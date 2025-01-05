@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<config date="1735913383242" transient="false" version="3.0">
+<config date="1736067657758" transient="false" version="3.0">
 <site enabled="true" policy="USER-EXCLUDE" updateable="true" url="platform:/base/">
 <feature id="org.eclipse.help" plugin-identifier="org.eclipse.help.base" url="features/org.eclipse.help_2.3.1300.v20230302-0300/" version="2.3.1300.v20230302-0300">
 </feature>
@@ -16,6 +16,8 @@
 <feature id="org.eclipse.sirius.runtime.ide.ui" plugin-identifier="org.eclipse.sirius.common.ui" url="features/org.eclipse.sirius.runtime.ide.ui_7.4.2.202406251241/" version="7.4.2.202406251241">
 </feature>
 <feature id="org.eclipse.sdk" url="features/org.eclipse.sdk_4.27.0.v20230302-0300/" version="4.27.0.v20230302-0300">
+</feature>
+<feature id="org.eclipse.emf.emfatic" url="features/org.eclipse.emf.emfatic_1.1.0.202309291048/" version="1.1.0.202309291048">
 </feature>
 <feature id="org.eclipse.gmf" url="features/org.eclipse.gmf_1.16.3.202312121900/" version="1.16.3.202312121900">
 </feature>

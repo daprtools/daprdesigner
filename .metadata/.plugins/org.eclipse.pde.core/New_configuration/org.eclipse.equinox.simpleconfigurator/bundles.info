@@ -216,6 +216,9 @@ org.eclipse.emf.ecoretools.ui,3.5.1.202404261351,file:/home/raman/Downloads/Obeo
 org.eclipse.emf.edit,2.18.0.v20230211-1150,file:/home/raman/Downloads/ObeoDesigner-Community/plugins/org.eclipse.emf.edit_2.18.0.v20230211-1150.jar,4,false
 org.eclipse.emf.edit.ui,2.23.0.v20230211-1150,file:/home/raman/Downloads/ObeoDesigner-Community/plugins/org.eclipse.emf.edit.ui_2.23.0.v20230211-1150.jar,4,false
 org.eclipse.emf.eef.runtime,1.5.2.201707060903,file:/home/raman/Downloads/ObeoDesigner-Community/plugins/org.eclipse.emf.eef.runtime_1.5.2.201707060903.jar,4,false
+org.eclipse.emf.emfatic.core,1.1.0.202309291048,file:/home/raman/Downloads/ObeoDesigner-Community/plugins/org.eclipse.emf.emfatic.core_1.1.0.202309291048.jar,4,false
+org.eclipse.emf.emfatic.doc.user,1.1.0.202103091458,file:/home/raman/Downloads/ObeoDesigner-Community/plugins/org.eclipse.emf.emfatic.doc.user_1.1.0.202103091458.jar,4,false
+org.eclipse.emf.emfatic.ui,1.1.0.202305161114,file:/home/raman/Downloads/ObeoDesigner-Community/plugins/org.eclipse.emf.emfatic.ui_1.1.0.202305161114.jar,4,false
 org.eclipse.emf.example.installer,1.11.0.v20230211-1150,file:/home/raman/Downloads/ObeoDesigner-Community/plugins/org.eclipse.emf.example.installer_1.11.0.v20230211-1150.jar,4,false
 org.eclipse.emf.exporter,2.11.0.v20230211-1150,file:/home/raman/Downloads/ObeoDesigner-Community/plugins/org.eclipse.emf.exporter_2.11.0.v20230211-1150.jar,4,false
 org.eclipse.emf.importer,2.13.0.v20230211-1150,file:/home/raman/Downloads/ObeoDesigner-Community/plugins/org.eclipse.emf.importer_2.13.0.v20230211-1150.jar,4,false
@@ -349,6 +352,8 @@ org.eclipse.gmf.runtime.notation.edit,1.8.0.202211151334,file:/home/raman/Downlo
 org.eclipse.gmf.runtime.notation.providers,1.8.0.202312121900,file:/home/raman/Downloads/ObeoDesigner-Community/plugins/org.eclipse.gmf.runtime.notation.providers_1.8.0.202312121900.jar,4,false
 org.eclipse.gmf.runtime.notation.sdk,1.7.0.202211151334,file:/home/raman/Downloads/ObeoDesigner-Community/plugins/org.eclipse.gmf.runtime.notation.sdk_1.7.0.202211151334.jar,4,false
 org.eclipse.gmf.runtime.sdk,1.8.0.202312121900,file:/home/raman/Downloads/ObeoDesigner-Community/plugins/org.eclipse.gmf.runtime.sdk_1.8.0.202312121900.jar,4,false
+org.eclipse.gymnast.runtime.core,1.1.0.202309290832,file:/home/raman/Downloads/ObeoDesigner-Community/plugins/org.eclipse.gymnast.runtime.core_1.1.0.202309290832.jar,4,false
+org.eclipse.gymnast.runtime.ui,1.1.0.202103091458,file:/home/raman/Downloads/ObeoDesigner-Community/plugins/org.eclipse.gymnast.runtime.ui_1.1.0.202103091458.jar,4,false
 org.eclipse.help,3.9.100.v20210721-0601,file:/home/raman/Downloads/ObeoDesigner-Community/plugins/org.eclipse.help_3.9.100.v20210721-0601.jar,4,false
 org.eclipse.help.base,4.3.1000.v20230302-0300,file:/home/raman/Downloads/ObeoDesigner-Community/plugins/org.eclipse.help.base_4.3.1000.v20230302-0300.jar,4,false
 org.eclipse.help.ui,4.4.100.v20220619-1918,file:/home/raman/Downloads/ObeoDesigner-Community/plugins/org.eclipse.help.ui_4.4.100.v20220619-1918.jar,4,false
