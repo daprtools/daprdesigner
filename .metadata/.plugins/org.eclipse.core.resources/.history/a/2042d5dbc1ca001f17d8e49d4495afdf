@@ -1,0 +1,387 @@
+@namespace(
+	uri="http://dapr.io/daprtools/daprdesigner",
+	prefix="daprdesigner")
+package daprdesigner;
+
+
+mapentry EStringToStringMapEntry : String -> String;
+
+// Base classes
+class DaprArchitecture {
+	attr String name;
+	val Environment[*] environments;
+	
+}
+
+class Environment{
+	attr String name;
+	val Namespace namespace;
+	val Trustdomain[*] trustdomain;
+	val BuildingBlock[*] buildingblocks;
+}
+
+
+class Namespace{
+	
+	attr String name1;
+}
+class Trustdomain{
+	
+	attr String name;
+}
+
+abstract class BuildingBlock {
+	
+	ref Namespace namespace;
+	ref Trustdomain trustDomain;
+}
+
+
+// Service Invocation and Apps 
+class Services extends BuildingBlock{
+	
+	readonly attr  String name = "Services Group";
+	val App[*] apps;
+}
+
+class App {
+	attr String appId;
+	ref Namespace namespace;
+	ref Trustdomain trustDomain;
+	val AppConfiguration configuration;
+	
+	
+}
+
+class AppConfiguration{
+	readonly attr String apiVersion = "dapr.io/v1alpha1";
+	readonly attr String kind = "Configuration";
+	attr String metadata_name;
+	ref Namespace metadata_namespace;
+	val AppAccessControl[0..1] accessControl;
+	val APIAccessControl[0..1] apiControl;
+	val MiddlewareConfiguration[0..1] middlewareConfiguration;
+	val LoggingConfiguration[0..1] loggingConfiguration;
+	val NameResolutionConfiguration[0..1] nameResolutionConfiguration;
+	val SecretsConfiguration[0..1] secretsConfiguration;
+	val MetricsConfiguration[0..1] metricsConfiguration;
+	val TracingConfiguration[0..1] tracingConfiguration;
+	attr String[*] componentsDenyList;
+	
+}
+//Logging configuration
+
+class LoggingConfiguration{
+	attr boolean enabled = true;
+	attr boolean obfuscateURLs = false;
+	attr boolean omitHealthChecks = true;
+}
+//Name Resolution Configuration
+
+class NameResolutionConfiguration{
+	attr String componentName;
+	attr String componentVersion;
+	attr String configurationKey;
+	attr String configurationValue;
+	
+}
+//Secrets configuration
+
+class SecretsConfiguration
+{
+    val SecretsList[*] allowedList;
+    val SecretsList[*] deniedList;	
+	
+}
+
+class SecretsList{
+	attr String storeName;
+	attr boolean defaultAccess = true;
+	attr String[+] secrets;
+	
+}
+
+// Metrics Configuration
+
+class MetricsConfiguration{
+	attr boolean enabled;
+	attr int[*] latencyDistributionBuckets;
+	attr boolean http_increasedCardinality;
+	attr String[*] http_pathMatching;
+	attr boolean http_excludeVerbs;
+}
+
+// API Configuration
+
+class APIAccessControl{
+	val API[*] allowedAPIs;
+	val API[*] deniedAPIs;
+}
+
+class API {
+	attr String api_name;
+	attr String api_version;
+	attr String protocol;
+}
+
+
+
+// AccessControl configuration
+
+class AppAccessControl{
+	
+	attr String defaultAction;
+	ref  Trustdomain trustDomain;
+	val AppPolicy[*] policies;
+}
+
+class AppPolicy {
+  ref App app;
+  attr String defaultAction;
+  ref Trustdomain trustDomain;
+  ref Namespace namespace;
+  val Operation[*] operations;
+  
+  	
+}
+
+class Operation{
+	attr String protocol;
+	attr String operationName;
+	attr String[*] verbs;
+	attr String action;
+}
+
+// Middleware Configuration
+
+class MiddlewareConfiguration{
+	
+	val EStringToStringMapEntry[*] incomingHandler; // httpPipeline
+	val EStringToStringMapEntry[*] outgoingHandler; // appHttpPipeline  
+}
+
+class HttpHandler{
+	
+	attr String name;
+	attr String type;
+}
+
+
+//Tracing Configuration
+
+class TracingConfiguration{
+	attr String samplingRate;
+	attr boolean stdout;
+	attr String otel_endPointAddress;
+	attr boolean otel_isSecure;
+	attr String otel_protocol;
+	attr String zipkin_endPointAddress;
+} 
+
+
+// Subscription Configuration 
+
+class SubscriptionConfiguration{
+	readonly attr String apiVersion = "dapr.io/v2alpha1";
+	readonly attr String kind = "Subscription";
+	attr String name;
+	attr String topicName;
+	val  EStringToStringMapEntry[*] routeRules;
+	attr String pubsubname;
+	attr String deadLetterTopic;
+	attr boolean bulkSubscribe_enabled;
+	attr String bulkSubscribe_maxMessagesCount;
+	attr String bulkSubscribe_maxAwaitDurationMs;
+	ref App[*] scopes;
+	
+}
+
+class RouteRules{
+	attr String match;
+	attr String path;
+}
+
+
+// Resiliency Configuration
+
+class ResiliencyConfiguration {
+	readonly attr String apiVersion = "dapr.io/v2alpha1";
+	readonly attr String kind = "Subscription";
+	attr String name;
+	ref App[*] scopes;
+	val ResiliencyPolicy policy;
+	val ResiliencyTarget[*] targets;
+}
+
+class ResiliencyPolicy{
+	val RetryPolicy[*] retries;
+	val CircuitBreakerPolicy[*] circuitbreakers;
+	val EStringToStringMapEntry[*] timeouts;
+	
+}
+
+class ResiliencyTimeout{
+	attr String name;
+	attr String value;
+	
+}
+
+class RetryPolicy{
+	attr String name;
+	attr String policy_type;
+	attr String duration;
+	attr int maxRetries;
+}
+
+
+class CircuitBreakerPolicy{
+	attr String name;
+	attr int maxRequests;
+	attr String interval;
+	attr String timeout;
+	attr String trip;
+	
+}
+
+class ResiliencyTarget{
+	attr ResiliencyTargetType type;
+	attr String name;
+	val CircuitBreakerPolicy circuitBreaker;
+	val RetryPolicy retry;
+	attr int circuitBreakerCacheSize;
+	val ResiliencyTimeout timeout;
+	
+	
+}
+
+enum ResiliencyTargetType{
+	APP=1;
+	ACTOR=2;
+	COMPONENT_INBOUND=3;
+	COMPONENT_OUTBOUND=4;
+	
+}
+// HTTPEndpoint Configuration
+
+class HTTPEndPoint {
+	readonly attr String apiVersion = "dapr.io/v1alpha1";
+	readonly attr String kind = "HTTPEndpoint";
+	ref SecretStore auth;
+	attr String metadata_name;
+	attr String baseUrl;
+	ref App[*] scopes;
+	val SpecMetadata[*] headers; 
+	val SpecMetadata clientTLS_rootCA; 
+	val SpecMetadata clientTLS_certificate; 
+	val SpecMetadata clientTLS_privateKey; 	
+}
+
+
+
+//Component Definitions
+
+
+abstract class Component {
+	
+	readonly attr String apiVersion = "dapr.io/v1alpha1";
+	readonly attr String kind = "Component";
+	ref SecretStore auth;
+	attr String metadata_name;
+	ref Namespace metadata_namespace;
+	val ComponentSpec spec; 
+	ref App[*] scopes;
+		
+}
+
+class ComponentSpec{
+	attr boolean ignoreErrors;
+	attr String initTimeout;
+	val SpecMetadata[*] spec_metadata; 
+}
+
+class SpecMetadata{
+	attr String name;
+	attr String value;
+	attr boolean isFetchedFromSecret = false;
+	attr boolean isFetchedFromEnvironment = false;
+	attr String secretKeyRefName;
+	attr String secretKeyRefKey;
+	attr String envRef;
+}
+
+
+
+
+
+
+// Secret Stores 
+
+abstract class SecretStore extends Component  {
+	
+	
+}
+
+class HashicorpVault extends SecretStore{
+	
+	readonly attr String spec_type = "secretstores.aws.parameterstore";
+	readonly attr String spec_version = "v1";
+}
+
+// Message Broker Configurations 
+
+abstract class MessageBroker extends Component{
+	
+}
+
+
+
+
+class PubSub extends BuildingBlock{
+	
+	readonly attr  String name = "Message Brokers";
+	ref MessageBroker[*] mbrokers;
+}
+
+
+
+class Bindings extends BuildingBlock{
+	
+	attr String appID;
+}
+class Jobs extends BuildingBlock{
+	
+	attr String appID;
+}
+class Configuration extends BuildingBlock{
+	
+	attr String appID;
+}
+class Workflow extends BuildingBlock{
+	
+	attr String appID;
+}
+class Actors extends BuildingBlock{
+	
+	attr String appID;
+}
+class Secrets extends BuildingBlock{
+	
+	attr String appID;
+}
+class StateManagement extends BuildingBlock{
+	
+	attr String appID;
+}
+
+class DistributedLocks extends BuildingBlock{
+	
+	attr String appID;
+}
+class CryptoGraphy extends BuildingBlock{
+	
+	attr String appID;
+}
+
+
+
+

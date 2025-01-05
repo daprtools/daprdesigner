@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/daprdesigner/src-gen" creationIcons="false" editDirectory="/daprdesigner.edit/src-gen"
+    editorDirectory="/daprdesigner.editor/src-gen" modelPluginID="daprdesigner" modelName="Daprdesigner"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>daprdesigner.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Daprdesigner" disposableProviderFactory="true" ecorePackage="daprdesigner.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="daprdesigner.ecore#//ResiliencyTargetType">
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//ResiliencyTargetType/APP"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//ResiliencyTargetType/ACTOR"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//ResiliencyTargetType/COMPONENT_INBOUND"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//ResiliencyTargetType/COMPONENT_OUTBOUND"/>
+    </genEnums>
+    <genClasses ecoreClass="daprdesigner.ecore#//DaprArchitecture">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//DaprArchitecture/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//DaprArchitecture/environments"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//Environment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Environment/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//Environment/namespace"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//Environment/trustdomain"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//Environment/buildingblocks"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//Namespace">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Namespace/name"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//Trustdomain">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Trustdomain/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="daprdesigner.ecore#//BuildingBlock">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//BuildingBlock/namespace"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//BuildingBlock/trustDomain"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//Services">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Services/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//Services/apps"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//App">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//App/appId"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//App/namespace"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//App/trustDomain"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//App/configuration"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//AppConfiguration">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//AppConfiguration/apiVersion"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//AppConfiguration/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//AppConfiguration/metadata_name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//AppConfiguration/metadata_namespace"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//AppConfiguration/accessControl"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//AppConfiguration/apiControl"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//AppConfiguration/middlewareConfiguration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//AppConfiguration/loggingConfiguration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//AppConfiguration/nameResolutionConfiguration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//AppConfiguration/secretsConfiguration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//AppConfiguration/metricsConfiguration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//AppConfiguration/tracingConfiguration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//AppConfiguration/componentsDenyList"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//LoggingConfiguration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//LoggingConfiguration/enabled"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//LoggingConfiguration/obfuscateURLs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//LoggingConfiguration/omitHealthChecks"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//NameResolutionConfiguration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//NameResolutionConfiguration/componentName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//NameResolutionConfiguration/componentVersion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//NameResolutionConfiguration/configurationKey"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//NameResolutionConfiguration/configurationValue"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//SecretsConfiguration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//SecretsConfiguration/allowedList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//SecretsConfiguration/deniedList"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//SecretsList">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//SecretsList/storeName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//SecretsList/defaultAccess"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//SecretsList/secrets"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//MetricsConfiguration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//MetricsConfiguration/enabled"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//MetricsConfiguration/latencyDistributionBuckets"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//MetricsConfiguration/http_increasedCardinality"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//MetricsConfiguration/http_pathMatching"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//MetricsConfiguration/http_excludeVerbs"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//APIAccessControl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//APIAccessControl/allowedAPIs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//APIAccessControl/deniedAPIs"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//API">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//API/api_name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//API/api_version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//API/protocol"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//AppAccessControl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//AppAccessControl/defaultAction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//AppAccessControl/trustDomain"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//AppAccessControl/policies"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//AppPolicy">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//AppPolicy/app"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//AppPolicy/defaultAction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//AppPolicy/trustDomain"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//AppPolicy/namespace"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//AppPolicy/operations"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//Operation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Operation/protocol"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Operation/operationName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Operation/verbs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Operation/action"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//MiddlewareConfiguration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//MiddlewareConfiguration/incomingHandler"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//MiddlewareConfiguration/outgoingHandler"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//HttpHandler">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//HttpHandler/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//HttpHandler/type"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//TracingConfiguration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//TracingConfiguration/samplingRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//TracingConfiguration/stdout"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//TracingConfiguration/otel_endPointAddress"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//TracingConfiguration/otel_isSecure"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//TracingConfiguration/otel_protocol"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//TracingConfiguration/zipkin_endPointAddress"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//SubscriptionConfiguration">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//SubscriptionConfiguration/apiVersion"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//SubscriptionConfiguration/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//SubscriptionConfiguration/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//SubscriptionConfiguration/topicName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//SubscriptionConfiguration/routeRules"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//SubscriptionConfiguration/pubsubname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//SubscriptionConfiguration/deadLetterTopic"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//SubscriptionConfiguration/bulkSubscribe_enabled"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//SubscriptionConfiguration/bulkSubscribe_maxMessagesCount"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//SubscriptionConfiguration/bulkSubscribe_maxAwaitDurationMs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//SubscriptionConfiguration/scopes"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//RouteRules">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//RouteRules/match"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//RouteRules/path"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//ResiliencyConfiguration">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//ResiliencyConfiguration/apiVersion"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//ResiliencyConfiguration/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//ResiliencyConfiguration/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//ResiliencyConfiguration/scopes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//ResiliencyConfiguration/policy"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//ResiliencyConfiguration/targets"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//ResiliencyPolicy">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//ResiliencyPolicy/retries"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//ResiliencyPolicy/circuitbreakers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//ResiliencyPolicy/timeouts"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//ResiliencyTimeout">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//ResiliencyTimeout/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//ResiliencyTimeout/value"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//RetryPolicy">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//RetryPolicy/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//RetryPolicy/policy_type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//RetryPolicy/duration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//RetryPolicy/maxRetries"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//CircuitBreakerPolicy">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//CircuitBreakerPolicy/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//CircuitBreakerPolicy/maxRequests"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//CircuitBreakerPolicy/interval"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//CircuitBreakerPolicy/timeout"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//CircuitBreakerPolicy/trip"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//ResiliencyTarget">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//ResiliencyTarget/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//ResiliencyTarget/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//ResiliencyTarget/circuitBreaker"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//ResiliencyTarget/retry"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//ResiliencyTarget/circuitBreakerCacheSize"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//ResiliencyTarget/timeout"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//HTTPEndPoint">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//HTTPEndPoint/apiVersion"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//HTTPEndPoint/kind"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//HTTPEndPoint/auth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//HTTPEndPoint/metadata_name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//HTTPEndPoint/baseUrl"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//HTTPEndPoint/scopes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//HTTPEndPoint/headers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//HTTPEndPoint/clientTLS_rootCA"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//HTTPEndPoint/clientTLS_certificate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//HTTPEndPoint/clientTLS_privateKey"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="daprdesigner.ecore#//Component">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Component/apiVersion"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Component/kind"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//Component/auth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Component/metadata_name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//Component/metadata_namespace"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//Component/spec"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//Component/scopes"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//ComponentSpec">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//ComponentSpec/ignoreErrors"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//ComponentSpec/initTimeout"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//ComponentSpec/spec_metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//SpecMetadata">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//SpecMetadata/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//SpecMetadata/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//SpecMetadata/isFetchedFromSecret"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//SpecMetadata/isFetchedFromEnvironment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//SpecMetadata/secretKeyRefName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//SpecMetadata/secretKeyRefKey"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//SpecMetadata/envRef"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="daprdesigner.ecore#//SecretStore"/>
+    <genClasses ecoreClass="daprdesigner.ecore#//HashicorpVault">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//HashicorpVault/spec_type"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//HashicorpVault/spec_version"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="daprdesigner.ecore#//MessageBroker"/>
+    <genClasses ecoreClass="daprdesigner.ecore#//PubSub">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//PubSub/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//PubSub/mbrokers"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//Bindings">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Bindings/appID"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//Jobs">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Jobs/appID"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//Configuration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Configuration/appID"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//Workflow">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Workflow/appID"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//Actors">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Actors/appID"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//Secrets">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Secrets/appID"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//StateManagement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//StateManagement/appID"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//DistributedLocks">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//DistributedLocks/appID"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//CryptoGraphy">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//CryptoGraphy/appID"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
