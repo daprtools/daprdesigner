@@ -365,6 +365,7 @@ class Actors extends BuildingBlock{
 	attr String appID;
 }
 class Secrets extends BuildingBlock{
+	readonly attr  String name = "Secrets Store";
 	
 	attr String appID;
 }

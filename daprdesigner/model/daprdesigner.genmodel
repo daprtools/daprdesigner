@@ -250,6 +250,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Actors/appID"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//Secrets">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Secrets/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Secrets/appID"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//StateManagement">

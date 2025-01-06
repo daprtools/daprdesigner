@@ -2218,8 +2218,17 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSecrets_AppID() {
+	public EAttribute getSecrets_Name() {
 		return (EAttribute) secretsEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSecrets_AppID() {
+		return (EAttribute) secretsEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2553,6 +2562,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		createEAttribute(actorsEClass, ACTORS__APP_ID);
 
 		secretsEClass = createEClass(SECRETS);
+		createEAttribute(secretsEClass, SECRETS__NAME);
 		createEAttribute(secretsEClass, SECRETS__APP_ID);
 
 		stateManagementEClass = createEClass(STATE_MANAGEMENT);
@@ -3161,6 +3171,9 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(secretsEClass, Secrets.class, "Secrets", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSecrets_Name(), ecorePackage.getEString(), "name", "Secrets Store", 0, 1, Secrets.class,
+				!IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 		initEAttribute(getSecrets_AppID(), ecorePackage.getEString(), "appID", null, 0, 1, Secrets.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

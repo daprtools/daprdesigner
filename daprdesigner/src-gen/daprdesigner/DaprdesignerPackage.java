@@ -2955,13 +2955,22 @@ public interface DaprdesignerPackage extends EPackage {
 	int SECRETS__TRUST_DOMAIN = BUILDING_BLOCK__TRUST_DOMAIN;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECRETS__NAME = BUILDING_BLOCK_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>App ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECRETS__APP_ID = BUILDING_BLOCK_FEATURE_COUNT + 0;
+	int SECRETS__APP_ID = BUILDING_BLOCK_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Secrets</em>' class.
@@ -2970,7 +2979,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECRETS_FEATURE_COUNT = BUILDING_BLOCK_FEATURE_COUNT + 1;
+	int SECRETS_FEATURE_COUNT = BUILDING_BLOCK_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Secrets</em>' class.
@@ -5249,6 +5258,17 @@ public interface DaprdesignerPackage extends EPackage {
 	EClass getSecrets();
 
 	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.Secrets#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see daprdesigner.Secrets#getName()
+	 * @see #getSecrets()
+	 * @generated
+	 */
+	EAttribute getSecrets_Name();
+
+	/**
 	 * Returns the meta object for the attribute '{@link daprdesigner.Secrets#getAppID <em>App ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7009,6 +7029,14 @@ public interface DaprdesignerPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SECRETS = eINSTANCE.getSecrets();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SECRETS__NAME = eINSTANCE.getSecrets_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>App ID</b></em>' attribute feature.

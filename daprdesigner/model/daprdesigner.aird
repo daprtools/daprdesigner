@@ -6,7 +6,7 @@
     <semanticResources>daprdesigner.emf</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_6y24MMdeEe-UUb-_sZYaOg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_6zUyQMdeEe-UUb-_sZYaOg" name="daprdesigner" repPath="#_6zOroMdeEe-UUb-_sZYaOg" changeId="1736011992098">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_6zUyQMdeEe-UUb-_sZYaOg" name="daprdesigner" repPath="#_6zOroMdeEe-UUb-_sZYaOg" changeId="1736160633731">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="daprdesigner.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -797,6 +797,10 @@
         <children xmi:type="notation:Node" xmi:id="_9f5tQMdeEe-UUb-_sZYaOg" type="2003" element="_9dQo8MdeEe-UUb-_sZYaOg">
           <children xmi:type="notation:Node" xmi:id="_9f5tQ8deEe-UUb-_sZYaOg" type="5007"/>
           <children xmi:type="notation:Node" xmi:id="_9f5tRMdeEe-UUb-_sZYaOg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_DfqQEMwcEe-Uw7HLCvUlig" type="3010" element="_DepjccwcEe-Uw7HLCvUlig">
+              <styles xmi:type="notation:FontStyle" xmi:id="_DfqQEcwcEe-Uw7HLCvUlig" fontName="Ubuntu" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_DfqQEswcEe-Uw7HLCvUlig"/>
+            </children>
             <children xmi:type="notation:Node" xmi:id="_9gY1cMdeEe-UUb-_sZYaOg" type="3010" element="_9ebGkcdeEe-UUb-_sZYaOg">
               <styles xmi:type="notation:FontStyle" xmi:id="_9gY1ccdeEe-UUb-_sZYaOg" fontName="Ubuntu" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_9gY1csdeEe-UUb-_sZYaOg"/>
@@ -3112,6 +3116,14 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_DepjccwcEe-Uw7HLCvUlig" name="name : EString = Secrets Store" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="daprdesigner.ecore#//Secrets/name"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="daprdesigner.ecore#//Secrets/name"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_DeqxkMwcEe-Uw7HLCvUlig" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_9ebGkcdeEe-UUb-_sZYaOg" name="appID : EString" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="daprdesigner.ecore#//Secrets/appID"/>
         <semanticElements xmi:type="ecore:EAttribute" href="daprdesigner.ecore#//Secrets/appID"/>
