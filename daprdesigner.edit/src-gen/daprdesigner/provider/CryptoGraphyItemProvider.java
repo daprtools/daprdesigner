@@ -44,9 +44,26 @@ public class CryptoGraphyItemProvider extends BuildingBlockItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addNamePropertyDescriptor(object);
 			addAppIDPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_CryptoGraphy_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_CryptoGraphy_name_feature",
+								"_UI_CryptoGraphy_type"),
+						DaprdesignerPackage.Literals.CRYPTO_GRAPHY__NAME, false, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -94,7 +111,7 @@ public class CryptoGraphyItemProvider extends BuildingBlockItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((CryptoGraphy) object).getAppID();
+		String label = ((CryptoGraphy) object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_CryptoGraphy_type")
 				: getString("_UI_CryptoGraphy_type") + " " + label;
 	}
@@ -111,6 +128,7 @@ public class CryptoGraphyItemProvider extends BuildingBlockItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(CryptoGraphy.class)) {
+		case DaprdesignerPackage.CRYPTO_GRAPHY__NAME:
 		case DaprdesignerPackage.CRYPTO_GRAPHY__APP_ID:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;

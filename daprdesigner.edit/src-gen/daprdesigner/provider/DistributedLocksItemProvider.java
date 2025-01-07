@@ -44,9 +44,26 @@ public class DistributedLocksItemProvider extends BuildingBlockItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addNamePropertyDescriptor(object);
 			addAppIDPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_DistributedLocks_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DistributedLocks_name_feature",
+								"_UI_DistributedLocks_type"),
+						DaprdesignerPackage.Literals.DISTRIBUTED_LOCKS__NAME, false, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -94,7 +111,7 @@ public class DistributedLocksItemProvider extends BuildingBlockItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DistributedLocks) object).getAppID();
+		String label = ((DistributedLocks) object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_DistributedLocks_type")
 				: getString("_UI_DistributedLocks_type") + " " + label;
 	}
@@ -111,6 +128,7 @@ public class DistributedLocksItemProvider extends BuildingBlockItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DistributedLocks.class)) {
+		case DaprdesignerPackage.DISTRIBUTED_LOCKS__NAME:
 		case DaprdesignerPackage.DISTRIBUTED_LOCKS__APP_ID:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;

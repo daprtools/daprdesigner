@@ -345,40 +345,40 @@ class PubSub extends BuildingBlock{
 
 
 class Bindings extends BuildingBlock{
-	
+	readonly attr  String name = "Bindings";
 	attr String appID;
 }
 class Jobs extends BuildingBlock{
-	
+	readonly attr  String name = "Jobs";
 	attr String appID;
 }
 class Configuration extends BuildingBlock{
-	
+	readonly attr  String name = "Configuration";
 	attr String appID;
 }
 class Workflow extends BuildingBlock{
-	
+	readonly attr  String name = "Workflow";
 	attr String appID;
 }
 class Actors extends BuildingBlock{
-	
+	readonly attr  String name = "Actors";
 	attr String appID;
 }
 class Secrets extends BuildingBlock{
-	
+	readonly attr  String name = "Secrets";
 	attr String appID;
 }
 class StateManagement extends BuildingBlock{
-	
+	readonly attr  String name = "StateStore";
 	attr String appID;
 }
 
 class DistributedLocks extends BuildingBlock{
-	
+	readonly attr  String name = "Distributed Locks";
 	attr String appID;
 }
 class CryptoGraphy extends BuildingBlock{
-	
+	readonly attr  String name = "Cryptography";
 	attr String appID;
 }
 

@@ -235,30 +235,39 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//PubSub/mbrokers"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//Bindings">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Bindings/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Bindings/appID"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//Jobs">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Jobs/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Jobs/appID"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//Configuration">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Configuration/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Configuration/appID"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//Workflow">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Workflow/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Workflow/appID"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//Actors">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Actors/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Actors/appID"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//Secrets">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Secrets/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Secrets/appID"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//StateManagement">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//StateManagement/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//StateManagement/appID"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//DistributedLocks">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//DistributedLocks/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//DistributedLocks/appID"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//CryptoGraphy">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//CryptoGraphy/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//CryptoGraphy/appID"/>
     </genClasses>
   </genPackages>
