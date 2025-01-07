@@ -11,6 +11,7 @@ package daprdesigner;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link daprdesigner.DistributedLocks#getName <em>Name</em>}</li>
  *   <li>{@link daprdesigner.DistributedLocks#getAppID <em>App ID</em>}</li>
  * </ul>
  *
@@ -19,6 +20,18 @@ package daprdesigner;
  * @generated
  */
 public interface DistributedLocks extends BuildingBlock {
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * The default value is <code>"Distributed Locks"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see daprdesigner.DaprdesignerPackage#getDistributedLocks_Name()
+	 * @model default="Distributed Locks" changeable="false"
+	 * @generated
+	 */
+	String getName();
+
 	/**
 	 * Returns the value of the '<em><b>App ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->

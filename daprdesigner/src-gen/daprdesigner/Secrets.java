@@ -22,12 +22,12 @@ package daprdesigner;
 public interface Secrets extends BuildingBlock {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * The default value is <code>"Secrets Store"</code>.
+	 * The default value is <code>"Secrets"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see daprdesigner.DaprdesignerPackage#getSecrets_Name()
-	 * @model default="Secrets Store" changeable="false"
+	 * @model default="Secrets" changeable="false"
 	 * @generated
 	 */
 	String getName();

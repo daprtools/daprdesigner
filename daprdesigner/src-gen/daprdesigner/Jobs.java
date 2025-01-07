@@ -11,6 +11,7 @@ package daprdesigner;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link daprdesigner.Jobs#getName <em>Name</em>}</li>
  *   <li>{@link daprdesigner.Jobs#getAppID <em>App ID</em>}</li>
  * </ul>
  *
@@ -19,6 +20,18 @@ package daprdesigner;
  * @generated
  */
 public interface Jobs extends BuildingBlock {
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * The default value is <code>"Jobs"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see daprdesigner.DaprdesignerPackage#getJobs_Name()
+	 * @model default="Jobs" changeable="false"
+	 * @generated
+	 */
+	String getName();
+
 	/**
 	 * Returns the value of the '<em><b>App ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->

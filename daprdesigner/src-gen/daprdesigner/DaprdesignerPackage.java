@@ -2680,13 +2680,22 @@ public interface DaprdesignerPackage extends EPackage {
 	int BINDINGS__TRUST_DOMAIN = BUILDING_BLOCK__TRUST_DOMAIN;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINDINGS__NAME = BUILDING_BLOCK_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>App ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BINDINGS__APP_ID = BUILDING_BLOCK_FEATURE_COUNT + 0;
+	int BINDINGS__APP_ID = BUILDING_BLOCK_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Bindings</em>' class.
@@ -2695,7 +2704,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BINDINGS_FEATURE_COUNT = BUILDING_BLOCK_FEATURE_COUNT + 1;
+	int BINDINGS_FEATURE_COUNT = BUILDING_BLOCK_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Bindings</em>' class.
@@ -2735,13 +2744,22 @@ public interface DaprdesignerPackage extends EPackage {
 	int JOBS__TRUST_DOMAIN = BUILDING_BLOCK__TRUST_DOMAIN;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS__NAME = BUILDING_BLOCK_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>App ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOBS__APP_ID = BUILDING_BLOCK_FEATURE_COUNT + 0;
+	int JOBS__APP_ID = BUILDING_BLOCK_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Jobs</em>' class.
@@ -2750,7 +2768,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOBS_FEATURE_COUNT = BUILDING_BLOCK_FEATURE_COUNT + 1;
+	int JOBS_FEATURE_COUNT = BUILDING_BLOCK_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Jobs</em>' class.
@@ -2790,13 +2808,22 @@ public interface DaprdesignerPackage extends EPackage {
 	int CONFIGURATION__TRUST_DOMAIN = BUILDING_BLOCK__TRUST_DOMAIN;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIGURATION__NAME = BUILDING_BLOCK_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>App ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIGURATION__APP_ID = BUILDING_BLOCK_FEATURE_COUNT + 0;
+	int CONFIGURATION__APP_ID = BUILDING_BLOCK_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Configuration</em>' class.
@@ -2805,7 +2832,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIGURATION_FEATURE_COUNT = BUILDING_BLOCK_FEATURE_COUNT + 1;
+	int CONFIGURATION_FEATURE_COUNT = BUILDING_BLOCK_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Configuration</em>' class.
@@ -2845,13 +2872,22 @@ public interface DaprdesignerPackage extends EPackage {
 	int WORKFLOW__TRUST_DOMAIN = BUILDING_BLOCK__TRUST_DOMAIN;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORKFLOW__NAME = BUILDING_BLOCK_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>App ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WORKFLOW__APP_ID = BUILDING_BLOCK_FEATURE_COUNT + 0;
+	int WORKFLOW__APP_ID = BUILDING_BLOCK_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Workflow</em>' class.
@@ -2860,7 +2896,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORKFLOW_FEATURE_COUNT = BUILDING_BLOCK_FEATURE_COUNT + 1;
+	int WORKFLOW_FEATURE_COUNT = BUILDING_BLOCK_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Workflow</em>' class.
@@ -2900,13 +2936,22 @@ public interface DaprdesignerPackage extends EPackage {
 	int ACTORS__TRUST_DOMAIN = BUILDING_BLOCK__TRUST_DOMAIN;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTORS__NAME = BUILDING_BLOCK_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>App ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTORS__APP_ID = BUILDING_BLOCK_FEATURE_COUNT + 0;
+	int ACTORS__APP_ID = BUILDING_BLOCK_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Actors</em>' class.
@@ -2915,7 +2960,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTORS_FEATURE_COUNT = BUILDING_BLOCK_FEATURE_COUNT + 1;
+	int ACTORS_FEATURE_COUNT = BUILDING_BLOCK_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Actors</em>' class.
@@ -3019,13 +3064,22 @@ public interface DaprdesignerPackage extends EPackage {
 	int STATE_MANAGEMENT__TRUST_DOMAIN = BUILDING_BLOCK__TRUST_DOMAIN;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_MANAGEMENT__NAME = BUILDING_BLOCK_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>App ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_MANAGEMENT__APP_ID = BUILDING_BLOCK_FEATURE_COUNT + 0;
+	int STATE_MANAGEMENT__APP_ID = BUILDING_BLOCK_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>State Management</em>' class.
@@ -3034,7 +3088,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_MANAGEMENT_FEATURE_COUNT = BUILDING_BLOCK_FEATURE_COUNT + 1;
+	int STATE_MANAGEMENT_FEATURE_COUNT = BUILDING_BLOCK_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>State Management</em>' class.
@@ -3074,13 +3128,22 @@ public interface DaprdesignerPackage extends EPackage {
 	int DISTRIBUTED_LOCKS__TRUST_DOMAIN = BUILDING_BLOCK__TRUST_DOMAIN;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISTRIBUTED_LOCKS__NAME = BUILDING_BLOCK_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>App ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISTRIBUTED_LOCKS__APP_ID = BUILDING_BLOCK_FEATURE_COUNT + 0;
+	int DISTRIBUTED_LOCKS__APP_ID = BUILDING_BLOCK_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Distributed Locks</em>' class.
@@ -3089,7 +3152,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISTRIBUTED_LOCKS_FEATURE_COUNT = BUILDING_BLOCK_FEATURE_COUNT + 1;
+	int DISTRIBUTED_LOCKS_FEATURE_COUNT = BUILDING_BLOCK_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Distributed Locks</em>' class.
@@ -3129,13 +3192,22 @@ public interface DaprdesignerPackage extends EPackage {
 	int CRYPTO_GRAPHY__TRUST_DOMAIN = BUILDING_BLOCK__TRUST_DOMAIN;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CRYPTO_GRAPHY__NAME = BUILDING_BLOCK_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>App ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CRYPTO_GRAPHY__APP_ID = BUILDING_BLOCK_FEATURE_COUNT + 0;
+	int CRYPTO_GRAPHY__APP_ID = BUILDING_BLOCK_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Crypto Graphy</em>' class.
@@ -3144,7 +3216,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CRYPTO_GRAPHY_FEATURE_COUNT = BUILDING_BLOCK_FEATURE_COUNT + 1;
+	int CRYPTO_GRAPHY_FEATURE_COUNT = BUILDING_BLOCK_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Crypto Graphy</em>' class.
@@ -5153,6 +5225,17 @@ public interface DaprdesignerPackage extends EPackage {
 	EClass getBindings();
 
 	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.Bindings#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see daprdesigner.Bindings#getName()
+	 * @see #getBindings()
+	 * @generated
+	 */
+	EAttribute getBindings_Name();
+
+	/**
 	 * Returns the meta object for the attribute '{@link daprdesigner.Bindings#getAppID <em>App ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5172,6 +5255,17 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getJobs();
+
+	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.Jobs#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see daprdesigner.Jobs#getName()
+	 * @see #getJobs()
+	 * @generated
+	 */
+	EAttribute getJobs_Name();
 
 	/**
 	 * Returns the meta object for the attribute '{@link daprdesigner.Jobs#getAppID <em>App ID</em>}'.
@@ -5195,6 +5289,17 @@ public interface DaprdesignerPackage extends EPackage {
 	EClass getConfiguration();
 
 	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.Configuration#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see daprdesigner.Configuration#getName()
+	 * @see #getConfiguration()
+	 * @generated
+	 */
+	EAttribute getConfiguration_Name();
+
+	/**
 	 * Returns the meta object for the attribute '{@link daprdesigner.Configuration#getAppID <em>App ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5216,6 +5321,17 @@ public interface DaprdesignerPackage extends EPackage {
 	EClass getWorkflow();
 
 	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.Workflow#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see daprdesigner.Workflow#getName()
+	 * @see #getWorkflow()
+	 * @generated
+	 */
+	EAttribute getWorkflow_Name();
+
+	/**
 	 * Returns the meta object for the attribute '{@link daprdesigner.Workflow#getAppID <em>App ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5235,6 +5351,17 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getActors();
+
+	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.Actors#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see daprdesigner.Actors#getName()
+	 * @see #getActors()
+	 * @generated
+	 */
+	EAttribute getActors_Name();
 
 	/**
 	 * Returns the meta object for the attribute '{@link daprdesigner.Actors#getAppID <em>App ID</em>}'.
@@ -5290,6 +5417,17 @@ public interface DaprdesignerPackage extends EPackage {
 	EClass getStateManagement();
 
 	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.StateManagement#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see daprdesigner.StateManagement#getName()
+	 * @see #getStateManagement()
+	 * @generated
+	 */
+	EAttribute getStateManagement_Name();
+
+	/**
 	 * Returns the meta object for the attribute '{@link daprdesigner.StateManagement#getAppID <em>App ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5311,6 +5449,17 @@ public interface DaprdesignerPackage extends EPackage {
 	EClass getDistributedLocks();
 
 	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.DistributedLocks#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see daprdesigner.DistributedLocks#getName()
+	 * @see #getDistributedLocks()
+	 * @generated
+	 */
+	EAttribute getDistributedLocks_Name();
+
+	/**
 	 * Returns the meta object for the attribute '{@link daprdesigner.DistributedLocks#getAppID <em>App ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5330,6 +5479,17 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getCryptoGraphy();
+
+	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.CryptoGraphy#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see daprdesigner.CryptoGraphy#getName()
+	 * @see #getCryptoGraphy()
+	 * @generated
+	 */
+	EAttribute getCryptoGraphy_Name();
 
 	/**
 	 * Returns the meta object for the attribute '{@link daprdesigner.CryptoGraphy#getAppID <em>App ID</em>}'.
@@ -6941,6 +7101,14 @@ public interface DaprdesignerPackage extends EPackage {
 		EClass BINDINGS = eINSTANCE.getBindings();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BINDINGS__NAME = eINSTANCE.getBindings_Name();
+
+		/**
 		 * The meta object literal for the '<em><b>App ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6957,6 +7125,14 @@ public interface DaprdesignerPackage extends EPackage {
 		 * @generated
 		 */
 		EClass JOBS = eINSTANCE.getJobs();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute JOBS__NAME = eINSTANCE.getJobs_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>App ID</b></em>' attribute feature.
@@ -6977,6 +7153,14 @@ public interface DaprdesignerPackage extends EPackage {
 		EClass CONFIGURATION = eINSTANCE.getConfiguration();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONFIGURATION__NAME = eINSTANCE.getConfiguration_Name();
+
+		/**
 		 * The meta object literal for the '<em><b>App ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6995,6 +7179,14 @@ public interface DaprdesignerPackage extends EPackage {
 		EClass WORKFLOW = eINSTANCE.getWorkflow();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WORKFLOW__NAME = eINSTANCE.getWorkflow_Name();
+
+		/**
 		 * The meta object literal for the '<em><b>App ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -7011,6 +7203,14 @@ public interface DaprdesignerPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ACTORS = eINSTANCE.getActors();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTORS__NAME = eINSTANCE.getActors_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>App ID</b></em>' attribute feature.
@@ -7057,6 +7257,14 @@ public interface DaprdesignerPackage extends EPackage {
 		EClass STATE_MANAGEMENT = eINSTANCE.getStateManagement();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STATE_MANAGEMENT__NAME = eINSTANCE.getStateManagement_Name();
+
+		/**
 		 * The meta object literal for the '<em><b>App ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -7075,6 +7283,14 @@ public interface DaprdesignerPackage extends EPackage {
 		EClass DISTRIBUTED_LOCKS = eINSTANCE.getDistributedLocks();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DISTRIBUTED_LOCKS__NAME = eINSTANCE.getDistributedLocks_Name();
+
+		/**
 		 * The meta object literal for the '<em><b>App ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -7091,6 +7307,14 @@ public interface DaprdesignerPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CRYPTO_GRAPHY = eINSTANCE.getCryptoGraphy();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CRYPTO_GRAPHY__NAME = eINSTANCE.getCryptoGraphy_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>App ID</b></em>' attribute feature.

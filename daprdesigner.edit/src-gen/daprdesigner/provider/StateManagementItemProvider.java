@@ -44,9 +44,26 @@ public class StateManagementItemProvider extends BuildingBlockItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addNamePropertyDescriptor(object);
 			addAppIDPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_StateManagement_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_StateManagement_name_feature",
+								"_UI_StateManagement_type"),
+						DaprdesignerPackage.Literals.STATE_MANAGEMENT__NAME, false, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -94,7 +111,7 @@ public class StateManagementItemProvider extends BuildingBlockItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((StateManagement) object).getAppID();
+		String label = ((StateManagement) object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_StateManagement_type")
 				: getString("_UI_StateManagement_type") + " " + label;
 	}
@@ -111,6 +128,7 @@ public class StateManagementItemProvider extends BuildingBlockItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(StateManagement.class)) {
+		case DaprdesignerPackage.STATE_MANAGEMENT__NAME:
 		case DaprdesignerPackage.STATE_MANAGEMENT__APP_ID:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;

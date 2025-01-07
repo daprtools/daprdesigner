@@ -34,7 +34,7 @@ public class SecretsImpl extends BuildingBlockImpl implements Secrets {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = "Secrets Store";
+	protected static final String NAME_EDEFAULT = "Secrets";
 
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.

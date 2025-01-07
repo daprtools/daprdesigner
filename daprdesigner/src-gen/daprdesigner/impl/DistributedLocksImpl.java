@@ -19,12 +19,33 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link daprdesigner.impl.DistributedLocksImpl#getName <em>Name</em>}</li>
  *   <li>{@link daprdesigner.impl.DistributedLocksImpl#getAppID <em>App ID</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class DistributedLocksImpl extends BuildingBlockImpl implements DistributedLocks {
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = "Distributed Locks";
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getAppID() <em>App ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -69,6 +90,15 @@ public class DistributedLocksImpl extends BuildingBlockImpl implements Distribut
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getAppID() {
 		return appID;
 	}
@@ -94,6 +124,8 @@ public class DistributedLocksImpl extends BuildingBlockImpl implements Distribut
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case DaprdesignerPackage.DISTRIBUTED_LOCKS__NAME:
+			return getName();
 		case DaprdesignerPackage.DISTRIBUTED_LOCKS__APP_ID:
 			return getAppID();
 		}
@@ -138,6 +170,8 @@ public class DistributedLocksImpl extends BuildingBlockImpl implements Distribut
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case DaprdesignerPackage.DISTRIBUTED_LOCKS__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case DaprdesignerPackage.DISTRIBUTED_LOCKS__APP_ID:
 			return APP_ID_EDEFAULT == null ? appID != null : !APP_ID_EDEFAULT.equals(appID);
 		}
@@ -155,7 +189,9 @@ public class DistributedLocksImpl extends BuildingBlockImpl implements Distribut
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (appID: ");
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", appID: ");
 		result.append(appID);
 		result.append(')');
 		return result.toString();

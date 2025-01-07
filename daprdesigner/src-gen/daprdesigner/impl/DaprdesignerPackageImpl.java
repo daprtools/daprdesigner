@@ -2128,8 +2128,17 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBindings_AppID() {
+	public EAttribute getBindings_Name() {
 		return (EAttribute) bindingsEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBindings_AppID() {
+		return (EAttribute) bindingsEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2146,8 +2155,17 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getJobs_AppID() {
+	public EAttribute getJobs_Name() {
 		return (EAttribute) jobsEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getJobs_AppID() {
+		return (EAttribute) jobsEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2164,8 +2182,17 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getConfiguration_AppID() {
+	public EAttribute getConfiguration_Name() {
 		return (EAttribute) configurationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getConfiguration_AppID() {
+		return (EAttribute) configurationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2182,8 +2209,17 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWorkflow_AppID() {
+	public EAttribute getWorkflow_Name() {
 		return (EAttribute) workflowEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getWorkflow_AppID() {
+		return (EAttribute) workflowEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2200,8 +2236,17 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getActors_AppID() {
+	public EAttribute getActors_Name() {
 		return (EAttribute) actorsEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getActors_AppID() {
+		return (EAttribute) actorsEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2245,8 +2290,17 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getStateManagement_AppID() {
+	public EAttribute getStateManagement_Name() {
 		return (EAttribute) stateManagementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStateManagement_AppID() {
+		return (EAttribute) stateManagementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2263,8 +2317,17 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDistributedLocks_AppID() {
+	public EAttribute getDistributedLocks_Name() {
 		return (EAttribute) distributedLocksEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDistributedLocks_AppID() {
+		return (EAttribute) distributedLocksEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2281,8 +2344,17 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCryptoGraphy_AppID() {
+	public EAttribute getCryptoGraphy_Name() {
 		return (EAttribute) cryptoGraphyEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCryptoGraphy_AppID() {
+		return (EAttribute) cryptoGraphyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2547,18 +2619,23 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		createEReference(pubSubEClass, PUB_SUB__MBROKERS);
 
 		bindingsEClass = createEClass(BINDINGS);
+		createEAttribute(bindingsEClass, BINDINGS__NAME);
 		createEAttribute(bindingsEClass, BINDINGS__APP_ID);
 
 		jobsEClass = createEClass(JOBS);
+		createEAttribute(jobsEClass, JOBS__NAME);
 		createEAttribute(jobsEClass, JOBS__APP_ID);
 
 		configurationEClass = createEClass(CONFIGURATION);
+		createEAttribute(configurationEClass, CONFIGURATION__NAME);
 		createEAttribute(configurationEClass, CONFIGURATION__APP_ID);
 
 		workflowEClass = createEClass(WORKFLOW);
+		createEAttribute(workflowEClass, WORKFLOW__NAME);
 		createEAttribute(workflowEClass, WORKFLOW__APP_ID);
 
 		actorsEClass = createEClass(ACTORS);
+		createEAttribute(actorsEClass, ACTORS__NAME);
 		createEAttribute(actorsEClass, ACTORS__APP_ID);
 
 		secretsEClass = createEClass(SECRETS);
@@ -2566,12 +2643,15 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		createEAttribute(secretsEClass, SECRETS__APP_ID);
 
 		stateManagementEClass = createEClass(STATE_MANAGEMENT);
+		createEAttribute(stateManagementEClass, STATE_MANAGEMENT__NAME);
 		createEAttribute(stateManagementEClass, STATE_MANAGEMENT__APP_ID);
 
 		distributedLocksEClass = createEClass(DISTRIBUTED_LOCKS);
+		createEAttribute(distributedLocksEClass, DISTRIBUTED_LOCKS__NAME);
 		createEAttribute(distributedLocksEClass, DISTRIBUTED_LOCKS__APP_ID);
 
 		cryptoGraphyEClass = createEClass(CRYPTO_GRAPHY);
+		createEAttribute(cryptoGraphyEClass, CRYPTO_GRAPHY__NAME);
 		createEAttribute(cryptoGraphyEClass, CRYPTO_GRAPHY__APP_ID);
 
 		// Create enums
@@ -3149,29 +3229,42 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 
 		initEClass(bindingsEClass, Bindings.class, "Bindings", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBindings_Name(), ecorePackage.getEString(), "name", "Bindings", 0, 1, Bindings.class,
+				!IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 		initEAttribute(getBindings_AppID(), ecorePackage.getEString(), "appID", null, 0, 1, Bindings.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(jobsEClass, Jobs.class, "Jobs", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getJobs_Name(), ecorePackage.getEString(), "name", "Jobs", 0, 1, Jobs.class, !IS_TRANSIENT,
+				!IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobs_AppID(), ecorePackage.getEString(), "appID", null, 0, 1, Jobs.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(configurationEClass, Configuration.class, "Configuration", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getConfiguration_Name(), ecorePackage.getEString(), "name", "Configuration", 0, 1,
+				Configuration.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConfiguration_AppID(), ecorePackage.getEString(), "appID", null, 0, 1, Configuration.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(workflowEClass, Workflow.class, "Workflow", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getWorkflow_Name(), ecorePackage.getEString(), "name", "Workflow", 0, 1, Workflow.class,
+				!IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 		initEAttribute(getWorkflow_AppID(), ecorePackage.getEString(), "appID", null, 0, 1, Workflow.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actorsEClass, Actors.class, "Actors", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getActors_Name(), ecorePackage.getEString(), "name", "Actors", 0, 1, Actors.class, !IS_TRANSIENT,
+				!IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getActors_AppID(), ecorePackage.getEString(), "appID", null, 0, 1, Actors.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(secretsEClass, Secrets.class, "Secrets", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSecrets_Name(), ecorePackage.getEString(), "name", "Secrets Store", 0, 1, Secrets.class,
+		initEAttribute(getSecrets_Name(), ecorePackage.getEString(), "name", "Secrets", 0, 1, Secrets.class,
 				!IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 		initEAttribute(getSecrets_AppID(), ecorePackage.getEString(), "appID", null, 0, 1, Secrets.class, !IS_TRANSIENT,
@@ -3179,18 +3272,27 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 
 		initEClass(stateManagementEClass, StateManagement.class, "StateManagement", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getStateManagement_Name(), ecorePackage.getEString(), "name", "StateStore", 0, 1,
+				StateManagement.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStateManagement_AppID(), ecorePackage.getEString(), "appID", null, 0, 1,
 				StateManagement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(distributedLocksEClass, DistributedLocks.class, "DistributedLocks", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDistributedLocks_Name(), ecorePackage.getEString(), "name", "Distributed Locks", 0, 1,
+				DistributedLocks.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDistributedLocks_AppID(), ecorePackage.getEString(), "appID", null, 0, 1,
 				DistributedLocks.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(cryptoGraphyEClass, CryptoGraphy.class, "CryptoGraphy", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCryptoGraphy_Name(), ecorePackage.getEString(), "name", "Cryptography", 0, 1,
+				CryptoGraphy.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCryptoGraphy_AppID(), ecorePackage.getEString(), "appID", null, 0, 1, CryptoGraphy.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

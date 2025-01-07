@@ -44,9 +44,25 @@ public class ActorsItemProvider extends BuildingBlockItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addNamePropertyDescriptor(object);
 			addAppIDPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Actors_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Actors_name_feature", "_UI_Actors_type"),
+						DaprdesignerPackage.Literals.ACTORS__NAME, false, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -93,7 +109,7 @@ public class ActorsItemProvider extends BuildingBlockItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Actors) object).getAppID();
+		String label = ((Actors) object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_Actors_type")
 				: getString("_UI_Actors_type") + " " + label;
 	}
@@ -110,6 +126,7 @@ public class ActorsItemProvider extends BuildingBlockItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Actors.class)) {
+		case DaprdesignerPackage.ACTORS__NAME:
 		case DaprdesignerPackage.ACTORS__APP_ID:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
