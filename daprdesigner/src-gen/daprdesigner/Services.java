@@ -35,13 +35,13 @@ public interface Services extends BuildingBlock {
 	String getName();
 
 	/**
-	 * Returns the value of the '<em><b>Apps</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Apps</b></em>' reference list.
 	 * The list contents are of type {@link daprdesigner.App}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Apps</em>' containment reference list.
+	 * @return the value of the '<em>Apps</em>' reference list.
 	 * @see daprdesigner.DaprdesignerPackage#getServices_Apps()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	EList<App> getApps();

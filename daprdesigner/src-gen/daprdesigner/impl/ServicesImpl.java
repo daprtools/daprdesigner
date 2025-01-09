@@ -7,16 +7,10 @@ import daprdesigner.DaprdesignerPackage;
 import daprdesigner.Services;
 
 import java.util.Collection;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -54,7 +48,7 @@ public class ServicesImpl extends BuildingBlockImpl implements Services {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getApps() <em>Apps</em>}' containment reference list.
+	 * The cached value of the '{@link #getApps() <em>Apps</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getApps()
@@ -98,23 +92,9 @@ public class ServicesImpl extends BuildingBlockImpl implements Services {
 	 */
 	public EList<App> getApps() {
 		if (apps == null) {
-			apps = new EObjectContainmentEList<App>(App.class, this, DaprdesignerPackage.SERVICES__APPS);
+			apps = new EObjectResolvingEList<App>(App.class, this, DaprdesignerPackage.SERVICES__APPS);
 		}
 		return apps;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case DaprdesignerPackage.SERVICES__APPS:
-			return ((InternalEList<?>) getApps()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

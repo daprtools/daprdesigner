@@ -371,7 +371,7 @@ public interface DaprdesignerPackage extends EPackage {
 	int SERVICES__NAME = BUILDING_BLOCK_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Apps</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Apps</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3453,10 +3453,10 @@ public interface DaprdesignerPackage extends EPackage {
 	EAttribute getServices_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link daprdesigner.Services#getApps <em>Apps</em>}'.
+	 * Returns the meta object for the reference list '{@link daprdesigner.Services#getApps <em>Apps</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Apps</em>'.
+	 * @return the meta object for the reference list '<em>Apps</em>'.
 	 * @see daprdesigner.Services#getApps()
 	 * @see #getServices()
 	 * @generated
@@ -5710,7 +5710,7 @@ public interface DaprdesignerPackage extends EPackage {
 		EAttribute SERVICES__NAME = eINSTANCE.getServices_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Apps</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Apps</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

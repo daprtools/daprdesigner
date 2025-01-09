@@ -41,7 +41,7 @@ abstract class BuildingBlock {
 class Services extends BuildingBlock{
 	
 	readonly attr  String name = "Services Group";
-	val App[*] apps;
+	ref App[*] apps;
 }
 
 class App {
