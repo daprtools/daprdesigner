@@ -169,7 +169,7 @@ class SecretsAccessConfiguration extends AppConfiguration
 class SecretsAccessList extends DaprNode{
 	ref Component component;
 	attr boolean defaultAccess = true;
-	attr String[+] secrets;
+	attr String[*] secrets;
 	attr AccessAction action;
 	
 }
@@ -252,7 +252,6 @@ class TracingConfiguration extends AppConfiguration{
 class SubscriptionConfiguration extends DaprNode {
 	readonly attr String apiVersion = "dapr.io/v2alpha1";
 	readonly attr String kind = "Subscription";
-	attr String name;
 	attr String topicName;
 	ref RouteRules[*] routeRules;
 	ref Component pubsub;
@@ -325,11 +324,10 @@ class ResiliencyTarget extends DaprNode{
 
 // HTTPEndpoint Configuration
 
-class HTTPEndPoint {
+class HTTPEndPoint extends DaprNode {
 	readonly attr String apiVersion = "dapr.io/v1alpha1";
 	readonly attr String kind = "HTTPEndpoint";
 	ref SecretStore auth;
-	attr String metadata_name;
 	attr String baseUrl;
 	ref App[*] scopes;
 	val SpecMetadata[*] headers; 
@@ -341,26 +339,25 @@ class HTTPEndPoint {
 
 
 //Component Definitions
-abstract class Component {
+abstract class Component extends DaprNode {
 	
 	readonly attr String apiVersion = "dapr.io/v1alpha1";
 	readonly attr String kind = "Component";
 	ref SecretStore auth;
-	attr String metadata_name;
 	ref Namespace metadata_namespace;
-	val ComponentSpec spec; 
+	ref ComponentSpec spec; 
 	ref App[*] scopes;
 		
 }
 
-class ComponentSpec{
+class ComponentSpec extends DaprNode{
 	attr boolean ignoreErrors;
 	attr String initTimeout;
 	val SpecMetadata[*] spec_metadata; 
 }
 
-class SpecMetadata{
-	attr String name;
+class SpecMetadata extends DaprNode{
+	
 	attr String value;
 	attr boolean isFetchedFromSecret = false;
 	attr boolean isFetchedFromEnvironment = false;
