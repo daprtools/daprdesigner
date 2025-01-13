@@ -9,76 +9,108 @@ mapentry EStringToStringMapEntry : String -> String;
 // Base classes
 class DaprArchitecture {
 	attr String name;
-	val Environment[*] environments;
+	val Blocks[*] buildingblocks;
 	
 }
 
-class Environment{
+class Blocks{
 	attr String name;
-	val Namespace namespace;
-	val Trustdomain[*] trustdomain;
-	val BuildingBlock[*] buildingblocks;
+	attr String description;
+	attr String notes;
+	attr BlockType blockType;
+	val Blocks[*] subblocks;
+	val DaprNode[*] nodes;	
 }
 
-
-class Namespace{
-	
-	attr String name;
-}
-class Trustdomain{
+abstract class DaprNode{
 	
 	attr String name;
-}
-
-abstract class BuildingBlock {
+	attr String description;
+	attr String notes;
 	
-	ref Namespace namespace;
-	ref Trustdomain trustDomain;
 }
 
 
-// Service Invocation and Apps 
-class Services extends BuildingBlock{
+enum BlockType{
+
+
+	ENVIRONMENT;
+	MICROSERVICES;
+	PUBSUB;
+	SECRETSTORE;
+	BINDINGS;
+	JOBS;
+	WORKFLOW;
+	ACTORS;
+	STATESTORE;
+	DISTRIBUTEDLOCK;
+	CRYPTOGRAPHY;
+	CONFIGURATION;
+	CONFIGURATIONGROUP;	
 	
-	readonly attr  String name = "Services Group";
-	val App[*] apps;
+	
+	
 }
 
-class App {
+
+
+class Namespace extends DaprNode{
+	
+	
+}
+class Trustdomain extends DaprNode{
+	
+	
+}
+
+
+
+class App extends DaprNode{
 	attr String appId;
+	attr String repository;
+	attr SDKLanguage sdkLanguage;
 	ref Namespace namespace;
 	ref Trustdomain trustDomain;
-	val AppConfiguration configuration;
+	ref AppConfiguration[*] configurations;
 	
 	
 }
 
-class AppConfiguration{
+enum SDKLanguage{
+	JAVA;
+	CSHARP;
+	PYTHON;
+	NODE;
+	RUST;
+	
+}
+
+abstract class AppConfiguration extends DaprNode{
 	readonly attr String apiVersion = "dapr.io/v1alpha1";
 	readonly attr String kind = "Configuration";
-	attr String metadata_name;
+	
 	ref Namespace metadata_namespace;
-	val AppAccessControl[0..1] accessControl;
-	val APIAccessControl[0..1] apiControl;
-	val MiddlewareConfiguration[0..1] middlewareConfiguration;
-	val LoggingConfiguration[0..1] loggingConfiguration;
-	val NameResolutionConfiguration[0..1] nameResolutionConfiguration;
-	val SecretsConfiguration[0..1] secretsConfiguration;
-	val MetricsConfiguration[0..1] metricsConfiguration;
-	val TracingConfiguration[0..1] tracingConfiguration;
+	ref AppAccessControl[*] accessControl;
+	ref APIAccessControl[*] apiControl;
+	ref MiddlewareConfiguration[*] middlewareConfiguration;
+	ref LoggingConfiguration[0..1] loggingConfiguration;
+	ref NameResolutionConfiguration[0..1] nameResolutionConfiguration;
+	ref SecretsConfiguration[0..1] secretsConfiguration;
+	ref MetricsConfiguration[0..1] metricsConfiguration;
+	ref TracingConfiguration[0..1] tracingConfiguration;
 	attr String[*] componentsDenyList;
 	
 }
 //Logging configuration
 
-class LoggingConfiguration{
+class LoggingConfiguration extends AppConfiguration{
 	attr boolean enabled = true;
 	attr boolean obfuscateURLs = false;
 	attr boolean omitHealthChecks = true;
 }
 //Name Resolution Configuration
 
-class NameResolutionConfiguration{
+class NameResolutionConfiguration extends AppConfiguration{
 	attr String componentName;
 	attr String componentVersion;
 	attr String configurationKey;
@@ -87,7 +119,7 @@ class NameResolutionConfiguration{
 }
 //Secrets configuration
 
-class SecretsConfiguration
+class SecretsConfiguration extends AppConfiguration
 {
     val SecretsList[*] allowedList;
     val SecretsList[*] deniedList;	
@@ -103,7 +135,7 @@ class SecretsList{
 
 // Metrics Configuration
 
-class MetricsConfiguration{
+class MetricsConfiguration extends AppConfiguration{
 	attr boolean enabled;
 	attr int[*] latencyDistributionBuckets;
 	attr boolean http_increasedCardinality;
@@ -113,7 +145,7 @@ class MetricsConfiguration{
 
 // API Configuration
 
-class APIAccessControl{
+class APIAccessControl extends AppConfiguration {
 	val API[*] allowedAPIs;
 	val API[*] deniedAPIs;
 }
@@ -128,7 +160,7 @@ class API {
 
 // AccessControl configuration
 
-class AppAccessControl{
+class AppAccessControl extends AppConfiguration {
 	
 	attr String defaultAction;
 	ref  Trustdomain trustDomain;
@@ -154,7 +186,7 @@ class Operation{
 
 // Middleware Configuration
 
-class MiddlewareConfiguration{
+class MiddlewareConfiguration extends AppConfiguration{
 	
 	val EStringToStringMapEntry[*] incomingHandler; // httpPipeline
 	val EStringToStringMapEntry[*] outgoingHandler; // appHttpPipeline  
@@ -169,7 +201,7 @@ class HttpHandler{
 
 //Tracing Configuration
 
-class TracingConfiguration{
+class TracingConfiguration extends AppConfiguration{
 	attr String samplingRate;
 	attr boolean stdout;
 	attr String otel_endPointAddress;
@@ -181,7 +213,7 @@ class TracingConfiguration{
 
 // Subscription Configuration 
 
-class SubscriptionConfiguration{
+class SubscriptionConfiguration {
 	readonly attr String apiVersion = "dapr.io/v2alpha1";
 	readonly attr String kind = "Subscription";
 	attr String name;
@@ -336,51 +368,6 @@ abstract class MessageBroker extends Component{
 
 
 
-class PubSub extends BuildingBlock{
-	
-	readonly attr  String name = "Message Brokers";
-	ref MessageBroker[*] mbrokers;
-}
-
-
-
-class Bindings extends BuildingBlock{
-	readonly attr  String name = "Bindings";
-	attr String appID;
-}
-class Jobs extends BuildingBlock{
-	readonly attr  String name = "Jobs";
-	attr String appID;
-}
-class Configuration extends BuildingBlock{
-	readonly attr  String name = "Configuration";
-	attr String appID;
-}
-class Workflow extends BuildingBlock{
-	readonly attr  String name = "Workflow";
-	attr String appID;
-}
-class Actors extends BuildingBlock{
-	readonly attr  String name = "Actors";
-	attr String appID;
-}
-class Secrets extends BuildingBlock{
-	readonly attr  String name = "Secrets";
-	attr String appID;
-}
-class StateManagement extends BuildingBlock{
-	readonly attr  String name = "StateStore";
-	attr String appID;
-}
-
-class DistributedLocks extends BuildingBlock{
-	readonly attr  String name = "Distributed Locks";
-	attr String appID;
-}
-class CryptoGraphy extends BuildingBlock{
-	readonly attr  String name = "Cryptography";
-	attr String appID;
-}
 
 
 
