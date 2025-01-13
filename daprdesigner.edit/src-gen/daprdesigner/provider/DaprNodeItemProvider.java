@@ -2,8 +2,8 @@
  */
 package daprdesigner.provider;
 
+import daprdesigner.DaprNode;
 import daprdesigner.DaprdesignerPackage;
-import daprdesigner.DistributedLocks;
 
 import java.util.Collection;
 import java.util.List;
@@ -11,25 +11,34 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link daprdesigner.DistributedLocks} object.
+ * This is the item provider adapter for a {@link daprdesigner.DaprNode} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class DistributedLocksItemProvider extends BuildingBlockItemProvider {
+public class DaprNodeItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DistributedLocksItemProvider(AdapterFactory adapterFactory) {
+	public DaprNodeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -45,7 +54,8 @@ public class DistributedLocksItemProvider extends BuildingBlockItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addAppIDPropertyDescriptor(object);
+			addDescriptionPropertyDescriptor(object);
+			addNotesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -59,38 +69,43 @@ public class DistributedLocksItemProvider extends BuildingBlockItemProvider {
 	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_DistributedLocks_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_DistributedLocks_name_feature",
-								"_UI_DistributedLocks_type"),
-						DaprdesignerPackage.Literals.DISTRIBUTED_LOCKS__NAME, false, false, false,
+						getResourceLocator(), getString("_UI_DaprNode_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DaprNode_name_feature",
+								"_UI_DaprNode_type"),
+						DaprdesignerPackage.Literals.DAPR_NODE__NAME, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the App ID feature.
+	 * This adds a property descriptor for the Description feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAppIDPropertyDescriptor(Object object) {
+	protected void addDescriptionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_DistributedLocks_appID_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_DistributedLocks_appID_feature",
-								"_UI_DistributedLocks_type"),
-						DaprdesignerPackage.Literals.DISTRIBUTED_LOCKS__APP_ID, true, false, false,
+						getResourceLocator(), getString("_UI_DaprNode_description_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DaprNode_description_feature",
+								"_UI_DaprNode_type"),
+						DaprdesignerPackage.Literals.DAPR_NODE__DESCRIPTION, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This returns DistributedLocks.gif.
+	 * This adds a property descriptor for the Notes feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/DistributedLocks"));
+	protected void addNotesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_DaprNode_notes_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DaprNode_notes_feature",
+								"_UI_DaprNode_type"),
+						DaprdesignerPackage.Literals.DAPR_NODE__NOTES, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -111,9 +126,9 @@ public class DistributedLocksItemProvider extends BuildingBlockItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DistributedLocks) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_DistributedLocks_type")
-				: getString("_UI_DistributedLocks_type") + " " + label;
+		String label = ((DaprNode) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_DaprNode_type")
+				: getString("_UI_DaprNode_type") + " " + label;
 	}
 
 	/**
@@ -127,9 +142,10 @@ public class DistributedLocksItemProvider extends BuildingBlockItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(DistributedLocks.class)) {
-		case DaprdesignerPackage.DISTRIBUTED_LOCKS__NAME:
-		case DaprdesignerPackage.DISTRIBUTED_LOCKS__APP_ID:
+		switch (notification.getFeatureID(DaprNode.class)) {
+		case DaprdesignerPackage.DAPR_NODE__NAME:
+		case DaprdesignerPackage.DAPR_NODE__DESCRIPTION:
+		case DaprdesignerPackage.DAPR_NODE__NOTES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
@@ -146,6 +162,17 @@ public class DistributedLocksItemProvider extends BuildingBlockItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return DaprdesignerEditPlugin.INSTANCE;
 	}
 
 }

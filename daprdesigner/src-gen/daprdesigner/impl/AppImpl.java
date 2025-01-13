@@ -6,16 +6,21 @@ import daprdesigner.App;
 import daprdesigner.AppConfiguration;
 import daprdesigner.DaprdesignerPackage;
 import daprdesigner.Namespace;
+import daprdesigner.SDKLanguage;
 import daprdesigner.Trustdomain;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,14 +31,16 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link daprdesigner.impl.AppImpl#getAppId <em>App Id</em>}</li>
+ *   <li>{@link daprdesigner.impl.AppImpl#getRepository <em>Repository</em>}</li>
+ *   <li>{@link daprdesigner.impl.AppImpl#getSdkLanguage <em>Sdk Language</em>}</li>
  *   <li>{@link daprdesigner.impl.AppImpl#getNamespace <em>Namespace</em>}</li>
  *   <li>{@link daprdesigner.impl.AppImpl#getTrustDomain <em>Trust Domain</em>}</li>
- *   <li>{@link daprdesigner.impl.AppImpl#getConfiguration <em>Configuration</em>}</li>
+ *   <li>{@link daprdesigner.impl.AppImpl#getConfigurations <em>Configurations</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class AppImpl extends MinimalEObjectImpl.Container implements App {
+public class AppImpl extends DaprNodeImpl implements App {
 	/**
 	 * The default value of the '{@link #getAppId() <em>App Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -53,6 +60,46 @@ public class AppImpl extends MinimalEObjectImpl.Container implements App {
 	 * @ordered
 	 */
 	protected String appId = APP_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getRepository() <em>Repository</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRepository()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REPOSITORY_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRepository() <em>Repository</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRepository()
+	 * @generated
+	 * @ordered
+	 */
+	protected String repository = REPOSITORY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSdkLanguage() <em>Sdk Language</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSdkLanguage()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final SDKLanguage SDK_LANGUAGE_EDEFAULT = SDKLanguage.JAVA;
+
+	/**
+	 * The cached value of the '{@link #getSdkLanguage() <em>Sdk Language</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSdkLanguage()
+	 * @generated
+	 * @ordered
+	 */
+	protected SDKLanguage sdkLanguage = SDK_LANGUAGE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getNamespace() <em>Namespace</em>}' reference.
@@ -75,14 +122,14 @@ public class AppImpl extends MinimalEObjectImpl.Container implements App {
 	protected Trustdomain trustDomain;
 
 	/**
-	 * The cached value of the '{@link #getConfiguration() <em>Configuration</em>}' containment reference.
+	 * The cached value of the '{@link #getConfigurations() <em>Configurations</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getConfiguration()
+	 * @see #getConfigurations()
 	 * @generated
 	 * @ordered
 	 */
-	protected AppConfiguration configuration;
+	protected EList<AppConfiguration> configurations;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -122,6 +169,50 @@ public class AppImpl extends MinimalEObjectImpl.Container implements App {
 		appId = newAppId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.APP__APP_ID, oldAppId, appId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getRepository() {
+		return repository;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRepository(String newRepository) {
+		String oldRepository = repository;
+		repository = newRepository;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.APP__REPOSITORY, oldRepository,
+					repository));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SDKLanguage getSdkLanguage() {
+		return sdkLanguage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSdkLanguage(SDKLanguage newSdkLanguage) {
+		SDKLanguage oldSdkLanguage = sdkLanguage;
+		sdkLanguage = newSdkLanguage == null ? SDK_LANGUAGE_EDEFAULT : newSdkLanguage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.APP__SDK_LANGUAGE, oldSdkLanguage,
+					sdkLanguage));
 	}
 
 	/**
@@ -209,63 +300,12 @@ public class AppImpl extends MinimalEObjectImpl.Container implements App {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AppConfiguration getConfiguration() {
-		return configuration;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetConfiguration(AppConfiguration newConfiguration, NotificationChain msgs) {
-		AppConfiguration oldConfiguration = configuration;
-		configuration = newConfiguration;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					DaprdesignerPackage.APP__CONFIGURATION, oldConfiguration, newConfiguration);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+	public EList<AppConfiguration> getConfigurations() {
+		if (configurations == null) {
+			configurations = new EObjectResolvingEList<AppConfiguration>(AppConfiguration.class, this,
+					DaprdesignerPackage.APP__CONFIGURATIONS);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setConfiguration(AppConfiguration newConfiguration) {
-		if (newConfiguration != configuration) {
-			NotificationChain msgs = null;
-			if (configuration != null)
-				msgs = ((InternalEObject) configuration).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - DaprdesignerPackage.APP__CONFIGURATION, null, msgs);
-			if (newConfiguration != null)
-				msgs = ((InternalEObject) newConfiguration).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - DaprdesignerPackage.APP__CONFIGURATION, null, msgs);
-			msgs = basicSetConfiguration(newConfiguration, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.APP__CONFIGURATION,
-					newConfiguration, newConfiguration));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case DaprdesignerPackage.APP__CONFIGURATION:
-			return basicSetConfiguration(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+		return configurations;
 	}
 
 	/**
@@ -278,6 +318,10 @@ public class AppImpl extends MinimalEObjectImpl.Container implements App {
 		switch (featureID) {
 		case DaprdesignerPackage.APP__APP_ID:
 			return getAppId();
+		case DaprdesignerPackage.APP__REPOSITORY:
+			return getRepository();
+		case DaprdesignerPackage.APP__SDK_LANGUAGE:
+			return getSdkLanguage();
 		case DaprdesignerPackage.APP__NAMESPACE:
 			if (resolve)
 				return getNamespace();
@@ -286,8 +330,8 @@ public class AppImpl extends MinimalEObjectImpl.Container implements App {
 			if (resolve)
 				return getTrustDomain();
 			return basicGetTrustDomain();
-		case DaprdesignerPackage.APP__CONFIGURATION:
-			return getConfiguration();
+		case DaprdesignerPackage.APP__CONFIGURATIONS:
+			return getConfigurations();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -297,11 +341,18 @@ public class AppImpl extends MinimalEObjectImpl.Container implements App {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case DaprdesignerPackage.APP__APP_ID:
 			setAppId((String) newValue);
+			return;
+		case DaprdesignerPackage.APP__REPOSITORY:
+			setRepository((String) newValue);
+			return;
+		case DaprdesignerPackage.APP__SDK_LANGUAGE:
+			setSdkLanguage((SDKLanguage) newValue);
 			return;
 		case DaprdesignerPackage.APP__NAMESPACE:
 			setNamespace((Namespace) newValue);
@@ -309,8 +360,9 @@ public class AppImpl extends MinimalEObjectImpl.Container implements App {
 		case DaprdesignerPackage.APP__TRUST_DOMAIN:
 			setTrustDomain((Trustdomain) newValue);
 			return;
-		case DaprdesignerPackage.APP__CONFIGURATION:
-			setConfiguration((AppConfiguration) newValue);
+		case DaprdesignerPackage.APP__CONFIGURATIONS:
+			getConfigurations().clear();
+			getConfigurations().addAll((Collection<? extends AppConfiguration>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -327,14 +379,20 @@ public class AppImpl extends MinimalEObjectImpl.Container implements App {
 		case DaprdesignerPackage.APP__APP_ID:
 			setAppId(APP_ID_EDEFAULT);
 			return;
+		case DaprdesignerPackage.APP__REPOSITORY:
+			setRepository(REPOSITORY_EDEFAULT);
+			return;
+		case DaprdesignerPackage.APP__SDK_LANGUAGE:
+			setSdkLanguage(SDK_LANGUAGE_EDEFAULT);
+			return;
 		case DaprdesignerPackage.APP__NAMESPACE:
 			setNamespace((Namespace) null);
 			return;
 		case DaprdesignerPackage.APP__TRUST_DOMAIN:
 			setTrustDomain((Trustdomain) null);
 			return;
-		case DaprdesignerPackage.APP__CONFIGURATION:
-			setConfiguration((AppConfiguration) null);
+		case DaprdesignerPackage.APP__CONFIGURATIONS:
+			getConfigurations().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -350,12 +408,16 @@ public class AppImpl extends MinimalEObjectImpl.Container implements App {
 		switch (featureID) {
 		case DaprdesignerPackage.APP__APP_ID:
 			return APP_ID_EDEFAULT == null ? appId != null : !APP_ID_EDEFAULT.equals(appId);
+		case DaprdesignerPackage.APP__REPOSITORY:
+			return REPOSITORY_EDEFAULT == null ? repository != null : !REPOSITORY_EDEFAULT.equals(repository);
+		case DaprdesignerPackage.APP__SDK_LANGUAGE:
+			return sdkLanguage != SDK_LANGUAGE_EDEFAULT;
 		case DaprdesignerPackage.APP__NAMESPACE:
 			return namespace != null;
 		case DaprdesignerPackage.APP__TRUST_DOMAIN:
 			return trustDomain != null;
-		case DaprdesignerPackage.APP__CONFIGURATION:
-			return configuration != null;
+		case DaprdesignerPackage.APP__CONFIGURATIONS:
+			return configurations != null && !configurations.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -373,6 +435,10 @@ public class AppImpl extends MinimalEObjectImpl.Container implements App {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (appId: ");
 		result.append(appId);
+		result.append(", repository: ");
+		result.append(repository);
+		result.append(", sdkLanguage: ");
+		result.append(sdkLanguage);
 		result.append(')');
 		return result.toString();
 	}

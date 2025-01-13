@@ -2,8 +2,6 @@
  */
 package daprdesigner;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Tracing Configuration</b></em>'.
@@ -25,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface TracingConfiguration extends EObject {
+public interface TracingConfiguration extends AppConfiguration {
 	/**
 	 * Returns the value of the '<em><b>Sampling Rate</b></em>' attribute.
 	 * <!-- begin-user-doc -->

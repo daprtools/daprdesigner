@@ -4,13 +4,15 @@ package daprdesigner.impl;
 
 import daprdesigner.DaprdesignerPackage;
 import daprdesigner.MiddlewareConfiguration;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EMap;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -28,7 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class MiddlewareConfigurationImpl extends MinimalEObjectImpl.Container implements MiddlewareConfiguration {
+public class MiddlewareConfigurationImpl extends AppConfigurationImpl implements MiddlewareConfiguration {
 	/**
 	 * The cached value of the '{@link #getIncomingHandler() <em>Incoming Handler</em>}' map.
 	 * <!-- begin-user-doc -->
@@ -139,7 +141,6 @@ public class MiddlewareConfigurationImpl extends MinimalEObjectImpl.Container im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {

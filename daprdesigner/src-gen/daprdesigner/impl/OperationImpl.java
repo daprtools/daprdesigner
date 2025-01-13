@@ -2,8 +2,11 @@
  */
 package daprdesigner.impl;
 
+import daprdesigner.AccessAction;
 import daprdesigner.DaprdesignerPackage;
 import daprdesigner.Operation;
+import daprdesigner.Protocol;
+import daprdesigner.Verb;
 
 import java.util.Collection;
 
@@ -14,7 +17,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -34,7 +36,7 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *
  * @generated
  */
-public class OperationImpl extends MinimalEObjectImpl.Container implements Operation {
+public class OperationImpl extends DaprNodeImpl implements Operation {
 	/**
 	 * The default value of the '{@link #getProtocol() <em>Protocol</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -43,7 +45,7 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PROTOCOL_EDEFAULT = null;
+	protected static final Protocol PROTOCOL_EDEFAULT = Protocol.HTTP;
 
 	/**
 	 * The cached value of the '{@link #getProtocol() <em>Protocol</em>}' attribute.
@@ -53,7 +55,7 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
 	 * @generated
 	 * @ordered
 	 */
-	protected String protocol = PROTOCOL_EDEFAULT;
+	protected Protocol protocol = PROTOCOL_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getOperationName() <em>Operation Name</em>}' attribute.
@@ -83,7 +85,7 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<String> verbs;
+	protected EList<Verb> verbs;
 
 	/**
 	 * The default value of the '{@link #getAction() <em>Action</em>}' attribute.
@@ -93,7 +95,7 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ACTION_EDEFAULT = null;
+	protected static final AccessAction ACTION_EDEFAULT = AccessAction.ALLOW;
 
 	/**
 	 * The cached value of the '{@link #getAction() <em>Action</em>}' attribute.
@@ -103,7 +105,7 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
 	 * @generated
 	 * @ordered
 	 */
-	protected String action = ACTION_EDEFAULT;
+	protected AccessAction action = ACTION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,7 +131,7 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getProtocol() {
+	public Protocol getProtocol() {
 		return protocol;
 	}
 
@@ -138,9 +140,9 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setProtocol(String newProtocol) {
-		String oldProtocol = protocol;
-		protocol = newProtocol;
+	public void setProtocol(Protocol newProtocol) {
+		Protocol oldProtocol = protocol;
+		protocol = newProtocol == null ? PROTOCOL_EDEFAULT : newProtocol;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.OPERATION__PROTOCOL, oldProtocol,
 					protocol));
@@ -173,9 +175,9 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<String> getVerbs() {
+	public EList<Verb> getVerbs() {
 		if (verbs == null) {
-			verbs = new EDataTypeUniqueEList<String>(String.class, this, DaprdesignerPackage.OPERATION__VERBS);
+			verbs = new EDataTypeUniqueEList<Verb>(Verb.class, this, DaprdesignerPackage.OPERATION__VERBS);
 		}
 		return verbs;
 	}
@@ -185,7 +187,7 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getAction() {
+	public AccessAction getAction() {
 		return action;
 	}
 
@@ -194,9 +196,9 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAction(String newAction) {
-		String oldAction = action;
-		action = newAction;
+	public void setAction(AccessAction newAction) {
+		AccessAction oldAction = action;
+		action = newAction == null ? ACTION_EDEFAULT : newAction;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.OPERATION__ACTION, oldAction,
 					action));
@@ -232,17 +234,17 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case DaprdesignerPackage.OPERATION__PROTOCOL:
-			setProtocol((String) newValue);
+			setProtocol((Protocol) newValue);
 			return;
 		case DaprdesignerPackage.OPERATION__OPERATION_NAME:
 			setOperationName((String) newValue);
 			return;
 		case DaprdesignerPackage.OPERATION__VERBS:
 			getVerbs().clear();
-			getVerbs().addAll((Collection<? extends String>) newValue);
+			getVerbs().addAll((Collection<? extends Verb>) newValue);
 			return;
 		case DaprdesignerPackage.OPERATION__ACTION:
-			setAction((String) newValue);
+			setAction((AccessAction) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -281,14 +283,14 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case DaprdesignerPackage.OPERATION__PROTOCOL:
-			return PROTOCOL_EDEFAULT == null ? protocol != null : !PROTOCOL_EDEFAULT.equals(protocol);
+			return protocol != PROTOCOL_EDEFAULT;
 		case DaprdesignerPackage.OPERATION__OPERATION_NAME:
 			return OPERATION_NAME_EDEFAULT == null ? operationName != null
 					: !OPERATION_NAME_EDEFAULT.equals(operationName);
 		case DaprdesignerPackage.OPERATION__VERBS:
 			return verbs != null && !verbs.isEmpty();
 		case DaprdesignerPackage.OPERATION__ACTION:
-			return ACTION_EDEFAULT == null ? action != null : !ACTION_EDEFAULT.equals(action);
+			return action != ACTION_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

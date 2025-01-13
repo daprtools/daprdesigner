@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link daprdesigner.DaprArchitecture#getName <em>Name</em>}</li>
- *   <li>{@link daprdesigner.DaprArchitecture#getEnvironments <em>Environments</em>}</li>
+ *   <li>{@link daprdesigner.DaprArchitecture#getBuildingblocks <em>Buildingblocks</em>}</li>
  * </ul>
  *
  * @see daprdesigner.DaprdesignerPackage#getDaprArchitecture()
@@ -47,15 +47,15 @@ public interface DaprArchitecture extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Environments</b></em>' containment reference list.
-	 * The list contents are of type {@link daprdesigner.Environment}.
+	 * Returns the value of the '<em><b>Buildingblocks</b></em>' containment reference list.
+	 * The list contents are of type {@link daprdesigner.Block}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Environments</em>' containment reference list.
-	 * @see daprdesigner.DaprdesignerPackage#getDaprArchitecture_Environments()
+	 * @return the value of the '<em>Buildingblocks</em>' containment reference list.
+	 * @see daprdesigner.DaprdesignerPackage#getDaprArchitecture_Buildingblocks()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Environment> getEnvironments();
+	EList<Block> getBuildingblocks();
 
 } // DaprArchitecture

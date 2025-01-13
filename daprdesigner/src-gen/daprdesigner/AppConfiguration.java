@@ -4,8 +4,6 @@ package daprdesigner;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>App Configuration</b></em>'.
@@ -17,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link daprdesigner.AppConfiguration#getApiVersion <em>Api Version</em>}</li>
  *   <li>{@link daprdesigner.AppConfiguration#getKind <em>Kind</em>}</li>
- *   <li>{@link daprdesigner.AppConfiguration#getMetadata_name <em>Metadata name</em>}</li>
  *   <li>{@link daprdesigner.AppConfiguration#getMetadata_namespace <em>Metadata namespace</em>}</li>
  *   <li>{@link daprdesigner.AppConfiguration#getAccessControl <em>Access Control</em>}</li>
  *   <li>{@link daprdesigner.AppConfiguration#getApiControl <em>Api Control</em>}</li>
@@ -31,10 +28,10 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see daprdesigner.DaprdesignerPackage#getAppConfiguration()
- * @model
+ * @model abstract="true"
  * @generated
  */
-public interface AppConfiguration extends EObject {
+public interface AppConfiguration extends DaprNode {
 	/**
 	 * Returns the value of the '<em><b>Api Version</b></em>' attribute.
 	 * The default value is <code>"dapr.io/v1alpha1"</code>.
@@ -60,28 +57,6 @@ public interface AppConfiguration extends EObject {
 	String getKind();
 
 	/**
-	 * Returns the value of the '<em><b>Metadata name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Metadata name</em>' attribute.
-	 * @see #setMetadata_name(String)
-	 * @see daprdesigner.DaprdesignerPackage#getAppConfiguration_Metadata_name()
-	 * @model
-	 * @generated
-	 */
-	String getMetadata_name();
-
-	/**
-	 * Sets the value of the '{@link daprdesigner.AppConfiguration#getMetadata_name <em>Metadata name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Metadata name</em>' attribute.
-	 * @see #getMetadata_name()
-	 * @generated
-	 */
-	void setMetadata_name(String value);
-
-	/**
 	 * Returns the value of the '<em><b>Metadata namespace</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -104,176 +79,146 @@ public interface AppConfiguration extends EObject {
 	void setMetadata_namespace(Namespace value);
 
 	/**
-	 * Returns the value of the '<em><b>Access Control</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Access Control</b></em>' reference list.
+	 * The list contents are of type {@link daprdesigner.AppAccessControl}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Access Control</em>' containment reference.
-	 * @see #setAccessControl(AppAccessControl)
+	 * @return the value of the '<em>Access Control</em>' reference list.
 	 * @see daprdesigner.DaprdesignerPackage#getAppConfiguration_AccessControl()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
-	AppAccessControl getAccessControl();
+	EList<AppAccessControl> getAccessControl();
 
 	/**
-	 * Sets the value of the '{@link daprdesigner.AppConfiguration#getAccessControl <em>Access Control</em>}' containment reference.
+	 * Returns the value of the '<em><b>Api Control</b></em>' reference list.
+	 * The list contents are of type {@link daprdesigner.APIAccessControl}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Access Control</em>' containment reference.
-	 * @see #getAccessControl()
-	 * @generated
-	 */
-	void setAccessControl(AppAccessControl value);
-
-	/**
-	 * Returns the value of the '<em><b>Api Control</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Api Control</em>' containment reference.
-	 * @see #setApiControl(APIAccessControl)
+	 * @return the value of the '<em>Api Control</em>' reference list.
 	 * @see daprdesigner.DaprdesignerPackage#getAppConfiguration_ApiControl()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
-	APIAccessControl getApiControl();
+	EList<APIAccessControl> getApiControl();
 
 	/**
-	 * Sets the value of the '{@link daprdesigner.AppConfiguration#getApiControl <em>Api Control</em>}' containment reference.
+	 * Returns the value of the '<em><b>Middleware Configuration</b></em>' reference list.
+	 * The list contents are of type {@link daprdesigner.MiddlewareConfiguration}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Api Control</em>' containment reference.
-	 * @see #getApiControl()
-	 * @generated
-	 */
-	void setApiControl(APIAccessControl value);
-
-	/**
-	 * Returns the value of the '<em><b>Middleware Configuration</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Middleware Configuration</em>' containment reference.
-	 * @see #setMiddlewareConfiguration(MiddlewareConfiguration)
+	 * @return the value of the '<em>Middleware Configuration</em>' reference list.
 	 * @see daprdesigner.DaprdesignerPackage#getAppConfiguration_MiddlewareConfiguration()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
-	MiddlewareConfiguration getMiddlewareConfiguration();
+	EList<MiddlewareConfiguration> getMiddlewareConfiguration();
 
 	/**
-	 * Sets the value of the '{@link daprdesigner.AppConfiguration#getMiddlewareConfiguration <em>Middleware Configuration</em>}' containment reference.
+	 * Returns the value of the '<em><b>Logging Configuration</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Middleware Configuration</em>' containment reference.
-	 * @see #getMiddlewareConfiguration()
-	 * @generated
-	 */
-	void setMiddlewareConfiguration(MiddlewareConfiguration value);
-
-	/**
-	 * Returns the value of the '<em><b>Logging Configuration</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Logging Configuration</em>' containment reference.
+	 * @return the value of the '<em>Logging Configuration</em>' reference.
 	 * @see #setLoggingConfiguration(LoggingConfiguration)
 	 * @see daprdesigner.DaprdesignerPackage#getAppConfiguration_LoggingConfiguration()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	LoggingConfiguration getLoggingConfiguration();
 
 	/**
-	 * Sets the value of the '{@link daprdesigner.AppConfiguration#getLoggingConfiguration <em>Logging Configuration</em>}' containment reference.
+	 * Sets the value of the '{@link daprdesigner.AppConfiguration#getLoggingConfiguration <em>Logging Configuration</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Logging Configuration</em>' containment reference.
+	 * @param value the new value of the '<em>Logging Configuration</em>' reference.
 	 * @see #getLoggingConfiguration()
 	 * @generated
 	 */
 	void setLoggingConfiguration(LoggingConfiguration value);
 
 	/**
-	 * Returns the value of the '<em><b>Name Resolution Configuration</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Name Resolution Configuration</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name Resolution Configuration</em>' containment reference.
+	 * @return the value of the '<em>Name Resolution Configuration</em>' reference.
 	 * @see #setNameResolutionConfiguration(NameResolutionConfiguration)
 	 * @see daprdesigner.DaprdesignerPackage#getAppConfiguration_NameResolutionConfiguration()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	NameResolutionConfiguration getNameResolutionConfiguration();
 
 	/**
-	 * Sets the value of the '{@link daprdesigner.AppConfiguration#getNameResolutionConfiguration <em>Name Resolution Configuration</em>}' containment reference.
+	 * Sets the value of the '{@link daprdesigner.AppConfiguration#getNameResolutionConfiguration <em>Name Resolution Configuration</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name Resolution Configuration</em>' containment reference.
+	 * @param value the new value of the '<em>Name Resolution Configuration</em>' reference.
 	 * @see #getNameResolutionConfiguration()
 	 * @generated
 	 */
 	void setNameResolutionConfiguration(NameResolutionConfiguration value);
 
 	/**
-	 * Returns the value of the '<em><b>Secrets Configuration</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Secrets Configuration</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Secrets Configuration</em>' containment reference.
+	 * @return the value of the '<em>Secrets Configuration</em>' reference.
 	 * @see #setSecretsConfiguration(SecretsConfiguration)
 	 * @see daprdesigner.DaprdesignerPackage#getAppConfiguration_SecretsConfiguration()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	SecretsConfiguration getSecretsConfiguration();
 
 	/**
-	 * Sets the value of the '{@link daprdesigner.AppConfiguration#getSecretsConfiguration <em>Secrets Configuration</em>}' containment reference.
+	 * Sets the value of the '{@link daprdesigner.AppConfiguration#getSecretsConfiguration <em>Secrets Configuration</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Secrets Configuration</em>' containment reference.
+	 * @param value the new value of the '<em>Secrets Configuration</em>' reference.
 	 * @see #getSecretsConfiguration()
 	 * @generated
 	 */
 	void setSecretsConfiguration(SecretsConfiguration value);
 
 	/**
-	 * Returns the value of the '<em><b>Metrics Configuration</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Metrics Configuration</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Metrics Configuration</em>' containment reference.
+	 * @return the value of the '<em>Metrics Configuration</em>' reference.
 	 * @see #setMetricsConfiguration(MetricsConfiguration)
 	 * @see daprdesigner.DaprdesignerPackage#getAppConfiguration_MetricsConfiguration()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	MetricsConfiguration getMetricsConfiguration();
 
 	/**
-	 * Sets the value of the '{@link daprdesigner.AppConfiguration#getMetricsConfiguration <em>Metrics Configuration</em>}' containment reference.
+	 * Sets the value of the '{@link daprdesigner.AppConfiguration#getMetricsConfiguration <em>Metrics Configuration</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Metrics Configuration</em>' containment reference.
+	 * @param value the new value of the '<em>Metrics Configuration</em>' reference.
 	 * @see #getMetricsConfiguration()
 	 * @generated
 	 */
 	void setMetricsConfiguration(MetricsConfiguration value);
 
 	/**
-	 * Returns the value of the '<em><b>Tracing Configuration</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Tracing Configuration</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tracing Configuration</em>' containment reference.
+	 * @return the value of the '<em>Tracing Configuration</em>' reference.
 	 * @see #setTracingConfiguration(TracingConfiguration)
 	 * @see daprdesigner.DaprdesignerPackage#getAppConfiguration_TracingConfiguration()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	TracingConfiguration getTracingConfiguration();
 
 	/**
-	 * Sets the value of the '{@link daprdesigner.AppConfiguration#getTracingConfiguration <em>Tracing Configuration</em>}' containment reference.
+	 * Sets the value of the '{@link daprdesigner.AppConfiguration#getTracingConfiguration <em>Tracing Configuration</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tracing Configuration</em>' containment reference.
+	 * @param value the new value of the '<em>Tracing Configuration</em>' reference.
 	 * @see #getTracingConfiguration()
 	 * @generated
 	 */

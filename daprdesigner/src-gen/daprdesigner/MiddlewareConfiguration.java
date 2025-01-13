@@ -3,7 +3,6 @@
 package daprdesigner;
 
 import org.eclipse.emf.common.util.EMap;
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface MiddlewareConfiguration extends EObject {
+public interface MiddlewareConfiguration extends AppConfiguration {
 	/**
 	 * Returns the value of the '<em><b>Incoming Handler</b></em>' map.
 	 * The key is of type {@link java.lang.String},

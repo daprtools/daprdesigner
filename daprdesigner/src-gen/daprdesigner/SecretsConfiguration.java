@@ -4,8 +4,6 @@ package daprdesigner;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Secrets Configuration</b></em>'.
@@ -23,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface SecretsConfiguration extends EObject {
+public interface SecretsConfiguration extends AppConfiguration {
 	/**
 	 * Returns the value of the '<em><b>Allowed List</b></em>' containment reference list.
 	 * The list contents are of type {@link daprdesigner.SecretsList}.

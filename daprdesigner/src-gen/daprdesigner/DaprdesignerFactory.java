@@ -31,13 +31,13 @@ public interface DaprdesignerFactory extends EFactory {
 	DaprArchitecture createDaprArchitecture();
 
 	/**
-	 * Returns a new object of class '<em>Environment</em>'.
+	 * Returns a new object of class '<em>Block</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Environment</em>'.
+	 * @return a new object of class '<em>Block</em>'.
 	 * @generated
 	 */
-	Environment createEnvironment();
+	Block createBlock();
 
 	/**
 	 * Returns a new object of class '<em>Namespace</em>'.
@@ -58,15 +58,6 @@ public interface DaprdesignerFactory extends EFactory {
 	Trustdomain createTrustdomain();
 
 	/**
-	 * Returns a new object of class '<em>Services</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Services</em>'.
-	 * @generated
-	 */
-	Services createServices();
-
-	/**
 	 * Returns a new object of class '<em>App</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -74,15 +65,6 @@ public interface DaprdesignerFactory extends EFactory {
 	 * @generated
 	 */
 	App createApp();
-
-	/**
-	 * Returns a new object of class '<em>App Configuration</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>App Configuration</em>'.
-	 * @generated
-	 */
-	AppConfiguration createAppConfiguration();
 
 	/**
 	 * Returns a new object of class '<em>Logging Configuration</em>'.
@@ -308,96 +290,6 @@ public interface DaprdesignerFactory extends EFactory {
 	 * @generated
 	 */
 	HashicorpVault createHashicorpVault();
-
-	/**
-	 * Returns a new object of class '<em>Pub Sub</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Pub Sub</em>'.
-	 * @generated
-	 */
-	PubSub createPubSub();
-
-	/**
-	 * Returns a new object of class '<em>Bindings</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Bindings</em>'.
-	 * @generated
-	 */
-	Bindings createBindings();
-
-	/**
-	 * Returns a new object of class '<em>Jobs</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Jobs</em>'.
-	 * @generated
-	 */
-	Jobs createJobs();
-
-	/**
-	 * Returns a new object of class '<em>Configuration</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Configuration</em>'.
-	 * @generated
-	 */
-	Configuration createConfiguration();
-
-	/**
-	 * Returns a new object of class '<em>Workflow</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Workflow</em>'.
-	 * @generated
-	 */
-	Workflow createWorkflow();
-
-	/**
-	 * Returns a new object of class '<em>Actors</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Actors</em>'.
-	 * @generated
-	 */
-	Actors createActors();
-
-	/**
-	 * Returns a new object of class '<em>Secrets</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Secrets</em>'.
-	 * @generated
-	 */
-	Secrets createSecrets();
-
-	/**
-	 * Returns a new object of class '<em>State Management</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>State Management</em>'.
-	 * @generated
-	 */
-	StateManagement createStateManagement();
-
-	/**
-	 * Returns a new object of class '<em>Distributed Locks</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Distributed Locks</em>'.
-	 * @generated
-	 */
-	DistributedLocks createDistributedLocks();
-
-	/**
-	 * Returns a new object of class '<em>Crypto Graphy</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Crypto Graphy</em>'.
-	 * @generated
-	 */
-	CryptoGraphy createCryptoGraphy();
 
 	/**
 	 * Returns the package supported by this factory.

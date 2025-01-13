@@ -10,7 +10,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +29,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class TracingConfigurationImpl extends MinimalEObjectImpl.Container implements TracingConfiguration {
+public class TracingConfigurationImpl extends AppConfigurationImpl implements TracingConfiguration {
 	/**
 	 * The default value of the '{@link #getSamplingRate() <em>Sampling Rate</em>}' attribute.
 	 * <!-- begin-user-doc -->

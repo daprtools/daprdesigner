@@ -158,14 +158,14 @@ class MetricsConfiguration extends AppConfiguration{
 // API Configuration
 
 class APIAccessControl extends AppConfiguration {
-	val API[*] allowedAPIs;
-	val API[*] deniedAPIs;
+	ref API[*] apiList;
 }
 
-class API {
-	attr String api_name;
+class API extends DaprNode{
+	ref Component component;
 	attr String api_version;
-	attr String protocol;
+	attr Protocol protocol;
+	attr AccessAction access;
 }
 
 

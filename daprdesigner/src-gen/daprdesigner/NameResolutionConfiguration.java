@@ -2,8 +2,6 @@
  */
 package daprdesigner;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Name Resolution Configuration</b></em>'.
@@ -23,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface NameResolutionConfiguration extends EObject {
+public interface NameResolutionConfiguration extends AppConfiguration {
 	/**
 	 * Returns the value of the '<em><b>Component Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

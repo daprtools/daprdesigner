@@ -123,13 +123,13 @@ public interface DaprdesignerPackage extends EPackage {
 	int DAPR_ARCHITECTURE__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Environments</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Buildingblocks</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DAPR_ARCHITECTURE__ENVIRONMENTS = 1;
+	int DAPR_ARCHITECTURE__BUILDINGBLOCKS = 1;
 
 	/**
 	 * The number of structural features of the '<em>Dapr Architecture</em>' class.
@@ -150,14 +150,14 @@ public interface DaprdesignerPackage extends EPackage {
 	int DAPR_ARCHITECTURE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link daprdesigner.impl.EnvironmentImpl <em>Environment</em>}' class.
+	 * The meta object id for the '{@link daprdesigner.impl.BlockImpl <em>Block</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see daprdesigner.impl.EnvironmentImpl
-	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getEnvironment()
+	 * @see daprdesigner.impl.BlockImpl
+	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getBlock()
 	 * @generated
 	 */
-	int ENVIRONMENT = 2;
+	int BLOCK = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -166,52 +166,125 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENVIRONMENT__NAME = 0;
+	int BLOCK__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Namespace</b></em>' containment reference.
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENVIRONMENT__NAMESPACE = 1;
+	int BLOCK__DESCRIPTION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Trustdomain</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Notes</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENVIRONMENT__TRUSTDOMAIN = 2;
+	int BLOCK__NOTES = 2;
 
 	/**
-	 * The feature id for the '<em><b>Buildingblocks</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Block Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENVIRONMENT__BUILDINGBLOCKS = 3;
+	int BLOCK__BLOCK_TYPE = 3;
 
 	/**
-	 * The number of structural features of the '<em>Environment</em>' class.
+	 * The feature id for the '<em><b>Subblocks</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENVIRONMENT_FEATURE_COUNT = 4;
+	int BLOCK__SUBBLOCKS = 4;
 
 	/**
-	 * The number of operations of the '<em>Environment</em>' class.
+	 * The feature id for the '<em><b>Nodes</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENVIRONMENT_OPERATION_COUNT = 0;
+	int BLOCK__NODES = 5;
+
+	/**
+	 * The number of structural features of the '<em>Block</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOCK_FEATURE_COUNT = 6;
+
+	/**
+	 * The number of operations of the '<em>Block</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOCK_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link daprdesigner.impl.DaprNodeImpl <em>Dapr Node</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see daprdesigner.impl.DaprNodeImpl
+	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getDaprNode()
+	 * @generated
+	 */
+	int DAPR_NODE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DAPR_NODE__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DAPR_NODE__DESCRIPTION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Notes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DAPR_NODE__NOTES = 2;
+
+	/**
+	 * The number of structural features of the '<em>Dapr Node</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DAPR_NODE_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Dapr Node</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DAPR_NODE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.impl.NamespaceImpl <em>Namespace</em>}' class.
@@ -221,7 +294,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getNamespace()
 	 * @generated
 	 */
-	int NAMESPACE = 3;
+	int NAMESPACE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -230,8 +303,27 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAMESPACE__NAME = 0;
+	int NAMESPACE__NAME = DAPR_NODE__NAME;
 
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE__DESCRIPTION = DAPR_NODE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Notes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE__NOTES = DAPR_NODE__NOTES;
+
+	
 	/**
 	 * The number of structural features of the '<em>Namespace</em>' class.
 	 * <!-- begin-user-doc -->
@@ -239,7 +331,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAMESPACE_FEATURE_COUNT = 1;
+	int NAMESPACE_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Namespace</em>' class.
@@ -248,7 +340,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAMESPACE_OPERATION_COUNT = 0;
+	int NAMESPACE_OPERATION_COUNT = DAPR_NODE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.impl.TrustdomainImpl <em>Trustdomain</em>}' class.
@@ -258,7 +350,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getTrustdomain()
 	 * @generated
 	 */
-	int TRUSTDOMAIN = 4;
+	int TRUSTDOMAIN = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -267,7 +359,27 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRUSTDOMAIN__NAME = 0;
+	int TRUSTDOMAIN__NAME = DAPR_NODE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUSTDOMAIN__DESCRIPTION = DAPR_NODE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Notes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUSTDOMAIN__NOTES = DAPR_NODE__NOTES;
+
+	
 
 	/**
 	 * The number of structural features of the '<em>Trustdomain</em>' class.
@@ -276,7 +388,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRUSTDOMAIN_FEATURE_COUNT = 1;
+	int TRUSTDOMAIN_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Trustdomain</em>' class.
@@ -285,117 +397,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRUSTDOMAIN_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link daprdesigner.impl.BuildingBlockImpl <em>Building Block</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see daprdesigner.impl.BuildingBlockImpl
-	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getBuildingBlock()
-	 * @generated
-	 */
-	int BUILDING_BLOCK = 5;
-
-	/**
-	 * The feature id for the '<em><b>Namespace</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUILDING_BLOCK__NAMESPACE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Trust Domain</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUILDING_BLOCK__TRUST_DOMAIN = 1;
-
-	/**
-	 * The number of structural features of the '<em>Building Block</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUILDING_BLOCK_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Building Block</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUILDING_BLOCK_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link daprdesigner.impl.ServicesImpl <em>Services</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see daprdesigner.impl.ServicesImpl
-	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getServices()
-	 * @generated
-	 */
-	int SERVICES = 6;
-
-	/**
-	 * The feature id for the '<em><b>Namespace</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICES__NAMESPACE = BUILDING_BLOCK__NAMESPACE;
-
-	/**
-	 * The feature id for the '<em><b>Trust Domain</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICES__TRUST_DOMAIN = BUILDING_BLOCK__TRUST_DOMAIN;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICES__NAME = BUILDING_BLOCK_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Apps</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICES__APPS = BUILDING_BLOCK_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Services</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICES_FEATURE_COUNT = BUILDING_BLOCK_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Services</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICES_OPERATION_COUNT = BUILDING_BLOCK_OPERATION_COUNT + 0;
+	int TRUSTDOMAIN_OPERATION_COUNT = DAPR_NODE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.impl.AppImpl <em>App</em>}' class.
@@ -405,7 +407,34 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getApp()
 	 * @generated
 	 */
-	int APP = 7;
+	int APP = 6;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP__NAME = DAPR_NODE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP__DESCRIPTION = DAPR_NODE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Notes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP__NOTES = DAPR_NODE__NOTES;
 
 	/**
 	 * The feature id for the '<em><b>App Id</b></em>' attribute.
@@ -414,7 +443,25 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP__APP_ID = 0;
+	int APP__APP_ID = DAPR_NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Repository</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP__REPOSITORY = DAPR_NODE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Sdk Language</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP__SDK_LANGUAGE = DAPR_NODE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' reference.
@@ -423,7 +470,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP__NAMESPACE = 1;
+	int APP__NAMESPACE = DAPR_NODE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Trust Domain</b></em>' reference.
@@ -432,16 +479,16 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP__TRUST_DOMAIN = 2;
+	int APP__TRUST_DOMAIN = DAPR_NODE_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Configuration</b></em>' containment reference.
+	 * The feature id for the '<em><b>Configurations</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APP__CONFIGURATION = 3;
+	int APP__CONFIGURATIONS = DAPR_NODE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>App</em>' class.
@@ -450,7 +497,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP_FEATURE_COUNT = 4;
+	int APP_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>App</em>' class.
@@ -459,7 +506,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP_OPERATION_COUNT = 0;
+	int APP_OPERATION_COUNT = DAPR_NODE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.impl.AppConfigurationImpl <em>App Configuration</em>}' class.
@@ -469,7 +516,34 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getAppConfiguration()
 	 * @generated
 	 */
-	int APP_CONFIGURATION = 8;
+	int APP_CONFIGURATION = 7;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP_CONFIGURATION__NAME = DAPR_NODE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP_CONFIGURATION__DESCRIPTION = DAPR_NODE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Notes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP_CONFIGURATION__NOTES = DAPR_NODE__NOTES;
 
 	/**
 	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
@@ -478,7 +552,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP_CONFIGURATION__API_VERSION = 0;
+	int APP_CONFIGURATION__API_VERSION = DAPR_NODE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -487,16 +561,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP_CONFIGURATION__KIND = 1;
-
-	/**
-	 * The feature id for the '<em><b>Metadata name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APP_CONFIGURATION__METADATA_NAME = 2;
+	int APP_CONFIGURATION__KIND = DAPR_NODE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Metadata namespace</b></em>' reference.
@@ -505,79 +570,79 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP_CONFIGURATION__METADATA_NAMESPACE = 3;
+	int APP_CONFIGURATION__METADATA_NAMESPACE = DAPR_NODE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Access Control</b></em>' containment reference.
+	 * The feature id for the '<em><b>Access Control</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APP_CONFIGURATION__ACCESS_CONTROL = 4;
+	int APP_CONFIGURATION__ACCESS_CONTROL = DAPR_NODE_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Api Control</b></em>' containment reference.
+	 * The feature id for the '<em><b>Api Control</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APP_CONFIGURATION__API_CONTROL = 5;
+	int APP_CONFIGURATION__API_CONTROL = DAPR_NODE_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Middleware Configuration</b></em>' containment reference.
+	 * The feature id for the '<em><b>Middleware Configuration</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APP_CONFIGURATION__MIDDLEWARE_CONFIGURATION = 6;
+	int APP_CONFIGURATION__MIDDLEWARE_CONFIGURATION = DAPR_NODE_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Logging Configuration</b></em>' containment reference.
+	 * The feature id for the '<em><b>Logging Configuration</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APP_CONFIGURATION__LOGGING_CONFIGURATION = 7;
+	int APP_CONFIGURATION__LOGGING_CONFIGURATION = DAPR_NODE_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Name Resolution Configuration</b></em>' containment reference.
+	 * The feature id for the '<em><b>Name Resolution Configuration</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APP_CONFIGURATION__NAME_RESOLUTION_CONFIGURATION = 8;
+	int APP_CONFIGURATION__NAME_RESOLUTION_CONFIGURATION = DAPR_NODE_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Secrets Configuration</b></em>' containment reference.
+	 * The feature id for the '<em><b>Secrets Configuration</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APP_CONFIGURATION__SECRETS_CONFIGURATION = 9;
+	int APP_CONFIGURATION__SECRETS_CONFIGURATION = DAPR_NODE_FEATURE_COUNT + 8;
 
 	/**
-	 * The feature id for the '<em><b>Metrics Configuration</b></em>' containment reference.
+	 * The feature id for the '<em><b>Metrics Configuration</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APP_CONFIGURATION__METRICS_CONFIGURATION = 10;
+	int APP_CONFIGURATION__METRICS_CONFIGURATION = DAPR_NODE_FEATURE_COUNT + 9;
 
 	/**
-	 * The feature id for the '<em><b>Tracing Configuration</b></em>' containment reference.
+	 * The feature id for the '<em><b>Tracing Configuration</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APP_CONFIGURATION__TRACING_CONFIGURATION = 11;
+	int APP_CONFIGURATION__TRACING_CONFIGURATION = DAPR_NODE_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Components Deny List</b></em>' attribute list.
@@ -586,7 +651,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP_CONFIGURATION__COMPONENTS_DENY_LIST = 12;
+	int APP_CONFIGURATION__COMPONENTS_DENY_LIST = DAPR_NODE_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>App Configuration</em>' class.
@@ -595,7 +660,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP_CONFIGURATION_FEATURE_COUNT = 13;
+	int APP_CONFIGURATION_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 12;
 
 	/**
 	 * The number of operations of the '<em>App Configuration</em>' class.
@@ -604,7 +669,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP_CONFIGURATION_OPERATION_COUNT = 0;
+	int APP_CONFIGURATION_OPERATION_COUNT = DAPR_NODE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.impl.LoggingConfigurationImpl <em>Logging Configuration</em>}' class.
@@ -614,7 +679,142 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getLoggingConfiguration()
 	 * @generated
 	 */
-	int LOGGING_CONFIGURATION = 9;
+	int LOGGING_CONFIGURATION = 8;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGGING_CONFIGURATION__NAME = APP_CONFIGURATION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGGING_CONFIGURATION__DESCRIPTION = APP_CONFIGURATION__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Notes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGGING_CONFIGURATION__NOTES = APP_CONFIGURATION__NOTES;
+
+	/**
+	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGGING_CONFIGURATION__API_VERSION = APP_CONFIGURATION__API_VERSION;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGGING_CONFIGURATION__KIND = APP_CONFIGURATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Metadata namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGGING_CONFIGURATION__METADATA_NAMESPACE = APP_CONFIGURATION__METADATA_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Access Control</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGGING_CONFIGURATION__ACCESS_CONTROL = APP_CONFIGURATION__ACCESS_CONTROL;
+
+	/**
+	 * The feature id for the '<em><b>Api Control</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGGING_CONFIGURATION__API_CONTROL = APP_CONFIGURATION__API_CONTROL;
+
+	/**
+	 * The feature id for the '<em><b>Middleware Configuration</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGGING_CONFIGURATION__MIDDLEWARE_CONFIGURATION = APP_CONFIGURATION__MIDDLEWARE_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Logging Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGGING_CONFIGURATION__LOGGING_CONFIGURATION = APP_CONFIGURATION__LOGGING_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Name Resolution Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGGING_CONFIGURATION__NAME_RESOLUTION_CONFIGURATION = APP_CONFIGURATION__NAME_RESOLUTION_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Secrets Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGGING_CONFIGURATION__SECRETS_CONFIGURATION = APP_CONFIGURATION__SECRETS_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Metrics Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGGING_CONFIGURATION__METRICS_CONFIGURATION = APP_CONFIGURATION__METRICS_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Tracing Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGGING_CONFIGURATION__TRACING_CONFIGURATION = APP_CONFIGURATION__TRACING_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Components Deny List</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGGING_CONFIGURATION__COMPONENTS_DENY_LIST = APP_CONFIGURATION__COMPONENTS_DENY_LIST;
 
 	/**
 	 * The feature id for the '<em><b>Enabled</b></em>' attribute.
@@ -623,7 +823,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGGING_CONFIGURATION__ENABLED = 0;
+	int LOGGING_CONFIGURATION__ENABLED = APP_CONFIGURATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Obfuscate UR Ls</b></em>' attribute.
@@ -632,7 +832,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGGING_CONFIGURATION__OBFUSCATE_UR_LS = 1;
+	int LOGGING_CONFIGURATION__OBFUSCATE_UR_LS = APP_CONFIGURATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Omit Health Checks</b></em>' attribute.
@@ -641,7 +841,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGGING_CONFIGURATION__OMIT_HEALTH_CHECKS = 2;
+	int LOGGING_CONFIGURATION__OMIT_HEALTH_CHECKS = APP_CONFIGURATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Logging Configuration</em>' class.
@@ -650,7 +850,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGGING_CONFIGURATION_FEATURE_COUNT = 3;
+	int LOGGING_CONFIGURATION_FEATURE_COUNT = APP_CONFIGURATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Logging Configuration</em>' class.
@@ -659,7 +859,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGGING_CONFIGURATION_OPERATION_COUNT = 0;
+	int LOGGING_CONFIGURATION_OPERATION_COUNT = APP_CONFIGURATION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.impl.NameResolutionConfigurationImpl <em>Name Resolution Configuration</em>}' class.
@@ -669,7 +869,142 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getNameResolutionConfiguration()
 	 * @generated
 	 */
-	int NAME_RESOLUTION_CONFIGURATION = 10;
+	int NAME_RESOLUTION_CONFIGURATION = 9;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAME_RESOLUTION_CONFIGURATION__NAME = APP_CONFIGURATION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAME_RESOLUTION_CONFIGURATION__DESCRIPTION = APP_CONFIGURATION__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Notes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAME_RESOLUTION_CONFIGURATION__NOTES = APP_CONFIGURATION__NOTES;
+
+	/**
+	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAME_RESOLUTION_CONFIGURATION__API_VERSION = APP_CONFIGURATION__API_VERSION;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAME_RESOLUTION_CONFIGURATION__KIND = APP_CONFIGURATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Metadata namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAME_RESOLUTION_CONFIGURATION__METADATA_NAMESPACE = APP_CONFIGURATION__METADATA_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Access Control</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAME_RESOLUTION_CONFIGURATION__ACCESS_CONTROL = APP_CONFIGURATION__ACCESS_CONTROL;
+
+	/**
+	 * The feature id for the '<em><b>Api Control</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAME_RESOLUTION_CONFIGURATION__API_CONTROL = APP_CONFIGURATION__API_CONTROL;
+
+	/**
+	 * The feature id for the '<em><b>Middleware Configuration</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAME_RESOLUTION_CONFIGURATION__MIDDLEWARE_CONFIGURATION = APP_CONFIGURATION__MIDDLEWARE_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Logging Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAME_RESOLUTION_CONFIGURATION__LOGGING_CONFIGURATION = APP_CONFIGURATION__LOGGING_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Name Resolution Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAME_RESOLUTION_CONFIGURATION__NAME_RESOLUTION_CONFIGURATION = APP_CONFIGURATION__NAME_RESOLUTION_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Secrets Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAME_RESOLUTION_CONFIGURATION__SECRETS_CONFIGURATION = APP_CONFIGURATION__SECRETS_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Metrics Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAME_RESOLUTION_CONFIGURATION__METRICS_CONFIGURATION = APP_CONFIGURATION__METRICS_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Tracing Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAME_RESOLUTION_CONFIGURATION__TRACING_CONFIGURATION = APP_CONFIGURATION__TRACING_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Components Deny List</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAME_RESOLUTION_CONFIGURATION__COMPONENTS_DENY_LIST = APP_CONFIGURATION__COMPONENTS_DENY_LIST;
 
 	/**
 	 * The feature id for the '<em><b>Component Name</b></em>' attribute.
@@ -678,7 +1013,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAME_RESOLUTION_CONFIGURATION__COMPONENT_NAME = 0;
+	int NAME_RESOLUTION_CONFIGURATION__COMPONENT_NAME = APP_CONFIGURATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Component Version</b></em>' attribute.
@@ -687,7 +1022,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAME_RESOLUTION_CONFIGURATION__COMPONENT_VERSION = 1;
+	int NAME_RESOLUTION_CONFIGURATION__COMPONENT_VERSION = APP_CONFIGURATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Configuration Key</b></em>' attribute.
@@ -696,7 +1031,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAME_RESOLUTION_CONFIGURATION__CONFIGURATION_KEY = 2;
+	int NAME_RESOLUTION_CONFIGURATION__CONFIGURATION_KEY = APP_CONFIGURATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Configuration Value</b></em>' attribute.
@@ -705,7 +1040,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAME_RESOLUTION_CONFIGURATION__CONFIGURATION_VALUE = 3;
+	int NAME_RESOLUTION_CONFIGURATION__CONFIGURATION_VALUE = APP_CONFIGURATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Name Resolution Configuration</em>' class.
@@ -714,7 +1049,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAME_RESOLUTION_CONFIGURATION_FEATURE_COUNT = 4;
+	int NAME_RESOLUTION_CONFIGURATION_FEATURE_COUNT = APP_CONFIGURATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Name Resolution Configuration</em>' class.
@@ -723,7 +1058,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAME_RESOLUTION_CONFIGURATION_OPERATION_COUNT = 0;
+	int NAME_RESOLUTION_CONFIGURATION_OPERATION_COUNT = APP_CONFIGURATION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.impl.SecretsConfigurationImpl <em>Secrets Configuration</em>}' class.
@@ -733,7 +1068,142 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getSecretsConfiguration()
 	 * @generated
 	 */
-	int SECRETS_CONFIGURATION = 11;
+	int SECRETS_CONFIGURATION = 10;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECRETS_CONFIGURATION__NAME = APP_CONFIGURATION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECRETS_CONFIGURATION__DESCRIPTION = APP_CONFIGURATION__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Notes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECRETS_CONFIGURATION__NOTES = APP_CONFIGURATION__NOTES;
+
+	/**
+	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECRETS_CONFIGURATION__API_VERSION = APP_CONFIGURATION__API_VERSION;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECRETS_CONFIGURATION__KIND = APP_CONFIGURATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Metadata namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECRETS_CONFIGURATION__METADATA_NAMESPACE = APP_CONFIGURATION__METADATA_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Access Control</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECRETS_CONFIGURATION__ACCESS_CONTROL = APP_CONFIGURATION__ACCESS_CONTROL;
+
+	/**
+	 * The feature id for the '<em><b>Api Control</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECRETS_CONFIGURATION__API_CONTROL = APP_CONFIGURATION__API_CONTROL;
+
+	/**
+	 * The feature id for the '<em><b>Middleware Configuration</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECRETS_CONFIGURATION__MIDDLEWARE_CONFIGURATION = APP_CONFIGURATION__MIDDLEWARE_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Logging Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECRETS_CONFIGURATION__LOGGING_CONFIGURATION = APP_CONFIGURATION__LOGGING_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Name Resolution Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECRETS_CONFIGURATION__NAME_RESOLUTION_CONFIGURATION = APP_CONFIGURATION__NAME_RESOLUTION_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Secrets Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECRETS_CONFIGURATION__SECRETS_CONFIGURATION = APP_CONFIGURATION__SECRETS_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Metrics Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECRETS_CONFIGURATION__METRICS_CONFIGURATION = APP_CONFIGURATION__METRICS_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Tracing Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECRETS_CONFIGURATION__TRACING_CONFIGURATION = APP_CONFIGURATION__TRACING_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Components Deny List</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECRETS_CONFIGURATION__COMPONENTS_DENY_LIST = APP_CONFIGURATION__COMPONENTS_DENY_LIST;
 
 	/**
 	 * The feature id for the '<em><b>Allowed List</b></em>' containment reference list.
@@ -742,7 +1212,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECRETS_CONFIGURATION__ALLOWED_LIST = 0;
+	int SECRETS_CONFIGURATION__ALLOWED_LIST = APP_CONFIGURATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Denied List</b></em>' containment reference list.
@@ -751,7 +1221,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECRETS_CONFIGURATION__DENIED_LIST = 1;
+	int SECRETS_CONFIGURATION__DENIED_LIST = APP_CONFIGURATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Secrets Configuration</em>' class.
@@ -760,7 +1230,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECRETS_CONFIGURATION_FEATURE_COUNT = 2;
+	int SECRETS_CONFIGURATION_FEATURE_COUNT = APP_CONFIGURATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Secrets Configuration</em>' class.
@@ -769,7 +1239,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECRETS_CONFIGURATION_OPERATION_COUNT = 0;
+	int SECRETS_CONFIGURATION_OPERATION_COUNT = APP_CONFIGURATION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.impl.SecretsListImpl <em>Secrets List</em>}' class.
@@ -779,7 +1249,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getSecretsList()
 	 * @generated
 	 */
-	int SECRETS_LIST = 12;
+	int SECRETS_LIST = 11;
 
 	/**
 	 * The feature id for the '<em><b>Store Name</b></em>' attribute.
@@ -834,7 +1304,142 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getMetricsConfiguration()
 	 * @generated
 	 */
-	int METRICS_CONFIGURATION = 13;
+	int METRICS_CONFIGURATION = 12;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRICS_CONFIGURATION__NAME = APP_CONFIGURATION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRICS_CONFIGURATION__DESCRIPTION = APP_CONFIGURATION__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Notes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRICS_CONFIGURATION__NOTES = APP_CONFIGURATION__NOTES;
+
+	/**
+	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRICS_CONFIGURATION__API_VERSION = APP_CONFIGURATION__API_VERSION;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRICS_CONFIGURATION__KIND = APP_CONFIGURATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Metadata namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRICS_CONFIGURATION__METADATA_NAMESPACE = APP_CONFIGURATION__METADATA_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Access Control</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRICS_CONFIGURATION__ACCESS_CONTROL = APP_CONFIGURATION__ACCESS_CONTROL;
+
+	/**
+	 * The feature id for the '<em><b>Api Control</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRICS_CONFIGURATION__API_CONTROL = APP_CONFIGURATION__API_CONTROL;
+
+	/**
+	 * The feature id for the '<em><b>Middleware Configuration</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRICS_CONFIGURATION__MIDDLEWARE_CONFIGURATION = APP_CONFIGURATION__MIDDLEWARE_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Logging Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRICS_CONFIGURATION__LOGGING_CONFIGURATION = APP_CONFIGURATION__LOGGING_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Name Resolution Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRICS_CONFIGURATION__NAME_RESOLUTION_CONFIGURATION = APP_CONFIGURATION__NAME_RESOLUTION_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Secrets Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRICS_CONFIGURATION__SECRETS_CONFIGURATION = APP_CONFIGURATION__SECRETS_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Metrics Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRICS_CONFIGURATION__METRICS_CONFIGURATION = APP_CONFIGURATION__METRICS_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Tracing Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRICS_CONFIGURATION__TRACING_CONFIGURATION = APP_CONFIGURATION__TRACING_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Components Deny List</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRICS_CONFIGURATION__COMPONENTS_DENY_LIST = APP_CONFIGURATION__COMPONENTS_DENY_LIST;
 
 	/**
 	 * The feature id for the '<em><b>Enabled</b></em>' attribute.
@@ -843,7 +1448,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METRICS_CONFIGURATION__ENABLED = 0;
+	int METRICS_CONFIGURATION__ENABLED = APP_CONFIGURATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Latency Distribution Buckets</b></em>' attribute list.
@@ -852,7 +1457,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METRICS_CONFIGURATION__LATENCY_DISTRIBUTION_BUCKETS = 1;
+	int METRICS_CONFIGURATION__LATENCY_DISTRIBUTION_BUCKETS = APP_CONFIGURATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Http increased Cardinality</b></em>' attribute.
@@ -861,7 +1466,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METRICS_CONFIGURATION__HTTP_INCREASED_CARDINALITY = 2;
+	int METRICS_CONFIGURATION__HTTP_INCREASED_CARDINALITY = APP_CONFIGURATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Http path Matching</b></em>' attribute list.
@@ -870,7 +1475,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METRICS_CONFIGURATION__HTTP_PATH_MATCHING = 3;
+	int METRICS_CONFIGURATION__HTTP_PATH_MATCHING = APP_CONFIGURATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Http exclude Verbs</b></em>' attribute.
@@ -879,7 +1484,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METRICS_CONFIGURATION__HTTP_EXCLUDE_VERBS = 4;
+	int METRICS_CONFIGURATION__HTTP_EXCLUDE_VERBS = APP_CONFIGURATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Metrics Configuration</em>' class.
@@ -888,7 +1493,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METRICS_CONFIGURATION_FEATURE_COUNT = 5;
+	int METRICS_CONFIGURATION_FEATURE_COUNT = APP_CONFIGURATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Metrics Configuration</em>' class.
@@ -897,7 +1502,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METRICS_CONFIGURATION_OPERATION_COUNT = 0;
+	int METRICS_CONFIGURATION_OPERATION_COUNT = APP_CONFIGURATION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.impl.APIAccessControlImpl <em>API Access Control</em>}' class.
@@ -907,25 +1512,151 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getAPIAccessControl()
 	 * @generated
 	 */
-	int API_ACCESS_CONTROL = 14;
+	int API_ACCESS_CONTROL = 13;
 
 	/**
-	 * The feature id for the '<em><b>Allowed AP Is</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int API_ACCESS_CONTROL__ALLOWED_AP_IS = 0;
+	int API_ACCESS_CONTROL__NAME = APP_CONFIGURATION__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Denied AP Is</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int API_ACCESS_CONTROL__DENIED_AP_IS = 1;
+	int API_ACCESS_CONTROL__DESCRIPTION = APP_CONFIGURATION__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Notes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_ACCESS_CONTROL__NOTES = APP_CONFIGURATION__NOTES;
+
+	/**
+	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_ACCESS_CONTROL__API_VERSION = APP_CONFIGURATION__API_VERSION;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_ACCESS_CONTROL__KIND = APP_CONFIGURATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Metadata namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_ACCESS_CONTROL__METADATA_NAMESPACE = APP_CONFIGURATION__METADATA_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Access Control</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_ACCESS_CONTROL__ACCESS_CONTROL = APP_CONFIGURATION__ACCESS_CONTROL;
+
+	/**
+	 * The feature id for the '<em><b>Api Control</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_ACCESS_CONTROL__API_CONTROL = APP_CONFIGURATION__API_CONTROL;
+
+	/**
+	 * The feature id for the '<em><b>Middleware Configuration</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_ACCESS_CONTROL__MIDDLEWARE_CONFIGURATION = APP_CONFIGURATION__MIDDLEWARE_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Logging Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_ACCESS_CONTROL__LOGGING_CONFIGURATION = APP_CONFIGURATION__LOGGING_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Name Resolution Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_ACCESS_CONTROL__NAME_RESOLUTION_CONFIGURATION = APP_CONFIGURATION__NAME_RESOLUTION_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Secrets Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_ACCESS_CONTROL__SECRETS_CONFIGURATION = APP_CONFIGURATION__SECRETS_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Metrics Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_ACCESS_CONTROL__METRICS_CONFIGURATION = APP_CONFIGURATION__METRICS_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Tracing Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_ACCESS_CONTROL__TRACING_CONFIGURATION = APP_CONFIGURATION__TRACING_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Components Deny List</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_ACCESS_CONTROL__COMPONENTS_DENY_LIST = APP_CONFIGURATION__COMPONENTS_DENY_LIST;
+
+	/**
+	 * The feature id for the '<em><b>Api List</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_ACCESS_CONTROL__API_LIST = APP_CONFIGURATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>API Access Control</em>' class.
@@ -934,7 +1665,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int API_ACCESS_CONTROL_FEATURE_COUNT = 2;
+	int API_ACCESS_CONTROL_FEATURE_COUNT = APP_CONFIGURATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>API Access Control</em>' class.
@@ -943,7 +1674,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int API_ACCESS_CONTROL_OPERATION_COUNT = 0;
+	int API_ACCESS_CONTROL_OPERATION_COUNT = APP_CONFIGURATION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.impl.APIImpl <em>API</em>}' class.
@@ -953,16 +1684,43 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getAPI()
 	 * @generated
 	 */
-	int API = 15;
+	int API = 14;
 
 	/**
-	 * The feature id for the '<em><b>Api name</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int API__API_NAME = 0;
+	int API__NAME = DAPR_NODE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API__DESCRIPTION = DAPR_NODE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Notes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API__NOTES = DAPR_NODE__NOTES;
+
+	/**
+	 * The feature id for the '<em><b>Component</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API__COMPONENT = DAPR_NODE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Api version</b></em>' attribute.
@@ -971,7 +1729,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int API__API_VERSION = 1;
+	int API__API_VERSION = DAPR_NODE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Protocol</b></em>' attribute.
@@ -980,7 +1738,16 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int API__PROTOCOL = 2;
+	int API__PROTOCOL = DAPR_NODE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Access</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API__ACCESS = DAPR_NODE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>API</em>' class.
@@ -989,7 +1756,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int API_FEATURE_COUNT = 3;
+	int API_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>API</em>' class.
@@ -998,7 +1765,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int API_OPERATION_COUNT = 0;
+	int API_OPERATION_COUNT = DAPR_NODE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.impl.AppAccessControlImpl <em>App Access Control</em>}' class.
@@ -1008,7 +1775,142 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getAppAccessControl()
 	 * @generated
 	 */
-	int APP_ACCESS_CONTROL = 16;
+	int APP_ACCESS_CONTROL = 15;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP_ACCESS_CONTROL__NAME = APP_CONFIGURATION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP_ACCESS_CONTROL__DESCRIPTION = APP_CONFIGURATION__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Notes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP_ACCESS_CONTROL__NOTES = APP_CONFIGURATION__NOTES;
+
+	/**
+	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP_ACCESS_CONTROL__API_VERSION = APP_CONFIGURATION__API_VERSION;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP_ACCESS_CONTROL__KIND = APP_CONFIGURATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Metadata namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP_ACCESS_CONTROL__METADATA_NAMESPACE = APP_CONFIGURATION__METADATA_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Access Control</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP_ACCESS_CONTROL__ACCESS_CONTROL = APP_CONFIGURATION__ACCESS_CONTROL;
+
+	/**
+	 * The feature id for the '<em><b>Api Control</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP_ACCESS_CONTROL__API_CONTROL = APP_CONFIGURATION__API_CONTROL;
+
+	/**
+	 * The feature id for the '<em><b>Middleware Configuration</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP_ACCESS_CONTROL__MIDDLEWARE_CONFIGURATION = APP_CONFIGURATION__MIDDLEWARE_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Logging Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP_ACCESS_CONTROL__LOGGING_CONFIGURATION = APP_CONFIGURATION__LOGGING_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Name Resolution Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP_ACCESS_CONTROL__NAME_RESOLUTION_CONFIGURATION = APP_CONFIGURATION__NAME_RESOLUTION_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Secrets Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP_ACCESS_CONTROL__SECRETS_CONFIGURATION = APP_CONFIGURATION__SECRETS_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Metrics Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP_ACCESS_CONTROL__METRICS_CONFIGURATION = APP_CONFIGURATION__METRICS_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Tracing Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP_ACCESS_CONTROL__TRACING_CONFIGURATION = APP_CONFIGURATION__TRACING_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Components Deny List</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP_ACCESS_CONTROL__COMPONENTS_DENY_LIST = APP_CONFIGURATION__COMPONENTS_DENY_LIST;
 
 	/**
 	 * The feature id for the '<em><b>Default Action</b></em>' attribute.
@@ -1017,7 +1919,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP_ACCESS_CONTROL__DEFAULT_ACTION = 0;
+	int APP_ACCESS_CONTROL__DEFAULT_ACTION = APP_CONFIGURATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Trust Domain</b></em>' reference.
@@ -1026,16 +1928,16 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP_ACCESS_CONTROL__TRUST_DOMAIN = 1;
+	int APP_ACCESS_CONTROL__TRUST_DOMAIN = APP_CONFIGURATION_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Policies</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Policies</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APP_ACCESS_CONTROL__POLICIES = 2;
+	int APP_ACCESS_CONTROL__POLICIES = APP_CONFIGURATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>App Access Control</em>' class.
@@ -1044,7 +1946,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP_ACCESS_CONTROL_FEATURE_COUNT = 3;
+	int APP_ACCESS_CONTROL_FEATURE_COUNT = APP_CONFIGURATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>App Access Control</em>' class.
@@ -1053,7 +1955,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP_ACCESS_CONTROL_OPERATION_COUNT = 0;
+	int APP_ACCESS_CONTROL_OPERATION_COUNT = APP_CONFIGURATION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.impl.AppPolicyImpl <em>App Policy</em>}' class.
@@ -1063,7 +1965,34 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getAppPolicy()
 	 * @generated
 	 */
-	int APP_POLICY = 17;
+	int APP_POLICY = 16;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP_POLICY__NAME = DAPR_NODE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP_POLICY__DESCRIPTION = DAPR_NODE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Notes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP_POLICY__NOTES = DAPR_NODE__NOTES;
 
 	/**
 	 * The feature id for the '<em><b>App</b></em>' reference.
@@ -1072,7 +2001,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP_POLICY__APP = 0;
+	int APP_POLICY__APP = DAPR_NODE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Default Action</b></em>' attribute.
@@ -1081,7 +2010,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP_POLICY__DEFAULT_ACTION = 1;
+	int APP_POLICY__DEFAULT_ACTION = DAPR_NODE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Trust Domain</b></em>' reference.
@@ -1090,7 +2019,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP_POLICY__TRUST_DOMAIN = 2;
+	int APP_POLICY__TRUST_DOMAIN = DAPR_NODE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' reference.
@@ -1099,16 +2028,16 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP_POLICY__NAMESPACE = 3;
+	int APP_POLICY__NAMESPACE = DAPR_NODE_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Operations</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Operations</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APP_POLICY__OPERATIONS = 4;
+	int APP_POLICY__OPERATIONS = DAPR_NODE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>App Policy</em>' class.
@@ -1117,7 +2046,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP_POLICY_FEATURE_COUNT = 5;
+	int APP_POLICY_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>App Policy</em>' class.
@@ -1126,7 +2055,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP_POLICY_OPERATION_COUNT = 0;
+	int APP_POLICY_OPERATION_COUNT = DAPR_NODE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.impl.OperationImpl <em>Operation</em>}' class.
@@ -1136,7 +2065,34 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getOperation()
 	 * @generated
 	 */
-	int OPERATION = 18;
+	int OPERATION = 17;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION__NAME = DAPR_NODE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION__DESCRIPTION = DAPR_NODE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Notes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION__NOTES = DAPR_NODE__NOTES;
 
 	/**
 	 * The feature id for the '<em><b>Protocol</b></em>' attribute.
@@ -1145,7 +2101,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION__PROTOCOL = 0;
+	int OPERATION__PROTOCOL = DAPR_NODE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Operation Name</b></em>' attribute.
@@ -1154,7 +2110,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION__OPERATION_NAME = 1;
+	int OPERATION__OPERATION_NAME = DAPR_NODE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Verbs</b></em>' attribute list.
@@ -1163,7 +2119,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION__VERBS = 2;
+	int OPERATION__VERBS = DAPR_NODE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' attribute.
@@ -1172,7 +2128,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION__ACTION = 3;
+	int OPERATION__ACTION = DAPR_NODE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Operation</em>' class.
@@ -1181,7 +2137,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_FEATURE_COUNT = 4;
+	int OPERATION_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Operation</em>' class.
@@ -1190,7 +2146,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_OPERATION_COUNT = 0;
+	int OPERATION_OPERATION_COUNT = DAPR_NODE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.impl.MiddlewareConfigurationImpl <em>Middleware Configuration</em>}' class.
@@ -1200,7 +2156,142 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getMiddlewareConfiguration()
 	 * @generated
 	 */
-	int MIDDLEWARE_CONFIGURATION = 19;
+	int MIDDLEWARE_CONFIGURATION = 18;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIDDLEWARE_CONFIGURATION__NAME = APP_CONFIGURATION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIDDLEWARE_CONFIGURATION__DESCRIPTION = APP_CONFIGURATION__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Notes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIDDLEWARE_CONFIGURATION__NOTES = APP_CONFIGURATION__NOTES;
+
+	/**
+	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIDDLEWARE_CONFIGURATION__API_VERSION = APP_CONFIGURATION__API_VERSION;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIDDLEWARE_CONFIGURATION__KIND = APP_CONFIGURATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Metadata namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIDDLEWARE_CONFIGURATION__METADATA_NAMESPACE = APP_CONFIGURATION__METADATA_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Access Control</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIDDLEWARE_CONFIGURATION__ACCESS_CONTROL = APP_CONFIGURATION__ACCESS_CONTROL;
+
+	/**
+	 * The feature id for the '<em><b>Api Control</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIDDLEWARE_CONFIGURATION__API_CONTROL = APP_CONFIGURATION__API_CONTROL;
+
+	/**
+	 * The feature id for the '<em><b>Middleware Configuration</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIDDLEWARE_CONFIGURATION__MIDDLEWARE_CONFIGURATION = APP_CONFIGURATION__MIDDLEWARE_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Logging Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIDDLEWARE_CONFIGURATION__LOGGING_CONFIGURATION = APP_CONFIGURATION__LOGGING_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Name Resolution Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIDDLEWARE_CONFIGURATION__NAME_RESOLUTION_CONFIGURATION = APP_CONFIGURATION__NAME_RESOLUTION_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Secrets Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIDDLEWARE_CONFIGURATION__SECRETS_CONFIGURATION = APP_CONFIGURATION__SECRETS_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Metrics Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIDDLEWARE_CONFIGURATION__METRICS_CONFIGURATION = APP_CONFIGURATION__METRICS_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Tracing Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIDDLEWARE_CONFIGURATION__TRACING_CONFIGURATION = APP_CONFIGURATION__TRACING_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Components Deny List</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIDDLEWARE_CONFIGURATION__COMPONENTS_DENY_LIST = APP_CONFIGURATION__COMPONENTS_DENY_LIST;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Handler</b></em>' map.
@@ -1209,7 +2300,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MIDDLEWARE_CONFIGURATION__INCOMING_HANDLER = 0;
+	int MIDDLEWARE_CONFIGURATION__INCOMING_HANDLER = APP_CONFIGURATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Handler</b></em>' map.
@@ -1218,7 +2309,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MIDDLEWARE_CONFIGURATION__OUTGOING_HANDLER = 1;
+	int MIDDLEWARE_CONFIGURATION__OUTGOING_HANDLER = APP_CONFIGURATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Middleware Configuration</em>' class.
@@ -1227,7 +2318,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MIDDLEWARE_CONFIGURATION_FEATURE_COUNT = 2;
+	int MIDDLEWARE_CONFIGURATION_FEATURE_COUNT = APP_CONFIGURATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Middleware Configuration</em>' class.
@@ -1236,7 +2327,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MIDDLEWARE_CONFIGURATION_OPERATION_COUNT = 0;
+	int MIDDLEWARE_CONFIGURATION_OPERATION_COUNT = APP_CONFIGURATION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.impl.HttpHandlerImpl <em>Http Handler</em>}' class.
@@ -1246,7 +2337,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getHttpHandler()
 	 * @generated
 	 */
-	int HTTP_HANDLER = 20;
+	int HTTP_HANDLER = 19;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1292,7 +2383,142 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getTracingConfiguration()
 	 * @generated
 	 */
-	int TRACING_CONFIGURATION = 21;
+	int TRACING_CONFIGURATION = 20;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACING_CONFIGURATION__NAME = APP_CONFIGURATION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACING_CONFIGURATION__DESCRIPTION = APP_CONFIGURATION__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Notes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACING_CONFIGURATION__NOTES = APP_CONFIGURATION__NOTES;
+
+	/**
+	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACING_CONFIGURATION__API_VERSION = APP_CONFIGURATION__API_VERSION;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACING_CONFIGURATION__KIND = APP_CONFIGURATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Metadata namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACING_CONFIGURATION__METADATA_NAMESPACE = APP_CONFIGURATION__METADATA_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Access Control</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACING_CONFIGURATION__ACCESS_CONTROL = APP_CONFIGURATION__ACCESS_CONTROL;
+
+	/**
+	 * The feature id for the '<em><b>Api Control</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACING_CONFIGURATION__API_CONTROL = APP_CONFIGURATION__API_CONTROL;
+
+	/**
+	 * The feature id for the '<em><b>Middleware Configuration</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACING_CONFIGURATION__MIDDLEWARE_CONFIGURATION = APP_CONFIGURATION__MIDDLEWARE_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Logging Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACING_CONFIGURATION__LOGGING_CONFIGURATION = APP_CONFIGURATION__LOGGING_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Name Resolution Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACING_CONFIGURATION__NAME_RESOLUTION_CONFIGURATION = APP_CONFIGURATION__NAME_RESOLUTION_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Secrets Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACING_CONFIGURATION__SECRETS_CONFIGURATION = APP_CONFIGURATION__SECRETS_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Metrics Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACING_CONFIGURATION__METRICS_CONFIGURATION = APP_CONFIGURATION__METRICS_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Tracing Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACING_CONFIGURATION__TRACING_CONFIGURATION = APP_CONFIGURATION__TRACING_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Components Deny List</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACING_CONFIGURATION__COMPONENTS_DENY_LIST = APP_CONFIGURATION__COMPONENTS_DENY_LIST;
 
 	/**
 	 * The feature id for the '<em><b>Sampling Rate</b></em>' attribute.
@@ -1301,7 +2527,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACING_CONFIGURATION__SAMPLING_RATE = 0;
+	int TRACING_CONFIGURATION__SAMPLING_RATE = APP_CONFIGURATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Stdout</b></em>' attribute.
@@ -1310,7 +2536,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACING_CONFIGURATION__STDOUT = 1;
+	int TRACING_CONFIGURATION__STDOUT = APP_CONFIGURATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Otel end Point Address</b></em>' attribute.
@@ -1319,7 +2545,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACING_CONFIGURATION__OTEL_END_POINT_ADDRESS = 2;
+	int TRACING_CONFIGURATION__OTEL_END_POINT_ADDRESS = APP_CONFIGURATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Otel is Secure</b></em>' attribute.
@@ -1328,7 +2554,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACING_CONFIGURATION__OTEL_IS_SECURE = 3;
+	int TRACING_CONFIGURATION__OTEL_IS_SECURE = APP_CONFIGURATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Otel protocol</b></em>' attribute.
@@ -1337,7 +2563,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACING_CONFIGURATION__OTEL_PROTOCOL = 4;
+	int TRACING_CONFIGURATION__OTEL_PROTOCOL = APP_CONFIGURATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Zipkin end Point Address</b></em>' attribute.
@@ -1346,7 +2572,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACING_CONFIGURATION__ZIPKIN_END_POINT_ADDRESS = 5;
+	int TRACING_CONFIGURATION__ZIPKIN_END_POINT_ADDRESS = APP_CONFIGURATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Tracing Configuration</em>' class.
@@ -1355,7 +2581,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACING_CONFIGURATION_FEATURE_COUNT = 6;
+	int TRACING_CONFIGURATION_FEATURE_COUNT = APP_CONFIGURATION_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Tracing Configuration</em>' class.
@@ -1364,7 +2590,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACING_CONFIGURATION_OPERATION_COUNT = 0;
+	int TRACING_CONFIGURATION_OPERATION_COUNT = APP_CONFIGURATION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.impl.SubscriptionConfigurationImpl <em>Subscription Configuration</em>}' class.
@@ -1374,7 +2600,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getSubscriptionConfiguration()
 	 * @generated
 	 */
-	int SUBSCRIPTION_CONFIGURATION = 22;
+	int SUBSCRIPTION_CONFIGURATION = 21;
 
 	/**
 	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
@@ -1501,7 +2727,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getRouteRules()
 	 * @generated
 	 */
-	int ROUTE_RULES = 23;
+	int ROUTE_RULES = 22;
 
 	/**
 	 * The feature id for the '<em><b>Match</b></em>' attribute.
@@ -1547,7 +2773,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getResiliencyConfiguration()
 	 * @generated
 	 */
-	int RESILIENCY_CONFIGURATION = 24;
+	int RESILIENCY_CONFIGURATION = 23;
 
 	/**
 	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
@@ -1629,7 +2855,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getResiliencyPolicy()
 	 * @generated
 	 */
-	int RESILIENCY_POLICY = 25;
+	int RESILIENCY_POLICY = 24;
 
 	/**
 	 * The feature id for the '<em><b>Retries</b></em>' containment reference list.
@@ -1684,7 +2910,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getResiliencyTimeout()
 	 * @generated
 	 */
-	int RESILIENCY_TIMEOUT = 26;
+	int RESILIENCY_TIMEOUT = 25;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1730,7 +2956,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getRetryPolicy()
 	 * @generated
 	 */
-	int RETRY_POLICY = 27;
+	int RETRY_POLICY = 26;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1794,7 +3020,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getCircuitBreakerPolicy()
 	 * @generated
 	 */
-	int CIRCUIT_BREAKER_POLICY = 28;
+	int CIRCUIT_BREAKER_POLICY = 27;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1867,7 +3093,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getResiliencyTarget()
 	 * @generated
 	 */
-	int RESILIENCY_TARGET = 29;
+	int RESILIENCY_TARGET = 28;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1949,7 +3175,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getHTTPEndPoint()
 	 * @generated
 	 */
-	int HTTP_END_POINT = 30;
+	int HTTP_END_POINT = 29;
 
 	/**
 	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
@@ -2067,7 +3293,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getComponent()
 	 * @generated
 	 */
-	int COMPONENT = 31;
+	int COMPONENT = 30;
 
 	/**
 	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
@@ -2158,7 +3384,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getComponentSpec()
 	 * @generated
 	 */
-	int COMPONENT_SPEC = 32;
+	int COMPONENT_SPEC = 31;
 
 	/**
 	 * The feature id for the '<em><b>Ignore Errors</b></em>' attribute.
@@ -2213,7 +3439,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getSpecMetadata()
 	 * @generated
 	 */
-	int SPEC_METADATA = 33;
+	int SPEC_METADATA = 32;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2304,7 +3530,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getSecretStore()
 	 * @generated
 	 */
-	int SECRET_STORE = 34;
+	int SECRET_STORE = 33;
 
 	/**
 	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
@@ -2395,7 +3621,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getHashicorpVault()
 	 * @generated
 	 */
-	int HASHICORP_VAULT = 35;
+	int HASHICORP_VAULT = 34;
 
 	/**
 	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
@@ -2504,7 +3730,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getMessageBroker()
 	 * @generated
 	 */
-	int MESSAGE_BROKER = 36;
+	int MESSAGE_BROKER = 35;
 
 	/**
 	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
@@ -2588,644 +3814,54 @@ public interface DaprdesignerPackage extends EPackage {
 	int MESSAGE_BROKER_OPERATION_COUNT = COMPONENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link daprdesigner.impl.PubSubImpl <em>Pub Sub</em>}' class.
+	 * The meta object id for the '{@link daprdesigner.AccessAction <em>Access Action</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see daprdesigner.impl.PubSubImpl
-	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getPubSub()
+	 * @see daprdesigner.AccessAction
+	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getAccessAction()
 	 * @generated
 	 */
-	int PUB_SUB = 37;
+	int ACCESS_ACTION = 36;
 
 	/**
-	 * The feature id for the '<em><b>Namespace</b></em>' reference.
+	 * The meta object id for the '{@link daprdesigner.BlockType <em>Block Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see daprdesigner.BlockType
+	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getBlockType()
 	 * @generated
-	 * @ordered
 	 */
-	int PUB_SUB__NAMESPACE = BUILDING_BLOCK__NAMESPACE;
+	int BLOCK_TYPE = 37;
 
 	/**
-	 * The feature id for the '<em><b>Trust Domain</b></em>' reference.
+	 * The meta object id for the '{@link daprdesigner.SDKLanguage <em>SDK Language</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see daprdesigner.SDKLanguage
+	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getSDKLanguage()
 	 * @generated
-	 * @ordered
 	 */
-	int PUB_SUB__TRUST_DOMAIN = BUILDING_BLOCK__TRUST_DOMAIN;
+	int SDK_LANGUAGE = 38;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The meta object id for the '{@link daprdesigner.Protocol <em>Protocol</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see daprdesigner.Protocol
+	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getProtocol()
 	 * @generated
-	 * @ordered
 	 */
-	int PUB_SUB__NAME = BUILDING_BLOCK_FEATURE_COUNT + 0;
+	int PROTOCOL = 39;
 
 	/**
-	 * The feature id for the '<em><b>Mbrokers</b></em>' reference list.
+	 * The meta object id for the '{@link daprdesigner.Verb <em>Verb</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see daprdesigner.Verb
+	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getVerb()
 	 * @generated
-	 * @ordered
 	 */
-	int PUB_SUB__MBROKERS = BUILDING_BLOCK_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Pub Sub</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PUB_SUB_FEATURE_COUNT = BUILDING_BLOCK_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Pub Sub</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PUB_SUB_OPERATION_COUNT = BUILDING_BLOCK_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link daprdesigner.impl.BindingsImpl <em>Bindings</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see daprdesigner.impl.BindingsImpl
-	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getBindings()
-	 * @generated
-	 */
-	int BINDINGS = 38;
-
-	/**
-	 * The feature id for the '<em><b>Namespace</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINDINGS__NAMESPACE = BUILDING_BLOCK__NAMESPACE;
-
-	/**
-	 * The feature id for the '<em><b>Trust Domain</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINDINGS__TRUST_DOMAIN = BUILDING_BLOCK__TRUST_DOMAIN;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINDINGS__NAME = BUILDING_BLOCK_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>App ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINDINGS__APP_ID = BUILDING_BLOCK_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Bindings</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINDINGS_FEATURE_COUNT = BUILDING_BLOCK_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Bindings</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINDINGS_OPERATION_COUNT = BUILDING_BLOCK_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link daprdesigner.impl.JobsImpl <em>Jobs</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see daprdesigner.impl.JobsImpl
-	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getJobs()
-	 * @generated
-	 */
-	int JOBS = 39;
-
-	/**
-	 * The feature id for the '<em><b>Namespace</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOBS__NAMESPACE = BUILDING_BLOCK__NAMESPACE;
-
-	/**
-	 * The feature id for the '<em><b>Trust Domain</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOBS__TRUST_DOMAIN = BUILDING_BLOCK__TRUST_DOMAIN;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOBS__NAME = BUILDING_BLOCK_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>App ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOBS__APP_ID = BUILDING_BLOCK_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Jobs</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOBS_FEATURE_COUNT = BUILDING_BLOCK_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Jobs</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOBS_OPERATION_COUNT = BUILDING_BLOCK_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link daprdesigner.impl.ConfigurationImpl <em>Configuration</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see daprdesigner.impl.ConfigurationImpl
-	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getConfiguration()
-	 * @generated
-	 */
-	int CONFIGURATION = 40;
-
-	/**
-	 * The feature id for the '<em><b>Namespace</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIGURATION__NAMESPACE = BUILDING_BLOCK__NAMESPACE;
-
-	/**
-	 * The feature id for the '<em><b>Trust Domain</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIGURATION__TRUST_DOMAIN = BUILDING_BLOCK__TRUST_DOMAIN;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIGURATION__NAME = BUILDING_BLOCK_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>App ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIGURATION__APP_ID = BUILDING_BLOCK_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Configuration</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIGURATION_FEATURE_COUNT = BUILDING_BLOCK_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Configuration</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIGURATION_OPERATION_COUNT = BUILDING_BLOCK_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link daprdesigner.impl.WorkflowImpl <em>Workflow</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see daprdesigner.impl.WorkflowImpl
-	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getWorkflow()
-	 * @generated
-	 */
-	int WORKFLOW = 41;
-
-	/**
-	 * The feature id for the '<em><b>Namespace</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORKFLOW__NAMESPACE = BUILDING_BLOCK__NAMESPACE;
-
-	/**
-	 * The feature id for the '<em><b>Trust Domain</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORKFLOW__TRUST_DOMAIN = BUILDING_BLOCK__TRUST_DOMAIN;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORKFLOW__NAME = BUILDING_BLOCK_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>App ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORKFLOW__APP_ID = BUILDING_BLOCK_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Workflow</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORKFLOW_FEATURE_COUNT = BUILDING_BLOCK_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Workflow</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORKFLOW_OPERATION_COUNT = BUILDING_BLOCK_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link daprdesigner.impl.ActorsImpl <em>Actors</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see daprdesigner.impl.ActorsImpl
-	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getActors()
-	 * @generated
-	 */
-	int ACTORS = 42;
-
-	/**
-	 * The feature id for the '<em><b>Namespace</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTORS__NAMESPACE = BUILDING_BLOCK__NAMESPACE;
-
-	/**
-	 * The feature id for the '<em><b>Trust Domain</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTORS__TRUST_DOMAIN = BUILDING_BLOCK__TRUST_DOMAIN;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTORS__NAME = BUILDING_BLOCK_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>App ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTORS__APP_ID = BUILDING_BLOCK_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Actors</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTORS_FEATURE_COUNT = BUILDING_BLOCK_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Actors</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTORS_OPERATION_COUNT = BUILDING_BLOCK_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link daprdesigner.impl.SecretsImpl <em>Secrets</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see daprdesigner.impl.SecretsImpl
-	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getSecrets()
-	 * @generated
-	 */
-	int SECRETS = 43;
-
-	/**
-	 * The feature id for the '<em><b>Namespace</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECRETS__NAMESPACE = BUILDING_BLOCK__NAMESPACE;
-
-	/**
-	 * The feature id for the '<em><b>Trust Domain</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECRETS__TRUST_DOMAIN = BUILDING_BLOCK__TRUST_DOMAIN;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECRETS__NAME = BUILDING_BLOCK_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>App ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECRETS__APP_ID = BUILDING_BLOCK_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Secrets</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECRETS_FEATURE_COUNT = BUILDING_BLOCK_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Secrets</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECRETS_OPERATION_COUNT = BUILDING_BLOCK_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link daprdesigner.impl.StateManagementImpl <em>State Management</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see daprdesigner.impl.StateManagementImpl
-	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getStateManagement()
-	 * @generated
-	 */
-	int STATE_MANAGEMENT = 44;
-
-	/**
-	 * The feature id for the '<em><b>Namespace</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_MANAGEMENT__NAMESPACE = BUILDING_BLOCK__NAMESPACE;
-
-	/**
-	 * The feature id for the '<em><b>Trust Domain</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_MANAGEMENT__TRUST_DOMAIN = BUILDING_BLOCK__TRUST_DOMAIN;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_MANAGEMENT__NAME = BUILDING_BLOCK_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>App ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_MANAGEMENT__APP_ID = BUILDING_BLOCK_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>State Management</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_MANAGEMENT_FEATURE_COUNT = BUILDING_BLOCK_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>State Management</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_MANAGEMENT_OPERATION_COUNT = BUILDING_BLOCK_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link daprdesigner.impl.DistributedLocksImpl <em>Distributed Locks</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see daprdesigner.impl.DistributedLocksImpl
-	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getDistributedLocks()
-	 * @generated
-	 */
-	int DISTRIBUTED_LOCKS = 45;
-
-	/**
-	 * The feature id for the '<em><b>Namespace</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISTRIBUTED_LOCKS__NAMESPACE = BUILDING_BLOCK__NAMESPACE;
-
-	/**
-	 * The feature id for the '<em><b>Trust Domain</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISTRIBUTED_LOCKS__TRUST_DOMAIN = BUILDING_BLOCK__TRUST_DOMAIN;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISTRIBUTED_LOCKS__NAME = BUILDING_BLOCK_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>App ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISTRIBUTED_LOCKS__APP_ID = BUILDING_BLOCK_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Distributed Locks</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISTRIBUTED_LOCKS_FEATURE_COUNT = BUILDING_BLOCK_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Distributed Locks</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISTRIBUTED_LOCKS_OPERATION_COUNT = BUILDING_BLOCK_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link daprdesigner.impl.CryptoGraphyImpl <em>Crypto Graphy</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see daprdesigner.impl.CryptoGraphyImpl
-	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getCryptoGraphy()
-	 * @generated
-	 */
-	int CRYPTO_GRAPHY = 46;
-
-	/**
-	 * The feature id for the '<em><b>Namespace</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CRYPTO_GRAPHY__NAMESPACE = BUILDING_BLOCK__NAMESPACE;
-
-	/**
-	 * The feature id for the '<em><b>Trust Domain</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CRYPTO_GRAPHY__TRUST_DOMAIN = BUILDING_BLOCK__TRUST_DOMAIN;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CRYPTO_GRAPHY__NAME = BUILDING_BLOCK_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>App ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CRYPTO_GRAPHY__APP_ID = BUILDING_BLOCK_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Crypto Graphy</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CRYPTO_GRAPHY_FEATURE_COUNT = BUILDING_BLOCK_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Crypto Graphy</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CRYPTO_GRAPHY_OPERATION_COUNT = BUILDING_BLOCK_OPERATION_COUNT + 0;
+	int VERB = 40;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.ResiliencyTargetType <em>Resiliency Target Type</em>}' enum.
@@ -3235,7 +3871,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getResiliencyTargetType()
 	 * @generated
 	 */
-	int RESILIENCY_TARGET_TYPE = 47;
+	int RESILIENCY_TARGET_TYPE = 41;
 
 	/**
 	 * Returns the meta object for class '{@link java.util.Map.Entry <em>EString To String Map Entry</em>}'.
@@ -3293,69 +3929,134 @@ public interface DaprdesignerPackage extends EPackage {
 	EAttribute getDaprArchitecture_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link daprdesigner.DaprArchitecture#getEnvironments <em>Environments</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Environments</em>'.
-	 * @see daprdesigner.DaprArchitecture#getEnvironments()
-	 * @see #getDaprArchitecture()
-	 * @generated
-	 */
-	EReference getDaprArchitecture_Environments();
-
-	/**
-	 * Returns the meta object for class '{@link daprdesigner.Environment <em>Environment</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Environment</em>'.
-	 * @see daprdesigner.Environment
-	 * @generated
-	 */
-	EClass getEnvironment();
-
-	/**
-	 * Returns the meta object for the attribute '{@link daprdesigner.Environment#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see daprdesigner.Environment#getName()
-	 * @see #getEnvironment()
-	 * @generated
-	 */
-	EAttribute getEnvironment_Name();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link daprdesigner.Environment#getNamespace <em>Namespace</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Namespace</em>'.
-	 * @see daprdesigner.Environment#getNamespace()
-	 * @see #getEnvironment()
-	 * @generated
-	 */
-	EReference getEnvironment_Namespace();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link daprdesigner.Environment#getTrustdomain <em>Trustdomain</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Trustdomain</em>'.
-	 * @see daprdesigner.Environment#getTrustdomain()
-	 * @see #getEnvironment()
-	 * @generated
-	 */
-	EReference getEnvironment_Trustdomain();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link daprdesigner.Environment#getBuildingblocks <em>Buildingblocks</em>}'.
+	 * Returns the meta object for the containment reference list '{@link daprdesigner.DaprArchitecture#getBuildingblocks <em>Buildingblocks</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Buildingblocks</em>'.
-	 * @see daprdesigner.Environment#getBuildingblocks()
-	 * @see #getEnvironment()
+	 * @see daprdesigner.DaprArchitecture#getBuildingblocks()
+	 * @see #getDaprArchitecture()
 	 * @generated
 	 */
-	EReference getEnvironment_Buildingblocks();
+	EReference getDaprArchitecture_Buildingblocks();
+
+	/**
+	 * Returns the meta object for class '{@link daprdesigner.Block <em>Block</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Block</em>'.
+	 * @see daprdesigner.Block
+	 * @generated
+	 */
+	EClass getBlock();
+
+	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.Block#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see daprdesigner.Block#getName()
+	 * @see #getBlock()
+	 * @generated
+	 */
+	EAttribute getBlock_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.Block#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see daprdesigner.Block#getDescription()
+	 * @see #getBlock()
+	 * @generated
+	 */
+	EAttribute getBlock_Description();
+
+	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.Block#getNotes <em>Notes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Notes</em>'.
+	 * @see daprdesigner.Block#getNotes()
+	 * @see #getBlock()
+	 * @generated
+	 */
+	EAttribute getBlock_Notes();
+
+	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.Block#getBlockType <em>Block Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Block Type</em>'.
+	 * @see daprdesigner.Block#getBlockType()
+	 * @see #getBlock()
+	 * @generated
+	 */
+	EAttribute getBlock_BlockType();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link daprdesigner.Block#getSubblocks <em>Subblocks</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Subblocks</em>'.
+	 * @see daprdesigner.Block#getSubblocks()
+	 * @see #getBlock()
+	 * @generated
+	 */
+	EReference getBlock_Subblocks();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link daprdesigner.Block#getNodes <em>Nodes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Nodes</em>'.
+	 * @see daprdesigner.Block#getNodes()
+	 * @see #getBlock()
+	 * @generated
+	 */
+	EReference getBlock_Nodes();
+
+	/**
+	 * Returns the meta object for class '{@link daprdesigner.DaprNode <em>Dapr Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Dapr Node</em>'.
+	 * @see daprdesigner.DaprNode
+	 * @generated
+	 */
+	EClass getDaprNode();
+
+	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.DaprNode#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see daprdesigner.DaprNode#getName()
+	 * @see #getDaprNode()
+	 * @generated
+	 */
+	EAttribute getDaprNode_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.DaprNode#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see daprdesigner.DaprNode#getDescription()
+	 * @see #getDaprNode()
+	 * @generated
+	 */
+	EAttribute getDaprNode_Description();
+
+	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.DaprNode#getNotes <em>Notes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Notes</em>'.
+	 * @see daprdesigner.DaprNode#getNotes()
+	 * @see #getDaprNode()
+	 * @generated
+	 */
+	EAttribute getDaprNode_Notes();
 
 	/**
 	 * Returns the meta object for class '{@link daprdesigner.Namespace <em>Namespace</em>}'.
@@ -3400,70 +4101,6 @@ public interface DaprdesignerPackage extends EPackage {
 	EAttribute getTrustdomain_Name();
 
 	/**
-	 * Returns the meta object for class '{@link daprdesigner.BuildingBlock <em>Building Block</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Building Block</em>'.
-	 * @see daprdesigner.BuildingBlock
-	 * @generated
-	 */
-	EClass getBuildingBlock();
-
-	/**
-	 * Returns the meta object for the reference '{@link daprdesigner.BuildingBlock#getNamespace <em>Namespace</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Namespace</em>'.
-	 * @see daprdesigner.BuildingBlock#getNamespace()
-	 * @see #getBuildingBlock()
-	 * @generated
-	 */
-	EReference getBuildingBlock_Namespace();
-
-	/**
-	 * Returns the meta object for the reference '{@link daprdesigner.BuildingBlock#getTrustDomain <em>Trust Domain</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Trust Domain</em>'.
-	 * @see daprdesigner.BuildingBlock#getTrustDomain()
-	 * @see #getBuildingBlock()
-	 * @generated
-	 */
-	EReference getBuildingBlock_TrustDomain();
-
-	/**
-	 * Returns the meta object for class '{@link daprdesigner.Services <em>Services</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Services</em>'.
-	 * @see daprdesigner.Services
-	 * @generated
-	 */
-	EClass getServices();
-
-	/**
-	 * Returns the meta object for the attribute '{@link daprdesigner.Services#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see daprdesigner.Services#getName()
-	 * @see #getServices()
-	 * @generated
-	 */
-	EAttribute getServices_Name();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link daprdesigner.Services#getApps <em>Apps</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Apps</em>'.
-	 * @see daprdesigner.Services#getApps()
-	 * @see #getServices()
-	 * @generated
-	 */
-	EReference getServices_Apps();
-
-	/**
 	 * Returns the meta object for class '{@link daprdesigner.App <em>App</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3483,6 +4120,28 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getApp_AppId();
+
+	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.App#getRepository <em>Repository</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Repository</em>'.
+	 * @see daprdesigner.App#getRepository()
+	 * @see #getApp()
+	 * @generated
+	 */
+	EAttribute getApp_Repository();
+
+	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.App#getSdkLanguage <em>Sdk Language</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Sdk Language</em>'.
+	 * @see daprdesigner.App#getSdkLanguage()
+	 * @see #getApp()
+	 * @generated
+	 */
+	EAttribute getApp_SdkLanguage();
 
 	/**
 	 * Returns the meta object for the reference '{@link daprdesigner.App#getNamespace <em>Namespace</em>}'.
@@ -3507,15 +4166,15 @@ public interface DaprdesignerPackage extends EPackage {
 	EReference getApp_TrustDomain();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link daprdesigner.App#getConfiguration <em>Configuration</em>}'.
+	 * Returns the meta object for the reference list '{@link daprdesigner.App#getConfigurations <em>Configurations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Configuration</em>'.
-	 * @see daprdesigner.App#getConfiguration()
+	 * @return the meta object for the reference list '<em>Configurations</em>'.
+	 * @see daprdesigner.App#getConfigurations()
 	 * @see #getApp()
 	 * @generated
 	 */
-	EReference getApp_Configuration();
+	EReference getApp_Configurations();
 
 	/**
 	 * Returns the meta object for class '{@link daprdesigner.AppConfiguration <em>App Configuration</em>}'.
@@ -3550,17 +4209,6 @@ public interface DaprdesignerPackage extends EPackage {
 	EAttribute getAppConfiguration_Kind();
 
 	/**
-	 * Returns the meta object for the attribute '{@link daprdesigner.AppConfiguration#getMetadata_name <em>Metadata name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Metadata name</em>'.
-	 * @see daprdesigner.AppConfiguration#getMetadata_name()
-	 * @see #getAppConfiguration()
-	 * @generated
-	 */
-	EAttribute getAppConfiguration_Metadata_name();
-
-	/**
 	 * Returns the meta object for the reference '{@link daprdesigner.AppConfiguration#getMetadata_namespace <em>Metadata namespace</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3572,10 +4220,10 @@ public interface DaprdesignerPackage extends EPackage {
 	EReference getAppConfiguration_Metadata_namespace();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link daprdesigner.AppConfiguration#getAccessControl <em>Access Control</em>}'.
+	 * Returns the meta object for the reference list '{@link daprdesigner.AppConfiguration#getAccessControl <em>Access Control</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Access Control</em>'.
+	 * @return the meta object for the reference list '<em>Access Control</em>'.
 	 * @see daprdesigner.AppConfiguration#getAccessControl()
 	 * @see #getAppConfiguration()
 	 * @generated
@@ -3583,10 +4231,10 @@ public interface DaprdesignerPackage extends EPackage {
 	EReference getAppConfiguration_AccessControl();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link daprdesigner.AppConfiguration#getApiControl <em>Api Control</em>}'.
+	 * Returns the meta object for the reference list '{@link daprdesigner.AppConfiguration#getApiControl <em>Api Control</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Api Control</em>'.
+	 * @return the meta object for the reference list '<em>Api Control</em>'.
 	 * @see daprdesigner.AppConfiguration#getApiControl()
 	 * @see #getAppConfiguration()
 	 * @generated
@@ -3594,10 +4242,10 @@ public interface DaprdesignerPackage extends EPackage {
 	EReference getAppConfiguration_ApiControl();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link daprdesigner.AppConfiguration#getMiddlewareConfiguration <em>Middleware Configuration</em>}'.
+	 * Returns the meta object for the reference list '{@link daprdesigner.AppConfiguration#getMiddlewareConfiguration <em>Middleware Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Middleware Configuration</em>'.
+	 * @return the meta object for the reference list '<em>Middleware Configuration</em>'.
 	 * @see daprdesigner.AppConfiguration#getMiddlewareConfiguration()
 	 * @see #getAppConfiguration()
 	 * @generated
@@ -3605,10 +4253,10 @@ public interface DaprdesignerPackage extends EPackage {
 	EReference getAppConfiguration_MiddlewareConfiguration();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link daprdesigner.AppConfiguration#getLoggingConfiguration <em>Logging Configuration</em>}'.
+	 * Returns the meta object for the reference '{@link daprdesigner.AppConfiguration#getLoggingConfiguration <em>Logging Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Logging Configuration</em>'.
+	 * @return the meta object for the reference '<em>Logging Configuration</em>'.
 	 * @see daprdesigner.AppConfiguration#getLoggingConfiguration()
 	 * @see #getAppConfiguration()
 	 * @generated
@@ -3616,10 +4264,10 @@ public interface DaprdesignerPackage extends EPackage {
 	EReference getAppConfiguration_LoggingConfiguration();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link daprdesigner.AppConfiguration#getNameResolutionConfiguration <em>Name Resolution Configuration</em>}'.
+	 * Returns the meta object for the reference '{@link daprdesigner.AppConfiguration#getNameResolutionConfiguration <em>Name Resolution Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Name Resolution Configuration</em>'.
+	 * @return the meta object for the reference '<em>Name Resolution Configuration</em>'.
 	 * @see daprdesigner.AppConfiguration#getNameResolutionConfiguration()
 	 * @see #getAppConfiguration()
 	 * @generated
@@ -3627,10 +4275,10 @@ public interface DaprdesignerPackage extends EPackage {
 	EReference getAppConfiguration_NameResolutionConfiguration();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link daprdesigner.AppConfiguration#getSecretsConfiguration <em>Secrets Configuration</em>}'.
+	 * Returns the meta object for the reference '{@link daprdesigner.AppConfiguration#getSecretsConfiguration <em>Secrets Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Secrets Configuration</em>'.
+	 * @return the meta object for the reference '<em>Secrets Configuration</em>'.
 	 * @see daprdesigner.AppConfiguration#getSecretsConfiguration()
 	 * @see #getAppConfiguration()
 	 * @generated
@@ -3638,10 +4286,10 @@ public interface DaprdesignerPackage extends EPackage {
 	EReference getAppConfiguration_SecretsConfiguration();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link daprdesigner.AppConfiguration#getMetricsConfiguration <em>Metrics Configuration</em>}'.
+	 * Returns the meta object for the reference '{@link daprdesigner.AppConfiguration#getMetricsConfiguration <em>Metrics Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Metrics Configuration</em>'.
+	 * @return the meta object for the reference '<em>Metrics Configuration</em>'.
 	 * @see daprdesigner.AppConfiguration#getMetricsConfiguration()
 	 * @see #getAppConfiguration()
 	 * @generated
@@ -3649,10 +4297,10 @@ public interface DaprdesignerPackage extends EPackage {
 	EReference getAppConfiguration_MetricsConfiguration();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link daprdesigner.AppConfiguration#getTracingConfiguration <em>Tracing Configuration</em>}'.
+	 * Returns the meta object for the reference '{@link daprdesigner.AppConfiguration#getTracingConfiguration <em>Tracing Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Tracing Configuration</em>'.
+	 * @return the meta object for the reference '<em>Tracing Configuration</em>'.
 	 * @see daprdesigner.AppConfiguration#getTracingConfiguration()
 	 * @see #getAppConfiguration()
 	 * @generated
@@ -3918,26 +4566,15 @@ public interface DaprdesignerPackage extends EPackage {
 	EClass getAPIAccessControl();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link daprdesigner.APIAccessControl#getAllowedAPIs <em>Allowed AP Is</em>}'.
+	 * Returns the meta object for the reference list '{@link daprdesigner.APIAccessControl#getApiList <em>Api List</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Allowed AP Is</em>'.
-	 * @see daprdesigner.APIAccessControl#getAllowedAPIs()
+	 * @return the meta object for the reference list '<em>Api List</em>'.
+	 * @see daprdesigner.APIAccessControl#getApiList()
 	 * @see #getAPIAccessControl()
 	 * @generated
 	 */
-	EReference getAPIAccessControl_AllowedAPIs();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link daprdesigner.APIAccessControl#getDeniedAPIs <em>Denied AP Is</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Denied AP Is</em>'.
-	 * @see daprdesigner.APIAccessControl#getDeniedAPIs()
-	 * @see #getAPIAccessControl()
-	 * @generated
-	 */
-	EReference getAPIAccessControl_DeniedAPIs();
+	EReference getAPIAccessControl_ApiList();
 
 	/**
 	 * Returns the meta object for class '{@link daprdesigner.API <em>API</em>}'.
@@ -3950,15 +4587,15 @@ public interface DaprdesignerPackage extends EPackage {
 	EClass getAPI();
 
 	/**
-	 * Returns the meta object for the attribute '{@link daprdesigner.API#getApi_name <em>Api name</em>}'.
+	 * Returns the meta object for the reference '{@link daprdesigner.API#getComponent <em>Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Api name</em>'.
-	 * @see daprdesigner.API#getApi_name()
+	 * @return the meta object for the reference '<em>Component</em>'.
+	 * @see daprdesigner.API#getComponent()
 	 * @see #getAPI()
 	 * @generated
 	 */
-	EAttribute getAPI_Api_name();
+	EReference getAPI_Component();
 
 	/**
 	 * Returns the meta object for the attribute '{@link daprdesigner.API#getApi_version <em>Api version</em>}'.
@@ -3981,6 +4618,17 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAPI_Protocol();
+
+	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.API#getAccess <em>Access</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Access</em>'.
+	 * @see daprdesigner.API#getAccess()
+	 * @see #getAPI()
+	 * @generated
+	 */
+	EAttribute getAPI_Access();
 
 	/**
 	 * Returns the meta object for class '{@link daprdesigner.AppAccessControl <em>App Access Control</em>}'.
@@ -4015,10 +4663,10 @@ public interface DaprdesignerPackage extends EPackage {
 	EReference getAppAccessControl_TrustDomain();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link daprdesigner.AppAccessControl#getPolicies <em>Policies</em>}'.
+	 * Returns the meta object for the reference list '{@link daprdesigner.AppAccessControl#getPolicies <em>Policies</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Policies</em>'.
+	 * @return the meta object for the reference list '<em>Policies</em>'.
 	 * @see daprdesigner.AppAccessControl#getPolicies()
 	 * @see #getAppAccessControl()
 	 * @generated
@@ -4080,10 +4728,10 @@ public interface DaprdesignerPackage extends EPackage {
 	EReference getAppPolicy_Namespace();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link daprdesigner.AppPolicy#getOperations <em>Operations</em>}'.
+	 * Returns the meta object for the reference list '{@link daprdesigner.AppPolicy#getOperations <em>Operations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Operations</em>'.
+	 * @return the meta object for the reference list '<em>Operations</em>'.
 	 * @see daprdesigner.AppPolicy#getOperations()
 	 * @see #getAppPolicy()
 	 * @generated
@@ -5183,324 +5831,54 @@ public interface DaprdesignerPackage extends EPackage {
 	EClass getMessageBroker();
 
 	/**
-	 * Returns the meta object for class '{@link daprdesigner.PubSub <em>Pub Sub</em>}'.
+	 * Returns the meta object for enum '{@link daprdesigner.AccessAction <em>Access Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Pub Sub</em>'.
-	 * @see daprdesigner.PubSub
+	 * @return the meta object for enum '<em>Access Action</em>'.
+	 * @see daprdesigner.AccessAction
 	 * @generated
 	 */
-	EClass getPubSub();
+	EEnum getAccessAction();
 
 	/**
-	 * Returns the meta object for the attribute '{@link daprdesigner.PubSub#getName <em>Name</em>}'.
+	 * Returns the meta object for enum '{@link daprdesigner.BlockType <em>Block Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see daprdesigner.PubSub#getName()
-	 * @see #getPubSub()
+	 * @return the meta object for enum '<em>Block Type</em>'.
+	 * @see daprdesigner.BlockType
 	 * @generated
 	 */
-	EAttribute getPubSub_Name();
+	EEnum getBlockType();
 
 	/**
-	 * Returns the meta object for the reference list '{@link daprdesigner.PubSub#getMbrokers <em>Mbrokers</em>}'.
+	 * Returns the meta object for enum '{@link daprdesigner.SDKLanguage <em>SDK Language</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Mbrokers</em>'.
-	 * @see daprdesigner.PubSub#getMbrokers()
-	 * @see #getPubSub()
+	 * @return the meta object for enum '<em>SDK Language</em>'.
+	 * @see daprdesigner.SDKLanguage
 	 * @generated
 	 */
-	EReference getPubSub_Mbrokers();
+	EEnum getSDKLanguage();
 
 	/**
-	 * Returns the meta object for class '{@link daprdesigner.Bindings <em>Bindings</em>}'.
+	 * Returns the meta object for enum '{@link daprdesigner.Protocol <em>Protocol</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Bindings</em>'.
-	 * @see daprdesigner.Bindings
+	 * @return the meta object for enum '<em>Protocol</em>'.
+	 * @see daprdesigner.Protocol
 	 * @generated
 	 */
-	EClass getBindings();
+	EEnum getProtocol();
 
 	/**
-	 * Returns the meta object for the attribute '{@link daprdesigner.Bindings#getName <em>Name</em>}'.
+	 * Returns the meta object for enum '{@link daprdesigner.Verb <em>Verb</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see daprdesigner.Bindings#getName()
-	 * @see #getBindings()
+	 * @return the meta object for enum '<em>Verb</em>'.
+	 * @see daprdesigner.Verb
 	 * @generated
 	 */
-	EAttribute getBindings_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link daprdesigner.Bindings#getAppID <em>App ID</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>App ID</em>'.
-	 * @see daprdesigner.Bindings#getAppID()
-	 * @see #getBindings()
-	 * @generated
-	 */
-	EAttribute getBindings_AppID();
-
-	/**
-	 * Returns the meta object for class '{@link daprdesigner.Jobs <em>Jobs</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Jobs</em>'.
-	 * @see daprdesigner.Jobs
-	 * @generated
-	 */
-	EClass getJobs();
-
-	/**
-	 * Returns the meta object for the attribute '{@link daprdesigner.Jobs#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see daprdesigner.Jobs#getName()
-	 * @see #getJobs()
-	 * @generated
-	 */
-	EAttribute getJobs_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link daprdesigner.Jobs#getAppID <em>App ID</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>App ID</em>'.
-	 * @see daprdesigner.Jobs#getAppID()
-	 * @see #getJobs()
-	 * @generated
-	 */
-	EAttribute getJobs_AppID();
-
-	/**
-	 * Returns the meta object for class '{@link daprdesigner.Configuration <em>Configuration</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Configuration</em>'.
-	 * @see daprdesigner.Configuration
-	 * @generated
-	 */
-	EClass getConfiguration();
-
-	/**
-	 * Returns the meta object for the attribute '{@link daprdesigner.Configuration#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see daprdesigner.Configuration#getName()
-	 * @see #getConfiguration()
-	 * @generated
-	 */
-	EAttribute getConfiguration_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link daprdesigner.Configuration#getAppID <em>App ID</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>App ID</em>'.
-	 * @see daprdesigner.Configuration#getAppID()
-	 * @see #getConfiguration()
-	 * @generated
-	 */
-	EAttribute getConfiguration_AppID();
-
-	/**
-	 * Returns the meta object for class '{@link daprdesigner.Workflow <em>Workflow</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Workflow</em>'.
-	 * @see daprdesigner.Workflow
-	 * @generated
-	 */
-	EClass getWorkflow();
-
-	/**
-	 * Returns the meta object for the attribute '{@link daprdesigner.Workflow#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see daprdesigner.Workflow#getName()
-	 * @see #getWorkflow()
-	 * @generated
-	 */
-	EAttribute getWorkflow_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link daprdesigner.Workflow#getAppID <em>App ID</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>App ID</em>'.
-	 * @see daprdesigner.Workflow#getAppID()
-	 * @see #getWorkflow()
-	 * @generated
-	 */
-	EAttribute getWorkflow_AppID();
-
-	/**
-	 * Returns the meta object for class '{@link daprdesigner.Actors <em>Actors</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Actors</em>'.
-	 * @see daprdesigner.Actors
-	 * @generated
-	 */
-	EClass getActors();
-
-	/**
-	 * Returns the meta object for the attribute '{@link daprdesigner.Actors#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see daprdesigner.Actors#getName()
-	 * @see #getActors()
-	 * @generated
-	 */
-	EAttribute getActors_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link daprdesigner.Actors#getAppID <em>App ID</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>App ID</em>'.
-	 * @see daprdesigner.Actors#getAppID()
-	 * @see #getActors()
-	 * @generated
-	 */
-	EAttribute getActors_AppID();
-
-	/**
-	 * Returns the meta object for class '{@link daprdesigner.Secrets <em>Secrets</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Secrets</em>'.
-	 * @see daprdesigner.Secrets
-	 * @generated
-	 */
-	EClass getSecrets();
-
-	/**
-	 * Returns the meta object for the attribute '{@link daprdesigner.Secrets#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see daprdesigner.Secrets#getName()
-	 * @see #getSecrets()
-	 * @generated
-	 */
-	EAttribute getSecrets_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link daprdesigner.Secrets#getAppID <em>App ID</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>App ID</em>'.
-	 * @see daprdesigner.Secrets#getAppID()
-	 * @see #getSecrets()
-	 * @generated
-	 */
-	EAttribute getSecrets_AppID();
-
-	/**
-	 * Returns the meta object for class '{@link daprdesigner.StateManagement <em>State Management</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>State Management</em>'.
-	 * @see daprdesigner.StateManagement
-	 * @generated
-	 */
-	EClass getStateManagement();
-
-	/**
-	 * Returns the meta object for the attribute '{@link daprdesigner.StateManagement#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see daprdesigner.StateManagement#getName()
-	 * @see #getStateManagement()
-	 * @generated
-	 */
-	EAttribute getStateManagement_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link daprdesigner.StateManagement#getAppID <em>App ID</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>App ID</em>'.
-	 * @see daprdesigner.StateManagement#getAppID()
-	 * @see #getStateManagement()
-	 * @generated
-	 */
-	EAttribute getStateManagement_AppID();
-
-	/**
-	 * Returns the meta object for class '{@link daprdesigner.DistributedLocks <em>Distributed Locks</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Distributed Locks</em>'.
-	 * @see daprdesigner.DistributedLocks
-	 * @generated
-	 */
-	EClass getDistributedLocks();
-
-	/**
-	 * Returns the meta object for the attribute '{@link daprdesigner.DistributedLocks#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see daprdesigner.DistributedLocks#getName()
-	 * @see #getDistributedLocks()
-	 * @generated
-	 */
-	EAttribute getDistributedLocks_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link daprdesigner.DistributedLocks#getAppID <em>App ID</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>App ID</em>'.
-	 * @see daprdesigner.DistributedLocks#getAppID()
-	 * @see #getDistributedLocks()
-	 * @generated
-	 */
-	EAttribute getDistributedLocks_AppID();
-
-	/**
-	 * Returns the meta object for class '{@link daprdesigner.CryptoGraphy <em>Crypto Graphy</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Crypto Graphy</em>'.
-	 * @see daprdesigner.CryptoGraphy
-	 * @generated
-	 */
-	EClass getCryptoGraphy();
-
-	/**
-	 * Returns the meta object for the attribute '{@link daprdesigner.CryptoGraphy#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see daprdesigner.CryptoGraphy#getName()
-	 * @see #getCryptoGraphy()
-	 * @generated
-	 */
-	EAttribute getCryptoGraphy_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link daprdesigner.CryptoGraphy#getAppID <em>App ID</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>App ID</em>'.
-	 * @see daprdesigner.CryptoGraphy#getAppID()
-	 * @see #getCryptoGraphy()
-	 * @generated
-	 */
-	EAttribute getCryptoGraphy_AppID();
+	EEnum getVerb();
 
 	/**
 	 * Returns the meta object for enum '{@link daprdesigner.ResiliencyTargetType <em>Resiliency Target Type</em>}'.
@@ -5580,22 +5958,22 @@ public interface DaprdesignerPackage extends EPackage {
 		EAttribute DAPR_ARCHITECTURE__NAME = eINSTANCE.getDaprArchitecture_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Environments</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Buildingblocks</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DAPR_ARCHITECTURE__ENVIRONMENTS = eINSTANCE.getDaprArchitecture_Environments();
+		EReference DAPR_ARCHITECTURE__BUILDINGBLOCKS = eINSTANCE.getDaprArchitecture_Buildingblocks();
 
 		/**
-		 * The meta object literal for the '{@link daprdesigner.impl.EnvironmentImpl <em>Environment</em>}' class.
+		 * The meta object literal for the '{@link daprdesigner.impl.BlockImpl <em>Block</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see daprdesigner.impl.EnvironmentImpl
-		 * @see daprdesigner.impl.DaprdesignerPackageImpl#getEnvironment()
+		 * @see daprdesigner.impl.BlockImpl
+		 * @see daprdesigner.impl.DaprdesignerPackageImpl#getBlock()
 		 * @generated
 		 */
-		EClass ENVIRONMENT = eINSTANCE.getEnvironment();
+		EClass BLOCK = eINSTANCE.getBlock();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -5603,31 +5981,81 @@ public interface DaprdesignerPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ENVIRONMENT__NAME = eINSTANCE.getEnvironment_Name();
+		EAttribute BLOCK__NAME = eINSTANCE.getBlock_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Namespace</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ENVIRONMENT__NAMESPACE = eINSTANCE.getEnvironment_Namespace();
+		EAttribute BLOCK__DESCRIPTION = eINSTANCE.getBlock_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Trustdomain</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Notes</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ENVIRONMENT__TRUSTDOMAIN = eINSTANCE.getEnvironment_Trustdomain();
+		EAttribute BLOCK__NOTES = eINSTANCE.getBlock_Notes();
 
 		/**
-		 * The meta object literal for the '<em><b>Buildingblocks</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Block Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ENVIRONMENT__BUILDINGBLOCKS = eINSTANCE.getEnvironment_Buildingblocks();
+		EAttribute BLOCK__BLOCK_TYPE = eINSTANCE.getBlock_BlockType();
+
+		/**
+		 * The meta object literal for the '<em><b>Subblocks</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BLOCK__SUBBLOCKS = eINSTANCE.getBlock_Subblocks();
+
+		/**
+		 * The meta object literal for the '<em><b>Nodes</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BLOCK__NODES = eINSTANCE.getBlock_Nodes();
+
+		/**
+		 * The meta object literal for the '{@link daprdesigner.impl.DaprNodeImpl <em>Dapr Node</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see daprdesigner.impl.DaprNodeImpl
+		 * @see daprdesigner.impl.DaprdesignerPackageImpl#getDaprNode()
+		 * @generated
+		 */
+		EClass DAPR_NODE = eINSTANCE.getDaprNode();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DAPR_NODE__NAME = eINSTANCE.getDaprNode_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DAPR_NODE__DESCRIPTION = eINSTANCE.getDaprNode_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Notes</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DAPR_NODE__NOTES = eINSTANCE.getDaprNode_Notes();
 
 		/**
 		 * The meta object literal for the '{@link daprdesigner.impl.NamespaceImpl <em>Namespace</em>}' class.
@@ -5666,58 +6094,6 @@ public interface DaprdesignerPackage extends EPackage {
 		EAttribute TRUSTDOMAIN__NAME = eINSTANCE.getTrustdomain_Name();
 
 		/**
-		 * The meta object literal for the '{@link daprdesigner.impl.BuildingBlockImpl <em>Building Block</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see daprdesigner.impl.BuildingBlockImpl
-		 * @see daprdesigner.impl.DaprdesignerPackageImpl#getBuildingBlock()
-		 * @generated
-		 */
-		EClass BUILDING_BLOCK = eINSTANCE.getBuildingBlock();
-
-		/**
-		 * The meta object literal for the '<em><b>Namespace</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BUILDING_BLOCK__NAMESPACE = eINSTANCE.getBuildingBlock_Namespace();
-
-		/**
-		 * The meta object literal for the '<em><b>Trust Domain</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BUILDING_BLOCK__TRUST_DOMAIN = eINSTANCE.getBuildingBlock_TrustDomain();
-
-		/**
-		 * The meta object literal for the '{@link daprdesigner.impl.ServicesImpl <em>Services</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see daprdesigner.impl.ServicesImpl
-		 * @see daprdesigner.impl.DaprdesignerPackageImpl#getServices()
-		 * @generated
-		 */
-		EClass SERVICES = eINSTANCE.getServices();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SERVICES__NAME = eINSTANCE.getServices_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Apps</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SERVICES__APPS = eINSTANCE.getServices_Apps();
-
-		/**
 		 * The meta object literal for the '{@link daprdesigner.impl.AppImpl <em>App</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5736,6 +6112,22 @@ public interface DaprdesignerPackage extends EPackage {
 		EAttribute APP__APP_ID = eINSTANCE.getApp_AppId();
 
 		/**
+		 * The meta object literal for the '<em><b>Repository</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute APP__REPOSITORY = eINSTANCE.getApp_Repository();
+
+		/**
+		 * The meta object literal for the '<em><b>Sdk Language</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute APP__SDK_LANGUAGE = eINSTANCE.getApp_SdkLanguage();
+
+		/**
 		 * The meta object literal for the '<em><b>Namespace</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5752,12 +6144,12 @@ public interface DaprdesignerPackage extends EPackage {
 		EReference APP__TRUST_DOMAIN = eINSTANCE.getApp_TrustDomain();
 
 		/**
-		 * The meta object literal for the '<em><b>Configuration</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Configurations</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference APP__CONFIGURATION = eINSTANCE.getApp_Configuration();
+		EReference APP__CONFIGURATIONS = eINSTANCE.getApp_Configurations();
 
 		/**
 		 * The meta object literal for the '{@link daprdesigner.impl.AppConfigurationImpl <em>App Configuration</em>}' class.
@@ -5786,14 +6178,6 @@ public interface DaprdesignerPackage extends EPackage {
 		EAttribute APP_CONFIGURATION__KIND = eINSTANCE.getAppConfiguration_Kind();
 
 		/**
-		 * The meta object literal for the '<em><b>Metadata name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute APP_CONFIGURATION__METADATA_NAME = eINSTANCE.getAppConfiguration_Metadata_name();
-
-		/**
 		 * The meta object literal for the '<em><b>Metadata namespace</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5802,7 +6186,7 @@ public interface DaprdesignerPackage extends EPackage {
 		EReference APP_CONFIGURATION__METADATA_NAMESPACE = eINSTANCE.getAppConfiguration_Metadata_namespace();
 
 		/**
-		 * The meta object literal for the '<em><b>Access Control</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Access Control</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -5810,7 +6194,7 @@ public interface DaprdesignerPackage extends EPackage {
 		EReference APP_CONFIGURATION__ACCESS_CONTROL = eINSTANCE.getAppConfiguration_AccessControl();
 
 		/**
-		 * The meta object literal for the '<em><b>Api Control</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Api Control</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -5818,7 +6202,7 @@ public interface DaprdesignerPackage extends EPackage {
 		EReference APP_CONFIGURATION__API_CONTROL = eINSTANCE.getAppConfiguration_ApiControl();
 
 		/**
-		 * The meta object literal for the '<em><b>Middleware Configuration</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Middleware Configuration</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -5827,7 +6211,7 @@ public interface DaprdesignerPackage extends EPackage {
 				.getAppConfiguration_MiddlewareConfiguration();
 
 		/**
-		 * The meta object literal for the '<em><b>Logging Configuration</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Logging Configuration</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -5835,7 +6219,7 @@ public interface DaprdesignerPackage extends EPackage {
 		EReference APP_CONFIGURATION__LOGGING_CONFIGURATION = eINSTANCE.getAppConfiguration_LoggingConfiguration();
 
 		/**
-		 * The meta object literal for the '<em><b>Name Resolution Configuration</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Name Resolution Configuration</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -5844,7 +6228,7 @@ public interface DaprdesignerPackage extends EPackage {
 				.getAppConfiguration_NameResolutionConfiguration();
 
 		/**
-		 * The meta object literal for the '<em><b>Secrets Configuration</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Secrets Configuration</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -5852,7 +6236,7 @@ public interface DaprdesignerPackage extends EPackage {
 		EReference APP_CONFIGURATION__SECRETS_CONFIGURATION = eINSTANCE.getAppConfiguration_SecretsConfiguration();
 
 		/**
-		 * The meta object literal for the '<em><b>Metrics Configuration</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Metrics Configuration</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -5860,7 +6244,7 @@ public interface DaprdesignerPackage extends EPackage {
 		EReference APP_CONFIGURATION__METRICS_CONFIGURATION = eINSTANCE.getAppConfiguration_MetricsConfiguration();
 
 		/**
-		 * The meta object literal for the '<em><b>Tracing Configuration</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Tracing Configuration</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -6078,20 +6462,12 @@ public interface DaprdesignerPackage extends EPackage {
 		EClass API_ACCESS_CONTROL = eINSTANCE.getAPIAccessControl();
 
 		/**
-		 * The meta object literal for the '<em><b>Allowed AP Is</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Api List</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference API_ACCESS_CONTROL__ALLOWED_AP_IS = eINSTANCE.getAPIAccessControl_AllowedAPIs();
-
-		/**
-		 * The meta object literal for the '<em><b>Denied AP Is</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference API_ACCESS_CONTROL__DENIED_AP_IS = eINSTANCE.getAPIAccessControl_DeniedAPIs();
+		EReference API_ACCESS_CONTROL__API_LIST = eINSTANCE.getAPIAccessControl_ApiList();
 
 		/**
 		 * The meta object literal for the '{@link daprdesigner.impl.APIImpl <em>API</em>}' class.
@@ -6104,12 +6480,12 @@ public interface DaprdesignerPackage extends EPackage {
 		EClass API = eINSTANCE.getAPI();
 
 		/**
-		 * The meta object literal for the '<em><b>Api name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Component</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute API__API_NAME = eINSTANCE.getAPI_Api_name();
+		EReference API__COMPONENT = eINSTANCE.getAPI_Component();
 
 		/**
 		 * The meta object literal for the '<em><b>Api version</b></em>' attribute feature.
@@ -6126,6 +6502,14 @@ public interface DaprdesignerPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute API__PROTOCOL = eINSTANCE.getAPI_Protocol();
+
+		/**
+		 * The meta object literal for the '<em><b>Access</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute API__ACCESS = eINSTANCE.getAPI_Access();
 
 		/**
 		 * The meta object literal for the '{@link daprdesigner.impl.AppAccessControlImpl <em>App Access Control</em>}' class.
@@ -6154,7 +6538,7 @@ public interface DaprdesignerPackage extends EPackage {
 		EReference APP_ACCESS_CONTROL__TRUST_DOMAIN = eINSTANCE.getAppAccessControl_TrustDomain();
 
 		/**
-		 * The meta object literal for the '<em><b>Policies</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Policies</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -6204,7 +6588,7 @@ public interface DaprdesignerPackage extends EPackage {
 		EReference APP_POLICY__NAMESPACE = eINSTANCE.getAppPolicy_Namespace();
 
 		/**
-		 * The meta object literal for the '<em><b>Operations</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Operations</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -7065,264 +7449,54 @@ public interface DaprdesignerPackage extends EPackage {
 		EClass MESSAGE_BROKER = eINSTANCE.getMessageBroker();
 
 		/**
-		 * The meta object literal for the '{@link daprdesigner.impl.PubSubImpl <em>Pub Sub</em>}' class.
+		 * The meta object literal for the '{@link daprdesigner.AccessAction <em>Access Action</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see daprdesigner.impl.PubSubImpl
-		 * @see daprdesigner.impl.DaprdesignerPackageImpl#getPubSub()
+		 * @see daprdesigner.AccessAction
+		 * @see daprdesigner.impl.DaprdesignerPackageImpl#getAccessAction()
 		 * @generated
 		 */
-		EClass PUB_SUB = eINSTANCE.getPubSub();
+		EEnum ACCESS_ACTION = eINSTANCE.getAccessAction();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '{@link daprdesigner.BlockType <em>Block Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see daprdesigner.BlockType
+		 * @see daprdesigner.impl.DaprdesignerPackageImpl#getBlockType()
 		 * @generated
 		 */
-		EAttribute PUB_SUB__NAME = eINSTANCE.getPubSub_Name();
+		EEnum BLOCK_TYPE = eINSTANCE.getBlockType();
 
 		/**
-		 * The meta object literal for the '<em><b>Mbrokers</b></em>' reference list feature.
+		 * The meta object literal for the '{@link daprdesigner.SDKLanguage <em>SDK Language</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see daprdesigner.SDKLanguage
+		 * @see daprdesigner.impl.DaprdesignerPackageImpl#getSDKLanguage()
 		 * @generated
 		 */
-		EReference PUB_SUB__MBROKERS = eINSTANCE.getPubSub_Mbrokers();
+		EEnum SDK_LANGUAGE = eINSTANCE.getSDKLanguage();
 
 		/**
-		 * The meta object literal for the '{@link daprdesigner.impl.BindingsImpl <em>Bindings</em>}' class.
+		 * The meta object literal for the '{@link daprdesigner.Protocol <em>Protocol</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see daprdesigner.impl.BindingsImpl
-		 * @see daprdesigner.impl.DaprdesignerPackageImpl#getBindings()
+		 * @see daprdesigner.Protocol
+		 * @see daprdesigner.impl.DaprdesignerPackageImpl#getProtocol()
 		 * @generated
 		 */
-		EClass BINDINGS = eINSTANCE.getBindings();
+		EEnum PROTOCOL = eINSTANCE.getProtocol();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '{@link daprdesigner.Verb <em>Verb</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see daprdesigner.Verb
+		 * @see daprdesigner.impl.DaprdesignerPackageImpl#getVerb()
 		 * @generated
 		 */
-		EAttribute BINDINGS__NAME = eINSTANCE.getBindings_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>App ID</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BINDINGS__APP_ID = eINSTANCE.getBindings_AppID();
-
-		/**
-		 * The meta object literal for the '{@link daprdesigner.impl.JobsImpl <em>Jobs</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see daprdesigner.impl.JobsImpl
-		 * @see daprdesigner.impl.DaprdesignerPackageImpl#getJobs()
-		 * @generated
-		 */
-		EClass JOBS = eINSTANCE.getJobs();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute JOBS__NAME = eINSTANCE.getJobs_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>App ID</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute JOBS__APP_ID = eINSTANCE.getJobs_AppID();
-
-		/**
-		 * The meta object literal for the '{@link daprdesigner.impl.ConfigurationImpl <em>Configuration</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see daprdesigner.impl.ConfigurationImpl
-		 * @see daprdesigner.impl.DaprdesignerPackageImpl#getConfiguration()
-		 * @generated
-		 */
-		EClass CONFIGURATION = eINSTANCE.getConfiguration();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONFIGURATION__NAME = eINSTANCE.getConfiguration_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>App ID</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONFIGURATION__APP_ID = eINSTANCE.getConfiguration_AppID();
-
-		/**
-		 * The meta object literal for the '{@link daprdesigner.impl.WorkflowImpl <em>Workflow</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see daprdesigner.impl.WorkflowImpl
-		 * @see daprdesigner.impl.DaprdesignerPackageImpl#getWorkflow()
-		 * @generated
-		 */
-		EClass WORKFLOW = eINSTANCE.getWorkflow();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WORKFLOW__NAME = eINSTANCE.getWorkflow_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>App ID</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WORKFLOW__APP_ID = eINSTANCE.getWorkflow_AppID();
-
-		/**
-		 * The meta object literal for the '{@link daprdesigner.impl.ActorsImpl <em>Actors</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see daprdesigner.impl.ActorsImpl
-		 * @see daprdesigner.impl.DaprdesignerPackageImpl#getActors()
-		 * @generated
-		 */
-		EClass ACTORS = eINSTANCE.getActors();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ACTORS__NAME = eINSTANCE.getActors_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>App ID</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ACTORS__APP_ID = eINSTANCE.getActors_AppID();
-
-		/**
-		 * The meta object literal for the '{@link daprdesigner.impl.SecretsImpl <em>Secrets</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see daprdesigner.impl.SecretsImpl
-		 * @see daprdesigner.impl.DaprdesignerPackageImpl#getSecrets()
-		 * @generated
-		 */
-		EClass SECRETS = eINSTANCE.getSecrets();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SECRETS__NAME = eINSTANCE.getSecrets_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>App ID</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SECRETS__APP_ID = eINSTANCE.getSecrets_AppID();
-
-		/**
-		 * The meta object literal for the '{@link daprdesigner.impl.StateManagementImpl <em>State Management</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see daprdesigner.impl.StateManagementImpl
-		 * @see daprdesigner.impl.DaprdesignerPackageImpl#getStateManagement()
-		 * @generated
-		 */
-		EClass STATE_MANAGEMENT = eINSTANCE.getStateManagement();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute STATE_MANAGEMENT__NAME = eINSTANCE.getStateManagement_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>App ID</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute STATE_MANAGEMENT__APP_ID = eINSTANCE.getStateManagement_AppID();
-
-		/**
-		 * The meta object literal for the '{@link daprdesigner.impl.DistributedLocksImpl <em>Distributed Locks</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see daprdesigner.impl.DistributedLocksImpl
-		 * @see daprdesigner.impl.DaprdesignerPackageImpl#getDistributedLocks()
-		 * @generated
-		 */
-		EClass DISTRIBUTED_LOCKS = eINSTANCE.getDistributedLocks();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DISTRIBUTED_LOCKS__NAME = eINSTANCE.getDistributedLocks_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>App ID</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DISTRIBUTED_LOCKS__APP_ID = eINSTANCE.getDistributedLocks_AppID();
-
-		/**
-		 * The meta object literal for the '{@link daprdesigner.impl.CryptoGraphyImpl <em>Crypto Graphy</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see daprdesigner.impl.CryptoGraphyImpl
-		 * @see daprdesigner.impl.DaprdesignerPackageImpl#getCryptoGraphy()
-		 * @generated
-		 */
-		EClass CRYPTO_GRAPHY = eINSTANCE.getCryptoGraphy();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CRYPTO_GRAPHY__NAME = eINSTANCE.getCryptoGraphy_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>App ID</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CRYPTO_GRAPHY__APP_ID = eINSTANCE.getCryptoGraphy_AppID();
+		EEnum VERB = eINSTANCE.getVerb();
 
 		/**
 		 * The meta object literal for the '{@link daprdesigner.ResiliencyTargetType <em>Resiliency Target Type</em>}' enum.

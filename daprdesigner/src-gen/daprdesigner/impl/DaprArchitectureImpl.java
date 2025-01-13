@@ -2,9 +2,9 @@
  */
 package daprdesigner.impl;
 
+import daprdesigner.Block;
 import daprdesigner.DaprArchitecture;
 import daprdesigner.DaprdesignerPackage;
-import daprdesigner.Environment;
 
 import java.util.Collection;
 
@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link daprdesigner.impl.DaprArchitectureImpl#getName <em>Name</em>}</li>
- *   <li>{@link daprdesigner.impl.DaprArchitectureImpl#getEnvironments <em>Environments</em>}</li>
+ *   <li>{@link daprdesigner.impl.DaprArchitectureImpl#getBuildingblocks <em>Buildingblocks</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,14 +58,14 @@ public class DaprArchitectureImpl extends MinimalEObjectImpl.Container implement
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getEnvironments() <em>Environments</em>}' containment reference list.
+	 * The cached value of the '{@link #getBuildingblocks() <em>Buildingblocks</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEnvironments()
+	 * @see #getBuildingblocks()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Environment> environments;
+	protected EList<Block> buildingblocks;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,12 +113,12 @@ public class DaprArchitectureImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Environment> getEnvironments() {
-		if (environments == null) {
-			environments = new EObjectContainmentEList<Environment>(Environment.class, this,
-					DaprdesignerPackage.DAPR_ARCHITECTURE__ENVIRONMENTS);
+	public EList<Block> getBuildingblocks() {
+		if (buildingblocks == null) {
+			buildingblocks = new EObjectContainmentEList<Block>(Block.class, this,
+					DaprdesignerPackage.DAPR_ARCHITECTURE__BUILDINGBLOCKS);
 		}
-		return environments;
+		return buildingblocks;
 	}
 
 	/**
@@ -129,8 +129,8 @@ public class DaprArchitectureImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case DaprdesignerPackage.DAPR_ARCHITECTURE__ENVIRONMENTS:
-			return ((InternalEList<?>) getEnvironments()).basicRemove(otherEnd, msgs);
+		case DaprdesignerPackage.DAPR_ARCHITECTURE__BUILDINGBLOCKS:
+			return ((InternalEList<?>) getBuildingblocks()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -145,8 +145,8 @@ public class DaprArchitectureImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 		case DaprdesignerPackage.DAPR_ARCHITECTURE__NAME:
 			return getName();
-		case DaprdesignerPackage.DAPR_ARCHITECTURE__ENVIRONMENTS:
-			return getEnvironments();
+		case DaprdesignerPackage.DAPR_ARCHITECTURE__BUILDINGBLOCKS:
+			return getBuildingblocks();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -163,9 +163,9 @@ public class DaprArchitectureImpl extends MinimalEObjectImpl.Container implement
 		case DaprdesignerPackage.DAPR_ARCHITECTURE__NAME:
 			setName((String) newValue);
 			return;
-		case DaprdesignerPackage.DAPR_ARCHITECTURE__ENVIRONMENTS:
-			getEnvironments().clear();
-			getEnvironments().addAll((Collection<? extends Environment>) newValue);
+		case DaprdesignerPackage.DAPR_ARCHITECTURE__BUILDINGBLOCKS:
+			getBuildingblocks().clear();
+			getBuildingblocks().addAll((Collection<? extends Block>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -182,8 +182,8 @@ public class DaprArchitectureImpl extends MinimalEObjectImpl.Container implement
 		case DaprdesignerPackage.DAPR_ARCHITECTURE__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case DaprdesignerPackage.DAPR_ARCHITECTURE__ENVIRONMENTS:
-			getEnvironments().clear();
+		case DaprdesignerPackage.DAPR_ARCHITECTURE__BUILDINGBLOCKS:
+			getBuildingblocks().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -199,8 +199,8 @@ public class DaprArchitectureImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 		case DaprdesignerPackage.DAPR_ARCHITECTURE__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case DaprdesignerPackage.DAPR_ARCHITECTURE__ENVIRONMENTS:
-			return environments != null && !environments.isEmpty();
+		case DaprdesignerPackage.DAPR_ARCHITECTURE__BUILDINGBLOCKS:
+			return buildingblocks != null && !buildingblocks.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

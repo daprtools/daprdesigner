@@ -2,6 +2,7 @@
  */
 package daprdesigner.impl;
 
+import daprdesigner.AccessAction;
 import daprdesigner.AppAccessControl;
 import daprdesigner.AppPolicy;
 import daprdesigner.DaprdesignerPackage;
@@ -10,7 +11,6 @@ import daprdesigner.Trustdomain;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -18,10 +18,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,7 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class AppAccessControlImpl extends MinimalEObjectImpl.Container implements AppAccessControl {
+public class AppAccessControlImpl extends AppConfigurationImpl implements AppAccessControl {
 	/**
 	 * The default value of the '{@link #getDefaultAction() <em>Default Action</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -47,7 +45,7 @@ public class AppAccessControlImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DEFAULT_ACTION_EDEFAULT = null;
+	protected static final AccessAction DEFAULT_ACTION_EDEFAULT = AccessAction.ALLOW;
 
 	/**
 	 * The cached value of the '{@link #getDefaultAction() <em>Default Action</em>}' attribute.
@@ -57,7 +55,7 @@ public class AppAccessControlImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 * @ordered
 	 */
-	protected String defaultAction = DEFAULT_ACTION_EDEFAULT;
+	protected AccessAction defaultAction = DEFAULT_ACTION_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getTrustDomain() <em>Trust Domain</em>}' reference.
@@ -70,7 +68,7 @@ public class AppAccessControlImpl extends MinimalEObjectImpl.Container implement
 	protected Trustdomain trustDomain;
 
 	/**
-	 * The cached value of the '{@link #getPolicies() <em>Policies</em>}' containment reference list.
+	 * The cached value of the '{@link #getPolicies() <em>Policies</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPolicies()
@@ -103,7 +101,7 @@ public class AppAccessControlImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getDefaultAction() {
+	public AccessAction getDefaultAction() {
 		return defaultAction;
 	}
 
@@ -112,9 +110,9 @@ public class AppAccessControlImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDefaultAction(String newDefaultAction) {
-		String oldDefaultAction = defaultAction;
-		defaultAction = newDefaultAction;
+	public void setDefaultAction(AccessAction newDefaultAction) {
+		AccessAction oldDefaultAction = defaultAction;
+		defaultAction = newDefaultAction == null ? DEFAULT_ACTION_EDEFAULT : newDefaultAction;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					DaprdesignerPackage.APP_ACCESS_CONTROL__DEFAULT_ACTION, oldDefaultAction, defaultAction));
@@ -167,24 +165,10 @@ public class AppAccessControlImpl extends MinimalEObjectImpl.Container implement
 	 */
 	public EList<AppPolicy> getPolicies() {
 		if (policies == null) {
-			policies = new EObjectContainmentEList<AppPolicy>(AppPolicy.class, this,
+			policies = new EObjectResolvingEList<AppPolicy>(AppPolicy.class, this,
 					DaprdesignerPackage.APP_ACCESS_CONTROL__POLICIES);
 		}
 		return policies;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case DaprdesignerPackage.APP_ACCESS_CONTROL__POLICIES:
-			return ((InternalEList<?>) getPolicies()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -217,7 +201,7 @@ public class AppAccessControlImpl extends MinimalEObjectImpl.Container implement
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case DaprdesignerPackage.APP_ACCESS_CONTROL__DEFAULT_ACTION:
-			setDefaultAction((String) newValue);
+			setDefaultAction((AccessAction) newValue);
 			return;
 		case DaprdesignerPackage.APP_ACCESS_CONTROL__TRUST_DOMAIN:
 			setTrustDomain((Trustdomain) newValue);
@@ -260,8 +244,7 @@ public class AppAccessControlImpl extends MinimalEObjectImpl.Container implement
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case DaprdesignerPackage.APP_ACCESS_CONTROL__DEFAULT_ACTION:
-			return DEFAULT_ACTION_EDEFAULT == null ? defaultAction != null
-					: !DEFAULT_ACTION_EDEFAULT.equals(defaultAction);
+			return defaultAction != DEFAULT_ACTION_EDEFAULT;
 		case DaprdesignerPackage.APP_ACCESS_CONTROL__TRUST_DOMAIN:
 			return trustDomain != null;
 		case DaprdesignerPackage.APP_ACCESS_CONTROL__POLICIES:

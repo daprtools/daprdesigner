@@ -17,7 +17,6 @@ import daprdesigner.TracingConfiguration;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -25,9 +24,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,7 +38,6 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * <ul>
  *   <li>{@link daprdesigner.impl.AppConfigurationImpl#getApiVersion <em>Api Version</em>}</li>
  *   <li>{@link daprdesigner.impl.AppConfigurationImpl#getKind <em>Kind</em>}</li>
- *   <li>{@link daprdesigner.impl.AppConfigurationImpl#getMetadata_name <em>Metadata name</em>}</li>
  *   <li>{@link daprdesigner.impl.AppConfigurationImpl#getMetadata_namespace <em>Metadata namespace</em>}</li>
  *   <li>{@link daprdesigner.impl.AppConfigurationImpl#getAccessControl <em>Access Control</em>}</li>
  *   <li>{@link daprdesigner.impl.AppConfigurationImpl#getApiControl <em>Api Control</em>}</li>
@@ -54,7 +52,7 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *
  * @generated
  */
-public class AppConfigurationImpl extends MinimalEObjectImpl.Container implements AppConfiguration {
+public abstract class AppConfigurationImpl extends DaprNodeImpl implements AppConfiguration {
 	/**
 	 * The default value of the '{@link #getApiVersion() <em>Api Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -96,26 +94,6 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 	protected String kind = KIND_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getMetadata_name() <em>Metadata name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMetadata_name()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String METADATA_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMetadata_name() <em>Metadata name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMetadata_name()
-	 * @generated
-	 * @ordered
-	 */
-	protected String metadata_name = METADATA_NAME_EDEFAULT;
-
-	/**
 	 * The cached value of the '{@link #getMetadata_namespace() <em>Metadata namespace</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -126,37 +104,37 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 	protected Namespace metadata_namespace;
 
 	/**
-	 * The cached value of the '{@link #getAccessControl() <em>Access Control</em>}' containment reference.
+	 * The cached value of the '{@link #getAccessControl() <em>Access Control</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAccessControl()
 	 * @generated
 	 * @ordered
 	 */
-	protected AppAccessControl accessControl;
+	protected EList<AppAccessControl> accessControl;
 
 	/**
-	 * The cached value of the '{@link #getApiControl() <em>Api Control</em>}' containment reference.
+	 * The cached value of the '{@link #getApiControl() <em>Api Control</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getApiControl()
 	 * @generated
 	 * @ordered
 	 */
-	protected APIAccessControl apiControl;
+	protected EList<APIAccessControl> apiControl;
 
 	/**
-	 * The cached value of the '{@link #getMiddlewareConfiguration() <em>Middleware Configuration</em>}' containment reference.
+	 * The cached value of the '{@link #getMiddlewareConfiguration() <em>Middleware Configuration</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMiddlewareConfiguration()
 	 * @generated
 	 * @ordered
 	 */
-	protected MiddlewareConfiguration middlewareConfiguration;
+	protected EList<MiddlewareConfiguration> middlewareConfiguration;
 
 	/**
-	 * The cached value of the '{@link #getLoggingConfiguration() <em>Logging Configuration</em>}' containment reference.
+	 * The cached value of the '{@link #getLoggingConfiguration() <em>Logging Configuration</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getLoggingConfiguration()
@@ -166,7 +144,7 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 	protected LoggingConfiguration loggingConfiguration;
 
 	/**
-	 * The cached value of the '{@link #getNameResolutionConfiguration() <em>Name Resolution Configuration</em>}' containment reference.
+	 * The cached value of the '{@link #getNameResolutionConfiguration() <em>Name Resolution Configuration</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getNameResolutionConfiguration()
@@ -176,7 +154,7 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 	protected NameResolutionConfiguration nameResolutionConfiguration;
 
 	/**
-	 * The cached value of the '{@link #getSecretsConfiguration() <em>Secrets Configuration</em>}' containment reference.
+	 * The cached value of the '{@link #getSecretsConfiguration() <em>Secrets Configuration</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSecretsConfiguration()
@@ -186,7 +164,7 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 	protected SecretsConfiguration secretsConfiguration;
 
 	/**
-	 * The cached value of the '{@link #getMetricsConfiguration() <em>Metrics Configuration</em>}' containment reference.
+	 * The cached value of the '{@link #getMetricsConfiguration() <em>Metrics Configuration</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMetricsConfiguration()
@@ -196,7 +174,7 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 	protected MetricsConfiguration metricsConfiguration;
 
 	/**
-	 * The cached value of the '{@link #getTracingConfiguration() <em>Tracing Configuration</em>}' containment reference.
+	 * The cached value of the '{@link #getTracingConfiguration() <em>Tracing Configuration</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTracingConfiguration()
@@ -257,28 +235,6 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getMetadata_name() {
-		return metadata_name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMetadata_name(String newMetadata_name) {
-		String oldMetadata_name = metadata_name;
-		metadata_name = newMetadata_name;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.APP_CONFIGURATION__METADATA_NAME,
-					oldMetadata_name, metadata_name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Namespace getMetadata_namespace() {
 		if (metadata_namespace != null && metadata_namespace.eIsProxy()) {
 			InternalEObject oldMetadata_namespace = (InternalEObject) metadata_namespace;
@@ -321,7 +277,11 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AppAccessControl getAccessControl() {
+	public EList<AppAccessControl> getAccessControl() {
+		if (accessControl == null) {
+			accessControl = new EObjectResolvingEList<AppAccessControl>(AppAccessControl.class, this,
+					DaprdesignerPackage.APP_CONFIGURATION__ACCESS_CONTROL);
+		}
 		return accessControl;
 	}
 
@@ -330,48 +290,11 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetAccessControl(AppAccessControl newAccessControl, NotificationChain msgs) {
-		AppAccessControl oldAccessControl = accessControl;
-		accessControl = newAccessControl;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					DaprdesignerPackage.APP_CONFIGURATION__ACCESS_CONTROL, oldAccessControl, newAccessControl);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+	public EList<APIAccessControl> getApiControl() {
+		if (apiControl == null) {
+			apiControl = new EObjectResolvingEList<APIAccessControl>(APIAccessControl.class, this,
+					DaprdesignerPackage.APP_CONFIGURATION__API_CONTROL);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAccessControl(AppAccessControl newAccessControl) {
-		if (newAccessControl != accessControl) {
-			NotificationChain msgs = null;
-			if (accessControl != null)
-				msgs = ((InternalEObject) accessControl).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - DaprdesignerPackage.APP_CONFIGURATION__ACCESS_CONTROL, null, msgs);
-			if (newAccessControl != null)
-				msgs = ((InternalEObject) newAccessControl).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - DaprdesignerPackage.APP_CONFIGURATION__ACCESS_CONTROL, null, msgs);
-			msgs = basicSetAccessControl(newAccessControl, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.APP_CONFIGURATION__ACCESS_CONTROL,
-					newAccessControl, newAccessControl));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public APIAccessControl getApiControl() {
 		return apiControl;
 	}
 
@@ -380,48 +303,11 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetApiControl(APIAccessControl newApiControl, NotificationChain msgs) {
-		APIAccessControl oldApiControl = apiControl;
-		apiControl = newApiControl;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					DaprdesignerPackage.APP_CONFIGURATION__API_CONTROL, oldApiControl, newApiControl);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+	public EList<MiddlewareConfiguration> getMiddlewareConfiguration() {
+		if (middlewareConfiguration == null) {
+			middlewareConfiguration = new EObjectResolvingEList<MiddlewareConfiguration>(MiddlewareConfiguration.class,
+					this, DaprdesignerPackage.APP_CONFIGURATION__MIDDLEWARE_CONFIGURATION);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setApiControl(APIAccessControl newApiControl) {
-		if (newApiControl != apiControl) {
-			NotificationChain msgs = null;
-			if (apiControl != null)
-				msgs = ((InternalEObject) apiControl).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - DaprdesignerPackage.APP_CONFIGURATION__API_CONTROL, null, msgs);
-			if (newApiControl != null)
-				msgs = ((InternalEObject) newApiControl).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - DaprdesignerPackage.APP_CONFIGURATION__API_CONTROL, null, msgs);
-			msgs = basicSetApiControl(newApiControl, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.APP_CONFIGURATION__API_CONTROL,
-					newApiControl, newApiControl));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MiddlewareConfiguration getMiddlewareConfiguration() {
 		return middlewareConfiguration;
 	}
 
@@ -430,53 +316,17 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetMiddlewareConfiguration(MiddlewareConfiguration newMiddlewareConfiguration,
-			NotificationChain msgs) {
-		MiddlewareConfiguration oldMiddlewareConfiguration = middlewareConfiguration;
-		middlewareConfiguration = newMiddlewareConfiguration;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					DaprdesignerPackage.APP_CONFIGURATION__MIDDLEWARE_CONFIGURATION, oldMiddlewareConfiguration,
-					newMiddlewareConfiguration);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMiddlewareConfiguration(MiddlewareConfiguration newMiddlewareConfiguration) {
-		if (newMiddlewareConfiguration != middlewareConfiguration) {
-			NotificationChain msgs = null;
-			if (middlewareConfiguration != null)
-				msgs = ((InternalEObject) middlewareConfiguration).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - DaprdesignerPackage.APP_CONFIGURATION__MIDDLEWARE_CONFIGURATION, null,
-						msgs);
-			if (newMiddlewareConfiguration != null)
-				msgs = ((InternalEObject) newMiddlewareConfiguration).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - DaprdesignerPackage.APP_CONFIGURATION__MIDDLEWARE_CONFIGURATION, null,
-						msgs);
-			msgs = basicSetMiddlewareConfiguration(newMiddlewareConfiguration, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					DaprdesignerPackage.APP_CONFIGURATION__MIDDLEWARE_CONFIGURATION, newMiddlewareConfiguration,
-					newMiddlewareConfiguration));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public LoggingConfiguration getLoggingConfiguration() {
+		if (loggingConfiguration != null && loggingConfiguration.eIsProxy()) {
+			InternalEObject oldLoggingConfiguration = (InternalEObject) loggingConfiguration;
+			loggingConfiguration = (LoggingConfiguration) eResolveProxy(oldLoggingConfiguration);
+			if (loggingConfiguration != oldLoggingConfiguration) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							DaprdesignerPackage.APP_CONFIGURATION__LOGGING_CONFIGURATION, oldLoggingConfiguration,
+							loggingConfiguration));
+			}
+		}
 		return loggingConfiguration;
 	}
 
@@ -485,20 +335,8 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetLoggingConfiguration(LoggingConfiguration newLoggingConfiguration,
-			NotificationChain msgs) {
-		LoggingConfiguration oldLoggingConfiguration = loggingConfiguration;
-		loggingConfiguration = newLoggingConfiguration;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					DaprdesignerPackage.APP_CONFIGURATION__LOGGING_CONFIGURATION, oldLoggingConfiguration,
-					newLoggingConfiguration);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
+	public LoggingConfiguration basicGetLoggingConfiguration() {
+		return loggingConfiguration;
 	}
 
 	/**
@@ -507,23 +345,12 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	public void setLoggingConfiguration(LoggingConfiguration newLoggingConfiguration) {
-		if (newLoggingConfiguration != loggingConfiguration) {
-			NotificationChain msgs = null;
-			if (loggingConfiguration != null)
-				msgs = ((InternalEObject) loggingConfiguration).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - DaprdesignerPackage.APP_CONFIGURATION__LOGGING_CONFIGURATION, null,
-						msgs);
-			if (newLoggingConfiguration != null)
-				msgs = ((InternalEObject) newLoggingConfiguration).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - DaprdesignerPackage.APP_CONFIGURATION__LOGGING_CONFIGURATION, null,
-						msgs);
-			msgs = basicSetLoggingConfiguration(newLoggingConfiguration, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
+		LoggingConfiguration oldLoggingConfiguration = loggingConfiguration;
+		loggingConfiguration = newLoggingConfiguration;
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					DaprdesignerPackage.APP_CONFIGURATION__LOGGING_CONFIGURATION, newLoggingConfiguration,
-					newLoggingConfiguration));
+					DaprdesignerPackage.APP_CONFIGURATION__LOGGING_CONFIGURATION, oldLoggingConfiguration,
+					loggingConfiguration));
 	}
 
 	/**
@@ -532,6 +359,16 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	public NameResolutionConfiguration getNameResolutionConfiguration() {
+		if (nameResolutionConfiguration != null && nameResolutionConfiguration.eIsProxy()) {
+			InternalEObject oldNameResolutionConfiguration = (InternalEObject) nameResolutionConfiguration;
+			nameResolutionConfiguration = (NameResolutionConfiguration) eResolveProxy(oldNameResolutionConfiguration);
+			if (nameResolutionConfiguration != oldNameResolutionConfiguration) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							DaprdesignerPackage.APP_CONFIGURATION__NAME_RESOLUTION_CONFIGURATION,
+							oldNameResolutionConfiguration, nameResolutionConfiguration));
+			}
+		}
 		return nameResolutionConfiguration;
 	}
 
@@ -540,20 +377,8 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetNameResolutionConfiguration(
-			NameResolutionConfiguration newNameResolutionConfiguration, NotificationChain msgs) {
-		NameResolutionConfiguration oldNameResolutionConfiguration = nameResolutionConfiguration;
-		nameResolutionConfiguration = newNameResolutionConfiguration;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					DaprdesignerPackage.APP_CONFIGURATION__NAME_RESOLUTION_CONFIGURATION,
-					oldNameResolutionConfiguration, newNameResolutionConfiguration);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
+	public NameResolutionConfiguration basicGetNameResolutionConfiguration() {
+		return nameResolutionConfiguration;
 	}
 
 	/**
@@ -562,23 +387,12 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	public void setNameResolutionConfiguration(NameResolutionConfiguration newNameResolutionConfiguration) {
-		if (newNameResolutionConfiguration != nameResolutionConfiguration) {
-			NotificationChain msgs = null;
-			if (nameResolutionConfiguration != null)
-				msgs = ((InternalEObject) nameResolutionConfiguration).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - DaprdesignerPackage.APP_CONFIGURATION__NAME_RESOLUTION_CONFIGURATION,
-						null, msgs);
-			if (newNameResolutionConfiguration != null)
-				msgs = ((InternalEObject) newNameResolutionConfiguration).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - DaprdesignerPackage.APP_CONFIGURATION__NAME_RESOLUTION_CONFIGURATION,
-						null, msgs);
-			msgs = basicSetNameResolutionConfiguration(newNameResolutionConfiguration, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
+		NameResolutionConfiguration oldNameResolutionConfiguration = nameResolutionConfiguration;
+		nameResolutionConfiguration = newNameResolutionConfiguration;
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					DaprdesignerPackage.APP_CONFIGURATION__NAME_RESOLUTION_CONFIGURATION,
-					newNameResolutionConfiguration, newNameResolutionConfiguration));
+					oldNameResolutionConfiguration, nameResolutionConfiguration));
 	}
 
 	/**
@@ -587,6 +401,16 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	public SecretsConfiguration getSecretsConfiguration() {
+		if (secretsConfiguration != null && secretsConfiguration.eIsProxy()) {
+			InternalEObject oldSecretsConfiguration = (InternalEObject) secretsConfiguration;
+			secretsConfiguration = (SecretsConfiguration) eResolveProxy(oldSecretsConfiguration);
+			if (secretsConfiguration != oldSecretsConfiguration) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							DaprdesignerPackage.APP_CONFIGURATION__SECRETS_CONFIGURATION, oldSecretsConfiguration,
+							secretsConfiguration));
+			}
+		}
 		return secretsConfiguration;
 	}
 
@@ -595,20 +419,8 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSecretsConfiguration(SecretsConfiguration newSecretsConfiguration,
-			NotificationChain msgs) {
-		SecretsConfiguration oldSecretsConfiguration = secretsConfiguration;
-		secretsConfiguration = newSecretsConfiguration;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					DaprdesignerPackage.APP_CONFIGURATION__SECRETS_CONFIGURATION, oldSecretsConfiguration,
-					newSecretsConfiguration);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
+	public SecretsConfiguration basicGetSecretsConfiguration() {
+		return secretsConfiguration;
 	}
 
 	/**
@@ -617,23 +429,12 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	public void setSecretsConfiguration(SecretsConfiguration newSecretsConfiguration) {
-		if (newSecretsConfiguration != secretsConfiguration) {
-			NotificationChain msgs = null;
-			if (secretsConfiguration != null)
-				msgs = ((InternalEObject) secretsConfiguration).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - DaprdesignerPackage.APP_CONFIGURATION__SECRETS_CONFIGURATION, null,
-						msgs);
-			if (newSecretsConfiguration != null)
-				msgs = ((InternalEObject) newSecretsConfiguration).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - DaprdesignerPackage.APP_CONFIGURATION__SECRETS_CONFIGURATION, null,
-						msgs);
-			msgs = basicSetSecretsConfiguration(newSecretsConfiguration, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
+		SecretsConfiguration oldSecretsConfiguration = secretsConfiguration;
+		secretsConfiguration = newSecretsConfiguration;
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					DaprdesignerPackage.APP_CONFIGURATION__SECRETS_CONFIGURATION, newSecretsConfiguration,
-					newSecretsConfiguration));
+					DaprdesignerPackage.APP_CONFIGURATION__SECRETS_CONFIGURATION, oldSecretsConfiguration,
+					secretsConfiguration));
 	}
 
 	/**
@@ -642,6 +443,16 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	public MetricsConfiguration getMetricsConfiguration() {
+		if (metricsConfiguration != null && metricsConfiguration.eIsProxy()) {
+			InternalEObject oldMetricsConfiguration = (InternalEObject) metricsConfiguration;
+			metricsConfiguration = (MetricsConfiguration) eResolveProxy(oldMetricsConfiguration);
+			if (metricsConfiguration != oldMetricsConfiguration) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							DaprdesignerPackage.APP_CONFIGURATION__METRICS_CONFIGURATION, oldMetricsConfiguration,
+							metricsConfiguration));
+			}
+		}
 		return metricsConfiguration;
 	}
 
@@ -650,20 +461,8 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetMetricsConfiguration(MetricsConfiguration newMetricsConfiguration,
-			NotificationChain msgs) {
-		MetricsConfiguration oldMetricsConfiguration = metricsConfiguration;
-		metricsConfiguration = newMetricsConfiguration;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					DaprdesignerPackage.APP_CONFIGURATION__METRICS_CONFIGURATION, oldMetricsConfiguration,
-					newMetricsConfiguration);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
+	public MetricsConfiguration basicGetMetricsConfiguration() {
+		return metricsConfiguration;
 	}
 
 	/**
@@ -672,23 +471,12 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	public void setMetricsConfiguration(MetricsConfiguration newMetricsConfiguration) {
-		if (newMetricsConfiguration != metricsConfiguration) {
-			NotificationChain msgs = null;
-			if (metricsConfiguration != null)
-				msgs = ((InternalEObject) metricsConfiguration).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - DaprdesignerPackage.APP_CONFIGURATION__METRICS_CONFIGURATION, null,
-						msgs);
-			if (newMetricsConfiguration != null)
-				msgs = ((InternalEObject) newMetricsConfiguration).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - DaprdesignerPackage.APP_CONFIGURATION__METRICS_CONFIGURATION, null,
-						msgs);
-			msgs = basicSetMetricsConfiguration(newMetricsConfiguration, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
+		MetricsConfiguration oldMetricsConfiguration = metricsConfiguration;
+		metricsConfiguration = newMetricsConfiguration;
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					DaprdesignerPackage.APP_CONFIGURATION__METRICS_CONFIGURATION, newMetricsConfiguration,
-					newMetricsConfiguration));
+					DaprdesignerPackage.APP_CONFIGURATION__METRICS_CONFIGURATION, oldMetricsConfiguration,
+					metricsConfiguration));
 	}
 
 	/**
@@ -697,6 +485,16 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	public TracingConfiguration getTracingConfiguration() {
+		if (tracingConfiguration != null && tracingConfiguration.eIsProxy()) {
+			InternalEObject oldTracingConfiguration = (InternalEObject) tracingConfiguration;
+			tracingConfiguration = (TracingConfiguration) eResolveProxy(oldTracingConfiguration);
+			if (tracingConfiguration != oldTracingConfiguration) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							DaprdesignerPackage.APP_CONFIGURATION__TRACING_CONFIGURATION, oldTracingConfiguration,
+							tracingConfiguration));
+			}
+		}
 		return tracingConfiguration;
 	}
 
@@ -705,20 +503,8 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTracingConfiguration(TracingConfiguration newTracingConfiguration,
-			NotificationChain msgs) {
-		TracingConfiguration oldTracingConfiguration = tracingConfiguration;
-		tracingConfiguration = newTracingConfiguration;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					DaprdesignerPackage.APP_CONFIGURATION__TRACING_CONFIGURATION, oldTracingConfiguration,
-					newTracingConfiguration);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
+	public TracingConfiguration basicGetTracingConfiguration() {
+		return tracingConfiguration;
 	}
 
 	/**
@@ -727,23 +513,12 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	public void setTracingConfiguration(TracingConfiguration newTracingConfiguration) {
-		if (newTracingConfiguration != tracingConfiguration) {
-			NotificationChain msgs = null;
-			if (tracingConfiguration != null)
-				msgs = ((InternalEObject) tracingConfiguration).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - DaprdesignerPackage.APP_CONFIGURATION__TRACING_CONFIGURATION, null,
-						msgs);
-			if (newTracingConfiguration != null)
-				msgs = ((InternalEObject) newTracingConfiguration).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - DaprdesignerPackage.APP_CONFIGURATION__TRACING_CONFIGURATION, null,
-						msgs);
-			msgs = basicSetTracingConfiguration(newTracingConfiguration, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
+		TracingConfiguration oldTracingConfiguration = tracingConfiguration;
+		tracingConfiguration = newTracingConfiguration;
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					DaprdesignerPackage.APP_CONFIGURATION__TRACING_CONFIGURATION, newTracingConfiguration,
-					newTracingConfiguration));
+					DaprdesignerPackage.APP_CONFIGURATION__TRACING_CONFIGURATION, oldTracingConfiguration,
+					tracingConfiguration));
 	}
 
 	/**
@@ -765,42 +540,12 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case DaprdesignerPackage.APP_CONFIGURATION__ACCESS_CONTROL:
-			return basicSetAccessControl(null, msgs);
-		case DaprdesignerPackage.APP_CONFIGURATION__API_CONTROL:
-			return basicSetApiControl(null, msgs);
-		case DaprdesignerPackage.APP_CONFIGURATION__MIDDLEWARE_CONFIGURATION:
-			return basicSetMiddlewareConfiguration(null, msgs);
-		case DaprdesignerPackage.APP_CONFIGURATION__LOGGING_CONFIGURATION:
-			return basicSetLoggingConfiguration(null, msgs);
-		case DaprdesignerPackage.APP_CONFIGURATION__NAME_RESOLUTION_CONFIGURATION:
-			return basicSetNameResolutionConfiguration(null, msgs);
-		case DaprdesignerPackage.APP_CONFIGURATION__SECRETS_CONFIGURATION:
-			return basicSetSecretsConfiguration(null, msgs);
-		case DaprdesignerPackage.APP_CONFIGURATION__METRICS_CONFIGURATION:
-			return basicSetMetricsConfiguration(null, msgs);
-		case DaprdesignerPackage.APP_CONFIGURATION__TRACING_CONFIGURATION:
-			return basicSetTracingConfiguration(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case DaprdesignerPackage.APP_CONFIGURATION__API_VERSION:
 			return getApiVersion();
 		case DaprdesignerPackage.APP_CONFIGURATION__KIND:
 			return getKind();
-		case DaprdesignerPackage.APP_CONFIGURATION__METADATA_NAME:
-			return getMetadata_name();
 		case DaprdesignerPackage.APP_CONFIGURATION__METADATA_NAMESPACE:
 			if (resolve)
 				return getMetadata_namespace();
@@ -812,15 +557,25 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 		case DaprdesignerPackage.APP_CONFIGURATION__MIDDLEWARE_CONFIGURATION:
 			return getMiddlewareConfiguration();
 		case DaprdesignerPackage.APP_CONFIGURATION__LOGGING_CONFIGURATION:
-			return getLoggingConfiguration();
+			if (resolve)
+				return getLoggingConfiguration();
+			return basicGetLoggingConfiguration();
 		case DaprdesignerPackage.APP_CONFIGURATION__NAME_RESOLUTION_CONFIGURATION:
-			return getNameResolutionConfiguration();
+			if (resolve)
+				return getNameResolutionConfiguration();
+			return basicGetNameResolutionConfiguration();
 		case DaprdesignerPackage.APP_CONFIGURATION__SECRETS_CONFIGURATION:
-			return getSecretsConfiguration();
+			if (resolve)
+				return getSecretsConfiguration();
+			return basicGetSecretsConfiguration();
 		case DaprdesignerPackage.APP_CONFIGURATION__METRICS_CONFIGURATION:
-			return getMetricsConfiguration();
+			if (resolve)
+				return getMetricsConfiguration();
+			return basicGetMetricsConfiguration();
 		case DaprdesignerPackage.APP_CONFIGURATION__TRACING_CONFIGURATION:
-			return getTracingConfiguration();
+			if (resolve)
+				return getTracingConfiguration();
+			return basicGetTracingConfiguration();
 		case DaprdesignerPackage.APP_CONFIGURATION__COMPONENTS_DENY_LIST:
 			return getComponentsDenyList();
 		}
@@ -836,20 +591,20 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DaprdesignerPackage.APP_CONFIGURATION__METADATA_NAME:
-			setMetadata_name((String) newValue);
-			return;
 		case DaprdesignerPackage.APP_CONFIGURATION__METADATA_NAMESPACE:
 			setMetadata_namespace((Namespace) newValue);
 			return;
 		case DaprdesignerPackage.APP_CONFIGURATION__ACCESS_CONTROL:
-			setAccessControl((AppAccessControl) newValue);
+			getAccessControl().clear();
+			getAccessControl().addAll((Collection<? extends AppAccessControl>) newValue);
 			return;
 		case DaprdesignerPackage.APP_CONFIGURATION__API_CONTROL:
-			setApiControl((APIAccessControl) newValue);
+			getApiControl().clear();
+			getApiControl().addAll((Collection<? extends APIAccessControl>) newValue);
 			return;
 		case DaprdesignerPackage.APP_CONFIGURATION__MIDDLEWARE_CONFIGURATION:
-			setMiddlewareConfiguration((MiddlewareConfiguration) newValue);
+			getMiddlewareConfiguration().clear();
+			getMiddlewareConfiguration().addAll((Collection<? extends MiddlewareConfiguration>) newValue);
 			return;
 		case DaprdesignerPackage.APP_CONFIGURATION__LOGGING_CONFIGURATION:
 			setLoggingConfiguration((LoggingConfiguration) newValue);
@@ -882,20 +637,17 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DaprdesignerPackage.APP_CONFIGURATION__METADATA_NAME:
-			setMetadata_name(METADATA_NAME_EDEFAULT);
-			return;
 		case DaprdesignerPackage.APP_CONFIGURATION__METADATA_NAMESPACE:
 			setMetadata_namespace((Namespace) null);
 			return;
 		case DaprdesignerPackage.APP_CONFIGURATION__ACCESS_CONTROL:
-			setAccessControl((AppAccessControl) null);
+			getAccessControl().clear();
 			return;
 		case DaprdesignerPackage.APP_CONFIGURATION__API_CONTROL:
-			setApiControl((APIAccessControl) null);
+			getApiControl().clear();
 			return;
 		case DaprdesignerPackage.APP_CONFIGURATION__MIDDLEWARE_CONFIGURATION:
-			setMiddlewareConfiguration((MiddlewareConfiguration) null);
+			getMiddlewareConfiguration().clear();
 			return;
 		case DaprdesignerPackage.APP_CONFIGURATION__LOGGING_CONFIGURATION:
 			setLoggingConfiguration((LoggingConfiguration) null);
@@ -931,17 +683,14 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 			return API_VERSION_EDEFAULT == null ? apiVersion != null : !API_VERSION_EDEFAULT.equals(apiVersion);
 		case DaprdesignerPackage.APP_CONFIGURATION__KIND:
 			return KIND_EDEFAULT == null ? kind != null : !KIND_EDEFAULT.equals(kind);
-		case DaprdesignerPackage.APP_CONFIGURATION__METADATA_NAME:
-			return METADATA_NAME_EDEFAULT == null ? metadata_name != null
-					: !METADATA_NAME_EDEFAULT.equals(metadata_name);
 		case DaprdesignerPackage.APP_CONFIGURATION__METADATA_NAMESPACE:
 			return metadata_namespace != null;
 		case DaprdesignerPackage.APP_CONFIGURATION__ACCESS_CONTROL:
-			return accessControl != null;
+			return accessControl != null && !accessControl.isEmpty();
 		case DaprdesignerPackage.APP_CONFIGURATION__API_CONTROL:
-			return apiControl != null;
+			return apiControl != null && !apiControl.isEmpty();
 		case DaprdesignerPackage.APP_CONFIGURATION__MIDDLEWARE_CONFIGURATION:
-			return middlewareConfiguration != null;
+			return middlewareConfiguration != null && !middlewareConfiguration.isEmpty();
 		case DaprdesignerPackage.APP_CONFIGURATION__LOGGING_CONFIGURATION:
 			return loggingConfiguration != null;
 		case DaprdesignerPackage.APP_CONFIGURATION__NAME_RESOLUTION_CONFIGURATION:
@@ -973,8 +722,6 @@ public class AppConfigurationImpl extends MinimalEObjectImpl.Container implement
 		result.append(apiVersion);
 		result.append(", kind: ");
 		result.append(kind);
-		result.append(", metadata_name: ");
-		result.append(metadata_name);
 		result.append(", componentsDenyList: ");
 		result.append(componentsDenyList);
 		result.append(')');
