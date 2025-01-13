@@ -12,6 +12,12 @@ enum AccessAction{
 	DENY;
 }
 
+enum RetryPolicyType {
+	CONSTANT;
+	EXPONENTIAL;
+	
+}
+
 
 enum HttpHandlerType{
 	INCOMING;
@@ -115,16 +121,17 @@ abstract class AppConfiguration extends DaprNode{
 	readonly attr String apiVersion = "dapr.io/v1alpha1";
 	readonly attr String kind = "Configuration";
 	
-	ref Namespace metadata_namespace;
-	ref AppAccessControl[*] accessControl;
-	ref APIAccessControl[*] apiControl;
-	ref MiddlewareConfiguration[*] middlewareConfiguration;
-	ref LoggingConfiguration[0..1] loggingConfiguration;
-	ref NameResolutionConfiguration[0..1] nameResolutionConfiguration;
-	ref SecretsAccessConfiguration[0..1] secretsAccessConfiguration;
-	ref MetricsConfiguration[0..1] metricsConfiguration;
-	ref TracingConfiguration[0..1] tracingConfiguration;
-	ref DeniedComponentsConfiguration[0..1] deniedComponentsConfiguration;
+//	ref Namespace metadata_namespace;
+//	ref AppAccessControl[0..1] accessControl;
+//	ref APIAccessControl[0..1] apiControl;
+//	ref MiddlewareConfiguration[0..1] middlewareConfiguration;
+//	ref LoggingConfiguration[0..1] loggingConfiguration;
+//	ref NameResolutionConfiguration[0..1] nameResolutionConfiguration;
+//	ref SecretsAccessConfiguration[0..1] secretsAccessConfiguration;
+//	ref MetricsConfiguration[0..1] metricsConfiguration;
+//	ref TracingConfiguration[0..1] tracingConfiguration;
+//	ref DeniedComponentsConfiguration[0..1] deniedComponentsConfiguration;
+	
 	
 }
 
@@ -136,14 +143,14 @@ class DeniedComponentsConfiguration extends AppConfiguration{
 
 
 //Logging configuration
-
 class LoggingConfiguration extends AppConfiguration{
 	attr boolean enabled = true;
 	attr boolean obfuscateURLs = false;
 	attr boolean omitHealthChecks = true;
 }
-//Name Resolution Configuration
 
+
+//Name Resolution Configuration
 class NameResolutionConfiguration extends AppConfiguration{
 	ref Component component;
 	attr String componentVersion;
@@ -151,8 +158,8 @@ class NameResolutionConfiguration extends AppConfiguration{
 	attr String configurationValue;
 	
 }
-//Secrets configuration
 
+//Secrets configuration
 class SecretsAccessConfiguration extends AppConfiguration
 {
    ref SecretsAccessList[*] accessList;
@@ -168,7 +175,6 @@ class SecretsAccessList extends DaprNode{
 }
 
 // Metrics Configuration
-
 class MetricsConfiguration extends AppConfiguration{
 	attr boolean enabled;
 	attr int[*] latencyDistributionBuckets;
@@ -178,7 +184,6 @@ class MetricsConfiguration extends AppConfiguration{
 }
 
 // API Configuration
-
 class APIAccessControl extends AppConfiguration {
 	ref API[*] apiList;
 }
@@ -193,7 +198,6 @@ class API extends DaprNode{
 
 
 // App AccessControl configuration
-
 class AppAccessControl extends AppConfiguration {
 	attr AccessAction defaultAction;
 	ref  Trustdomain trustDomain;
@@ -220,7 +224,6 @@ class Operation extends DaprNode{
 }
 
 // Middleware Configuration
-
 class MiddlewareConfiguration extends AppConfiguration{
 	
 	ref HttpHandler[*] httpHandlers;
@@ -235,7 +238,6 @@ class HttpHandler extends DaprNode{
 
 
 //Tracing Configuration
-
 class TracingConfiguration extends AppConfiguration{
 	attr String samplingRate;
 	attr boolean stdout;
@@ -247,14 +249,13 @@ class TracingConfiguration extends AppConfiguration{
 
 
 // Subscription Configuration 
-
-class SubscriptionConfiguration {
+class SubscriptionConfiguration extends DaprNode {
 	readonly attr String apiVersion = "dapr.io/v2alpha1";
 	readonly attr String kind = "Subscription";
 	attr String name;
 	attr String topicName;
-	val  EStringToStringMapEntry[*] routeRules;
-	attr String pubsubname;
+	ref RouteRules[*] routeRules;
+	ref Component pubsub;
 	attr String deadLetterTopic;
 	attr boolean bulkSubscribe_enabled;
 	attr String bulkSubscribe_maxMessagesCount;
@@ -263,60 +264,60 @@ class SubscriptionConfiguration {
 	
 }
 
-class RouteRules{
+class RouteRules extends DaprNode{
 	attr String match;
 	attr String path;
 }
 
 
 // Resiliency Configuration
-
-class ResiliencyConfiguration {
+class ResiliencyConfiguration extends DaprNode{
 	readonly attr String apiVersion = "dapr.io/v2alpha1";
-	readonly attr String kind = "Subscription";
-	attr String name;
+	readonly attr String kind = "Resiliency";
+	readonly attr String version = "v1alpha1";
+	
 	ref App[*] scopes;
-	val ResiliencyPolicy policy;
+	ref ResiliencyPolicy policy;
 	val ResiliencyTarget[*] targets;
 }
 
-class ResiliencyPolicy{
-	val RetryPolicy[*] retries;
+class ResiliencyPolicy extends DaprNode{
+	ref RetryPolicy[*] retries;
 	val CircuitBreakerPolicy[*] circuitbreakers;
-	val EStringToStringMapEntry[*] timeouts;
+	ref ResiliencyTimeout[*] timeoutDefinitions;
 	
 }
 
-class ResiliencyTimeout{
-	attr String name;
-	attr String value;
+class RetryPolicy extends DaprNode{
 	
-}
-
-class RetryPolicy{
-	attr String name;
-	attr String policy_type;
-	attr String duration;
+	attr RetryPolicyType policy_type;
+	attr int duration;
 	attr int maxRetries;
+	attr int maxInterval; 
 }
 
-
-class CircuitBreakerPolicy{
-	attr String name;
-	attr int maxRequests;
-	attr String interval;
-	attr String timeout;
-	attr String trip;
+class ResiliencyTimeout extends DaprNode{
+	
+	attr int timeOutinSeconds;
 	
 }
 
-class ResiliencyTarget{
+class CircuitBreakerPolicy extends DaprNode{
+
+	attr int maxRequests;
+	attr int interval;
+	attr int timeout;
+	attr String trip = "consecutiveFailures > 5";
+	
+}
+
+class ResiliencyTarget extends DaprNode{
 	attr ResiliencyTargetType type;
-	attr String name;
-	val CircuitBreakerPolicy circuitBreaker;
-	val RetryPolicy retry;
+	
+	ref CircuitBreakerPolicy circuitBreaker;
+	ref RetryPolicy retry;
 	attr int circuitBreakerCacheSize;
-	val ResiliencyTimeout timeout;
+	ref ResiliencyTimeout timeout;
 	
 	
 }
@@ -340,8 +341,6 @@ class HTTPEndPoint {
 
 
 //Component Definitions
-
-
 abstract class Component {
 	
 	readonly attr String apiVersion = "dapr.io/v1alpha1";
