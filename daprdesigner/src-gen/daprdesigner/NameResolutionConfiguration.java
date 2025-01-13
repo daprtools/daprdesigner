@@ -2,8 +2,6 @@
  */
 package daprdesigner;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Name Resolution Configuration</b></em>'.
@@ -13,7 +11,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link daprdesigner.NameResolutionConfiguration#getComponentName <em>Component Name</em>}</li>
+ *   <li>{@link daprdesigner.NameResolutionConfiguration#getComponent <em>Component</em>}</li>
  *   <li>{@link daprdesigner.NameResolutionConfiguration#getComponentVersion <em>Component Version</em>}</li>
  *   <li>{@link daprdesigner.NameResolutionConfiguration#getConfigurationKey <em>Configuration Key</em>}</li>
  *   <li>{@link daprdesigner.NameResolutionConfiguration#getConfigurationValue <em>Configuration Value</em>}</li>
@@ -23,28 +21,28 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface NameResolutionConfiguration extends EObject {
+public interface NameResolutionConfiguration extends AppConfiguration {
 	/**
-	 * Returns the value of the '<em><b>Component Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Component</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Component Name</em>' attribute.
-	 * @see #setComponentName(String)
-	 * @see daprdesigner.DaprdesignerPackage#getNameResolutionConfiguration_ComponentName()
+	 * @return the value of the '<em>Component</em>' reference.
+	 * @see #setComponent(Component)
+	 * @see daprdesigner.DaprdesignerPackage#getNameResolutionConfiguration_Component()
 	 * @model
 	 * @generated
 	 */
-	String getComponentName();
+	Component getComponent();
 
 	/**
-	 * Sets the value of the '{@link daprdesigner.NameResolutionConfiguration#getComponentName <em>Component Name</em>}' attribute.
+	 * Sets the value of the '{@link daprdesigner.NameResolutionConfiguration#getComponent <em>Component</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Component Name</em>' attribute.
-	 * @see #getComponentName()
+	 * @param value the new value of the '<em>Component</em>' reference.
+	 * @see #getComponent()
 	 * @generated
 	 */
-	void setComponentName(String value);
+	void setComponent(Component value);
 
 	/**
 	 * Returns the value of the '<em><b>Component Version</b></em>' attribute.

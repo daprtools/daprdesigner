@@ -4,8 +4,6 @@ package daprdesigner;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Component Spec</b></em>'.
@@ -24,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface ComponentSpec extends EObject {
+public interface ComponentSpec extends DaprNode {
 	/**
 	 * Returns the value of the '<em><b>Ignore Errors</b></em>' attribute.
 	 * <!-- begin-user-doc -->

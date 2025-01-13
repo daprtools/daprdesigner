@@ -62,7 +62,7 @@ public class MessageBrokerItemProvider extends ComponentItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((MessageBroker) object).getMetadata_name();
+		String label = ((MessageBroker) object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_MessageBroker_type")
 				: getString("_UI_MessageBroker_type") + " " + label;
 	}

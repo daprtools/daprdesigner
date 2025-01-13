@@ -5,6 +5,7 @@ package daprdesigner.util;
 import daprdesigner.*;
 
 import java.util.Map;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -82,9 +83,16 @@ public class DaprdesignerSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case DaprdesignerPackage.ENVIRONMENT: {
-			Environment environment = (Environment) theEObject;
-			T result = caseEnvironment(environment);
+		case DaprdesignerPackage.BLOCK: {
+			Block block = (Block) theEObject;
+			T result = caseBlock(block);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DaprdesignerPackage.DAPR_NODE: {
+			DaprNode daprNode = (DaprNode) theEObject;
+			T result = caseDaprNode(daprNode);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -93,6 +101,8 @@ public class DaprdesignerSwitch<T> extends Switch<T> {
 			Namespace namespace = (Namespace) theEObject;
 			T result = caseNamespace(namespace);
 			if (result == null)
+				result = caseDaprNode(namespace);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -100,21 +110,7 @@ public class DaprdesignerSwitch<T> extends Switch<T> {
 			Trustdomain trustdomain = (Trustdomain) theEObject;
 			T result = caseTrustdomain(trustdomain);
 			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DaprdesignerPackage.BUILDING_BLOCK: {
-			BuildingBlock buildingBlock = (BuildingBlock) theEObject;
-			T result = caseBuildingBlock(buildingBlock);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DaprdesignerPackage.SERVICES: {
-			Services services = (Services) theEObject;
-			T result = caseServices(services);
-			if (result == null)
-				result = caseBuildingBlock(services);
+				result = caseDaprNode(trustdomain);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -123,12 +119,27 @@ public class DaprdesignerSwitch<T> extends Switch<T> {
 			App app = (App) theEObject;
 			T result = caseApp(app);
 			if (result == null)
+				result = caseDaprNode(app);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case DaprdesignerPackage.APP_CONFIGURATION: {
 			AppConfiguration appConfiguration = (AppConfiguration) theEObject;
 			T result = caseAppConfiguration(appConfiguration);
+			if (result == null)
+				result = caseDaprNode(appConfiguration);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DaprdesignerPackage.DENIED_COMPONENTS_CONFIGURATION: {
+			DeniedComponentsConfiguration deniedComponentsConfiguration = (DeniedComponentsConfiguration) theEObject;
+			T result = caseDeniedComponentsConfiguration(deniedComponentsConfiguration);
+			if (result == null)
+				result = caseAppConfiguration(deniedComponentsConfiguration);
+			if (result == null)
+				result = caseDaprNode(deniedComponentsConfiguration);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -137,6 +148,10 @@ public class DaprdesignerSwitch<T> extends Switch<T> {
 			LoggingConfiguration loggingConfiguration = (LoggingConfiguration) theEObject;
 			T result = caseLoggingConfiguration(loggingConfiguration);
 			if (result == null)
+				result = caseAppConfiguration(loggingConfiguration);
+			if (result == null)
+				result = caseDaprNode(loggingConfiguration);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -144,19 +159,29 @@ public class DaprdesignerSwitch<T> extends Switch<T> {
 			NameResolutionConfiguration nameResolutionConfiguration = (NameResolutionConfiguration) theEObject;
 			T result = caseNameResolutionConfiguration(nameResolutionConfiguration);
 			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DaprdesignerPackage.SECRETS_CONFIGURATION: {
-			SecretsConfiguration secretsConfiguration = (SecretsConfiguration) theEObject;
-			T result = caseSecretsConfiguration(secretsConfiguration);
+				result = caseAppConfiguration(nameResolutionConfiguration);
+			if (result == null)
+				result = caseDaprNode(nameResolutionConfiguration);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case DaprdesignerPackage.SECRETS_LIST: {
-			SecretsList secretsList = (SecretsList) theEObject;
-			T result = caseSecretsList(secretsList);
+		case DaprdesignerPackage.SECRETS_ACCESS_CONFIGURATION: {
+			SecretsAccessConfiguration secretsAccessConfiguration = (SecretsAccessConfiguration) theEObject;
+			T result = caseSecretsAccessConfiguration(secretsAccessConfiguration);
+			if (result == null)
+				result = caseAppConfiguration(secretsAccessConfiguration);
+			if (result == null)
+				result = caseDaprNode(secretsAccessConfiguration);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DaprdesignerPackage.SECRETS_ACCESS_LIST: {
+			SecretsAccessList secretsAccessList = (SecretsAccessList) theEObject;
+			T result = caseSecretsAccessList(secretsAccessList);
+			if (result == null)
+				result = caseDaprNode(secretsAccessList);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -165,12 +190,20 @@ public class DaprdesignerSwitch<T> extends Switch<T> {
 			MetricsConfiguration metricsConfiguration = (MetricsConfiguration) theEObject;
 			T result = caseMetricsConfiguration(metricsConfiguration);
 			if (result == null)
+				result = caseAppConfiguration(metricsConfiguration);
+			if (result == null)
+				result = caseDaprNode(metricsConfiguration);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case DaprdesignerPackage.API_ACCESS_CONTROL: {
 			APIAccessControl apiAccessControl = (APIAccessControl) theEObject;
 			T result = caseAPIAccessControl(apiAccessControl);
+			if (result == null)
+				result = caseAppConfiguration(apiAccessControl);
+			if (result == null)
+				result = caseDaprNode(apiAccessControl);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -179,12 +212,18 @@ public class DaprdesignerSwitch<T> extends Switch<T> {
 			API api = (API) theEObject;
 			T result = caseAPI(api);
 			if (result == null)
+				result = caseDaprNode(api);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case DaprdesignerPackage.APP_ACCESS_CONTROL: {
 			AppAccessControl appAccessControl = (AppAccessControl) theEObject;
 			T result = caseAppAccessControl(appAccessControl);
+			if (result == null)
+				result = caseAppConfiguration(appAccessControl);
+			if (result == null)
+				result = caseDaprNode(appAccessControl);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -193,12 +232,16 @@ public class DaprdesignerSwitch<T> extends Switch<T> {
 			AppPolicy appPolicy = (AppPolicy) theEObject;
 			T result = caseAppPolicy(appPolicy);
 			if (result == null)
+				result = caseDaprNode(appPolicy);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case DaprdesignerPackage.OPERATION: {
 			Operation operation = (Operation) theEObject;
 			T result = caseOperation(operation);
+			if (result == null)
+				result = caseDaprNode(operation);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -207,12 +250,18 @@ public class DaprdesignerSwitch<T> extends Switch<T> {
 			MiddlewareConfiguration middlewareConfiguration = (MiddlewareConfiguration) theEObject;
 			T result = caseMiddlewareConfiguration(middlewareConfiguration);
 			if (result == null)
+				result = caseAppConfiguration(middlewareConfiguration);
+			if (result == null)
+				result = caseDaprNode(middlewareConfiguration);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case DaprdesignerPackage.HTTP_HANDLER: {
 			HttpHandler httpHandler = (HttpHandler) theEObject;
 			T result = caseHttpHandler(httpHandler);
+			if (result == null)
+				result = caseDaprNode(httpHandler);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -221,12 +270,18 @@ public class DaprdesignerSwitch<T> extends Switch<T> {
 			TracingConfiguration tracingConfiguration = (TracingConfiguration) theEObject;
 			T result = caseTracingConfiguration(tracingConfiguration);
 			if (result == null)
+				result = caseAppConfiguration(tracingConfiguration);
+			if (result == null)
+				result = caseDaprNode(tracingConfiguration);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION: {
 			SubscriptionConfiguration subscriptionConfiguration = (SubscriptionConfiguration) theEObject;
 			T result = caseSubscriptionConfiguration(subscriptionConfiguration);
+			if (result == null)
+				result = caseDaprNode(subscriptionConfiguration);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -235,12 +290,16 @@ public class DaprdesignerSwitch<T> extends Switch<T> {
 			RouteRules routeRules = (RouteRules) theEObject;
 			T result = caseRouteRules(routeRules);
 			if (result == null)
+				result = caseDaprNode(routeRules);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case DaprdesignerPackage.RESILIENCY_CONFIGURATION: {
 			ResiliencyConfiguration resiliencyConfiguration = (ResiliencyConfiguration) theEObject;
 			T result = caseResiliencyConfiguration(resiliencyConfiguration);
+			if (result == null)
+				result = caseDaprNode(resiliencyConfiguration);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -249,12 +308,7 @@ public class DaprdesignerSwitch<T> extends Switch<T> {
 			ResiliencyPolicy resiliencyPolicy = (ResiliencyPolicy) theEObject;
 			T result = caseResiliencyPolicy(resiliencyPolicy);
 			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DaprdesignerPackage.RESILIENCY_TIMEOUT: {
-			ResiliencyTimeout resiliencyTimeout = (ResiliencyTimeout) theEObject;
-			T result = caseResiliencyTimeout(resiliencyTimeout);
+				result = caseDaprNode(resiliencyPolicy);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -263,12 +317,25 @@ public class DaprdesignerSwitch<T> extends Switch<T> {
 			RetryPolicy retryPolicy = (RetryPolicy) theEObject;
 			T result = caseRetryPolicy(retryPolicy);
 			if (result == null)
+				result = caseDaprNode(retryPolicy);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DaprdesignerPackage.RESILIENCY_TIMEOUT: {
+			ResiliencyTimeout resiliencyTimeout = (ResiliencyTimeout) theEObject;
+			T result = caseResiliencyTimeout(resiliencyTimeout);
+			if (result == null)
+				result = caseDaprNode(resiliencyTimeout);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case DaprdesignerPackage.CIRCUIT_BREAKER_POLICY: {
 			CircuitBreakerPolicy circuitBreakerPolicy = (CircuitBreakerPolicy) theEObject;
 			T result = caseCircuitBreakerPolicy(circuitBreakerPolicy);
+			if (result == null)
+				result = caseDaprNode(circuitBreakerPolicy);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -277,12 +344,16 @@ public class DaprdesignerSwitch<T> extends Switch<T> {
 			ResiliencyTarget resiliencyTarget = (ResiliencyTarget) theEObject;
 			T result = caseResiliencyTarget(resiliencyTarget);
 			if (result == null)
+				result = caseDaprNode(resiliencyTarget);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case DaprdesignerPackage.HTTP_END_POINT: {
 			HTTPEndPoint httpEndPoint = (HTTPEndPoint) theEObject;
 			T result = caseHTTPEndPoint(httpEndPoint);
+			if (result == null)
+				result = caseDaprNode(httpEndPoint);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -291,6 +362,8 @@ public class DaprdesignerSwitch<T> extends Switch<T> {
 			Component component = (Component) theEObject;
 			T result = caseComponent(component);
 			if (result == null)
+				result = caseDaprNode(component);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -298,12 +371,16 @@ public class DaprdesignerSwitch<T> extends Switch<T> {
 			ComponentSpec componentSpec = (ComponentSpec) theEObject;
 			T result = caseComponentSpec(componentSpec);
 			if (result == null)
+				result = caseDaprNode(componentSpec);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case DaprdesignerPackage.SPEC_METADATA: {
 			SpecMetadata specMetadata = (SpecMetadata) theEObject;
 			T result = caseSpecMetadata(specMetadata);
+			if (result == null)
+				result = caseDaprNode(specMetadata);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -313,6 +390,8 @@ public class DaprdesignerSwitch<T> extends Switch<T> {
 			T result = caseSecretStore(secretStore);
 			if (result == null)
 				result = caseComponent(secretStore);
+			if (result == null)
+				result = caseDaprNode(secretStore);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -325,6 +404,8 @@ public class DaprdesignerSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseComponent(hashicorpVault);
 			if (result == null)
+				result = caseDaprNode(hashicorpVault);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -334,95 +415,7 @@ public class DaprdesignerSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseComponent(messageBroker);
 			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DaprdesignerPackage.PUB_SUB: {
-			PubSub pubSub = (PubSub) theEObject;
-			T result = casePubSub(pubSub);
-			if (result == null)
-				result = caseBuildingBlock(pubSub);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DaprdesignerPackage.BINDINGS: {
-			Bindings bindings = (Bindings) theEObject;
-			T result = caseBindings(bindings);
-			if (result == null)
-				result = caseBuildingBlock(bindings);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DaprdesignerPackage.JOBS: {
-			Jobs jobs = (Jobs) theEObject;
-			T result = caseJobs(jobs);
-			if (result == null)
-				result = caseBuildingBlock(jobs);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DaprdesignerPackage.CONFIGURATION: {
-			Configuration configuration = (Configuration) theEObject;
-			T result = caseConfiguration(configuration);
-			if (result == null)
-				result = caseBuildingBlock(configuration);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DaprdesignerPackage.WORKFLOW: {
-			Workflow workflow = (Workflow) theEObject;
-			T result = caseWorkflow(workflow);
-			if (result == null)
-				result = caseBuildingBlock(workflow);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DaprdesignerPackage.ACTORS: {
-			Actors actors = (Actors) theEObject;
-			T result = caseActors(actors);
-			if (result == null)
-				result = caseBuildingBlock(actors);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DaprdesignerPackage.SECRETS: {
-			Secrets secrets = (Secrets) theEObject;
-			T result = caseSecrets(secrets);
-			if (result == null)
-				result = caseBuildingBlock(secrets);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DaprdesignerPackage.STATE_MANAGEMENT: {
-			StateManagement stateManagement = (StateManagement) theEObject;
-			T result = caseStateManagement(stateManagement);
-			if (result == null)
-				result = caseBuildingBlock(stateManagement);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DaprdesignerPackage.DISTRIBUTED_LOCKS: {
-			DistributedLocks distributedLocks = (DistributedLocks) theEObject;
-			T result = caseDistributedLocks(distributedLocks);
-			if (result == null)
-				result = caseBuildingBlock(distributedLocks);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DaprdesignerPackage.CRYPTO_GRAPHY: {
-			CryptoGraphy cryptoGraphy = (CryptoGraphy) theEObject;
-			T result = caseCryptoGraphy(cryptoGraphy);
-			if (result == null)
-				result = caseBuildingBlock(cryptoGraphy);
+				result = caseDaprNode(messageBroker);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -463,17 +456,32 @@ public class DaprdesignerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Environment</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Block</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Environment</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Block</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEnvironment(Environment object) {
+	public T caseBlock(Block object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Dapr Node</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Dapr Node</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDaprNode(DaprNode object) {
 		return null;
 	}
 
@@ -508,36 +516,6 @@ public class DaprdesignerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Building Block</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Building Block</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBuildingBlock(BuildingBlock object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Services</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Services</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseServices(Services object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>App</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -564,6 +542,21 @@ public class DaprdesignerSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAppConfiguration(AppConfiguration object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Denied Components Configuration</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Denied Components Configuration</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDeniedComponentsConfiguration(DeniedComponentsConfiguration object) {
 		return null;
 	}
 
@@ -598,32 +591,32 @@ public class DaprdesignerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Secrets Configuration</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Secrets Access Configuration</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Secrets Configuration</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Secrets Access Configuration</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSecretsConfiguration(SecretsConfiguration object) {
+	public T caseSecretsAccessConfiguration(SecretsAccessConfiguration object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Secrets List</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Secrets Access List</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Secrets List</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Secrets Access List</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSecretsList(SecretsList object) {
+	public T caseSecretsAccessList(SecretsAccessList object) {
 		return null;
 	}
 
@@ -823,21 +816,6 @@ public class DaprdesignerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Resiliency Timeout</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Resiliency Timeout</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseResiliencyTimeout(ResiliencyTimeout object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Retry Policy</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -849,6 +827,21 @@ public class DaprdesignerSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRetryPolicy(RetryPolicy object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Resiliency Timeout</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Resiliency Timeout</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseResiliencyTimeout(ResiliencyTimeout object) {
 		return null;
 	}
 
@@ -984,156 +977,6 @@ public class DaprdesignerSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseMessageBroker(MessageBroker object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Pub Sub</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Pub Sub</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePubSub(PubSub object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Bindings</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Bindings</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBindings(Bindings object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Jobs</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Jobs</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseJobs(Jobs object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Configuration</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Configuration</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseConfiguration(Configuration object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Workflow</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Workflow</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseWorkflow(Workflow object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Actors</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Actors</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseActors(Actors object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Secrets</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Secrets</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSecrets(Secrets object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>State Management</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>State Management</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseStateManagement(StateManagement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Distributed Locks</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Distributed Locks</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDistributedLocks(DistributedLocks object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Crypto Graphy</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Crypto Graphy</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCryptoGraphy(CryptoGraphy object) {
 		return null;
 	}
 

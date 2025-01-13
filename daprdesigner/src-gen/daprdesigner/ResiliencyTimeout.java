@@ -2,8 +2,6 @@
  */
 package daprdesigner;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Resiliency Timeout</b></em>'.
@@ -13,15 +11,37 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link daprdesigner.ResiliencyTimeout#getTimeOutinSeconds <em>Time Outin Seconds</em>}</li>
  *   <li>{@link daprdesigner.ResiliencyTimeout#getName <em>Name</em>}</li>
- *   <li>{@link daprdesigner.ResiliencyTimeout#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see daprdesigner.DaprdesignerPackage#getResiliencyTimeout()
  * @model
  * @generated
  */
-public interface ResiliencyTimeout extends EObject {
+public interface ResiliencyTimeout extends DaprNode {
+	/**
+	 * Returns the value of the '<em><b>Time Outin Seconds</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Time Outin Seconds</em>' attribute.
+	 * @see #setTimeOutinSeconds(int)
+	 * @see daprdesigner.DaprdesignerPackage#getResiliencyTimeout_TimeOutinSeconds()
+	 * @model
+	 * @generated
+	 */
+	int getTimeOutinSeconds();
+
+	/**
+	 * Sets the value of the '{@link daprdesigner.ResiliencyTimeout#getTimeOutinSeconds <em>Time Outin Seconds</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Time Outin Seconds</em>' attribute.
+	 * @see #getTimeOutinSeconds()
+	 * @generated
+	 */
+	void setTimeOutinSeconds(int value);
+
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -43,27 +63,5 @@ public interface ResiliencyTimeout extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(String)
-	 * @see daprdesigner.DaprdesignerPackage#getResiliencyTimeout_Value()
-	 * @model
-	 * @generated
-	 */
-	String getValue();
-
-	/**
-	 * Sets the value of the '{@link daprdesigner.ResiliencyTimeout#getValue <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value</em>' attribute.
-	 * @see #getValue()
-	 * @generated
-	 */
-	void setValue(String value);
 
 } // ResiliencyTimeout

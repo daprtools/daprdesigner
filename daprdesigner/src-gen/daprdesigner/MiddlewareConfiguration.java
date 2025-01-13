@@ -2,8 +2,7 @@
  */
 package daprdesigner;
 
-import org.eclipse.emf.common.util.EMap;
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,39 +13,24 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link daprdesigner.MiddlewareConfiguration#getIncomingHandler <em>Incoming Handler</em>}</li>
- *   <li>{@link daprdesigner.MiddlewareConfiguration#getOutgoingHandler <em>Outgoing Handler</em>}</li>
+ *   <li>{@link daprdesigner.MiddlewareConfiguration#getHttpHandlers <em>Http Handlers</em>}</li>
  * </ul>
  *
  * @see daprdesigner.DaprdesignerPackage#getMiddlewareConfiguration()
  * @model
  * @generated
  */
-public interface MiddlewareConfiguration extends EObject {
+public interface MiddlewareConfiguration extends AppConfiguration {
 	/**
-	 * Returns the value of the '<em><b>Incoming Handler</b></em>' map.
-	 * The key is of type {@link java.lang.String},
-	 * and the value is of type {@link java.lang.String},
+	 * Returns the value of the '<em><b>Http Handlers</b></em>' reference list.
+	 * The list contents are of type {@link daprdesigner.HttpHandler}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Incoming Handler</em>' map.
-	 * @see daprdesigner.DaprdesignerPackage#getMiddlewareConfiguration_IncomingHandler()
-	 * @model mapType="daprdesigner.EStringToStringMapEntry&lt;org.eclipse.emf.ecore.EString, org.eclipse.emf.ecore.EString&gt;"
+	 * @return the value of the '<em>Http Handlers</em>' reference list.
+	 * @see daprdesigner.DaprdesignerPackage#getMiddlewareConfiguration_HttpHandlers()
+	 * @model
 	 * @generated
 	 */
-	EMap<String, String> getIncomingHandler();
-
-	/**
-	 * Returns the value of the '<em><b>Outgoing Handler</b></em>' map.
-	 * The key is of type {@link java.lang.String},
-	 * and the value is of type {@link java.lang.String},
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Outgoing Handler</em>' map.
-	 * @see daprdesigner.DaprdesignerPackage#getMiddlewareConfiguration_OutgoingHandler()
-	 * @model mapType="daprdesigner.EStringToStringMapEntry&lt;org.eclipse.emf.ecore.EString, org.eclipse.emf.ecore.EString&gt;"
-	 * @generated
-	 */
-	EMap<String, String> getOutgoingHandler();
+	EList<HttpHandler> getHttpHandlers();
 
 } // MiddlewareConfiguration

@@ -12,17 +12,10 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
@@ -31,8 +24,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ResiliencyPolicyItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ResiliencyPolicyItemProvider extends DaprNodeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -54,8 +46,25 @@ public class ResiliencyPolicyItemProvider extends ItemProviderAdapter implements
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addTimeoutDefinitionsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Timeout Definitions feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTimeoutDefinitionsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ResiliencyPolicy_timeoutDefinitions_feature"),
+						getString("_UI_PropertyDescriptor_description",
+								"_UI_ResiliencyPolicy_timeoutDefinitions_feature", "_UI_ResiliencyPolicy_type"),
+						DaprdesignerPackage.Literals.RESILIENCY_POLICY__TIMEOUT_DEFINITIONS, true, false, true, null,
+						null, null));
 	}
 
 	/**
@@ -72,7 +81,6 @@ public class ResiliencyPolicyItemProvider extends ItemProviderAdapter implements
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DaprdesignerPackage.Literals.RESILIENCY_POLICY__RETRIES);
 			childrenFeatures.add(DaprdesignerPackage.Literals.RESILIENCY_POLICY__CIRCUITBREAKERS);
-			childrenFeatures.add(DaprdesignerPackage.Literals.RESILIENCY_POLICY__TIMEOUTS);
 		}
 		return childrenFeatures;
 	}
@@ -119,7 +127,9 @@ public class ResiliencyPolicyItemProvider extends ItemProviderAdapter implements
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ResiliencyPolicy_type");
+		String label = ((ResiliencyPolicy) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_ResiliencyPolicy_type")
+				: getString("_UI_ResiliencyPolicy_type") + " " + label;
 	}
 
 	/**
@@ -136,7 +146,6 @@ public class ResiliencyPolicyItemProvider extends ItemProviderAdapter implements
 		switch (notification.getFeatureID(ResiliencyPolicy.class)) {
 		case DaprdesignerPackage.RESILIENCY_POLICY__RETRIES:
 		case DaprdesignerPackage.RESILIENCY_POLICY__CIRCUITBREAKERS:
-		case DaprdesignerPackage.RESILIENCY_POLICY__TIMEOUTS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -159,20 +168,6 @@ public class ResiliencyPolicyItemProvider extends ItemProviderAdapter implements
 
 		newChildDescriptors.add(createChildParameter(DaprdesignerPackage.Literals.RESILIENCY_POLICY__CIRCUITBREAKERS,
 				DaprdesignerFactory.eINSTANCE.createCircuitBreakerPolicy()));
-
-		newChildDescriptors.add(createChildParameter(DaprdesignerPackage.Literals.RESILIENCY_POLICY__TIMEOUTS,
-				DaprdesignerFactory.eINSTANCE.create(DaprdesignerPackage.Literals.ESTRING_TO_STRING_MAP_ENTRY)));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return DaprdesignerEditPlugin.INSTANCE;
 	}
 
 }

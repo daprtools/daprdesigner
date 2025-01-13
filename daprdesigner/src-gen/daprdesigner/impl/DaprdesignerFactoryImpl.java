@@ -5,6 +5,7 @@ package daprdesigner.impl;
 import daprdesigner.*;
 
 import java.util.Map;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -62,26 +63,24 @@ public class DaprdesignerFactoryImpl extends EFactoryImpl implements Daprdesigne
 			return (EObject) createEStringToStringMapEntry();
 		case DaprdesignerPackage.DAPR_ARCHITECTURE:
 			return createDaprArchitecture();
-		case DaprdesignerPackage.ENVIRONMENT:
-			return createEnvironment();
+		case DaprdesignerPackage.BLOCK:
+			return createBlock();
 		case DaprdesignerPackage.NAMESPACE:
 			return createNamespace();
 		case DaprdesignerPackage.TRUSTDOMAIN:
 			return createTrustdomain();
-		case DaprdesignerPackage.SERVICES:
-			return createServices();
 		case DaprdesignerPackage.APP:
 			return createApp();
-		case DaprdesignerPackage.APP_CONFIGURATION:
-			return createAppConfiguration();
+		case DaprdesignerPackage.DENIED_COMPONENTS_CONFIGURATION:
+			return createDeniedComponentsConfiguration();
 		case DaprdesignerPackage.LOGGING_CONFIGURATION:
 			return createLoggingConfiguration();
 		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION:
 			return createNameResolutionConfiguration();
-		case DaprdesignerPackage.SECRETS_CONFIGURATION:
-			return createSecretsConfiguration();
-		case DaprdesignerPackage.SECRETS_LIST:
-			return createSecretsList();
+		case DaprdesignerPackage.SECRETS_ACCESS_CONFIGURATION:
+			return createSecretsAccessConfiguration();
+		case DaprdesignerPackage.SECRETS_ACCESS_LIST:
+			return createSecretsAccessList();
 		case DaprdesignerPackage.METRICS_CONFIGURATION:
 			return createMetricsConfiguration();
 		case DaprdesignerPackage.API_ACCESS_CONTROL:
@@ -108,10 +107,10 @@ public class DaprdesignerFactoryImpl extends EFactoryImpl implements Daprdesigne
 			return createResiliencyConfiguration();
 		case DaprdesignerPackage.RESILIENCY_POLICY:
 			return createResiliencyPolicy();
-		case DaprdesignerPackage.RESILIENCY_TIMEOUT:
-			return createResiliencyTimeout();
 		case DaprdesignerPackage.RETRY_POLICY:
 			return createRetryPolicy();
+		case DaprdesignerPackage.RESILIENCY_TIMEOUT:
+			return createResiliencyTimeout();
 		case DaprdesignerPackage.CIRCUIT_BREAKER_POLICY:
 			return createCircuitBreakerPolicy();
 		case DaprdesignerPackage.RESILIENCY_TARGET:
@@ -124,26 +123,6 @@ public class DaprdesignerFactoryImpl extends EFactoryImpl implements Daprdesigne
 			return createSpecMetadata();
 		case DaprdesignerPackage.HASHICORP_VAULT:
 			return createHashicorpVault();
-		case DaprdesignerPackage.PUB_SUB:
-			return createPubSub();
-		case DaprdesignerPackage.BINDINGS:
-			return createBindings();
-		case DaprdesignerPackage.JOBS:
-			return createJobs();
-		case DaprdesignerPackage.CONFIGURATION:
-			return createConfiguration();
-		case DaprdesignerPackage.WORKFLOW:
-			return createWorkflow();
-		case DaprdesignerPackage.ACTORS:
-			return createActors();
-		case DaprdesignerPackage.SECRETS:
-			return createSecrets();
-		case DaprdesignerPackage.STATE_MANAGEMENT:
-			return createStateManagement();
-		case DaprdesignerPackage.DISTRIBUTED_LOCKS:
-			return createDistributedLocks();
-		case DaprdesignerPackage.CRYPTO_GRAPHY:
-			return createCryptoGraphy();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -157,8 +136,22 @@ public class DaprdesignerFactoryImpl extends EFactoryImpl implements Daprdesigne
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
+		case DaprdesignerPackage.ACCESS_ACTION:
+			return createAccessActionFromString(eDataType, initialValue);
+		case DaprdesignerPackage.RETRY_POLICY_TYPE:
+			return createRetryPolicyTypeFromString(eDataType, initialValue);
+		case DaprdesignerPackage.HTTP_HANDLER_TYPE:
+			return createHttpHandlerTypeFromString(eDataType, initialValue);
 		case DaprdesignerPackage.RESILIENCY_TARGET_TYPE:
 			return createResiliencyTargetTypeFromString(eDataType, initialValue);
+		case DaprdesignerPackage.BLOCK_TYPE:
+			return createBlockTypeFromString(eDataType, initialValue);
+		case DaprdesignerPackage.SDK_LANGUAGE:
+			return createSDKLanguageFromString(eDataType, initialValue);
+		case DaprdesignerPackage.PROTOCOL:
+			return createProtocolFromString(eDataType, initialValue);
+		case DaprdesignerPackage.VERB:
+			return createVerbFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -172,8 +165,22 @@ public class DaprdesignerFactoryImpl extends EFactoryImpl implements Daprdesigne
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
+		case DaprdesignerPackage.ACCESS_ACTION:
+			return convertAccessActionToString(eDataType, instanceValue);
+		case DaprdesignerPackage.RETRY_POLICY_TYPE:
+			return convertRetryPolicyTypeToString(eDataType, instanceValue);
+		case DaprdesignerPackage.HTTP_HANDLER_TYPE:
+			return convertHttpHandlerTypeToString(eDataType, instanceValue);
 		case DaprdesignerPackage.RESILIENCY_TARGET_TYPE:
 			return convertResiliencyTargetTypeToString(eDataType, instanceValue);
+		case DaprdesignerPackage.BLOCK_TYPE:
+			return convertBlockTypeToString(eDataType, instanceValue);
+		case DaprdesignerPackage.SDK_LANGUAGE:
+			return convertSDKLanguageToString(eDataType, instanceValue);
+		case DaprdesignerPackage.PROTOCOL:
+			return convertProtocolToString(eDataType, instanceValue);
+		case DaprdesignerPackage.VERB:
+			return convertVerbToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -204,9 +211,9 @@ public class DaprdesignerFactoryImpl extends EFactoryImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Environment createEnvironment() {
-		EnvironmentImpl environment = new EnvironmentImpl();
-		return environment;
+	public Block createBlock() {
+		BlockImpl block = new BlockImpl();
+		return block;
 	}
 
 	/**
@@ -234,16 +241,6 @@ public class DaprdesignerFactoryImpl extends EFactoryImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Services createServices() {
-		ServicesImpl services = new ServicesImpl();
-		return services;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public App createApp() {
 		AppImpl app = new AppImpl();
 		return app;
@@ -254,9 +251,9 @@ public class DaprdesignerFactoryImpl extends EFactoryImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AppConfiguration createAppConfiguration() {
-		AppConfigurationImpl appConfiguration = new AppConfigurationImpl();
-		return appConfiguration;
+	public DeniedComponentsConfiguration createDeniedComponentsConfiguration() {
+		DeniedComponentsConfigurationImpl deniedComponentsConfiguration = new DeniedComponentsConfigurationImpl();
+		return deniedComponentsConfiguration;
 	}
 
 	/**
@@ -284,9 +281,9 @@ public class DaprdesignerFactoryImpl extends EFactoryImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SecretsConfiguration createSecretsConfiguration() {
-		SecretsConfigurationImpl secretsConfiguration = new SecretsConfigurationImpl();
-		return secretsConfiguration;
+	public SecretsAccessConfiguration createSecretsAccessConfiguration() {
+		SecretsAccessConfigurationImpl secretsAccessConfiguration = new SecretsAccessConfigurationImpl();
+		return secretsAccessConfiguration;
 	}
 
 	/**
@@ -294,9 +291,9 @@ public class DaprdesignerFactoryImpl extends EFactoryImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SecretsList createSecretsList() {
-		SecretsListImpl secretsList = new SecretsListImpl();
-		return secretsList;
+	public SecretsAccessList createSecretsAccessList() {
+		SecretsAccessListImpl secretsAccessList = new SecretsAccessListImpl();
+		return secretsAccessList;
 	}
 
 	/**
@@ -434,9 +431,9 @@ public class DaprdesignerFactoryImpl extends EFactoryImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ResiliencyTimeout createResiliencyTimeout() {
-		ResiliencyTimeoutImpl resiliencyTimeout = new ResiliencyTimeoutImpl();
-		return resiliencyTimeout;
+	public RetryPolicy createRetryPolicy() {
+		RetryPolicyImpl retryPolicy = new RetryPolicyImpl();
+		return retryPolicy;
 	}
 
 	/**
@@ -444,9 +441,9 @@ public class DaprdesignerFactoryImpl extends EFactoryImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RetryPolicy createRetryPolicy() {
-		RetryPolicyImpl retryPolicy = new RetryPolicyImpl();
-		return retryPolicy;
+	public ResiliencyTimeout createResiliencyTimeout() {
+		ResiliencyTimeoutImpl resiliencyTimeout = new ResiliencyTimeoutImpl();
+		return resiliencyTimeout;
 	}
 
 	/**
@@ -514,9 +511,12 @@ public class DaprdesignerFactoryImpl extends EFactoryImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PubSub createPubSub() {
-		PubSubImpl pubSub = new PubSubImpl();
-		return pubSub;
+	public AccessAction createAccessActionFromString(EDataType eDataType, String initialValue) {
+		AccessAction result = AccessAction.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
 	}
 
 	/**
@@ -524,9 +524,8 @@ public class DaprdesignerFactoryImpl extends EFactoryImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Bindings createBindings() {
-		BindingsImpl bindings = new BindingsImpl();
-		return bindings;
+	public String convertAccessActionToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**
@@ -534,9 +533,12 @@ public class DaprdesignerFactoryImpl extends EFactoryImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Jobs createJobs() {
-		JobsImpl jobs = new JobsImpl();
-		return jobs;
+	public RetryPolicyType createRetryPolicyTypeFromString(EDataType eDataType, String initialValue) {
+		RetryPolicyType result = RetryPolicyType.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
 	}
 
 	/**
@@ -544,9 +546,8 @@ public class DaprdesignerFactoryImpl extends EFactoryImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Configuration createConfiguration() {
-		ConfigurationImpl configuration = new ConfigurationImpl();
-		return configuration;
+	public String convertRetryPolicyTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**
@@ -554,9 +555,12 @@ public class DaprdesignerFactoryImpl extends EFactoryImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Workflow createWorkflow() {
-		WorkflowImpl workflow = new WorkflowImpl();
-		return workflow;
+	public HttpHandlerType createHttpHandlerTypeFromString(EDataType eDataType, String initialValue) {
+		HttpHandlerType result = HttpHandlerType.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
 	}
 
 	/**
@@ -564,49 +568,8 @@ public class DaprdesignerFactoryImpl extends EFactoryImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Actors createActors() {
-		ActorsImpl actors = new ActorsImpl();
-		return actors;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Secrets createSecrets() {
-		SecretsImpl secrets = new SecretsImpl();
-		return secrets;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public StateManagement createStateManagement() {
-		StateManagementImpl stateManagement = new StateManagementImpl();
-		return stateManagement;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DistributedLocks createDistributedLocks() {
-		DistributedLocksImpl distributedLocks = new DistributedLocksImpl();
-		return distributedLocks;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CryptoGraphy createCryptoGraphy() {
-		CryptoGraphyImpl cryptoGraphy = new CryptoGraphyImpl();
-		return cryptoGraphy;
+	public String convertHttpHandlerTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**
@@ -628,6 +591,94 @@ public class DaprdesignerFactoryImpl extends EFactoryImpl implements Daprdesigne
 	 * @generated
 	 */
 	public String convertResiliencyTargetTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BlockType createBlockTypeFromString(EDataType eDataType, String initialValue) {
+		BlockType result = BlockType.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertBlockTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SDKLanguage createSDKLanguageFromString(EDataType eDataType, String initialValue) {
+		SDKLanguage result = SDKLanguage.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertSDKLanguageToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Protocol createProtocolFromString(EDataType eDataType, String initialValue) {
+		Protocol result = Protocol.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertProtocolToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Verb createVerbFromString(EDataType eDataType, String initialValue) {
+		Verb result = Verb.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertVerbToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

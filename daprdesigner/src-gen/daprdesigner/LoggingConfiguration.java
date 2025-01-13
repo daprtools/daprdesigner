@@ -2,8 +2,6 @@
  */
 package daprdesigner;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Logging Configuration</b></em>'.
@@ -22,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface LoggingConfiguration extends EObject {
+public interface LoggingConfiguration extends AppConfiguration {
 	/**
 	 * Returns the value of the '<em><b>Enabled</b></em>' attribute.
 	 * The default value is <code>"true"</code>.

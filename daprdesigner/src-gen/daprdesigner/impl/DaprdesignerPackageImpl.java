@@ -3,27 +3,25 @@
 package daprdesigner.impl;
 
 import daprdesigner.APIAccessControl;
-import daprdesigner.Actors;
+import daprdesigner.AccessAction;
 import daprdesigner.App;
 import daprdesigner.AppAccessControl;
 import daprdesigner.AppConfiguration;
 import daprdesigner.AppPolicy;
-import daprdesigner.Bindings;
-import daprdesigner.BuildingBlock;
+import daprdesigner.Block;
+import daprdesigner.BlockType;
 import daprdesigner.CircuitBreakerPolicy;
 import daprdesigner.Component;
 import daprdesigner.ComponentSpec;
-import daprdesigner.Configuration;
-import daprdesigner.CryptoGraphy;
 import daprdesigner.DaprArchitecture;
+import daprdesigner.DaprNode;
 import daprdesigner.DaprdesignerFactory;
 import daprdesigner.DaprdesignerPackage;
-import daprdesigner.DistributedLocks;
-import daprdesigner.Environment;
+import daprdesigner.DeniedComponentsConfiguration;
 import daprdesigner.HTTPEndPoint;
 import daprdesigner.HashicorpVault;
 import daprdesigner.HttpHandler;
-import daprdesigner.Jobs;
+import daprdesigner.HttpHandlerType;
 import daprdesigner.LoggingConfiguration;
 import daprdesigner.MessageBroker;
 import daprdesigner.MetricsConfiguration;
@@ -31,27 +29,27 @@ import daprdesigner.MiddlewareConfiguration;
 import daprdesigner.NameResolutionConfiguration;
 import daprdesigner.Namespace;
 import daprdesigner.Operation;
-import daprdesigner.PubSub;
+import daprdesigner.Protocol;
 import daprdesigner.ResiliencyConfiguration;
 import daprdesigner.ResiliencyPolicy;
 import daprdesigner.ResiliencyTarget;
 import daprdesigner.ResiliencyTargetType;
 import daprdesigner.ResiliencyTimeout;
 import daprdesigner.RetryPolicy;
+import daprdesigner.RetryPolicyType;
 import daprdesigner.RouteRules;
+import daprdesigner.SDKLanguage;
 import daprdesigner.SecretStore;
-import daprdesigner.Secrets;
-import daprdesigner.SecretsConfiguration;
-import daprdesigner.SecretsList;
-import daprdesigner.Services;
+import daprdesigner.SecretsAccessConfiguration;
+import daprdesigner.SecretsAccessList;
 import daprdesigner.SpecMetadata;
-import daprdesigner.StateManagement;
 import daprdesigner.SubscriptionConfiguration;
 import daprdesigner.TracingConfiguration;
 import daprdesigner.Trustdomain;
-import daprdesigner.Workflow;
+import daprdesigner.Verb;
 
 import java.util.Map;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -86,7 +84,14 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass environmentEClass = null;
+	private EClass blockEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass daprNodeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -107,20 +112,6 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass buildingBlockEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass servicesEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass appEClass = null;
 
 	/**
@@ -129,6 +120,13 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * @generated
 	 */
 	private EClass appConfigurationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass deniedComponentsConfigurationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -149,14 +147,14 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass secretsConfigurationEClass = null;
+	private EClass secretsAccessConfigurationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass secretsListEClass = null;
+	private EClass secretsAccessListEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -254,14 +252,14 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass resiliencyTimeoutEClass = null;
+	private EClass retryPolicyEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass retryPolicyEClass = null;
+	private EClass resiliencyTimeoutEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -331,70 +329,21 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass pubSubEClass = null;
+	private EEnum accessActionEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass bindingsEClass = null;
+	private EEnum retryPolicyTypeEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass jobsEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass configurationEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass workflowEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass actorsEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass secretsEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass stateManagementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass distributedLocksEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass cryptoGraphyEClass = null;
+	private EEnum httpHandlerTypeEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -402,6 +351,34 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * @generated
 	 */
 	private EEnum resiliencyTargetTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum blockTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum sdkLanguageEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum protocolEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum verbEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -517,7 +494,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDaprArchitecture_Environments() {
+	public EReference getDaprArchitecture_Buildingblocks() {
 		return (EReference) daprArchitectureEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -526,8 +503,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getEnvironment() {
-		return environmentEClass;
+	public EClass getBlock() {
+		return blockEClass;
 	}
 
 	/**
@@ -535,8 +512,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEnvironment_Name() {
-		return (EAttribute) environmentEClass.getEStructuralFeatures().get(0);
+	public EAttribute getBlock_Name() {
+		return (EAttribute) blockEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -544,8 +521,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEnvironment_Namespace() {
-		return (EReference) environmentEClass.getEStructuralFeatures().get(1);
+	public EAttribute getBlock_Description() {
+		return (EAttribute) blockEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -553,8 +530,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEnvironment_Trustdomain() {
-		return (EReference) environmentEClass.getEStructuralFeatures().get(2);
+	public EAttribute getBlock_Notes() {
+		return (EAttribute) blockEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -562,8 +539,62 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEnvironment_Buildingblocks() {
-		return (EReference) environmentEClass.getEStructuralFeatures().get(3);
+	public EAttribute getBlock_BlockType() {
+		return (EAttribute) blockEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBlock_Subblocks() {
+		return (EReference) blockEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBlock_Nodes() {
+		return (EReference) blockEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDaprNode() {
+		return daprNodeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDaprNode_Name() {
+		return (EAttribute) daprNodeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDaprNode_Description() {
+		return (EAttribute) daprNodeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDaprNode_Notes() {
+		return (EAttribute) daprNodeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -581,7 +612,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * @generated
 	 */
 	public EAttribute getNamespace_Name() {
-		return (EAttribute) namespaceEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) namespaceEClass.getEStructuralFeatures().get(-1);
 	}
 
 	/**
@@ -599,61 +630,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * @generated
 	 */
 	public EAttribute getTrustdomain_Name() {
-		return (EAttribute) trustdomainEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getBuildingBlock() {
-		return buildingBlockEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getBuildingBlock_Namespace() {
-		return (EReference) buildingBlockEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getBuildingBlock_TrustDomain() {
-		return (EReference) buildingBlockEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getServices() {
-		return servicesEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getServices_Name() {
-		return (EAttribute) servicesEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getServices_Apps() {
-		return (EReference) servicesEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) trustdomainEClass.getEStructuralFeatures().get(-1);
 	}
 
 	/**
@@ -679,8 +656,26 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getApp_Repository() {
+		return (EAttribute) appEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getApp_SdkLanguage() {
+		return (EAttribute) appEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getApp_Namespace() {
-		return (EReference) appEClass.getEStructuralFeatures().get(1);
+		return (EReference) appEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -689,7 +684,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * @generated
 	 */
 	public EReference getApp_TrustDomain() {
-		return (EReference) appEClass.getEStructuralFeatures().get(2);
+		return (EReference) appEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -697,8 +692,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getApp_Configuration() {
-		return (EReference) appEClass.getEStructuralFeatures().get(3);
+	public EReference getApp_Configurations() {
+		return (EReference) appEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -733,8 +728,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAppConfiguration_Metadata_name() {
-		return (EAttribute) appConfigurationEClass.getEStructuralFeatures().get(2);
+	public EClass getDeniedComponentsConfiguration() {
+		return deniedComponentsConfigurationEClass;
 	}
 
 	/**
@@ -742,89 +737,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAppConfiguration_Metadata_namespace() {
-		return (EReference) appConfigurationEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAppConfiguration_AccessControl() {
-		return (EReference) appConfigurationEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAppConfiguration_ApiControl() {
-		return (EReference) appConfigurationEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAppConfiguration_MiddlewareConfiguration() {
-		return (EReference) appConfigurationEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAppConfiguration_LoggingConfiguration() {
-		return (EReference) appConfigurationEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAppConfiguration_NameResolutionConfiguration() {
-		return (EReference) appConfigurationEClass.getEStructuralFeatures().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAppConfiguration_SecretsConfiguration() {
-		return (EReference) appConfigurationEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAppConfiguration_MetricsConfiguration() {
-		return (EReference) appConfigurationEClass.getEStructuralFeatures().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAppConfiguration_TracingConfiguration() {
-		return (EReference) appConfigurationEClass.getEStructuralFeatures().get(11);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAppConfiguration_ComponentsDenyList() {
-		return (EAttribute) appConfigurationEClass.getEStructuralFeatures().get(12);
+	public EReference getDeniedComponentsConfiguration_DeniedComponents() {
+		return (EReference) deniedComponentsConfigurationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -877,8 +791,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getNameResolutionConfiguration_ComponentName() {
-		return (EAttribute) nameResolutionConfigurationEClass.getEStructuralFeatures().get(0);
+	public EReference getNameResolutionConfiguration_Component() {
+		return (EReference) nameResolutionConfigurationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -913,8 +827,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSecretsConfiguration() {
-		return secretsConfigurationEClass;
+	public EClass getSecretsAccessConfiguration() {
+		return secretsAccessConfigurationEClass;
 	}
 
 	/**
@@ -922,8 +836,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSecretsConfiguration_AllowedList() {
-		return (EReference) secretsConfigurationEClass.getEStructuralFeatures().get(0);
+	public EReference getSecretsAccessConfiguration_AccessList() {
+		return (EReference) secretsAccessConfigurationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -931,8 +845,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSecretsConfiguration_DeniedList() {
-		return (EReference) secretsConfigurationEClass.getEStructuralFeatures().get(1);
+	public EClass getSecretsAccessList() {
+		return secretsAccessListEClass;
 	}
 
 	/**
@@ -940,8 +854,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSecretsList() {
-		return secretsListEClass;
+	public EReference getSecretsAccessList_Component() {
+		return (EReference) secretsAccessListEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -949,8 +863,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSecretsList_StoreName() {
-		return (EAttribute) secretsListEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSecretsAccessList_DefaultAccess() {
+		return (EAttribute) secretsAccessListEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -958,8 +872,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSecretsList_DefaultAccess() {
-		return (EAttribute) secretsListEClass.getEStructuralFeatures().get(1);
+	public EAttribute getSecretsAccessList_Secrets() {
+		return (EAttribute) secretsAccessListEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -967,8 +881,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSecretsList_Secrets() {
-		return (EAttribute) secretsListEClass.getEStructuralFeatures().get(2);
+	public EAttribute getSecretsAccessList_Action() {
+		return (EAttribute) secretsAccessListEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1039,17 +953,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAPIAccessControl_AllowedAPIs() {
+	public EReference getAPIAccessControl_ApiList() {
 		return (EReference) apiAccessControlEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAPIAccessControl_DeniedAPIs() {
-		return (EReference) apiAccessControlEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1066,8 +971,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAPI_Api_name() {
-		return (EAttribute) apiEClass.getEStructuralFeatures().get(0);
+	public EReference getAPI_Component() {
+		return (EReference) apiEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1086,6 +991,15 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 */
 	public EAttribute getAPI_Protocol() {
 		return (EAttribute) apiEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAPI_Access() {
+		return (EAttribute) apiEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1237,17 +1151,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMiddlewareConfiguration_IncomingHandler() {
+	public EReference getMiddlewareConfiguration_HttpHandlers() {
 		return (EReference) middlewareConfigurationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMiddlewareConfiguration_OutgoingHandler() {
-		return (EReference) middlewareConfigurationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1264,7 +1169,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getHttpHandler_Name() {
+	public EAttribute getHttpHandler_HandlerName() {
 		return (EAttribute) httpHandlerEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1275,6 +1180,24 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 */
 	public EAttribute getHttpHandler_Type() {
 		return (EAttribute) httpHandlerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getHttpHandler_HandlerType() {
+		return (EAttribute) httpHandlerEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getHttpHandler_Name() {
+		return (EAttribute) httpHandlerEClass.getEStructuralFeatures().get(-1);
 	}
 
 	/**
@@ -1372,7 +1295,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSubscriptionConfiguration_Name() {
+	public EAttribute getSubscriptionConfiguration_TopicName() {
 		return (EAttribute) subscriptionConfigurationEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1381,8 +1304,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSubscriptionConfiguration_TopicName() {
-		return (EAttribute) subscriptionConfigurationEClass.getEStructuralFeatures().get(3);
+	public EReference getSubscriptionConfiguration_RouteRules() {
+		return (EReference) subscriptionConfigurationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1390,7 +1313,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSubscriptionConfiguration_RouteRules() {
+	public EReference getSubscriptionConfiguration_Pubsub() {
 		return (EReference) subscriptionConfigurationEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1399,7 +1322,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSubscriptionConfiguration_Pubsubname() {
+	public EAttribute getSubscriptionConfiguration_DeadLetterTopic() {
 		return (EAttribute) subscriptionConfigurationEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -1408,7 +1331,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSubscriptionConfiguration_DeadLetterTopic() {
+	public EAttribute getSubscriptionConfiguration_BulkSubscribe_enabled() {
 		return (EAttribute) subscriptionConfigurationEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -1417,7 +1340,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSubscriptionConfiguration_BulkSubscribe_enabled() {
+	public EAttribute getSubscriptionConfiguration_BulkSubscribe_maxMessagesCount() {
 		return (EAttribute) subscriptionConfigurationEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -1426,7 +1349,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSubscriptionConfiguration_BulkSubscribe_maxMessagesCount() {
+	public EAttribute getSubscriptionConfiguration_BulkSubscribe_maxAwaitDurationMs() {
 		return (EAttribute) subscriptionConfigurationEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -1435,8 +1358,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSubscriptionConfiguration_BulkSubscribe_maxAwaitDurationMs() {
-		return (EAttribute) subscriptionConfigurationEClass.getEStructuralFeatures().get(9);
+	public EReference getSubscriptionConfiguration_Scopes() {
+		return (EReference) subscriptionConfigurationEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1444,8 +1367,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSubscriptionConfiguration_Scopes() {
-		return (EReference) subscriptionConfigurationEClass.getEStructuralFeatures().get(10);
+	public EAttribute getSubscriptionConfiguration_Name() {
+		return (EAttribute) subscriptionConfigurationEClass.getEStructuralFeatures().get(-1);
 	}
 
 	/**
@@ -1507,7 +1430,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getResiliencyConfiguration_Name() {
+	public EAttribute getResiliencyConfiguration_Version() {
 		return (EAttribute) resiliencyConfigurationEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1543,6 +1466,15 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getResiliencyConfiguration_Name() {
+		return (EAttribute) resiliencyConfigurationEClass.getEStructuralFeatures().get(-1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getResiliencyPolicy() {
 		return resiliencyPolicyEClass;
 	}
@@ -1570,35 +1502,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getResiliencyPolicy_Timeouts() {
+	public EReference getResiliencyPolicy_TimeoutDefinitions() {
 		return (EReference) resiliencyPolicyEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getResiliencyTimeout() {
-		return resiliencyTimeoutEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getResiliencyTimeout_Name() {
-		return (EAttribute) resiliencyTimeoutEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getResiliencyTimeout_Value() {
-		return (EAttribute) resiliencyTimeoutEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1615,7 +1520,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRetryPolicy_Name() {
+	public EAttribute getRetryPolicy_Policy_type() {
 		return (EAttribute) retryPolicyEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1624,7 +1529,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRetryPolicy_Policy_type() {
+	public EAttribute getRetryPolicy_Duration() {
 		return (EAttribute) retryPolicyEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1633,7 +1538,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRetryPolicy_Duration() {
+	public EAttribute getRetryPolicy_MaxRetries() {
 		return (EAttribute) retryPolicyEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1642,8 +1547,44 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRetryPolicy_MaxRetries() {
+	public EAttribute getRetryPolicy_MaxInterval() {
 		return (EAttribute) retryPolicyEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRetryPolicy_Name() {
+		return (EAttribute) retryPolicyEClass.getEStructuralFeatures().get(-1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getResiliencyTimeout() {
+		return resiliencyTimeoutEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getResiliencyTimeout_TimeOutinSeconds() {
+		return (EAttribute) resiliencyTimeoutEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getResiliencyTimeout_Name() {
+		return (EAttribute) resiliencyTimeoutEClass.getEStructuralFeatures().get(-1);
 	}
 
 	/**
@@ -1660,7 +1601,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCircuitBreakerPolicy_Name() {
+	public EAttribute getCircuitBreakerPolicy_MaxRequests() {
 		return (EAttribute) circuitBreakerPolicyEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1669,7 +1610,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCircuitBreakerPolicy_MaxRequests() {
+	public EAttribute getCircuitBreakerPolicy_Interval() {
 		return (EAttribute) circuitBreakerPolicyEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1678,7 +1619,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCircuitBreakerPolicy_Interval() {
+	public EAttribute getCircuitBreakerPolicy_Timeout() {
 		return (EAttribute) circuitBreakerPolicyEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1687,7 +1628,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCircuitBreakerPolicy_Timeout() {
+	public EAttribute getCircuitBreakerPolicy_Trip() {
 		return (EAttribute) circuitBreakerPolicyEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1696,8 +1637,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCircuitBreakerPolicy_Trip() {
-		return (EAttribute) circuitBreakerPolicyEClass.getEStructuralFeatures().get(4);
+	public EAttribute getCircuitBreakerPolicy_Name() {
+		return (EAttribute) circuitBreakerPolicyEClass.getEStructuralFeatures().get(-1);
 	}
 
 	/**
@@ -1723,17 +1664,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getResiliencyTarget_Name() {
-		return (EAttribute) resiliencyTargetEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getResiliencyTarget_CircuitBreaker() {
-		return (EReference) resiliencyTargetEClass.getEStructuralFeatures().get(2);
+		return (EReference) resiliencyTargetEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1742,7 +1674,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * @generated
 	 */
 	public EReference getResiliencyTarget_Retry() {
-		return (EReference) resiliencyTargetEClass.getEStructuralFeatures().get(3);
+		return (EReference) resiliencyTargetEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1751,7 +1683,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * @generated
 	 */
 	public EAttribute getResiliencyTarget_CircuitBreakerCacheSize() {
-		return (EAttribute) resiliencyTargetEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) resiliencyTargetEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1760,7 +1692,16 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * @generated
 	 */
 	public EReference getResiliencyTarget_Timeout() {
-		return (EReference) resiliencyTargetEClass.getEStructuralFeatures().get(5);
+		return (EReference) resiliencyTargetEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getResiliencyTarget_Name() {
+		return (EAttribute) resiliencyTargetEClass.getEStructuralFeatures().get(-1);
 	}
 
 	/**
@@ -1804,7 +1745,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getHTTPEndPoint_Metadata_name() {
+	public EAttribute getHTTPEndPoint_BaseUrl() {
 		return (EAttribute) httpEndPointEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1813,17 +1754,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getHTTPEndPoint_BaseUrl() {
-		return (EAttribute) httpEndPointEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getHTTPEndPoint_Scopes() {
-		return (EReference) httpEndPointEClass.getEStructuralFeatures().get(5);
+		return (EReference) httpEndPointEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1832,7 +1764,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * @generated
 	 */
 	public EReference getHTTPEndPoint_Headers() {
-		return (EReference) httpEndPointEClass.getEStructuralFeatures().get(6);
+		return (EReference) httpEndPointEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1841,7 +1773,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * @generated
 	 */
 	public EReference getHTTPEndPoint_ClientTLS_rootCA() {
-		return (EReference) httpEndPointEClass.getEStructuralFeatures().get(7);
+		return (EReference) httpEndPointEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1850,7 +1782,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * @generated
 	 */
 	public EReference getHTTPEndPoint_ClientTLS_certificate() {
-		return (EReference) httpEndPointEClass.getEStructuralFeatures().get(8);
+		return (EReference) httpEndPointEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1859,7 +1791,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * @generated
 	 */
 	public EReference getHTTPEndPoint_ClientTLS_privateKey() {
-		return (EReference) httpEndPointEClass.getEStructuralFeatures().get(9);
+		return (EReference) httpEndPointEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1903,17 +1835,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getComponent_Metadata_name() {
-		return (EAttribute) componentEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getComponent_Metadata_namespace() {
-		return (EReference) componentEClass.getEStructuralFeatures().get(4);
+		return (EReference) componentEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1922,7 +1845,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * @generated
 	 */
 	public EReference getComponent_Spec() {
-		return (EReference) componentEClass.getEStructuralFeatures().get(5);
+		return (EReference) componentEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1931,7 +1854,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * @generated
 	 */
 	public EReference getComponent_Scopes() {
-		return (EReference) componentEClass.getEStructuralFeatures().get(6);
+		return (EReference) componentEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1984,7 +1907,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSpecMetadata_Name() {
+	public EAttribute getSpecMetadata_Value() {
 		return (EAttribute) specMetadataEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1993,7 +1916,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSpecMetadata_Value() {
+	public EAttribute getSpecMetadata_IsFetchedFromSecret() {
 		return (EAttribute) specMetadataEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -2002,7 +1925,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSpecMetadata_IsFetchedFromSecret() {
+	public EAttribute getSpecMetadata_IsFetchedFromEnvironment() {
 		return (EAttribute) specMetadataEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -2011,7 +1934,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSpecMetadata_IsFetchedFromEnvironment() {
+	public EAttribute getSpecMetadata_SecretKeyRefName() {
 		return (EAttribute) specMetadataEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -2020,7 +1943,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSpecMetadata_SecretKeyRefName() {
+	public EAttribute getSpecMetadata_SecretKeyRefKey() {
 		return (EAttribute) specMetadataEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -2029,7 +1952,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSpecMetadata_SecretKeyRefKey() {
+	public EAttribute getSpecMetadata_EnvRef() {
 		return (EAttribute) specMetadataEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -2038,8 +1961,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSpecMetadata_EnvRef() {
-		return (EAttribute) specMetadataEClass.getEStructuralFeatures().get(6);
+	public EAttribute getSpecMetadata_Name() {
+		return (EAttribute) specMetadataEClass.getEStructuralFeatures().get(-1);
 	}
 
 	/**
@@ -2092,8 +2015,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPubSub() {
-		return pubSubEClass;
+	public EEnum getAccessAction() {
+		return accessActionEEnum;
 	}
 
 	/**
@@ -2101,8 +2024,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPubSub_Name() {
-		return (EAttribute) pubSubEClass.getEStructuralFeatures().get(0);
+	public EEnum getRetryPolicyType() {
+		return retryPolicyTypeEEnum;
 	}
 
 	/**
@@ -2110,251 +2033,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPubSub_Mbrokers() {
-		return (EReference) pubSubEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getBindings() {
-		return bindingsEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getBindings_Name() {
-		return (EAttribute) bindingsEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getBindings_AppID() {
-		return (EAttribute) bindingsEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getJobs() {
-		return jobsEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getJobs_Name() {
-		return (EAttribute) jobsEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getJobs_AppID() {
-		return (EAttribute) jobsEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getConfiguration() {
-		return configurationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getConfiguration_Name() {
-		return (EAttribute) configurationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getConfiguration_AppID() {
-		return (EAttribute) configurationEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getWorkflow() {
-		return workflowEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getWorkflow_Name() {
-		return (EAttribute) workflowEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getWorkflow_AppID() {
-		return (EAttribute) workflowEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getActors() {
-		return actorsEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getActors_Name() {
-		return (EAttribute) actorsEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getActors_AppID() {
-		return (EAttribute) actorsEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getSecrets() {
-		return secretsEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getSecrets_Name() {
-		return (EAttribute) secretsEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getSecrets_AppID() {
-		return (EAttribute) secretsEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getStateManagement() {
-		return stateManagementEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getStateManagement_Name() {
-		return (EAttribute) stateManagementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getStateManagement_AppID() {
-		return (EAttribute) stateManagementEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getDistributedLocks() {
-		return distributedLocksEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDistributedLocks_Name() {
-		return (EAttribute) distributedLocksEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDistributedLocks_AppID() {
-		return (EAttribute) distributedLocksEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getCryptoGraphy() {
-		return cryptoGraphyEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCryptoGraphy_Name() {
-		return (EAttribute) cryptoGraphyEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCryptoGraphy_AppID() {
-		return (EAttribute) cryptoGraphyEClass.getEStructuralFeatures().get(1);
+	public EEnum getHttpHandlerType() {
+		return httpHandlerTypeEEnum;
 	}
 
 	/**
@@ -2364,6 +2044,42 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 */
 	public EEnum getResiliencyTargetType() {
 		return resiliencyTargetTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getBlockType() {
+		return blockTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getSDKLanguage() {
+		return sdkLanguageEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getProtocol() {
+		return protocolEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getVerb() {
+		return verbEEnum;
 	}
 
 	/**
@@ -2401,13 +2117,20 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 
 		daprArchitectureEClass = createEClass(DAPR_ARCHITECTURE);
 		createEAttribute(daprArchitectureEClass, DAPR_ARCHITECTURE__NAME);
-		createEReference(daprArchitectureEClass, DAPR_ARCHITECTURE__ENVIRONMENTS);
+		createEReference(daprArchitectureEClass, DAPR_ARCHITECTURE__BUILDINGBLOCKS);
 
-		environmentEClass = createEClass(ENVIRONMENT);
-		createEAttribute(environmentEClass, ENVIRONMENT__NAME);
-		createEReference(environmentEClass, ENVIRONMENT__NAMESPACE);
-		createEReference(environmentEClass, ENVIRONMENT__TRUSTDOMAIN);
-		createEReference(environmentEClass, ENVIRONMENT__BUILDINGBLOCKS);
+		blockEClass = createEClass(BLOCK);
+		createEAttribute(blockEClass, BLOCK__NAME);
+		createEAttribute(blockEClass, BLOCK__DESCRIPTION);
+		createEAttribute(blockEClass, BLOCK__NOTES);
+		createEAttribute(blockEClass, BLOCK__BLOCK_TYPE);
+		createEReference(blockEClass, BLOCK__SUBBLOCKS);
+		createEReference(blockEClass, BLOCK__NODES);
+
+		daprNodeEClass = createEClass(DAPR_NODE);
+		createEAttribute(daprNodeEClass, DAPR_NODE__NAME);
+		createEAttribute(daprNodeEClass, DAPR_NODE__DESCRIPTION);
+		createEAttribute(daprNodeEClass, DAPR_NODE__NOTES);
 
 		namespaceEClass = createEClass(NAMESPACE);
 		createEAttribute(namespaceEClass, NAMESPACE__NAME);
@@ -2415,34 +2138,20 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		trustdomainEClass = createEClass(TRUSTDOMAIN);
 		createEAttribute(trustdomainEClass, TRUSTDOMAIN__NAME);
 
-		buildingBlockEClass = createEClass(BUILDING_BLOCK);
-		createEReference(buildingBlockEClass, BUILDING_BLOCK__NAMESPACE);
-		createEReference(buildingBlockEClass, BUILDING_BLOCK__TRUST_DOMAIN);
-
-		servicesEClass = createEClass(SERVICES);
-		createEAttribute(servicesEClass, SERVICES__NAME);
-		createEReference(servicesEClass, SERVICES__APPS);
-
 		appEClass = createEClass(APP);
 		createEAttribute(appEClass, APP__APP_ID);
+		createEAttribute(appEClass, APP__REPOSITORY);
+		createEAttribute(appEClass, APP__SDK_LANGUAGE);
 		createEReference(appEClass, APP__NAMESPACE);
 		createEReference(appEClass, APP__TRUST_DOMAIN);
-		createEReference(appEClass, APP__CONFIGURATION);
+		createEReference(appEClass, APP__CONFIGURATIONS);
 
 		appConfigurationEClass = createEClass(APP_CONFIGURATION);
 		createEAttribute(appConfigurationEClass, APP_CONFIGURATION__API_VERSION);
 		createEAttribute(appConfigurationEClass, APP_CONFIGURATION__KIND);
-		createEAttribute(appConfigurationEClass, APP_CONFIGURATION__METADATA_NAME);
-		createEReference(appConfigurationEClass, APP_CONFIGURATION__METADATA_NAMESPACE);
-		createEReference(appConfigurationEClass, APP_CONFIGURATION__ACCESS_CONTROL);
-		createEReference(appConfigurationEClass, APP_CONFIGURATION__API_CONTROL);
-		createEReference(appConfigurationEClass, APP_CONFIGURATION__MIDDLEWARE_CONFIGURATION);
-		createEReference(appConfigurationEClass, APP_CONFIGURATION__LOGGING_CONFIGURATION);
-		createEReference(appConfigurationEClass, APP_CONFIGURATION__NAME_RESOLUTION_CONFIGURATION);
-		createEReference(appConfigurationEClass, APP_CONFIGURATION__SECRETS_CONFIGURATION);
-		createEReference(appConfigurationEClass, APP_CONFIGURATION__METRICS_CONFIGURATION);
-		createEReference(appConfigurationEClass, APP_CONFIGURATION__TRACING_CONFIGURATION);
-		createEAttribute(appConfigurationEClass, APP_CONFIGURATION__COMPONENTS_DENY_LIST);
+
+		deniedComponentsConfigurationEClass = createEClass(DENIED_COMPONENTS_CONFIGURATION);
+		createEReference(deniedComponentsConfigurationEClass, DENIED_COMPONENTS_CONFIGURATION__DENIED_COMPONENTS);
 
 		loggingConfigurationEClass = createEClass(LOGGING_CONFIGURATION);
 		createEAttribute(loggingConfigurationEClass, LOGGING_CONFIGURATION__ENABLED);
@@ -2450,19 +2159,19 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		createEAttribute(loggingConfigurationEClass, LOGGING_CONFIGURATION__OMIT_HEALTH_CHECKS);
 
 		nameResolutionConfigurationEClass = createEClass(NAME_RESOLUTION_CONFIGURATION);
-		createEAttribute(nameResolutionConfigurationEClass, NAME_RESOLUTION_CONFIGURATION__COMPONENT_NAME);
+		createEReference(nameResolutionConfigurationEClass, NAME_RESOLUTION_CONFIGURATION__COMPONENT);
 		createEAttribute(nameResolutionConfigurationEClass, NAME_RESOLUTION_CONFIGURATION__COMPONENT_VERSION);
 		createEAttribute(nameResolutionConfigurationEClass, NAME_RESOLUTION_CONFIGURATION__CONFIGURATION_KEY);
 		createEAttribute(nameResolutionConfigurationEClass, NAME_RESOLUTION_CONFIGURATION__CONFIGURATION_VALUE);
 
-		secretsConfigurationEClass = createEClass(SECRETS_CONFIGURATION);
-		createEReference(secretsConfigurationEClass, SECRETS_CONFIGURATION__ALLOWED_LIST);
-		createEReference(secretsConfigurationEClass, SECRETS_CONFIGURATION__DENIED_LIST);
+		secretsAccessConfigurationEClass = createEClass(SECRETS_ACCESS_CONFIGURATION);
+		createEReference(secretsAccessConfigurationEClass, SECRETS_ACCESS_CONFIGURATION__ACCESS_LIST);
 
-		secretsListEClass = createEClass(SECRETS_LIST);
-		createEAttribute(secretsListEClass, SECRETS_LIST__STORE_NAME);
-		createEAttribute(secretsListEClass, SECRETS_LIST__DEFAULT_ACCESS);
-		createEAttribute(secretsListEClass, SECRETS_LIST__SECRETS);
+		secretsAccessListEClass = createEClass(SECRETS_ACCESS_LIST);
+		createEReference(secretsAccessListEClass, SECRETS_ACCESS_LIST__COMPONENT);
+		createEAttribute(secretsAccessListEClass, SECRETS_ACCESS_LIST__DEFAULT_ACCESS);
+		createEAttribute(secretsAccessListEClass, SECRETS_ACCESS_LIST__SECRETS);
+		createEAttribute(secretsAccessListEClass, SECRETS_ACCESS_LIST__ACTION);
 
 		metricsConfigurationEClass = createEClass(METRICS_CONFIGURATION);
 		createEAttribute(metricsConfigurationEClass, METRICS_CONFIGURATION__ENABLED);
@@ -2472,13 +2181,13 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		createEAttribute(metricsConfigurationEClass, METRICS_CONFIGURATION__HTTP_EXCLUDE_VERBS);
 
 		apiAccessControlEClass = createEClass(API_ACCESS_CONTROL);
-		createEReference(apiAccessControlEClass, API_ACCESS_CONTROL__ALLOWED_AP_IS);
-		createEReference(apiAccessControlEClass, API_ACCESS_CONTROL__DENIED_AP_IS);
+		createEReference(apiAccessControlEClass, API_ACCESS_CONTROL__API_LIST);
 
 		apiEClass = createEClass(API);
-		createEAttribute(apiEClass, API__API_NAME);
+		createEReference(apiEClass, API__COMPONENT);
 		createEAttribute(apiEClass, API__API_VERSION);
 		createEAttribute(apiEClass, API__PROTOCOL);
+		createEAttribute(apiEClass, API__ACCESS);
 
 		appAccessControlEClass = createEClass(APP_ACCESS_CONTROL);
 		createEAttribute(appAccessControlEClass, APP_ACCESS_CONTROL__DEFAULT_ACTION);
@@ -2499,12 +2208,13 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		createEAttribute(operationEClass, OPERATION__ACTION);
 
 		middlewareConfigurationEClass = createEClass(MIDDLEWARE_CONFIGURATION);
-		createEReference(middlewareConfigurationEClass, MIDDLEWARE_CONFIGURATION__INCOMING_HANDLER);
-		createEReference(middlewareConfigurationEClass, MIDDLEWARE_CONFIGURATION__OUTGOING_HANDLER);
+		createEReference(middlewareConfigurationEClass, MIDDLEWARE_CONFIGURATION__HTTP_HANDLERS);
 
 		httpHandlerEClass = createEClass(HTTP_HANDLER);
-		createEAttribute(httpHandlerEClass, HTTP_HANDLER__NAME);
+		createEAttribute(httpHandlerEClass, HTTP_HANDLER__HANDLER_NAME);
 		createEAttribute(httpHandlerEClass, HTTP_HANDLER__TYPE);
+		createEAttribute(httpHandlerEClass, HTTP_HANDLER__HANDLER_TYPE);
+		createEAttribute(httpHandlerEClass, HTTP_HANDLER__NAME);
 
 		tracingConfigurationEClass = createEClass(TRACING_CONFIGURATION);
 		createEAttribute(tracingConfigurationEClass, TRACING_CONFIGURATION__SAMPLING_RATE);
@@ -2517,10 +2227,9 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		subscriptionConfigurationEClass = createEClass(SUBSCRIPTION_CONFIGURATION);
 		createEAttribute(subscriptionConfigurationEClass, SUBSCRIPTION_CONFIGURATION__API_VERSION);
 		createEAttribute(subscriptionConfigurationEClass, SUBSCRIPTION_CONFIGURATION__KIND);
-		createEAttribute(subscriptionConfigurationEClass, SUBSCRIPTION_CONFIGURATION__NAME);
 		createEAttribute(subscriptionConfigurationEClass, SUBSCRIPTION_CONFIGURATION__TOPIC_NAME);
 		createEReference(subscriptionConfigurationEClass, SUBSCRIPTION_CONFIGURATION__ROUTE_RULES);
-		createEAttribute(subscriptionConfigurationEClass, SUBSCRIPTION_CONFIGURATION__PUBSUBNAME);
+		createEReference(subscriptionConfigurationEClass, SUBSCRIPTION_CONFIGURATION__PUBSUB);
 		createEAttribute(subscriptionConfigurationEClass, SUBSCRIPTION_CONFIGURATION__DEAD_LETTER_TOPIC);
 		createEAttribute(subscriptionConfigurationEClass, SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_ENABLED);
 		createEAttribute(subscriptionConfigurationEClass,
@@ -2528,6 +2237,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		createEAttribute(subscriptionConfigurationEClass,
 				SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_MAX_AWAIT_DURATION_MS);
 		createEReference(subscriptionConfigurationEClass, SUBSCRIPTION_CONFIGURATION__SCOPES);
+		createEAttribute(subscriptionConfigurationEClass, SUBSCRIPTION_CONFIGURATION__NAME);
 
 		routeRulesEClass = createEClass(ROUTE_RULES);
 		createEAttribute(routeRulesEClass, ROUTE_RULES__MATCH);
@@ -2536,46 +2246,47 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		resiliencyConfigurationEClass = createEClass(RESILIENCY_CONFIGURATION);
 		createEAttribute(resiliencyConfigurationEClass, RESILIENCY_CONFIGURATION__API_VERSION);
 		createEAttribute(resiliencyConfigurationEClass, RESILIENCY_CONFIGURATION__KIND);
-		createEAttribute(resiliencyConfigurationEClass, RESILIENCY_CONFIGURATION__NAME);
+		createEAttribute(resiliencyConfigurationEClass, RESILIENCY_CONFIGURATION__VERSION);
 		createEReference(resiliencyConfigurationEClass, RESILIENCY_CONFIGURATION__SCOPES);
 		createEReference(resiliencyConfigurationEClass, RESILIENCY_CONFIGURATION__POLICY);
 		createEReference(resiliencyConfigurationEClass, RESILIENCY_CONFIGURATION__TARGETS);
+		createEAttribute(resiliencyConfigurationEClass, RESILIENCY_CONFIGURATION__NAME);
 
 		resiliencyPolicyEClass = createEClass(RESILIENCY_POLICY);
 		createEReference(resiliencyPolicyEClass, RESILIENCY_POLICY__RETRIES);
 		createEReference(resiliencyPolicyEClass, RESILIENCY_POLICY__CIRCUITBREAKERS);
-		createEReference(resiliencyPolicyEClass, RESILIENCY_POLICY__TIMEOUTS);
-
-		resiliencyTimeoutEClass = createEClass(RESILIENCY_TIMEOUT);
-		createEAttribute(resiliencyTimeoutEClass, RESILIENCY_TIMEOUT__NAME);
-		createEAttribute(resiliencyTimeoutEClass, RESILIENCY_TIMEOUT__VALUE);
+		createEReference(resiliencyPolicyEClass, RESILIENCY_POLICY__TIMEOUT_DEFINITIONS);
 
 		retryPolicyEClass = createEClass(RETRY_POLICY);
-		createEAttribute(retryPolicyEClass, RETRY_POLICY__NAME);
 		createEAttribute(retryPolicyEClass, RETRY_POLICY__POLICY_TYPE);
 		createEAttribute(retryPolicyEClass, RETRY_POLICY__DURATION);
 		createEAttribute(retryPolicyEClass, RETRY_POLICY__MAX_RETRIES);
+		createEAttribute(retryPolicyEClass, RETRY_POLICY__MAX_INTERVAL);
+		createEAttribute(retryPolicyEClass, RETRY_POLICY__NAME);
+
+		resiliencyTimeoutEClass = createEClass(RESILIENCY_TIMEOUT);
+		createEAttribute(resiliencyTimeoutEClass, RESILIENCY_TIMEOUT__TIME_OUTIN_SECONDS);
+		createEAttribute(resiliencyTimeoutEClass, RESILIENCY_TIMEOUT__NAME);
 
 		circuitBreakerPolicyEClass = createEClass(CIRCUIT_BREAKER_POLICY);
-		createEAttribute(circuitBreakerPolicyEClass, CIRCUIT_BREAKER_POLICY__NAME);
 		createEAttribute(circuitBreakerPolicyEClass, CIRCUIT_BREAKER_POLICY__MAX_REQUESTS);
 		createEAttribute(circuitBreakerPolicyEClass, CIRCUIT_BREAKER_POLICY__INTERVAL);
 		createEAttribute(circuitBreakerPolicyEClass, CIRCUIT_BREAKER_POLICY__TIMEOUT);
 		createEAttribute(circuitBreakerPolicyEClass, CIRCUIT_BREAKER_POLICY__TRIP);
+		createEAttribute(circuitBreakerPolicyEClass, CIRCUIT_BREAKER_POLICY__NAME);
 
 		resiliencyTargetEClass = createEClass(RESILIENCY_TARGET);
 		createEAttribute(resiliencyTargetEClass, RESILIENCY_TARGET__TYPE);
-		createEAttribute(resiliencyTargetEClass, RESILIENCY_TARGET__NAME);
 		createEReference(resiliencyTargetEClass, RESILIENCY_TARGET__CIRCUIT_BREAKER);
 		createEReference(resiliencyTargetEClass, RESILIENCY_TARGET__RETRY);
 		createEAttribute(resiliencyTargetEClass, RESILIENCY_TARGET__CIRCUIT_BREAKER_CACHE_SIZE);
 		createEReference(resiliencyTargetEClass, RESILIENCY_TARGET__TIMEOUT);
+		createEAttribute(resiliencyTargetEClass, RESILIENCY_TARGET__NAME);
 
 		httpEndPointEClass = createEClass(HTTP_END_POINT);
 		createEAttribute(httpEndPointEClass, HTTP_END_POINT__API_VERSION);
 		createEAttribute(httpEndPointEClass, HTTP_END_POINT__KIND);
 		createEReference(httpEndPointEClass, HTTP_END_POINT__AUTH);
-		createEAttribute(httpEndPointEClass, HTTP_END_POINT__METADATA_NAME);
 		createEAttribute(httpEndPointEClass, HTTP_END_POINT__BASE_URL);
 		createEReference(httpEndPointEClass, HTTP_END_POINT__SCOPES);
 		createEReference(httpEndPointEClass, HTTP_END_POINT__HEADERS);
@@ -2587,7 +2298,6 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		createEAttribute(componentEClass, COMPONENT__API_VERSION);
 		createEAttribute(componentEClass, COMPONENT__KIND);
 		createEReference(componentEClass, COMPONENT__AUTH);
-		createEAttribute(componentEClass, COMPONENT__METADATA_NAME);
 		createEReference(componentEClass, COMPONENT__METADATA_NAMESPACE);
 		createEReference(componentEClass, COMPONENT__SPEC);
 		createEReference(componentEClass, COMPONENT__SCOPES);
@@ -2598,13 +2308,13 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		createEReference(componentSpecEClass, COMPONENT_SPEC__SPEC_METADATA);
 
 		specMetadataEClass = createEClass(SPEC_METADATA);
-		createEAttribute(specMetadataEClass, SPEC_METADATA__NAME);
 		createEAttribute(specMetadataEClass, SPEC_METADATA__VALUE);
 		createEAttribute(specMetadataEClass, SPEC_METADATA__IS_FETCHED_FROM_SECRET);
 		createEAttribute(specMetadataEClass, SPEC_METADATA__IS_FETCHED_FROM_ENVIRONMENT);
 		createEAttribute(specMetadataEClass, SPEC_METADATA__SECRET_KEY_REF_NAME);
 		createEAttribute(specMetadataEClass, SPEC_METADATA__SECRET_KEY_REF_KEY);
 		createEAttribute(specMetadataEClass, SPEC_METADATA__ENV_REF);
+		createEAttribute(specMetadataEClass, SPEC_METADATA__NAME);
 
 		secretStoreEClass = createEClass(SECRET_STORE);
 
@@ -2614,48 +2324,15 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 
 		messageBrokerEClass = createEClass(MESSAGE_BROKER);
 
-		pubSubEClass = createEClass(PUB_SUB);
-		createEAttribute(pubSubEClass, PUB_SUB__NAME);
-		createEReference(pubSubEClass, PUB_SUB__MBROKERS);
-
-		bindingsEClass = createEClass(BINDINGS);
-		createEAttribute(bindingsEClass, BINDINGS__NAME);
-		createEAttribute(bindingsEClass, BINDINGS__APP_ID);
-
-		jobsEClass = createEClass(JOBS);
-		createEAttribute(jobsEClass, JOBS__NAME);
-		createEAttribute(jobsEClass, JOBS__APP_ID);
-
-		configurationEClass = createEClass(CONFIGURATION);
-		createEAttribute(configurationEClass, CONFIGURATION__NAME);
-		createEAttribute(configurationEClass, CONFIGURATION__APP_ID);
-
-		workflowEClass = createEClass(WORKFLOW);
-		createEAttribute(workflowEClass, WORKFLOW__NAME);
-		createEAttribute(workflowEClass, WORKFLOW__APP_ID);
-
-		actorsEClass = createEClass(ACTORS);
-		createEAttribute(actorsEClass, ACTORS__NAME);
-		createEAttribute(actorsEClass, ACTORS__APP_ID);
-
-		secretsEClass = createEClass(SECRETS);
-		createEAttribute(secretsEClass, SECRETS__NAME);
-		createEAttribute(secretsEClass, SECRETS__APP_ID);
-
-		stateManagementEClass = createEClass(STATE_MANAGEMENT);
-		createEAttribute(stateManagementEClass, STATE_MANAGEMENT__NAME);
-		createEAttribute(stateManagementEClass, STATE_MANAGEMENT__APP_ID);
-
-		distributedLocksEClass = createEClass(DISTRIBUTED_LOCKS);
-		createEAttribute(distributedLocksEClass, DISTRIBUTED_LOCKS__NAME);
-		createEAttribute(distributedLocksEClass, DISTRIBUTED_LOCKS__APP_ID);
-
-		cryptoGraphyEClass = createEClass(CRYPTO_GRAPHY);
-		createEAttribute(cryptoGraphyEClass, CRYPTO_GRAPHY__NAME);
-		createEAttribute(cryptoGraphyEClass, CRYPTO_GRAPHY__APP_ID);
-
 		// Create enums
+		accessActionEEnum = createEEnum(ACCESS_ACTION);
+		retryPolicyTypeEEnum = createEEnum(RETRY_POLICY_TYPE);
+		httpHandlerTypeEEnum = createEEnum(HTTP_HANDLER_TYPE);
 		resiliencyTargetTypeEEnum = createEEnum(RESILIENCY_TARGET_TYPE);
+		blockTypeEEnum = createEEnum(BLOCK_TYPE);
+		sdkLanguageEEnum = createEEnum(SDK_LANGUAGE);
+		protocolEEnum = createEEnum(PROTOCOL);
+		verbEEnum = createEEnum(VERB);
 	}
 
 	/**
@@ -2687,20 +2364,39 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		servicesEClass.getESuperTypes().add(this.getBuildingBlock());
+		namespaceEClass.getESuperTypes().add(this.getDaprNode());
+		trustdomainEClass.getESuperTypes().add(this.getDaprNode());
+		appEClass.getESuperTypes().add(this.getDaprNode());
+		appConfigurationEClass.getESuperTypes().add(this.getDaprNode());
+		deniedComponentsConfigurationEClass.getESuperTypes().add(this.getAppConfiguration());
+		loggingConfigurationEClass.getESuperTypes().add(this.getAppConfiguration());
+		nameResolutionConfigurationEClass.getESuperTypes().add(this.getAppConfiguration());
+		secretsAccessConfigurationEClass.getESuperTypes().add(this.getAppConfiguration());
+		secretsAccessListEClass.getESuperTypes().add(this.getDaprNode());
+		metricsConfigurationEClass.getESuperTypes().add(this.getAppConfiguration());
+		apiAccessControlEClass.getESuperTypes().add(this.getAppConfiguration());
+		apiEClass.getESuperTypes().add(this.getDaprNode());
+		appAccessControlEClass.getESuperTypes().add(this.getAppConfiguration());
+		appPolicyEClass.getESuperTypes().add(this.getDaprNode());
+		operationEClass.getESuperTypes().add(this.getDaprNode());
+		middlewareConfigurationEClass.getESuperTypes().add(this.getAppConfiguration());
+		httpHandlerEClass.getESuperTypes().add(this.getDaprNode());
+		tracingConfigurationEClass.getESuperTypes().add(this.getAppConfiguration());
+		subscriptionConfigurationEClass.getESuperTypes().add(this.getDaprNode());
+		routeRulesEClass.getESuperTypes().add(this.getDaprNode());
+		resiliencyConfigurationEClass.getESuperTypes().add(this.getDaprNode());
+		resiliencyPolicyEClass.getESuperTypes().add(this.getDaprNode());
+		retryPolicyEClass.getESuperTypes().add(this.getDaprNode());
+		resiliencyTimeoutEClass.getESuperTypes().add(this.getDaprNode());
+		circuitBreakerPolicyEClass.getESuperTypes().add(this.getDaprNode());
+		resiliencyTargetEClass.getESuperTypes().add(this.getDaprNode());
+		httpEndPointEClass.getESuperTypes().add(this.getDaprNode());
+		componentEClass.getESuperTypes().add(this.getDaprNode());
+		componentSpecEClass.getESuperTypes().add(this.getDaprNode());
+		specMetadataEClass.getESuperTypes().add(this.getDaprNode());
 		secretStoreEClass.getESuperTypes().add(this.getComponent());
 		hashicorpVaultEClass.getESuperTypes().add(this.getSecretStore());
 		messageBrokerEClass.getESuperTypes().add(this.getComponent());
-		pubSubEClass.getESuperTypes().add(this.getBuildingBlock());
-		bindingsEClass.getESuperTypes().add(this.getBuildingBlock());
-		jobsEClass.getESuperTypes().add(this.getBuildingBlock());
-		configurationEClass.getESuperTypes().add(this.getBuildingBlock());
-		workflowEClass.getESuperTypes().add(this.getBuildingBlock());
-		actorsEClass.getESuperTypes().add(this.getBuildingBlock());
-		secretsEClass.getESuperTypes().add(this.getBuildingBlock());
-		stateManagementEClass.getESuperTypes().add(this.getBuildingBlock());
-		distributedLocksEClass.getESuperTypes().add(this.getBuildingBlock());
-		cryptoGraphyEClass.getESuperTypes().add(this.getBuildingBlock());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(eStringToStringMapEntryEClass, Map.Entry.class, "EStringToStringMapEntry", !IS_ABSTRACT,
@@ -2716,23 +2412,33 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		initEAttribute(getDaprArchitecture_Name(), ecorePackage.getEString(), "name", null, 0, 1,
 				DaprArchitecture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEReference(getDaprArchitecture_Environments(), this.getEnvironment(), null, "environments", null, 0, -1,
+		initEReference(getDaprArchitecture_Buildingblocks(), this.getBlock(), null, "buildingblocks", null, 0, -1,
 				DaprArchitecture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(environmentEClass, Environment.class, "Environment", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEnvironment_Name(), ecorePackage.getEString(), "name", null, 0, 1, Environment.class,
+		initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBlock_Name(), ecorePackage.getEString(), "name", null, 0, 1, Block.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBlock_Description(), ecorePackage.getEString(), "description", null, 0, 1, Block.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEnvironment_Namespace(), this.getNamespace(), null, "namespace", null, 0, 1,
-				Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEnvironment_Trustdomain(), this.getTrustdomain(), null, "trustdomain", null, 0, -1,
-				Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEnvironment_Buildingblocks(), this.getBuildingBlock(), null, "buildingblocks", null, 0, -1,
-				Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBlock_Notes(), ecorePackage.getEString(), "notes", null, 0, 1, Block.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBlock_BlockType(), this.getBlockType(), "blockType", null, 0, 1, Block.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBlock_Subblocks(), this.getBlock(), null, "subblocks", null, 0, -1, Block.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBlock_Nodes(), this.getDaprNode(), null, "nodes", null, 0, -1, Block.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(daprNodeEClass, DaprNode.class, "DaprNode", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDaprNode_Name(), ecorePackage.getEString(), "name", null, 0, 1, DaprNode.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDaprNode_Description(), ecorePackage.getEString(), "description", null, 0, 1, DaprNode.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDaprNode_Notes(), ecorePackage.getEString(), "notes", null, 0, 1, DaprNode.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(namespaceEClass, Namespace.class, "Namespace", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -2744,26 +2450,12 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		initEAttribute(getTrustdomain_Name(), ecorePackage.getEString(), "name", null, 0, 1, Trustdomain.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(buildingBlockEClass, BuildingBlock.class, "BuildingBlock", IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBuildingBlock_Namespace(), this.getNamespace(), null, "namespace", null, 0, 1,
-				BuildingBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBuildingBlock_TrustDomain(), this.getTrustdomain(), null, "trustDomain", null, 0, 1,
-				BuildingBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(servicesEClass, Services.class, "Services", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getServices_Name(), ecorePackage.getEString(), "name", "Services Group", 0, 1, Services.class,
-				!IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEReference(getServices_Apps(), this.getApp(), null, "apps", null, 0, -1, Services.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-
 		initEClass(appEClass, App.class, "App", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getApp_AppId(), ecorePackage.getEString(), "appId", null, 0, 1, App.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getApp_Repository(), ecorePackage.getEString(), "repository", null, 0, 1, App.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getApp_SdkLanguage(), this.getSDKLanguage(), "sdkLanguage", null, 0, 1, App.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApp_Namespace(), this.getNamespace(), null, "namespace", null, 0, 1, App.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
@@ -2771,11 +2463,11 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		initEReference(getApp_TrustDomain(), this.getTrustdomain(), null, "trustDomain", null, 0, 1, App.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getApp_Configuration(), this.getAppConfiguration(), null, "configuration", null, 0, 1, App.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getApp_Configurations(), this.getAppConfiguration(), null, "configurations", null, 0, -1,
+				App.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(appConfigurationEClass, AppConfiguration.class, "AppConfiguration", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(appConfigurationEClass, AppConfiguration.class, "AppConfiguration", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAppConfiguration_ApiVersion(), ecorePackage.getEString(), "apiVersion", "dapr.io/v1alpha1", 0,
 				1, AppConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
@@ -2783,39 +2475,12 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		initEAttribute(getAppConfiguration_Kind(), ecorePackage.getEString(), "kind", "Configuration", 0, 1,
 				AppConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAppConfiguration_Metadata_name(), ecorePackage.getEString(), "metadata_name", null, 0, 1,
-				AppConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-		initEReference(getAppConfiguration_Metadata_namespace(), this.getNamespace(), null, "metadata_namespace", null,
-				0, 1, AppConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAppConfiguration_AccessControl(), this.getAppAccessControl(), null, "accessControl", null, 0,
-				1, AppConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
-				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAppConfiguration_ApiControl(), this.getAPIAccessControl(), null, "apiControl", null, 0, 1,
-				AppConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAppConfiguration_MiddlewareConfiguration(), this.getMiddlewareConfiguration(), null,
-				"middlewareConfiguration", null, 0, 1, AppConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAppConfiguration_LoggingConfiguration(), this.getLoggingConfiguration(), null,
-				"loggingConfiguration", null, 0, 1, AppConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAppConfiguration_NameResolutionConfiguration(), this.getNameResolutionConfiguration(), null,
-				"nameResolutionConfiguration", null, 0, 1, AppConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAppConfiguration_SecretsConfiguration(), this.getSecretsConfiguration(), null,
-				"secretsConfiguration", null, 0, 1, AppConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAppConfiguration_MetricsConfiguration(), this.getMetricsConfiguration(), null,
-				"metricsConfiguration", null, 0, 1, AppConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAppConfiguration_TracingConfiguration(), this.getTracingConfiguration(), null,
-				"tracingConfiguration", null, 0, 1, AppConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAppConfiguration_ComponentsDenyList(), ecorePackage.getEString(), "componentsDenyList", null,
-				0, -1, AppConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(deniedComponentsConfigurationEClass, DeniedComponentsConfiguration.class,
+				"DeniedComponentsConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDeniedComponentsConfiguration_DeniedComponents(), this.getComponent(), null,
+				"deniedComponents", null, 0, -1, DeniedComponentsConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(loggingConfigurationEClass, LoggingConfiguration.class, "LoggingConfiguration", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2831,9 +2496,9 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 
 		initEClass(nameResolutionConfigurationEClass, NameResolutionConfiguration.class, "NameResolutionConfiguration",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNameResolutionConfiguration_ComponentName(), ecorePackage.getEString(), "componentName", null,
-				0, 1, NameResolutionConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
-				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNameResolutionConfiguration_Component(), this.getComponent(), null, "component", null, 0, 1,
+				NameResolutionConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNameResolutionConfiguration_ComponentVersion(), ecorePackage.getEString(), "componentVersion",
 				null, 0, 1, NameResolutionConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2844,25 +2509,26 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 				"configurationValue", null, 0, 1, NameResolutionConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(secretsConfigurationEClass, SecretsConfiguration.class, "SecretsConfiguration", !IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSecretsConfiguration_AllowedList(), this.getSecretsList(), null, "allowedList", null, 0, -1,
-				SecretsConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
-				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSecretsConfiguration_DeniedList(), this.getSecretsList(), null, "deniedList", null, 0, -1,
-				SecretsConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
-				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(secretsAccessConfigurationEClass, SecretsAccessConfiguration.class, "SecretsAccessConfiguration",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSecretsAccessConfiguration_AccessList(), this.getSecretsAccessList(), null, "accessList",
+				null, 0, -1, SecretsAccessConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(secretsListEClass, SecretsList.class, "SecretsList", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(secretsAccessListEClass, SecretsAccessList.class, "SecretsAccessList", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSecretsList_StoreName(), ecorePackage.getEString(), "storeName", null, 0, 1,
-				SecretsList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+		initEReference(getSecretsAccessList_Component(), this.getComponent(), null, "component", null, 0, 1,
+				SecretsAccessList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSecretsAccessList_DefaultAccess(), ecorePackage.getEBoolean(), "defaultAccess", "true", 0, 1,
+				SecretsAccessList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSecretsList_DefaultAccess(), ecorePackage.getEBoolean(), "defaultAccess", "true", 0, 1,
-				SecretsList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+		initEAttribute(getSecretsAccessList_Secrets(), ecorePackage.getEString(), "secrets", null, 0, -1,
+				SecretsAccessList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSecretsList_Secrets(), ecorePackage.getEString(), "secrets", null, 1, -1, SecretsList.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSecretsAccessList_Action(), this.getAccessAction(), "action", null, 0, 1,
+				SecretsAccessList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(metricsConfigurationEClass, MetricsConfiguration.class, "MetricsConfiguration", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2884,32 +2550,32 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 
 		initEClass(apiAccessControlEClass, APIAccessControl.class, "APIAccessControl", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAPIAccessControl_AllowedAPIs(), this.getAPI(), null, "allowedAPIs", null, 0, -1,
-				APIAccessControl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAPIAccessControl_DeniedAPIs(), this.getAPI(), null, "deniedAPIs", null, 0, -1,
-				APIAccessControl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+		initEReference(getAPIAccessControl_ApiList(), this.getAPI(), null, "apiList", null, 0, -1,
+				APIAccessControl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(apiEClass, daprdesigner.API.class, "API", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAPI_Api_name(), ecorePackage.getEString(), "api_name", null, 0, 1, daprdesigner.API.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAPI_Component(), this.getComponent(), null, "component", null, 0, 1, daprdesigner.API.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAPI_Api_version(), ecorePackage.getEString(), "api_version", null, 0, 1,
 				daprdesigner.API.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAPI_Protocol(), ecorePackage.getEString(), "protocol", null, 0, 1, daprdesigner.API.class,
+		initEAttribute(getAPI_Protocol(), this.getProtocol(), "protocol", null, 0, 1, daprdesigner.API.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAPI_Access(), this.getAccessAction(), "access", null, 0, 1, daprdesigner.API.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(appAccessControlEClass, AppAccessControl.class, "AppAccessControl", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAppAccessControl_DefaultAction(), ecorePackage.getEString(), "defaultAction", null, 0, 1,
+		initEAttribute(getAppAccessControl_DefaultAction(), this.getAccessAction(), "defaultAction", null, 0, 1,
 				AppAccessControl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 		initEReference(getAppAccessControl_TrustDomain(), this.getTrustdomain(), null, "trustDomain", null, 0, 1,
 				AppAccessControl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAppAccessControl_Policies(), this.getAppPolicy(), null, "policies", null, 0, -1,
-				AppAccessControl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				AppAccessControl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(appPolicyEClass, AppPolicy.class, "AppPolicy", !IS_ABSTRACT, !IS_INTERFACE,
@@ -2917,7 +2583,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		initEReference(getAppPolicy_App(), this.getApp(), null, "app", null, 0, 1, AppPolicy.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEAttribute(getAppPolicy_DefaultAction(), ecorePackage.getEString(), "defaultAction", null, 0, 1,
+		initEAttribute(getAppPolicy_DefaultAction(), this.getAccessAction(), "defaultAction", null, 0, 1,
 				AppPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 		initEReference(getAppPolicy_TrustDomain(), this.getTrustdomain(), null, "trustDomain", null, 0, 1,
@@ -2927,35 +2593,38 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAppPolicy_Operations(), this.getOperation(), null, "operations", null, 0, -1, AppPolicy.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operationEClass, Operation.class, "Operation", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getOperation_Protocol(), ecorePackage.getEString(), "protocol", null, 0, 1, Operation.class,
+		initEAttribute(getOperation_Protocol(), this.getProtocol(), "protocol", null, 0, 1, Operation.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOperation_OperationName(), ecorePackage.getEString(), "operationName", null, 0, 1,
 				Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getOperation_Verbs(), ecorePackage.getEString(), "verbs", null, 0, -1, Operation.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getOperation_Action(), ecorePackage.getEString(), "action", null, 0, 1, Operation.class,
+		initEAttribute(getOperation_Verbs(), this.getVerb(), "verbs", null, 0, -1, Operation.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOperation_Action(), this.getAccessAction(), "action", null, 0, 1, Operation.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(middlewareConfigurationEClass, MiddlewareConfiguration.class, "MiddlewareConfiguration",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMiddlewareConfiguration_IncomingHandler(), this.getEStringToStringMapEntry(), null,
-				"incomingHandler", null, 0, -1, MiddlewareConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMiddlewareConfiguration_OutgoingHandler(), this.getEStringToStringMapEntry(), null,
-				"outgoingHandler", null, 0, -1, MiddlewareConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMiddlewareConfiguration_HttpHandlers(), this.getHttpHandler(), null, "httpHandlers", null, 0,
+				-1, MiddlewareConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(httpHandlerEClass, HttpHandler.class, "HttpHandler", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getHttpHandler_Name(), ecorePackage.getEString(), "name", null, 0, 1, HttpHandler.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHttpHandler_HandlerName(), ecorePackage.getEString(), "handlerName", null, 0, 1,
+				HttpHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHttpHandler_Type(), ecorePackage.getEString(), "type", null, 0, 1, HttpHandler.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHttpHandler_HandlerType(), this.getHttpHandlerType(), "handlerType", null, 0, 1,
+				HttpHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHttpHandler_Name(), ecorePackage.getEString(), "name", null, 0, 1, HttpHandler.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tracingConfigurationEClass, TracingConfiguration.class, "TracingConfiguration", !IS_ABSTRACT,
@@ -2987,18 +2656,15 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		initEAttribute(getSubscriptionConfiguration_Kind(), ecorePackage.getEString(), "kind", "Subscription", 0, 1,
 				SubscriptionConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSubscriptionConfiguration_Name(), ecorePackage.getEString(), "name", null, 0, 1,
-				SubscriptionConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSubscriptionConfiguration_TopicName(), ecorePackage.getEString(), "topicName", null, 0, 1,
 				SubscriptionConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSubscriptionConfiguration_RouteRules(), this.getEStringToStringMapEntry(), null, "routeRules",
-				null, 0, -1, SubscriptionConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
-				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSubscriptionConfiguration_Pubsubname(), ecorePackage.getEString(), "pubsubname", null, 0, 1,
-				SubscriptionConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSubscriptionConfiguration_RouteRules(), this.getRouteRules(), null, "routeRules", null, 0, -1,
+				SubscriptionConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSubscriptionConfiguration_Pubsub(), this.getComponent(), null, "pubsub", null, 0, 1,
+				SubscriptionConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSubscriptionConfiguration_DeadLetterTopic(), ecorePackage.getEString(), "deadLetterTopic",
 				null, 0, 1, SubscriptionConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
 				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3014,6 +2680,9 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		initEReference(getSubscriptionConfiguration_Scopes(), this.getApp(), null, "scopes", null, 0, -1,
 				SubscriptionConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSubscriptionConfiguration_Name(), ecorePackage.getEString(), "name", null, 0, 1,
+				SubscriptionConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(routeRulesEClass, RouteRules.class, "RouteRules", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -3027,70 +2696,76 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		initEAttribute(getResiliencyConfiguration_ApiVersion(), ecorePackage.getEString(), "apiVersion",
 				"dapr.io/v2alpha1", 0, 1, ResiliencyConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE,
 				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getResiliencyConfiguration_Kind(), ecorePackage.getEString(), "kind", "Subscription", 0, 1,
+		initEAttribute(getResiliencyConfiguration_Kind(), ecorePackage.getEString(), "kind", "Resiliency", 0, 1,
 				ResiliencyConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getResiliencyConfiguration_Name(), ecorePackage.getEString(), "name", null, 0, 1,
-				ResiliencyConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+		initEAttribute(getResiliencyConfiguration_Version(), ecorePackage.getEString(), "version", "v1alpha1", 0, 1,
+				ResiliencyConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResiliencyConfiguration_Scopes(), this.getApp(), null, "scopes", null, 0, -1,
 				ResiliencyConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResiliencyConfiguration_Policy(), this.getResiliencyPolicy(), null, "policy", null, 0, 1,
-				ResiliencyConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
-				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+				ResiliencyConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResiliencyConfiguration_Targets(), this.getResiliencyTarget(), null, "targets", null, 0, -1,
 				ResiliencyConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getResiliencyConfiguration_Name(), ecorePackage.getEString(), "name", null, 0, 1,
+				ResiliencyConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(resiliencyPolicyEClass, ResiliencyPolicy.class, "ResiliencyPolicy", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getResiliencyPolicy_Retries(), this.getRetryPolicy(), null, "retries", null, 0, -1,
-				ResiliencyPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				ResiliencyPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResiliencyPolicy_Circuitbreakers(), this.getCircuitBreakerPolicy(), null, "circuitbreakers",
 				null, 0, -1, ResiliencyPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getResiliencyPolicy_Timeouts(), this.getEStringToStringMapEntry(), null, "timeouts", null, 0, -1,
-				ResiliencyPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(resiliencyTimeoutEClass, ResiliencyTimeout.class, "ResiliencyTimeout", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getResiliencyTimeout_Name(), ecorePackage.getEString(), "name", null, 0, 1,
-				ResiliencyTimeout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getResiliencyTimeout_Value(), ecorePackage.getEString(), "value", null, 0, 1,
-				ResiliencyTimeout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
+		initEReference(getResiliencyPolicy_TimeoutDefinitions(), this.getResiliencyTimeout(), null,
+				"timeoutDefinitions", null, 0, -1, ResiliencyPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(retryPolicyEClass, RetryPolicy.class, "RetryPolicy", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRetryPolicy_Name(), ecorePackage.getEString(), "name", null, 0, 1, RetryPolicy.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRetryPolicy_Policy_type(), ecorePackage.getEString(), "policy_type", null, 0, 1,
+		initEAttribute(getRetryPolicy_Policy_type(), this.getRetryPolicyType(), "policy_type", null, 0, 1,
 				RetryPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRetryPolicy_Duration(), ecorePackage.getEString(), "duration", null, 0, 1, RetryPolicy.class,
+		initEAttribute(getRetryPolicy_Duration(), ecorePackage.getEInt(), "duration", null, 0, 1, RetryPolicy.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRetryPolicy_MaxRetries(), ecorePackage.getEInt(), "maxRetries", null, 0, 1, RetryPolicy.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRetryPolicy_MaxInterval(), ecorePackage.getEInt(), "maxInterval", null, 0, 1,
+				RetryPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRetryPolicy_Name(), ecorePackage.getEString(), "name", null, 0, 1, RetryPolicy.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(resiliencyTimeoutEClass, ResiliencyTimeout.class, "ResiliencyTimeout", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getResiliencyTimeout_TimeOutinSeconds(), ecorePackage.getEInt(), "timeOutinSeconds", null, 0, 1,
+				ResiliencyTimeout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getResiliencyTimeout_Name(), ecorePackage.getEString(), "name", null, 0, 1,
+				ResiliencyTimeout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(circuitBreakerPolicyEClass, CircuitBreakerPolicy.class, "CircuitBreakerPolicy", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCircuitBreakerPolicy_Name(), ecorePackage.getEString(), "name", null, 0, 1,
-				CircuitBreakerPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCircuitBreakerPolicy_MaxRequests(), ecorePackage.getEInt(), "maxRequests", null, 0, 1,
 				CircuitBreakerPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCircuitBreakerPolicy_Interval(), ecorePackage.getEString(), "interval", null, 0, 1,
+		initEAttribute(getCircuitBreakerPolicy_Interval(), ecorePackage.getEInt(), "interval", null, 0, 1,
 				CircuitBreakerPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCircuitBreakerPolicy_Timeout(), ecorePackage.getEString(), "timeout", null, 0, 1,
+		initEAttribute(getCircuitBreakerPolicy_Timeout(), ecorePackage.getEInt(), "timeout", null, 0, 1,
 				CircuitBreakerPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCircuitBreakerPolicy_Trip(), ecorePackage.getEString(), "trip", null, 0, 1,
+		initEAttribute(getCircuitBreakerPolicy_Trip(), ecorePackage.getEString(), "trip", "consecutiveFailures > 5", 0,
+				1, CircuitBreakerPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCircuitBreakerPolicy_Name(), ecorePackage.getEString(), "name", null, 0, 1,
 				CircuitBreakerPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -3099,21 +2774,21 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		initEAttribute(getResiliencyTarget_Type(), this.getResiliencyTargetType(), "type", null, 0, 1,
 				ResiliencyTarget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getResiliencyTarget_Name(), ecorePackage.getEString(), "name", null, 0, 1,
-				ResiliencyTarget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
 		initEReference(getResiliencyTarget_CircuitBreaker(), this.getCircuitBreakerPolicy(), null, "circuitBreaker",
-				null, 0, 1, ResiliencyTarget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
-				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+				null, 0, 1, ResiliencyTarget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResiliencyTarget_Retry(), this.getRetryPolicy(), null, "retry", null, 0, 1,
-				ResiliencyTarget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				ResiliencyTarget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getResiliencyTarget_CircuitBreakerCacheSize(), ecorePackage.getEInt(), "circuitBreakerCacheSize",
 				null, 0, 1, ResiliencyTarget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResiliencyTarget_Timeout(), this.getResiliencyTimeout(), null, "timeout", null, 0, 1,
-				ResiliencyTarget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				ResiliencyTarget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getResiliencyTarget_Name(), ecorePackage.getEString(), "name", null, 0, 1,
+				ResiliencyTarget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(httpEndPointEClass, HTTPEndPoint.class, "HTTPEndPoint", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -3126,9 +2801,6 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		initEReference(getHTTPEndPoint_Auth(), this.getSecretStore(), null, "auth", null, 0, 1, HTTPEndPoint.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHTTPEndPoint_Metadata_name(), ecorePackage.getEString(), "metadata_name", null, 0, 1,
-				HTTPEndPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHTTPEndPoint_BaseUrl(), ecorePackage.getEString(), "baseUrl", null, 0, 1, HTTPEndPoint.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHTTPEndPoint_Scopes(), this.getApp(), null, "scopes", null, 0, -1, HTTPEndPoint.class,
@@ -3158,14 +2830,11 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		initEReference(getComponent_Auth(), this.getSecretStore(), null, "auth", null, 0, 1, Component.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComponent_Metadata_name(), ecorePackage.getEString(), "metadata_name", null, 0, 1,
-				Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_Metadata_namespace(), this.getNamespace(), null, "metadata_namespace", null, 0, 1,
 				Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_Spec(), this.getComponentSpec(), null, "spec", null, 0, 1, Component.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_Scopes(), this.getApp(), null, "scopes", null, 0, -1, Component.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
@@ -3185,8 +2854,6 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 
 		initEClass(specMetadataEClass, SpecMetadata.class, "SpecMetadata", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSpecMetadata_Name(), ecorePackage.getEString(), "name", null, 0, 1, SpecMetadata.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSpecMetadata_Value(), ecorePackage.getEString(), "value", null, 0, 1, SpecMetadata.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSpecMetadata_IsFetchedFromSecret(), ecorePackage.getEBoolean(), "isFetchedFromSecret",
@@ -3202,6 +2869,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 				SpecMetadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSpecMetadata_EnvRef(), ecorePackage.getEString(), "envRef", null, 0, 1, SpecMetadata.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSpecMetadata_Name(), ecorePackage.getEString(), "name", null, 0, 1, SpecMetadata.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(secretStoreEClass, SecretStore.class, "SecretStore", IS_ABSTRACT, !IS_INTERFACE,
@@ -3219,89 +2888,57 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		initEClass(messageBrokerEClass, MessageBroker.class, "MessageBroker", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(pubSubEClass, PubSub.class, "PubSub", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPubSub_Name(), ecorePackage.getEString(), "name", "Message Brokers", 0, 1, PubSub.class,
-				!IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEReference(getPubSub_Mbrokers(), this.getMessageBroker(), null, "mbrokers", null, 0, -1, PubSub.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(bindingsEClass, Bindings.class, "Bindings", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBindings_Name(), ecorePackage.getEString(), "name", "Bindings", 0, 1, Bindings.class,
-				!IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEAttribute(getBindings_AppID(), ecorePackage.getEString(), "appID", null, 0, 1, Bindings.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(jobsEClass, Jobs.class, "Jobs", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getJobs_Name(), ecorePackage.getEString(), "name", "Jobs", 0, 1, Jobs.class, !IS_TRANSIENT,
-				!IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getJobs_AppID(), ecorePackage.getEString(), "appID", null, 0, 1, Jobs.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(configurationEClass, Configuration.class, "Configuration", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getConfiguration_Name(), ecorePackage.getEString(), "name", "Configuration", 0, 1,
-				Configuration.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getConfiguration_AppID(), ecorePackage.getEString(), "appID", null, 0, 1, Configuration.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(workflowEClass, Workflow.class, "Workflow", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getWorkflow_Name(), ecorePackage.getEString(), "name", "Workflow", 0, 1, Workflow.class,
-				!IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEAttribute(getWorkflow_AppID(), ecorePackage.getEString(), "appID", null, 0, 1, Workflow.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(actorsEClass, Actors.class, "Actors", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getActors_Name(), ecorePackage.getEString(), "name", "Actors", 0, 1, Actors.class, !IS_TRANSIENT,
-				!IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getActors_AppID(), ecorePackage.getEString(), "appID", null, 0, 1, Actors.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(secretsEClass, Secrets.class, "Secrets", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSecrets_Name(), ecorePackage.getEString(), "name", "Secrets", 0, 1, Secrets.class,
-				!IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEAttribute(getSecrets_AppID(), ecorePackage.getEString(), "appID", null, 0, 1, Secrets.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(stateManagementEClass, StateManagement.class, "StateManagement", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getStateManagement_Name(), ecorePackage.getEString(), "name", "StateStore", 0, 1,
-				StateManagement.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStateManagement_AppID(), ecorePackage.getEString(), "appID", null, 0, 1,
-				StateManagement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-
-		initEClass(distributedLocksEClass, DistributedLocks.class, "DistributedLocks", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDistributedLocks_Name(), ecorePackage.getEString(), "name", "Distributed Locks", 0, 1,
-				DistributedLocks.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDistributedLocks_AppID(), ecorePackage.getEString(), "appID", null, 0, 1,
-				DistributedLocks.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-
-		initEClass(cryptoGraphyEClass, CryptoGraphy.class, "CryptoGraphy", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCryptoGraphy_Name(), ecorePackage.getEString(), "name", "Cryptography", 0, 1,
-				CryptoGraphy.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCryptoGraphy_AppID(), ecorePackage.getEString(), "appID", null, 0, 1, CryptoGraphy.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		// Initialize enums and add enum literals
+		initEEnum(accessActionEEnum, AccessAction.class, "AccessAction");
+		addEEnumLiteral(accessActionEEnum, AccessAction.ALLOW);
+		addEEnumLiteral(accessActionEEnum, AccessAction.DENY);
+
+		initEEnum(retryPolicyTypeEEnum, RetryPolicyType.class, "RetryPolicyType");
+		addEEnumLiteral(retryPolicyTypeEEnum, RetryPolicyType.CONSTANT);
+		addEEnumLiteral(retryPolicyTypeEEnum, RetryPolicyType.EXPONENTIAL);
+
+		initEEnum(httpHandlerTypeEEnum, HttpHandlerType.class, "HttpHandlerType");
+		addEEnumLiteral(httpHandlerTypeEEnum, HttpHandlerType.INCOMING);
+		addEEnumLiteral(httpHandlerTypeEEnum, HttpHandlerType.OUTGOING);
+
 		initEEnum(resiliencyTargetTypeEEnum, ResiliencyTargetType.class, "ResiliencyTargetType");
 		addEEnumLiteral(resiliencyTargetTypeEEnum, ResiliencyTargetType.APP);
 		addEEnumLiteral(resiliencyTargetTypeEEnum, ResiliencyTargetType.ACTOR);
 		addEEnumLiteral(resiliencyTargetTypeEEnum, ResiliencyTargetType.COMPONENT_INBOUND);
 		addEEnumLiteral(resiliencyTargetTypeEEnum, ResiliencyTargetType.COMPONENT_OUTBOUND);
+
+		initEEnum(blockTypeEEnum, BlockType.class, "BlockType");
+		addEEnumLiteral(blockTypeEEnum, BlockType.ENVIRONMENT);
+		addEEnumLiteral(blockTypeEEnum, BlockType.MICROSERVICES);
+		addEEnumLiteral(blockTypeEEnum, BlockType.PUBSUB);
+		addEEnumLiteral(blockTypeEEnum, BlockType.SECRETSTORE);
+		addEEnumLiteral(blockTypeEEnum, BlockType.BINDINGS);
+		addEEnumLiteral(blockTypeEEnum, BlockType.JOBS);
+		addEEnumLiteral(blockTypeEEnum, BlockType.WORKFLOW);
+		addEEnumLiteral(blockTypeEEnum, BlockType.ACTORS);
+		addEEnumLiteral(blockTypeEEnum, BlockType.STATESTORE);
+		addEEnumLiteral(blockTypeEEnum, BlockType.DISTRIBUTEDLOCK);
+		addEEnumLiteral(blockTypeEEnum, BlockType.CRYPTOGRAPHY);
+		addEEnumLiteral(blockTypeEEnum, BlockType.CONFIGURATION);
+		addEEnumLiteral(blockTypeEEnum, BlockType.CONFIGURATIONGROUP);
+
+		initEEnum(sdkLanguageEEnum, SDKLanguage.class, "SDKLanguage");
+		addEEnumLiteral(sdkLanguageEEnum, SDKLanguage.JAVA);
+		addEEnumLiteral(sdkLanguageEEnum, SDKLanguage.CSHARP);
+		addEEnumLiteral(sdkLanguageEEnum, SDKLanguage.PYTHON);
+		addEEnumLiteral(sdkLanguageEEnum, SDKLanguage.NODE);
+		addEEnumLiteral(sdkLanguageEEnum, SDKLanguage.RUST);
+
+		initEEnum(protocolEEnum, Protocol.class, "Protocol");
+		addEEnumLiteral(protocolEEnum, Protocol.HTTP);
+		addEEnumLiteral(protocolEEnum, Protocol.GRPC);
+
+		initEEnum(verbEEnum, Verb.class, "Verb");
+		addEEnumLiteral(verbEEnum, Verb.GET);
+		addEEnumLiteral(verbEEnum, Verb.POST);
+		addEEnumLiteral(verbEEnum, Verb.PUT);
+		addEEnumLiteral(verbEEnum, Verb.DELETE);
+		addEEnumLiteral(verbEEnum, Verb.PATCH);
 
 		// Create resource
 		createResource(eNS_URI);

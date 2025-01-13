@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
@@ -36,7 +35,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link daprdesigner.impl.HTTPEndPointImpl#getApiVersion <em>Api Version</em>}</li>
  *   <li>{@link daprdesigner.impl.HTTPEndPointImpl#getKind <em>Kind</em>}</li>
  *   <li>{@link daprdesigner.impl.HTTPEndPointImpl#getAuth <em>Auth</em>}</li>
- *   <li>{@link daprdesigner.impl.HTTPEndPointImpl#getMetadata_name <em>Metadata name</em>}</li>
  *   <li>{@link daprdesigner.impl.HTTPEndPointImpl#getBaseUrl <em>Base Url</em>}</li>
  *   <li>{@link daprdesigner.impl.HTTPEndPointImpl#getScopes <em>Scopes</em>}</li>
  *   <li>{@link daprdesigner.impl.HTTPEndPointImpl#getHeaders <em>Headers</em>}</li>
@@ -47,7 +45,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class HTTPEndPointImpl extends MinimalEObjectImpl.Container implements HTTPEndPoint {
+public class HTTPEndPointImpl extends DaprNodeImpl implements HTTPEndPoint {
 	/**
 	 * The default value of the '{@link #getApiVersion() <em>Api Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -97,26 +95,6 @@ public class HTTPEndPointImpl extends MinimalEObjectImpl.Container implements HT
 	 * @ordered
 	 */
 	protected SecretStore auth;
-
-	/**
-	 * The default value of the '{@link #getMetadata_name() <em>Metadata name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMetadata_name()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String METADATA_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMetadata_name() <em>Metadata name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMetadata_name()
-	 * @generated
-	 * @ordered
-	 */
-	protected String metadata_name = METADATA_NAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getBaseUrl() <em>Base Url</em>}' attribute.
@@ -263,28 +241,6 @@ public class HTTPEndPointImpl extends MinimalEObjectImpl.Container implements HT
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.HTTP_END_POINT__AUTH, oldAuth,
 					auth));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getMetadata_name() {
-		return metadata_name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMetadata_name(String newMetadata_name) {
-		String oldMetadata_name = metadata_name;
-		metadata_name = newMetadata_name;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.HTTP_END_POINT__METADATA_NAME,
-					oldMetadata_name, metadata_name));
 	}
 
 	/**
@@ -530,8 +486,6 @@ public class HTTPEndPointImpl extends MinimalEObjectImpl.Container implements HT
 			if (resolve)
 				return getAuth();
 			return basicGetAuth();
-		case DaprdesignerPackage.HTTP_END_POINT__METADATA_NAME:
-			return getMetadata_name();
 		case DaprdesignerPackage.HTTP_END_POINT__BASE_URL:
 			return getBaseUrl();
 		case DaprdesignerPackage.HTTP_END_POINT__SCOPES:
@@ -559,9 +513,6 @@ public class HTTPEndPointImpl extends MinimalEObjectImpl.Container implements HT
 		switch (featureID) {
 		case DaprdesignerPackage.HTTP_END_POINT__AUTH:
 			setAuth((SecretStore) newValue);
-			return;
-		case DaprdesignerPackage.HTTP_END_POINT__METADATA_NAME:
-			setMetadata_name((String) newValue);
 			return;
 		case DaprdesignerPackage.HTTP_END_POINT__BASE_URL:
 			setBaseUrl((String) newValue);
@@ -597,9 +548,6 @@ public class HTTPEndPointImpl extends MinimalEObjectImpl.Container implements HT
 		switch (featureID) {
 		case DaprdesignerPackage.HTTP_END_POINT__AUTH:
 			setAuth((SecretStore) null);
-			return;
-		case DaprdesignerPackage.HTTP_END_POINT__METADATA_NAME:
-			setMetadata_name(METADATA_NAME_EDEFAULT);
 			return;
 		case DaprdesignerPackage.HTTP_END_POINT__BASE_URL:
 			setBaseUrl(BASE_URL_EDEFAULT);
@@ -637,9 +585,6 @@ public class HTTPEndPointImpl extends MinimalEObjectImpl.Container implements HT
 			return KIND_EDEFAULT == null ? kind != null : !KIND_EDEFAULT.equals(kind);
 		case DaprdesignerPackage.HTTP_END_POINT__AUTH:
 			return auth != null;
-		case DaprdesignerPackage.HTTP_END_POINT__METADATA_NAME:
-			return METADATA_NAME_EDEFAULT == null ? metadata_name != null
-					: !METADATA_NAME_EDEFAULT.equals(metadata_name);
 		case DaprdesignerPackage.HTTP_END_POINT__BASE_URL:
 			return BASE_URL_EDEFAULT == null ? baseUrl != null : !BASE_URL_EDEFAULT.equals(baseUrl);
 		case DaprdesignerPackage.HTTP_END_POINT__SCOPES:
@@ -671,8 +616,6 @@ public class HTTPEndPointImpl extends MinimalEObjectImpl.Container implements HT
 		result.append(apiVersion);
 		result.append(", kind: ");
 		result.append(kind);
-		result.append(", metadata_name: ");
-		result.append(metadata_name);
 		result.append(", baseUrl: ");
 		result.append(baseUrl);
 		result.append(')');

@@ -5,6 +5,7 @@ package daprdesigner.impl;
 import daprdesigner.CircuitBreakerPolicy;
 import daprdesigner.DaprdesignerPackage;
 import daprdesigner.ResiliencyPolicy;
+import daprdesigner.ResiliencyTimeout;
 import daprdesigner.RetryPolicy;
 
 import java.util.Collection;
@@ -13,15 +14,11 @@ import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EcoreEMap;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -34,14 +31,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link daprdesigner.impl.ResiliencyPolicyImpl#getRetries <em>Retries</em>}</li>
  *   <li>{@link daprdesigner.impl.ResiliencyPolicyImpl#getCircuitbreakers <em>Circuitbreakers</em>}</li>
- *   <li>{@link daprdesigner.impl.ResiliencyPolicyImpl#getTimeouts <em>Timeouts</em>}</li>
+ *   <li>{@link daprdesigner.impl.ResiliencyPolicyImpl#getTimeoutDefinitions <em>Timeout Definitions</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ResiliencyPolicyImpl extends MinimalEObjectImpl.Container implements ResiliencyPolicy {
+public class ResiliencyPolicyImpl extends DaprNodeImpl implements ResiliencyPolicy {
 	/**
-	 * The cached value of the '{@link #getRetries() <em>Retries</em>}' containment reference list.
+	 * The cached value of the '{@link #getRetries() <em>Retries</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRetries()
@@ -61,14 +58,14 @@ public class ResiliencyPolicyImpl extends MinimalEObjectImpl.Container implement
 	protected EList<CircuitBreakerPolicy> circuitbreakers;
 
 	/**
-	 * The cached value of the '{@link #getTimeouts() <em>Timeouts</em>}' map.
+	 * The cached value of the '{@link #getTimeoutDefinitions() <em>Timeout Definitions</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTimeouts()
+	 * @see #getTimeoutDefinitions()
 	 * @generated
 	 * @ordered
 	 */
-	protected EMap<String, String> timeouts;
+	protected EList<ResiliencyTimeout> timeoutDefinitions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -96,7 +93,7 @@ public class ResiliencyPolicyImpl extends MinimalEObjectImpl.Container implement
 	 */
 	public EList<RetryPolicy> getRetries() {
 		if (retries == null) {
-			retries = new EObjectContainmentEList<RetryPolicy>(RetryPolicy.class, this,
+			retries = new EObjectResolvingEList<RetryPolicy>(RetryPolicy.class, this,
 					DaprdesignerPackage.RESILIENCY_POLICY__RETRIES);
 		}
 		return retries;
@@ -120,12 +117,12 @@ public class ResiliencyPolicyImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EMap<String, String> getTimeouts() {
-		if (timeouts == null) {
-			timeouts = new EcoreEMap<String, String>(DaprdesignerPackage.Literals.ESTRING_TO_STRING_MAP_ENTRY,
-					EStringToStringMapEntryImpl.class, this, DaprdesignerPackage.RESILIENCY_POLICY__TIMEOUTS);
+	public EList<ResiliencyTimeout> getTimeoutDefinitions() {
+		if (timeoutDefinitions == null) {
+			timeoutDefinitions = new EObjectResolvingEList<ResiliencyTimeout>(ResiliencyTimeout.class, this,
+					DaprdesignerPackage.RESILIENCY_POLICY__TIMEOUT_DEFINITIONS);
 		}
-		return timeouts;
+		return timeoutDefinitions;
 	}
 
 	/**
@@ -136,12 +133,8 @@ public class ResiliencyPolicyImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case DaprdesignerPackage.RESILIENCY_POLICY__RETRIES:
-			return ((InternalEList<?>) getRetries()).basicRemove(otherEnd, msgs);
 		case DaprdesignerPackage.RESILIENCY_POLICY__CIRCUITBREAKERS:
 			return ((InternalEList<?>) getCircuitbreakers()).basicRemove(otherEnd, msgs);
-		case DaprdesignerPackage.RESILIENCY_POLICY__TIMEOUTS:
-			return ((InternalEList<?>) getTimeouts()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -158,11 +151,8 @@ public class ResiliencyPolicyImpl extends MinimalEObjectImpl.Container implement
 			return getRetries();
 		case DaprdesignerPackage.RESILIENCY_POLICY__CIRCUITBREAKERS:
 			return getCircuitbreakers();
-		case DaprdesignerPackage.RESILIENCY_POLICY__TIMEOUTS:
-			if (coreType)
-				return getTimeouts();
-			else
-				return getTimeouts().map();
+		case DaprdesignerPackage.RESILIENCY_POLICY__TIMEOUT_DEFINITIONS:
+			return getTimeoutDefinitions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -184,8 +174,9 @@ public class ResiliencyPolicyImpl extends MinimalEObjectImpl.Container implement
 			getCircuitbreakers().clear();
 			getCircuitbreakers().addAll((Collection<? extends CircuitBreakerPolicy>) newValue);
 			return;
-		case DaprdesignerPackage.RESILIENCY_POLICY__TIMEOUTS:
-			((EStructuralFeature.Setting) getTimeouts()).set(newValue);
+		case DaprdesignerPackage.RESILIENCY_POLICY__TIMEOUT_DEFINITIONS:
+			getTimeoutDefinitions().clear();
+			getTimeoutDefinitions().addAll((Collection<? extends ResiliencyTimeout>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -205,8 +196,8 @@ public class ResiliencyPolicyImpl extends MinimalEObjectImpl.Container implement
 		case DaprdesignerPackage.RESILIENCY_POLICY__CIRCUITBREAKERS:
 			getCircuitbreakers().clear();
 			return;
-		case DaprdesignerPackage.RESILIENCY_POLICY__TIMEOUTS:
-			getTimeouts().clear();
+		case DaprdesignerPackage.RESILIENCY_POLICY__TIMEOUT_DEFINITIONS:
+			getTimeoutDefinitions().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -224,8 +215,8 @@ public class ResiliencyPolicyImpl extends MinimalEObjectImpl.Container implement
 			return retries != null && !retries.isEmpty();
 		case DaprdesignerPackage.RESILIENCY_POLICY__CIRCUITBREAKERS:
 			return circuitbreakers != null && !circuitbreakers.isEmpty();
-		case DaprdesignerPackage.RESILIENCY_POLICY__TIMEOUTS:
-			return timeouts != null && !timeouts.isEmpty();
+		case DaprdesignerPackage.RESILIENCY_POLICY__TIMEOUT_DEFINITIONS:
+			return timeoutDefinitions != null && !timeoutDefinitions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

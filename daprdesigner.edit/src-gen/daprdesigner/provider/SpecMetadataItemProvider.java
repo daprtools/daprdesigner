@@ -11,17 +11,9 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
@@ -30,8 +22,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SpecMetadataItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class SpecMetadataItemProvider extends DaprNodeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -53,31 +44,15 @@ public class SpecMetadataItemProvider extends ItemProviderAdapter implements IEd
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
 			addValuePropertyDescriptor(object);
 			addIsFetchedFromSecretPropertyDescriptor(object);
 			addIsFetchedFromEnvironmentPropertyDescriptor(object);
 			addSecretKeyRefNamePropertyDescriptor(object);
 			addSecretKeyRefKeyPropertyDescriptor(object);
 			addEnvRefPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_SpecMetadata_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_SpecMetadata_name_feature",
-								"_UI_SpecMetadata_type"),
-						DaprdesignerPackage.Literals.SPEC_METADATA__NAME, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -177,6 +152,22 @@ public class SpecMetadataItemProvider extends ItemProviderAdapter implements IEd
 	}
 
 	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_SpecMetadata_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_SpecMetadata_name_feature",
+								"_UI_SpecMetadata_type"),
+						DaprdesignerPackage.Literals.SPEC_METADATA__NAME, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This returns SpecMetadata.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -222,13 +213,13 @@ public class SpecMetadataItemProvider extends ItemProviderAdapter implements IEd
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(SpecMetadata.class)) {
-		case DaprdesignerPackage.SPEC_METADATA__NAME:
 		case DaprdesignerPackage.SPEC_METADATA__VALUE:
 		case DaprdesignerPackage.SPEC_METADATA__IS_FETCHED_FROM_SECRET:
 		case DaprdesignerPackage.SPEC_METADATA__IS_FETCHED_FROM_ENVIRONMENT:
 		case DaprdesignerPackage.SPEC_METADATA__SECRET_KEY_REF_NAME:
 		case DaprdesignerPackage.SPEC_METADATA__SECRET_KEY_REF_KEY:
 		case DaprdesignerPackage.SPEC_METADATA__ENV_REF:
+		case DaprdesignerPackage.SPEC_METADATA__NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
@@ -245,17 +236,6 @@ public class SpecMetadataItemProvider extends ItemProviderAdapter implements IEd
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return DaprdesignerEditPlugin.INSTANCE;
 	}
 
 }

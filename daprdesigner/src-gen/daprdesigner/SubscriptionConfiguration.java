@@ -4,9 +4,6 @@ package daprdesigner;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.common.util.EMap;
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Subscription Configuration</b></em>'.
@@ -18,22 +15,22 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link daprdesigner.SubscriptionConfiguration#getApiVersion <em>Api Version</em>}</li>
  *   <li>{@link daprdesigner.SubscriptionConfiguration#getKind <em>Kind</em>}</li>
- *   <li>{@link daprdesigner.SubscriptionConfiguration#getName <em>Name</em>}</li>
  *   <li>{@link daprdesigner.SubscriptionConfiguration#getTopicName <em>Topic Name</em>}</li>
  *   <li>{@link daprdesigner.SubscriptionConfiguration#getRouteRules <em>Route Rules</em>}</li>
- *   <li>{@link daprdesigner.SubscriptionConfiguration#getPubsubname <em>Pubsubname</em>}</li>
+ *   <li>{@link daprdesigner.SubscriptionConfiguration#getPubsub <em>Pubsub</em>}</li>
  *   <li>{@link daprdesigner.SubscriptionConfiguration#getDeadLetterTopic <em>Dead Letter Topic</em>}</li>
  *   <li>{@link daprdesigner.SubscriptionConfiguration#isBulkSubscribe_enabled <em>Bulk Subscribe enabled</em>}</li>
  *   <li>{@link daprdesigner.SubscriptionConfiguration#getBulkSubscribe_maxMessagesCount <em>Bulk Subscribe max Messages Count</em>}</li>
  *   <li>{@link daprdesigner.SubscriptionConfiguration#getBulkSubscribe_maxAwaitDurationMs <em>Bulk Subscribe max Await Duration Ms</em>}</li>
  *   <li>{@link daprdesigner.SubscriptionConfiguration#getScopes <em>Scopes</em>}</li>
+ *   <li>{@link daprdesigner.SubscriptionConfiguration#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see daprdesigner.DaprdesignerPackage#getSubscriptionConfiguration()
  * @model
  * @generated
  */
-public interface SubscriptionConfiguration extends EObject {
+public interface SubscriptionConfiguration extends DaprNode {
 	/**
 	 * Returns the value of the '<em><b>Api Version</b></em>' attribute.
 	 * The default value is <code>"dapr.io/v2alpha1"</code>.
@@ -59,28 +56,6 @@ public interface SubscriptionConfiguration extends EObject {
 	String getKind();
 
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see daprdesigner.DaprdesignerPackage#getSubscriptionConfiguration_Name()
-	 * @model
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link daprdesigner.SubscriptionConfiguration#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
-
-	/**
 	 * Returns the value of the '<em><b>Topic Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -103,39 +78,38 @@ public interface SubscriptionConfiguration extends EObject {
 	void setTopicName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Route Rules</b></em>' map.
-	 * The key is of type {@link java.lang.String},
-	 * and the value is of type {@link java.lang.String},
+	 * Returns the value of the '<em><b>Route Rules</b></em>' reference list.
+	 * The list contents are of type {@link daprdesigner.RouteRules}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Route Rules</em>' map.
+	 * @return the value of the '<em>Route Rules</em>' reference list.
 	 * @see daprdesigner.DaprdesignerPackage#getSubscriptionConfiguration_RouteRules()
-	 * @model mapType="daprdesigner.EStringToStringMapEntry&lt;org.eclipse.emf.ecore.EString, org.eclipse.emf.ecore.EString&gt;"
-	 * @generated
-	 */
-	EMap<String, String> getRouteRules();
-
-	/**
-	 * Returns the value of the '<em><b>Pubsubname</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Pubsubname</em>' attribute.
-	 * @see #setPubsubname(String)
-	 * @see daprdesigner.DaprdesignerPackage#getSubscriptionConfiguration_Pubsubname()
 	 * @model
 	 * @generated
 	 */
-	String getPubsubname();
+	EList<RouteRules> getRouteRules();
 
 	/**
-	 * Sets the value of the '{@link daprdesigner.SubscriptionConfiguration#getPubsubname <em>Pubsubname</em>}' attribute.
+	 * Returns the value of the '<em><b>Pubsub</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Pubsubname</em>' attribute.
-	 * @see #getPubsubname()
+	 * @return the value of the '<em>Pubsub</em>' reference.
+	 * @see #setPubsub(Component)
+	 * @see daprdesigner.DaprdesignerPackage#getSubscriptionConfiguration_Pubsub()
+	 * @model
 	 * @generated
 	 */
-	void setPubsubname(String value);
+	Component getPubsub();
+
+	/**
+	 * Sets the value of the '{@link daprdesigner.SubscriptionConfiguration#getPubsub <em>Pubsub</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Pubsub</em>' reference.
+	 * @see #getPubsub()
+	 * @generated
+	 */
+	void setPubsub(Component value);
 
 	/**
 	 * Returns the value of the '<em><b>Dead Letter Topic</b></em>' attribute.
@@ -236,5 +210,27 @@ public interface SubscriptionConfiguration extends EObject {
 	 * @generated
 	 */
 	EList<App> getScopes();
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see daprdesigner.DaprdesignerPackage#getSubscriptionConfiguration_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link daprdesigner.SubscriptionConfiguration#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // SubscriptionConfiguration

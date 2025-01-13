@@ -2,15 +2,16 @@
  */
 package daprdesigner.impl;
 
+import daprdesigner.Component;
 import daprdesigner.DaprdesignerPackage;
 import daprdesigner.NameResolutionConfiguration;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +21,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link daprdesigner.impl.NameResolutionConfigurationImpl#getComponentName <em>Component Name</em>}</li>
+ *   <li>{@link daprdesigner.impl.NameResolutionConfigurationImpl#getComponent <em>Component</em>}</li>
  *   <li>{@link daprdesigner.impl.NameResolutionConfigurationImpl#getComponentVersion <em>Component Version</em>}</li>
  *   <li>{@link daprdesigner.impl.NameResolutionConfigurationImpl#getConfigurationKey <em>Configuration Key</em>}</li>
  *   <li>{@link daprdesigner.impl.NameResolutionConfigurationImpl#getConfigurationValue <em>Configuration Value</em>}</li>
@@ -28,27 +29,16 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class NameResolutionConfigurationImpl extends MinimalEObjectImpl.Container
-		implements NameResolutionConfiguration {
+public class NameResolutionConfigurationImpl extends AppConfigurationImpl implements NameResolutionConfiguration {
 	/**
-	 * The default value of the '{@link #getComponentName() <em>Component Name</em>}' attribute.
+	 * The cached value of the '{@link #getComponent() <em>Component</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getComponentName()
+	 * @see #getComponent()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String COMPONENT_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getComponentName() <em>Component Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComponentName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String componentName = COMPONENT_NAME_EDEFAULT;
+	protected Component component;
 
 	/**
 	 * The default value of the '{@link #getComponentVersion() <em>Component Version</em>}' attribute.
@@ -134,8 +124,17 @@ public class NameResolutionConfigurationImpl extends MinimalEObjectImpl.Containe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getComponentName() {
-		return componentName;
+	public Component getComponent() {
+		if (component != null && component.eIsProxy()) {
+			InternalEObject oldComponent = (InternalEObject) component;
+			component = (Component) eResolveProxy(oldComponent);
+			if (component != oldComponent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__COMPONENT, oldComponent, component));
+			}
+		}
+		return component;
 	}
 
 	/**
@@ -143,13 +142,21 @@ public class NameResolutionConfigurationImpl extends MinimalEObjectImpl.Containe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setComponentName(String newComponentName) {
-		String oldComponentName = componentName;
-		componentName = newComponentName;
+	public Component basicGetComponent() {
+		return component;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setComponent(Component newComponent) {
+		Component oldComponent = component;
+		component = newComponent;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__COMPONENT_NAME, oldComponentName,
-					componentName));
+					DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__COMPONENT, oldComponent, component));
 	}
 
 	/**
@@ -229,8 +236,10 @@ public class NameResolutionConfigurationImpl extends MinimalEObjectImpl.Containe
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__COMPONENT_NAME:
-			return getComponentName();
+		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__COMPONENT:
+			if (resolve)
+				return getComponent();
+			return basicGetComponent();
 		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__COMPONENT_VERSION:
 			return getComponentVersion();
 		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__CONFIGURATION_KEY:
@@ -249,8 +258,8 @@ public class NameResolutionConfigurationImpl extends MinimalEObjectImpl.Containe
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__COMPONENT_NAME:
-			setComponentName((String) newValue);
+		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__COMPONENT:
+			setComponent((Component) newValue);
 			return;
 		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__COMPONENT_VERSION:
 			setComponentVersion((String) newValue);
@@ -273,8 +282,8 @@ public class NameResolutionConfigurationImpl extends MinimalEObjectImpl.Containe
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__COMPONENT_NAME:
-			setComponentName(COMPONENT_NAME_EDEFAULT);
+		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__COMPONENT:
+			setComponent((Component) null);
 			return;
 		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__COMPONENT_VERSION:
 			setComponentVersion(COMPONENT_VERSION_EDEFAULT);
@@ -297,9 +306,8 @@ public class NameResolutionConfigurationImpl extends MinimalEObjectImpl.Containe
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__COMPONENT_NAME:
-			return COMPONENT_NAME_EDEFAULT == null ? componentName != null
-					: !COMPONENT_NAME_EDEFAULT.equals(componentName);
+		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__COMPONENT:
+			return component != null;
 		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__COMPONENT_VERSION:
 			return COMPONENT_VERSION_EDEFAULT == null ? componentVersion != null
 					: !COMPONENT_VERSION_EDEFAULT.equals(componentVersion);
@@ -324,9 +332,7 @@ public class NameResolutionConfigurationImpl extends MinimalEObjectImpl.Containe
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (componentName: ");
-		result.append(componentName);
-		result.append(", componentVersion: ");
+		result.append(" (componentVersion: ");
 		result.append(componentVersion);
 		result.append(", configurationKey: ");
 		result.append(configurationKey);

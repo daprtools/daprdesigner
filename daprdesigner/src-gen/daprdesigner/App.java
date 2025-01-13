@@ -2,7 +2,7 @@
  */
 package daprdesigner;
 
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,16 +14,18 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link daprdesigner.App#getAppId <em>App Id</em>}</li>
+ *   <li>{@link daprdesigner.App#getRepository <em>Repository</em>}</li>
+ *   <li>{@link daprdesigner.App#getSdkLanguage <em>Sdk Language</em>}</li>
  *   <li>{@link daprdesigner.App#getNamespace <em>Namespace</em>}</li>
  *   <li>{@link daprdesigner.App#getTrustDomain <em>Trust Domain</em>}</li>
- *   <li>{@link daprdesigner.App#getConfiguration <em>Configuration</em>}</li>
+ *   <li>{@link daprdesigner.App#getConfigurations <em>Configurations</em>}</li>
  * </ul>
  *
  * @see daprdesigner.DaprdesignerPackage#getApp()
  * @model
  * @generated
  */
-public interface App extends EObject {
+public interface App extends DaprNode {
 	/**
 	 * Returns the value of the '<em><b>App Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -45,6 +47,53 @@ public interface App extends EObject {
 	 * @generated
 	 */
 	void setAppId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Repository</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Repository</em>' attribute.
+	 * @see #setRepository(String)
+	 * @see daprdesigner.DaprdesignerPackage#getApp_Repository()
+	 * @model
+	 * @generated
+	 */
+	String getRepository();
+
+	/**
+	 * Sets the value of the '{@link daprdesigner.App#getRepository <em>Repository</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Repository</em>' attribute.
+	 * @see #getRepository()
+	 * @generated
+	 */
+	void setRepository(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Sdk Language</b></em>' attribute.
+	 * The literals are from the enumeration {@link daprdesigner.SDKLanguage}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sdk Language</em>' attribute.
+	 * @see daprdesigner.SDKLanguage
+	 * @see #setSdkLanguage(SDKLanguage)
+	 * @see daprdesigner.DaprdesignerPackage#getApp_SdkLanguage()
+	 * @model
+	 * @generated
+	 */
+	SDKLanguage getSdkLanguage();
+
+	/**
+	 * Sets the value of the '{@link daprdesigner.App#getSdkLanguage <em>Sdk Language</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Sdk Language</em>' attribute.
+	 * @see daprdesigner.SDKLanguage
+	 * @see #getSdkLanguage()
+	 * @generated
+	 */
+	void setSdkLanguage(SDKLanguage value);
 
 	/**
 	 * Returns the value of the '<em><b>Namespace</b></em>' reference.
@@ -91,25 +140,15 @@ public interface App extends EObject {
 	void setTrustDomain(Trustdomain value);
 
 	/**
-	 * Returns the value of the '<em><b>Configuration</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Configurations</b></em>' reference list.
+	 * The list contents are of type {@link daprdesigner.AppConfiguration}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Configuration</em>' containment reference.
-	 * @see #setConfiguration(AppConfiguration)
-	 * @see daprdesigner.DaprdesignerPackage#getApp_Configuration()
-	 * @model containment="true"
+	 * @return the value of the '<em>Configurations</em>' reference list.
+	 * @see daprdesigner.DaprdesignerPackage#getApp_Configurations()
+	 * @model
 	 * @generated
 	 */
-	AppConfiguration getConfiguration();
-
-	/**
-	 * Sets the value of the '{@link daprdesigner.App#getConfiguration <em>Configuration</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Configuration</em>' containment reference.
-	 * @see #getConfiguration()
-	 * @generated
-	 */
-	void setConfiguration(AppConfiguration value);
+	EList<AppConfiguration> getConfigurations();
 
 } // App

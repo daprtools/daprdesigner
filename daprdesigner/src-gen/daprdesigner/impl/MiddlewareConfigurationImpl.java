@@ -3,16 +3,16 @@
 package daprdesigner.impl;
 
 import daprdesigner.DaprdesignerPackage;
+import daprdesigner.HttpHandler;
 import daprdesigner.MiddlewareConfiguration;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EMap;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EcoreEMap;
-import org.eclipse.emf.ecore.util.InternalEList;
+import java.util.Collection;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,32 +22,21 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link daprdesigner.impl.MiddlewareConfigurationImpl#getIncomingHandler <em>Incoming Handler</em>}</li>
- *   <li>{@link daprdesigner.impl.MiddlewareConfigurationImpl#getOutgoingHandler <em>Outgoing Handler</em>}</li>
+ *   <li>{@link daprdesigner.impl.MiddlewareConfigurationImpl#getHttpHandlers <em>Http Handlers</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class MiddlewareConfigurationImpl extends MinimalEObjectImpl.Container implements MiddlewareConfiguration {
+public class MiddlewareConfigurationImpl extends AppConfigurationImpl implements MiddlewareConfiguration {
 	/**
-	 * The cached value of the '{@link #getIncomingHandler() <em>Incoming Handler</em>}' map.
+	 * The cached value of the '{@link #getHttpHandlers() <em>Http Handlers</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getIncomingHandler()
+	 * @see #getHttpHandlers()
 	 * @generated
 	 * @ordered
 	 */
-	protected EMap<String, String> incomingHandler;
-
-	/**
-	 * The cached value of the '{@link #getOutgoingHandler() <em>Outgoing Handler</em>}' map.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOutgoingHandler()
-	 * @generated
-	 * @ordered
-	 */
-	protected EMap<String, String> outgoingHandler;
+	protected EList<HttpHandler> httpHandlers;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,43 +62,12 @@ public class MiddlewareConfigurationImpl extends MinimalEObjectImpl.Container im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EMap<String, String> getIncomingHandler() {
-		if (incomingHandler == null) {
-			incomingHandler = new EcoreEMap<String, String>(DaprdesignerPackage.Literals.ESTRING_TO_STRING_MAP_ENTRY,
-					EStringToStringMapEntryImpl.class, this,
-					DaprdesignerPackage.MIDDLEWARE_CONFIGURATION__INCOMING_HANDLER);
+	public EList<HttpHandler> getHttpHandlers() {
+		if (httpHandlers == null) {
+			httpHandlers = new EObjectResolvingEList<HttpHandler>(HttpHandler.class, this,
+					DaprdesignerPackage.MIDDLEWARE_CONFIGURATION__HTTP_HANDLERS);
 		}
-		return incomingHandler;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EMap<String, String> getOutgoingHandler() {
-		if (outgoingHandler == null) {
-			outgoingHandler = new EcoreEMap<String, String>(DaprdesignerPackage.Literals.ESTRING_TO_STRING_MAP_ENTRY,
-					EStringToStringMapEntryImpl.class, this,
-					DaprdesignerPackage.MIDDLEWARE_CONFIGURATION__OUTGOING_HANDLER);
-		}
-		return outgoingHandler;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case DaprdesignerPackage.MIDDLEWARE_CONFIGURATION__INCOMING_HANDLER:
-			return ((InternalEList<?>) getIncomingHandler()).basicRemove(otherEnd, msgs);
-		case DaprdesignerPackage.MIDDLEWARE_CONFIGURATION__OUTGOING_HANDLER:
-			return ((InternalEList<?>) getOutgoingHandler()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+		return httpHandlers;
 	}
 
 	/**
@@ -120,16 +78,8 @@ public class MiddlewareConfigurationImpl extends MinimalEObjectImpl.Container im
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DaprdesignerPackage.MIDDLEWARE_CONFIGURATION__INCOMING_HANDLER:
-			if (coreType)
-				return getIncomingHandler();
-			else
-				return getIncomingHandler().map();
-		case DaprdesignerPackage.MIDDLEWARE_CONFIGURATION__OUTGOING_HANDLER:
-			if (coreType)
-				return getOutgoingHandler();
-			else
-				return getOutgoingHandler().map();
+		case DaprdesignerPackage.MIDDLEWARE_CONFIGURATION__HTTP_HANDLERS:
+			return getHttpHandlers();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -143,11 +93,9 @@ public class MiddlewareConfigurationImpl extends MinimalEObjectImpl.Container im
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DaprdesignerPackage.MIDDLEWARE_CONFIGURATION__INCOMING_HANDLER:
-			((EStructuralFeature.Setting) getIncomingHandler()).set(newValue);
-			return;
-		case DaprdesignerPackage.MIDDLEWARE_CONFIGURATION__OUTGOING_HANDLER:
-			((EStructuralFeature.Setting) getOutgoingHandler()).set(newValue);
+		case DaprdesignerPackage.MIDDLEWARE_CONFIGURATION__HTTP_HANDLERS:
+			getHttpHandlers().clear();
+			getHttpHandlers().addAll((Collection<? extends HttpHandler>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -161,11 +109,8 @@ public class MiddlewareConfigurationImpl extends MinimalEObjectImpl.Container im
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DaprdesignerPackage.MIDDLEWARE_CONFIGURATION__INCOMING_HANDLER:
-			getIncomingHandler().clear();
-			return;
-		case DaprdesignerPackage.MIDDLEWARE_CONFIGURATION__OUTGOING_HANDLER:
-			getOutgoingHandler().clear();
+		case DaprdesignerPackage.MIDDLEWARE_CONFIGURATION__HTTP_HANDLERS:
+			getHttpHandlers().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -179,10 +124,8 @@ public class MiddlewareConfigurationImpl extends MinimalEObjectImpl.Container im
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DaprdesignerPackage.MIDDLEWARE_CONFIGURATION__INCOMING_HANDLER:
-			return incomingHandler != null && !incomingHandler.isEmpty();
-		case DaprdesignerPackage.MIDDLEWARE_CONFIGURATION__OUTGOING_HANDLER:
-			return outgoingHandler != null && !outgoingHandler.isEmpty();
+		case DaprdesignerPackage.MIDDLEWARE_CONFIGURATION__HTTP_HANDLERS:
+			return httpHandlers != null && !httpHandlers.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

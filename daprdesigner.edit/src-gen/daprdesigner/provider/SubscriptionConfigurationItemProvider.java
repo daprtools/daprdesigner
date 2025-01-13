@@ -12,19 +12,11 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
@@ -33,8 +25,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SubscriptionConfigurationItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class SubscriptionConfigurationItemProvider extends DaprNodeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -58,14 +49,14 @@ public class SubscriptionConfigurationItemProvider extends ItemProviderAdapter i
 
 			addApiVersionPropertyDescriptor(object);
 			addKindPropertyDescriptor(object);
-			addNamePropertyDescriptor(object);
 			addTopicNamePropertyDescriptor(object);
-			addPubsubnamePropertyDescriptor(object);
+			addPubsubPropertyDescriptor(object);
 			addDeadLetterTopicPropertyDescriptor(object);
 			addBulkSubscribe_enabledPropertyDescriptor(object);
 			addBulkSubscribe_maxMessagesCountPropertyDescriptor(object);
 			addBulkSubscribe_maxAwaitDurationMsPropertyDescriptor(object);
 			addScopesPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -103,22 +94,6 @@ public class SubscriptionConfigurationItemProvider extends ItemProviderAdapter i
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_SubscriptionConfiguration_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_SubscriptionConfiguration_name_feature",
-								"_UI_SubscriptionConfiguration_type"),
-						DaprdesignerPackage.Literals.SUBSCRIPTION_CONFIGURATION__NAME, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Topic Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -135,19 +110,18 @@ public class SubscriptionConfigurationItemProvider extends ItemProviderAdapter i
 	}
 
 	/**
-	 * This adds a property descriptor for the Pubsubname feature.
+	 * This adds a property descriptor for the Pubsub feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPubsubnamePropertyDescriptor(Object object) {
+	protected void addPubsubPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_SubscriptionConfiguration_pubsubname_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_SubscriptionConfiguration_pubsubname_feature",
+				getString("_UI_SubscriptionConfiguration_pubsub_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_SubscriptionConfiguration_pubsub_feature",
 						"_UI_SubscriptionConfiguration_type"),
-				DaprdesignerPackage.Literals.SUBSCRIPTION_CONFIGURATION__PUBSUBNAME, true, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+				DaprdesignerPackage.Literals.SUBSCRIPTION_CONFIGURATION__PUBSUB, true, false, true, null, null, null));
 	}
 
 	/**
@@ -233,6 +207,22 @@ public class SubscriptionConfigurationItemProvider extends ItemProviderAdapter i
 	}
 
 	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_SubscriptionConfiguration_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_SubscriptionConfiguration_name_feature",
+								"_UI_SubscriptionConfiguration_type"),
+						DaprdesignerPackage.Literals.SUBSCRIPTION_CONFIGURATION__NAME, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -310,13 +300,12 @@ public class SubscriptionConfigurationItemProvider extends ItemProviderAdapter i
 		switch (notification.getFeatureID(SubscriptionConfiguration.class)) {
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__API_VERSION:
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__KIND:
-		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__NAME:
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__TOPIC_NAME:
-		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__PUBSUBNAME:
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__DEAD_LETTER_TOPIC:
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_ENABLED:
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_MAX_MESSAGES_COUNT:
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_MAX_AWAIT_DURATION_MS:
+		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__ROUTE_RULES:
@@ -337,20 +326,9 @@ public class SubscriptionConfigurationItemProvider extends ItemProviderAdapter i
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				DaprdesignerPackage.Literals.SUBSCRIPTION_CONFIGURATION__ROUTE_RULES,
-				DaprdesignerFactory.eINSTANCE.create(DaprdesignerPackage.Literals.ESTRING_TO_STRING_MAP_ENTRY)));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return DaprdesignerEditPlugin.INSTANCE;
+		newChildDescriptors
+				.add(createChildParameter(DaprdesignerPackage.Literals.SUBSCRIPTION_CONFIGURATION__ROUTE_RULES,
+						DaprdesignerFactory.eINSTANCE.createRouteRules()));
 	}
 
 }

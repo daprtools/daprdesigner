@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -37,7 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ComponentSpecImpl extends MinimalEObjectImpl.Container implements ComponentSpec {
+public class ComponentSpecImpl extends DaprNodeImpl implements ComponentSpec {
 	/**
 	 * The default value of the '{@link #isIgnoreErrors() <em>Ignore Errors</em>}' attribute.
 	 * <!-- begin-user-doc -->

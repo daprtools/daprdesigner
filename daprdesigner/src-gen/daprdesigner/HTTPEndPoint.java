@@ -4,8 +4,6 @@ package daprdesigner;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>HTTP End Point</b></em>'.
@@ -18,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link daprdesigner.HTTPEndPoint#getApiVersion <em>Api Version</em>}</li>
  *   <li>{@link daprdesigner.HTTPEndPoint#getKind <em>Kind</em>}</li>
  *   <li>{@link daprdesigner.HTTPEndPoint#getAuth <em>Auth</em>}</li>
- *   <li>{@link daprdesigner.HTTPEndPoint#getMetadata_name <em>Metadata name</em>}</li>
  *   <li>{@link daprdesigner.HTTPEndPoint#getBaseUrl <em>Base Url</em>}</li>
  *   <li>{@link daprdesigner.HTTPEndPoint#getScopes <em>Scopes</em>}</li>
  *   <li>{@link daprdesigner.HTTPEndPoint#getHeaders <em>Headers</em>}</li>
@@ -31,7 +28,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface HTTPEndPoint extends EObject {
+public interface HTTPEndPoint extends DaprNode {
 	/**
 	 * Returns the value of the '<em><b>Api Version</b></em>' attribute.
 	 * The default value is <code>"dapr.io/v1alpha1"</code>.
@@ -77,28 +74,6 @@ public interface HTTPEndPoint extends EObject {
 	 * @generated
 	 */
 	void setAuth(SecretStore value);
-
-	/**
-	 * Returns the value of the '<em><b>Metadata name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Metadata name</em>' attribute.
-	 * @see #setMetadata_name(String)
-	 * @see daprdesigner.DaprdesignerPackage#getHTTPEndPoint_Metadata_name()
-	 * @model
-	 * @generated
-	 */
-	String getMetadata_name();
-
-	/**
-	 * Sets the value of the '{@link daprdesigner.HTTPEndPoint#getMetadata_name <em>Metadata name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Metadata name</em>' attribute.
-	 * @see #getMetadata_name()
-	 * @generated
-	 */
-	void setMetadata_name(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Base Url</b></em>' attribute.

@@ -2,8 +2,6 @@
  */
 package daprdesigner;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Spec Metadata</b></em>'.
@@ -13,42 +11,20 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link daprdesigner.SpecMetadata#getName <em>Name</em>}</li>
  *   <li>{@link daprdesigner.SpecMetadata#getValue <em>Value</em>}</li>
  *   <li>{@link daprdesigner.SpecMetadata#isIsFetchedFromSecret <em>Is Fetched From Secret</em>}</li>
  *   <li>{@link daprdesigner.SpecMetadata#isIsFetchedFromEnvironment <em>Is Fetched From Environment</em>}</li>
  *   <li>{@link daprdesigner.SpecMetadata#getSecretKeyRefName <em>Secret Key Ref Name</em>}</li>
  *   <li>{@link daprdesigner.SpecMetadata#getSecretKeyRefKey <em>Secret Key Ref Key</em>}</li>
  *   <li>{@link daprdesigner.SpecMetadata#getEnvRef <em>Env Ref</em>}</li>
+ *   <li>{@link daprdesigner.SpecMetadata#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see daprdesigner.DaprdesignerPackage#getSpecMetadata()
  * @model
  * @generated
  */
-public interface SpecMetadata extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see daprdesigner.DaprdesignerPackage#getSpecMetadata_Name()
-	 * @model
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link daprdesigner.SpecMetadata#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
-
+public interface SpecMetadata extends DaprNode {
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -182,5 +158,27 @@ public interface SpecMetadata extends EObject {
 	 * @generated
 	 */
 	void setEnvRef(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see daprdesigner.DaprdesignerPackage#getSpecMetadata_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link daprdesigner.SpecMetadata#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // SpecMetadata

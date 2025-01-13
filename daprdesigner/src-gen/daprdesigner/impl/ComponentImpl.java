@@ -12,7 +12,6 @@ import daprdesigner.SecretStore;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -20,7 +19,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
@@ -35,7 +33,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link daprdesigner.impl.ComponentImpl#getApiVersion <em>Api Version</em>}</li>
  *   <li>{@link daprdesigner.impl.ComponentImpl#getKind <em>Kind</em>}</li>
  *   <li>{@link daprdesigner.impl.ComponentImpl#getAuth <em>Auth</em>}</li>
- *   <li>{@link daprdesigner.impl.ComponentImpl#getMetadata_name <em>Metadata name</em>}</li>
  *   <li>{@link daprdesigner.impl.ComponentImpl#getMetadata_namespace <em>Metadata namespace</em>}</li>
  *   <li>{@link daprdesigner.impl.ComponentImpl#getSpec <em>Spec</em>}</li>
  *   <li>{@link daprdesigner.impl.ComponentImpl#getScopes <em>Scopes</em>}</li>
@@ -43,7 +40,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *
  * @generated
  */
-public abstract class ComponentImpl extends MinimalEObjectImpl.Container implements Component {
+public abstract class ComponentImpl extends DaprNodeImpl implements Component {
 	/**
 	 * The default value of the '{@link #getApiVersion() <em>Api Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -95,26 +92,6 @@ public abstract class ComponentImpl extends MinimalEObjectImpl.Container impleme
 	protected SecretStore auth;
 
 	/**
-	 * The default value of the '{@link #getMetadata_name() <em>Metadata name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMetadata_name()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String METADATA_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMetadata_name() <em>Metadata name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMetadata_name()
-	 * @generated
-	 * @ordered
-	 */
-	protected String metadata_name = METADATA_NAME_EDEFAULT;
-
-	/**
 	 * The cached value of the '{@link #getMetadata_namespace() <em>Metadata namespace</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -125,7 +102,7 @@ public abstract class ComponentImpl extends MinimalEObjectImpl.Container impleme
 	protected Namespace metadata_namespace;
 
 	/**
-	 * The cached value of the '{@link #getSpec() <em>Spec</em>}' containment reference.
+	 * The cached value of the '{@link #getSpec() <em>Spec</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSpec()
@@ -225,28 +202,6 @@ public abstract class ComponentImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getMetadata_name() {
-		return metadata_name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMetadata_name(String newMetadata_name) {
-		String oldMetadata_name = metadata_name;
-		metadata_name = newMetadata_name;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.COMPONENT__METADATA_NAME,
-					oldMetadata_name, metadata_name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Namespace getMetadata_namespace() {
 		if (metadata_namespace != null && metadata_namespace.eIsProxy()) {
 			InternalEObject oldMetadata_namespace = (InternalEObject) metadata_namespace;
@@ -289,6 +244,15 @@ public abstract class ComponentImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public ComponentSpec getSpec() {
+		if (spec != null && spec.eIsProxy()) {
+			InternalEObject oldSpec = (InternalEObject) spec;
+			spec = (ComponentSpec) eResolveProxy(oldSpec);
+			if (spec != oldSpec) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DaprdesignerPackage.COMPONENT__SPEC,
+							oldSpec, spec));
+			}
+		}
 		return spec;
 	}
 
@@ -297,18 +261,8 @@ public abstract class ComponentImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSpec(ComponentSpec newSpec, NotificationChain msgs) {
-		ComponentSpec oldSpec = spec;
-		spec = newSpec;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					DaprdesignerPackage.COMPONENT__SPEC, oldSpec, newSpec);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
+	public ComponentSpec basicGetSpec() {
+		return spec;
 	}
 
 	/**
@@ -317,20 +271,10 @@ public abstract class ComponentImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public void setSpec(ComponentSpec newSpec) {
-		if (newSpec != spec) {
-			NotificationChain msgs = null;
-			if (spec != null)
-				msgs = ((InternalEObject) spec).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - DaprdesignerPackage.COMPONENT__SPEC, null, msgs);
-			if (newSpec != null)
-				msgs = ((InternalEObject) newSpec).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - DaprdesignerPackage.COMPONENT__SPEC, null, msgs);
-			msgs = basicSetSpec(newSpec, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.COMPONENT__SPEC, newSpec,
-					newSpec));
+		ComponentSpec oldSpec = spec;
+		spec = newSpec;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.COMPONENT__SPEC, oldSpec, spec));
 	}
 
 	/**
@@ -351,20 +295,6 @@ public abstract class ComponentImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case DaprdesignerPackage.COMPONENT__SPEC:
-			return basicSetSpec(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case DaprdesignerPackage.COMPONENT__API_VERSION:
@@ -375,14 +305,14 @@ public abstract class ComponentImpl extends MinimalEObjectImpl.Container impleme
 			if (resolve)
 				return getAuth();
 			return basicGetAuth();
-		case DaprdesignerPackage.COMPONENT__METADATA_NAME:
-			return getMetadata_name();
 		case DaprdesignerPackage.COMPONENT__METADATA_NAMESPACE:
 			if (resolve)
 				return getMetadata_namespace();
 			return basicGetMetadata_namespace();
 		case DaprdesignerPackage.COMPONENT__SPEC:
-			return getSpec();
+			if (resolve)
+				return getSpec();
+			return basicGetSpec();
 		case DaprdesignerPackage.COMPONENT__SCOPES:
 			return getScopes();
 		}
@@ -400,9 +330,6 @@ public abstract class ComponentImpl extends MinimalEObjectImpl.Container impleme
 		switch (featureID) {
 		case DaprdesignerPackage.COMPONENT__AUTH:
 			setAuth((SecretStore) newValue);
-			return;
-		case DaprdesignerPackage.COMPONENT__METADATA_NAME:
-			setMetadata_name((String) newValue);
 			return;
 		case DaprdesignerPackage.COMPONENT__METADATA_NAMESPACE:
 			setMetadata_namespace((Namespace) newValue);
@@ -428,9 +355,6 @@ public abstract class ComponentImpl extends MinimalEObjectImpl.Container impleme
 		switch (featureID) {
 		case DaprdesignerPackage.COMPONENT__AUTH:
 			setAuth((SecretStore) null);
-			return;
-		case DaprdesignerPackage.COMPONENT__METADATA_NAME:
-			setMetadata_name(METADATA_NAME_EDEFAULT);
 			return;
 		case DaprdesignerPackage.COMPONENT__METADATA_NAMESPACE:
 			setMetadata_namespace((Namespace) null);
@@ -459,9 +383,6 @@ public abstract class ComponentImpl extends MinimalEObjectImpl.Container impleme
 			return KIND_EDEFAULT == null ? kind != null : !KIND_EDEFAULT.equals(kind);
 		case DaprdesignerPackage.COMPONENT__AUTH:
 			return auth != null;
-		case DaprdesignerPackage.COMPONENT__METADATA_NAME:
-			return METADATA_NAME_EDEFAULT == null ? metadata_name != null
-					: !METADATA_NAME_EDEFAULT.equals(metadata_name);
 		case DaprdesignerPackage.COMPONENT__METADATA_NAMESPACE:
 			return metadata_namespace != null;
 		case DaprdesignerPackage.COMPONENT__SPEC:
@@ -487,8 +408,6 @@ public abstract class ComponentImpl extends MinimalEObjectImpl.Container impleme
 		result.append(apiVersion);
 		result.append(", kind: ");
 		result.append(kind);
-		result.append(", metadata_name: ");
-		result.append(metadata_name);
 		result.append(')');
 		return result.toString();
 	}

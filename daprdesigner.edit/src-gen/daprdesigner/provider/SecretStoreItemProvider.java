@@ -62,7 +62,7 @@ public class SecretStoreItemProvider extends ComponentItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((SecretStore) object).getMetadata_name();
+		String label = ((SecretStore) object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_SecretStore_type")
 				: getString("_UI_SecretStore_type") + " " + label;
 	}

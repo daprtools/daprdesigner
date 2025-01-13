@@ -89,7 +89,7 @@ public class DaprArchitectureItemProvider extends ItemProviderAdapter implements
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(DaprdesignerPackage.Literals.DAPR_ARCHITECTURE__ENVIRONMENTS);
+			childrenFeatures.add(DaprdesignerPackage.Literals.DAPR_ARCHITECTURE__BUILDINGBLOCKS);
 		}
 		return childrenFeatures;
 	}
@@ -156,7 +156,7 @@ public class DaprArchitectureItemProvider extends ItemProviderAdapter implements
 		case DaprdesignerPackage.DAPR_ARCHITECTURE__NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case DaprdesignerPackage.DAPR_ARCHITECTURE__ENVIRONMENTS:
+		case DaprdesignerPackage.DAPR_ARCHITECTURE__BUILDINGBLOCKS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -174,8 +174,8 @@ public class DaprArchitectureItemProvider extends ItemProviderAdapter implements
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(DaprdesignerPackage.Literals.DAPR_ARCHITECTURE__ENVIRONMENTS,
-				DaprdesignerFactory.eINSTANCE.createEnvironment()));
+		newChildDescriptors.add(createChildParameter(DaprdesignerPackage.Literals.DAPR_ARCHITECTURE__BUILDINGBLOCKS,
+				DaprdesignerFactory.eINSTANCE.createBlock()));
 	}
 
 	/**

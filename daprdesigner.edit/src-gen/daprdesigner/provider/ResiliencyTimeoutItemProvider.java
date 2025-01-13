@@ -11,17 +11,9 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
@@ -30,8 +22,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ResiliencyTimeoutItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ResiliencyTimeoutItemProvider extends DaprNodeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -53,10 +44,26 @@ public class ResiliencyTimeoutItemProvider extends ItemProviderAdapter implement
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addTimeOutinSecondsPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
-			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Time Outin Seconds feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTimeOutinSecondsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ResiliencyTimeout_timeOutinSeconds_feature"),
+						getString("_UI_PropertyDescriptor_description",
+								"_UI_ResiliencyTimeout_timeOutinSeconds_feature", "_UI_ResiliencyTimeout_type"),
+						DaprdesignerPackage.Literals.RESILIENCY_TIMEOUT__TIME_OUTIN_SECONDS, true, false, false,
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -72,22 +79,6 @@ public class ResiliencyTimeoutItemProvider extends ItemProviderAdapter implement
 						getString("_UI_PropertyDescriptor_description", "_UI_ResiliencyTimeout_name_feature",
 								"_UI_ResiliencyTimeout_type"),
 						DaprdesignerPackage.Literals.RESILIENCY_TIMEOUT__NAME, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Value feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addValuePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ResiliencyTimeout_value_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_ResiliencyTimeout_value_feature",
-								"_UI_ResiliencyTimeout_type"),
-						DaprdesignerPackage.Literals.RESILIENCY_TIMEOUT__VALUE, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -137,8 +128,8 @@ public class ResiliencyTimeoutItemProvider extends ItemProviderAdapter implement
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ResiliencyTimeout.class)) {
+		case DaprdesignerPackage.RESILIENCY_TIMEOUT__TIME_OUTIN_SECONDS:
 		case DaprdesignerPackage.RESILIENCY_TIMEOUT__NAME:
-		case DaprdesignerPackage.RESILIENCY_TIMEOUT__VALUE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
@@ -155,17 +146,6 @@ public class ResiliencyTimeoutItemProvider extends ItemProviderAdapter implement
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return DaprdesignerEditPlugin.INSTANCE;
 	}
 
 }

@@ -5,6 +5,7 @@ package daprdesigner.util;
 import daprdesigner.*;
 
 import java.util.Map;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -78,8 +79,13 @@ public class DaprdesignerAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseEnvironment(Environment object) {
-			return createEnvironmentAdapter();
+		public Adapter caseBlock(Block object) {
+			return createBlockAdapter();
+		}
+
+		@Override
+		public Adapter caseDaprNode(DaprNode object) {
+			return createDaprNodeAdapter();
 		}
 
 		@Override
@@ -93,16 +99,6 @@ public class DaprdesignerAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseBuildingBlock(BuildingBlock object) {
-			return createBuildingBlockAdapter();
-		}
-
-		@Override
-		public Adapter caseServices(Services object) {
-			return createServicesAdapter();
-		}
-
-		@Override
 		public Adapter caseApp(App object) {
 			return createAppAdapter();
 		}
@@ -110,6 +106,11 @@ public class DaprdesignerAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseAppConfiguration(AppConfiguration object) {
 			return createAppConfigurationAdapter();
+		}
+
+		@Override
+		public Adapter caseDeniedComponentsConfiguration(DeniedComponentsConfiguration object) {
+			return createDeniedComponentsConfigurationAdapter();
 		}
 
 		@Override
@@ -123,13 +124,13 @@ public class DaprdesignerAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseSecretsConfiguration(SecretsConfiguration object) {
-			return createSecretsConfigurationAdapter();
+		public Adapter caseSecretsAccessConfiguration(SecretsAccessConfiguration object) {
+			return createSecretsAccessConfigurationAdapter();
 		}
 
 		@Override
-		public Adapter caseSecretsList(SecretsList object) {
-			return createSecretsListAdapter();
+		public Adapter caseSecretsAccessList(SecretsAccessList object) {
+			return createSecretsAccessListAdapter();
 		}
 
 		@Override
@@ -198,13 +199,13 @@ public class DaprdesignerAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseResiliencyTimeout(ResiliencyTimeout object) {
-			return createResiliencyTimeoutAdapter();
+		public Adapter caseRetryPolicy(RetryPolicy object) {
+			return createRetryPolicyAdapter();
 		}
 
 		@Override
-		public Adapter caseRetryPolicy(RetryPolicy object) {
-			return createRetryPolicyAdapter();
+		public Adapter caseResiliencyTimeout(ResiliencyTimeout object) {
+			return createResiliencyTimeoutAdapter();
 		}
 
 		@Override
@@ -250,56 +251,6 @@ public class DaprdesignerAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseMessageBroker(MessageBroker object) {
 			return createMessageBrokerAdapter();
-		}
-
-		@Override
-		public Adapter casePubSub(PubSub object) {
-			return createPubSubAdapter();
-		}
-
-		@Override
-		public Adapter caseBindings(Bindings object) {
-			return createBindingsAdapter();
-		}
-
-		@Override
-		public Adapter caseJobs(Jobs object) {
-			return createJobsAdapter();
-		}
-
-		@Override
-		public Adapter caseConfiguration(Configuration object) {
-			return createConfigurationAdapter();
-		}
-
-		@Override
-		public Adapter caseWorkflow(Workflow object) {
-			return createWorkflowAdapter();
-		}
-
-		@Override
-		public Adapter caseActors(Actors object) {
-			return createActorsAdapter();
-		}
-
-		@Override
-		public Adapter caseSecrets(Secrets object) {
-			return createSecretsAdapter();
-		}
-
-		@Override
-		public Adapter caseStateManagement(StateManagement object) {
-			return createStateManagementAdapter();
-		}
-
-		@Override
-		public Adapter caseDistributedLocks(DistributedLocks object) {
-			return createDistributedLocksAdapter();
-		}
-
-		@Override
-		public Adapter caseCryptoGraphy(CryptoGraphy object) {
-			return createCryptoGraphyAdapter();
 		}
 
 		@Override
@@ -350,16 +301,30 @@ public class DaprdesignerAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link daprdesigner.Environment <em>Environment</em>}'.
+	 * Creates a new adapter for an object of class '{@link daprdesigner.Block <em>Block</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see daprdesigner.Environment
+	 * @see daprdesigner.Block
 	 * @generated
 	 */
-	public Adapter createEnvironmentAdapter() {
+	public Adapter createBlockAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link daprdesigner.DaprNode <em>Dapr Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see daprdesigner.DaprNode
+	 * @generated
+	 */
+	public Adapter createDaprNodeAdapter() {
 		return null;
 	}
 
@@ -392,34 +357,6 @@ public class DaprdesignerAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link daprdesigner.BuildingBlock <em>Building Block</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see daprdesigner.BuildingBlock
-	 * @generated
-	 */
-	public Adapter createBuildingBlockAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link daprdesigner.Services <em>Services</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see daprdesigner.Services
-	 * @generated
-	 */
-	public Adapter createServicesAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link daprdesigner.App <em>App</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -444,6 +381,20 @@ public class DaprdesignerAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAppConfigurationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link daprdesigner.DeniedComponentsConfiguration <em>Denied Components Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see daprdesigner.DeniedComponentsConfiguration
+	 * @generated
+	 */
+	public Adapter createDeniedComponentsConfigurationAdapter() {
 		return null;
 	}
 
@@ -476,30 +427,30 @@ public class DaprdesignerAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link daprdesigner.SecretsConfiguration <em>Secrets Configuration</em>}'.
+	 * Creates a new adapter for an object of class '{@link daprdesigner.SecretsAccessConfiguration <em>Secrets Access Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see daprdesigner.SecretsConfiguration
+	 * @see daprdesigner.SecretsAccessConfiguration
 	 * @generated
 	 */
-	public Adapter createSecretsConfigurationAdapter() {
+	public Adapter createSecretsAccessConfigurationAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link daprdesigner.SecretsList <em>Secrets List</em>}'.
+	 * Creates a new adapter for an object of class '{@link daprdesigner.SecretsAccessList <em>Secrets Access List</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see daprdesigner.SecretsList
+	 * @see daprdesigner.SecretsAccessList
 	 * @generated
 	 */
-	public Adapter createSecretsListAdapter() {
+	public Adapter createSecretsAccessListAdapter() {
 		return null;
 	}
 
@@ -686,20 +637,6 @@ public class DaprdesignerAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link daprdesigner.ResiliencyTimeout <em>Resiliency Timeout</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see daprdesigner.ResiliencyTimeout
-	 * @generated
-	 */
-	public Adapter createResiliencyTimeoutAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link daprdesigner.RetryPolicy <em>Retry Policy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -710,6 +647,20 @@ public class DaprdesignerAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRetryPolicyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link daprdesigner.ResiliencyTimeout <em>Resiliency Timeout</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see daprdesigner.ResiliencyTimeout
+	 * @generated
+	 */
+	public Adapter createResiliencyTimeoutAdapter() {
 		return null;
 	}
 
@@ -836,146 +787,6 @@ public class DaprdesignerAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMessageBrokerAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link daprdesigner.PubSub <em>Pub Sub</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see daprdesigner.PubSub
-	 * @generated
-	 */
-	public Adapter createPubSubAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link daprdesigner.Bindings <em>Bindings</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see daprdesigner.Bindings
-	 * @generated
-	 */
-	public Adapter createBindingsAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link daprdesigner.Jobs <em>Jobs</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see daprdesigner.Jobs
-	 * @generated
-	 */
-	public Adapter createJobsAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link daprdesigner.Configuration <em>Configuration</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see daprdesigner.Configuration
-	 * @generated
-	 */
-	public Adapter createConfigurationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link daprdesigner.Workflow <em>Workflow</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see daprdesigner.Workflow
-	 * @generated
-	 */
-	public Adapter createWorkflowAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link daprdesigner.Actors <em>Actors</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see daprdesigner.Actors
-	 * @generated
-	 */
-	public Adapter createActorsAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link daprdesigner.Secrets <em>Secrets</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see daprdesigner.Secrets
-	 * @generated
-	 */
-	public Adapter createSecretsAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link daprdesigner.StateManagement <em>State Management</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see daprdesigner.StateManagement
-	 * @generated
-	 */
-	public Adapter createStateManagementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link daprdesigner.DistributedLocks <em>Distributed Locks</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see daprdesigner.DistributedLocks
-	 * @generated
-	 */
-	public Adapter createDistributedLocksAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link daprdesigner.CryptoGraphy <em>Crypto Graphy</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see daprdesigner.CryptoGraphy
-	 * @generated
-	 */
-	public Adapter createCryptoGraphyAdapter() {
 		return null;
 	}
 

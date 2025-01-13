@@ -2,8 +2,6 @@
  */
 package daprdesigner;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Circuit Breaker Policy</b></em>'.
@@ -13,40 +11,18 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link daprdesigner.CircuitBreakerPolicy#getName <em>Name</em>}</li>
  *   <li>{@link daprdesigner.CircuitBreakerPolicy#getMaxRequests <em>Max Requests</em>}</li>
  *   <li>{@link daprdesigner.CircuitBreakerPolicy#getInterval <em>Interval</em>}</li>
  *   <li>{@link daprdesigner.CircuitBreakerPolicy#getTimeout <em>Timeout</em>}</li>
  *   <li>{@link daprdesigner.CircuitBreakerPolicy#getTrip <em>Trip</em>}</li>
+ *   <li>{@link daprdesigner.CircuitBreakerPolicy#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see daprdesigner.DaprdesignerPackage#getCircuitBreakerPolicy()
  * @model
  * @generated
  */
-public interface CircuitBreakerPolicy extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see daprdesigner.DaprdesignerPackage#getCircuitBreakerPolicy_Name()
-	 * @model
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link daprdesigner.CircuitBreakerPolicy#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
-
+public interface CircuitBreakerPolicy extends DaprNode {
 	/**
 	 * Returns the value of the '<em><b>Max Requests</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -74,12 +50,12 @@ public interface CircuitBreakerPolicy extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Interval</em>' attribute.
-	 * @see #setInterval(String)
+	 * @see #setInterval(int)
 	 * @see daprdesigner.DaprdesignerPackage#getCircuitBreakerPolicy_Interval()
 	 * @model
 	 * @generated
 	 */
-	String getInterval();
+	int getInterval();
 
 	/**
 	 * Sets the value of the '{@link daprdesigner.CircuitBreakerPolicy#getInterval <em>Interval</em>}' attribute.
@@ -89,19 +65,19 @@ public interface CircuitBreakerPolicy extends EObject {
 	 * @see #getInterval()
 	 * @generated
 	 */
-	void setInterval(String value);
+	void setInterval(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Timeout</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Timeout</em>' attribute.
-	 * @see #setTimeout(String)
+	 * @see #setTimeout(int)
 	 * @see daprdesigner.DaprdesignerPackage#getCircuitBreakerPolicy_Timeout()
 	 * @model
 	 * @generated
 	 */
-	String getTimeout();
+	int getTimeout();
 
 	/**
 	 * Sets the value of the '{@link daprdesigner.CircuitBreakerPolicy#getTimeout <em>Timeout</em>}' attribute.
@@ -111,16 +87,17 @@ public interface CircuitBreakerPolicy extends EObject {
 	 * @see #getTimeout()
 	 * @generated
 	 */
-	void setTimeout(String value);
+	void setTimeout(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Trip</b></em>' attribute.
+	 * The default value is <code>"consecutiveFailures > 5"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Trip</em>' attribute.
 	 * @see #setTrip(String)
 	 * @see daprdesigner.DaprdesignerPackage#getCircuitBreakerPolicy_Trip()
-	 * @model
+	 * @model default="consecutiveFailures &gt; 5"
 	 * @generated
 	 */
 	String getTrip();
@@ -134,5 +111,27 @@ public interface CircuitBreakerPolicy extends EObject {
 	 * @generated
 	 */
 	void setTrip(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see daprdesigner.DaprdesignerPackage#getCircuitBreakerPolicy_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link daprdesigner.CircuitBreakerPolicy#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // CircuitBreakerPolicy

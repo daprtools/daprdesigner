@@ -111,7 +111,7 @@ public class HashicorpVaultItemProvider extends SecretStoreItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((HashicorpVault) object).getMetadata_name();
+		String label = ((HashicorpVault) object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_HashicorpVault_type")
 				: getString("_UI_HashicorpVault_type") + " " + label;
 	}

@@ -12,19 +12,11 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
@@ -33,8 +25,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class HTTPEndPointItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class HTTPEndPointItemProvider extends DaprNodeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -59,7 +50,6 @@ public class HTTPEndPointItemProvider extends ItemProviderAdapter implements IEd
 			addApiVersionPropertyDescriptor(object);
 			addKindPropertyDescriptor(object);
 			addAuthPropertyDescriptor(object);
-			addMetadata_namePropertyDescriptor(object);
 			addBaseUrlPropertyDescriptor(object);
 			addScopesPropertyDescriptor(object);
 		}
@@ -111,22 +101,6 @@ public class HTTPEndPointItemProvider extends ItemProviderAdapter implements IEd
 						getString("_UI_PropertyDescriptor_description", "_UI_HTTPEndPoint_auth_feature",
 								"_UI_HTTPEndPoint_type"),
 						DaprdesignerPackage.Literals.HTTP_END_POINT__AUTH, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Metadata name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addMetadata_namePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_HTTPEndPoint_metadata_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_HTTPEndPoint_metadata_name_feature",
-								"_UI_HTTPEndPoint_type"),
-						DaprdesignerPackage.Literals.HTTP_END_POINT__METADATA_NAME, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -222,7 +196,7 @@ public class HTTPEndPointItemProvider extends ItemProviderAdapter implements IEd
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((HTTPEndPoint) object).getMetadata_name();
+		String label = ((HTTPEndPoint) object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_HTTPEndPoint_type")
 				: getString("_UI_HTTPEndPoint_type") + " " + label;
 	}
@@ -241,7 +215,6 @@ public class HTTPEndPointItemProvider extends ItemProviderAdapter implements IEd
 		switch (notification.getFeatureID(HTTPEndPoint.class)) {
 		case DaprdesignerPackage.HTTP_END_POINT__API_VERSION:
 		case DaprdesignerPackage.HTTP_END_POINT__KIND:
-		case DaprdesignerPackage.HTTP_END_POINT__METADATA_NAME:
 		case DaprdesignerPackage.HTTP_END_POINT__BASE_URL:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
@@ -302,17 +275,6 @@ public class HTTPEndPointItemProvider extends ItemProviderAdapter implements IEd
 					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
 		}
 		return super.getCreateChildText(owner, feature, child, selection);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return DaprdesignerEditPlugin.INSTANCE;
 	}
 
 }

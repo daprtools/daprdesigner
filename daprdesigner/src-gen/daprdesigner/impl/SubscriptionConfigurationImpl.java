@@ -3,26 +3,23 @@
 package daprdesigner.impl;
 
 import daprdesigner.App;
+import daprdesigner.Component;
 import daprdesigner.DaprdesignerPackage;
+import daprdesigner.RouteRules;
 import daprdesigner.SubscriptionConfiguration;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.EcoreEMap;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,20 +31,20 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link daprdesigner.impl.SubscriptionConfigurationImpl#getApiVersion <em>Api Version</em>}</li>
  *   <li>{@link daprdesigner.impl.SubscriptionConfigurationImpl#getKind <em>Kind</em>}</li>
- *   <li>{@link daprdesigner.impl.SubscriptionConfigurationImpl#getName <em>Name</em>}</li>
  *   <li>{@link daprdesigner.impl.SubscriptionConfigurationImpl#getTopicName <em>Topic Name</em>}</li>
  *   <li>{@link daprdesigner.impl.SubscriptionConfigurationImpl#getRouteRules <em>Route Rules</em>}</li>
- *   <li>{@link daprdesigner.impl.SubscriptionConfigurationImpl#getPubsubname <em>Pubsubname</em>}</li>
+ *   <li>{@link daprdesigner.impl.SubscriptionConfigurationImpl#getPubsub <em>Pubsub</em>}</li>
  *   <li>{@link daprdesigner.impl.SubscriptionConfigurationImpl#getDeadLetterTopic <em>Dead Letter Topic</em>}</li>
  *   <li>{@link daprdesigner.impl.SubscriptionConfigurationImpl#isBulkSubscribe_enabled <em>Bulk Subscribe enabled</em>}</li>
  *   <li>{@link daprdesigner.impl.SubscriptionConfigurationImpl#getBulkSubscribe_maxMessagesCount <em>Bulk Subscribe max Messages Count</em>}</li>
  *   <li>{@link daprdesigner.impl.SubscriptionConfigurationImpl#getBulkSubscribe_maxAwaitDurationMs <em>Bulk Subscribe max Await Duration Ms</em>}</li>
  *   <li>{@link daprdesigner.impl.SubscriptionConfigurationImpl#getScopes <em>Scopes</em>}</li>
+ *   <li>{@link daprdesigner.impl.SubscriptionConfigurationImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class SubscriptionConfigurationImpl extends MinimalEObjectImpl.Container implements SubscriptionConfiguration {
+public class SubscriptionConfigurationImpl extends DaprNodeImpl implements SubscriptionConfiguration {
 	/**
 	 * The default value of the '{@link #getApiVersion() <em>Api Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -89,26 +86,6 @@ public class SubscriptionConfigurationImpl extends MinimalEObjectImpl.Container 
 	protected String kind = KIND_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getTopicName() <em>Topic Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -129,34 +106,24 @@ public class SubscriptionConfigurationImpl extends MinimalEObjectImpl.Container 
 	protected String topicName = TOPIC_NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getRouteRules() <em>Route Rules</em>}' map.
+	 * The cached value of the '{@link #getRouteRules() <em>Route Rules</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRouteRules()
 	 * @generated
 	 * @ordered
 	 */
-	protected EMap<String, String> routeRules;
+	protected EList<RouteRules> routeRules;
 
 	/**
-	 * The default value of the '{@link #getPubsubname() <em>Pubsubname</em>}' attribute.
+	 * The cached value of the '{@link #getPubsub() <em>Pubsub</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPubsubname()
+	 * @see #getPubsub()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PUBSUBNAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPubsubname() <em>Pubsubname</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPubsubname()
-	 * @generated
-	 * @ordered
-	 */
-	protected String pubsubname = PUBSUBNAME_EDEFAULT;
+	protected Component pubsub;
 
 	/**
 	 * The default value of the '{@link #getDeadLetterTopic() <em>Dead Letter Topic</em>}' attribute.
@@ -249,6 +216,26 @@ public class SubscriptionConfigurationImpl extends MinimalEObjectImpl.Container 
 	protected EList<App> scopes;
 
 	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -290,28 +277,6 @@ public class SubscriptionConfigurationImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__NAME,
-					oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getTopicName() {
 		return topicName;
 	}
@@ -334,10 +299,9 @@ public class SubscriptionConfigurationImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EMap<String, String> getRouteRules() {
+	public EList<RouteRules> getRouteRules() {
 		if (routeRules == null) {
-			routeRules = new EcoreEMap<String, String>(DaprdesignerPackage.Literals.ESTRING_TO_STRING_MAP_ENTRY,
-					EStringToStringMapEntryImpl.class, this,
+			routeRules = new EObjectResolvingEList<RouteRules>(RouteRules.class, this,
 					DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__ROUTE_RULES);
 		}
 		return routeRules;
@@ -348,8 +312,17 @@ public class SubscriptionConfigurationImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getPubsubname() {
-		return pubsubname;
+	public Component getPubsub() {
+		if (pubsub != null && pubsub.eIsProxy()) {
+			InternalEObject oldPubsub = (InternalEObject) pubsub;
+			pubsub = (Component) eResolveProxy(oldPubsub);
+			if (pubsub != oldPubsub) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__PUBSUB, oldPubsub, pubsub));
+			}
+		}
+		return pubsub;
 	}
 
 	/**
@@ -357,12 +330,21 @@ public class SubscriptionConfigurationImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPubsubname(String newPubsubname) {
-		String oldPubsubname = pubsubname;
-		pubsubname = newPubsubname;
+	public Component basicGetPubsub() {
+		return pubsub;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPubsub(Component newPubsub) {
+		Component oldPubsub = pubsub;
+		pubsub = newPubsub;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__PUBSUBNAME, oldPubsubname, pubsubname));
+					DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__PUBSUB, oldPubsub, pubsub));
 	}
 
 	/**
@@ -475,13 +457,21 @@ public class SubscriptionConfigurationImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__ROUTE_RULES:
-			return ((InternalEList<?>) getRouteRules()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__NAME,
+					oldName, name));
 	}
 
 	/**
@@ -496,17 +486,14 @@ public class SubscriptionConfigurationImpl extends MinimalEObjectImpl.Container 
 			return getApiVersion();
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__KIND:
 			return getKind();
-		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__NAME:
-			return getName();
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__TOPIC_NAME:
 			return getTopicName();
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__ROUTE_RULES:
-			if (coreType)
-				return getRouteRules();
-			else
-				return getRouteRules().map();
-		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__PUBSUBNAME:
-			return getPubsubname();
+			return getRouteRules();
+		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__PUBSUB:
+			if (resolve)
+				return getPubsub();
+			return basicGetPubsub();
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__DEAD_LETTER_TOPIC:
 			return getDeadLetterTopic();
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_ENABLED:
@@ -517,6 +504,8 @@ public class SubscriptionConfigurationImpl extends MinimalEObjectImpl.Container 
 			return getBulkSubscribe_maxAwaitDurationMs();
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__SCOPES:
 			return getScopes();
+		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -530,17 +519,15 @@ public class SubscriptionConfigurationImpl extends MinimalEObjectImpl.Container 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__NAME:
-			setName((String) newValue);
-			return;
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__TOPIC_NAME:
 			setTopicName((String) newValue);
 			return;
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__ROUTE_RULES:
-			((EStructuralFeature.Setting) getRouteRules()).set(newValue);
+			getRouteRules().clear();
+			getRouteRules().addAll((Collection<? extends RouteRules>) newValue);
 			return;
-		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__PUBSUBNAME:
-			setPubsubname((String) newValue);
+		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__PUBSUB:
+			setPubsub((Component) newValue);
 			return;
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__DEAD_LETTER_TOPIC:
 			setDeadLetterTopic((String) newValue);
@@ -558,6 +545,9 @@ public class SubscriptionConfigurationImpl extends MinimalEObjectImpl.Container 
 			getScopes().clear();
 			getScopes().addAll((Collection<? extends App>) newValue);
 			return;
+		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__NAME:
+			setName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -570,17 +560,14 @@ public class SubscriptionConfigurationImpl extends MinimalEObjectImpl.Container 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__NAME:
-			setName(NAME_EDEFAULT);
-			return;
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__TOPIC_NAME:
 			setTopicName(TOPIC_NAME_EDEFAULT);
 			return;
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__ROUTE_RULES:
 			getRouteRules().clear();
 			return;
-		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__PUBSUBNAME:
-			setPubsubname(PUBSUBNAME_EDEFAULT);
+		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__PUBSUB:
+			setPubsub((Component) null);
 			return;
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__DEAD_LETTER_TOPIC:
 			setDeadLetterTopic(DEAD_LETTER_TOPIC_EDEFAULT);
@@ -596,6 +583,9 @@ public class SubscriptionConfigurationImpl extends MinimalEObjectImpl.Container 
 			return;
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__SCOPES:
 			getScopes().clear();
+			return;
+		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__NAME:
+			setName(NAME_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -613,14 +603,12 @@ public class SubscriptionConfigurationImpl extends MinimalEObjectImpl.Container 
 			return API_VERSION_EDEFAULT == null ? apiVersion != null : !API_VERSION_EDEFAULT.equals(apiVersion);
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__KIND:
 			return KIND_EDEFAULT == null ? kind != null : !KIND_EDEFAULT.equals(kind);
-		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__TOPIC_NAME:
 			return TOPIC_NAME_EDEFAULT == null ? topicName != null : !TOPIC_NAME_EDEFAULT.equals(topicName);
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__ROUTE_RULES:
 			return routeRules != null && !routeRules.isEmpty();
-		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__PUBSUBNAME:
-			return PUBSUBNAME_EDEFAULT == null ? pubsubname != null : !PUBSUBNAME_EDEFAULT.equals(pubsubname);
+		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__PUBSUB:
+			return pubsub != null;
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__DEAD_LETTER_TOPIC:
 			return DEAD_LETTER_TOPIC_EDEFAULT == null ? deadLetterTopic != null
 					: !DEAD_LETTER_TOPIC_EDEFAULT.equals(deadLetterTopic);
@@ -634,6 +622,8 @@ public class SubscriptionConfigurationImpl extends MinimalEObjectImpl.Container 
 					: !BULK_SUBSCRIBE_MAX_AWAIT_DURATION_MS_EDEFAULT.equals(bulkSubscribe_maxAwaitDurationMs);
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__SCOPES:
 			return scopes != null && !scopes.isEmpty();
+		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -653,12 +643,8 @@ public class SubscriptionConfigurationImpl extends MinimalEObjectImpl.Container 
 		result.append(apiVersion);
 		result.append(", kind: ");
 		result.append(kind);
-		result.append(", name: ");
-		result.append(name);
 		result.append(", topicName: ");
 		result.append(topicName);
-		result.append(", pubsubname: ");
-		result.append(pubsubname);
 		result.append(", deadLetterTopic: ");
 		result.append(deadLetterTopic);
 		result.append(", bulkSubscribe_enabled: ");
@@ -667,6 +653,8 @@ public class SubscriptionConfigurationImpl extends MinimalEObjectImpl.Container 
 		result.append(bulkSubscribe_maxMessagesCount);
 		result.append(", bulkSubscribe_maxAwaitDurationMs: ");
 		result.append(bulkSubscribe_maxAwaitDurationMs);
+		result.append(", name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

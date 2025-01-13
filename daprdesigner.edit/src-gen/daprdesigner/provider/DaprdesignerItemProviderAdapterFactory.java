@@ -119,26 +119,26 @@ public class DaprdesignerItemProviderAdapterFactory extends DaprdesignerAdapterF
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link daprdesigner.Environment} instances.
+	 * This keeps track of the one adapter used for all {@link daprdesigner.Block} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EnvironmentItemProvider environmentItemProvider;
+	protected BlockItemProvider blockItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link daprdesigner.Environment}.
+	 * This creates an adapter for a {@link daprdesigner.Block}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createEnvironmentAdapter() {
-		if (environmentItemProvider == null) {
-			environmentItemProvider = new EnvironmentItemProvider(this);
+	public Adapter createBlockAdapter() {
+		if (blockItemProvider == null) {
+			blockItemProvider = new BlockItemProvider(this);
 		}
 
-		return environmentItemProvider;
+		return blockItemProvider;
 	}
 
 	/**
@@ -188,29 +188,6 @@ public class DaprdesignerItemProviderAdapterFactory extends DaprdesignerAdapterF
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link daprdesigner.Services} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ServicesItemProvider servicesItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link daprdesigner.Services}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createServicesAdapter() {
-		if (servicesItemProvider == null) {
-			servicesItemProvider = new ServicesItemProvider(this);
-		}
-
-		return servicesItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link daprdesigner.App} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -234,26 +211,26 @@ public class DaprdesignerItemProviderAdapterFactory extends DaprdesignerAdapterF
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link daprdesigner.AppConfiguration} instances.
+	 * This keeps track of the one adapter used for all {@link daprdesigner.DeniedComponentsConfiguration} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AppConfigurationItemProvider appConfigurationItemProvider;
+	protected DeniedComponentsConfigurationItemProvider deniedComponentsConfigurationItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link daprdesigner.AppConfiguration}.
+	 * This creates an adapter for a {@link daprdesigner.DeniedComponentsConfiguration}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createAppConfigurationAdapter() {
-		if (appConfigurationItemProvider == null) {
-			appConfigurationItemProvider = new AppConfigurationItemProvider(this);
+	public Adapter createDeniedComponentsConfigurationAdapter() {
+		if (deniedComponentsConfigurationItemProvider == null) {
+			deniedComponentsConfigurationItemProvider = new DeniedComponentsConfigurationItemProvider(this);
 		}
 
-		return appConfigurationItemProvider;
+		return deniedComponentsConfigurationItemProvider;
 	}
 
 	/**
@@ -303,49 +280,49 @@ public class DaprdesignerItemProviderAdapterFactory extends DaprdesignerAdapterF
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link daprdesigner.SecretsConfiguration} instances.
+	 * This keeps track of the one adapter used for all {@link daprdesigner.SecretsAccessConfiguration} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SecretsConfigurationItemProvider secretsConfigurationItemProvider;
+	protected SecretsAccessConfigurationItemProvider secretsAccessConfigurationItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link daprdesigner.SecretsConfiguration}.
+	 * This creates an adapter for a {@link daprdesigner.SecretsAccessConfiguration}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createSecretsConfigurationAdapter() {
-		if (secretsConfigurationItemProvider == null) {
-			secretsConfigurationItemProvider = new SecretsConfigurationItemProvider(this);
+	public Adapter createSecretsAccessConfigurationAdapter() {
+		if (secretsAccessConfigurationItemProvider == null) {
+			secretsAccessConfigurationItemProvider = new SecretsAccessConfigurationItemProvider(this);
 		}
 
-		return secretsConfigurationItemProvider;
+		return secretsAccessConfigurationItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link daprdesigner.SecretsList} instances.
+	 * This keeps track of the one adapter used for all {@link daprdesigner.SecretsAccessList} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SecretsListItemProvider secretsListItemProvider;
+	protected SecretsAccessListItemProvider secretsAccessListItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link daprdesigner.SecretsList}.
+	 * This creates an adapter for a {@link daprdesigner.SecretsAccessList}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createSecretsListAdapter() {
-		if (secretsListItemProvider == null) {
-			secretsListItemProvider = new SecretsListItemProvider(this);
+	public Adapter createSecretsAccessListAdapter() {
+		if (secretsAccessListItemProvider == null) {
+			secretsAccessListItemProvider = new SecretsAccessListItemProvider(this);
 		}
 
-		return secretsListItemProvider;
+		return secretsAccessListItemProvider;
 	}
 
 	/**
@@ -648,29 +625,6 @@ public class DaprdesignerItemProviderAdapterFactory extends DaprdesignerAdapterF
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link daprdesigner.ResiliencyTimeout} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ResiliencyTimeoutItemProvider resiliencyTimeoutItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link daprdesigner.ResiliencyTimeout}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createResiliencyTimeoutAdapter() {
-		if (resiliencyTimeoutItemProvider == null) {
-			resiliencyTimeoutItemProvider = new ResiliencyTimeoutItemProvider(this);
-		}
-
-		return resiliencyTimeoutItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link daprdesigner.RetryPolicy} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -691,6 +645,29 @@ public class DaprdesignerItemProviderAdapterFactory extends DaprdesignerAdapterF
 		}
 
 		return retryPolicyItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link daprdesigner.ResiliencyTimeout} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ResiliencyTimeoutItemProvider resiliencyTimeoutItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link daprdesigner.ResiliencyTimeout}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createResiliencyTimeoutAdapter() {
+		if (resiliencyTimeoutItemProvider == null) {
+			resiliencyTimeoutItemProvider = new ResiliencyTimeoutItemProvider(this);
+		}
+
+		return resiliencyTimeoutItemProvider;
 	}
 
 	/**
@@ -832,236 +809,6 @@ public class DaprdesignerItemProviderAdapterFactory extends DaprdesignerAdapterF
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link daprdesigner.PubSub} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PubSubItemProvider pubSubItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link daprdesigner.PubSub}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPubSubAdapter() {
-		if (pubSubItemProvider == null) {
-			pubSubItemProvider = new PubSubItemProvider(this);
-		}
-
-		return pubSubItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link daprdesigner.Bindings} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected BindingsItemProvider bindingsItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link daprdesigner.Bindings}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createBindingsAdapter() {
-		if (bindingsItemProvider == null) {
-			bindingsItemProvider = new BindingsItemProvider(this);
-		}
-
-		return bindingsItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link daprdesigner.Jobs} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected JobsItemProvider jobsItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link daprdesigner.Jobs}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createJobsAdapter() {
-		if (jobsItemProvider == null) {
-			jobsItemProvider = new JobsItemProvider(this);
-		}
-
-		return jobsItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link daprdesigner.Configuration} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ConfigurationItemProvider configurationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link daprdesigner.Configuration}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createConfigurationAdapter() {
-		if (configurationItemProvider == null) {
-			configurationItemProvider = new ConfigurationItemProvider(this);
-		}
-
-		return configurationItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link daprdesigner.Workflow} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected WorkflowItemProvider workflowItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link daprdesigner.Workflow}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createWorkflowAdapter() {
-		if (workflowItemProvider == null) {
-			workflowItemProvider = new WorkflowItemProvider(this);
-		}
-
-		return workflowItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link daprdesigner.Actors} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ActorsItemProvider actorsItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link daprdesigner.Actors}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createActorsAdapter() {
-		if (actorsItemProvider == null) {
-			actorsItemProvider = new ActorsItemProvider(this);
-		}
-
-		return actorsItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link daprdesigner.Secrets} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SecretsItemProvider secretsItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link daprdesigner.Secrets}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSecretsAdapter() {
-		if (secretsItemProvider == null) {
-			secretsItemProvider = new SecretsItemProvider(this);
-		}
-
-		return secretsItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link daprdesigner.StateManagement} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected StateManagementItemProvider stateManagementItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link daprdesigner.StateManagement}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createStateManagementAdapter() {
-		if (stateManagementItemProvider == null) {
-			stateManagementItemProvider = new StateManagementItemProvider(this);
-		}
-
-		return stateManagementItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link daprdesigner.DistributedLocks} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DistributedLocksItemProvider distributedLocksItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link daprdesigner.DistributedLocks}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDistributedLocksAdapter() {
-		if (distributedLocksItemProvider == null) {
-			distributedLocksItemProvider = new DistributedLocksItemProvider(this);
-		}
-
-		return distributedLocksItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link daprdesigner.CryptoGraphy} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CryptoGraphyItemProvider cryptoGraphyItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link daprdesigner.CryptoGraphy}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCryptoGraphyAdapter() {
-		if (cryptoGraphyItemProvider == null) {
-			cryptoGraphyItemProvider = new CryptoGraphyItemProvider(this);
-		}
-
-		return cryptoGraphyItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1164,26 +911,24 @@ public class DaprdesignerItemProviderAdapterFactory extends DaprdesignerAdapterF
 			eStringToStringMapEntryItemProvider.dispose();
 		if (daprArchitectureItemProvider != null)
 			daprArchitectureItemProvider.dispose();
-		if (environmentItemProvider != null)
-			environmentItemProvider.dispose();
+		if (blockItemProvider != null)
+			blockItemProvider.dispose();
 		if (namespaceItemProvider != null)
 			namespaceItemProvider.dispose();
 		if (trustdomainItemProvider != null)
 			trustdomainItemProvider.dispose();
-		if (servicesItemProvider != null)
-			servicesItemProvider.dispose();
 		if (appItemProvider != null)
 			appItemProvider.dispose();
-		if (appConfigurationItemProvider != null)
-			appConfigurationItemProvider.dispose();
+		if (deniedComponentsConfigurationItemProvider != null)
+			deniedComponentsConfigurationItemProvider.dispose();
 		if (loggingConfigurationItemProvider != null)
 			loggingConfigurationItemProvider.dispose();
 		if (nameResolutionConfigurationItemProvider != null)
 			nameResolutionConfigurationItemProvider.dispose();
-		if (secretsConfigurationItemProvider != null)
-			secretsConfigurationItemProvider.dispose();
-		if (secretsListItemProvider != null)
-			secretsListItemProvider.dispose();
+		if (secretsAccessConfigurationItemProvider != null)
+			secretsAccessConfigurationItemProvider.dispose();
+		if (secretsAccessListItemProvider != null)
+			secretsAccessListItemProvider.dispose();
 		if (metricsConfigurationItemProvider != null)
 			metricsConfigurationItemProvider.dispose();
 		if (apiAccessControlItemProvider != null)
@@ -1210,10 +955,10 @@ public class DaprdesignerItemProviderAdapterFactory extends DaprdesignerAdapterF
 			resiliencyConfigurationItemProvider.dispose();
 		if (resiliencyPolicyItemProvider != null)
 			resiliencyPolicyItemProvider.dispose();
-		if (resiliencyTimeoutItemProvider != null)
-			resiliencyTimeoutItemProvider.dispose();
 		if (retryPolicyItemProvider != null)
 			retryPolicyItemProvider.dispose();
+		if (resiliencyTimeoutItemProvider != null)
+			resiliencyTimeoutItemProvider.dispose();
 		if (circuitBreakerPolicyItemProvider != null)
 			circuitBreakerPolicyItemProvider.dispose();
 		if (resiliencyTargetItemProvider != null)
@@ -1226,26 +971,6 @@ public class DaprdesignerItemProviderAdapterFactory extends DaprdesignerAdapterF
 			specMetadataItemProvider.dispose();
 		if (hashicorpVaultItemProvider != null)
 			hashicorpVaultItemProvider.dispose();
-		if (pubSubItemProvider != null)
-			pubSubItemProvider.dispose();
-		if (bindingsItemProvider != null)
-			bindingsItemProvider.dispose();
-		if (jobsItemProvider != null)
-			jobsItemProvider.dispose();
-		if (configurationItemProvider != null)
-			configurationItemProvider.dispose();
-		if (workflowItemProvider != null)
-			workflowItemProvider.dispose();
-		if (actorsItemProvider != null)
-			actorsItemProvider.dispose();
-		if (secretsItemProvider != null)
-			secretsItemProvider.dispose();
-		if (stateManagementItemProvider != null)
-			stateManagementItemProvider.dispose();
-		if (distributedLocksItemProvider != null)
-			distributedLocksItemProvider.dispose();
-		if (cryptoGraphyItemProvider != null)
-			cryptoGraphyItemProvider.dispose();
 	}
 
 }

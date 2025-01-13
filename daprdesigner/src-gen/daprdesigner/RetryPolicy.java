@@ -2,8 +2,6 @@
  */
 package daprdesigner;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Retry Policy</b></em>'.
@@ -13,72 +11,54 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link daprdesigner.RetryPolicy#getName <em>Name</em>}</li>
  *   <li>{@link daprdesigner.RetryPolicy#getPolicy_type <em>Policy type</em>}</li>
  *   <li>{@link daprdesigner.RetryPolicy#getDuration <em>Duration</em>}</li>
  *   <li>{@link daprdesigner.RetryPolicy#getMaxRetries <em>Max Retries</em>}</li>
+ *   <li>{@link daprdesigner.RetryPolicy#getMaxInterval <em>Max Interval</em>}</li>
+ *   <li>{@link daprdesigner.RetryPolicy#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see daprdesigner.DaprdesignerPackage#getRetryPolicy()
  * @model
  * @generated
  */
-public interface RetryPolicy extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see daprdesigner.DaprdesignerPackage#getRetryPolicy_Name()
-	 * @model
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link daprdesigner.RetryPolicy#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
-
+public interface RetryPolicy extends DaprNode {
 	/**
 	 * Returns the value of the '<em><b>Policy type</b></em>' attribute.
+	 * The literals are from the enumeration {@link daprdesigner.RetryPolicyType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Policy type</em>' attribute.
-	 * @see #setPolicy_type(String)
+	 * @see daprdesigner.RetryPolicyType
+	 * @see #setPolicy_type(RetryPolicyType)
 	 * @see daprdesigner.DaprdesignerPackage#getRetryPolicy_Policy_type()
 	 * @model
 	 * @generated
 	 */
-	String getPolicy_type();
+	RetryPolicyType getPolicy_type();
 
 	/**
 	 * Sets the value of the '{@link daprdesigner.RetryPolicy#getPolicy_type <em>Policy type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Policy type</em>' attribute.
+	 * @see daprdesigner.RetryPolicyType
 	 * @see #getPolicy_type()
 	 * @generated
 	 */
-	void setPolicy_type(String value);
+	void setPolicy_type(RetryPolicyType value);
 
 	/**
 	 * Returns the value of the '<em><b>Duration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Duration</em>' attribute.
-	 * @see #setDuration(String)
+	 * @see #setDuration(int)
 	 * @see daprdesigner.DaprdesignerPackage#getRetryPolicy_Duration()
 	 * @model
 	 * @generated
 	 */
-	String getDuration();
+	int getDuration();
 
 	/**
 	 * Sets the value of the '{@link daprdesigner.RetryPolicy#getDuration <em>Duration</em>}' attribute.
@@ -88,7 +68,7 @@ public interface RetryPolicy extends EObject {
 	 * @see #getDuration()
 	 * @generated
 	 */
-	void setDuration(String value);
+	void setDuration(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Max Retries</b></em>' attribute.
@@ -111,5 +91,49 @@ public interface RetryPolicy extends EObject {
 	 * @generated
 	 */
 	void setMaxRetries(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Interval</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Interval</em>' attribute.
+	 * @see #setMaxInterval(int)
+	 * @see daprdesigner.DaprdesignerPackage#getRetryPolicy_MaxInterval()
+	 * @model
+	 * @generated
+	 */
+	int getMaxInterval();
+
+	/**
+	 * Sets the value of the '{@link daprdesigner.RetryPolicy#getMaxInterval <em>Max Interval</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Interval</em>' attribute.
+	 * @see #getMaxInterval()
+	 * @generated
+	 */
+	void setMaxInterval(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see daprdesigner.DaprdesignerPackage#getRetryPolicy_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link daprdesigner.RetryPolicy#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // RetryPolicy

@@ -10,13 +10,11 @@ import daprdesigner.ResiliencyTimeout;
 import daprdesigner.RetryPolicy;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,16 +25,16 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link daprdesigner.impl.ResiliencyTargetImpl#getType <em>Type</em>}</li>
- *   <li>{@link daprdesigner.impl.ResiliencyTargetImpl#getName <em>Name</em>}</li>
  *   <li>{@link daprdesigner.impl.ResiliencyTargetImpl#getCircuitBreaker <em>Circuit Breaker</em>}</li>
  *   <li>{@link daprdesigner.impl.ResiliencyTargetImpl#getRetry <em>Retry</em>}</li>
  *   <li>{@link daprdesigner.impl.ResiliencyTargetImpl#getCircuitBreakerCacheSize <em>Circuit Breaker Cache Size</em>}</li>
  *   <li>{@link daprdesigner.impl.ResiliencyTargetImpl#getTimeout <em>Timeout</em>}</li>
+ *   <li>{@link daprdesigner.impl.ResiliencyTargetImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ResiliencyTargetImpl extends MinimalEObjectImpl.Container implements ResiliencyTarget {
+public class ResiliencyTargetImpl extends DaprNodeImpl implements ResiliencyTarget {
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -58,27 +56,7 @@ public class ResiliencyTargetImpl extends MinimalEObjectImpl.Container implement
 	protected ResiliencyTargetType type = TYPE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getCircuitBreaker() <em>Circuit Breaker</em>}' containment reference.
+	 * The cached value of the '{@link #getCircuitBreaker() <em>Circuit Breaker</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCircuitBreaker()
@@ -88,7 +66,7 @@ public class ResiliencyTargetImpl extends MinimalEObjectImpl.Container implement
 	protected CircuitBreakerPolicy circuitBreaker;
 
 	/**
-	 * The cached value of the '{@link #getRetry() <em>Retry</em>}' containment reference.
+	 * The cached value of the '{@link #getRetry() <em>Retry</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRetry()
@@ -118,7 +96,7 @@ public class ResiliencyTargetImpl extends MinimalEObjectImpl.Container implement
 	protected int circuitBreakerCacheSize = CIRCUIT_BREAKER_CACHE_SIZE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getTimeout() <em>Timeout</em>}' containment reference.
+	 * The cached value of the '{@link #getTimeout() <em>Timeout</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTimeout()
@@ -126,6 +104,26 @@ public class ResiliencyTargetImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected ResiliencyTimeout timeout;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -173,29 +171,16 @@ public class ResiliencyTargetImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.RESILIENCY_TARGET__NAME, oldName,
-					name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public CircuitBreakerPolicy getCircuitBreaker() {
+		if (circuitBreaker != null && circuitBreaker.eIsProxy()) {
+			InternalEObject oldCircuitBreaker = (InternalEObject) circuitBreaker;
+			circuitBreaker = (CircuitBreakerPolicy) eResolveProxy(oldCircuitBreaker);
+			if (circuitBreaker != oldCircuitBreaker) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							DaprdesignerPackage.RESILIENCY_TARGET__CIRCUIT_BREAKER, oldCircuitBreaker, circuitBreaker));
+			}
+		}
 		return circuitBreaker;
 	}
 
@@ -204,18 +189,8 @@ public class ResiliencyTargetImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCircuitBreaker(CircuitBreakerPolicy newCircuitBreaker, NotificationChain msgs) {
-		CircuitBreakerPolicy oldCircuitBreaker = circuitBreaker;
-		circuitBreaker = newCircuitBreaker;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					DaprdesignerPackage.RESILIENCY_TARGET__CIRCUIT_BREAKER, oldCircuitBreaker, newCircuitBreaker);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
+	public CircuitBreakerPolicy basicGetCircuitBreaker() {
+		return circuitBreaker;
 	}
 
 	/**
@@ -224,20 +199,11 @@ public class ResiliencyTargetImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	public void setCircuitBreaker(CircuitBreakerPolicy newCircuitBreaker) {
-		if (newCircuitBreaker != circuitBreaker) {
-			NotificationChain msgs = null;
-			if (circuitBreaker != null)
-				msgs = ((InternalEObject) circuitBreaker).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - DaprdesignerPackage.RESILIENCY_TARGET__CIRCUIT_BREAKER, null, msgs);
-			if (newCircuitBreaker != null)
-				msgs = ((InternalEObject) newCircuitBreaker).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - DaprdesignerPackage.RESILIENCY_TARGET__CIRCUIT_BREAKER, null, msgs);
-			msgs = basicSetCircuitBreaker(newCircuitBreaker, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
+		CircuitBreakerPolicy oldCircuitBreaker = circuitBreaker;
+		circuitBreaker = newCircuitBreaker;
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					DaprdesignerPackage.RESILIENCY_TARGET__CIRCUIT_BREAKER, newCircuitBreaker, newCircuitBreaker));
+					DaprdesignerPackage.RESILIENCY_TARGET__CIRCUIT_BREAKER, oldCircuitBreaker, circuitBreaker));
 	}
 
 	/**
@@ -246,6 +212,15 @@ public class ResiliencyTargetImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	public RetryPolicy getRetry() {
+		if (retry != null && retry.eIsProxy()) {
+			InternalEObject oldRetry = (InternalEObject) retry;
+			retry = (RetryPolicy) eResolveProxy(oldRetry);
+			if (retry != oldRetry) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							DaprdesignerPackage.RESILIENCY_TARGET__RETRY, oldRetry, retry));
+			}
+		}
 		return retry;
 	}
 
@@ -254,18 +229,8 @@ public class ResiliencyTargetImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetRetry(RetryPolicy newRetry, NotificationChain msgs) {
-		RetryPolicy oldRetry = retry;
-		retry = newRetry;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					DaprdesignerPackage.RESILIENCY_TARGET__RETRY, oldRetry, newRetry);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
+	public RetryPolicy basicGetRetry() {
+		return retry;
 	}
 
 	/**
@@ -274,20 +239,11 @@ public class ResiliencyTargetImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	public void setRetry(RetryPolicy newRetry) {
-		if (newRetry != retry) {
-			NotificationChain msgs = null;
-			if (retry != null)
-				msgs = ((InternalEObject) retry).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - DaprdesignerPackage.RESILIENCY_TARGET__RETRY, null, msgs);
-			if (newRetry != null)
-				msgs = ((InternalEObject) newRetry).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - DaprdesignerPackage.RESILIENCY_TARGET__RETRY, null, msgs);
-			msgs = basicSetRetry(newRetry, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
+		RetryPolicy oldRetry = retry;
+		retry = newRetry;
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.RESILIENCY_TARGET__RETRY,
-					newRetry, newRetry));
+					oldRetry, retry));
 	}
 
 	/**
@@ -319,6 +275,15 @@ public class ResiliencyTargetImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	public ResiliencyTimeout getTimeout() {
+		if (timeout != null && timeout.eIsProxy()) {
+			InternalEObject oldTimeout = (InternalEObject) timeout;
+			timeout = (ResiliencyTimeout) eResolveProxy(oldTimeout);
+			if (timeout != oldTimeout) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							DaprdesignerPackage.RESILIENCY_TARGET__TIMEOUT, oldTimeout, timeout));
+			}
+		}
 		return timeout;
 	}
 
@@ -327,18 +292,8 @@ public class ResiliencyTargetImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTimeout(ResiliencyTimeout newTimeout, NotificationChain msgs) {
-		ResiliencyTimeout oldTimeout = timeout;
-		timeout = newTimeout;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					DaprdesignerPackage.RESILIENCY_TARGET__TIMEOUT, oldTimeout, newTimeout);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
+	public ResiliencyTimeout basicGetTimeout() {
+		return timeout;
 	}
 
 	/**
@@ -347,20 +302,11 @@ public class ResiliencyTargetImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	public void setTimeout(ResiliencyTimeout newTimeout) {
-		if (newTimeout != timeout) {
-			NotificationChain msgs = null;
-			if (timeout != null)
-				msgs = ((InternalEObject) timeout).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - DaprdesignerPackage.RESILIENCY_TARGET__TIMEOUT, null, msgs);
-			if (newTimeout != null)
-				msgs = ((InternalEObject) newTimeout).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - DaprdesignerPackage.RESILIENCY_TARGET__TIMEOUT, null, msgs);
-			msgs = basicSetTimeout(newTimeout, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
+		ResiliencyTimeout oldTimeout = timeout;
+		timeout = newTimeout;
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.RESILIENCY_TARGET__TIMEOUT,
-					newTimeout, newTimeout));
+					oldTimeout, timeout));
 	}
 
 	/**
@@ -368,17 +314,21 @@ public class ResiliencyTargetImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case DaprdesignerPackage.RESILIENCY_TARGET__CIRCUIT_BREAKER:
-			return basicSetCircuitBreaker(null, msgs);
-		case DaprdesignerPackage.RESILIENCY_TARGET__RETRY:
-			return basicSetRetry(null, msgs);
-		case DaprdesignerPackage.RESILIENCY_TARGET__TIMEOUT:
-			return basicSetTimeout(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.RESILIENCY_TARGET__NAME, oldName,
+					name));
 	}
 
 	/**
@@ -391,16 +341,22 @@ public class ResiliencyTargetImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 		case DaprdesignerPackage.RESILIENCY_TARGET__TYPE:
 			return getType();
-		case DaprdesignerPackage.RESILIENCY_TARGET__NAME:
-			return getName();
 		case DaprdesignerPackage.RESILIENCY_TARGET__CIRCUIT_BREAKER:
-			return getCircuitBreaker();
+			if (resolve)
+				return getCircuitBreaker();
+			return basicGetCircuitBreaker();
 		case DaprdesignerPackage.RESILIENCY_TARGET__RETRY:
-			return getRetry();
+			if (resolve)
+				return getRetry();
+			return basicGetRetry();
 		case DaprdesignerPackage.RESILIENCY_TARGET__CIRCUIT_BREAKER_CACHE_SIZE:
 			return getCircuitBreakerCacheSize();
 		case DaprdesignerPackage.RESILIENCY_TARGET__TIMEOUT:
-			return getTimeout();
+			if (resolve)
+				return getTimeout();
+			return basicGetTimeout();
+		case DaprdesignerPackage.RESILIENCY_TARGET__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -416,9 +372,6 @@ public class ResiliencyTargetImpl extends MinimalEObjectImpl.Container implement
 		case DaprdesignerPackage.RESILIENCY_TARGET__TYPE:
 			setType((ResiliencyTargetType) newValue);
 			return;
-		case DaprdesignerPackage.RESILIENCY_TARGET__NAME:
-			setName((String) newValue);
-			return;
 		case DaprdesignerPackage.RESILIENCY_TARGET__CIRCUIT_BREAKER:
 			setCircuitBreaker((CircuitBreakerPolicy) newValue);
 			return;
@@ -430,6 +383,9 @@ public class ResiliencyTargetImpl extends MinimalEObjectImpl.Container implement
 			return;
 		case DaprdesignerPackage.RESILIENCY_TARGET__TIMEOUT:
 			setTimeout((ResiliencyTimeout) newValue);
+			return;
+		case DaprdesignerPackage.RESILIENCY_TARGET__NAME:
+			setName((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -446,9 +402,6 @@ public class ResiliencyTargetImpl extends MinimalEObjectImpl.Container implement
 		case DaprdesignerPackage.RESILIENCY_TARGET__TYPE:
 			setType(TYPE_EDEFAULT);
 			return;
-		case DaprdesignerPackage.RESILIENCY_TARGET__NAME:
-			setName(NAME_EDEFAULT);
-			return;
 		case DaprdesignerPackage.RESILIENCY_TARGET__CIRCUIT_BREAKER:
 			setCircuitBreaker((CircuitBreakerPolicy) null);
 			return;
@@ -460,6 +413,9 @@ public class ResiliencyTargetImpl extends MinimalEObjectImpl.Container implement
 			return;
 		case DaprdesignerPackage.RESILIENCY_TARGET__TIMEOUT:
 			setTimeout((ResiliencyTimeout) null);
+			return;
+		case DaprdesignerPackage.RESILIENCY_TARGET__NAME:
+			setName(NAME_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -475,8 +431,6 @@ public class ResiliencyTargetImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 		case DaprdesignerPackage.RESILIENCY_TARGET__TYPE:
 			return type != TYPE_EDEFAULT;
-		case DaprdesignerPackage.RESILIENCY_TARGET__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case DaprdesignerPackage.RESILIENCY_TARGET__CIRCUIT_BREAKER:
 			return circuitBreaker != null;
 		case DaprdesignerPackage.RESILIENCY_TARGET__RETRY:
@@ -485,6 +439,8 @@ public class ResiliencyTargetImpl extends MinimalEObjectImpl.Container implement
 			return circuitBreakerCacheSize != CIRCUIT_BREAKER_CACHE_SIZE_EDEFAULT;
 		case DaprdesignerPackage.RESILIENCY_TARGET__TIMEOUT:
 			return timeout != null;
+		case DaprdesignerPackage.RESILIENCY_TARGET__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -502,10 +458,10 @@ public class ResiliencyTargetImpl extends MinimalEObjectImpl.Container implement
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (type: ");
 		result.append(type);
-		result.append(", name: ");
-		result.append(name);
 		result.append(", circuitBreakerCacheSize: ");
 		result.append(circuitBreakerCacheSize);
+		result.append(", name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

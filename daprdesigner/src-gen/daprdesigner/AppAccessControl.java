@@ -4,8 +4,6 @@ package daprdesigner;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>App Access Control</b></em>'.
@@ -24,28 +22,31 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface AppAccessControl extends EObject {
+public interface AppAccessControl extends AppConfiguration {
 	/**
 	 * Returns the value of the '<em><b>Default Action</b></em>' attribute.
+	 * The literals are from the enumeration {@link daprdesigner.AccessAction}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Default Action</em>' attribute.
-	 * @see #setDefaultAction(String)
+	 * @see daprdesigner.AccessAction
+	 * @see #setDefaultAction(AccessAction)
 	 * @see daprdesigner.DaprdesignerPackage#getAppAccessControl_DefaultAction()
 	 * @model
 	 * @generated
 	 */
-	String getDefaultAction();
+	AccessAction getDefaultAction();
 
 	/**
 	 * Sets the value of the '{@link daprdesigner.AppAccessControl#getDefaultAction <em>Default Action</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Default Action</em>' attribute.
+	 * @see daprdesigner.AccessAction
 	 * @see #getDefaultAction()
 	 * @generated
 	 */
-	void setDefaultAction(String value);
+	void setDefaultAction(AccessAction value);
 
 	/**
 	 * Returns the value of the '<em><b>Trust Domain</b></em>' reference.
@@ -70,13 +71,13 @@ public interface AppAccessControl extends EObject {
 	void setTrustDomain(Trustdomain value);
 
 	/**
-	 * Returns the value of the '<em><b>Policies</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Policies</b></em>' reference list.
 	 * The list contents are of type {@link daprdesigner.AppPolicy}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Policies</em>' containment reference list.
+	 * @return the value of the '<em>Policies</em>' reference list.
 	 * @see daprdesigner.DaprdesignerPackage#getAppAccessControl_Policies()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	EList<AppPolicy> getPolicies();

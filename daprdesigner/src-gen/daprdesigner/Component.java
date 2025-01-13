@@ -4,8 +4,6 @@ package daprdesigner;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Component</b></em>'.
@@ -18,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link daprdesigner.Component#getApiVersion <em>Api Version</em>}</li>
  *   <li>{@link daprdesigner.Component#getKind <em>Kind</em>}</li>
  *   <li>{@link daprdesigner.Component#getAuth <em>Auth</em>}</li>
- *   <li>{@link daprdesigner.Component#getMetadata_name <em>Metadata name</em>}</li>
  *   <li>{@link daprdesigner.Component#getMetadata_namespace <em>Metadata namespace</em>}</li>
  *   <li>{@link daprdesigner.Component#getSpec <em>Spec</em>}</li>
  *   <li>{@link daprdesigner.Component#getScopes <em>Scopes</em>}</li>
@@ -28,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface Component extends EObject {
+public interface Component extends DaprNode {
 	/**
 	 * Returns the value of the '<em><b>Api Version</b></em>' attribute.
 	 * The default value is <code>"dapr.io/v1alpha1"</code>.
@@ -76,28 +73,6 @@ public interface Component extends EObject {
 	void setAuth(SecretStore value);
 
 	/**
-	 * Returns the value of the '<em><b>Metadata name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Metadata name</em>' attribute.
-	 * @see #setMetadata_name(String)
-	 * @see daprdesigner.DaprdesignerPackage#getComponent_Metadata_name()
-	 * @model
-	 * @generated
-	 */
-	String getMetadata_name();
-
-	/**
-	 * Sets the value of the '{@link daprdesigner.Component#getMetadata_name <em>Metadata name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Metadata name</em>' attribute.
-	 * @see #getMetadata_name()
-	 * @generated
-	 */
-	void setMetadata_name(String value);
-
-	/**
 	 * Returns the value of the '<em><b>Metadata namespace</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -120,22 +95,22 @@ public interface Component extends EObject {
 	void setMetadata_namespace(Namespace value);
 
 	/**
-	 * Returns the value of the '<em><b>Spec</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Spec</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Spec</em>' containment reference.
+	 * @return the value of the '<em>Spec</em>' reference.
 	 * @see #setSpec(ComponentSpec)
 	 * @see daprdesigner.DaprdesignerPackage#getComponent_Spec()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	ComponentSpec getSpec();
 
 	/**
-	 * Sets the value of the '{@link daprdesigner.Component#getSpec <em>Spec</em>}' containment reference.
+	 * Sets the value of the '{@link daprdesigner.Component#getSpec <em>Spec</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Spec</em>' containment reference.
+	 * @param value the new value of the '<em>Spec</em>' reference.
 	 * @see #getSpec()
 	 * @generated
 	 */

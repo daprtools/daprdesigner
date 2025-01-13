@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
@@ -35,15 +34,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link daprdesigner.impl.ResiliencyConfigurationImpl#getApiVersion <em>Api Version</em>}</li>
  *   <li>{@link daprdesigner.impl.ResiliencyConfigurationImpl#getKind <em>Kind</em>}</li>
- *   <li>{@link daprdesigner.impl.ResiliencyConfigurationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link daprdesigner.impl.ResiliencyConfigurationImpl#getVersion <em>Version</em>}</li>
  *   <li>{@link daprdesigner.impl.ResiliencyConfigurationImpl#getScopes <em>Scopes</em>}</li>
  *   <li>{@link daprdesigner.impl.ResiliencyConfigurationImpl#getPolicy <em>Policy</em>}</li>
  *   <li>{@link daprdesigner.impl.ResiliencyConfigurationImpl#getTargets <em>Targets</em>}</li>
+ *   <li>{@link daprdesigner.impl.ResiliencyConfigurationImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ResiliencyConfigurationImpl extends MinimalEObjectImpl.Container implements ResiliencyConfiguration {
+public class ResiliencyConfigurationImpl extends DaprNodeImpl implements ResiliencyConfiguration {
 	/**
 	 * The default value of the '{@link #getApiVersion() <em>Api Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -72,7 +72,7 @@ public class ResiliencyConfigurationImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String KIND_EDEFAULT = "Subscription";
+	protected static final String KIND_EDEFAULT = "Resiliency";
 
 	/**
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
@@ -83,6 +83,56 @@ public class ResiliencyConfigurationImpl extends MinimalEObjectImpl.Container im
 	 * @ordered
 	 */
 	protected String kind = KIND_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVersion()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VERSION_EDEFAULT = "v1alpha1";
+
+	/**
+	 * The cached value of the '{@link #getVersion() <em>Version</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVersion()
+	 * @generated
+	 * @ordered
+	 */
+	protected String version = VERSION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getScopes() <em>Scopes</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getScopes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<App> scopes;
+
+	/**
+	 * The cached value of the '{@link #getPolicy() <em>Policy</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPolicy()
+	 * @generated
+	 * @ordered
+	 */
+	protected ResiliencyPolicy policy;
+
+	/**
+	 * The cached value of the '{@link #getTargets() <em>Targets</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTargets()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ResiliencyTarget> targets;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -103,36 +153,6 @@ public class ResiliencyConfigurationImpl extends MinimalEObjectImpl.Container im
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getScopes() <em>Scopes</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getScopes()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<App> scopes;
-
-	/**
-	 * The cached value of the '{@link #getPolicy() <em>Policy</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPolicy()
-	 * @generated
-	 * @ordered
-	 */
-	protected ResiliencyPolicy policy;
-
-	/**
-	 * The cached value of the '{@link #getTargets() <em>Targets</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTargets()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ResiliencyTarget> targets;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -176,6 +196,81 @@ public class ResiliencyConfigurationImpl extends MinimalEObjectImpl.Container im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getVersion() {
+		return version;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<App> getScopes() {
+		if (scopes == null) {
+			scopes = new EObjectResolvingEList<App>(App.class, this,
+					DaprdesignerPackage.RESILIENCY_CONFIGURATION__SCOPES);
+		}
+		return scopes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ResiliencyPolicy getPolicy() {
+		if (policy != null && policy.eIsProxy()) {
+			InternalEObject oldPolicy = (InternalEObject) policy;
+			policy = (ResiliencyPolicy) eResolveProxy(oldPolicy);
+			if (policy != oldPolicy) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							DaprdesignerPackage.RESILIENCY_CONFIGURATION__POLICY, oldPolicy, policy));
+			}
+		}
+		return policy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ResiliencyPolicy basicGetPolicy() {
+		return policy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPolicy(ResiliencyPolicy newPolicy) {
+		ResiliencyPolicy oldPolicy = policy;
+		policy = newPolicy;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.RESILIENCY_CONFIGURATION__POLICY,
+					oldPolicy, policy));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ResiliencyTarget> getTargets() {
+		if (targets == null) {
+			targets = new EObjectContainmentEList<ResiliencyTarget>(ResiliencyTarget.class, this,
+					DaprdesignerPackage.RESILIENCY_CONFIGURATION__TARGETS);
+		}
+		return targets;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getName() {
 		return name;
 	}
@@ -198,87 +293,9 @@ public class ResiliencyConfigurationImpl extends MinimalEObjectImpl.Container im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<App> getScopes() {
-		if (scopes == null) {
-			scopes = new EObjectResolvingEList<App>(App.class, this,
-					DaprdesignerPackage.RESILIENCY_CONFIGURATION__SCOPES);
-		}
-		return scopes;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ResiliencyPolicy getPolicy() {
-		return policy;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetPolicy(ResiliencyPolicy newPolicy, NotificationChain msgs) {
-		ResiliencyPolicy oldPolicy = policy;
-		policy = newPolicy;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					DaprdesignerPackage.RESILIENCY_CONFIGURATION__POLICY, oldPolicy, newPolicy);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPolicy(ResiliencyPolicy newPolicy) {
-		if (newPolicy != policy) {
-			NotificationChain msgs = null;
-			if (policy != null)
-				msgs = ((InternalEObject) policy).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - DaprdesignerPackage.RESILIENCY_CONFIGURATION__POLICY, null, msgs);
-			if (newPolicy != null)
-				msgs = ((InternalEObject) newPolicy).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - DaprdesignerPackage.RESILIENCY_CONFIGURATION__POLICY, null, msgs);
-			msgs = basicSetPolicy(newPolicy, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.RESILIENCY_CONFIGURATION__POLICY,
-					newPolicy, newPolicy));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<ResiliencyTarget> getTargets() {
-		if (targets == null) {
-			targets = new EObjectContainmentEList<ResiliencyTarget>(ResiliencyTarget.class, this,
-					DaprdesignerPackage.RESILIENCY_CONFIGURATION__TARGETS);
-		}
-		return targets;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__POLICY:
-			return basicSetPolicy(null, msgs);
 		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__TARGETS:
 			return ((InternalEList<?>) getTargets()).basicRemove(otherEnd, msgs);
 		}
@@ -297,14 +314,18 @@ public class ResiliencyConfigurationImpl extends MinimalEObjectImpl.Container im
 			return getApiVersion();
 		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__KIND:
 			return getKind();
-		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__NAME:
-			return getName();
+		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__VERSION:
+			return getVersion();
 		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__SCOPES:
 			return getScopes();
 		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__POLICY:
-			return getPolicy();
+			if (resolve)
+				return getPolicy();
+			return basicGetPolicy();
 		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__TARGETS:
 			return getTargets();
+		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -318,9 +339,6 @@ public class ResiliencyConfigurationImpl extends MinimalEObjectImpl.Container im
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__NAME:
-			setName((String) newValue);
-			return;
 		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__SCOPES:
 			getScopes().clear();
 			getScopes().addAll((Collection<? extends App>) newValue);
@@ -331,6 +349,9 @@ public class ResiliencyConfigurationImpl extends MinimalEObjectImpl.Container im
 		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__TARGETS:
 			getTargets().clear();
 			getTargets().addAll((Collection<? extends ResiliencyTarget>) newValue);
+			return;
+		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__NAME:
+			setName((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -344,9 +365,6 @@ public class ResiliencyConfigurationImpl extends MinimalEObjectImpl.Container im
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__NAME:
-			setName(NAME_EDEFAULT);
-			return;
 		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__SCOPES:
 			getScopes().clear();
 			return;
@@ -355,6 +373,9 @@ public class ResiliencyConfigurationImpl extends MinimalEObjectImpl.Container im
 			return;
 		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__TARGETS:
 			getTargets().clear();
+			return;
+		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__NAME:
+			setName(NAME_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -372,14 +393,16 @@ public class ResiliencyConfigurationImpl extends MinimalEObjectImpl.Container im
 			return API_VERSION_EDEFAULT == null ? apiVersion != null : !API_VERSION_EDEFAULT.equals(apiVersion);
 		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__KIND:
 			return KIND_EDEFAULT == null ? kind != null : !KIND_EDEFAULT.equals(kind);
-		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__VERSION:
+			return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
 		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__SCOPES:
 			return scopes != null && !scopes.isEmpty();
 		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__POLICY:
 			return policy != null;
 		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__TARGETS:
 			return targets != null && !targets.isEmpty();
+		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -399,6 +422,8 @@ public class ResiliencyConfigurationImpl extends MinimalEObjectImpl.Container im
 		result.append(apiVersion);
 		result.append(", kind: ");
 		result.append(kind);
+		result.append(", version: ");
+		result.append(version);
 		result.append(", name: ");
 		result.append(name);
 		result.append(')');

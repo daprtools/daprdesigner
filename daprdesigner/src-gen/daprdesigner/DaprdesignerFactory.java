@@ -31,13 +31,13 @@ public interface DaprdesignerFactory extends EFactory {
 	DaprArchitecture createDaprArchitecture();
 
 	/**
-	 * Returns a new object of class '<em>Environment</em>'.
+	 * Returns a new object of class '<em>Block</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Environment</em>'.
+	 * @return a new object of class '<em>Block</em>'.
 	 * @generated
 	 */
-	Environment createEnvironment();
+	Block createBlock();
 
 	/**
 	 * Returns a new object of class '<em>Namespace</em>'.
@@ -58,15 +58,6 @@ public interface DaprdesignerFactory extends EFactory {
 	Trustdomain createTrustdomain();
 
 	/**
-	 * Returns a new object of class '<em>Services</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Services</em>'.
-	 * @generated
-	 */
-	Services createServices();
-
-	/**
 	 * Returns a new object of class '<em>App</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -76,13 +67,13 @@ public interface DaprdesignerFactory extends EFactory {
 	App createApp();
 
 	/**
-	 * Returns a new object of class '<em>App Configuration</em>'.
+	 * Returns a new object of class '<em>Denied Components Configuration</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>App Configuration</em>'.
+	 * @return a new object of class '<em>Denied Components Configuration</em>'.
 	 * @generated
 	 */
-	AppConfiguration createAppConfiguration();
+	DeniedComponentsConfiguration createDeniedComponentsConfiguration();
 
 	/**
 	 * Returns a new object of class '<em>Logging Configuration</em>'.
@@ -103,22 +94,22 @@ public interface DaprdesignerFactory extends EFactory {
 	NameResolutionConfiguration createNameResolutionConfiguration();
 
 	/**
-	 * Returns a new object of class '<em>Secrets Configuration</em>'.
+	 * Returns a new object of class '<em>Secrets Access Configuration</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Secrets Configuration</em>'.
+	 * @return a new object of class '<em>Secrets Access Configuration</em>'.
 	 * @generated
 	 */
-	SecretsConfiguration createSecretsConfiguration();
+	SecretsAccessConfiguration createSecretsAccessConfiguration();
 
 	/**
-	 * Returns a new object of class '<em>Secrets List</em>'.
+	 * Returns a new object of class '<em>Secrets Access List</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Secrets List</em>'.
+	 * @return a new object of class '<em>Secrets Access List</em>'.
 	 * @generated
 	 */
-	SecretsList createSecretsList();
+	SecretsAccessList createSecretsAccessList();
 
 	/**
 	 * Returns a new object of class '<em>Metrics Configuration</em>'.
@@ -238,15 +229,6 @@ public interface DaprdesignerFactory extends EFactory {
 	ResiliencyPolicy createResiliencyPolicy();
 
 	/**
-	 * Returns a new object of class '<em>Resiliency Timeout</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Resiliency Timeout</em>'.
-	 * @generated
-	 */
-	ResiliencyTimeout createResiliencyTimeout();
-
-	/**
 	 * Returns a new object of class '<em>Retry Policy</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -254,6 +236,15 @@ public interface DaprdesignerFactory extends EFactory {
 	 * @generated
 	 */
 	RetryPolicy createRetryPolicy();
+
+	/**
+	 * Returns a new object of class '<em>Resiliency Timeout</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Resiliency Timeout</em>'.
+	 * @generated
+	 */
+	ResiliencyTimeout createResiliencyTimeout();
 
 	/**
 	 * Returns a new object of class '<em>Circuit Breaker Policy</em>'.
@@ -308,96 +299,6 @@ public interface DaprdesignerFactory extends EFactory {
 	 * @generated
 	 */
 	HashicorpVault createHashicorpVault();
-
-	/**
-	 * Returns a new object of class '<em>Pub Sub</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Pub Sub</em>'.
-	 * @generated
-	 */
-	PubSub createPubSub();
-
-	/**
-	 * Returns a new object of class '<em>Bindings</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Bindings</em>'.
-	 * @generated
-	 */
-	Bindings createBindings();
-
-	/**
-	 * Returns a new object of class '<em>Jobs</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Jobs</em>'.
-	 * @generated
-	 */
-	Jobs createJobs();
-
-	/**
-	 * Returns a new object of class '<em>Configuration</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Configuration</em>'.
-	 * @generated
-	 */
-	Configuration createConfiguration();
-
-	/**
-	 * Returns a new object of class '<em>Workflow</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Workflow</em>'.
-	 * @generated
-	 */
-	Workflow createWorkflow();
-
-	/**
-	 * Returns a new object of class '<em>Actors</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Actors</em>'.
-	 * @generated
-	 */
-	Actors createActors();
-
-	/**
-	 * Returns a new object of class '<em>Secrets</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Secrets</em>'.
-	 * @generated
-	 */
-	Secrets createSecrets();
-
-	/**
-	 * Returns a new object of class '<em>State Management</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>State Management</em>'.
-	 * @generated
-	 */
-	StateManagement createStateManagement();
-
-	/**
-	 * Returns a new object of class '<em>Distributed Locks</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Distributed Locks</em>'.
-	 * @generated
-	 */
-	DistributedLocks createDistributedLocks();
-
-	/**
-	 * Returns a new object of class '<em>Crypto Graphy</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Crypto Graphy</em>'.
-	 * @generated
-	 */
-	CryptoGraphy createCryptoGraphy();
 
 	/**
 	 * Returns the package supported by this factory.

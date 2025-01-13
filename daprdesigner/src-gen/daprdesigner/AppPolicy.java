@@ -4,8 +4,6 @@ package daprdesigner;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>App Policy</b></em>'.
@@ -26,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface AppPolicy extends EObject {
+public interface AppPolicy extends DaprNode {
 	/**
 	 * Returns the value of the '<em><b>App</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -51,25 +49,28 @@ public interface AppPolicy extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Default Action</b></em>' attribute.
+	 * The literals are from the enumeration {@link daprdesigner.AccessAction}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Default Action</em>' attribute.
-	 * @see #setDefaultAction(String)
+	 * @see daprdesigner.AccessAction
+	 * @see #setDefaultAction(AccessAction)
 	 * @see daprdesigner.DaprdesignerPackage#getAppPolicy_DefaultAction()
 	 * @model
 	 * @generated
 	 */
-	String getDefaultAction();
+	AccessAction getDefaultAction();
 
 	/**
 	 * Sets the value of the '{@link daprdesigner.AppPolicy#getDefaultAction <em>Default Action</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Default Action</em>' attribute.
+	 * @see daprdesigner.AccessAction
 	 * @see #getDefaultAction()
 	 * @generated
 	 */
-	void setDefaultAction(String value);
+	void setDefaultAction(AccessAction value);
 
 	/**
 	 * Returns the value of the '<em><b>Trust Domain</b></em>' reference.
@@ -116,13 +117,13 @@ public interface AppPolicy extends EObject {
 	void setNamespace(Namespace value);
 
 	/**
-	 * Returns the value of the '<em><b>Operations</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Operations</b></em>' reference list.
 	 * The list contents are of type {@link daprdesigner.Operation}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Operations</em>' containment reference list.
+	 * @return the value of the '<em>Operations</em>' reference list.
 	 * @see daprdesigner.DaprdesignerPackage#getAppPolicy_Operations()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	EList<Operation> getOperations();

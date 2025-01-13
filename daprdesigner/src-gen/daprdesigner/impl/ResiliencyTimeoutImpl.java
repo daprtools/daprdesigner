@@ -10,7 +10,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,13 +19,33 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link daprdesigner.impl.ResiliencyTimeoutImpl#getTimeOutinSeconds <em>Time Outin Seconds</em>}</li>
  *   <li>{@link daprdesigner.impl.ResiliencyTimeoutImpl#getName <em>Name</em>}</li>
- *   <li>{@link daprdesigner.impl.ResiliencyTimeoutImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ResiliencyTimeoutImpl extends MinimalEObjectImpl.Container implements ResiliencyTimeout {
+public class ResiliencyTimeoutImpl extends DaprNodeImpl implements ResiliencyTimeout {
+	/**
+	 * The default value of the '{@link #getTimeOutinSeconds() <em>Time Outin Seconds</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTimeOutinSeconds()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int TIME_OUTIN_SECONDS_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getTimeOutinSeconds() <em>Time Outin Seconds</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTimeOutinSeconds()
+	 * @generated
+	 * @ordered
+	 */
+	protected int timeOutinSeconds = TIME_OUTIN_SECONDS_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -48,26 +67,6 @@ public class ResiliencyTimeoutImpl extends MinimalEObjectImpl.Container implemen
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VALUE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected String value = VALUE_EDEFAULT;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -84,6 +83,28 @@ public class ResiliencyTimeoutImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	protected EClass eStaticClass() {
 		return DaprdesignerPackage.Literals.RESILIENCY_TIMEOUT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getTimeOutinSeconds() {
+		return timeOutinSeconds;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTimeOutinSeconds(int newTimeOutinSeconds) {
+		int oldTimeOutinSeconds = timeOutinSeconds;
+		timeOutinSeconds = newTimeOutinSeconds;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					DaprdesignerPackage.RESILIENCY_TIMEOUT__TIME_OUTIN_SECONDS, oldTimeOutinSeconds, timeOutinSeconds));
 	}
 
 	/**
@@ -113,35 +134,13 @@ public class ResiliencyTimeoutImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getValue() {
-		return value;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setValue(String newValue) {
-		String oldValue = value;
-		value = newValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.RESILIENCY_TIMEOUT__VALUE,
-					oldValue, value));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case DaprdesignerPackage.RESILIENCY_TIMEOUT__TIME_OUTIN_SECONDS:
+			return getTimeOutinSeconds();
 		case DaprdesignerPackage.RESILIENCY_TIMEOUT__NAME:
 			return getName();
-		case DaprdesignerPackage.RESILIENCY_TIMEOUT__VALUE:
-			return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -154,11 +153,11 @@ public class ResiliencyTimeoutImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case DaprdesignerPackage.RESILIENCY_TIMEOUT__TIME_OUTIN_SECONDS:
+			setTimeOutinSeconds((Integer) newValue);
+			return;
 		case DaprdesignerPackage.RESILIENCY_TIMEOUT__NAME:
 			setName((String) newValue);
-			return;
-		case DaprdesignerPackage.RESILIENCY_TIMEOUT__VALUE:
-			setValue((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -172,11 +171,11 @@ public class ResiliencyTimeoutImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case DaprdesignerPackage.RESILIENCY_TIMEOUT__TIME_OUTIN_SECONDS:
+			setTimeOutinSeconds(TIME_OUTIN_SECONDS_EDEFAULT);
+			return;
 		case DaprdesignerPackage.RESILIENCY_TIMEOUT__NAME:
 			setName(NAME_EDEFAULT);
-			return;
-		case DaprdesignerPackage.RESILIENCY_TIMEOUT__VALUE:
-			setValue(VALUE_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -190,10 +189,10 @@ public class ResiliencyTimeoutImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case DaprdesignerPackage.RESILIENCY_TIMEOUT__TIME_OUTIN_SECONDS:
+			return timeOutinSeconds != TIME_OUTIN_SECONDS_EDEFAULT;
 		case DaprdesignerPackage.RESILIENCY_TIMEOUT__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case DaprdesignerPackage.RESILIENCY_TIMEOUT__VALUE:
-			return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -209,10 +208,10 @@ public class ResiliencyTimeoutImpl extends MinimalEObjectImpl.Container implemen
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
+		result.append(" (timeOutinSeconds: ");
+		result.append(timeOutinSeconds);
+		result.append(", name: ");
 		result.append(name);
-		result.append(", value: ");
-		result.append(value);
 		result.append(')');
 		return result.toString();
 	}

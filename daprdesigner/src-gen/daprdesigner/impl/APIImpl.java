@@ -3,14 +3,17 @@
 package daprdesigner.impl;
 
 import daprdesigner.API;
+import daprdesigner.AccessAction;
+import daprdesigner.Component;
 import daprdesigner.DaprdesignerPackage;
+import daprdesigner.Protocol;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,33 +23,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link daprdesigner.impl.APIImpl#getApi_name <em>Api name</em>}</li>
+ *   <li>{@link daprdesigner.impl.APIImpl#getComponent <em>Component</em>}</li>
  *   <li>{@link daprdesigner.impl.APIImpl#getApi_version <em>Api version</em>}</li>
  *   <li>{@link daprdesigner.impl.APIImpl#getProtocol <em>Protocol</em>}</li>
+ *   <li>{@link daprdesigner.impl.APIImpl#getAccess <em>Access</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class APIImpl extends MinimalEObjectImpl.Container implements API {
+public class APIImpl extends DaprNodeImpl implements API {
 	/**
-	 * The default value of the '{@link #getApi_name() <em>Api name</em>}' attribute.
+	 * The cached value of the '{@link #getComponent() <em>Component</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getApi_name()
+	 * @see #getComponent()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String API_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getApi_name() <em>Api name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getApi_name()
-	 * @generated
-	 * @ordered
-	 */
-	protected String api_name = API_NAME_EDEFAULT;
+	protected Component component;
 
 	/**
 	 * The default value of the '{@link #getApi_version() <em>Api version</em>}' attribute.
@@ -76,7 +70,7 @@ public class APIImpl extends MinimalEObjectImpl.Container implements API {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PROTOCOL_EDEFAULT = null;
+	protected static final Protocol PROTOCOL_EDEFAULT = Protocol.HTTP;
 
 	/**
 	 * The cached value of the '{@link #getProtocol() <em>Protocol</em>}' attribute.
@@ -86,7 +80,27 @@ public class APIImpl extends MinimalEObjectImpl.Container implements API {
 	 * @generated
 	 * @ordered
 	 */
-	protected String protocol = PROTOCOL_EDEFAULT;
+	protected Protocol protocol = PROTOCOL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAccess() <em>Access</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAccess()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final AccessAction ACCESS_EDEFAULT = AccessAction.ALLOW;
+
+	/**
+	 * The cached value of the '{@link #getAccess() <em>Access</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAccess()
+	 * @generated
+	 * @ordered
+	 */
+	protected AccessAction access = ACCESS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,8 +126,17 @@ public class APIImpl extends MinimalEObjectImpl.Container implements API {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getApi_name() {
-		return api_name;
+	public Component getComponent() {
+		if (component != null && component.eIsProxy()) {
+			InternalEObject oldComponent = (InternalEObject) component;
+			component = (Component) eResolveProxy(oldComponent);
+			if (component != oldComponent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DaprdesignerPackage.API__COMPONENT,
+							oldComponent, component));
+			}
+		}
+		return component;
 	}
 
 	/**
@@ -121,12 +144,21 @@ public class APIImpl extends MinimalEObjectImpl.Container implements API {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setApi_name(String newApi_name) {
-		String oldApi_name = api_name;
-		api_name = newApi_name;
+	public Component basicGetComponent() {
+		return component;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setComponent(Component newComponent) {
+		Component oldComponent = component;
+		component = newComponent;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.API__API_NAME, oldApi_name,
-					api_name));
+			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.API__COMPONENT, oldComponent,
+					component));
 	}
 
 	/**
@@ -156,7 +188,7 @@ public class APIImpl extends MinimalEObjectImpl.Container implements API {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getProtocol() {
+	public Protocol getProtocol() {
 		return protocol;
 	}
 
@@ -165,9 +197,9 @@ public class APIImpl extends MinimalEObjectImpl.Container implements API {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setProtocol(String newProtocol) {
-		String oldProtocol = protocol;
-		protocol = newProtocol;
+	public void setProtocol(Protocol newProtocol) {
+		Protocol oldProtocol = protocol;
+		protocol = newProtocol == null ? PROTOCOL_EDEFAULT : newProtocol;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.API__PROTOCOL, oldProtocol,
 					protocol));
@@ -178,15 +210,40 @@ public class APIImpl extends MinimalEObjectImpl.Container implements API {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public AccessAction getAccess() {
+		return access;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAccess(AccessAction newAccess) {
+		AccessAction oldAccess = access;
+		access = newAccess == null ? ACCESS_EDEFAULT : newAccess;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.API__ACCESS, oldAccess, access));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DaprdesignerPackage.API__API_NAME:
-			return getApi_name();
+		case DaprdesignerPackage.API__COMPONENT:
+			if (resolve)
+				return getComponent();
+			return basicGetComponent();
 		case DaprdesignerPackage.API__API_VERSION:
 			return getApi_version();
 		case DaprdesignerPackage.API__PROTOCOL:
 			return getProtocol();
+		case DaprdesignerPackage.API__ACCESS:
+			return getAccess();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -199,14 +256,17 @@ public class APIImpl extends MinimalEObjectImpl.Container implements API {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DaprdesignerPackage.API__API_NAME:
-			setApi_name((String) newValue);
+		case DaprdesignerPackage.API__COMPONENT:
+			setComponent((Component) newValue);
 			return;
 		case DaprdesignerPackage.API__API_VERSION:
 			setApi_version((String) newValue);
 			return;
 		case DaprdesignerPackage.API__PROTOCOL:
-			setProtocol((String) newValue);
+			setProtocol((Protocol) newValue);
+			return;
+		case DaprdesignerPackage.API__ACCESS:
+			setAccess((AccessAction) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -220,14 +280,17 @@ public class APIImpl extends MinimalEObjectImpl.Container implements API {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DaprdesignerPackage.API__API_NAME:
-			setApi_name(API_NAME_EDEFAULT);
+		case DaprdesignerPackage.API__COMPONENT:
+			setComponent((Component) null);
 			return;
 		case DaprdesignerPackage.API__API_VERSION:
 			setApi_version(API_VERSION_EDEFAULT);
 			return;
 		case DaprdesignerPackage.API__PROTOCOL:
 			setProtocol(PROTOCOL_EDEFAULT);
+			return;
+		case DaprdesignerPackage.API__ACCESS:
+			setAccess(ACCESS_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -241,12 +304,14 @@ public class APIImpl extends MinimalEObjectImpl.Container implements API {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DaprdesignerPackage.API__API_NAME:
-			return API_NAME_EDEFAULT == null ? api_name != null : !API_NAME_EDEFAULT.equals(api_name);
+		case DaprdesignerPackage.API__COMPONENT:
+			return component != null;
 		case DaprdesignerPackage.API__API_VERSION:
 			return API_VERSION_EDEFAULT == null ? api_version != null : !API_VERSION_EDEFAULT.equals(api_version);
 		case DaprdesignerPackage.API__PROTOCOL:
-			return PROTOCOL_EDEFAULT == null ? protocol != null : !PROTOCOL_EDEFAULT.equals(protocol);
+			return protocol != PROTOCOL_EDEFAULT;
+		case DaprdesignerPackage.API__ACCESS:
+			return access != ACCESS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -262,12 +327,12 @@ public class APIImpl extends MinimalEObjectImpl.Container implements API {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (api_name: ");
-		result.append(api_name);
-		result.append(", api_version: ");
+		result.append(" (api_version: ");
 		result.append(api_version);
 		result.append(", protocol: ");
 		result.append(protocol);
+		result.append(", access: ");
+		result.append(access);
 		result.append(')');
 		return result.toString();
 	}

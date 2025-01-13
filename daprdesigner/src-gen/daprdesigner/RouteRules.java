@@ -2,8 +2,6 @@
  */
 package daprdesigner;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Route Rules</b></em>'.
@@ -21,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface RouteRules extends EObject {
+public interface RouteRules extends DaprNode {
 	/**
 	 * Returns the value of the '<em><b>Match</b></em>' attribute.
 	 * <!-- begin-user-doc -->

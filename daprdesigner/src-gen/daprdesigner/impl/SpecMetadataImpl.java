@@ -10,7 +10,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,38 +19,18 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link daprdesigner.impl.SpecMetadataImpl#getName <em>Name</em>}</li>
  *   <li>{@link daprdesigner.impl.SpecMetadataImpl#getValue <em>Value</em>}</li>
  *   <li>{@link daprdesigner.impl.SpecMetadataImpl#isIsFetchedFromSecret <em>Is Fetched From Secret</em>}</li>
  *   <li>{@link daprdesigner.impl.SpecMetadataImpl#isIsFetchedFromEnvironment <em>Is Fetched From Environment</em>}</li>
  *   <li>{@link daprdesigner.impl.SpecMetadataImpl#getSecretKeyRefName <em>Secret Key Ref Name</em>}</li>
  *   <li>{@link daprdesigner.impl.SpecMetadataImpl#getSecretKeyRefKey <em>Secret Key Ref Key</em>}</li>
  *   <li>{@link daprdesigner.impl.SpecMetadataImpl#getEnvRef <em>Env Ref</em>}</li>
+ *   <li>{@link daprdesigner.impl.SpecMetadataImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class SpecMetadataImpl extends MinimalEObjectImpl.Container implements SpecMetadata {
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
-
+public class SpecMetadataImpl extends DaprNodeImpl implements SpecMetadata {
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -173,6 +152,26 @@ public class SpecMetadataImpl extends MinimalEObjectImpl.Container implements Sp
 	protected String envRef = ENV_REF_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -189,28 +188,6 @@ public class SpecMetadataImpl extends MinimalEObjectImpl.Container implements Sp
 	@Override
 	protected EClass eStaticClass() {
 		return DaprdesignerPackage.Literals.SPEC_METADATA;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.SPEC_METADATA__NAME, oldName,
-					name));
 	}
 
 	/**
@@ -352,11 +329,31 @@ public class SpecMetadataImpl extends MinimalEObjectImpl.Container implements Sp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.SPEC_METADATA__NAME, oldName,
+					name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DaprdesignerPackage.SPEC_METADATA__NAME:
-			return getName();
 		case DaprdesignerPackage.SPEC_METADATA__VALUE:
 			return getValue();
 		case DaprdesignerPackage.SPEC_METADATA__IS_FETCHED_FROM_SECRET:
@@ -369,6 +366,8 @@ public class SpecMetadataImpl extends MinimalEObjectImpl.Container implements Sp
 			return getSecretKeyRefKey();
 		case DaprdesignerPackage.SPEC_METADATA__ENV_REF:
 			return getEnvRef();
+		case DaprdesignerPackage.SPEC_METADATA__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -381,9 +380,6 @@ public class SpecMetadataImpl extends MinimalEObjectImpl.Container implements Sp
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DaprdesignerPackage.SPEC_METADATA__NAME:
-			setName((String) newValue);
-			return;
 		case DaprdesignerPackage.SPEC_METADATA__VALUE:
 			setValue((String) newValue);
 			return;
@@ -402,6 +398,9 @@ public class SpecMetadataImpl extends MinimalEObjectImpl.Container implements Sp
 		case DaprdesignerPackage.SPEC_METADATA__ENV_REF:
 			setEnvRef((String) newValue);
 			return;
+		case DaprdesignerPackage.SPEC_METADATA__NAME:
+			setName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -414,9 +413,6 @@ public class SpecMetadataImpl extends MinimalEObjectImpl.Container implements Sp
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DaprdesignerPackage.SPEC_METADATA__NAME:
-			setName(NAME_EDEFAULT);
-			return;
 		case DaprdesignerPackage.SPEC_METADATA__VALUE:
 			setValue(VALUE_EDEFAULT);
 			return;
@@ -435,6 +431,9 @@ public class SpecMetadataImpl extends MinimalEObjectImpl.Container implements Sp
 		case DaprdesignerPackage.SPEC_METADATA__ENV_REF:
 			setEnvRef(ENV_REF_EDEFAULT);
 			return;
+		case DaprdesignerPackage.SPEC_METADATA__NAME:
+			setName(NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -447,8 +446,6 @@ public class SpecMetadataImpl extends MinimalEObjectImpl.Container implements Sp
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DaprdesignerPackage.SPEC_METADATA__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case DaprdesignerPackage.SPEC_METADATA__VALUE:
 			return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		case DaprdesignerPackage.SPEC_METADATA__IS_FETCHED_FROM_SECRET:
@@ -463,6 +460,8 @@ public class SpecMetadataImpl extends MinimalEObjectImpl.Container implements Sp
 					: !SECRET_KEY_REF_KEY_EDEFAULT.equals(secretKeyRefKey);
 		case DaprdesignerPackage.SPEC_METADATA__ENV_REF:
 			return ENV_REF_EDEFAULT == null ? envRef != null : !ENV_REF_EDEFAULT.equals(envRef);
+		case DaprdesignerPackage.SPEC_METADATA__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -478,9 +477,7 @@ public class SpecMetadataImpl extends MinimalEObjectImpl.Container implements Sp
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", value: ");
+		result.append(" (value: ");
 		result.append(value);
 		result.append(", isFetchedFromSecret: ");
 		result.append(isFetchedFromSecret);
@@ -492,6 +489,8 @@ public class SpecMetadataImpl extends MinimalEObjectImpl.Container implements Sp
 		result.append(secretKeyRefKey);
 		result.append(", envRef: ");
 		result.append(envRef);
+		result.append(", name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}
