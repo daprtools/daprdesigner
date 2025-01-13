@@ -6,34 +6,13 @@ package daprdesigner;
 
 mapentry EStringToStringMapEntry : String -> String;
 
-// Base classes
-class DaprArchitecture {
-	attr String name;
-	val Blocks[*] buildingblocks;
-	
+// Enums
+enum AccessAction{
+	ALLOW;
+	DENY;
 }
-
-class Blocks{
-	attr String name;
-	attr String description;
-	attr String notes;
-	attr BlockType blockType;
-	val Blocks[*] subblocks;
-	val DaprNode[*] nodes;	
-}
-
-abstract class DaprNode{
-	
-	attr String name;
-	attr String description;
-	attr String notes;
-	
-}
-
 
 enum BlockType{
-
-
 	ENVIRONMENT;
 	MICROSERVICES;
 	PUBSUB;
@@ -46,13 +25,53 @@ enum BlockType{
 	DISTRIBUTEDLOCK;
 	CRYPTOGRAPHY;
 	CONFIGURATION;
-	CONFIGURATIONGROUP;	
-	
-	
+	CONFIGURATIONGROUP;		
+}
+
+enum SDKLanguage{
+	JAVA;
+	CSHARP;
+	PYTHON;
+	NODE;
+	RUST;	
+}
+
+enum Protocol{
+	HTTP;
+	GRPC;
+}
+
+enum Verb{
+	GET;
+	POST;
+	PUT;
+	DELETE;
+	PATCH;
+}
+
+// Base classes
+class DaprArchitecture {
+	attr String name;
+	val Block[*] buildingblocks;
 	
 }
 
+class Block{
+	attr String name;
+	attr String description;
+	attr String notes;
+	attr BlockType blockType;
+	val Block[*] subblocks;
+	val DaprNode[*] nodes;	
+}
 
+abstract class DaprNode{
+	
+	attr String name;
+	attr String description;
+	attr String notes;
+	
+}
 
 class Namespace extends DaprNode{
 	
@@ -76,14 +95,7 @@ class App extends DaprNode{
 	
 }
 
-enum SDKLanguage{
-	JAVA;
-	CSHARP;
-	PYTHON;
-	NODE;
-	RUST;
-	
-}
+
 
 abstract class AppConfiguration extends DaprNode{
 	readonly attr String apiVersion = "dapr.io/v1alpha1";
@@ -158,30 +170,31 @@ class API {
 
 
 
-// AccessControl configuration
+// App AccessControl configuration
 
 class AppAccessControl extends AppConfiguration {
-	
-	attr String defaultAction;
+	attr AccessAction defaultAction;
 	ref  Trustdomain trustDomain;
-	val AppPolicy[*] policies;
+	ref AppPolicy[*] policies;
 }
 
-class AppPolicy {
+
+
+class AppPolicy extends DaprNode {
   ref App app;
-  attr String defaultAction;
+  attr AccessAction defaultAction;
   ref Trustdomain trustDomain;
   ref Namespace namespace;
-  val Operation[*] operations;
+  ref Operation[*] operations;
   
   	
 }
 
-class Operation{
-	attr String protocol;
+class Operation extends DaprNode{
+	attr Protocol protocol;
 	attr String operationName;
-	attr String[*] verbs;
-	attr String action;
+	attr Verb[*] verbs;
+	attr AccessAction action;
 }
 
 // Middleware Configuration
