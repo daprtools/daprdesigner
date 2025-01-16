@@ -94,12 +94,15 @@ abstract class DaprNode{
 }
 
 class Namespace extends DaprNode{
+	readonly attr String help = "https://docs.dapr.io/operations/components/component-scopes/";
+
+
 	
 	
 }
 class Trustdomain extends DaprNode{
 	
-	
+	readonly attr String help = "https://docs.dapr.io/operations/configuration/invoke-allowlist/#trustdomain";
 }
 
 
@@ -120,6 +123,7 @@ class App extends DaprNode{
 abstract class AppConfiguration extends DaprNode{
 	readonly attr String apiVersion = "dapr.io/v1alpha1";
 	readonly attr String kind = "Configuration";
+	readonly attr String help = "https://docs.dapr.io/reference/resource-specs/configuration-schema/";
 	
 //	ref Namespace metadata_namespace;
 //	ref AppAccessControl[0..1] accessControl;
@@ -138,6 +142,8 @@ abstract class AppConfiguration extends DaprNode{
 // Components Deny List
 class DeniedComponentsConfiguration extends AppConfiguration{
 	ref Component[*] deniedComponents;
+	readonly attr String help = "https://docs.dapr.io/operations/configuration/configuration-overview/#disallow-usage-of-certain-component-types";
+
 }
 
 
@@ -147,6 +153,7 @@ class LoggingConfiguration extends AppConfiguration{
 	attr boolean enabled = true;
 	attr boolean obfuscateURLs = false;
 	attr boolean omitHealthChecks = true;
+	readonly attr String help= "";
 }
 
 
@@ -156,6 +163,7 @@ class NameResolutionConfiguration extends AppConfiguration{
 	attr String componentVersion;
 	attr String configurationKey;
 	attr String configurationValue;
+	readonly attr String help= "";
 	
 }
 
@@ -163,6 +171,7 @@ class NameResolutionConfiguration extends AppConfiguration{
 class SecretsAccessConfiguration extends AppConfiguration
 {
    ref SecretsAccessList[*] accessList;
+   readonly attr String help= "";
 	
 }
 
@@ -171,6 +180,7 @@ class SecretsAccessList extends DaprNode{
 	attr boolean defaultAccess = true;
 	attr String[*] secrets;
 	attr AccessAction action;
+	readonly attr String help= "";
 	
 }
 
@@ -181,6 +191,7 @@ class MetricsConfiguration extends AppConfiguration{
 	attr boolean http_increasedCardinality;
 	attr String[*] http_pathMatching;
 	attr boolean http_excludeVerbs;
+	readonly attr String help= "";
 }
 
 // API Configuration
@@ -193,6 +204,7 @@ class API extends DaprNode{
 	attr String api_version;
 	attr Protocol protocol;
 	attr AccessAction access;
+	readonly attr String help= "";
 }
 
 
@@ -202,6 +214,7 @@ class AppAccessControl extends AppConfiguration {
 	attr AccessAction defaultAction;
 	ref  Trustdomain trustDomain;
 	ref AppPolicy[*] policies;
+	readonly attr String help= "";
 }
 
 
@@ -212,6 +225,7 @@ class AppPolicy extends DaprNode {
   ref Trustdomain trustDomain;
   ref Namespace namespace;
   ref Operation[*] operations;
+  readonly attr String help= "";
   
   	
 }
@@ -221,12 +235,14 @@ class Operation extends DaprNode{
 	attr String operationName;
 	attr Verb[*] verbs;
 	attr AccessAction action;
+	readonly attr String help= "";
 }
 
 // Middleware Configuration
 class MiddlewareConfiguration extends AppConfiguration{
 	
 	ref HttpHandler[*] httpHandlers;
+	readonly attr String help= "";
 }
 
 class HttpHandler extends DaprNode{
@@ -234,6 +250,7 @@ class HttpHandler extends DaprNode{
 	attr String handlerName;
 	attr String type;
 	attr HttpHandlerType handlerType;
+	readonly attr String help= "";
 }
 
 
@@ -245,6 +262,7 @@ class TracingConfiguration extends AppConfiguration{
 	attr boolean otel_isSecure;
 	attr String otel_protocol;
 	attr String zipkin_endPointAddress;
+	readonly attr String help= "";
 } 
 
 
@@ -260,49 +278,58 @@ class SubscriptionConfiguration extends DaprNode {
 	attr String bulkSubscribe_maxMessagesCount;
 	attr String bulkSubscribe_maxAwaitDurationMs;
 	ref App[*] scopes;
+	readonly attr String help= "";
 	
 }
 
 class RouteRules extends DaprNode{
 	attr String match;
 	attr String path;
+	readonly attr String help= "";
 }
 
 
 // Resiliency Configuration
 class ResiliencyConfiguration extends DaprNode{
+	readonly attr String help= "";
 	readonly attr String apiVersion = "dapr.io/v2alpha1";
 	readonly attr String kind = "Resiliency";
 	readonly attr String version = "v1alpha1";
-	
 	ref App[*] scopes;
 	ref ResiliencyPolicy policy;
 	val ResiliencyTarget[*] targets;
 }
 
 class ResiliencyPolicy extends DaprNode{
+	readonly attr String help= "";
 	ref RetryPolicy[*] retries;
 	val CircuitBreakerPolicy[*] circuitbreakers;
 	ref ResiliencyTimeout[*] timeoutDefinitions;
+	
 	
 }
 
 class RetryPolicy extends DaprNode{
 	
+	readonly attr String help= "";
 	attr RetryPolicyType policy_type;
 	attr int duration;
 	attr int maxRetries;
 	attr int maxInterval; 
+	
 }
 
 class ResiliencyTimeout extends DaprNode{
 	
+	readonly attr String help= "";
 	attr int timeOutinSeconds;
+	
 	
 }
 
 class CircuitBreakerPolicy extends DaprNode{
 
+	readonly attr String help= "";
 	attr int maxRequests;
 	attr int interval;
 	attr int timeout;
@@ -311,12 +338,13 @@ class CircuitBreakerPolicy extends DaprNode{
 }
 
 class ResiliencyTarget extends DaprNode{
+	readonly attr String help= "";
 	attr ResiliencyTargetType type;
-	
+	attr int circuitBreakerCacheSize;
 	ref CircuitBreakerPolicy circuitBreaker;
 	ref RetryPolicy retry;
-	attr int circuitBreakerCacheSize;
 	ref ResiliencyTimeout timeout;
+	
 	
 	
 }
@@ -325,39 +353,43 @@ class ResiliencyTarget extends DaprNode{
 // HTTPEndpoint Configuration
 
 class HTTPEndPoint extends DaprNode {
+	readonly attr String help= ""; 	
 	readonly attr String apiVersion = "dapr.io/v1alpha1";
 	readonly attr String kind = "HTTPEndpoint";
-	ref SecretStore auth;
 	attr String baseUrl;
+	ref SecretStore auth;
 	ref App[*] scopes;
-	val SpecMetadata[*] headers; 
-	val SpecMetadata clientTLS_rootCA; 
-	val SpecMetadata clientTLS_certificate; 
-	val SpecMetadata clientTLS_privateKey; 	
+	ref SpecMetadata[*] headers; 
+	ref SpecMetadata clientTLS_rootCA; 
+	ref SpecMetadata clientTLS_certificate; 
+	ref SpecMetadata clientTLS_privateKey;
+	
 }
 
 
 
 //Component Definitions
 abstract class Component extends DaprNode {
-	
+	readonly attr String help= ""; 	
 	readonly attr String apiVersion = "dapr.io/v1alpha1";
 	readonly attr String kind = "Component";
 	ref SecretStore auth;
 	ref Namespace metadata_namespace;
 	ref ComponentSpec spec; 
 	ref App[*] scopes;
+	
 		
 }
 
 class ComponentSpec extends DaprNode{
+	readonly attr String help= "";
 	attr boolean ignoreErrors;
 	attr String initTimeout;
-	val SpecMetadata[*] spec_metadata; 
+	ref SpecMetadata[*] spec_metadata; 
 }
 
 class SpecMetadata extends DaprNode{
-	
+	readonly attr String help= "";
 	attr String value;
 	attr boolean isFetchedFromSecret = false;
 	attr boolean isFetchedFromEnvironment = false;
@@ -374,6 +406,8 @@ class SpecMetadata extends DaprNode{
 // Secret Stores 
 
 abstract class SecretStore extends Component  {
+
+	
 	
 	
 }
