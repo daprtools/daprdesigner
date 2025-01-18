@@ -118,12 +118,20 @@ class App extends DaprNode{
 	
 }
 
+class Actor extends App{
+	
+}
+
+class Workflow extends App{
+	
+	
+}
 
 
 abstract class AppConfiguration extends DaprNode{
 	readonly attr String apiVersion = "dapr.io/v1alpha1";
 	readonly attr String kind = "Configuration";
-	readonly attr String help = "https://docs.dapr.io/reference/resource-specs/configuration-schema/";
+	
 	
 //	ref Namespace metadata_namespace;
 //	ref AppAccessControl[0..1] accessControl;
@@ -373,10 +381,12 @@ abstract class Component extends DaprNode {
 	readonly attr String help= ""; 	
 	readonly attr String apiVersion = "dapr.io/v1alpha1";
 	readonly attr String kind = "Component";
+	attr String providerName;
 	ref SecretStore auth;
 	ref Namespace metadata_namespace;
 	ref ComponentSpec spec; 
 	ref App[*] scopes;
+	
 	
 		
 }
@@ -401,28 +411,38 @@ class SpecMetadata extends DaprNode{
 
 
 
+class PubSub extends Component{
+	
+}
+
+class Bindings extends Component{
+	
+	
+}
 
 
 // Secret Stores 
 
-abstract class SecretStore extends Component  {
-
-	
-	
-	
+ class SecretStore extends Component  {	
 }
 
-class HashicorpVault extends SecretStore{
-	
-	readonly attr String spec_type = "secretstores.aws.parameterstore";
-	readonly attr String spec_version = "v1";
+
+ class StateStore extends Component  {	
 }
 
-// Message Broker Configurations 
-
-abstract class MessageBroker extends Component{
-	
+class ConfigurationStore extends Component  {	
 }
+
+class Locks extends Component  {	
+}
+
+class Cryptography extends Component  {	
+}
+
+class Middleware extends Component  {	
+}
+
+
 
 
 
