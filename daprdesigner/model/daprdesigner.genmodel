@@ -291,5 +291,6 @@
     <genClasses ecoreClass="daprdesigner.ecore#//Locks"/>
     <genClasses ecoreClass="daprdesigner.ecore#//Cryptography"/>
     <genClasses ecoreClass="daprdesigner.ecore#//Middleware"/>
+    <genClasses ecoreClass="daprdesigner.ecore#//Nameresolution"/>
   </genPackages>
 </genmodel:GenModel>

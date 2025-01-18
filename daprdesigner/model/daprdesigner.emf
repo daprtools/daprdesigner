@@ -420,28 +420,33 @@ class Bindings extends Component{
 	
 }
 
-
-// Secret Stores 
-
- class SecretStore extends Component  {	
+class SecretStore extends Component{
+	
 }
 
 
- class StateStore extends Component  {	
+class StateStore extends Component{
+	
 }
 
-class ConfigurationStore extends Component  {	
+class ConfigurationStore extends Component{
+	
 }
 
-class Locks extends Component  {	
+class Locks extends Component{
+	
 }
 
-class Cryptography extends Component  {	
+class Cryptography extends Component{
+	
+
 }
 
-class Middleware extends Component  {	
+class Middleware extends Component{
+	
 }
-class Nameresolution extends Component  {	
+class Nameresolution extends Component{
+	
 }
 
 

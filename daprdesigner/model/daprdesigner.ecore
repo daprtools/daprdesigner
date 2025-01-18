@@ -361,4 +361,5 @@
   <eClassifiers xsi:type="ecore:EClass" name="Locks" eSuperTypes="#//Component"/>
   <eClassifiers xsi:type="ecore:EClass" name="Cryptography" eSuperTypes="#//Component"/>
   <eClassifiers xsi:type="ecore:EClass" name="Middleware" eSuperTypes="#//Component"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Nameresolution" eSuperTypes="#//Component"/>
 </ecore:EPackage>
