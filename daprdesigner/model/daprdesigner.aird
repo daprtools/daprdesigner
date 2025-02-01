@@ -6,7 +6,7 @@
     <semanticResources>daprdesigner.emf</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_enaFsNJMEe-Peq7LfH4BaA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_esG_gNJMEe-Peq7LfH4BaA" name="daprdesigner" repPath="#_eqjgUNJMEe-Peq7LfH4BaA" changeId="1737218571245">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_esG_gNJMEe-Peq7LfH4BaA" name="daprdesigner" repPath="#_eqjgUNJMEe-Peq7LfH4BaA" changeId="1737276383515">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="daprdesigner.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -2677,6 +2677,20 @@
           <backgroundColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           <foregroundColor xmi:type="description:UserFixedColor" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@userColorsPalettes[name='Ecore%20Palette']/@entries[name='EClass']"/>
         </computedStyleDescriptions>
+        <computedStyleDescriptions xmi:type="style:FlatContainerStyleDescription" xmi:id="_3GfAYNZBEe-K-_Xn7VwjZw" arcWidth="8" arcHeight="8" borderSizeComputationExpression="1" iconPath="/daprdesigner.edit/icons/full/obj16/AppConfiguration.gif" tooltipExpression="service:renderTooltip" roundedCorner="true" widthComputationExpression="12" heightComputationExpression="10" backgroundStyle="Liquid">
+          <borderColor xmi:type="description:UserFixedColor" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@userColorsPalettes[name='Ecore%20Palette']/@entries[name='Dark%20EClass']"/>
+          <labelFormat>italic</labelFormat>
+          <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <backgroundColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          <foregroundColor xmi:type="description:UserFixedColor" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@userColorsPalettes[name='Ecore%20Palette']/@entries[name='Abstract%20EClass']"/>
+        </computedStyleDescriptions>
+        <computedStyleDescriptions xmi:type="style:FlatContainerStyleDescription" xmi:id="_3HPOUNZBEe-K-_Xn7VwjZw" arcWidth="8" arcHeight="8" borderSizeComputationExpression="1" iconPath="/daprdesigner.edit/icons/full/obj16/Component.gif" tooltipExpression="service:renderTooltip" roundedCorner="true" widthComputationExpression="12" heightComputationExpression="10" backgroundStyle="Liquid">
+          <borderColor xmi:type="description:UserFixedColor" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@userColorsPalettes[name='Ecore%20Palette']/@entries[name='Dark%20EClass']"/>
+          <labelFormat>italic</labelFormat>
+          <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <backgroundColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          <foregroundColor xmi:type="description:UserFixedColor" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@userColorsPalettes[name='Ecore%20Palette']/@entries[name='Abstract%20EClass']"/>
+        </computedStyleDescriptions>
       </data>
     </ownedAnnotationEntries>
     <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_rmZrsNJMEe-Peq7LfH4BaA" name="EStringToStringMapEntry" tooltipText="" width="12" height="10">
@@ -3190,7 +3204,7 @@
     <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_rm8eQNJMEe-Peq7LfH4BaA" name="AppConfiguration" tooltipText="" outgoingEdges="_rrVPANJMEe-Peq7LfH4BaA" incomingEdges="_rqObxtJMEe-Peq7LfH4BaA _rrV2FtJMEe-Peq7LfH4BaA _rrXEMNJMEe-Peq7LfH4BaA _rrXrQ9JMEe-Peq7LfH4BaA _rrYSVNJMEe-Peq7LfH4BaA _rraHgNJMEe-Peq7LfH4BaA _rraukNJMEe-Peq7LfH4BaA _rrb8ttJMEe-Peq7LfH4BaA _rreY89JMEe-Peq7LfH4BaA _rrg1MNJMEe-Peq7LfH4BaA" width="12" height="10">
       <target xmi:type="ecore:EClass" href="daprdesigner.ecore#//AppConfiguration"/>
       <semanticElements xmi:type="ecore:EClass" href="daprdesigner.ecore#//AppConfiguration"/>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="__QOF4tW4Ee-aK-daK3QgMg" iconPath="/org.eclipse.emf.ecoretools.design/icons/full/obj16/empty.gif" description="__QKbgNW4Ee-aK-daK3QgMg" borderSize="1" borderSizeComputationExpression="1" borderColor="125,125,125" backgroundStyle="Liquid" foregroundColor="228,228,228">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_3GfncNZBEe-K-_Xn7VwjZw" iconPath="/daprdesigner.edit/icons/full/obj16/AppConfiguration.gif" description="_3GfAYNZBEe-K-_Xn7VwjZw" borderSize="1" borderSizeComputationExpression="1" borderColor="125,125,125" backgroundStyle="Liquid" foregroundColor="228,228,228">
         <labelFormat>italic</labelFormat>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
@@ -3992,7 +4006,7 @@
     <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_rnlXcNJMEe-Peq7LfH4BaA" name="Component" tooltipText="" outgoingEdges="_rrHMkNJMEe-Peq7LfH4BaA _rrHzptJMEe-Peq7LfH4BaA _rrJBwNJMEe-Peq7LfH4BaA _rrpYENJMEe-Peq7LfH4BaA _Avfq1tW6Ee-aK-daK3QgMg" incomingEdges="_rqPp4NJMEe-Peq7LfH4BaA _rqQQ9tJMEe-Peq7LfH4BaA _rqStMNJMEe-Peq7LfH4BaA _rqUiY9JMEe-Peq7LfH4BaA _rqdsVdJMEe-Peq7LfH4BaA _rrr0U9JMEe-Peq7LfH4BaA _kainQ9WUEe-zvcayomleWQ _kajOU9WUEe-zvcayomleWQ _kaj1ZtWUEe-zvcayomleWQ _kakcdtWUEe-zvcayomleWQ _kalDhtWUEe-zvcayomleWQ _kalqltWUEe-zvcayomleWQ _kam4sNWUEe-zvcayomleWQ _dUKarNW5Ee-aK-daK3QgMg" width="12" height="10">
       <target xmi:type="ecore:EClass" href="daprdesigner.ecore#//Component"/>
       <semanticElements xmi:type="ecore:EClass" href="daprdesigner.ecore#//Component"/>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="__Qhn4dW4Ee-aK-daK3QgMg" iconPath="/org.eclipse.emf.ecoretools.design/icons/full/obj16/empty.gif" description="__QKbgNW4Ee-aK-daK3QgMg" borderSize="1" borderSizeComputationExpression="1" borderColor="125,125,125" backgroundStyle="Liquid" foregroundColor="228,228,228">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_3HP1YNZBEe-K-_Xn7VwjZw" iconPath="/daprdesigner.edit/icons/full/obj16/Component.gif" description="_3HPOUNZBEe-K-_Xn7VwjZw" borderSize="1" borderSizeComputationExpression="1" borderColor="125,125,125" backgroundStyle="Liquid" foregroundColor="228,228,228">
         <labelFormat>italic</labelFormat>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
