@@ -48,6 +48,22 @@ enum BlockType{
 	CONFIGURATIONGROUP;		
 }
 
+enum NodeBlockType{
+	APP;
+	ACTOR;
+	WORKFLOW;
+	PUBSUB;
+	BINDING;
+	SECRETSTORE;
+	STATESTORE;
+	DISTRIBUTEDLOCK;
+	CRYPTOGRAPHY;
+	SUBSCRIPTION;
+	RESILIENCY;
+	HTTPENDPOINT;
+	
+	
+}
 enum SDKLanguage{
 	JAVA;
 	CSHARP;
@@ -90,6 +106,13 @@ abstract class DaprNode{
 	attr String name;
 	attr String description;
 	attr String notes;
+	
+}
+
+class NodeBlocks extends DaprNode{
+	
+	attr NodeBlockType nodeBlockType;
+	val DaprNode[*] nodes;	
 	
 }
 

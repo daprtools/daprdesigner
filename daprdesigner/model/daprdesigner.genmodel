@@ -42,6 +42,20 @@
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//BlockType/CONFIGURATION"/>
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//BlockType/CONFIGURATIONGROUP"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="daprdesigner.ecore#//NodeBlockType">
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/APP"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/ACTOR"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/WORKFLOW"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/PUBSUB"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/BINDING"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/SECRETSTORE"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/STATESTORE"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/DISTRIBUTEDLOCK"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/CRYPTOGRAPHY"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/SUBSCRIPTION"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/RESILIENCY"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/HTTPENDPOINT"/>
+    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="daprdesigner.ecore#//SDKLanguage">
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//SDKLanguage/JAVA"/>
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//SDKLanguage/CSHARP"/>
@@ -80,6 +94,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//DaprNode/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//DaprNode/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//DaprNode/notes"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//NodeBlocks">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//NodeBlocks/nodeBlockType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//NodeBlocks/nodes"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//Namespace">
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Namespace/help"/>
