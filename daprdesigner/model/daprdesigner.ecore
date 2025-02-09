@@ -206,8 +206,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="Operation" eSuperTypes="#//DaprNode">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="protocol" eType="#//Protocol"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operationName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="verbs" upperBound="-1"
-        eType="#//Verb"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="applyToGet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="applyToPost" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="applyToPut" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="applyToDelete" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="applyToPatch" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" eType="#//AccessAction"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" defaultValueLiteral=""/>

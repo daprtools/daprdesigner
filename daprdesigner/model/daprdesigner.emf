@@ -264,7 +264,11 @@ class AppPolicy extends DaprNode {
 class Operation extends DaprNode{
 	attr Protocol protocol;
 	attr String operationName;
-	attr Verb[*] verbs;
+    attr boolean applyToGet;
+    attr boolean applyToPost;
+    attr boolean applyToPut;
+    attr boolean applyToDelete;
+    attr boolean applyToPatch;
 	attr AccessAction action;
 	readonly attr String help= "";
 }

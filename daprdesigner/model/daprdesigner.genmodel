@@ -182,7 +182,11 @@
     <genClasses ecoreClass="daprdesigner.ecore#//Operation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Operation/protocol"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Operation/operationName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Operation/verbs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Operation/applyToGet"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Operation/applyToPost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Operation/applyToPut"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Operation/applyToDelete"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Operation/applyToPatch"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Operation/action"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Operation/help"/>
     </genClasses>
