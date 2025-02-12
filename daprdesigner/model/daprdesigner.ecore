@@ -53,6 +53,23 @@
     <eLiterals name="RESILIENCY" value="10"/>
     <eLiterals name="HTTPENDPOINT" value="11"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="APIType">
+    <eLiterals name="INVOKE"/>
+    <eLiterals name="STATE" value="1"/>
+    <eLiterals name="PUBLISH" value="2"/>
+    <eLiterals name="SUBSCRIBE" value="3"/>
+    <eLiterals name="BINDINGS" value="4"/>
+    <eLiterals name="SECRETS" value="5"/>
+    <eLiterals name="ACTORS" value="6"/>
+    <eLiterals name="METADATA" value="7"/>
+    <eLiterals name="CONFIGURATION" value="8"/>
+    <eLiterals name="LOCK" value="9"/>
+    <eLiterals name="UNLOCK" value="10"/>
+    <eLiterals name="CRYPTO" value="11"/>
+    <eLiterals name="WORKFLOWS" value="12"/>
+    <eLiterals name="HEALTHZ" value="13"/>
+    <eLiterals name="SHUTDOWN" value="14"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="SDKLanguage">
     <eLiterals name="JAVA"/>
     <eLiterals name="CSHARP" value="1"/>
@@ -105,6 +122,8 @@
         changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/configuration/invoke-allowlist/#trustdomain"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="App" eSuperTypes="#//DaprNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/developing-applications/building-blocks/service-invocation/service-invocation-overview/"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="appId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="repository" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sdkLanguage" eType="#//SDKLanguage"/>
@@ -113,8 +132,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="configurations" upperBound="-1"
         eType="#//AppConfiguration"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Actor" eSuperTypes="#//App"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Workflow" eSuperTypes="#//App"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Actor" eSuperTypes="#//App">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="additionalHelp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/developing-applications/building-blocks/actors/actors-overview/"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Workflow" eSuperTypes="#//App">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="additionalHelp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/developing-applications/building-blocks/workflow/workflow-overview/"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AppConfiguration" abstract="true" eSuperTypes="#//DaprNode">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="apiVersion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" defaultValueLiteral="dapr.io/v1alpha1"/>
@@ -122,88 +147,92 @@
         changeable="false" defaultValueLiteral="Configuration"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DeniedComponentsConfiguration" eSuperTypes="#//AppConfiguration">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="deniedComponents" upperBound="-1"
-        eType="#//Component"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/configuration/configuration-overview/#disallow-usage-of-certain-component-types"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deniedComponents" upperBound="-1"
+        eType="#//Component"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LoggingConfiguration" eSuperTypes="#//AppConfiguration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/configuration/configuration-overview/#logging"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="enabled" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="obfuscateURLs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="omitHealthChecks" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NameResolutionConfiguration" eSuperTypes="#//AppConfiguration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/configuration/configuration-overview/#name-resolution-component"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//Component"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="componentVersion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="configurationKey" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="configurationValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SecretsAccessConfiguration" eSuperTypes="#//AppConfiguration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/configuration/secret-scope/"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="accessList" upperBound="-1"
         eType="#//SecretsAccessList"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SecretsAccessList" eSuperTypes="#//DaprNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/configuration/secret-scope/"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//Component"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultAccess" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="secrets" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" eType="#//AccessAction"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MetricsConfiguration" eSuperTypes="#//AppConfiguration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/configuration/configuration-overview/#metrics"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="enabled" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="latencyDistributionBuckets"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="http_increasedCardinality"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="http_pathMatching" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="http_excludeVerbs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="APIAccessControl" eSuperTypes="#//AppConfiguration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/configuration/api-allowlist/#enabling-specific-http-apis"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="apiList" upperBound="-1"
         eType="#//API"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="API" eSuperTypes="#//DaprNode">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/configuration/api-allowlist/#list-of-dapr-apis"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="apiType" eType="#//APIType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="api_version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="protocol" eType="#//Protocol"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="access" eType="#//AccessAction"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AppAccessControl" eSuperTypes="#//AppConfiguration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/configuration/invoke-allowlist/#access-control"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultAction" eType="#//AccessAction"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="trustDomain" eType="#//Trustdomain"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="policies" upperBound="-1"
         eType="#//AppPolicy"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AppPolicy" eSuperTypes="#//DaprNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/configuration/invoke-allowlist/#policies"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="app" eType="#//App"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultAction" eType="#//AccessAction"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="trustDomain" eType="#//Trustdomain"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="namespace" eType="#//Namespace"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
         eType="#//Operation"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Operation" eSuperTypes="#//DaprNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/configuration/invoke-allowlist/#operations"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="protocol" eType="#//Protocol"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operationName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="applyToGet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -211,24 +240,26 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="applyToPut" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="applyToDelete" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="applyToPatch" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="verbs" upperBound="-1"
+        eType="#//Verb"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" eType="#//AccessAction"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MiddlewareConfiguration" eSuperTypes="#//AppConfiguration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/configuration/configuration-overview/#middleware"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="httpHandlers" upperBound="-1"
         eType="#//HttpHandler"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HttpHandler" eSuperTypes="#//DaprNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/configuration/configuration-overview/#middleware"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="handlerName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="handlerType" eType="#//HttpHandlerType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TracingConfiguration" eSuperTypes="#//AppConfiguration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/configuration/configuration-overview/#tracing"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="samplingRate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stdout" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="otel_endPointAddress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -236,10 +267,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="otel_protocol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="zipkin_endPointAddress"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SubscriptionConfiguration" eSuperTypes="#//DaprNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/reference/resource-specs/subscription-schema/"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="apiVersion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" defaultValueLiteral="dapr.io/v2alpha1"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -257,18 +288,16 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scopes" upperBound="-1"
         eType="#//App"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RouteRules" eSuperTypes="#//DaprNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/reference/resource-specs/subscription-schema/#spec-fields"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="match" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ResiliencyConfiguration" eSuperTypes="#//DaprNode">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" defaultValueLiteral=""/>
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/reference/resource-specs/resiliency-schema/"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="apiVersion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" defaultValueLiteral="dapr.io/v2alpha1"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -283,7 +312,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ResiliencyPolicy" eSuperTypes="#//DaprNode">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" defaultValueLiteral=""/>
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/resiliency/policies/"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="retries" upperBound="-1"
         eType="#//RetryPolicy"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="circuitbreakers" upperBound="-1"
@@ -293,7 +322,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RetryPolicy" eSuperTypes="#//DaprNode">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" defaultValueLiteral=""/>
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/resiliency/policies/#retries"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="policy_type" eType="#//RetryPolicyType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxRetries" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -301,12 +330,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ResiliencyTimeout" eSuperTypes="#//DaprNode">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" defaultValueLiteral=""/>
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/resiliency/policies/#timeouts"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeOutinSeconds" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CircuitBreakerPolicy" eSuperTypes="#//DaprNode">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" defaultValueLiteral=""/>
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/resiliency/policies/#circuit-breakers"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxRequests" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="interval" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeout" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -315,7 +344,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ResiliencyTarget" eSuperTypes="#//DaprNode">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" defaultValueLiteral=""/>
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/resiliency/targets/"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ResiliencyTargetType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="circuitBreakerCacheSize"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -325,7 +354,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HTTPEndPoint" eSuperTypes="#//DaprNode">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" defaultValueLiteral=""/>
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/reference/resource-specs/httpendpoints-schema/"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="apiVersion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" defaultValueLiteral="dapr.io/v1alpha1"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -342,8 +371,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="clientTLS_privateKey" eType="#//SpecMetadata"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true" eSuperTypes="#//DaprNode">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" defaultValueLiteral=""/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="apiVersion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" defaultValueLiteral="dapr.io/v1alpha1"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -357,7 +384,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComponentSpec" eSuperTypes="#//DaprNode">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" defaultValueLiteral=""/>
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/reference/resource-specs/component-schema/"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ignoreErrors" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="initTimeout" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="spec_metadata" upperBound="-1"
@@ -365,7 +392,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SpecMetadata" eSuperTypes="#//DaprNode">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" defaultValueLiteral=""/>
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/reference/resource-specs/component-schema/#spec-fields"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isFetchedFromSecret" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="false"/>
@@ -375,13 +402,40 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="secretKeyRefKey" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="envRef" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PubSub" eSuperTypes="#//Component"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Bindings" eSuperTypes="#//Component"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SecretStore" eSuperTypes="#//Component"/>
-  <eClassifiers xsi:type="ecore:EClass" name="StateStore" eSuperTypes="#//Component"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ConfigurationStore" eSuperTypes="#//Component"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Locks" eSuperTypes="#//Component"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Cryptography" eSuperTypes="#//Component"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Middleware" eSuperTypes="#//Component"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Nameresolution" eSuperTypes="#//Component"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PubSub" eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/reference/components-reference/supported-pubsub/"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bindings" eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/reference/components-reference/supported-bindings/"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SecretStore" eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/reference/components-reference/supported-secret-stores/"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StateStore" eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/reference/components-reference/supported-state-stores/"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConfigurationStore" eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/reference/components-reference/supported-configuration-stores/"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Locks" eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/reference/components-reference/supported-locks/"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Cryptography" eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/reference/components-reference/supported-cryptography/"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Middleware" eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/reference/components-reference/supported-middleware/"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Nameresolution" eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/reference/components-reference/supported-name-resolution/"/>
+  </eClassifiers>
 </ecore:EPackage>

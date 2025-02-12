@@ -64,6 +64,26 @@ enum NodeBlockType{
 	
 	
 }
+
+enum APIType{
+	
+	INVOKE;
+	STATE;
+	PUBLISH;
+	SUBSCRIBE;
+	BINDINGS;
+	SECRETS;
+	ACTORS;
+	METADATA;
+	CONFIGURATION;
+	LOCK;
+	UNLOCK;
+	CRYPTO;
+	WORKFLOWS;
+	HEALTHZ;
+	SHUTDOWN;
+	
+}
 enum SDKLanguage{
 	JAVA;
 	CSHARP;
@@ -131,6 +151,7 @@ class Trustdomain extends DaprNode{
 
 
 class App extends DaprNode{
+	readonly attr String help = "https://docs.dapr.io/developing-applications/building-blocks/service-invocation/service-invocation-overview/";
 	attr String appId;
 	attr String repository;
 	attr SDKLanguage sdkLanguage;
@@ -139,13 +160,18 @@ class App extends DaprNode{
 	ref AppConfiguration[*] configurations;
 	
 	
+	
+	
 }
 
 class Actor extends App{
+  readonly attr String additionalHelp = "https://docs.dapr.io/developing-applications/building-blocks/actors/actors-overview/";
 	
 }
 
 class Workflow extends App{
+
+	readonly attr String additionalHelp = "https://docs.dapr.io/developing-applications/building-blocks/workflow/workflow-overview/";
 	
 	
 }
@@ -172,8 +198,9 @@ abstract class AppConfiguration extends DaprNode{
 
 // Components Deny List
 class DeniedComponentsConfiguration extends AppConfiguration{
-	ref Component[*] deniedComponents;
 	readonly attr String help = "https://docs.dapr.io/operations/configuration/configuration-overview/#disallow-usage-of-certain-component-types";
+	ref Component[*] deniedComponents;
+	
 
 }
 
@@ -181,87 +208,95 @@ class DeniedComponentsConfiguration extends AppConfiguration{
 
 //Logging configuration
 class LoggingConfiguration extends AppConfiguration{
+	readonly attr String help= "https://docs.dapr.io/operations/configuration/configuration-overview/#logging";
 	attr boolean enabled = true;
 	attr boolean obfuscateURLs = false;
 	attr boolean omitHealthChecks = true;
-	readonly attr String help= "";
+	
 }
 
 
 //Name Resolution Configuration
 class NameResolutionConfiguration extends AppConfiguration{
+	readonly attr String help= "https://docs.dapr.io/operations/configuration/configuration-overview/#name-resolution-component";
 	ref Component component;
 	attr String componentVersion;
 	attr String configurationKey;
 	attr String configurationValue;
-	readonly attr String help= "";
+	
 	
 }
 
 //Secrets configuration
 class SecretsAccessConfiguration extends AppConfiguration
 {
-   ref SecretsAccessList[*] accessList;
-   readonly attr String help= "";
+	readonly attr String help= "https://docs.dapr.io/operations/configuration/secret-scope/";
+   	ref SecretsAccessList[*] accessList;
+   
 	
 }
 
 class SecretsAccessList extends DaprNode{
+	readonly attr String help= "https://docs.dapr.io/operations/configuration/secret-scope/";
 	ref Component component;
 	attr boolean defaultAccess = true;
 	attr String[*] secrets;
 	attr AccessAction action;
-	readonly attr String help= "";
+	
 	
 }
 
 // Metrics Configuration
 class MetricsConfiguration extends AppConfiguration{
+	readonly attr String help= "https://docs.dapr.io/operations/configuration/configuration-overview/#metrics";
 	attr boolean enabled;
-	attr int[*] latencyDistributionBuckets;
+	attr String latencyDistributionBuckets;
 	attr boolean http_increasedCardinality;
 	attr String[*] http_pathMatching;
 	attr boolean http_excludeVerbs;
-	readonly attr String help= "";
+	
 }
 
 // API Configuration
 class APIAccessControl extends AppConfiguration {
+	readonly attr String help= "https://docs.dapr.io/operations/configuration/api-allowlist/#enabling-specific-http-apis";
 	ref API[*] apiList;
+	
 }
 
 class API extends DaprNode{
-	ref Component component;
+	readonly attr String help= "https://docs.dapr.io/operations/configuration/api-allowlist/#list-of-dapr-apis";
+	attr APIType apiType;
 	attr String api_version;
 	attr Protocol protocol;
 	attr AccessAction access;
-	readonly attr String help= "";
+	
 }
 
 
 
 // App AccessControl configuration
 class AppAccessControl extends AppConfiguration {
+	readonly attr String help= "https://docs.dapr.io/operations/configuration/invoke-allowlist/#access-control";
 	attr AccessAction defaultAction;
 	ref  Trustdomain trustDomain;
 	ref AppPolicy[*] policies;
-	readonly attr String help= "";
+	
 }
 
 
 
 class AppPolicy extends DaprNode {
-  ref App app;
-  attr AccessAction defaultAction;
-  ref Trustdomain trustDomain;
-  ref Namespace namespace;
-  ref Operation[*] operations;
-  readonly attr String help= "";
-  
-  	
+	readonly attr String help= "https://docs.dapr.io/operations/configuration/invoke-allowlist/#policies";
+	ref App app;
+	attr AccessAction defaultAction;
+	ref Trustdomain trustDomain;
+	ref Namespace namespace;
+	ref Operation[*] operations;
 }
 
 class Operation extends DaprNode{
+	readonly attr String help= "https://docs.dapr.io/operations/configuration/invoke-allowlist/#operations";
 	attr Protocol protocol;
 	attr String operationName;
     attr boolean applyToGet;
@@ -269,40 +304,43 @@ class Operation extends DaprNode{
     attr boolean applyToPut;
     attr boolean applyToDelete;
     attr boolean applyToPatch;
+    attr Verb[*] verbs;
 	attr AccessAction action;
-	readonly attr String help= "";
+	
 }
 
 // Middleware Configuration
 class MiddlewareConfiguration extends AppConfiguration{
-	
+	readonly attr String help= "https://docs.dapr.io/operations/configuration/configuration-overview/#middleware";
 	ref HttpHandler[*] httpHandlers;
-	readonly attr String help= "";
+	
 }
 
 class HttpHandler extends DaprNode{
-	
+	readonly attr String help= "https://docs.dapr.io/operations/configuration/configuration-overview/#middleware";
 	attr String handlerName;
 	attr String type;
 	attr HttpHandlerType handlerType;
-	readonly attr String help= "";
+	
 }
 
 
 //Tracing Configuration
 class TracingConfiguration extends AppConfiguration{
+	readonly attr String help= "https://docs.dapr.io/operations/configuration/configuration-overview/#tracing";
 	attr String samplingRate;
 	attr boolean stdout;
 	attr String otel_endPointAddress;
 	attr boolean otel_isSecure;
 	attr String otel_protocol;
 	attr String zipkin_endPointAddress;
-	readonly attr String help= "";
+	
 } 
 
 
 // Subscription Configuration 
 class SubscriptionConfiguration extends DaprNode {
+	readonly attr String help= "https://docs.dapr.io/reference/resource-specs/subscription-schema/";
 	readonly attr String apiVersion = "dapr.io/v2alpha1";
 	readonly attr String kind = "Subscription";
 	attr String topicName;
@@ -313,20 +351,21 @@ class SubscriptionConfiguration extends DaprNode {
 	attr String bulkSubscribe_maxMessagesCount;
 	attr String bulkSubscribe_maxAwaitDurationMs;
 	ref App[*] scopes;
-	readonly attr String help= "";
+	
 	
 }
 
 class RouteRules extends DaprNode{
+	readonly attr String help= "https://docs.dapr.io/reference/resource-specs/subscription-schema/#spec-fields";
 	attr String match;
 	attr String path;
-	readonly attr String help= "";
+	
 }
 
 
 // Resiliency Configuration
 class ResiliencyConfiguration extends DaprNode{
-	readonly attr String help= "";
+	readonly attr String help= "https://docs.dapr.io/reference/resource-specs/resiliency-schema/";
 	readonly attr String apiVersion = "dapr.io/v2alpha1";
 	readonly attr String kind = "Resiliency";
 	readonly attr String version = "v1alpha1";
@@ -336,7 +375,7 @@ class ResiliencyConfiguration extends DaprNode{
 }
 
 class ResiliencyPolicy extends DaprNode{
-	readonly attr String help= "";
+	readonly attr String help= "https://docs.dapr.io/operations/resiliency/policies/";
 	ref RetryPolicy[*] retries;
 	val CircuitBreakerPolicy[*] circuitbreakers;
 	ref ResiliencyTimeout[*] timeoutDefinitions;
@@ -346,17 +385,18 @@ class ResiliencyPolicy extends DaprNode{
 
 class RetryPolicy extends DaprNode{
 	
-	readonly attr String help= "";
+	readonly attr String help= "https://docs.dapr.io/operations/resiliency/policies/#retries";
 	attr RetryPolicyType policy_type;
 	attr int duration;
 	attr int maxRetries;
 	attr int maxInterval; 
 	
+	
 }
 
 class ResiliencyTimeout extends DaprNode{
 	
-	readonly attr String help= "";
+	readonly attr String help= "https://docs.dapr.io/operations/resiliency/policies/#timeouts";
 	attr int timeOutinSeconds;
 	
 	
@@ -364,7 +404,7 @@ class ResiliencyTimeout extends DaprNode{
 
 class CircuitBreakerPolicy extends DaprNode{
 
-	readonly attr String help= "";
+	readonly attr String help= "https://docs.dapr.io/operations/resiliency/policies/#circuit-breakers";
 	attr int maxRequests;
 	attr int interval;
 	attr int timeout;
@@ -373,7 +413,7 @@ class CircuitBreakerPolicy extends DaprNode{
 }
 
 class ResiliencyTarget extends DaprNode{
-	readonly attr String help= "";
+	readonly attr String help= "https://docs.dapr.io/operations/resiliency/targets/";
 	attr ResiliencyTargetType type;
 	attr int circuitBreakerCacheSize;
 	ref CircuitBreakerPolicy circuitBreaker;
@@ -388,7 +428,7 @@ class ResiliencyTarget extends DaprNode{
 // HTTPEndpoint Configuration
 
 class HTTPEndPoint extends DaprNode {
-	readonly attr String help= ""; 	
+	readonly attr String help= "https://docs.dapr.io/reference/resource-specs/httpendpoints-schema/"; 	
 	readonly attr String apiVersion = "dapr.io/v1alpha1";
 	readonly attr String kind = "HTTPEndpoint";
 	attr String baseUrl;
@@ -405,7 +445,7 @@ class HTTPEndPoint extends DaprNode {
 
 //Component Definitions
 abstract class Component extends DaprNode {
-	readonly attr String help= ""; 	
+			
 	readonly attr String apiVersion = "dapr.io/v1alpha1";
 	readonly attr String kind = "Component";
 	attr String providerName;
@@ -419,14 +459,14 @@ abstract class Component extends DaprNode {
 }
 
 class ComponentSpec extends DaprNode{
-	readonly attr String help= "";
+	readonly attr String help= "https://docs.dapr.io/reference/resource-specs/component-schema/";
 	attr boolean ignoreErrors;
 	attr String initTimeout;
 	ref SpecMetadata[*] spec_metadata; 
 }
 
 class SpecMetadata extends DaprNode{
-	readonly attr String help= "";
+	readonly attr String help= "https://docs.dapr.io/reference/resource-specs/component-schema/#spec-fields";
 	attr String value;
 	attr boolean isFetchedFromSecret = false;
 	attr boolean isFetchedFromEnvironment = false;
@@ -439,40 +479,47 @@ class SpecMetadata extends DaprNode{
 
 
 class PubSub extends Component{
+	readonly attr String help= "https://docs.dapr.io/reference/components-reference/supported-pubsub/";
 	
 }
 
 class Bindings extends Component{
+	readonly attr String help= "https://docs.dapr.io/reference/components-reference/supported-bindings/";
 	
 	
 }
 
 class SecretStore extends Component{
+	readonly attr String help= "https://docs.dapr.io/reference/components-reference/supported-secret-stores/";
 	
 }
 
 
 class StateStore extends Component{
+	readonly attr String help= "https://docs.dapr.io/reference/components-reference/supported-state-stores/";
 	
 }
 
 class ConfigurationStore extends Component{
+	readonly attr String help= "https://docs.dapr.io/reference/components-reference/supported-configuration-stores/";
 	
 }
 
 class Locks extends Component{
+	readonly attr String help= "https://docs.dapr.io/reference/components-reference/supported-locks/";
 	
 }
 
 class Cryptography extends Component{
-	
-
+	readonly attr String help= "https://docs.dapr.io/reference/components-reference/supported-cryptography/";
 }
 
 class Middleware extends Component{
+	readonly attr String help= "https://docs.dapr.io/reference/components-reference/supported-middleware/";
 	
 }
 class Nameresolution extends Component{
+	readonly attr String help= "https://docs.dapr.io/reference/components-reference/supported-name-resolution/";
 	
 }
 
