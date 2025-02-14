@@ -313,7 +313,7 @@
         changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/resiliency/policies/"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="retries" upperBound="-1"
         eType="#//RetryPolicy"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="circuitbreakers" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="circuitBreakers" upperBound="-1"
         eType="#//CircuitBreakerPolicy"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="timeoutDefinitions" upperBound="-1"
         eType="#//ResiliencyTimeout"/>

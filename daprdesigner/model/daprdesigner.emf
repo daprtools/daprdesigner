@@ -377,7 +377,7 @@ class ResiliencyConfiguration extends DaprNode{
 class ResiliencyPolicy extends DaprNode{
 	readonly attr String help= "https://docs.dapr.io/operations/resiliency/policies/";
 	ref RetryPolicy[*] retries;
-	ref CircuitBreakerPolicy[*] circuitbreakers;
+	ref CircuitBreakerPolicy[*] circuitBreakers;
 	ref ResiliencyTimeout[*] timeoutDefinitions;
 	
 	

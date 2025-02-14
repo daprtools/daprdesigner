@@ -262,7 +262,7 @@
     <genClasses ecoreClass="daprdesigner.ecore#//ResiliencyPolicy">
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//ResiliencyPolicy/help"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//ResiliencyPolicy/retries"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//ResiliencyPolicy/circuitbreakers"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//ResiliencyPolicy/circuitBreakers"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//ResiliencyPolicy/timeoutDefinitions"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//RetryPolicy">
