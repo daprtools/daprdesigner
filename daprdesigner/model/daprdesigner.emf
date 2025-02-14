@@ -210,7 +210,7 @@ class DeniedComponentsConfiguration extends AppConfiguration{
 class LoggingConfiguration extends AppConfiguration{
 	readonly attr String help= "https://docs.dapr.io/operations/configuration/configuration-overview/#logging";
 	attr boolean enabled = true;
-	attr boolean obfuscateURLs = false;
+	attr boolean obfuscateUrls = false;
 	attr boolean omitHealthChecks = true;
 	
 }
@@ -371,13 +371,13 @@ class ResiliencyConfiguration extends DaprNode{
 	readonly attr String version = "v1alpha1";
 	ref App[*] scopes;
 	ref ResiliencyPolicy policy;
-	val ResiliencyTarget[*] targets;
+	ref ResiliencyTarget[*] targets;
 }
 
 class ResiliencyPolicy extends DaprNode{
 	readonly attr String help= "https://docs.dapr.io/operations/resiliency/policies/";
 	ref RetryPolicy[*] retries;
-	val CircuitBreakerPolicy[*] circuitbreakers;
+	ref CircuitBreakerPolicy[*] circuitbreakers;
 	ref ResiliencyTimeout[*] timeoutDefinitions;
 	
 	
@@ -419,6 +419,8 @@ class ResiliencyTarget extends DaprNode{
 	ref CircuitBreakerPolicy circuitBreaker;
 	ref RetryPolicy retry;
 	ref ResiliencyTimeout timeout;
+	ref App[*] appsActorsOrWorkflows;
+	ref Component[*] components;
 	
 	
 	

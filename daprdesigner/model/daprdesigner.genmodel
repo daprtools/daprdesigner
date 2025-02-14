@@ -148,7 +148,7 @@
     <genClasses ecoreClass="daprdesigner.ecore#//LoggingConfiguration">
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//LoggingConfiguration/help"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//LoggingConfiguration/enabled"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//LoggingConfiguration/obfuscateURLs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//LoggingConfiguration/obfuscateUrls"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//LoggingConfiguration/omitHealthChecks"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//NameResolutionConfiguration">
@@ -290,6 +290,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//ResiliencyTarget/circuitBreaker"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//ResiliencyTarget/retry"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//ResiliencyTarget/timeout"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//ResiliencyTarget/appsActorsOrWorkflows"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//ResiliencyTarget/components"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//HTTPEndPoint">
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//HTTPEndPoint/help"/>

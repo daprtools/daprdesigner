@@ -157,7 +157,7 @@
         changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/configuration/configuration-overview/#logging"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="enabled" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="obfuscateURLs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="obfuscateUrls" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="omitHealthChecks" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="true"/>
@@ -306,7 +306,7 @@
         eType="#//App"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="policy" eType="#//ResiliencyPolicy"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="targets" upperBound="-1"
-        eType="#//ResiliencyTarget" containment="true"/>
+        eType="#//ResiliencyTarget"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ResiliencyPolicy" eSuperTypes="#//DaprNode">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -314,7 +314,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="retries" upperBound="-1"
         eType="#//RetryPolicy"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="circuitbreakers" upperBound="-1"
-        eType="#//CircuitBreakerPolicy" containment="true"/>
+        eType="#//CircuitBreakerPolicy"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="timeoutDefinitions" upperBound="-1"
         eType="#//ResiliencyTimeout"/>
   </eClassifiers>
@@ -349,6 +349,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="circuitBreaker" eType="#//CircuitBreakerPolicy"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="retry" eType="#//RetryPolicy"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="timeout" eType="#//ResiliencyTimeout"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="appsActorsOrWorkflows"
+        upperBound="-1" eType="#//App"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
+        eType="#//Component"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HTTPEndPoint" eSuperTypes="#//DaprNode">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
