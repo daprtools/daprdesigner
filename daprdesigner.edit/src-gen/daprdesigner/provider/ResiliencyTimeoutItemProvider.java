@@ -45,7 +45,7 @@ public class ResiliencyTimeoutItemProvider extends DaprNodeItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addHelpPropertyDescriptor(object);
-			addTimeOutinSecondsPropertyDescriptor(object);
+			addTimeOutInSecondsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -67,18 +67,18 @@ public class ResiliencyTimeoutItemProvider extends DaprNodeItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Time Outin Seconds feature.
+	 * This adds a property descriptor for the Time Out In Seconds feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTimeOutinSecondsPropertyDescriptor(Object object) {
+	protected void addTimeOutInSecondsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ResiliencyTimeout_timeOutinSeconds_feature"),
+						getResourceLocator(), getString("_UI_ResiliencyTimeout_timeOutInSeconds_feature"),
 						getString("_UI_PropertyDescriptor_description",
-								"_UI_ResiliencyTimeout_timeOutinSeconds_feature", "_UI_ResiliencyTimeout_type"),
-						DaprdesignerPackage.Literals.RESILIENCY_TIMEOUT__TIME_OUTIN_SECONDS, true, false, false,
+								"_UI_ResiliencyTimeout_timeOutInSeconds_feature", "_UI_ResiliencyTimeout_type"),
+						DaprdesignerPackage.Literals.RESILIENCY_TIMEOUT__TIME_OUT_IN_SECONDS, true, false, false,
 						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
@@ -129,7 +129,7 @@ public class ResiliencyTimeoutItemProvider extends DaprNodeItemProvider {
 
 		switch (notification.getFeatureID(ResiliencyTimeout.class)) {
 		case DaprdesignerPackage.RESILIENCY_TIMEOUT__HELP:
-		case DaprdesignerPackage.RESILIENCY_TIMEOUT__TIME_OUTIN_SECONDS:
+		case DaprdesignerPackage.RESILIENCY_TIMEOUT__TIME_OUT_IN_SECONDS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

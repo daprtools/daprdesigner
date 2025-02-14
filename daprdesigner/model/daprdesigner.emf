@@ -349,7 +349,7 @@ class SubscriptionConfiguration extends DaprNode {
 	attr String deadLetterTopic;
 	attr boolean bulkSubscribe_enabled;
 	attr String bulkSubscribe_maxMessagesCount;
-	attr String bulkSubscribe_maxAwaitDurationMs;
+	attr String bulkSubscribe_maxAwaitDurations;
 	ref App[*] scopes;
 	
 	
@@ -371,7 +371,7 @@ class ResiliencyConfiguration extends DaprNode{
 	readonly attr String version = "v1alpha1";
 	ref App[*] scopes;
 	ref ResiliencyPolicy policy;
-	ref ResiliencyTarget[*] targets;
+	ref ResiliencyTarget[*] resiliencyTargets;
 }
 
 class ResiliencyPolicy extends DaprNode{
@@ -397,7 +397,7 @@ class RetryPolicy extends DaprNode{
 class ResiliencyTimeout extends DaprNode{
 	
 	readonly attr String help= "https://docs.dapr.io/operations/resiliency/policies/#timeouts";
-	attr int timeOutinSeconds;
+	attr int timeOutInSeconds;
 	
 	
 }

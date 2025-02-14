@@ -282,7 +282,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bulkSubscribe_maxMessagesCount"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bulkSubscribe_maxAwaitDurationMs"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bulkSubscribe_maxAwaitDurations"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scopes" upperBound="-1"
         eType="#//App"/>
@@ -305,7 +305,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="scopes" upperBound="-1"
         eType="#//App"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="policy" eType="#//ResiliencyPolicy"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="targets" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resiliencyTargets" upperBound="-1"
         eType="#//ResiliencyTarget"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ResiliencyPolicy" eSuperTypes="#//DaprNode">
@@ -329,7 +329,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ResiliencyTimeout" eSuperTypes="#//DaprNode">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/resiliency/policies/#timeouts"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeOutinSeconds" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeOutInSeconds" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CircuitBreakerPolicy" eSuperTypes="#//DaprNode">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"

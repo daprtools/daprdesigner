@@ -53,7 +53,7 @@ public class SubscriptionConfigurationItemProvider extends DaprNodeItemProvider 
 			addDeadLetterTopicPropertyDescriptor(object);
 			addBulkSubscribe_enabledPropertyDescriptor(object);
 			addBulkSubscribe_maxMessagesCountPropertyDescriptor(object);
-			addBulkSubscribe_maxAwaitDurationMsPropertyDescriptor(object);
+			addBulkSubscribe_maxAwaitDurationsPropertyDescriptor(object);
 			addScopesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -189,19 +189,19 @@ public class SubscriptionConfigurationItemProvider extends DaprNodeItemProvider 
 	}
 
 	/**
-	 * This adds a property descriptor for the Bulk Subscribe max Await Duration Ms feature.
+	 * This adds a property descriptor for the Bulk Subscribe max Await Durations feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addBulkSubscribe_maxAwaitDurationMsPropertyDescriptor(Object object) {
+	protected void addBulkSubscribe_maxAwaitDurationsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_SubscriptionConfiguration_bulkSubscribe_maxAwaitDurationMs_feature"),
+				getString("_UI_SubscriptionConfiguration_bulkSubscribe_maxAwaitDurations_feature"),
 				getString("_UI_PropertyDescriptor_description",
-						"_UI_SubscriptionConfiguration_bulkSubscribe_maxAwaitDurationMs_feature",
+						"_UI_SubscriptionConfiguration_bulkSubscribe_maxAwaitDurations_feature",
 						"_UI_SubscriptionConfiguration_type"),
-				DaprdesignerPackage.Literals.SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_MAX_AWAIT_DURATION_MS, true,
+				DaprdesignerPackage.Literals.SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_MAX_AWAIT_DURATIONS, true,
 				false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -289,7 +289,7 @@ public class SubscriptionConfigurationItemProvider extends DaprNodeItemProvider 
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__DEAD_LETTER_TOPIC:
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_ENABLED:
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_MAX_MESSAGES_COUNT:
-		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_MAX_AWAIT_DURATION_MS:
+		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_MAX_AWAIT_DURATIONS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

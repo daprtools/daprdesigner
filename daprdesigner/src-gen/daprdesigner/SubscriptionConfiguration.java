@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link daprdesigner.SubscriptionConfiguration#getDeadLetterTopic <em>Dead Letter Topic</em>}</li>
  *   <li>{@link daprdesigner.SubscriptionConfiguration#isBulkSubscribe_enabled <em>Bulk Subscribe enabled</em>}</li>
  *   <li>{@link daprdesigner.SubscriptionConfiguration#getBulkSubscribe_maxMessagesCount <em>Bulk Subscribe max Messages Count</em>}</li>
- *   <li>{@link daprdesigner.SubscriptionConfiguration#getBulkSubscribe_maxAwaitDurationMs <em>Bulk Subscribe max Await Duration Ms</em>}</li>
+ *   <li>{@link daprdesigner.SubscriptionConfiguration#getBulkSubscribe_maxAwaitDurations <em>Bulk Subscribe max Await Durations</em>}</li>
  *   <li>{@link daprdesigner.SubscriptionConfiguration#getScopes <em>Scopes</em>}</li>
  * </ul>
  *
@@ -178,26 +178,26 @@ public interface SubscriptionConfiguration extends DaprNode {
 	void setBulkSubscribe_maxMessagesCount(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Bulk Subscribe max Await Duration Ms</b></em>' attribute.
+	 * Returns the value of the '<em><b>Bulk Subscribe max Await Durations</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Bulk Subscribe max Await Duration Ms</em>' attribute.
-	 * @see #setBulkSubscribe_maxAwaitDurationMs(String)
-	 * @see daprdesigner.DaprdesignerPackage#getSubscriptionConfiguration_BulkSubscribe_maxAwaitDurationMs()
+	 * @return the value of the '<em>Bulk Subscribe max Await Durations</em>' attribute.
+	 * @see #setBulkSubscribe_maxAwaitDurations(String)
+	 * @see daprdesigner.DaprdesignerPackage#getSubscriptionConfiguration_BulkSubscribe_maxAwaitDurations()
 	 * @model
 	 * @generated
 	 */
-	String getBulkSubscribe_maxAwaitDurationMs();
+	String getBulkSubscribe_maxAwaitDurations();
 
 	/**
-	 * Sets the value of the '{@link daprdesigner.SubscriptionConfiguration#getBulkSubscribe_maxAwaitDurationMs <em>Bulk Subscribe max Await Duration Ms</em>}' attribute.
+	 * Sets the value of the '{@link daprdesigner.SubscriptionConfiguration#getBulkSubscribe_maxAwaitDurations <em>Bulk Subscribe max Await Durations</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Bulk Subscribe max Await Duration Ms</em>' attribute.
-	 * @see #getBulkSubscribe_maxAwaitDurationMs()
+	 * @param value the new value of the '<em>Bulk Subscribe max Await Durations</em>' attribute.
+	 * @see #getBulkSubscribe_maxAwaitDurations()
 	 * @generated
 	 */
-	void setBulkSubscribe_maxAwaitDurationMs(String value);
+	void setBulkSubscribe_maxAwaitDurations(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Scopes</b></em>' reference list.

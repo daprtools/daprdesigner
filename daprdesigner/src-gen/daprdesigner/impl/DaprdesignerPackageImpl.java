@@ -1662,7 +1662,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSubscriptionConfiguration_BulkSubscribe_maxAwaitDurationMs() {
+	public EAttribute getSubscriptionConfiguration_BulkSubscribe_maxAwaitDurations() {
 		return (EAttribute) subscriptionConfigurationEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -1788,7 +1788,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getResiliencyConfiguration_Targets() {
+	public EReference getResiliencyConfiguration_ResiliencyTargets() {
 		return (EReference) resiliencyConfigurationEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -1914,7 +1914,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getResiliencyTimeout_TimeOutinSeconds() {
+	public EAttribute getResiliencyTimeout_TimeOutInSeconds() {
 		return (EAttribute) resiliencyTimeoutEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -2775,7 +2775,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		createEAttribute(subscriptionConfigurationEClass,
 				SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_MAX_MESSAGES_COUNT);
 		createEAttribute(subscriptionConfigurationEClass,
-				SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_MAX_AWAIT_DURATION_MS);
+				SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_MAX_AWAIT_DURATIONS);
 		createEReference(subscriptionConfigurationEClass, SUBSCRIPTION_CONFIGURATION__SCOPES);
 
 		routeRulesEClass = createEClass(ROUTE_RULES);
@@ -2790,7 +2790,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		createEAttribute(resiliencyConfigurationEClass, RESILIENCY_CONFIGURATION__VERSION);
 		createEReference(resiliencyConfigurationEClass, RESILIENCY_CONFIGURATION__SCOPES);
 		createEReference(resiliencyConfigurationEClass, RESILIENCY_CONFIGURATION__POLICY);
-		createEReference(resiliencyConfigurationEClass, RESILIENCY_CONFIGURATION__TARGETS);
+		createEReference(resiliencyConfigurationEClass, RESILIENCY_CONFIGURATION__RESILIENCY_TARGETS);
 
 		resiliencyPolicyEClass = createEClass(RESILIENCY_POLICY);
 		createEAttribute(resiliencyPolicyEClass, RESILIENCY_POLICY__HELP);
@@ -2807,7 +2807,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 
 		resiliencyTimeoutEClass = createEClass(RESILIENCY_TIMEOUT);
 		createEAttribute(resiliencyTimeoutEClass, RESILIENCY_TIMEOUT__HELP);
-		createEAttribute(resiliencyTimeoutEClass, RESILIENCY_TIMEOUT__TIME_OUTIN_SECONDS);
+		createEAttribute(resiliencyTimeoutEClass, RESILIENCY_TIMEOUT__TIME_OUT_IN_SECONDS);
 
 		circuitBreakerPolicyEClass = createEClass(CIRCUIT_BREAKER_POLICY);
 		createEAttribute(circuitBreakerPolicyEClass, CIRCUIT_BREAKER_POLICY__HELP);
@@ -3347,8 +3347,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		initEAttribute(getSubscriptionConfiguration_BulkSubscribe_maxMessagesCount(), ecorePackage.getEString(),
 				"bulkSubscribe_maxMessagesCount", null, 0, 1, SubscriptionConfiguration.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSubscriptionConfiguration_BulkSubscribe_maxAwaitDurationMs(), ecorePackage.getEString(),
-				"bulkSubscribe_maxAwaitDurationMs", null, 0, 1, SubscriptionConfiguration.class, !IS_TRANSIENT,
+		initEAttribute(getSubscriptionConfiguration_BulkSubscribe_maxAwaitDurations(), ecorePackage.getEString(),
+				"bulkSubscribe_maxAwaitDurations", null, 0, 1, SubscriptionConfiguration.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSubscriptionConfiguration_Scopes(), this.getApp(), null, "scopes", null, 0, -1,
 				SubscriptionConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
@@ -3386,9 +3386,9 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		initEReference(getResiliencyConfiguration_Policy(), this.getResiliencyPolicy(), null, "policy", null, 0, 1,
 				ResiliencyConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getResiliencyConfiguration_Targets(), this.getResiliencyTarget(), null, "targets", null, 0, -1,
-				ResiliencyConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getResiliencyConfiguration_ResiliencyTargets(), this.getResiliencyTarget(), null,
+				"resiliencyTargets", null, 0, -1, ResiliencyConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(resiliencyPolicyEClass, ResiliencyPolicy.class, "ResiliencyPolicy", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -3427,7 +3427,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 				"https://docs.dapr.io/operations/resiliency/policies/#timeouts", 0, 1, ResiliencyTimeout.class,
 				!IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEAttribute(getResiliencyTimeout_TimeOutinSeconds(), ecorePackage.getEInt(), "timeOutinSeconds", null, 0, 1,
+		initEAttribute(getResiliencyTimeout_TimeOutInSeconds(), ecorePackage.getEInt(), "timeOutInSeconds", null, 0, 1,
 				ResiliencyTimeout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 

@@ -3,6 +3,7 @@
 package daprdesigner.provider;
 
 import daprdesigner.Block;
+import daprdesigner.BlockType;
 import daprdesigner.DaprdesignerFactory;
 import daprdesigner.DaprdesignerPackage;
 
@@ -161,10 +162,42 @@ public class BlockItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * This returns Block.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated not
 	 */
 	@Override
 	public Object getImage(Object object) {
+		Block b = (Block) object;
+		BlockType bt = b.getBlockType();
+		switch (bt) {
+		case ACTORS:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/Actors"));
+		case BINDINGS:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/Bindings"));
+		case CONFIGURATION:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/ConfigurationStore"));
+		case CRYPTOGRAPHY:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/Cryptography"));
+		case DISTRIBUTEDLOCK:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/Locks"));
+		case CONFIGURATIONGROUP:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/AppConfiguration"));
+		case ENVIRONMENT:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/Environment"));
+		case JOBS:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/Jobs"));
+		case MICROSERVICES:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/App2"));
+		case PUBSUB:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/PubSub"));
+		case SECRETSTORE:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/SecretStore"));
+		case STATESTORE:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/StateStore"));
+		case WORKFLOW:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/Workflow"));
+
+		}
+
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/Block"));
 	}
 

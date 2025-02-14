@@ -19,7 +19,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link daprdesigner.ResiliencyConfiguration#getVersion <em>Version</em>}</li>
  *   <li>{@link daprdesigner.ResiliencyConfiguration#getScopes <em>Scopes</em>}</li>
  *   <li>{@link daprdesigner.ResiliencyConfiguration#getPolicy <em>Policy</em>}</li>
- *   <li>{@link daprdesigner.ResiliencyConfiguration#getTargets <em>Targets</em>}</li>
+ *   <li>{@link daprdesigner.ResiliencyConfiguration#getResiliencyTargets <em>Resiliency Targets</em>}</li>
  * </ul>
  *
  * @see daprdesigner.DaprdesignerPackage#getResiliencyConfiguration()
@@ -110,15 +110,15 @@ public interface ResiliencyConfiguration extends DaprNode {
 	void setPolicy(ResiliencyPolicy value);
 
 	/**
-	 * Returns the value of the '<em><b>Targets</b></em>' reference list.
+	 * Returns the value of the '<em><b>Resiliency Targets</b></em>' reference list.
 	 * The list contents are of type {@link daprdesigner.ResiliencyTarget}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Targets</em>' reference list.
-	 * @see daprdesigner.DaprdesignerPackage#getResiliencyConfiguration_Targets()
+	 * @return the value of the '<em>Resiliency Targets</em>' reference list.
+	 * @see daprdesigner.DaprdesignerPackage#getResiliencyConfiguration_ResiliencyTargets()
 	 * @model
 	 * @generated
 	 */
-	EList<ResiliencyTarget> getTargets();
+	EList<ResiliencyTarget> getResiliencyTargets();
 
 } // ResiliencyConfiguration

@@ -4,6 +4,7 @@ package daprdesigner.provider;
 
 import daprdesigner.DaprdesignerFactory;
 import daprdesigner.DaprdesignerPackage;
+import daprdesigner.NodeBlockType;
 import daprdesigner.NodeBlocks;
 
 import java.util.Collection;
@@ -102,10 +103,39 @@ public class NodeBlocksItemProvider extends DaprNodeItemProvider {
 	 * This returns NodeBlocks.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated not
 	 */
 	@Override
 	public Object getImage(Object object) {
+		NodeBlocks nb = (NodeBlocks) object;
+		NodeBlockType nbt = nb.getNodeBlockType();
+		switch (nbt) {
+		case ACTOR:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/Actor"));
+		case BINDING:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/Bindings"));
+		case APP:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/App2"));
+		case CRYPTOGRAPHY:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/Cryptography"));
+		case DISTRIBUTEDLOCK:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/Locks"));
+		case HTTPENDPOINT:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/HTTPEndPoint"));
+		case PUBSUB:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/PubSub"));
+		case RESILIENCY:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/ResiliencyConfiguration"));
+		case SECRETSTORE:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/SecretStore"));
+		case STATESTORE:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/StateStore"));
+		case SUBSCRIPTION:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/SubscriptionConfiguration"));
+		case WORKFLOW:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/Workflow"));
+
+		}
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/NodeBlocks"));
 	}
 

@@ -12,7 +12,7 @@ package daprdesigner;
  * </p>
  * <ul>
  *   <li>{@link daprdesigner.ResiliencyTimeout#getHelp <em>Help</em>}</li>
- *   <li>{@link daprdesigner.ResiliencyTimeout#getTimeOutinSeconds <em>Time Outin Seconds</em>}</li>
+ *   <li>{@link daprdesigner.ResiliencyTimeout#getTimeOutInSeconds <em>Time Out In Seconds</em>}</li>
  * </ul>
  *
  * @see daprdesigner.DaprdesignerPackage#getResiliencyTimeout()
@@ -33,25 +33,25 @@ public interface ResiliencyTimeout extends DaprNode {
 	String getHelp();
 
 	/**
-	 * Returns the value of the '<em><b>Time Outin Seconds</b></em>' attribute.
+	 * Returns the value of the '<em><b>Time Out In Seconds</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Time Outin Seconds</em>' attribute.
-	 * @see #setTimeOutinSeconds(int)
-	 * @see daprdesigner.DaprdesignerPackage#getResiliencyTimeout_TimeOutinSeconds()
+	 * @return the value of the '<em>Time Out In Seconds</em>' attribute.
+	 * @see #setTimeOutInSeconds(int)
+	 * @see daprdesigner.DaprdesignerPackage#getResiliencyTimeout_TimeOutInSeconds()
 	 * @model
 	 * @generated
 	 */
-	int getTimeOutinSeconds();
+	int getTimeOutInSeconds();
 
 	/**
-	 * Sets the value of the '{@link daprdesigner.ResiliencyTimeout#getTimeOutinSeconds <em>Time Outin Seconds</em>}' attribute.
+	 * Sets the value of the '{@link daprdesigner.ResiliencyTimeout#getTimeOutInSeconds <em>Time Out In Seconds</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Time Outin Seconds</em>' attribute.
-	 * @see #getTimeOutinSeconds()
+	 * @param value the new value of the '<em>Time Out In Seconds</em>' attribute.
+	 * @see #getTimeOutInSeconds()
 	 * @generated
 	 */
-	void setTimeOutinSeconds(int value);
+	void setTimeOutInSeconds(int value);
 
 } // ResiliencyTimeout

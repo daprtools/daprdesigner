@@ -242,7 +242,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//SubscriptionConfiguration/deadLetterTopic"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//SubscriptionConfiguration/bulkSubscribe_enabled"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//SubscriptionConfiguration/bulkSubscribe_maxMessagesCount"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//SubscriptionConfiguration/bulkSubscribe_maxAwaitDurationMs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//SubscriptionConfiguration/bulkSubscribe_maxAwaitDurations"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//SubscriptionConfiguration/scopes"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//RouteRules">
@@ -257,7 +257,7 @@
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//ResiliencyConfiguration/version"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//ResiliencyConfiguration/scopes"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//ResiliencyConfiguration/policy"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//ResiliencyConfiguration/targets"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//ResiliencyConfiguration/resiliencyTargets"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//ResiliencyPolicy">
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//ResiliencyPolicy/help"/>
@@ -274,7 +274,7 @@
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//ResiliencyTimeout">
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//ResiliencyTimeout/help"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//ResiliencyTimeout/timeOutinSeconds"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//ResiliencyTimeout/timeOutInSeconds"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//CircuitBreakerPolicy">
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//CircuitBreakerPolicy/help"/>

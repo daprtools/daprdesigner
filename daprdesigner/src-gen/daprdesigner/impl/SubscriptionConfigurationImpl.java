@@ -38,7 +38,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link daprdesigner.impl.SubscriptionConfigurationImpl#getDeadLetterTopic <em>Dead Letter Topic</em>}</li>
  *   <li>{@link daprdesigner.impl.SubscriptionConfigurationImpl#isBulkSubscribe_enabled <em>Bulk Subscribe enabled</em>}</li>
  *   <li>{@link daprdesigner.impl.SubscriptionConfigurationImpl#getBulkSubscribe_maxMessagesCount <em>Bulk Subscribe max Messages Count</em>}</li>
- *   <li>{@link daprdesigner.impl.SubscriptionConfigurationImpl#getBulkSubscribe_maxAwaitDurationMs <em>Bulk Subscribe max Await Duration Ms</em>}</li>
+ *   <li>{@link daprdesigner.impl.SubscriptionConfigurationImpl#getBulkSubscribe_maxAwaitDurations <em>Bulk Subscribe max Await Durations</em>}</li>
  *   <li>{@link daprdesigner.impl.SubscriptionConfigurationImpl#getScopes <em>Scopes</em>}</li>
  * </ul>
  *
@@ -206,24 +206,24 @@ public class SubscriptionConfigurationImpl extends DaprNodeImpl implements Subsc
 	protected String bulkSubscribe_maxMessagesCount = BULK_SUBSCRIBE_MAX_MESSAGES_COUNT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getBulkSubscribe_maxAwaitDurationMs() <em>Bulk Subscribe max Await Duration Ms</em>}' attribute.
+	 * The default value of the '{@link #getBulkSubscribe_maxAwaitDurations() <em>Bulk Subscribe max Await Durations</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBulkSubscribe_maxAwaitDurationMs()
+	 * @see #getBulkSubscribe_maxAwaitDurations()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String BULK_SUBSCRIBE_MAX_AWAIT_DURATION_MS_EDEFAULT = null;
+	protected static final String BULK_SUBSCRIBE_MAX_AWAIT_DURATIONS_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getBulkSubscribe_maxAwaitDurationMs() <em>Bulk Subscribe max Await Duration Ms</em>}' attribute.
+	 * The cached value of the '{@link #getBulkSubscribe_maxAwaitDurations() <em>Bulk Subscribe max Await Durations</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBulkSubscribe_maxAwaitDurationMs()
+	 * @see #getBulkSubscribe_maxAwaitDurations()
 	 * @generated
 	 * @ordered
 	 */
-	protected String bulkSubscribe_maxAwaitDurationMs = BULK_SUBSCRIBE_MAX_AWAIT_DURATION_MS_EDEFAULT;
+	protected String bulkSubscribe_maxAwaitDurations = BULK_SUBSCRIBE_MAX_AWAIT_DURATIONS_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getScopes() <em>Scopes</em>}' reference list.
@@ -421,8 +421,8 @@ public class SubscriptionConfigurationImpl extends DaprNodeImpl implements Subsc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getBulkSubscribe_maxAwaitDurationMs() {
-		return bulkSubscribe_maxAwaitDurationMs;
+	public String getBulkSubscribe_maxAwaitDurations() {
+		return bulkSubscribe_maxAwaitDurations;
 	}
 
 	/**
@@ -430,13 +430,13 @@ public class SubscriptionConfigurationImpl extends DaprNodeImpl implements Subsc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBulkSubscribe_maxAwaitDurationMs(String newBulkSubscribe_maxAwaitDurationMs) {
-		String oldBulkSubscribe_maxAwaitDurationMs = bulkSubscribe_maxAwaitDurationMs;
-		bulkSubscribe_maxAwaitDurationMs = newBulkSubscribe_maxAwaitDurationMs;
+	public void setBulkSubscribe_maxAwaitDurations(String newBulkSubscribe_maxAwaitDurations) {
+		String oldBulkSubscribe_maxAwaitDurations = bulkSubscribe_maxAwaitDurations;
+		bulkSubscribe_maxAwaitDurations = newBulkSubscribe_maxAwaitDurations;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_MAX_AWAIT_DURATION_MS,
-					oldBulkSubscribe_maxAwaitDurationMs, bulkSubscribe_maxAwaitDurationMs));
+					DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_MAX_AWAIT_DURATIONS,
+					oldBulkSubscribe_maxAwaitDurations, bulkSubscribe_maxAwaitDurations));
 	}
 
 	/**
@@ -489,8 +489,8 @@ public class SubscriptionConfigurationImpl extends DaprNodeImpl implements Subsc
 			return isBulkSubscribe_enabled();
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_MAX_MESSAGES_COUNT:
 			return getBulkSubscribe_maxMessagesCount();
-		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_MAX_AWAIT_DURATION_MS:
-			return getBulkSubscribe_maxAwaitDurationMs();
+		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_MAX_AWAIT_DURATIONS:
+			return getBulkSubscribe_maxAwaitDurations();
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__SCOPES:
 			return getScopes();
 		}
@@ -525,8 +525,8 @@ public class SubscriptionConfigurationImpl extends DaprNodeImpl implements Subsc
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_MAX_MESSAGES_COUNT:
 			setBulkSubscribe_maxMessagesCount((String) newValue);
 			return;
-		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_MAX_AWAIT_DURATION_MS:
-			setBulkSubscribe_maxAwaitDurationMs((String) newValue);
+		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_MAX_AWAIT_DURATIONS:
+			setBulkSubscribe_maxAwaitDurations((String) newValue);
 			return;
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__SCOPES:
 			getScopes().clear();
@@ -562,8 +562,8 @@ public class SubscriptionConfigurationImpl extends DaprNodeImpl implements Subsc
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_MAX_MESSAGES_COUNT:
 			setBulkSubscribe_maxMessagesCount(BULK_SUBSCRIBE_MAX_MESSAGES_COUNT_EDEFAULT);
 			return;
-		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_MAX_AWAIT_DURATION_MS:
-			setBulkSubscribe_maxAwaitDurationMs(BULK_SUBSCRIBE_MAX_AWAIT_DURATION_MS_EDEFAULT);
+		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_MAX_AWAIT_DURATIONS:
+			setBulkSubscribe_maxAwaitDurations(BULK_SUBSCRIBE_MAX_AWAIT_DURATIONS_EDEFAULT);
 			return;
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__SCOPES:
 			getScopes().clear();
@@ -600,9 +600,9 @@ public class SubscriptionConfigurationImpl extends DaprNodeImpl implements Subsc
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_MAX_MESSAGES_COUNT:
 			return BULK_SUBSCRIBE_MAX_MESSAGES_COUNT_EDEFAULT == null ? bulkSubscribe_maxMessagesCount != null
 					: !BULK_SUBSCRIBE_MAX_MESSAGES_COUNT_EDEFAULT.equals(bulkSubscribe_maxMessagesCount);
-		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_MAX_AWAIT_DURATION_MS:
-			return BULK_SUBSCRIBE_MAX_AWAIT_DURATION_MS_EDEFAULT == null ? bulkSubscribe_maxAwaitDurationMs != null
-					: !BULK_SUBSCRIBE_MAX_AWAIT_DURATION_MS_EDEFAULT.equals(bulkSubscribe_maxAwaitDurationMs);
+		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_MAX_AWAIT_DURATIONS:
+			return BULK_SUBSCRIBE_MAX_AWAIT_DURATIONS_EDEFAULT == null ? bulkSubscribe_maxAwaitDurations != null
+					: !BULK_SUBSCRIBE_MAX_AWAIT_DURATIONS_EDEFAULT.equals(bulkSubscribe_maxAwaitDurations);
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__SCOPES:
 			return scopes != null && !scopes.isEmpty();
 		}
@@ -634,8 +634,8 @@ public class SubscriptionConfigurationImpl extends DaprNodeImpl implements Subsc
 		result.append(bulkSubscribe_enabled);
 		result.append(", bulkSubscribe_maxMessagesCount: ");
 		result.append(bulkSubscribe_maxMessagesCount);
-		result.append(", bulkSubscribe_maxAwaitDurationMs: ");
-		result.append(bulkSubscribe_maxAwaitDurationMs);
+		result.append(", bulkSubscribe_maxAwaitDurations: ");
+		result.append(bulkSubscribe_maxAwaitDurations);
 		result.append(')');
 		return result.toString();
 	}

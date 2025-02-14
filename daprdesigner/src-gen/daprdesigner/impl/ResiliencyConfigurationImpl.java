@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link daprdesigner.impl.ResiliencyConfigurationImpl#getVersion <em>Version</em>}</li>
  *   <li>{@link daprdesigner.impl.ResiliencyConfigurationImpl#getScopes <em>Scopes</em>}</li>
  *   <li>{@link daprdesigner.impl.ResiliencyConfigurationImpl#getPolicy <em>Policy</em>}</li>
- *   <li>{@link daprdesigner.impl.ResiliencyConfigurationImpl#getTargets <em>Targets</em>}</li>
+ *   <li>{@link daprdesigner.impl.ResiliencyConfigurationImpl#getResiliencyTargets <em>Resiliency Targets</em>}</li>
  * </ul>
  *
  * @generated
@@ -140,14 +140,14 @@ public class ResiliencyConfigurationImpl extends DaprNodeImpl implements Resilie
 	protected ResiliencyPolicy policy;
 
 	/**
-	 * The cached value of the '{@link #getTargets() <em>Targets</em>}' reference list.
+	 * The cached value of the '{@link #getResiliencyTargets() <em>Resiliency Targets</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTargets()
+	 * @see #getResiliencyTargets()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ResiliencyTarget> targets;
+	protected EList<ResiliencyTarget> resiliencyTargets;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -262,12 +262,12 @@ public class ResiliencyConfigurationImpl extends DaprNodeImpl implements Resilie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ResiliencyTarget> getTargets() {
-		if (targets == null) {
-			targets = new EObjectResolvingEList<ResiliencyTarget>(ResiliencyTarget.class, this,
-					DaprdesignerPackage.RESILIENCY_CONFIGURATION__TARGETS);
+	public EList<ResiliencyTarget> getResiliencyTargets() {
+		if (resiliencyTargets == null) {
+			resiliencyTargets = new EObjectResolvingEList<ResiliencyTarget>(ResiliencyTarget.class, this,
+					DaprdesignerPackage.RESILIENCY_CONFIGURATION__RESILIENCY_TARGETS);
 		}
-		return targets;
+		return resiliencyTargets;
 	}
 
 	/**
@@ -292,8 +292,8 @@ public class ResiliencyConfigurationImpl extends DaprNodeImpl implements Resilie
 			if (resolve)
 				return getPolicy();
 			return basicGetPolicy();
-		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__TARGETS:
-			return getTargets();
+		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__RESILIENCY_TARGETS:
+			return getResiliencyTargets();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -314,9 +314,9 @@ public class ResiliencyConfigurationImpl extends DaprNodeImpl implements Resilie
 		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__POLICY:
 			setPolicy((ResiliencyPolicy) newValue);
 			return;
-		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__TARGETS:
-			getTargets().clear();
-			getTargets().addAll((Collection<? extends ResiliencyTarget>) newValue);
+		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__RESILIENCY_TARGETS:
+			getResiliencyTargets().clear();
+			getResiliencyTargets().addAll((Collection<? extends ResiliencyTarget>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -336,8 +336,8 @@ public class ResiliencyConfigurationImpl extends DaprNodeImpl implements Resilie
 		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__POLICY:
 			setPolicy((ResiliencyPolicy) null);
 			return;
-		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__TARGETS:
-			getTargets().clear();
+		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__RESILIENCY_TARGETS:
+			getResiliencyTargets().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -363,8 +363,8 @@ public class ResiliencyConfigurationImpl extends DaprNodeImpl implements Resilie
 			return scopes != null && !scopes.isEmpty();
 		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__POLICY:
 			return policy != null;
-		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__TARGETS:
-			return targets != null && !targets.isEmpty();
+		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__RESILIENCY_TARGETS:
+			return resiliencyTargets != null && !resiliencyTargets.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

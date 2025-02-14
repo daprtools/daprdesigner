@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link daprdesigner.impl.ResiliencyTimeoutImpl#getHelp <em>Help</em>}</li>
- *   <li>{@link daprdesigner.impl.ResiliencyTimeoutImpl#getTimeOutinSeconds <em>Time Outin Seconds</em>}</li>
+ *   <li>{@link daprdesigner.impl.ResiliencyTimeoutImpl#getTimeOutInSeconds <em>Time Out In Seconds</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,24 +47,24 @@ public class ResiliencyTimeoutImpl extends DaprNodeImpl implements ResiliencyTim
 	protected String help = HELP_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTimeOutinSeconds() <em>Time Outin Seconds</em>}' attribute.
+	 * The default value of the '{@link #getTimeOutInSeconds() <em>Time Out In Seconds</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTimeOutinSeconds()
+	 * @see #getTimeOutInSeconds()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int TIME_OUTIN_SECONDS_EDEFAULT = 0;
+	protected static final int TIME_OUT_IN_SECONDS_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getTimeOutinSeconds() <em>Time Outin Seconds</em>}' attribute.
+	 * The cached value of the '{@link #getTimeOutInSeconds() <em>Time Out In Seconds</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTimeOutinSeconds()
+	 * @see #getTimeOutInSeconds()
 	 * @generated
 	 * @ordered
 	 */
-	protected int timeOutinSeconds = TIME_OUTIN_SECONDS_EDEFAULT;
+	protected int timeOutInSeconds = TIME_OUT_IN_SECONDS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -99,8 +99,8 @@ public class ResiliencyTimeoutImpl extends DaprNodeImpl implements ResiliencyTim
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getTimeOutinSeconds() {
-		return timeOutinSeconds;
+	public int getTimeOutInSeconds() {
+		return timeOutInSeconds;
 	}
 
 	/**
@@ -108,12 +108,13 @@ public class ResiliencyTimeoutImpl extends DaprNodeImpl implements ResiliencyTim
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTimeOutinSeconds(int newTimeOutinSeconds) {
-		int oldTimeOutinSeconds = timeOutinSeconds;
-		timeOutinSeconds = newTimeOutinSeconds;
+	public void setTimeOutInSeconds(int newTimeOutInSeconds) {
+		int oldTimeOutInSeconds = timeOutInSeconds;
+		timeOutInSeconds = newTimeOutInSeconds;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					DaprdesignerPackage.RESILIENCY_TIMEOUT__TIME_OUTIN_SECONDS, oldTimeOutinSeconds, timeOutinSeconds));
+					DaprdesignerPackage.RESILIENCY_TIMEOUT__TIME_OUT_IN_SECONDS, oldTimeOutInSeconds,
+					timeOutInSeconds));
 	}
 
 	/**
@@ -126,8 +127,8 @@ public class ResiliencyTimeoutImpl extends DaprNodeImpl implements ResiliencyTim
 		switch (featureID) {
 		case DaprdesignerPackage.RESILIENCY_TIMEOUT__HELP:
 			return getHelp();
-		case DaprdesignerPackage.RESILIENCY_TIMEOUT__TIME_OUTIN_SECONDS:
-			return getTimeOutinSeconds();
+		case DaprdesignerPackage.RESILIENCY_TIMEOUT__TIME_OUT_IN_SECONDS:
+			return getTimeOutInSeconds();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -140,8 +141,8 @@ public class ResiliencyTimeoutImpl extends DaprNodeImpl implements ResiliencyTim
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DaprdesignerPackage.RESILIENCY_TIMEOUT__TIME_OUTIN_SECONDS:
-			setTimeOutinSeconds((Integer) newValue);
+		case DaprdesignerPackage.RESILIENCY_TIMEOUT__TIME_OUT_IN_SECONDS:
+			setTimeOutInSeconds((Integer) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -155,8 +156,8 @@ public class ResiliencyTimeoutImpl extends DaprNodeImpl implements ResiliencyTim
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DaprdesignerPackage.RESILIENCY_TIMEOUT__TIME_OUTIN_SECONDS:
-			setTimeOutinSeconds(TIME_OUTIN_SECONDS_EDEFAULT);
+		case DaprdesignerPackage.RESILIENCY_TIMEOUT__TIME_OUT_IN_SECONDS:
+			setTimeOutInSeconds(TIME_OUT_IN_SECONDS_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -172,8 +173,8 @@ public class ResiliencyTimeoutImpl extends DaprNodeImpl implements ResiliencyTim
 		switch (featureID) {
 		case DaprdesignerPackage.RESILIENCY_TIMEOUT__HELP:
 			return HELP_EDEFAULT == null ? help != null : !HELP_EDEFAULT.equals(help);
-		case DaprdesignerPackage.RESILIENCY_TIMEOUT__TIME_OUTIN_SECONDS:
-			return timeOutinSeconds != TIME_OUTIN_SECONDS_EDEFAULT;
+		case DaprdesignerPackage.RESILIENCY_TIMEOUT__TIME_OUT_IN_SECONDS:
+			return timeOutInSeconds != TIME_OUT_IN_SECONDS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -191,8 +192,8 @@ public class ResiliencyTimeoutImpl extends DaprNodeImpl implements ResiliencyTim
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (help: ");
 		result.append(help);
-		result.append(", timeOutinSeconds: ");
-		result.append(timeOutinSeconds);
+		result.append(", timeOutInSeconds: ");
+		result.append(timeOutInSeconds);
 		result.append(')');
 		return result.toString();
 	}

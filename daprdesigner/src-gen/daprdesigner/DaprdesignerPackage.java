@@ -2550,13 +2550,13 @@ public interface DaprdesignerPackage extends EPackage {
 	int SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_MAX_MESSAGES_COUNT = DAPR_NODE_FEATURE_COUNT + 8;
 
 	/**
-	 * The feature id for the '<em><b>Bulk Subscribe max Await Duration Ms</b></em>' attribute.
+	 * The feature id for the '<em><b>Bulk Subscribe max Await Durations</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_MAX_AWAIT_DURATION_MS = DAPR_NODE_FEATURE_COUNT + 9;
+	int SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_MAX_AWAIT_DURATIONS = DAPR_NODE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Scopes</b></em>' reference list.
@@ -2759,13 +2759,13 @@ public interface DaprdesignerPackage extends EPackage {
 	int RESILIENCY_CONFIGURATION__POLICY = DAPR_NODE_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Targets</b></em>' reference list.
+	 * The feature id for the '<em><b>Resiliency Targets</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESILIENCY_CONFIGURATION__TARGETS = DAPR_NODE_FEATURE_COUNT + 6;
+	int RESILIENCY_CONFIGURATION__RESILIENCY_TARGETS = DAPR_NODE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Resiliency Configuration</em>' class.
@@ -3023,13 +3023,13 @@ public interface DaprdesignerPackage extends EPackage {
 	int RESILIENCY_TIMEOUT__HELP = DAPR_NODE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Time Outin Seconds</b></em>' attribute.
+	 * The feature id for the '<em><b>Time Out In Seconds</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESILIENCY_TIMEOUT__TIME_OUTIN_SECONDS = DAPR_NODE_FEATURE_COUNT + 1;
+	int RESILIENCY_TIMEOUT__TIME_OUT_IN_SECONDS = DAPR_NODE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Resiliency Timeout</em>' class.
@@ -6343,15 +6343,15 @@ public interface DaprdesignerPackage extends EPackage {
 	EAttribute getSubscriptionConfiguration_BulkSubscribe_maxMessagesCount();
 
 	/**
-	 * Returns the meta object for the attribute '{@link daprdesigner.SubscriptionConfiguration#getBulkSubscribe_maxAwaitDurationMs <em>Bulk Subscribe max Await Duration Ms</em>}'.
+	 * Returns the meta object for the attribute '{@link daprdesigner.SubscriptionConfiguration#getBulkSubscribe_maxAwaitDurations <em>Bulk Subscribe max Await Durations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Bulk Subscribe max Await Duration Ms</em>'.
-	 * @see daprdesigner.SubscriptionConfiguration#getBulkSubscribe_maxAwaitDurationMs()
+	 * @return the meta object for the attribute '<em>Bulk Subscribe max Await Durations</em>'.
+	 * @see daprdesigner.SubscriptionConfiguration#getBulkSubscribe_maxAwaitDurations()
 	 * @see #getSubscriptionConfiguration()
 	 * @generated
 	 */
-	EAttribute getSubscriptionConfiguration_BulkSubscribe_maxAwaitDurationMs();
+	EAttribute getSubscriptionConfiguration_BulkSubscribe_maxAwaitDurations();
 
 	/**
 	 * Returns the meta object for the reference list '{@link daprdesigner.SubscriptionConfiguration#getScopes <em>Scopes</em>}'.
@@ -6495,15 +6495,15 @@ public interface DaprdesignerPackage extends EPackage {
 	EReference getResiliencyConfiguration_Policy();
 
 	/**
-	 * Returns the meta object for the reference list '{@link daprdesigner.ResiliencyConfiguration#getTargets <em>Targets</em>}'.
+	 * Returns the meta object for the reference list '{@link daprdesigner.ResiliencyConfiguration#getResiliencyTargets <em>Resiliency Targets</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Targets</em>'.
-	 * @see daprdesigner.ResiliencyConfiguration#getTargets()
+	 * @return the meta object for the reference list '<em>Resiliency Targets</em>'.
+	 * @see daprdesigner.ResiliencyConfiguration#getResiliencyTargets()
 	 * @see #getResiliencyConfiguration()
 	 * @generated
 	 */
-	EReference getResiliencyConfiguration_Targets();
+	EReference getResiliencyConfiguration_ResiliencyTargets();
 
 	/**
 	 * Returns the meta object for class '{@link daprdesigner.ResiliencyPolicy <em>Resiliency Policy</em>}'.
@@ -6646,15 +6646,15 @@ public interface DaprdesignerPackage extends EPackage {
 	EAttribute getResiliencyTimeout_Help();
 
 	/**
-	 * Returns the meta object for the attribute '{@link daprdesigner.ResiliencyTimeout#getTimeOutinSeconds <em>Time Outin Seconds</em>}'.
+	 * Returns the meta object for the attribute '{@link daprdesigner.ResiliencyTimeout#getTimeOutInSeconds <em>Time Out In Seconds</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Time Outin Seconds</em>'.
-	 * @see daprdesigner.ResiliencyTimeout#getTimeOutinSeconds()
+	 * @return the meta object for the attribute '<em>Time Out In Seconds</em>'.
+	 * @see daprdesigner.ResiliencyTimeout#getTimeOutInSeconds()
 	 * @see #getResiliencyTimeout()
 	 * @generated
 	 */
-	EAttribute getResiliencyTimeout_TimeOutinSeconds();
+	EAttribute getResiliencyTimeout_TimeOutInSeconds();
 
 	/**
 	 * Returns the meta object for class '{@link daprdesigner.CircuitBreakerPolicy <em>Circuit Breaker Policy</em>}'.
@@ -8543,13 +8543,13 @@ public interface DaprdesignerPackage extends EPackage {
 				.getSubscriptionConfiguration_BulkSubscribe_maxMessagesCount();
 
 		/**
-		 * The meta object literal for the '<em><b>Bulk Subscribe max Await Duration Ms</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Bulk Subscribe max Await Durations</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_MAX_AWAIT_DURATION_MS = eINSTANCE
-				.getSubscriptionConfiguration_BulkSubscribe_maxAwaitDurationMs();
+		EAttribute SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_MAX_AWAIT_DURATIONS = eINSTANCE
+				.getSubscriptionConfiguration_BulkSubscribe_maxAwaitDurations();
 
 		/**
 		 * The meta object literal for the '<em><b>Scopes</b></em>' reference list feature.
@@ -8660,12 +8660,13 @@ public interface DaprdesignerPackage extends EPackage {
 		EReference RESILIENCY_CONFIGURATION__POLICY = eINSTANCE.getResiliencyConfiguration_Policy();
 
 		/**
-		 * The meta object literal for the '<em><b>Targets</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Resiliency Targets</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RESILIENCY_CONFIGURATION__TARGETS = eINSTANCE.getResiliencyConfiguration_Targets();
+		EReference RESILIENCY_CONFIGURATION__RESILIENCY_TARGETS = eINSTANCE
+				.getResiliencyConfiguration_ResiliencyTargets();
 
 		/**
 		 * The meta object literal for the '{@link daprdesigner.impl.ResiliencyPolicyImpl <em>Resiliency Policy</em>}' class.
@@ -8778,12 +8779,12 @@ public interface DaprdesignerPackage extends EPackage {
 		EAttribute RESILIENCY_TIMEOUT__HELP = eINSTANCE.getResiliencyTimeout_Help();
 
 		/**
-		 * The meta object literal for the '<em><b>Time Outin Seconds</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Time Out In Seconds</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RESILIENCY_TIMEOUT__TIME_OUTIN_SECONDS = eINSTANCE.getResiliencyTimeout_TimeOutinSeconds();
+		EAttribute RESILIENCY_TIMEOUT__TIME_OUT_IN_SECONDS = eINSTANCE.getResiliencyTimeout_TimeOutInSeconds();
 
 		/**
 		 * The meta object literal for the '{@link daprdesigner.impl.CircuitBreakerPolicyImpl <em>Circuit Breaker Policy</em>}' class.
