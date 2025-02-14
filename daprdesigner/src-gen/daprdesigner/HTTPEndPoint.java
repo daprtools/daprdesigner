@@ -19,10 +19,10 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link daprdesigner.HTTPEndPoint#getBaseUrl <em>Base Url</em>}</li>
  *   <li>{@link daprdesigner.HTTPEndPoint#getAuth <em>Auth</em>}</li>
  *   <li>{@link daprdesigner.HTTPEndPoint#getScopes <em>Scopes</em>}</li>
- *   <li>{@link daprdesigner.HTTPEndPoint#getHeaders <em>Headers</em>}</li>
- *   <li>{@link daprdesigner.HTTPEndPoint#getClientTLS_rootCA <em>Client TLS root CA</em>}</li>
- *   <li>{@link daprdesigner.HTTPEndPoint#getClientTLS_certificate <em>Client TLS certificate</em>}</li>
- *   <li>{@link daprdesigner.HTTPEndPoint#getClientTLS_privateKey <em>Client TLS private Key</em>}</li>
+ *   <li>{@link daprdesigner.HTTPEndPoint#getSpecHeaders <em>Spec Headers</em>}</li>
+ *   <li>{@link daprdesigner.HTTPEndPoint#getSpecRootCA <em>Spec Root CA</em>}</li>
+ *   <li>{@link daprdesigner.HTTPEndPoint#getSpecCertificate <em>Spec Certificate</em>}</li>
+ *   <li>{@link daprdesigner.HTTPEndPoint#getSpecPrivateKey <em>Spec Private Key</em>}</li>
  * </ul>
  *
  * @see daprdesigner.DaprdesignerPackage#getHTTPEndPoint()
@@ -123,81 +123,81 @@ public interface HTTPEndPoint extends DaprNode {
 	EList<App> getScopes();
 
 	/**
-	 * Returns the value of the '<em><b>Headers</b></em>' reference list.
+	 * Returns the value of the '<em><b>Spec Headers</b></em>' reference list.
 	 * The list contents are of type {@link daprdesigner.SpecMetadata}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Headers</em>' reference list.
-	 * @see daprdesigner.DaprdesignerPackage#getHTTPEndPoint_Headers()
+	 * @return the value of the '<em>Spec Headers</em>' reference list.
+	 * @see daprdesigner.DaprdesignerPackage#getHTTPEndPoint_SpecHeaders()
 	 * @model
 	 * @generated
 	 */
-	EList<SpecMetadata> getHeaders();
+	EList<SpecMetadata> getSpecHeaders();
 
 	/**
-	 * Returns the value of the '<em><b>Client TLS root CA</b></em>' reference.
+	 * Returns the value of the '<em><b>Spec Root CA</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Client TLS root CA</em>' reference.
-	 * @see #setClientTLS_rootCA(SpecMetadata)
-	 * @see daprdesigner.DaprdesignerPackage#getHTTPEndPoint_ClientTLS_rootCA()
+	 * @return the value of the '<em>Spec Root CA</em>' reference.
+	 * @see #setSpecRootCA(SpecMetadata)
+	 * @see daprdesigner.DaprdesignerPackage#getHTTPEndPoint_SpecRootCA()
 	 * @model
 	 * @generated
 	 */
-	SpecMetadata getClientTLS_rootCA();
+	SpecMetadata getSpecRootCA();
 
 	/**
-	 * Sets the value of the '{@link daprdesigner.HTTPEndPoint#getClientTLS_rootCA <em>Client TLS root CA</em>}' reference.
+	 * Sets the value of the '{@link daprdesigner.HTTPEndPoint#getSpecRootCA <em>Spec Root CA</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Client TLS root CA</em>' reference.
-	 * @see #getClientTLS_rootCA()
+	 * @param value the new value of the '<em>Spec Root CA</em>' reference.
+	 * @see #getSpecRootCA()
 	 * @generated
 	 */
-	void setClientTLS_rootCA(SpecMetadata value);
+	void setSpecRootCA(SpecMetadata value);
 
 	/**
-	 * Returns the value of the '<em><b>Client TLS certificate</b></em>' reference.
+	 * Returns the value of the '<em><b>Spec Certificate</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Client TLS certificate</em>' reference.
-	 * @see #setClientTLS_certificate(SpecMetadata)
-	 * @see daprdesigner.DaprdesignerPackage#getHTTPEndPoint_ClientTLS_certificate()
+	 * @return the value of the '<em>Spec Certificate</em>' reference.
+	 * @see #setSpecCertificate(SpecMetadata)
+	 * @see daprdesigner.DaprdesignerPackage#getHTTPEndPoint_SpecCertificate()
 	 * @model
 	 * @generated
 	 */
-	SpecMetadata getClientTLS_certificate();
+	SpecMetadata getSpecCertificate();
 
 	/**
-	 * Sets the value of the '{@link daprdesigner.HTTPEndPoint#getClientTLS_certificate <em>Client TLS certificate</em>}' reference.
+	 * Sets the value of the '{@link daprdesigner.HTTPEndPoint#getSpecCertificate <em>Spec Certificate</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Client TLS certificate</em>' reference.
-	 * @see #getClientTLS_certificate()
+	 * @param value the new value of the '<em>Spec Certificate</em>' reference.
+	 * @see #getSpecCertificate()
 	 * @generated
 	 */
-	void setClientTLS_certificate(SpecMetadata value);
+	void setSpecCertificate(SpecMetadata value);
 
 	/**
-	 * Returns the value of the '<em><b>Client TLS private Key</b></em>' reference.
+	 * Returns the value of the '<em><b>Spec Private Key</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Client TLS private Key</em>' reference.
-	 * @see #setClientTLS_privateKey(SpecMetadata)
-	 * @see daprdesigner.DaprdesignerPackage#getHTTPEndPoint_ClientTLS_privateKey()
+	 * @return the value of the '<em>Spec Private Key</em>' reference.
+	 * @see #setSpecPrivateKey(SpecMetadata)
+	 * @see daprdesigner.DaprdesignerPackage#getHTTPEndPoint_SpecPrivateKey()
 	 * @model
 	 * @generated
 	 */
-	SpecMetadata getClientTLS_privateKey();
+	SpecMetadata getSpecPrivateKey();
 
 	/**
-	 * Sets the value of the '{@link daprdesigner.HTTPEndPoint#getClientTLS_privateKey <em>Client TLS private Key</em>}' reference.
+	 * Sets the value of the '{@link daprdesigner.HTTPEndPoint#getSpecPrivateKey <em>Spec Private Key</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Client TLS private Key</em>' reference.
-	 * @see #getClientTLS_privateKey()
+	 * @param value the new value of the '<em>Spec Private Key</em>' reference.
+	 * @see #getSpecPrivateKey()
 	 * @generated
 	 */
-	void setClientTLS_privateKey(SpecMetadata value);
+	void setSpecPrivateKey(SpecMetadata value);
 
 } // HTTPEndPoint

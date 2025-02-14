@@ -2121,7 +2121,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getHTTPEndPoint_Headers() {
+	public EReference getHTTPEndPoint_SpecHeaders() {
 		return (EReference) httpEndPointEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -2130,7 +2130,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getHTTPEndPoint_ClientTLS_rootCA() {
+	public EReference getHTTPEndPoint_SpecRootCA() {
 		return (EReference) httpEndPointEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -2139,7 +2139,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getHTTPEndPoint_ClientTLS_certificate() {
+	public EReference getHTTPEndPoint_SpecCertificate() {
 		return (EReference) httpEndPointEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -2148,7 +2148,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getHTTPEndPoint_ClientTLS_privateKey() {
+	public EReference getHTTPEndPoint_SpecPrivateKey() {
 		return (EReference) httpEndPointEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -2833,10 +2833,10 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		createEAttribute(httpEndPointEClass, HTTP_END_POINT__BASE_URL);
 		createEReference(httpEndPointEClass, HTTP_END_POINT__AUTH);
 		createEReference(httpEndPointEClass, HTTP_END_POINT__SCOPES);
-		createEReference(httpEndPointEClass, HTTP_END_POINT__HEADERS);
-		createEReference(httpEndPointEClass, HTTP_END_POINT__CLIENT_TLS_ROOT_CA);
-		createEReference(httpEndPointEClass, HTTP_END_POINT__CLIENT_TLS_CERTIFICATE);
-		createEReference(httpEndPointEClass, HTTP_END_POINT__CLIENT_TLS_PRIVATE_KEY);
+		createEReference(httpEndPointEClass, HTTP_END_POINT__SPEC_HEADERS);
+		createEReference(httpEndPointEClass, HTTP_END_POINT__SPEC_ROOT_CA);
+		createEReference(httpEndPointEClass, HTTP_END_POINT__SPEC_CERTIFICATE);
+		createEReference(httpEndPointEClass, HTTP_END_POINT__SPEC_PRIVATE_KEY);
 
 		componentEClass = createEClass(COMPONENT);
 		createEAttribute(componentEClass, COMPONENT__API_VERSION);
@@ -3497,18 +3497,18 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		initEReference(getHTTPEndPoint_Scopes(), this.getApp(), null, "scopes", null, 0, -1, HTTPEndPoint.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getHTTPEndPoint_Headers(), this.getSpecMetadata(), null, "headers", null, 0, -1,
+		initEReference(getHTTPEndPoint_SpecHeaders(), this.getSpecMetadata(), null, "specHeaders", null, 0, -1,
 				HTTPEndPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getHTTPEndPoint_ClientTLS_rootCA(), this.getSpecMetadata(), null, "clientTLS_rootCA", null, 0, 1,
+		initEReference(getHTTPEndPoint_SpecRootCA(), this.getSpecMetadata(), null, "specRootCA", null, 0, 1,
 				HTTPEndPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getHTTPEndPoint_ClientTLS_certificate(), this.getSpecMetadata(), null, "clientTLS_certificate",
-				null, 0, 1, HTTPEndPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getHTTPEndPoint_ClientTLS_privateKey(), this.getSpecMetadata(), null, "clientTLS_privateKey",
-				null, 0, 1, HTTPEndPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHTTPEndPoint_SpecCertificate(), this.getSpecMetadata(), null, "specCertificate", null, 0, 1,
+				HTTPEndPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHTTPEndPoint_SpecPrivateKey(), this.getSpecMetadata(), null, "specPrivateKey", null, 0, 1,
+				HTTPEndPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentEClass, Component.class, "Component", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

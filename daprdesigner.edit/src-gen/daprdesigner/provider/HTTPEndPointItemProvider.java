@@ -2,7 +2,6 @@
  */
 package daprdesigner.provider;
 
-import daprdesigner.DaprdesignerFactory;
 import daprdesigner.DaprdesignerPackage;
 import daprdesigner.HTTPEndPoint;
 
@@ -11,9 +10,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -53,6 +49,10 @@ public class HTTPEndPointItemProvider extends DaprNodeItemProvider {
 			addBaseUrlPropertyDescriptor(object);
 			addAuthPropertyDescriptor(object);
 			addScopesPropertyDescriptor(object);
+			addSpecHeadersPropertyDescriptor(object);
+			addSpecRootCAPropertyDescriptor(object);
+			addSpecCertificatePropertyDescriptor(object);
+			addSpecPrivateKeyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -152,36 +152,67 @@ public class HTTPEndPointItemProvider extends DaprNodeItemProvider {
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * This adds a property descriptor for the Spec Headers feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(DaprdesignerPackage.Literals.HTTP_END_POINT__HEADERS);
-			childrenFeatures.add(DaprdesignerPackage.Literals.HTTP_END_POINT__CLIENT_TLS_ROOT_CA);
-			childrenFeatures.add(DaprdesignerPackage.Literals.HTTP_END_POINT__CLIENT_TLS_CERTIFICATE);
-			childrenFeatures.add(DaprdesignerPackage.Literals.HTTP_END_POINT__CLIENT_TLS_PRIVATE_KEY);
-		}
-		return childrenFeatures;
+	protected void addSpecHeadersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_HTTPEndPoint_specHeaders_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_HTTPEndPoint_specHeaders_feature",
+								"_UI_HTTPEndPoint_type"),
+						DaprdesignerPackage.Literals.HTTP_END_POINT__SPEC_HEADERS, true, false, true, null, null,
+						null));
 	}
 
 	/**
+	 * This adds a property descriptor for the Spec Root CA feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
+	protected void addSpecRootCAPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_HTTPEndPoint_specRootCA_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_HTTPEndPoint_specRootCA_feature",
+								"_UI_HTTPEndPoint_type"),
+						DaprdesignerPackage.Literals.HTTP_END_POINT__SPEC_ROOT_CA, true, false, true, null, null,
+						null));
+	}
 
-		return super.getChildFeature(object, child);
+	/**
+	 * This adds a property descriptor for the Spec Certificate feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSpecCertificatePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_HTTPEndPoint_specCertificate_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_HTTPEndPoint_specCertificate_feature",
+								"_UI_HTTPEndPoint_type"),
+						DaprdesignerPackage.Literals.HTTP_END_POINT__SPEC_CERTIFICATE, true, false, true, null, null,
+						null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Spec Private Key feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSpecPrivateKeyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_HTTPEndPoint_specPrivateKey_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_HTTPEndPoint_specPrivateKey_feature",
+								"_UI_HTTPEndPoint_type"),
+						DaprdesignerPackage.Literals.HTTP_END_POINT__SPEC_PRIVATE_KEY, true, false, true, null, null,
+						null));
 	}
 
 	/**
@@ -236,12 +267,6 @@ public class HTTPEndPointItemProvider extends DaprNodeItemProvider {
 		case DaprdesignerPackage.HTTP_END_POINT__BASE_URL:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case DaprdesignerPackage.HTTP_END_POINT__HEADERS:
-		case DaprdesignerPackage.HTTP_END_POINT__CLIENT_TLS_ROOT_CA:
-		case DaprdesignerPackage.HTTP_END_POINT__CLIENT_TLS_CERTIFICATE:
-		case DaprdesignerPackage.HTTP_END_POINT__CLIENT_TLS_PRIVATE_KEY:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -256,43 +281,6 @@ public class HTTPEndPointItemProvider extends DaprNodeItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(DaprdesignerPackage.Literals.HTTP_END_POINT__HEADERS,
-				DaprdesignerFactory.eINSTANCE.createSpecMetadata()));
-
-		newChildDescriptors.add(createChildParameter(DaprdesignerPackage.Literals.HTTP_END_POINT__CLIENT_TLS_ROOT_CA,
-				DaprdesignerFactory.eINSTANCE.createSpecMetadata()));
-
-		newChildDescriptors
-				.add(createChildParameter(DaprdesignerPackage.Literals.HTTP_END_POINT__CLIENT_TLS_CERTIFICATE,
-						DaprdesignerFactory.eINSTANCE.createSpecMetadata()));
-
-		newChildDescriptors
-				.add(createChildParameter(DaprdesignerPackage.Literals.HTTP_END_POINT__CLIENT_TLS_PRIVATE_KEY,
-						DaprdesignerFactory.eINSTANCE.createSpecMetadata()));
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify = childFeature == DaprdesignerPackage.Literals.HTTP_END_POINT__HEADERS
-				|| childFeature == DaprdesignerPackage.Literals.HTTP_END_POINT__CLIENT_TLS_ROOT_CA
-				|| childFeature == DaprdesignerPackage.Literals.HTTP_END_POINT__CLIENT_TLS_CERTIFICATE
-				|| childFeature == DaprdesignerPackage.Literals.HTTP_END_POINT__CLIENT_TLS_PRIVATE_KEY;
-
-		if (qualify) {
-			return getString("_UI_CreateChild_text2",
-					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

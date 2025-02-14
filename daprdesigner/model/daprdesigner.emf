@@ -436,10 +436,10 @@ class HTTPEndPoint extends DaprNode {
 	attr String baseUrl;
 	ref SecretStore auth;
 	ref App[*] scopes;
-	ref SpecMetadata[*] headers; 
-	ref SpecMetadata clientTLS_rootCA; 
-	ref SpecMetadata clientTLS_certificate; 
-	ref SpecMetadata clientTLS_privateKey;
+	ref SpecMetadata[*] specHeaders; 
+	ref SpecMetadata specRootCA; 
+	ref SpecMetadata specCertificate; 
+	ref SpecMetadata specPrivateKey;
 	
 }
 

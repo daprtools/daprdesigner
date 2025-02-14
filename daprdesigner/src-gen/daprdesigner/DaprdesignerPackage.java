@@ -3368,40 +3368,40 @@ public interface DaprdesignerPackage extends EPackage {
 	int HTTP_END_POINT__SCOPES = DAPR_NODE_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Headers</b></em>' reference list.
+	 * The feature id for the '<em><b>Spec Headers</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HTTP_END_POINT__HEADERS = DAPR_NODE_FEATURE_COUNT + 6;
+	int HTTP_END_POINT__SPEC_HEADERS = DAPR_NODE_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Client TLS root CA</b></em>' reference.
+	 * The feature id for the '<em><b>Spec Root CA</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HTTP_END_POINT__CLIENT_TLS_ROOT_CA = DAPR_NODE_FEATURE_COUNT + 7;
+	int HTTP_END_POINT__SPEC_ROOT_CA = DAPR_NODE_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Client TLS certificate</b></em>' reference.
+	 * The feature id for the '<em><b>Spec Certificate</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HTTP_END_POINT__CLIENT_TLS_CERTIFICATE = DAPR_NODE_FEATURE_COUNT + 8;
+	int HTTP_END_POINT__SPEC_CERTIFICATE = DAPR_NODE_FEATURE_COUNT + 8;
 
 	/**
-	 * The feature id for the '<em><b>Client TLS private Key</b></em>' reference.
+	 * The feature id for the '<em><b>Spec Private Key</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HTTP_END_POINT__CLIENT_TLS_PRIVATE_KEY = DAPR_NODE_FEATURE_COUNT + 9;
+	int HTTP_END_POINT__SPEC_PRIVATE_KEY = DAPR_NODE_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>HTTP End Point</em>' class.
@@ -6896,48 +6896,48 @@ public interface DaprdesignerPackage extends EPackage {
 	EReference getHTTPEndPoint_Scopes();
 
 	/**
-	 * Returns the meta object for the reference list '{@link daprdesigner.HTTPEndPoint#getHeaders <em>Headers</em>}'.
+	 * Returns the meta object for the reference list '{@link daprdesigner.HTTPEndPoint#getSpecHeaders <em>Spec Headers</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Headers</em>'.
-	 * @see daprdesigner.HTTPEndPoint#getHeaders()
+	 * @return the meta object for the reference list '<em>Spec Headers</em>'.
+	 * @see daprdesigner.HTTPEndPoint#getSpecHeaders()
 	 * @see #getHTTPEndPoint()
 	 * @generated
 	 */
-	EReference getHTTPEndPoint_Headers();
+	EReference getHTTPEndPoint_SpecHeaders();
 
 	/**
-	 * Returns the meta object for the reference '{@link daprdesigner.HTTPEndPoint#getClientTLS_rootCA <em>Client TLS root CA</em>}'.
+	 * Returns the meta object for the reference '{@link daprdesigner.HTTPEndPoint#getSpecRootCA <em>Spec Root CA</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Client TLS root CA</em>'.
-	 * @see daprdesigner.HTTPEndPoint#getClientTLS_rootCA()
+	 * @return the meta object for the reference '<em>Spec Root CA</em>'.
+	 * @see daprdesigner.HTTPEndPoint#getSpecRootCA()
 	 * @see #getHTTPEndPoint()
 	 * @generated
 	 */
-	EReference getHTTPEndPoint_ClientTLS_rootCA();
+	EReference getHTTPEndPoint_SpecRootCA();
 
 	/**
-	 * Returns the meta object for the reference '{@link daprdesigner.HTTPEndPoint#getClientTLS_certificate <em>Client TLS certificate</em>}'.
+	 * Returns the meta object for the reference '{@link daprdesigner.HTTPEndPoint#getSpecCertificate <em>Spec Certificate</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Client TLS certificate</em>'.
-	 * @see daprdesigner.HTTPEndPoint#getClientTLS_certificate()
+	 * @return the meta object for the reference '<em>Spec Certificate</em>'.
+	 * @see daprdesigner.HTTPEndPoint#getSpecCertificate()
 	 * @see #getHTTPEndPoint()
 	 * @generated
 	 */
-	EReference getHTTPEndPoint_ClientTLS_certificate();
+	EReference getHTTPEndPoint_SpecCertificate();
 
 	/**
-	 * Returns the meta object for the reference '{@link daprdesigner.HTTPEndPoint#getClientTLS_privateKey <em>Client TLS private Key</em>}'.
+	 * Returns the meta object for the reference '{@link daprdesigner.HTTPEndPoint#getSpecPrivateKey <em>Spec Private Key</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Client TLS private Key</em>'.
-	 * @see daprdesigner.HTTPEndPoint#getClientTLS_privateKey()
+	 * @return the meta object for the reference '<em>Spec Private Key</em>'.
+	 * @see daprdesigner.HTTPEndPoint#getSpecPrivateKey()
 	 * @see #getHTTPEndPoint()
 	 * @generated
 	 */
-	EReference getHTTPEndPoint_ClientTLS_privateKey();
+	EReference getHTTPEndPoint_SpecPrivateKey();
 
 	/**
 	 * Returns the meta object for class '{@link daprdesigner.Component <em>Component</em>}'.
@@ -8970,36 +8970,36 @@ public interface DaprdesignerPackage extends EPackage {
 		EReference HTTP_END_POINT__SCOPES = eINSTANCE.getHTTPEndPoint_Scopes();
 
 		/**
-		 * The meta object literal for the '<em><b>Headers</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Spec Headers</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference HTTP_END_POINT__HEADERS = eINSTANCE.getHTTPEndPoint_Headers();
+		EReference HTTP_END_POINT__SPEC_HEADERS = eINSTANCE.getHTTPEndPoint_SpecHeaders();
 
 		/**
-		 * The meta object literal for the '<em><b>Client TLS root CA</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Spec Root CA</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference HTTP_END_POINT__CLIENT_TLS_ROOT_CA = eINSTANCE.getHTTPEndPoint_ClientTLS_rootCA();
+		EReference HTTP_END_POINT__SPEC_ROOT_CA = eINSTANCE.getHTTPEndPoint_SpecRootCA();
 
 		/**
-		 * The meta object literal for the '<em><b>Client TLS certificate</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Spec Certificate</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference HTTP_END_POINT__CLIENT_TLS_CERTIFICATE = eINSTANCE.getHTTPEndPoint_ClientTLS_certificate();
+		EReference HTTP_END_POINT__SPEC_CERTIFICATE = eINSTANCE.getHTTPEndPoint_SpecCertificate();
 
 		/**
-		 * The meta object literal for the '<em><b>Client TLS private Key</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Spec Private Key</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference HTTP_END_POINT__CLIENT_TLS_PRIVATE_KEY = eINSTANCE.getHTTPEndPoint_ClientTLS_privateKey();
+		EReference HTTP_END_POINT__SPEC_PRIVATE_KEY = eINSTANCE.getHTTPEndPoint_SpecPrivateKey();
 
 		/**
 		 * The meta object literal for the '{@link daprdesigner.impl.ComponentImpl <em>Component</em>}' class.

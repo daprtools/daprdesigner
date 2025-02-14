@@ -365,12 +365,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="auth" eType="#//SecretStore"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scopes" upperBound="-1"
         eType="#//App"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="headers" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specHeaders" upperBound="-1"
         eType="#//SpecMetadata"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="clientTLS_rootCA" eType="#//SpecMetadata"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="clientTLS_certificate"
-        eType="#//SpecMetadata"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="clientTLS_privateKey" eType="#//SpecMetadata"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specRootCA" eType="#//SpecMetadata"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specCertificate" eType="#//SpecMetadata"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specPrivateKey" eType="#//SpecMetadata"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true" eSuperTypes="#//DaprNode">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="apiVersion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"

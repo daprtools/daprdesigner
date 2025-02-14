@@ -35,10 +35,10 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link daprdesigner.impl.HTTPEndPointImpl#getBaseUrl <em>Base Url</em>}</li>
  *   <li>{@link daprdesigner.impl.HTTPEndPointImpl#getAuth <em>Auth</em>}</li>
  *   <li>{@link daprdesigner.impl.HTTPEndPointImpl#getScopes <em>Scopes</em>}</li>
- *   <li>{@link daprdesigner.impl.HTTPEndPointImpl#getHeaders <em>Headers</em>}</li>
- *   <li>{@link daprdesigner.impl.HTTPEndPointImpl#getClientTLS_rootCA <em>Client TLS root CA</em>}</li>
- *   <li>{@link daprdesigner.impl.HTTPEndPointImpl#getClientTLS_certificate <em>Client TLS certificate</em>}</li>
- *   <li>{@link daprdesigner.impl.HTTPEndPointImpl#getClientTLS_privateKey <em>Client TLS private Key</em>}</li>
+ *   <li>{@link daprdesigner.impl.HTTPEndPointImpl#getSpecHeaders <em>Spec Headers</em>}</li>
+ *   <li>{@link daprdesigner.impl.HTTPEndPointImpl#getSpecRootCA <em>Spec Root CA</em>}</li>
+ *   <li>{@link daprdesigner.impl.HTTPEndPointImpl#getSpecCertificate <em>Spec Certificate</em>}</li>
+ *   <li>{@link daprdesigner.impl.HTTPEndPointImpl#getSpecPrivateKey <em>Spec Private Key</em>}</li>
  * </ul>
  *
  * @generated
@@ -145,44 +145,44 @@ public class HTTPEndPointImpl extends DaprNodeImpl implements HTTPEndPoint {
 	protected EList<App> scopes;
 
 	/**
-	 * The cached value of the '{@link #getHeaders() <em>Headers</em>}' reference list.
+	 * The cached value of the '{@link #getSpecHeaders() <em>Spec Headers</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getHeaders()
+	 * @see #getSpecHeaders()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SpecMetadata> headers;
+	protected EList<SpecMetadata> specHeaders;
 
 	/**
-	 * The cached value of the '{@link #getClientTLS_rootCA() <em>Client TLS root CA</em>}' reference.
+	 * The cached value of the '{@link #getSpecRootCA() <em>Spec Root CA</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getClientTLS_rootCA()
+	 * @see #getSpecRootCA()
 	 * @generated
 	 * @ordered
 	 */
-	protected SpecMetadata clientTLS_rootCA;
+	protected SpecMetadata specRootCA;
 
 	/**
-	 * The cached value of the '{@link #getClientTLS_certificate() <em>Client TLS certificate</em>}' reference.
+	 * The cached value of the '{@link #getSpecCertificate() <em>Spec Certificate</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getClientTLS_certificate()
+	 * @see #getSpecCertificate()
 	 * @generated
 	 * @ordered
 	 */
-	protected SpecMetadata clientTLS_certificate;
+	protected SpecMetadata specCertificate;
 
 	/**
-	 * The cached value of the '{@link #getClientTLS_privateKey() <em>Client TLS private Key</em>}' reference.
+	 * The cached value of the '{@link #getSpecPrivateKey() <em>Spec Private Key</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getClientTLS_privateKey()
+	 * @see #getSpecPrivateKey()
 	 * @generated
 	 * @ordered
 	 */
-	protected SpecMetadata clientTLS_privateKey;
+	protected SpecMetadata specPrivateKey;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -309,12 +309,12 @@ public class HTTPEndPointImpl extends DaprNodeImpl implements HTTPEndPoint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SpecMetadata> getHeaders() {
-		if (headers == null) {
-			headers = new EObjectResolvingEList<SpecMetadata>(SpecMetadata.class, this,
-					DaprdesignerPackage.HTTP_END_POINT__HEADERS);
+	public EList<SpecMetadata> getSpecHeaders() {
+		if (specHeaders == null) {
+			specHeaders = new EObjectResolvingEList<SpecMetadata>(SpecMetadata.class, this,
+					DaprdesignerPackage.HTTP_END_POINT__SPEC_HEADERS);
 		}
-		return headers;
+		return specHeaders;
 	}
 
 	/**
@@ -322,18 +322,17 @@ public class HTTPEndPointImpl extends DaprNodeImpl implements HTTPEndPoint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SpecMetadata getClientTLS_rootCA() {
-		if (clientTLS_rootCA != null && clientTLS_rootCA.eIsProxy()) {
-			InternalEObject oldClientTLS_rootCA = (InternalEObject) clientTLS_rootCA;
-			clientTLS_rootCA = (SpecMetadata) eResolveProxy(oldClientTLS_rootCA);
-			if (clientTLS_rootCA != oldClientTLS_rootCA) {
+	public SpecMetadata getSpecRootCA() {
+		if (specRootCA != null && specRootCA.eIsProxy()) {
+			InternalEObject oldSpecRootCA = (InternalEObject) specRootCA;
+			specRootCA = (SpecMetadata) eResolveProxy(oldSpecRootCA);
+			if (specRootCA != oldSpecRootCA) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							DaprdesignerPackage.HTTP_END_POINT__CLIENT_TLS_ROOT_CA, oldClientTLS_rootCA,
-							clientTLS_rootCA));
+							DaprdesignerPackage.HTTP_END_POINT__SPEC_ROOT_CA, oldSpecRootCA, specRootCA));
 			}
 		}
-		return clientTLS_rootCA;
+		return specRootCA;
 	}
 
 	/**
@@ -341,8 +340,8 @@ public class HTTPEndPointImpl extends DaprNodeImpl implements HTTPEndPoint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SpecMetadata basicGetClientTLS_rootCA() {
-		return clientTLS_rootCA;
+	public SpecMetadata basicGetSpecRootCA() {
+		return specRootCA;
 	}
 
 	/**
@@ -350,12 +349,12 @@ public class HTTPEndPointImpl extends DaprNodeImpl implements HTTPEndPoint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setClientTLS_rootCA(SpecMetadata newClientTLS_rootCA) {
-		SpecMetadata oldClientTLS_rootCA = clientTLS_rootCA;
-		clientTLS_rootCA = newClientTLS_rootCA;
+	public void setSpecRootCA(SpecMetadata newSpecRootCA) {
+		SpecMetadata oldSpecRootCA = specRootCA;
+		specRootCA = newSpecRootCA;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					DaprdesignerPackage.HTTP_END_POINT__CLIENT_TLS_ROOT_CA, oldClientTLS_rootCA, clientTLS_rootCA));
+			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.HTTP_END_POINT__SPEC_ROOT_CA,
+					oldSpecRootCA, specRootCA));
 	}
 
 	/**
@@ -363,18 +362,17 @@ public class HTTPEndPointImpl extends DaprNodeImpl implements HTTPEndPoint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SpecMetadata getClientTLS_certificate() {
-		if (clientTLS_certificate != null && clientTLS_certificate.eIsProxy()) {
-			InternalEObject oldClientTLS_certificate = (InternalEObject) clientTLS_certificate;
-			clientTLS_certificate = (SpecMetadata) eResolveProxy(oldClientTLS_certificate);
-			if (clientTLS_certificate != oldClientTLS_certificate) {
+	public SpecMetadata getSpecCertificate() {
+		if (specCertificate != null && specCertificate.eIsProxy()) {
+			InternalEObject oldSpecCertificate = (InternalEObject) specCertificate;
+			specCertificate = (SpecMetadata) eResolveProxy(oldSpecCertificate);
+			if (specCertificate != oldSpecCertificate) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							DaprdesignerPackage.HTTP_END_POINT__CLIENT_TLS_CERTIFICATE, oldClientTLS_certificate,
-							clientTLS_certificate));
+							DaprdesignerPackage.HTTP_END_POINT__SPEC_CERTIFICATE, oldSpecCertificate, specCertificate));
 			}
 		}
-		return clientTLS_certificate;
+		return specCertificate;
 	}
 
 	/**
@@ -382,8 +380,8 @@ public class HTTPEndPointImpl extends DaprNodeImpl implements HTTPEndPoint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SpecMetadata basicGetClientTLS_certificate() {
-		return clientTLS_certificate;
+	public SpecMetadata basicGetSpecCertificate() {
+		return specCertificate;
 	}
 
 	/**
@@ -391,13 +389,12 @@ public class HTTPEndPointImpl extends DaprNodeImpl implements HTTPEndPoint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setClientTLS_certificate(SpecMetadata newClientTLS_certificate) {
-		SpecMetadata oldClientTLS_certificate = clientTLS_certificate;
-		clientTLS_certificate = newClientTLS_certificate;
+	public void setSpecCertificate(SpecMetadata newSpecCertificate) {
+		SpecMetadata oldSpecCertificate = specCertificate;
+		specCertificate = newSpecCertificate;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					DaprdesignerPackage.HTTP_END_POINT__CLIENT_TLS_CERTIFICATE, oldClientTLS_certificate,
-					clientTLS_certificate));
+			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.HTTP_END_POINT__SPEC_CERTIFICATE,
+					oldSpecCertificate, specCertificate));
 	}
 
 	/**
@@ -405,18 +402,17 @@ public class HTTPEndPointImpl extends DaprNodeImpl implements HTTPEndPoint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SpecMetadata getClientTLS_privateKey() {
-		if (clientTLS_privateKey != null && clientTLS_privateKey.eIsProxy()) {
-			InternalEObject oldClientTLS_privateKey = (InternalEObject) clientTLS_privateKey;
-			clientTLS_privateKey = (SpecMetadata) eResolveProxy(oldClientTLS_privateKey);
-			if (clientTLS_privateKey != oldClientTLS_privateKey) {
+	public SpecMetadata getSpecPrivateKey() {
+		if (specPrivateKey != null && specPrivateKey.eIsProxy()) {
+			InternalEObject oldSpecPrivateKey = (InternalEObject) specPrivateKey;
+			specPrivateKey = (SpecMetadata) eResolveProxy(oldSpecPrivateKey);
+			if (specPrivateKey != oldSpecPrivateKey) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							DaprdesignerPackage.HTTP_END_POINT__CLIENT_TLS_PRIVATE_KEY, oldClientTLS_privateKey,
-							clientTLS_privateKey));
+							DaprdesignerPackage.HTTP_END_POINT__SPEC_PRIVATE_KEY, oldSpecPrivateKey, specPrivateKey));
 			}
 		}
-		return clientTLS_privateKey;
+		return specPrivateKey;
 	}
 
 	/**
@@ -424,8 +420,8 @@ public class HTTPEndPointImpl extends DaprNodeImpl implements HTTPEndPoint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SpecMetadata basicGetClientTLS_privateKey() {
-		return clientTLS_privateKey;
+	public SpecMetadata basicGetSpecPrivateKey() {
+		return specPrivateKey;
 	}
 
 	/**
@@ -433,13 +429,12 @@ public class HTTPEndPointImpl extends DaprNodeImpl implements HTTPEndPoint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setClientTLS_privateKey(SpecMetadata newClientTLS_privateKey) {
-		SpecMetadata oldClientTLS_privateKey = clientTLS_privateKey;
-		clientTLS_privateKey = newClientTLS_privateKey;
+	public void setSpecPrivateKey(SpecMetadata newSpecPrivateKey) {
+		SpecMetadata oldSpecPrivateKey = specPrivateKey;
+		specPrivateKey = newSpecPrivateKey;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					DaprdesignerPackage.HTTP_END_POINT__CLIENT_TLS_PRIVATE_KEY, oldClientTLS_privateKey,
-					clientTLS_privateKey));
+			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.HTTP_END_POINT__SPEC_PRIVATE_KEY,
+					oldSpecPrivateKey, specPrivateKey));
 	}
 
 	/**
@@ -464,20 +459,20 @@ public class HTTPEndPointImpl extends DaprNodeImpl implements HTTPEndPoint {
 			return basicGetAuth();
 		case DaprdesignerPackage.HTTP_END_POINT__SCOPES:
 			return getScopes();
-		case DaprdesignerPackage.HTTP_END_POINT__HEADERS:
-			return getHeaders();
-		case DaprdesignerPackage.HTTP_END_POINT__CLIENT_TLS_ROOT_CA:
+		case DaprdesignerPackage.HTTP_END_POINT__SPEC_HEADERS:
+			return getSpecHeaders();
+		case DaprdesignerPackage.HTTP_END_POINT__SPEC_ROOT_CA:
 			if (resolve)
-				return getClientTLS_rootCA();
-			return basicGetClientTLS_rootCA();
-		case DaprdesignerPackage.HTTP_END_POINT__CLIENT_TLS_CERTIFICATE:
+				return getSpecRootCA();
+			return basicGetSpecRootCA();
+		case DaprdesignerPackage.HTTP_END_POINT__SPEC_CERTIFICATE:
 			if (resolve)
-				return getClientTLS_certificate();
-			return basicGetClientTLS_certificate();
-		case DaprdesignerPackage.HTTP_END_POINT__CLIENT_TLS_PRIVATE_KEY:
+				return getSpecCertificate();
+			return basicGetSpecCertificate();
+		case DaprdesignerPackage.HTTP_END_POINT__SPEC_PRIVATE_KEY:
 			if (resolve)
-				return getClientTLS_privateKey();
-			return basicGetClientTLS_privateKey();
+				return getSpecPrivateKey();
+			return basicGetSpecPrivateKey();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -501,18 +496,18 @@ public class HTTPEndPointImpl extends DaprNodeImpl implements HTTPEndPoint {
 			getScopes().clear();
 			getScopes().addAll((Collection<? extends App>) newValue);
 			return;
-		case DaprdesignerPackage.HTTP_END_POINT__HEADERS:
-			getHeaders().clear();
-			getHeaders().addAll((Collection<? extends SpecMetadata>) newValue);
+		case DaprdesignerPackage.HTTP_END_POINT__SPEC_HEADERS:
+			getSpecHeaders().clear();
+			getSpecHeaders().addAll((Collection<? extends SpecMetadata>) newValue);
 			return;
-		case DaprdesignerPackage.HTTP_END_POINT__CLIENT_TLS_ROOT_CA:
-			setClientTLS_rootCA((SpecMetadata) newValue);
+		case DaprdesignerPackage.HTTP_END_POINT__SPEC_ROOT_CA:
+			setSpecRootCA((SpecMetadata) newValue);
 			return;
-		case DaprdesignerPackage.HTTP_END_POINT__CLIENT_TLS_CERTIFICATE:
-			setClientTLS_certificate((SpecMetadata) newValue);
+		case DaprdesignerPackage.HTTP_END_POINT__SPEC_CERTIFICATE:
+			setSpecCertificate((SpecMetadata) newValue);
 			return;
-		case DaprdesignerPackage.HTTP_END_POINT__CLIENT_TLS_PRIVATE_KEY:
-			setClientTLS_privateKey((SpecMetadata) newValue);
+		case DaprdesignerPackage.HTTP_END_POINT__SPEC_PRIVATE_KEY:
+			setSpecPrivateKey((SpecMetadata) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -535,17 +530,17 @@ public class HTTPEndPointImpl extends DaprNodeImpl implements HTTPEndPoint {
 		case DaprdesignerPackage.HTTP_END_POINT__SCOPES:
 			getScopes().clear();
 			return;
-		case DaprdesignerPackage.HTTP_END_POINT__HEADERS:
-			getHeaders().clear();
+		case DaprdesignerPackage.HTTP_END_POINT__SPEC_HEADERS:
+			getSpecHeaders().clear();
 			return;
-		case DaprdesignerPackage.HTTP_END_POINT__CLIENT_TLS_ROOT_CA:
-			setClientTLS_rootCA((SpecMetadata) null);
+		case DaprdesignerPackage.HTTP_END_POINT__SPEC_ROOT_CA:
+			setSpecRootCA((SpecMetadata) null);
 			return;
-		case DaprdesignerPackage.HTTP_END_POINT__CLIENT_TLS_CERTIFICATE:
-			setClientTLS_certificate((SpecMetadata) null);
+		case DaprdesignerPackage.HTTP_END_POINT__SPEC_CERTIFICATE:
+			setSpecCertificate((SpecMetadata) null);
 			return;
-		case DaprdesignerPackage.HTTP_END_POINT__CLIENT_TLS_PRIVATE_KEY:
-			setClientTLS_privateKey((SpecMetadata) null);
+		case DaprdesignerPackage.HTTP_END_POINT__SPEC_PRIVATE_KEY:
+			setSpecPrivateKey((SpecMetadata) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -571,14 +566,14 @@ public class HTTPEndPointImpl extends DaprNodeImpl implements HTTPEndPoint {
 			return auth != null;
 		case DaprdesignerPackage.HTTP_END_POINT__SCOPES:
 			return scopes != null && !scopes.isEmpty();
-		case DaprdesignerPackage.HTTP_END_POINT__HEADERS:
-			return headers != null && !headers.isEmpty();
-		case DaprdesignerPackage.HTTP_END_POINT__CLIENT_TLS_ROOT_CA:
-			return clientTLS_rootCA != null;
-		case DaprdesignerPackage.HTTP_END_POINT__CLIENT_TLS_CERTIFICATE:
-			return clientTLS_certificate != null;
-		case DaprdesignerPackage.HTTP_END_POINT__CLIENT_TLS_PRIVATE_KEY:
-			return clientTLS_privateKey != null;
+		case DaprdesignerPackage.HTTP_END_POINT__SPEC_HEADERS:
+			return specHeaders != null && !specHeaders.isEmpty();
+		case DaprdesignerPackage.HTTP_END_POINT__SPEC_ROOT_CA:
+			return specRootCA != null;
+		case DaprdesignerPackage.HTTP_END_POINT__SPEC_CERTIFICATE:
+			return specCertificate != null;
+		case DaprdesignerPackage.HTTP_END_POINT__SPEC_PRIVATE_KEY:
+			return specPrivateKey != null;
 		}
 		return super.eIsSet(featureID);
 	}
