@@ -240,8 +240,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="applyToPut" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="applyToDelete" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="applyToPatch" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="verbs" upperBound="-1"
-        eType="#//Verb"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" eType="#//AccessAction"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MiddlewareConfiguration" eSuperTypes="#//AppConfiguration">

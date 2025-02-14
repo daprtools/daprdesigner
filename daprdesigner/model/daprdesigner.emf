@@ -304,7 +304,7 @@ class Operation extends DaprNode{
     attr boolean applyToPut;
     attr boolean applyToDelete;
     attr boolean applyToPatch;
-    attr Verb[*] verbs;
+   // attr Verb[*] verbs;
 	attr AccessAction action;
 	
 }
