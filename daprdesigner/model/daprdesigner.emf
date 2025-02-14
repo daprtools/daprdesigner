@@ -416,9 +416,9 @@ class ResiliencyTarget extends DaprNode{
 	readonly attr String help= "https://docs.dapr.io/operations/resiliency/targets/";
 	attr ResiliencyTargetType type;
 	attr int circuitBreakerCacheSize;
-	ref CircuitBreakerPolicy circuitBreaker;
-	ref RetryPolicy retry;
-	ref ResiliencyTimeout timeout;
+	ref CircuitBreakerPolicy[0..1] circuitBreaker;
+	ref RetryPolicy[0..1] retry;
+	ref ResiliencyTimeout[0..1] timeout;
 	ref App[*] appsActorsOrWorkflows;
 	ref Component[*] components;
 	
