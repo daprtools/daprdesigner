@@ -85,6 +85,15 @@ public interface DaprdesignerFactory extends EFactory {
 	Actor createActor();
 
 	/**
+	 * Returns a new object of class '<em>Jobs</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Jobs</em>'.
+	 * @generated
+	 */
+	Jobs createJobs();
+
+	/**
 	 * Returns a new object of class '<em>Workflow</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

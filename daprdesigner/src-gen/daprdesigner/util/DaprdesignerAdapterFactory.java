@@ -114,6 +114,11 @@ public class DaprdesignerAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseJobs(Jobs object) {
+			return createJobsAdapter();
+		}
+
+		@Override
 		public Adapter caseWorkflow(Workflow object) {
 			return createWorkflowAdapter();
 		}
@@ -440,6 +445,20 @@ public class DaprdesignerAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createActorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link daprdesigner.Jobs <em>Jobs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see daprdesigner.Jobs
+	 * @generated
+	 */
+	public Adapter createJobsAdapter() {
 		return null;
 	}
 

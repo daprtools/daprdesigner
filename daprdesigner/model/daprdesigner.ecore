@@ -52,6 +52,8 @@
     <eLiterals name="SUBSCRIPTION" value="9"/>
     <eLiterals name="RESILIENCY" value="10"/>
     <eLiterals name="HTTPENDPOINT" value="11"/>
+    <eLiterals name="JOBS" value="12"/>
+    <eLiterals name="CONFIGURATIONSTORE" value="13"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="APIType">
     <eLiterals name="INVOKE"/>
@@ -135,6 +137,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Actor" eSuperTypes="#//App">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="additionalHelp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" defaultValueLiteral="https://docs.dapr.io/developing-applications/building-blocks/actors/actors-overview/"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Jobs" eSuperTypes="#//App">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="additionalHelp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/developing-applications/building-blocks/jobs/jobs-overview/"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Workflow" eSuperTypes="#//App">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="additionalHelp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"

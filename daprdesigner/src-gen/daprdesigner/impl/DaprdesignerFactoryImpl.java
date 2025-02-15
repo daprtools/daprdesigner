@@ -75,6 +75,8 @@ public class DaprdesignerFactoryImpl extends EFactoryImpl implements Daprdesigne
 			return createApp();
 		case DaprdesignerPackage.ACTOR:
 			return createActor();
+		case DaprdesignerPackage.JOBS:
+			return createJobs();
 		case DaprdesignerPackage.WORKFLOW:
 			return createWorkflow();
 		case DaprdesignerPackage.DENIED_COMPONENTS_CONFIGURATION:
@@ -294,6 +296,16 @@ public class DaprdesignerFactoryImpl extends EFactoryImpl implements Daprdesigne
 	public Actor createActor() {
 		ActorImpl actor = new ActorImpl();
 		return actor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Jobs createJobs() {
+		JobsImpl jobs = new JobsImpl();
+		return jobs;
 	}
 
 	/**

@@ -136,7 +136,25 @@ public enum NodeBlockType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	HTTPENDPOINT(11, "HTTPENDPOINT", "HTTPENDPOINT");
+	HTTPENDPOINT(11, "HTTPENDPOINT", "HTTPENDPOINT"),
+	/**
+	* The '<em><b>JOBS</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #JOBS_VALUE
+	* @generated
+	* @ordered
+	*/
+	JOBS(12, "JOBS", "JOBS"),
+	/**
+	* The '<em><b>CONFIGURATIONSTORE</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #CONFIGURATIONSTORE_VALUE
+	* @generated
+	* @ordered
+	*/
+	CONFIGURATIONSTORE(13, "CONFIGURATIONSTORE", "CONFIGURATIONSTORE");
 
 	/**
 	 * The '<em><b>APP</b></em>' literal value.
@@ -271,13 +289,36 @@ public enum NodeBlockType implements Enumerator {
 	public static final int HTTPENDPOINT_VALUE = 11;
 
 	/**
+	 * The '<em><b>JOBS</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #JOBS
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int JOBS_VALUE = 12;
+
+	/**
+	 * The '<em><b>CONFIGURATIONSTORE</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #CONFIGURATIONSTORE
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CONFIGURATIONSTORE_VALUE = 13;
+
+	/**
 	 * An array of all the '<em><b>Node Block Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private static final NodeBlockType[] VALUES_ARRAY = new NodeBlockType[] { APP, ACTOR, WORKFLOW, PUBSUB, BINDING,
-			SECRETSTORE, STATESTORE, DISTRIBUTEDLOCK, CRYPTOGRAPHY, SUBSCRIPTION, RESILIENCY, HTTPENDPOINT, };
+			SECRETSTORE, STATESTORE, DISTRIBUTEDLOCK, CRYPTOGRAPHY, SUBSCRIPTION, RESILIENCY, HTTPENDPOINT, JOBS,
+			CONFIGURATIONSTORE, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Node Block Type</b></em>' enumerators.
@@ -357,6 +398,10 @@ public enum NodeBlockType implements Enumerator {
 			return RESILIENCY;
 		case HTTPENDPOINT_VALUE:
 			return HTTPENDPOINT;
+		case JOBS_VALUE:
+			return JOBS;
+		case CONFIGURATIONSTORE_VALUE:
+			return CONFIGURATIONSTORE;
 		}
 		return null;
 	}

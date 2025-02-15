@@ -733,6 +733,133 @@ public interface DaprdesignerPackage extends EPackage {
 	int ACTOR_OPERATION_COUNT = APP_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link daprdesigner.impl.JobsImpl <em>Jobs</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see daprdesigner.impl.JobsImpl
+	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getJobs()
+	 * @generated
+	 */
+	int JOBS = 9;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS__NAME = APP__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS__DESCRIPTION = APP__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Notes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS__NOTES = APP__NOTES;
+
+	/**
+	 * The feature id for the '<em><b>Help</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS__HELP = APP__HELP;
+
+	/**
+	 * The feature id for the '<em><b>App Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS__APP_ID = APP__APP_ID;
+
+	/**
+	 * The feature id for the '<em><b>Repository</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS__REPOSITORY = APP__REPOSITORY;
+
+	/**
+	 * The feature id for the '<em><b>Sdk Language</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS__SDK_LANGUAGE = APP__SDK_LANGUAGE;
+
+	/**
+	 * The feature id for the '<em><b>Namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS__NAMESPACE = APP__NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Trust Domain</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS__TRUST_DOMAIN = APP__TRUST_DOMAIN;
+
+	/**
+	 * The feature id for the '<em><b>Configurations</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS__CONFIGURATIONS = APP__CONFIGURATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Additional Help</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS__ADDITIONAL_HELP = APP_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Jobs</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS_FEATURE_COUNT = APP_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Jobs</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS_OPERATION_COUNT = APP_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link daprdesigner.impl.WorkflowImpl <em>Workflow</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -740,7 +867,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getWorkflow()
 	 * @generated
 	 */
-	int WORKFLOW = 9;
+	int WORKFLOW = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -867,7 +994,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getAppConfiguration()
 	 * @generated
 	 */
-	int APP_CONFIGURATION = 10;
+	int APP_CONFIGURATION = 11;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -940,7 +1067,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getDeniedComponentsConfiguration()
 	 * @generated
 	 */
-	int DENIED_COMPONENTS_CONFIGURATION = 11;
+	int DENIED_COMPONENTS_CONFIGURATION = 12;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1031,7 +1158,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getLoggingConfiguration()
 	 * @generated
 	 */
-	int LOGGING_CONFIGURATION = 12;
+	int LOGGING_CONFIGURATION = 13;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1140,7 +1267,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getNameResolutionConfiguration()
 	 * @generated
 	 */
-	int NAME_RESOLUTION_CONFIGURATION = 13;
+	int NAME_RESOLUTION_CONFIGURATION = 14;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1258,7 +1385,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getSecretsAccessConfiguration()
 	 * @generated
 	 */
-	int SECRETS_ACCESS_CONFIGURATION = 14;
+	int SECRETS_ACCESS_CONFIGURATION = 15;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1349,7 +1476,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getSecretsAccessList()
 	 * @generated
 	 */
-	int SECRETS_ACCESS_LIST = 15;
+	int SECRETS_ACCESS_LIST = 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1449,7 +1576,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getMetricsConfiguration()
 	 * @generated
 	 */
-	int METRICS_CONFIGURATION = 16;
+	int METRICS_CONFIGURATION = 17;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1576,7 +1703,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getAPIAccessControl()
 	 * @generated
 	 */
-	int API_ACCESS_CONTROL = 17;
+	int API_ACCESS_CONTROL = 18;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1667,7 +1794,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getAPI()
 	 * @generated
 	 */
-	int API = 18;
+	int API = 19;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1767,7 +1894,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getAppAccessControl()
 	 * @generated
 	 */
-	int APP_ACCESS_CONTROL = 19;
+	int APP_ACCESS_CONTROL = 20;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1876,7 +2003,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getAppPolicy()
 	 * @generated
 	 */
-	int APP_POLICY = 20;
+	int APP_POLICY = 21;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1985,7 +2112,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getOperation()
 	 * @generated
 	 */
-	int OPERATION = 21;
+	int OPERATION = 22;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2121,7 +2248,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getMiddlewareConfiguration()
 	 * @generated
 	 */
-	int MIDDLEWARE_CONFIGURATION = 22;
+	int MIDDLEWARE_CONFIGURATION = 23;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2212,7 +2339,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getHttpHandler()
 	 * @generated
 	 */
-	int HTTP_HANDLER = 23;
+	int HTTP_HANDLER = 24;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2303,7 +2430,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getTracingConfiguration()
 	 * @generated
 	 */
-	int TRACING_CONFIGURATION = 24;
+	int TRACING_CONFIGURATION = 25;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2439,7 +2566,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getSubscriptionConfiguration()
 	 * @generated
 	 */
-	int SUBSCRIPTION_CONFIGURATION = 25;
+	int SUBSCRIPTION_CONFIGURATION = 26;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2593,7 +2720,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getRouteRules()
 	 * @generated
 	 */
-	int ROUTE_RULES = 26;
+	int ROUTE_RULES = 27;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2675,7 +2802,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getResiliencyConfiguration()
 	 * @generated
 	 */
-	int RESILIENCY_CONFIGURATION = 27;
+	int RESILIENCY_CONFIGURATION = 28;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2793,7 +2920,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getResiliencyPolicy()
 	 * @generated
 	 */
-	int RESILIENCY_POLICY = 28;
+	int RESILIENCY_POLICY = 29;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2884,7 +3011,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getRetryPolicy()
 	 * @generated
 	 */
-	int RETRY_POLICY = 29;
+	int RETRY_POLICY = 30;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2984,7 +3111,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getResiliencyTimeout()
 	 * @generated
 	 */
-	int RESILIENCY_TIMEOUT = 30;
+	int RESILIENCY_TIMEOUT = 31;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3057,7 +3184,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getCircuitBreakerPolicy()
 	 * @generated
 	 */
-	int CIRCUIT_BREAKER_POLICY = 31;
+	int CIRCUIT_BREAKER_POLICY = 32;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3157,7 +3284,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getResiliencyTarget()
 	 * @generated
 	 */
-	int RESILIENCY_TARGET = 32;
+	int RESILIENCY_TARGET = 33;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3284,7 +3411,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getHTTPEndPoint()
 	 * @generated
 	 */
-	int HTTP_END_POINT = 33;
+	int HTTP_END_POINT = 34;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3429,7 +3556,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getComponent()
 	 * @generated
 	 */
-	int COMPONENT = 34;
+	int COMPONENT = 35;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3574,7 +3701,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getComponentSpec()
 	 * @generated
 	 */
-	int COMPONENT_SPEC = 35;
+	int COMPONENT_SPEC = 36;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3665,7 +3792,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getSpecMetadata()
 	 * @generated
 	 */
-	int SPEC_METADATA = 36;
+	int SPEC_METADATA = 37;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3783,7 +3910,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getPubSub()
 	 * @generated
 	 */
-	int PUB_SUB = 37;
+	int PUB_SUB = 38;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3937,7 +4064,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getBindings()
 	 * @generated
 	 */
-	int BINDINGS = 38;
+	int BINDINGS = 39;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4091,7 +4218,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getSecretStore()
 	 * @generated
 	 */
-	int SECRET_STORE = 39;
+	int SECRET_STORE = 40;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4245,7 +4372,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getStateStore()
 	 * @generated
 	 */
-	int STATE_STORE = 40;
+	int STATE_STORE = 41;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4399,7 +4526,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getConfigurationStore()
 	 * @generated
 	 */
-	int CONFIGURATION_STORE = 41;
+	int CONFIGURATION_STORE = 42;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4553,7 +4680,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getLocks()
 	 * @generated
 	 */
-	int LOCKS = 42;
+	int LOCKS = 43;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4707,7 +4834,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getCryptography()
 	 * @generated
 	 */
-	int CRYPTOGRAPHY = 43;
+	int CRYPTOGRAPHY = 44;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4861,7 +4988,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getMiddleware()
 	 * @generated
 	 */
-	int MIDDLEWARE = 44;
+	int MIDDLEWARE = 45;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5015,7 +5142,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getNameresolution()
 	 * @generated
 	 */
-	int NAMERESOLUTION = 45;
+	int NAMERESOLUTION = 46;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5169,7 +5296,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getAccessAction()
 	 * @generated
 	 */
-	int ACCESS_ACTION = 46;
+	int ACCESS_ACTION = 47;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.RetryPolicyType <em>Retry Policy Type</em>}' enum.
@@ -5179,7 +5306,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getRetryPolicyType()
 	 * @generated
 	 */
-	int RETRY_POLICY_TYPE = 47;
+	int RETRY_POLICY_TYPE = 48;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.HttpHandlerType <em>Http Handler Type</em>}' enum.
@@ -5189,7 +5316,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getHttpHandlerType()
 	 * @generated
 	 */
-	int HTTP_HANDLER_TYPE = 48;
+	int HTTP_HANDLER_TYPE = 49;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.ResiliencyTargetType <em>Resiliency Target Type</em>}' enum.
@@ -5199,7 +5326,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getResiliencyTargetType()
 	 * @generated
 	 */
-	int RESILIENCY_TARGET_TYPE = 49;
+	int RESILIENCY_TARGET_TYPE = 50;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.BlockType <em>Block Type</em>}' enum.
@@ -5209,7 +5336,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getBlockType()
 	 * @generated
 	 */
-	int BLOCK_TYPE = 50;
+	int BLOCK_TYPE = 51;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.NodeBlockType <em>Node Block Type</em>}' enum.
@@ -5219,7 +5346,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getNodeBlockType()
 	 * @generated
 	 */
-	int NODE_BLOCK_TYPE = 51;
+	int NODE_BLOCK_TYPE = 52;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.APIType <em>API Type</em>}' enum.
@@ -5229,7 +5356,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getAPIType()
 	 * @generated
 	 */
-	int API_TYPE = 52;
+	int API_TYPE = 53;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.SDKLanguage <em>SDK Language</em>}' enum.
@@ -5239,7 +5366,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getSDKLanguage()
 	 * @generated
 	 */
-	int SDK_LANGUAGE = 53;
+	int SDK_LANGUAGE = 54;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.Protocol <em>Protocol</em>}' enum.
@@ -5249,7 +5376,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getProtocol()
 	 * @generated
 	 */
-	int PROTOCOL = 54;
+	int PROTOCOL = 55;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.Verb <em>Verb</em>}' enum.
@@ -5259,7 +5386,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getVerb()
 	 * @generated
 	 */
-	int VERB = 55;
+	int VERB = 56;
 
 	/**
 	 * Returns the meta object for class '{@link java.util.Map.Entry <em>EString To String Map Entry</em>}'.
@@ -5627,6 +5754,27 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getActor_AdditionalHelp();
+
+	/**
+	 * Returns the meta object for class '{@link daprdesigner.Jobs <em>Jobs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Jobs</em>'.
+	 * @see daprdesigner.Jobs
+	 * @generated
+	 */
+	EClass getJobs();
+
+	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.Jobs#getAdditionalHelp <em>Additional Help</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Additional Help</em>'.
+	 * @see daprdesigner.Jobs#getAdditionalHelp()
+	 * @see #getJobs()
+	 * @generated
+	 */
+	EAttribute getJobs_AdditionalHelp();
 
 	/**
 	 * Returns the meta object for class '{@link daprdesigner.Workflow <em>Workflow</em>}'.
@@ -8071,6 +8219,24 @@ public interface DaprdesignerPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ACTOR__ADDITIONAL_HELP = eINSTANCE.getActor_AdditionalHelp();
+
+		/**
+		 * The meta object literal for the '{@link daprdesigner.impl.JobsImpl <em>Jobs</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see daprdesigner.impl.JobsImpl
+		 * @see daprdesigner.impl.DaprdesignerPackageImpl#getJobs()
+		 * @generated
+		 */
+		EClass JOBS = eINSTANCE.getJobs();
+
+		/**
+		 * The meta object literal for the '<em><b>Additional Help</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute JOBS__ADDITIONAL_HELP = eINSTANCE.getJobs_AdditionalHelp();
 
 		/**
 		 * The meta object literal for the '{@link daprdesigner.impl.WorkflowImpl <em>Workflow</em>}' class.

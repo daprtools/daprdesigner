@@ -55,6 +55,8 @@
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/SUBSCRIPTION"/>
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/RESILIENCY"/>
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/HTTPENDPOINT"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/JOBS"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/CONFIGURATIONSTORE"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="daprdesigner.ecore#//APIType">
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//APIType/INVOKE"/>
@@ -133,6 +135,9 @@
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//Actor">
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Actor/additionalHelp"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//Jobs">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Jobs/additionalHelp"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//Workflow">
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Workflow/additionalHelp"/>

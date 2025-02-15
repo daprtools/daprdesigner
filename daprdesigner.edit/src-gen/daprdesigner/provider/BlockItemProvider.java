@@ -280,6 +280,9 @@ public class BlockItemProvider extends ItemProviderAdapter implements IEditingDo
 				DaprdesignerFactory.eINSTANCE.createActor()));
 
 		newChildDescriptors.add(createChildParameter(DaprdesignerPackage.Literals.BLOCK__NODES,
+				DaprdesignerFactory.eINSTANCE.createJobs()));
+
+		newChildDescriptors.add(createChildParameter(DaprdesignerPackage.Literals.BLOCK__NODES,
 				DaprdesignerFactory.eINSTANCE.createWorkflow()));
 
 		newChildDescriptors.add(createChildParameter(DaprdesignerPackage.Literals.BLOCK__NODES,

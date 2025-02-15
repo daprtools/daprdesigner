@@ -257,6 +257,29 @@ public class DaprdesignerItemProviderAdapterFactory extends DaprdesignerAdapterF
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link daprdesigner.Jobs} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected JobsItemProvider jobsItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link daprdesigner.Jobs}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createJobsAdapter() {
+		if (jobsItemProvider == null) {
+			jobsItemProvider = new JobsItemProvider(this);
+		}
+
+		return jobsItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link daprdesigner.Workflow} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1176,6 +1199,8 @@ public class DaprdesignerItemProviderAdapterFactory extends DaprdesignerAdapterF
 			appItemProvider.dispose();
 		if (actorItemProvider != null)
 			actorItemProvider.dispose();
+		if (jobsItemProvider != null)
+			jobsItemProvider.dispose();
 		if (workflowItemProvider != null)
 			workflowItemProvider.dispose();
 		if (deniedComponentsConfigurationItemProvider != null)

@@ -134,6 +134,10 @@ public class NodeBlocksItemProvider extends DaprNodeItemProvider {
 			return overlayImage(object, getResourceLocator().getImage("full/obj16/SubscriptionConfiguration"));
 		case WORKFLOW:
 			return overlayImage(object, getResourceLocator().getImage("full/obj16/Workflow"));
+		case JOBS:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/Jobs"));	
+		case CONFIGURATIONSTORE:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/ConfigurationStore"));	
 
 		}
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/NodeBlocks"));
@@ -209,6 +213,9 @@ public class NodeBlocksItemProvider extends DaprNodeItemProvider {
 
 		newChildDescriptors.add(createChildParameter(DaprdesignerPackage.Literals.NODE_BLOCKS__NODES,
 				DaprdesignerFactory.eINSTANCE.createActor()));
+
+		newChildDescriptors.add(createChildParameter(DaprdesignerPackage.Literals.NODE_BLOCKS__NODES,
+				DaprdesignerFactory.eINSTANCE.createJobs()));
 
 		newChildDescriptors.add(createChildParameter(DaprdesignerPackage.Literals.NODE_BLOCKS__NODES,
 				DaprdesignerFactory.eINSTANCE.createWorkflow()));

@@ -61,6 +61,8 @@ enum NodeBlockType{
 	SUBSCRIPTION;
 	RESILIENCY;
 	HTTPENDPOINT;
+	JOBS;
+	CONFIGURATIONSTORE;
 	
 	
 }
@@ -166,6 +168,13 @@ class App extends DaprNode{
 
 class Actor extends App{
   readonly attr String additionalHelp = "https://docs.dapr.io/developing-applications/building-blocks/actors/actors-overview/";
+	
+}
+
+class Jobs extends App{
+
+	readonly attr String additionalHelp = "https://docs.dapr.io/developing-applications/building-blocks/jobs/jobs-overview/";
+	
 	
 }
 

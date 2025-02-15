@@ -144,6 +144,17 @@ public class DaprdesignerSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case DaprdesignerPackage.JOBS: {
+			Jobs jobs = (Jobs) theEObject;
+			T result = caseJobs(jobs);
+			if (result == null)
+				result = caseApp(jobs);
+			if (result == null)
+				result = caseDaprNode(jobs);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case DaprdesignerPackage.WORKFLOW: {
 			Workflow workflow = (Workflow) theEObject;
 			T result = caseWorkflow(workflow);
@@ -652,6 +663,21 @@ public class DaprdesignerSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseActor(Actor object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Jobs</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Jobs</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseJobs(Jobs object) {
 		return null;
 	}
 

@@ -26,6 +26,7 @@ import daprdesigner.DeniedComponentsConfiguration;
 import daprdesigner.HTTPEndPoint;
 import daprdesigner.HttpHandler;
 import daprdesigner.HttpHandlerType;
+import daprdesigner.Jobs;
 import daprdesigner.Locks;
 import daprdesigner.LoggingConfiguration;
 import daprdesigner.MetricsConfiguration;
@@ -138,6 +139,13 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * @generated
 	 */
 	private EClass actorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass jobsEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -836,6 +844,24 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 */
 	public EAttribute getActor_AdditionalHelp() {
 		return (EAttribute) actorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getJobs() {
+		return jobsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getJobs_AdditionalHelp() {
+		return (EAttribute) jobsEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2692,6 +2718,9 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		actorEClass = createEClass(ACTOR);
 		createEAttribute(actorEClass, ACTOR__ADDITIONAL_HELP);
 
+		jobsEClass = createEClass(JOBS);
+		createEAttribute(jobsEClass, JOBS__ADDITIONAL_HELP);
+
 		workflowEClass = createEClass(WORKFLOW);
 		createEAttribute(workflowEClass, WORKFLOW__ADDITIONAL_HELP);
 
@@ -2966,6 +2995,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		trustdomainEClass.getESuperTypes().add(this.getDaprNode());
 		appEClass.getESuperTypes().add(this.getDaprNode());
 		actorEClass.getESuperTypes().add(this.getApp());
+		jobsEClass.getESuperTypes().add(this.getApp());
 		workflowEClass.getESuperTypes().add(this.getApp());
 		appConfigurationEClass.getESuperTypes().add(this.getDaprNode());
 		deniedComponentsConfigurationEClass.getESuperTypes().add(this.getAppConfiguration());
@@ -3094,6 +3124,12 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 				"https://docs.dapr.io/developing-applications/building-blocks/actors/actors-overview/", 0, 1,
 				Actor.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(jobsEClass, Jobs.class, "Jobs", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getJobs_AdditionalHelp(), ecorePackage.getEString(), "additionalHelp",
+				"https://docs.dapr.io/developing-applications/building-blocks/jobs/jobs-overview/", 0, 1, Jobs.class,
+				!IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(workflowEClass, Workflow.class, "Workflow", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -3720,6 +3756,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.SUBSCRIPTION);
 		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.RESILIENCY);
 		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.HTTPENDPOINT);
+		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.JOBS);
+		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.CONFIGURATIONSTORE);
 
 		initEEnum(apiTypeEEnum, APIType.class, "APIType");
 		addEEnumLiteral(apiTypeEEnum, APIType.INVOKE);
