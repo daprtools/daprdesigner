@@ -2193,8 +2193,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComponent_Auth() {
-		return (EReference) componentEClass.getEStructuralFeatures().get(3);
+	public EAttribute getComponent_ProviderVersion() {
+		return (EAttribute) componentEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2202,7 +2202,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComponent_Metadata_namespace() {
+	public EReference getComponent_Auth() {
 		return (EReference) componentEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -2211,7 +2211,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComponent_Spec() {
+	public EReference getComponent_Metadata_namespace() {
 		return (EReference) componentEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -2220,8 +2220,35 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getComponent_IgnoreErrors() {
+		return (EAttribute) componentEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getComponent_InitTimeout() {
+		return (EAttribute) componentEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getComponent_SpecMetadata() {
+		return (EReference) componentEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getComponent_Scopes() {
-		return (EReference) componentEClass.getEStructuralFeatures().get(6);
+		return (EReference) componentEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -2842,9 +2869,12 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		createEAttribute(componentEClass, COMPONENT__API_VERSION);
 		createEAttribute(componentEClass, COMPONENT__KIND);
 		createEAttribute(componentEClass, COMPONENT__PROVIDER_NAME);
+		createEAttribute(componentEClass, COMPONENT__PROVIDER_VERSION);
 		createEReference(componentEClass, COMPONENT__AUTH);
 		createEReference(componentEClass, COMPONENT__METADATA_NAMESPACE);
-		createEReference(componentEClass, COMPONENT__SPEC);
+		createEAttribute(componentEClass, COMPONENT__IGNORE_ERRORS);
+		createEAttribute(componentEClass, COMPONENT__INIT_TIMEOUT);
+		createEReference(componentEClass, COMPONENT__SPEC_METADATA);
 		createEReference(componentEClass, COMPONENT__SCOPES);
 
 		componentSpecEClass = createEClass(COMPONENT_SPEC);
@@ -3521,15 +3551,24 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		initEAttribute(getComponent_ProviderName(), ecorePackage.getEString(), "providerName", null, 0, 1,
 				Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponent_ProviderVersion(), ecorePackage.getEString(), "providerVersion", null, 0, 1,
+				Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_Auth(), this.getSecretStore(), null, "auth", null, 0, 1, Component.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_Metadata_namespace(), this.getNamespace(), null, "metadata_namespace", null, 0, 1,
 				Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponent_Spec(), this.getComponentSpec(), null, "spec", null, 0, 1, Component.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponent_IgnoreErrors(), ecorePackage.getEBoolean(), "ignoreErrors", null, 0, 1,
+				Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponent_InitTimeout(), ecorePackage.getEString(), "initTimeout", null, 0, 1,
+				Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_SpecMetadata(), this.getSpecMetadata(), null, "specMetadata", null, 0, -1,
+				Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_Scopes(), this.getApp(), null, "scopes", null, 0, -1, Component.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

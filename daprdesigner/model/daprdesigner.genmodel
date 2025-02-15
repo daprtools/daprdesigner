@@ -309,9 +309,12 @@
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Component/apiVersion"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Component/kind"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Component/providerName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Component/providerVersion"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//Component/auth"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//Component/metadata_namespace"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//Component/spec"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Component/ignoreErrors"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Component/initTimeout"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//Component/specMetadata"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//Component/scopes"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//ComponentSpec">

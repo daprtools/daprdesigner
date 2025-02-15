@@ -377,9 +377,13 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" defaultValueLiteral="Component"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="providerName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="providerVersion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="auth" eType="#//SecretStore"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="metadata_namespace" eType="#//Namespace"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="spec" eType="#//ComponentSpec"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ignoreErrors" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initTimeout" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specMetadata" upperBound="-1"
+        eType="#//SpecMetadata"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scopes" upperBound="-1"
         eType="#//App"/>
   </eClassifiers>

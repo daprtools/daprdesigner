@@ -16,9 +16,12 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link daprdesigner.Component#getApiVersion <em>Api Version</em>}</li>
  *   <li>{@link daprdesigner.Component#getKind <em>Kind</em>}</li>
  *   <li>{@link daprdesigner.Component#getProviderName <em>Provider Name</em>}</li>
+ *   <li>{@link daprdesigner.Component#getProviderVersion <em>Provider Version</em>}</li>
  *   <li>{@link daprdesigner.Component#getAuth <em>Auth</em>}</li>
  *   <li>{@link daprdesigner.Component#getMetadata_namespace <em>Metadata namespace</em>}</li>
- *   <li>{@link daprdesigner.Component#getSpec <em>Spec</em>}</li>
+ *   <li>{@link daprdesigner.Component#isIgnoreErrors <em>Ignore Errors</em>}</li>
+ *   <li>{@link daprdesigner.Component#getInitTimeout <em>Init Timeout</em>}</li>
+ *   <li>{@link daprdesigner.Component#getSpecMetadata <em>Spec Metadata</em>}</li>
  *   <li>{@link daprdesigner.Component#getScopes <em>Scopes</em>}</li>
  * </ul>
  *
@@ -74,6 +77,28 @@ public interface Component extends DaprNode {
 	void setProviderName(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Provider Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Provider Version</em>' attribute.
+	 * @see #setProviderVersion(String)
+	 * @see daprdesigner.DaprdesignerPackage#getComponent_ProviderVersion()
+	 * @model
+	 * @generated
+	 */
+	String getProviderVersion();
+
+	/**
+	 * Sets the value of the '{@link daprdesigner.Component#getProviderVersion <em>Provider Version</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Provider Version</em>' attribute.
+	 * @see #getProviderVersion()
+	 * @generated
+	 */
+	void setProviderVersion(String value);
+
+	/**
 	 * Returns the value of the '<em><b>Auth</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -118,26 +143,60 @@ public interface Component extends DaprNode {
 	void setMetadata_namespace(Namespace value);
 
 	/**
-	 * Returns the value of the '<em><b>Spec</b></em>' reference.
+	 * Returns the value of the '<em><b>Ignore Errors</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Spec</em>' reference.
-	 * @see #setSpec(ComponentSpec)
-	 * @see daprdesigner.DaprdesignerPackage#getComponent_Spec()
+	 * @return the value of the '<em>Ignore Errors</em>' attribute.
+	 * @see #setIgnoreErrors(boolean)
+	 * @see daprdesigner.DaprdesignerPackage#getComponent_IgnoreErrors()
 	 * @model
 	 * @generated
 	 */
-	ComponentSpec getSpec();
+	boolean isIgnoreErrors();
 
 	/**
-	 * Sets the value of the '{@link daprdesigner.Component#getSpec <em>Spec</em>}' reference.
+	 * Sets the value of the '{@link daprdesigner.Component#isIgnoreErrors <em>Ignore Errors</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Spec</em>' reference.
-	 * @see #getSpec()
+	 * @param value the new value of the '<em>Ignore Errors</em>' attribute.
+	 * @see #isIgnoreErrors()
 	 * @generated
 	 */
-	void setSpec(ComponentSpec value);
+	void setIgnoreErrors(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Init Timeout</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Init Timeout</em>' attribute.
+	 * @see #setInitTimeout(String)
+	 * @see daprdesigner.DaprdesignerPackage#getComponent_InitTimeout()
+	 * @model
+	 * @generated
+	 */
+	String getInitTimeout();
+
+	/**
+	 * Sets the value of the '{@link daprdesigner.Component#getInitTimeout <em>Init Timeout</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Init Timeout</em>' attribute.
+	 * @see #getInitTimeout()
+	 * @generated
+	 */
+	void setInitTimeout(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Spec Metadata</b></em>' reference list.
+	 * The list contents are of type {@link daprdesigner.SpecMetadata}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Spec Metadata</em>' reference list.
+	 * @see daprdesigner.DaprdesignerPackage#getComponent_SpecMetadata()
+	 * @model
+	 * @generated
+	 */
+	EList<SpecMetadata> getSpecMetadata();
 
 	/**
 	 * Returns the value of the '<em><b>Scopes</b></em>' reference list.

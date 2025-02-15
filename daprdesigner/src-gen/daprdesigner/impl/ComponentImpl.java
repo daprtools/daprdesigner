@@ -4,10 +4,10 @@ package daprdesigner.impl;
 
 import daprdesigner.App;
 import daprdesigner.Component;
-import daprdesigner.ComponentSpec;
 import daprdesigner.DaprdesignerPackage;
 import daprdesigner.Namespace;
 import daprdesigner.SecretStore;
+import daprdesigner.SpecMetadata;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -32,9 +32,12 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link daprdesigner.impl.ComponentImpl#getApiVersion <em>Api Version</em>}</li>
  *   <li>{@link daprdesigner.impl.ComponentImpl#getKind <em>Kind</em>}</li>
  *   <li>{@link daprdesigner.impl.ComponentImpl#getProviderName <em>Provider Name</em>}</li>
+ *   <li>{@link daprdesigner.impl.ComponentImpl#getProviderVersion <em>Provider Version</em>}</li>
  *   <li>{@link daprdesigner.impl.ComponentImpl#getAuth <em>Auth</em>}</li>
  *   <li>{@link daprdesigner.impl.ComponentImpl#getMetadata_namespace <em>Metadata namespace</em>}</li>
- *   <li>{@link daprdesigner.impl.ComponentImpl#getSpec <em>Spec</em>}</li>
+ *   <li>{@link daprdesigner.impl.ComponentImpl#isIgnoreErrors <em>Ignore Errors</em>}</li>
+ *   <li>{@link daprdesigner.impl.ComponentImpl#getInitTimeout <em>Init Timeout</em>}</li>
+ *   <li>{@link daprdesigner.impl.ComponentImpl#getSpecMetadata <em>Spec Metadata</em>}</li>
  *   <li>{@link daprdesigner.impl.ComponentImpl#getScopes <em>Scopes</em>}</li>
  * </ul>
  *
@@ -102,6 +105,26 @@ public abstract class ComponentImpl extends DaprNodeImpl implements Component {
 	protected String providerName = PROVIDER_NAME_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getProviderVersion() <em>Provider Version</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProviderVersion()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PROVIDER_VERSION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getProviderVersion() <em>Provider Version</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProviderVersion()
+	 * @generated
+	 * @ordered
+	 */
+	protected String providerVersion = PROVIDER_VERSION_EDEFAULT;
+
+	/**
 	 * The cached value of the '{@link #getAuth() <em>Auth</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -122,14 +145,54 @@ public abstract class ComponentImpl extends DaprNodeImpl implements Component {
 	protected Namespace metadata_namespace;
 
 	/**
-	 * The cached value of the '{@link #getSpec() <em>Spec</em>}' reference.
+	 * The default value of the '{@link #isIgnoreErrors() <em>Ignore Errors</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSpec()
+	 * @see #isIgnoreErrors()
 	 * @generated
 	 * @ordered
 	 */
-	protected ComponentSpec spec;
+	protected static final boolean IGNORE_ERRORS_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIgnoreErrors() <em>Ignore Errors</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIgnoreErrors()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean ignoreErrors = IGNORE_ERRORS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getInitTimeout() <em>Init Timeout</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInitTimeout()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String INIT_TIMEOUT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getInitTimeout() <em>Init Timeout</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInitTimeout()
+	 * @generated
+	 * @ordered
+	 */
+	protected String initTimeout = INIT_TIMEOUT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSpecMetadata() <em>Spec Metadata</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSpecMetadata()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SpecMetadata> specMetadata;
 
 	/**
 	 * The cached value of the '{@link #getScopes() <em>Scopes</em>}' reference list.
@@ -198,6 +261,28 @@ public abstract class ComponentImpl extends DaprNodeImpl implements Component {
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.COMPONENT__PROVIDER_NAME,
 					oldProviderName, providerName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getProviderVersion() {
+		return providerVersion;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setProviderVersion(String newProviderVersion) {
+		String oldProviderVersion = providerVersion;
+		providerVersion = newProviderVersion;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.COMPONENT__PROVIDER_VERSION,
+					oldProviderVersion, providerVersion));
 	}
 
 	/**
@@ -285,17 +370,8 @@ public abstract class ComponentImpl extends DaprNodeImpl implements Component {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentSpec getSpec() {
-		if (spec != null && spec.eIsProxy()) {
-			InternalEObject oldSpec = (InternalEObject) spec;
-			spec = (ComponentSpec) eResolveProxy(oldSpec);
-			if (spec != oldSpec) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DaprdesignerPackage.COMPONENT__SPEC,
-							oldSpec, spec));
-			}
-		}
-		return spec;
+	public boolean isIgnoreErrors() {
+		return ignoreErrors;
 	}
 
 	/**
@@ -303,20 +379,47 @@ public abstract class ComponentImpl extends DaprNodeImpl implements Component {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentSpec basicGetSpec() {
-		return spec;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSpec(ComponentSpec newSpec) {
-		ComponentSpec oldSpec = spec;
-		spec = newSpec;
+	public void setIgnoreErrors(boolean newIgnoreErrors) {
+		boolean oldIgnoreErrors = ignoreErrors;
+		ignoreErrors = newIgnoreErrors;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.COMPONENT__SPEC, oldSpec, spec));
+			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.COMPONENT__IGNORE_ERRORS,
+					oldIgnoreErrors, ignoreErrors));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getInitTimeout() {
+		return initTimeout;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInitTimeout(String newInitTimeout) {
+		String oldInitTimeout = initTimeout;
+		initTimeout = newInitTimeout;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.COMPONENT__INIT_TIMEOUT,
+					oldInitTimeout, initTimeout));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<SpecMetadata> getSpecMetadata() {
+		if (specMetadata == null) {
+			specMetadata = new EObjectResolvingEList<SpecMetadata>(SpecMetadata.class, this,
+					DaprdesignerPackage.COMPONENT__SPEC_METADATA);
+		}
+		return specMetadata;
 	}
 
 	/**
@@ -345,6 +448,8 @@ public abstract class ComponentImpl extends DaprNodeImpl implements Component {
 			return getKind();
 		case DaprdesignerPackage.COMPONENT__PROVIDER_NAME:
 			return getProviderName();
+		case DaprdesignerPackage.COMPONENT__PROVIDER_VERSION:
+			return getProviderVersion();
 		case DaprdesignerPackage.COMPONENT__AUTH:
 			if (resolve)
 				return getAuth();
@@ -353,10 +458,12 @@ public abstract class ComponentImpl extends DaprNodeImpl implements Component {
 			if (resolve)
 				return getMetadata_namespace();
 			return basicGetMetadata_namespace();
-		case DaprdesignerPackage.COMPONENT__SPEC:
-			if (resolve)
-				return getSpec();
-			return basicGetSpec();
+		case DaprdesignerPackage.COMPONENT__IGNORE_ERRORS:
+			return isIgnoreErrors();
+		case DaprdesignerPackage.COMPONENT__INIT_TIMEOUT:
+			return getInitTimeout();
+		case DaprdesignerPackage.COMPONENT__SPEC_METADATA:
+			return getSpecMetadata();
 		case DaprdesignerPackage.COMPONENT__SCOPES:
 			return getScopes();
 		}
@@ -375,14 +482,24 @@ public abstract class ComponentImpl extends DaprNodeImpl implements Component {
 		case DaprdesignerPackage.COMPONENT__PROVIDER_NAME:
 			setProviderName((String) newValue);
 			return;
+		case DaprdesignerPackage.COMPONENT__PROVIDER_VERSION:
+			setProviderVersion((String) newValue);
+			return;
 		case DaprdesignerPackage.COMPONENT__AUTH:
 			setAuth((SecretStore) newValue);
 			return;
 		case DaprdesignerPackage.COMPONENT__METADATA_NAMESPACE:
 			setMetadata_namespace((Namespace) newValue);
 			return;
-		case DaprdesignerPackage.COMPONENT__SPEC:
-			setSpec((ComponentSpec) newValue);
+		case DaprdesignerPackage.COMPONENT__IGNORE_ERRORS:
+			setIgnoreErrors((Boolean) newValue);
+			return;
+		case DaprdesignerPackage.COMPONENT__INIT_TIMEOUT:
+			setInitTimeout((String) newValue);
+			return;
+		case DaprdesignerPackage.COMPONENT__SPEC_METADATA:
+			getSpecMetadata().clear();
+			getSpecMetadata().addAll((Collection<? extends SpecMetadata>) newValue);
 			return;
 		case DaprdesignerPackage.COMPONENT__SCOPES:
 			getScopes().clear();
@@ -403,14 +520,23 @@ public abstract class ComponentImpl extends DaprNodeImpl implements Component {
 		case DaprdesignerPackage.COMPONENT__PROVIDER_NAME:
 			setProviderName(PROVIDER_NAME_EDEFAULT);
 			return;
+		case DaprdesignerPackage.COMPONENT__PROVIDER_VERSION:
+			setProviderVersion(PROVIDER_VERSION_EDEFAULT);
+			return;
 		case DaprdesignerPackage.COMPONENT__AUTH:
 			setAuth((SecretStore) null);
 			return;
 		case DaprdesignerPackage.COMPONENT__METADATA_NAMESPACE:
 			setMetadata_namespace((Namespace) null);
 			return;
-		case DaprdesignerPackage.COMPONENT__SPEC:
-			setSpec((ComponentSpec) null);
+		case DaprdesignerPackage.COMPONENT__IGNORE_ERRORS:
+			setIgnoreErrors(IGNORE_ERRORS_EDEFAULT);
+			return;
+		case DaprdesignerPackage.COMPONENT__INIT_TIMEOUT:
+			setInitTimeout(INIT_TIMEOUT_EDEFAULT);
+			return;
+		case DaprdesignerPackage.COMPONENT__SPEC_METADATA:
+			getSpecMetadata().clear();
 			return;
 		case DaprdesignerPackage.COMPONENT__SCOPES:
 			getScopes().clear();
@@ -433,12 +559,19 @@ public abstract class ComponentImpl extends DaprNodeImpl implements Component {
 			return KIND_EDEFAULT == null ? kind != null : !KIND_EDEFAULT.equals(kind);
 		case DaprdesignerPackage.COMPONENT__PROVIDER_NAME:
 			return PROVIDER_NAME_EDEFAULT == null ? providerName != null : !PROVIDER_NAME_EDEFAULT.equals(providerName);
+		case DaprdesignerPackage.COMPONENT__PROVIDER_VERSION:
+			return PROVIDER_VERSION_EDEFAULT == null ? providerVersion != null
+					: !PROVIDER_VERSION_EDEFAULT.equals(providerVersion);
 		case DaprdesignerPackage.COMPONENT__AUTH:
 			return auth != null;
 		case DaprdesignerPackage.COMPONENT__METADATA_NAMESPACE:
 			return metadata_namespace != null;
-		case DaprdesignerPackage.COMPONENT__SPEC:
-			return spec != null;
+		case DaprdesignerPackage.COMPONENT__IGNORE_ERRORS:
+			return ignoreErrors != IGNORE_ERRORS_EDEFAULT;
+		case DaprdesignerPackage.COMPONENT__INIT_TIMEOUT:
+			return INIT_TIMEOUT_EDEFAULT == null ? initTimeout != null : !INIT_TIMEOUT_EDEFAULT.equals(initTimeout);
+		case DaprdesignerPackage.COMPONENT__SPEC_METADATA:
+			return specMetadata != null && !specMetadata.isEmpty();
 		case DaprdesignerPackage.COMPONENT__SCOPES:
 			return scopes != null && !scopes.isEmpty();
 		}
@@ -462,6 +595,12 @@ public abstract class ComponentImpl extends DaprNodeImpl implements Component {
 		result.append(kind);
 		result.append(", providerName: ");
 		result.append(providerName);
+		result.append(", providerVersion: ");
+		result.append(providerVersion);
+		result.append(", ignoreErrors: ");
+		result.append(ignoreErrors);
+		result.append(", initTimeout: ");
+		result.append(initTimeout);
 		result.append(')');
 		return result.toString();
 	}

@@ -451,9 +451,13 @@ abstract class Component extends DaprNode {
 	readonly attr String apiVersion = "dapr.io/v1alpha1";
 	readonly attr String kind = "Component";
 	attr String providerName;
+	attr String providerVersion;
 	ref SecretStore auth;
 	ref Namespace metadata_namespace;
-	ref ComponentSpec spec; 
+	attr boolean ignoreErrors;
+	attr String initTimeout;
+	ref SpecMetadata[*] specMetadata; 
+	//ref ComponentSpec spec; 
 	ref App[*] scopes;
 	
 	

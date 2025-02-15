@@ -3486,13 +3486,22 @@ public interface DaprdesignerPackage extends EPackage {
 	int COMPONENT__PROVIDER_NAME = DAPR_NODE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Provider Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__PROVIDER_VERSION = DAPR_NODE_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Auth</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__AUTH = DAPR_NODE_FEATURE_COUNT + 3;
+	int COMPONENT__AUTH = DAPR_NODE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Metadata namespace</b></em>' reference.
@@ -3501,16 +3510,34 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__METADATA_NAMESPACE = DAPR_NODE_FEATURE_COUNT + 4;
+	int COMPONENT__METADATA_NAMESPACE = DAPR_NODE_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Spec</b></em>' reference.
+	 * The feature id for the '<em><b>Ignore Errors</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__SPEC = DAPR_NODE_FEATURE_COUNT + 5;
+	int COMPONENT__IGNORE_ERRORS = DAPR_NODE_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Init Timeout</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__INIT_TIMEOUT = DAPR_NODE_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Spec Metadata</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__SPEC_METADATA = DAPR_NODE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Scopes</b></em>' reference list.
@@ -3519,7 +3546,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__SCOPES = DAPR_NODE_FEATURE_COUNT + 6;
+	int COMPONENT__SCOPES = DAPR_NODE_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -3528,7 +3555,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 7;
+	int COMPONENT_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of operations of the '<em>Component</em>' class.
@@ -3813,6 +3840,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int PUB_SUB__PROVIDER_NAME = COMPONENT__PROVIDER_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Provider Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PUB_SUB__PROVIDER_VERSION = COMPONENT__PROVIDER_VERSION;
+
+	/**
 	 * The feature id for the '<em><b>Auth</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3831,13 +3867,31 @@ public interface DaprdesignerPackage extends EPackage {
 	int PUB_SUB__METADATA_NAMESPACE = COMPONENT__METADATA_NAMESPACE;
 
 	/**
-	 * The feature id for the '<em><b>Spec</b></em>' reference.
+	 * The feature id for the '<em><b>Ignore Errors</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PUB_SUB__SPEC = COMPONENT__SPEC;
+	int PUB_SUB__IGNORE_ERRORS = COMPONENT__IGNORE_ERRORS;
+
+	/**
+	 * The feature id for the '<em><b>Init Timeout</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PUB_SUB__INIT_TIMEOUT = COMPONENT__INIT_TIMEOUT;
+
+	/**
+	 * The feature id for the '<em><b>Spec Metadata</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PUB_SUB__SPEC_METADATA = COMPONENT__SPEC_METADATA;
 
 	/**
 	 * The feature id for the '<em><b>Scopes</b></em>' reference list.
@@ -3940,6 +3994,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int BINDINGS__PROVIDER_NAME = COMPONENT__PROVIDER_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Provider Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINDINGS__PROVIDER_VERSION = COMPONENT__PROVIDER_VERSION;
+
+	/**
 	 * The feature id for the '<em><b>Auth</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3958,13 +4021,31 @@ public interface DaprdesignerPackage extends EPackage {
 	int BINDINGS__METADATA_NAMESPACE = COMPONENT__METADATA_NAMESPACE;
 
 	/**
-	 * The feature id for the '<em><b>Spec</b></em>' reference.
+	 * The feature id for the '<em><b>Ignore Errors</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BINDINGS__SPEC = COMPONENT__SPEC;
+	int BINDINGS__IGNORE_ERRORS = COMPONENT__IGNORE_ERRORS;
+
+	/**
+	 * The feature id for the '<em><b>Init Timeout</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINDINGS__INIT_TIMEOUT = COMPONENT__INIT_TIMEOUT;
+
+	/**
+	 * The feature id for the '<em><b>Spec Metadata</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINDINGS__SPEC_METADATA = COMPONENT__SPEC_METADATA;
 
 	/**
 	 * The feature id for the '<em><b>Scopes</b></em>' reference list.
@@ -4067,6 +4148,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int SECRET_STORE__PROVIDER_NAME = COMPONENT__PROVIDER_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Provider Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECRET_STORE__PROVIDER_VERSION = COMPONENT__PROVIDER_VERSION;
+
+	/**
 	 * The feature id for the '<em><b>Auth</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4085,13 +4175,31 @@ public interface DaprdesignerPackage extends EPackage {
 	int SECRET_STORE__METADATA_NAMESPACE = COMPONENT__METADATA_NAMESPACE;
 
 	/**
-	 * The feature id for the '<em><b>Spec</b></em>' reference.
+	 * The feature id for the '<em><b>Ignore Errors</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECRET_STORE__SPEC = COMPONENT__SPEC;
+	int SECRET_STORE__IGNORE_ERRORS = COMPONENT__IGNORE_ERRORS;
+
+	/**
+	 * The feature id for the '<em><b>Init Timeout</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECRET_STORE__INIT_TIMEOUT = COMPONENT__INIT_TIMEOUT;
+
+	/**
+	 * The feature id for the '<em><b>Spec Metadata</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECRET_STORE__SPEC_METADATA = COMPONENT__SPEC_METADATA;
 
 	/**
 	 * The feature id for the '<em><b>Scopes</b></em>' reference list.
@@ -4194,6 +4302,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int STATE_STORE__PROVIDER_NAME = COMPONENT__PROVIDER_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Provider Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_STORE__PROVIDER_VERSION = COMPONENT__PROVIDER_VERSION;
+
+	/**
 	 * The feature id for the '<em><b>Auth</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4212,13 +4329,31 @@ public interface DaprdesignerPackage extends EPackage {
 	int STATE_STORE__METADATA_NAMESPACE = COMPONENT__METADATA_NAMESPACE;
 
 	/**
-	 * The feature id for the '<em><b>Spec</b></em>' reference.
+	 * The feature id for the '<em><b>Ignore Errors</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_STORE__SPEC = COMPONENT__SPEC;
+	int STATE_STORE__IGNORE_ERRORS = COMPONENT__IGNORE_ERRORS;
+
+	/**
+	 * The feature id for the '<em><b>Init Timeout</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_STORE__INIT_TIMEOUT = COMPONENT__INIT_TIMEOUT;
+
+	/**
+	 * The feature id for the '<em><b>Spec Metadata</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_STORE__SPEC_METADATA = COMPONENT__SPEC_METADATA;
 
 	/**
 	 * The feature id for the '<em><b>Scopes</b></em>' reference list.
@@ -4321,6 +4456,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int CONFIGURATION_STORE__PROVIDER_NAME = COMPONENT__PROVIDER_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Provider Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIGURATION_STORE__PROVIDER_VERSION = COMPONENT__PROVIDER_VERSION;
+
+	/**
 	 * The feature id for the '<em><b>Auth</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4339,13 +4483,31 @@ public interface DaprdesignerPackage extends EPackage {
 	int CONFIGURATION_STORE__METADATA_NAMESPACE = COMPONENT__METADATA_NAMESPACE;
 
 	/**
-	 * The feature id for the '<em><b>Spec</b></em>' reference.
+	 * The feature id for the '<em><b>Ignore Errors</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIGURATION_STORE__SPEC = COMPONENT__SPEC;
+	int CONFIGURATION_STORE__IGNORE_ERRORS = COMPONENT__IGNORE_ERRORS;
+
+	/**
+	 * The feature id for the '<em><b>Init Timeout</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIGURATION_STORE__INIT_TIMEOUT = COMPONENT__INIT_TIMEOUT;
+
+	/**
+	 * The feature id for the '<em><b>Spec Metadata</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIGURATION_STORE__SPEC_METADATA = COMPONENT__SPEC_METADATA;
 
 	/**
 	 * The feature id for the '<em><b>Scopes</b></em>' reference list.
@@ -4448,6 +4610,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int LOCKS__PROVIDER_NAME = COMPONENT__PROVIDER_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Provider Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCKS__PROVIDER_VERSION = COMPONENT__PROVIDER_VERSION;
+
+	/**
 	 * The feature id for the '<em><b>Auth</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4466,13 +4637,31 @@ public interface DaprdesignerPackage extends EPackage {
 	int LOCKS__METADATA_NAMESPACE = COMPONENT__METADATA_NAMESPACE;
 
 	/**
-	 * The feature id for the '<em><b>Spec</b></em>' reference.
+	 * The feature id for the '<em><b>Ignore Errors</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOCKS__SPEC = COMPONENT__SPEC;
+	int LOCKS__IGNORE_ERRORS = COMPONENT__IGNORE_ERRORS;
+
+	/**
+	 * The feature id for the '<em><b>Init Timeout</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCKS__INIT_TIMEOUT = COMPONENT__INIT_TIMEOUT;
+
+	/**
+	 * The feature id for the '<em><b>Spec Metadata</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCKS__SPEC_METADATA = COMPONENT__SPEC_METADATA;
 
 	/**
 	 * The feature id for the '<em><b>Scopes</b></em>' reference list.
@@ -4575,6 +4764,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int CRYPTOGRAPHY__PROVIDER_NAME = COMPONENT__PROVIDER_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Provider Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CRYPTOGRAPHY__PROVIDER_VERSION = COMPONENT__PROVIDER_VERSION;
+
+	/**
 	 * The feature id for the '<em><b>Auth</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4593,13 +4791,31 @@ public interface DaprdesignerPackage extends EPackage {
 	int CRYPTOGRAPHY__METADATA_NAMESPACE = COMPONENT__METADATA_NAMESPACE;
 
 	/**
-	 * The feature id for the '<em><b>Spec</b></em>' reference.
+	 * The feature id for the '<em><b>Ignore Errors</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CRYPTOGRAPHY__SPEC = COMPONENT__SPEC;
+	int CRYPTOGRAPHY__IGNORE_ERRORS = COMPONENT__IGNORE_ERRORS;
+
+	/**
+	 * The feature id for the '<em><b>Init Timeout</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CRYPTOGRAPHY__INIT_TIMEOUT = COMPONENT__INIT_TIMEOUT;
+
+	/**
+	 * The feature id for the '<em><b>Spec Metadata</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CRYPTOGRAPHY__SPEC_METADATA = COMPONENT__SPEC_METADATA;
 
 	/**
 	 * The feature id for the '<em><b>Scopes</b></em>' reference list.
@@ -4702,6 +4918,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int MIDDLEWARE__PROVIDER_NAME = COMPONENT__PROVIDER_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Provider Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIDDLEWARE__PROVIDER_VERSION = COMPONENT__PROVIDER_VERSION;
+
+	/**
 	 * The feature id for the '<em><b>Auth</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4720,13 +4945,31 @@ public interface DaprdesignerPackage extends EPackage {
 	int MIDDLEWARE__METADATA_NAMESPACE = COMPONENT__METADATA_NAMESPACE;
 
 	/**
-	 * The feature id for the '<em><b>Spec</b></em>' reference.
+	 * The feature id for the '<em><b>Ignore Errors</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MIDDLEWARE__SPEC = COMPONENT__SPEC;
+	int MIDDLEWARE__IGNORE_ERRORS = COMPONENT__IGNORE_ERRORS;
+
+	/**
+	 * The feature id for the '<em><b>Init Timeout</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIDDLEWARE__INIT_TIMEOUT = COMPONENT__INIT_TIMEOUT;
+
+	/**
+	 * The feature id for the '<em><b>Spec Metadata</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIDDLEWARE__SPEC_METADATA = COMPONENT__SPEC_METADATA;
 
 	/**
 	 * The feature id for the '<em><b>Scopes</b></em>' reference list.
@@ -4829,6 +5072,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int NAMERESOLUTION__PROVIDER_NAME = COMPONENT__PROVIDER_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Provider Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMERESOLUTION__PROVIDER_VERSION = COMPONENT__PROVIDER_VERSION;
+
+	/**
 	 * The feature id for the '<em><b>Auth</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4847,13 +5099,31 @@ public interface DaprdesignerPackage extends EPackage {
 	int NAMERESOLUTION__METADATA_NAMESPACE = COMPONENT__METADATA_NAMESPACE;
 
 	/**
-	 * The feature id for the '<em><b>Spec</b></em>' reference.
+	 * The feature id for the '<em><b>Ignore Errors</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NAMERESOLUTION__SPEC = COMPONENT__SPEC;
+	int NAMERESOLUTION__IGNORE_ERRORS = COMPONENT__IGNORE_ERRORS;
+
+	/**
+	 * The feature id for the '<em><b>Init Timeout</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMERESOLUTION__INIT_TIMEOUT = COMPONENT__INIT_TIMEOUT;
+
+	/**
+	 * The feature id for the '<em><b>Spec Metadata</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMERESOLUTION__SPEC_METADATA = COMPONENT__SPEC_METADATA;
 
 	/**
 	 * The feature id for the '<em><b>Scopes</b></em>' reference list.
@@ -6983,6 +7253,17 @@ public interface DaprdesignerPackage extends EPackage {
 	EAttribute getComponent_ProviderName();
 
 	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.Component#getProviderVersion <em>Provider Version</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Provider Version</em>'.
+	 * @see daprdesigner.Component#getProviderVersion()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EAttribute getComponent_ProviderVersion();
+
+	/**
 	 * Returns the meta object for the reference '{@link daprdesigner.Component#getAuth <em>Auth</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7005,15 +7286,37 @@ public interface DaprdesignerPackage extends EPackage {
 	EReference getComponent_Metadata_namespace();
 
 	/**
-	 * Returns the meta object for the reference '{@link daprdesigner.Component#getSpec <em>Spec</em>}'.
+	 * Returns the meta object for the attribute '{@link daprdesigner.Component#isIgnoreErrors <em>Ignore Errors</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Spec</em>'.
-	 * @see daprdesigner.Component#getSpec()
+	 * @return the meta object for the attribute '<em>Ignore Errors</em>'.
+	 * @see daprdesigner.Component#isIgnoreErrors()
 	 * @see #getComponent()
 	 * @generated
 	 */
-	EReference getComponent_Spec();
+	EAttribute getComponent_IgnoreErrors();
+
+	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.Component#getInitTimeout <em>Init Timeout</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Init Timeout</em>'.
+	 * @see daprdesigner.Component#getInitTimeout()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EAttribute getComponent_InitTimeout();
+
+	/**
+	 * Returns the meta object for the reference list '{@link daprdesigner.Component#getSpecMetadata <em>Spec Metadata</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Spec Metadata</em>'.
+	 * @see daprdesigner.Component#getSpecMetadata()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EReference getComponent_SpecMetadata();
 
 	/**
 	 * Returns the meta object for the reference list '{@link daprdesigner.Component#getScopes <em>Scopes</em>}'.
@@ -9036,6 +9339,14 @@ public interface DaprdesignerPackage extends EPackage {
 		EAttribute COMPONENT__PROVIDER_NAME = eINSTANCE.getComponent_ProviderName();
 
 		/**
+		 * The meta object literal for the '<em><b>Provider Version</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT__PROVIDER_VERSION = eINSTANCE.getComponent_ProviderVersion();
+
+		/**
 		 * The meta object literal for the '<em><b>Auth</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -9052,12 +9363,28 @@ public interface DaprdesignerPackage extends EPackage {
 		EReference COMPONENT__METADATA_NAMESPACE = eINSTANCE.getComponent_Metadata_namespace();
 
 		/**
-		 * The meta object literal for the '<em><b>Spec</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Ignore Errors</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPONENT__SPEC = eINSTANCE.getComponent_Spec();
+		EAttribute COMPONENT__IGNORE_ERRORS = eINSTANCE.getComponent_IgnoreErrors();
+
+		/**
+		 * The meta object literal for the '<em><b>Init Timeout</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT__INIT_TIMEOUT = eINSTANCE.getComponent_InitTimeout();
+
+		/**
+		 * The meta object literal for the '<em><b>Spec Metadata</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT__SPEC_METADATA = eINSTANCE.getComponent_SpecMetadata();
 
 		/**
 		 * The meta object literal for the '<em><b>Scopes</b></em>' reference list feature.

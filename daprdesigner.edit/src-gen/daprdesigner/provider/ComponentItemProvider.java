@@ -47,9 +47,12 @@ public class ComponentItemProvider extends DaprNodeItemProvider {
 			addApiVersionPropertyDescriptor(object);
 			addKindPropertyDescriptor(object);
 			addProviderNamePropertyDescriptor(object);
+			addProviderVersionPropertyDescriptor(object);
 			addAuthPropertyDescriptor(object);
 			addMetadata_namespacePropertyDescriptor(object);
-			addSpecPropertyDescriptor(object);
+			addIgnoreErrorsPropertyDescriptor(object);
+			addInitTimeoutPropertyDescriptor(object);
+			addSpecMetadataPropertyDescriptor(object);
 			addScopesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -104,6 +107,22 @@ public class ComponentItemProvider extends DaprNodeItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Provider Version feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addProviderVersionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Component_providerVersion_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Component_providerVersion_feature",
+								"_UI_Component_type"),
+						DaprdesignerPackage.Literals.COMPONENT__PROVIDER_VERSION, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Auth feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -135,18 +154,50 @@ public class ComponentItemProvider extends DaprNodeItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Spec feature.
+	 * This adds a property descriptor for the Ignore Errors feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSpecPropertyDescriptor(Object object) {
+	protected void addIgnoreErrorsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Component_spec_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Component_spec_feature",
+						getResourceLocator(), getString("_UI_Component_ignoreErrors_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Component_ignoreErrors_feature",
 								"_UI_Component_type"),
-						DaprdesignerPackage.Literals.COMPONENT__SPEC, true, false, true, null, null, null));
+						DaprdesignerPackage.Literals.COMPONENT__IGNORE_ERRORS, true, false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Init Timeout feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInitTimeoutPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Component_initTimeout_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Component_initTimeout_feature",
+								"_UI_Component_type"),
+						DaprdesignerPackage.Literals.COMPONENT__INIT_TIMEOUT, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Spec Metadata feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSpecMetadataPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Component_specMetadata_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Component_specMetadata_feature",
+								"_UI_Component_type"),
+						DaprdesignerPackage.Literals.COMPONENT__SPEC_METADATA, true, false, true, null, null, null));
 	}
 
 	/**
@@ -202,6 +253,9 @@ public class ComponentItemProvider extends DaprNodeItemProvider {
 		case DaprdesignerPackage.COMPONENT__API_VERSION:
 		case DaprdesignerPackage.COMPONENT__KIND:
 		case DaprdesignerPackage.COMPONENT__PROVIDER_NAME:
+		case DaprdesignerPackage.COMPONENT__PROVIDER_VERSION:
+		case DaprdesignerPackage.COMPONENT__IGNORE_ERRORS:
+		case DaprdesignerPackage.COMPONENT__INIT_TIMEOUT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
