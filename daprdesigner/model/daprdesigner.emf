@@ -464,7 +464,7 @@ class ComponentSpec extends DaprNode{
 	readonly attr String help= "https://docs.dapr.io/reference/resource-specs/component-schema/";
 	attr boolean ignoreErrors;
 	attr String initTimeout;
-	ref SpecMetadata[*] spec_metadata; 
+	ref SpecMetadata[*] specMetadata; 
 }
 
 class SpecMetadata extends DaprNode{

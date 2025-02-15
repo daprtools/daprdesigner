@@ -180,7 +180,7 @@ public class BlockItemProvider extends ItemProviderAdapter implements IEditingDo
 		case DISTRIBUTEDLOCK:
 			return overlayImage(object, getResourceLocator().getImage("full/obj16/Locks"));
 		case CONFIGURATIONGROUP:
-			return overlayImage(object, getResourceLocator().getImage("full/obj16/AppConfiguration"));
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/AppConfiguration2"));
 		case ENVIRONMENT:
 			return overlayImage(object, getResourceLocator().getImage("full/obj16/Environment"));
 		case JOBS:

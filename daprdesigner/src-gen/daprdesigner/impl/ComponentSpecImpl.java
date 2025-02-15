@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link daprdesigner.impl.ComponentSpecImpl#getHelp <em>Help</em>}</li>
  *   <li>{@link daprdesigner.impl.ComponentSpecImpl#isIgnoreErrors <em>Ignore Errors</em>}</li>
  *   <li>{@link daprdesigner.impl.ComponentSpecImpl#getInitTimeout <em>Init Timeout</em>}</li>
- *   <li>{@link daprdesigner.impl.ComponentSpecImpl#getSpec_metadata <em>Spec metadata</em>}</li>
+ *   <li>{@link daprdesigner.impl.ComponentSpecImpl#getSpecMetadata <em>Spec Metadata</em>}</li>
  * </ul>
  *
  * @generated
@@ -96,14 +96,14 @@ public class ComponentSpecImpl extends DaprNodeImpl implements ComponentSpec {
 	protected String initTimeout = INIT_TIMEOUT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSpec_metadata() <em>Spec metadata</em>}' reference list.
+	 * The cached value of the '{@link #getSpecMetadata() <em>Spec Metadata</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSpec_metadata()
+	 * @see #getSpecMetadata()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SpecMetadata> spec_metadata;
+	protected EList<SpecMetadata> specMetadata;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -182,12 +182,12 @@ public class ComponentSpecImpl extends DaprNodeImpl implements ComponentSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SpecMetadata> getSpec_metadata() {
-		if (spec_metadata == null) {
-			spec_metadata = new EObjectResolvingEList<SpecMetadata>(SpecMetadata.class, this,
+	public EList<SpecMetadata> getSpecMetadata() {
+		if (specMetadata == null) {
+			specMetadata = new EObjectResolvingEList<SpecMetadata>(SpecMetadata.class, this,
 					DaprdesignerPackage.COMPONENT_SPEC__SPEC_METADATA);
 		}
-		return spec_metadata;
+		return specMetadata;
 	}
 
 	/**
@@ -205,7 +205,7 @@ public class ComponentSpecImpl extends DaprNodeImpl implements ComponentSpec {
 		case DaprdesignerPackage.COMPONENT_SPEC__INIT_TIMEOUT:
 			return getInitTimeout();
 		case DaprdesignerPackage.COMPONENT_SPEC__SPEC_METADATA:
-			return getSpec_metadata();
+			return getSpecMetadata();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -226,8 +226,8 @@ public class ComponentSpecImpl extends DaprNodeImpl implements ComponentSpec {
 			setInitTimeout((String) newValue);
 			return;
 		case DaprdesignerPackage.COMPONENT_SPEC__SPEC_METADATA:
-			getSpec_metadata().clear();
-			getSpec_metadata().addAll((Collection<? extends SpecMetadata>) newValue);
+			getSpecMetadata().clear();
+			getSpecMetadata().addAll((Collection<? extends SpecMetadata>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -248,7 +248,7 @@ public class ComponentSpecImpl extends DaprNodeImpl implements ComponentSpec {
 			setInitTimeout(INIT_TIMEOUT_EDEFAULT);
 			return;
 		case DaprdesignerPackage.COMPONENT_SPEC__SPEC_METADATA:
-			getSpec_metadata().clear();
+			getSpecMetadata().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -269,7 +269,7 @@ public class ComponentSpecImpl extends DaprNodeImpl implements ComponentSpec {
 		case DaprdesignerPackage.COMPONENT_SPEC__INIT_TIMEOUT:
 			return INIT_TIMEOUT_EDEFAULT == null ? initTimeout != null : !INIT_TIMEOUT_EDEFAULT.equals(initTimeout);
 		case DaprdesignerPackage.COMPONENT_SPEC__SPEC_METADATA:
-			return spec_metadata != null && !spec_metadata.isEmpty();
+			return specMetadata != null && !specMetadata.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

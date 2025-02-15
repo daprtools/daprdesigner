@@ -3604,7 +3604,7 @@ public interface DaprdesignerPackage extends EPackage {
 	int COMPONENT_SPEC__INIT_TIMEOUT = DAPR_NODE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Spec metadata</b></em>' reference list.
+	 * The feature id for the '<em><b>Spec Metadata</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -7070,15 +7070,15 @@ public interface DaprdesignerPackage extends EPackage {
 	EAttribute getComponentSpec_InitTimeout();
 
 	/**
-	 * Returns the meta object for the reference list '{@link daprdesigner.ComponentSpec#getSpec_metadata <em>Spec metadata</em>}'.
+	 * Returns the meta object for the reference list '{@link daprdesigner.ComponentSpec#getSpecMetadata <em>Spec Metadata</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Spec metadata</em>'.
-	 * @see daprdesigner.ComponentSpec#getSpec_metadata()
+	 * @return the meta object for the reference list '<em>Spec Metadata</em>'.
+	 * @see daprdesigner.ComponentSpec#getSpecMetadata()
 	 * @see #getComponentSpec()
 	 * @generated
 	 */
-	EReference getComponentSpec_Spec_metadata();
+	EReference getComponentSpec_SpecMetadata();
 
 	/**
 	 * Returns the meta object for class '{@link daprdesigner.SpecMetadata <em>Spec Metadata</em>}'.
@@ -9102,12 +9102,12 @@ public interface DaprdesignerPackage extends EPackage {
 		EAttribute COMPONENT_SPEC__INIT_TIMEOUT = eINSTANCE.getComponentSpec_InitTimeout();
 
 		/**
-		 * The meta object literal for the '<em><b>Spec metadata</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Spec Metadata</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPONENT_SPEC__SPEC_METADATA = eINSTANCE.getComponentSpec_Spec_metadata();
+		EReference COMPONENT_SPEC__SPEC_METADATA = eINSTANCE.getComponentSpec_SpecMetadata();
 
 		/**
 		 * The meta object literal for the '{@link daprdesigner.impl.SpecMetadataImpl <em>Spec Metadata</em>}' class.

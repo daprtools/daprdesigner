@@ -318,7 +318,7 @@
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//ComponentSpec/help"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//ComponentSpec/ignoreErrors"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//ComponentSpec/initTimeout"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//ComponentSpec/spec_metadata"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//ComponentSpec/specMetadata"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//SpecMetadata">
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//SpecMetadata/help"/>

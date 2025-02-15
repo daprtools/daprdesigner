@@ -16,7 +16,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link daprdesigner.ComponentSpec#getHelp <em>Help</em>}</li>
  *   <li>{@link daprdesigner.ComponentSpec#isIgnoreErrors <em>Ignore Errors</em>}</li>
  *   <li>{@link daprdesigner.ComponentSpec#getInitTimeout <em>Init Timeout</em>}</li>
- *   <li>{@link daprdesigner.ComponentSpec#getSpec_metadata <em>Spec metadata</em>}</li>
+ *   <li>{@link daprdesigner.ComponentSpec#getSpecMetadata <em>Spec Metadata</em>}</li>
  * </ul>
  *
  * @see daprdesigner.DaprdesignerPackage#getComponentSpec()
@@ -81,15 +81,15 @@ public interface ComponentSpec extends DaprNode {
 	void setInitTimeout(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Spec metadata</b></em>' reference list.
+	 * Returns the value of the '<em><b>Spec Metadata</b></em>' reference list.
 	 * The list contents are of type {@link daprdesigner.SpecMetadata}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Spec metadata</em>' reference list.
-	 * @see daprdesigner.DaprdesignerPackage#getComponentSpec_Spec_metadata()
+	 * @return the value of the '<em>Spec Metadata</em>' reference list.
+	 * @see daprdesigner.DaprdesignerPackage#getComponentSpec_SpecMetadata()
 	 * @model
 	 * @generated
 	 */
-	EList<SpecMetadata> getSpec_metadata();
+	EList<SpecMetadata> getSpecMetadata();
 
 } // ComponentSpec

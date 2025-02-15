@@ -388,7 +388,7 @@
         changeable="false" defaultValueLiteral="https://docs.dapr.io/reference/resource-specs/component-schema/"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ignoreErrors" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="initTimeout" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="spec_metadata" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specMetadata" upperBound="-1"
         eType="#//SpecMetadata"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SpecMetadata" eSuperTypes="#//DaprNode">

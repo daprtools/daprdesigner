@@ -2265,7 +2265,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComponentSpec_Spec_metadata() {
+	public EReference getComponentSpec_SpecMetadata() {
 		return (EReference) componentSpecEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -3546,7 +3546,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		initEAttribute(getComponentSpec_InitTimeout(), ecorePackage.getEString(), "initTimeout", null, 0, 1,
 				ComponentSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentSpec_Spec_metadata(), this.getSpecMetadata(), null, "spec_metadata", null, 0, -1,
+		initEReference(getComponentSpec_SpecMetadata(), this.getSpecMetadata(), null, "specMetadata", null, 0, -1,
 				ComponentSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
