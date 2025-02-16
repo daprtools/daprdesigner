@@ -995,15 +995,6 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getNameResolutionConfiguration_Component() {
-		return (EReference) nameResolutionConfigurationEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getNameResolutionConfiguration_ComponentVersion() {
 		return (EAttribute) nameResolutionConfigurationEClass.getEStructuralFeatures().get(2);
 	}
@@ -1033,6 +1024,15 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 */
 	public EAttribute getNameResolutionConfiguration_Help() {
 		return (EAttribute) nameResolutionConfigurationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNameResolutionConfiguration_NameResolutionComponent() {
+		return (EAttribute) nameResolutionConfigurationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1076,15 +1076,6 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSecretsAccessList_Component() {
-		return (EReference) secretsAccessListEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getSecretsAccessList_DefaultAccess() {
 		return (EAttribute) secretsAccessListEClass.getEStructuralFeatures().get(2);
 	}
@@ -1094,7 +1085,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSecretsAccessList_Secrets() {
+	public EAttribute getSecretsAccessList_AllowedSecrets() {
 		return (EAttribute) secretsAccessListEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1103,7 +1094,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSecretsAccessList_Action() {
+	public EAttribute getSecretsAccessList_DeniedSecrets() {
 		return (EAttribute) secretsAccessListEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1114,6 +1105,15 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 */
 	public EAttribute getSecretsAccessList_Help() {
 		return (EAttribute) secretsAccessListEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSecretsAccessList_SecretStore() {
+		return (EReference) secretsAccessListEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1499,26 +1499,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getHttpHandler_HandlerName() {
-		return (EAttribute) httpHandlerEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getHttpHandler_Type() {
-		return (EAttribute) httpHandlerEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getHttpHandler_HandlerType() {
-		return (EAttribute) httpHandlerEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) httpHandlerEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1528,6 +1510,15 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 */
 	public EAttribute getHttpHandler_Help() {
 		return (EAttribute) httpHandlerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getHttpHandler_MiddlewareComponent() {
+		return (EReference) httpHandlerEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1652,7 +1643,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSubscriptionConfiguration_Pubsub() {
+	public EReference getSubscriptionConfiguration_PubsubComponent() {
 		return (EReference) subscriptionConfigurationEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -2740,7 +2731,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 
 		nameResolutionConfigurationEClass = createEClass(NAME_RESOLUTION_CONFIGURATION);
 		createEAttribute(nameResolutionConfigurationEClass, NAME_RESOLUTION_CONFIGURATION__HELP);
-		createEReference(nameResolutionConfigurationEClass, NAME_RESOLUTION_CONFIGURATION__COMPONENT);
+		createEAttribute(nameResolutionConfigurationEClass, NAME_RESOLUTION_CONFIGURATION__NAME_RESOLUTION_COMPONENT);
 		createEAttribute(nameResolutionConfigurationEClass, NAME_RESOLUTION_CONFIGURATION__COMPONENT_VERSION);
 		createEAttribute(nameResolutionConfigurationEClass, NAME_RESOLUTION_CONFIGURATION__CONFIGURATION_KEY);
 		createEAttribute(nameResolutionConfigurationEClass, NAME_RESOLUTION_CONFIGURATION__CONFIGURATION_VALUE);
@@ -2751,10 +2742,10 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 
 		secretsAccessListEClass = createEClass(SECRETS_ACCESS_LIST);
 		createEAttribute(secretsAccessListEClass, SECRETS_ACCESS_LIST__HELP);
-		createEReference(secretsAccessListEClass, SECRETS_ACCESS_LIST__COMPONENT);
+		createEReference(secretsAccessListEClass, SECRETS_ACCESS_LIST__SECRET_STORE);
 		createEAttribute(secretsAccessListEClass, SECRETS_ACCESS_LIST__DEFAULT_ACCESS);
-		createEAttribute(secretsAccessListEClass, SECRETS_ACCESS_LIST__SECRETS);
-		createEAttribute(secretsAccessListEClass, SECRETS_ACCESS_LIST__ACTION);
+		createEAttribute(secretsAccessListEClass, SECRETS_ACCESS_LIST__ALLOWED_SECRETS);
+		createEAttribute(secretsAccessListEClass, SECRETS_ACCESS_LIST__DENIED_SECRETS);
 
 		metricsConfigurationEClass = createEClass(METRICS_CONFIGURATION);
 		createEAttribute(metricsConfigurationEClass, METRICS_CONFIGURATION__HELP);
@@ -2806,8 +2797,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 
 		httpHandlerEClass = createEClass(HTTP_HANDLER);
 		createEAttribute(httpHandlerEClass, HTTP_HANDLER__HELP);
-		createEAttribute(httpHandlerEClass, HTTP_HANDLER__HANDLER_NAME);
-		createEAttribute(httpHandlerEClass, HTTP_HANDLER__TYPE);
+		createEReference(httpHandlerEClass, HTTP_HANDLER__MIDDLEWARE_COMPONENT);
 		createEAttribute(httpHandlerEClass, HTTP_HANDLER__HANDLER_TYPE);
 
 		tracingConfigurationEClass = createEClass(TRACING_CONFIGURATION);
@@ -2825,7 +2815,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		createEAttribute(subscriptionConfigurationEClass, SUBSCRIPTION_CONFIGURATION__KIND);
 		createEAttribute(subscriptionConfigurationEClass, SUBSCRIPTION_CONFIGURATION__TOPIC_NAME);
 		createEReference(subscriptionConfigurationEClass, SUBSCRIPTION_CONFIGURATION__ROUTE_RULES);
-		createEReference(subscriptionConfigurationEClass, SUBSCRIPTION_CONFIGURATION__PUBSUB);
+		createEReference(subscriptionConfigurationEClass, SUBSCRIPTION_CONFIGURATION__PUBSUB_COMPONENT);
 		createEAttribute(subscriptionConfigurationEClass, SUBSCRIPTION_CONFIGURATION__DEAD_LETTER_TOPIC);
 		createEAttribute(subscriptionConfigurationEClass, SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_ENABLED);
 		createEAttribute(subscriptionConfigurationEClass,
@@ -3179,9 +3169,9 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 				"https://docs.dapr.io/operations/configuration/configuration-overview/#name-resolution-component", 0, 1,
 				NameResolutionConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getNameResolutionConfiguration_Component(), this.getComponent(), null, "component", null, 0, 1,
-				NameResolutionConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNameResolutionConfiguration_NameResolutionComponent(), ecorePackage.getEString(),
+				"nameResolutionComponent", null, 0, 1, NameResolutionConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNameResolutionConfiguration_ComponentVersion(), ecorePackage.getEString(), "componentVersion",
 				null, 0, 1, NameResolutionConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3208,16 +3198,16 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 				"https://docs.dapr.io/operations/configuration/secret-scope/", 0, 1, SecretsAccessList.class,
 				!IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getSecretsAccessList_Component(), this.getComponent(), null, "component", null, 0, 1,
+		initEReference(getSecretsAccessList_SecretStore(), this.getSecretStore(), null, "secretStore", null, 0, 1,
 				SecretsAccessList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSecretsAccessList_DefaultAccess(), ecorePackage.getEBoolean(), "defaultAccess", "true", 0, 1,
+		initEAttribute(getSecretsAccessList_DefaultAccess(), this.getAccessAction(), "defaultAccess", null, 0, 1,
 				SecretsAccessList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSecretsAccessList_Secrets(), ecorePackage.getEString(), "secrets", null, 0, -1,
+		initEAttribute(getSecretsAccessList_AllowedSecrets(), ecorePackage.getEString(), "allowedSecrets", null, 0, -1,
 				SecretsAccessList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSecretsAccessList_Action(), this.getAccessAction(), "action", null, 0, 1,
+		initEAttribute(getSecretsAccessList_DeniedSecrets(), ecorePackage.getEString(), "deniedSecrets", null, 0, -1,
 				SecretsAccessList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
@@ -3349,11 +3339,9 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 				"https://docs.dapr.io/operations/configuration/configuration-overview/#middleware", 0, 1,
 				HttpHandler.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHttpHandler_HandlerName(), ecorePackage.getEString(), "handlerName", null, 0, 1,
-				HttpHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHttpHandler_Type(), ecorePackage.getEString(), "type", null, 0, 1, HttpHandler.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHttpHandler_MiddlewareComponent(), this.getMiddleware(), null, "middlewareComponent", null, 0,
+				1, HttpHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHttpHandler_HandlerType(), this.getHttpHandlerType(), "handlerType", null, 0, 1,
 				HttpHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
@@ -3401,8 +3389,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		initEReference(getSubscriptionConfiguration_RouteRules(), this.getRouteRules(), null, "routeRules", null, 0, -1,
 				SubscriptionConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSubscriptionConfiguration_Pubsub(), this.getComponent(), null, "pubsub", null, 0, 1,
-				SubscriptionConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+		initEReference(getSubscriptionConfiguration_PubsubComponent(), this.getPubSub(), null, "pubsubComponent", null,
+				0, 1, SubscriptionConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSubscriptionConfiguration_DeadLetterTopic(), ecorePackage.getEString(), "deadLetterTopic",
 				null, 0, 1, SubscriptionConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
@@ -3742,6 +3730,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		addEEnumLiteral(blockTypeEEnum, BlockType.CRYPTOGRAPHY);
 		addEEnumLiteral(blockTypeEEnum, BlockType.CONFIGURATION);
 		addEEnumLiteral(blockTypeEEnum, BlockType.CONFIGURATIONGROUP);
+		addEEnumLiteral(blockTypeEEnum, BlockType.MIDDLEWARE);
 
 		initEEnum(nodeBlockTypeEEnum, NodeBlockType.class, "NodeBlockType");
 		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.APP);
@@ -3758,6 +3747,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.HTTPENDPOINT);
 		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.JOBS);
 		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.CONFIGURATIONSTORE);
+		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.MIDDLEWARE);
 
 		initEEnum(apiTypeEEnum, APIType.class, "APIType");
 		addEEnumLiteral(apiTypeEEnum, APIType.INVOKE);

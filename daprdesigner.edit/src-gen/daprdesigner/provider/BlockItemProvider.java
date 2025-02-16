@@ -195,6 +195,8 @@ public class BlockItemProvider extends ItemProviderAdapter implements IEditingDo
 			return overlayImage(object, getResourceLocator().getImage("full/obj16/StateStore"));
 		case WORKFLOW:
 			return overlayImage(object, getResourceLocator().getImage("full/obj16/Workflow"));
+		case MIDDLEWARE:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/Middleware"));	
 
 		}
 

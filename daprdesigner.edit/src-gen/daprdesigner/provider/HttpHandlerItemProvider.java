@@ -45,43 +45,10 @@ public class HttpHandlerItemProvider extends DaprNodeItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addHelpPropertyDescriptor(object);
-			addHandlerNamePropertyDescriptor(object);
-			addTypePropertyDescriptor(object);
+			addMiddlewareComponentPropertyDescriptor(object);
 			addHandlerTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Handler Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHandlerNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_HttpHandler_handlerName_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_HttpHandler_handlerName_feature",
-								"_UI_HttpHandler_type"),
-						DaprdesignerPackage.Literals.HTTP_HANDLER__HANDLER_NAME, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_HttpHandler_type_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_HttpHandler_type_feature",
-								"_UI_HttpHandler_type"),
-						DaprdesignerPackage.Literals.HTTP_HANDLER__TYPE, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -114,6 +81,21 @@ public class HttpHandlerItemProvider extends DaprNodeItemProvider {
 								"_UI_HttpHandler_type"),
 						DaprdesignerPackage.Literals.HTTP_HANDLER__HELP, false, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Middleware Component feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMiddlewareComponentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_HttpHandler_middlewareComponent_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_HttpHandler_middlewareComponent_feature",
+						"_UI_HttpHandler_type"),
+				DaprdesignerPackage.Literals.HTTP_HANDLER__MIDDLEWARE_COMPONENT, true, false, true, null, null, null));
 	}
 
 	/**
@@ -163,8 +145,6 @@ public class HttpHandlerItemProvider extends DaprNodeItemProvider {
 
 		switch (notification.getFeatureID(HttpHandler.class)) {
 		case DaprdesignerPackage.HTTP_HANDLER__HELP:
-		case DaprdesignerPackage.HTTP_HANDLER__HANDLER_NAME:
-		case DaprdesignerPackage.HTTP_HANDLER__TYPE:
 		case DaprdesignerPackage.HTTP_HANDLER__HANDLER_TYPE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;

@@ -45,27 +45,12 @@ public class SecretsAccessListItemProvider extends DaprNodeItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addHelpPropertyDescriptor(object);
-			addComponentPropertyDescriptor(object);
+			addSecretStorePropertyDescriptor(object);
 			addDefaultAccessPropertyDescriptor(object);
-			addSecretsPropertyDescriptor(object);
-			addActionPropertyDescriptor(object);
+			addAllowedSecretsPropertyDescriptor(object);
+			addDeniedSecretsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Component feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addComponentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_SecretsAccessList_component_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_SecretsAccessList_component_feature",
-						"_UI_SecretsAccessList_type"),
-				DaprdesignerPackage.Literals.SECRETS_ACCESS_LIST__COMPONENT, true, false, true, null, null, null));
 	}
 
 	/**
@@ -81,39 +66,39 @@ public class SecretsAccessListItemProvider extends DaprNodeItemProvider {
 				getString("_UI_PropertyDescriptor_description", "_UI_SecretsAccessList_defaultAccess_feature",
 						"_UI_SecretsAccessList_type"),
 				DaprdesignerPackage.Literals.SECRETS_ACCESS_LIST__DEFAULT_ACCESS, true, false, false,
-				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Secrets feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSecretsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_SecretsAccessList_secrets_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_SecretsAccessList_secrets_feature",
-						"_UI_SecretsAccessList_type"),
-				DaprdesignerPackage.Literals.SECRETS_ACCESS_LIST__SECRETS, true, false, false,
 				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Action feature.
+	 * This adds a property descriptor for the Allowed Secrets feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addActionPropertyDescriptor(Object object) {
+	protected void addAllowedSecretsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_SecretsAccessList_action_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_SecretsAccessList_action_feature",
+						getResourceLocator(), getString("_UI_SecretsAccessList_allowedSecrets_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_SecretsAccessList_allowedSecrets_feature",
 								"_UI_SecretsAccessList_type"),
-						DaprdesignerPackage.Literals.SECRETS_ACCESS_LIST__ACTION, true, false, false,
+						DaprdesignerPackage.Literals.SECRETS_ACCESS_LIST__ALLOWED_SECRETS, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Denied Secrets feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDeniedSecretsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_SecretsAccessList_deniedSecrets_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_SecretsAccessList_deniedSecrets_feature",
+						"_UI_SecretsAccessList_type"),
+				DaprdesignerPackage.Literals.SECRETS_ACCESS_LIST__DENIED_SECRETS, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -130,6 +115,21 @@ public class SecretsAccessListItemProvider extends DaprNodeItemProvider {
 								"_UI_SecretsAccessList_type"),
 						DaprdesignerPackage.Literals.SECRETS_ACCESS_LIST__HELP, false, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Secret Store feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSecretStorePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_SecretsAccessList_secretStore_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_SecretsAccessList_secretStore_feature",
+						"_UI_SecretsAccessList_type"),
+				DaprdesignerPackage.Literals.SECRETS_ACCESS_LIST__SECRET_STORE, true, false, true, null, null, null));
 	}
 
 	/**
@@ -180,8 +180,8 @@ public class SecretsAccessListItemProvider extends DaprNodeItemProvider {
 		switch (notification.getFeatureID(SecretsAccessList.class)) {
 		case DaprdesignerPackage.SECRETS_ACCESS_LIST__HELP:
 		case DaprdesignerPackage.SECRETS_ACCESS_LIST__DEFAULT_ACCESS:
-		case DaprdesignerPackage.SECRETS_ACCESS_LIST__SECRETS:
-		case DaprdesignerPackage.SECRETS_ACCESS_LIST__ACTION:
+		case DaprdesignerPackage.SECRETS_ACCESS_LIST__ALLOWED_SECRETS:
+		case DaprdesignerPackage.SECRETS_ACCESS_LIST__DENIED_SECRETS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

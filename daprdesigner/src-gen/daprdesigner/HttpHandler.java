@@ -12,8 +12,7 @@ package daprdesigner;
  * </p>
  * <ul>
  *   <li>{@link daprdesigner.HttpHandler#getHelp <em>Help</em>}</li>
- *   <li>{@link daprdesigner.HttpHandler#getHandlerName <em>Handler Name</em>}</li>
- *   <li>{@link daprdesigner.HttpHandler#getType <em>Type</em>}</li>
+ *   <li>{@link daprdesigner.HttpHandler#getMiddlewareComponent <em>Middleware Component</em>}</li>
  *   <li>{@link daprdesigner.HttpHandler#getHandlerType <em>Handler Type</em>}</li>
  * </ul>
  *
@@ -22,50 +21,6 @@ package daprdesigner;
  * @generated
  */
 public interface HttpHandler extends DaprNode {
-	/**
-	 * Returns the value of the '<em><b>Handler Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Handler Name</em>' attribute.
-	 * @see #setHandlerName(String)
-	 * @see daprdesigner.DaprdesignerPackage#getHttpHandler_HandlerName()
-	 * @model
-	 * @generated
-	 */
-	String getHandlerName();
-
-	/**
-	 * Sets the value of the '{@link daprdesigner.HttpHandler#getHandlerName <em>Handler Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Handler Name</em>' attribute.
-	 * @see #getHandlerName()
-	 * @generated
-	 */
-	void setHandlerName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Type</em>' attribute.
-	 * @see #setType(String)
-	 * @see daprdesigner.DaprdesignerPackage#getHttpHandler_Type()
-	 * @model
-	 * @generated
-	 */
-	String getType();
-
-	/**
-	 * Sets the value of the '{@link daprdesigner.HttpHandler#getType <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type</em>' attribute.
-	 * @see #getType()
-	 * @generated
-	 */
-	void setType(String value);
-
 	/**
 	 * Returns the value of the '<em><b>Handler Type</b></em>' attribute.
 	 * The literals are from the enumeration {@link daprdesigner.HttpHandlerType}.
@@ -102,5 +57,27 @@ public interface HttpHandler extends DaprNode {
 	 * @generated
 	 */
 	String getHelp();
+
+	/**
+	 * Returns the value of the '<em><b>Middleware Component</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Middleware Component</em>' reference.
+	 * @see #setMiddlewareComponent(Middleware)
+	 * @see daprdesigner.DaprdesignerPackage#getHttpHandler_MiddlewareComponent()
+	 * @model
+	 * @generated
+	 */
+	Middleware getMiddlewareComponent();
+
+	/**
+	 * Sets the value of the '{@link daprdesigner.HttpHandler#getMiddlewareComponent <em>Middleware Component</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Middleware Component</em>' reference.
+	 * @see #getMiddlewareComponent()
+	 * @generated
+	 */
+	void setMiddlewareComponent(Middleware value);
 
 } // HttpHandler

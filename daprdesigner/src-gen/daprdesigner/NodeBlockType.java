@@ -138,23 +138,32 @@ public enum NodeBlockType implements Enumerator {
 	 */
 	HTTPENDPOINT(11, "HTTPENDPOINT", "HTTPENDPOINT"),
 	/**
-	* The '<em><b>JOBS</b></em>' literal object.
-	* <!-- begin-user-doc -->
+	 * The '<em><b>JOBS</b></em>' literal object.
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @see #JOBS_VALUE
-	* @generated
-	* @ordered
-	*/
+	 * @see #JOBS_VALUE
+	 * @generated
+	 * @ordered
+	 */
 	JOBS(12, "JOBS", "JOBS"),
 	/**
-	* The '<em><b>CONFIGURATIONSTORE</b></em>' literal object.
+	 * The '<em><b>CONFIGURATIONSTORE</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	 * @see #CONFIGURATIONSTORE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	CONFIGURATIONSTORE(13, "CONFIGURATIONSTORE", "CONFIGURATIONSTORE"),
+	/**
+	* The '<em><b>MIDDLEWARE</b></em>' literal object.
 	* <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @see #CONFIGURATIONSTORE_VALUE
+	* @see #MIDDLEWARE_VALUE
 	* @generated
 	* @ordered
 	*/
-	CONFIGURATIONSTORE(13, "CONFIGURATIONSTORE", "CONFIGURATIONSTORE");
+	MIDDLEWARE(14, "MIDDLEWARE", "MIDDLEWARE");
 
 	/**
 	 * The '<em><b>APP</b></em>' literal value.
@@ -311,6 +320,17 @@ public enum NodeBlockType implements Enumerator {
 	public static final int CONFIGURATIONSTORE_VALUE = 13;
 
 	/**
+	 * The '<em><b>MIDDLEWARE</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #MIDDLEWARE
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MIDDLEWARE_VALUE = 14;
+
+	/**
 	 * An array of all the '<em><b>Node Block Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -318,7 +338,7 @@ public enum NodeBlockType implements Enumerator {
 	 */
 	private static final NodeBlockType[] VALUES_ARRAY = new NodeBlockType[] { APP, ACTOR, WORKFLOW, PUBSUB, BINDING,
 			SECRETSTORE, STATESTORE, DISTRIBUTEDLOCK, CRYPTOGRAPHY, SUBSCRIPTION, RESILIENCY, HTTPENDPOINT, JOBS,
-			CONFIGURATIONSTORE, };
+			CONFIGURATIONSTORE, MIDDLEWARE, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Node Block Type</b></em>' enumerators.
@@ -402,6 +422,8 @@ public enum NodeBlockType implements Enumerator {
 			return JOBS;
 		case CONFIGURATIONSTORE_VALUE:
 			return CONFIGURATIONSTORE;
+		case MIDDLEWARE_VALUE:
+			return MIDDLEWARE;
 		}
 		return null;
 	}

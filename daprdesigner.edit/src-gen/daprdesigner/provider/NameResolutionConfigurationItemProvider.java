@@ -45,28 +45,12 @@ public class NameResolutionConfigurationItemProvider extends AppConfigurationIte
 			super.getPropertyDescriptors(object);
 
 			addHelpPropertyDescriptor(object);
-			addComponentPropertyDescriptor(object);
+			addNameResolutionComponentPropertyDescriptor(object);
 			addComponentVersionPropertyDescriptor(object);
 			addConfigurationKeyPropertyDescriptor(object);
 			addConfigurationValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Component feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addComponentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_NameResolutionConfiguration_component_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_NameResolutionConfiguration_component_feature",
-						"_UI_NameResolutionConfiguration_type"),
-				DaprdesignerPackage.Literals.NAME_RESOLUTION_CONFIGURATION__COMPONENT, true, false, true, null, null,
-				null));
 	}
 
 	/**
@@ -137,6 +121,23 @@ public class NameResolutionConfigurationItemProvider extends AppConfigurationIte
 	}
 
 	/**
+	 * This adds a property descriptor for the Name Resolution Component feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNameResolutionComponentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_NameResolutionConfiguration_nameResolutionComponent_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_NameResolutionConfiguration_nameResolutionComponent_feature",
+						"_UI_NameResolutionConfiguration_type"),
+				DaprdesignerPackage.Literals.NAME_RESOLUTION_CONFIGURATION__NAME_RESOLUTION_COMPONENT, true, false,
+				false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This returns NameResolutionConfiguration.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -183,6 +184,7 @@ public class NameResolutionConfigurationItemProvider extends AppConfigurationIte
 
 		switch (notification.getFeatureID(NameResolutionConfiguration.class)) {
 		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__HELP:
+		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__NAME_RESOLUTION_COMPONENT:
 		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__COMPONENT_VERSION:
 		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__CONFIGURATION_KEY:
 		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__CONFIGURATION_VALUE:

@@ -146,7 +146,16 @@ public enum BlockType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CONFIGURATIONGROUP(12, "CONFIGURATIONGROUP", "CONFIGURATIONGROUP");
+	CONFIGURATIONGROUP(12, "CONFIGURATIONGROUP", "CONFIGURATIONGROUP"),
+	/**
+	* The '<em><b>MIDDLEWARE</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #MIDDLEWARE_VALUE
+	* @generated
+	* @ordered
+	*/
+	MIDDLEWARE(13, "MIDDLEWARE", "MIDDLEWARE");
 
 	/**
 	 * The '<em><b>ENVIRONMENT</b></em>' literal value.
@@ -292,6 +301,17 @@ public enum BlockType implements Enumerator {
 	public static final int CONFIGURATIONGROUP_VALUE = 12;
 
 	/**
+	 * The '<em><b>MIDDLEWARE</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #MIDDLEWARE
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MIDDLEWARE_VALUE = 13;
+
+	/**
 	 * An array of all the '<em><b>Block Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -299,7 +319,7 @@ public enum BlockType implements Enumerator {
 	 */
 	private static final BlockType[] VALUES_ARRAY = new BlockType[] { ENVIRONMENT, MICROSERVICES, PUBSUB, SECRETSTORE,
 			BINDINGS, JOBS, WORKFLOW, ACTORS, STATESTORE, DISTRIBUTEDLOCK, CRYPTOGRAPHY, CONFIGURATION,
-			CONFIGURATIONGROUP, };
+			CONFIGURATIONGROUP, MIDDLEWARE, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Block Type</b></em>' enumerators.
@@ -381,6 +401,8 @@ public enum BlockType implements Enumerator {
 			return CONFIGURATION;
 		case CONFIGURATIONGROUP_VALUE:
 			return CONFIGURATIONGROUP;
+		case MIDDLEWARE_VALUE:
+			return MIDDLEWARE;
 		}
 		return null;
 	}

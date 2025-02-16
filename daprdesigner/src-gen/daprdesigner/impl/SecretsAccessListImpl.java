@@ -3,8 +3,8 @@
 package daprdesigner.impl;
 
 import daprdesigner.AccessAction;
-import daprdesigner.Component;
 import daprdesigner.DaprdesignerPackage;
+import daprdesigner.SecretStore;
 import daprdesigner.SecretsAccessList;
 
 import java.util.Collection;
@@ -29,10 +29,10 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * </p>
  * <ul>
  *   <li>{@link daprdesigner.impl.SecretsAccessListImpl#getHelp <em>Help</em>}</li>
- *   <li>{@link daprdesigner.impl.SecretsAccessListImpl#getComponent <em>Component</em>}</li>
- *   <li>{@link daprdesigner.impl.SecretsAccessListImpl#isDefaultAccess <em>Default Access</em>}</li>
- *   <li>{@link daprdesigner.impl.SecretsAccessListImpl#getSecrets <em>Secrets</em>}</li>
- *   <li>{@link daprdesigner.impl.SecretsAccessListImpl#getAction <em>Action</em>}</li>
+ *   <li>{@link daprdesigner.impl.SecretsAccessListImpl#getSecretStore <em>Secret Store</em>}</li>
+ *   <li>{@link daprdesigner.impl.SecretsAccessListImpl#getDefaultAccess <em>Default Access</em>}</li>
+ *   <li>{@link daprdesigner.impl.SecretsAccessListImpl#getAllowedSecrets <em>Allowed Secrets</em>}</li>
+ *   <li>{@link daprdesigner.impl.SecretsAccessListImpl#getDeniedSecrets <em>Denied Secrets</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,64 +59,54 @@ public class SecretsAccessListImpl extends DaprNodeImpl implements SecretsAccess
 	protected String help = HELP_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getComponent() <em>Component</em>}' reference.
+	 * The cached value of the '{@link #getSecretStore() <em>Secret Store</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getComponent()
+	 * @see #getSecretStore()
 	 * @generated
 	 * @ordered
 	 */
-	protected Component component;
+	protected SecretStore secretStore;
 
 	/**
-	 * The default value of the '{@link #isDefaultAccess() <em>Default Access</em>}' attribute.
+	 * The default value of the '{@link #getDefaultAccess() <em>Default Access</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isDefaultAccess()
+	 * @see #getDefaultAccess()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean DEFAULT_ACCESS_EDEFAULT = true;
+	protected static final AccessAction DEFAULT_ACCESS_EDEFAULT = AccessAction.ALLOW;
 
 	/**
-	 * The cached value of the '{@link #isDefaultAccess() <em>Default Access</em>}' attribute.
+	 * The cached value of the '{@link #getDefaultAccess() <em>Default Access</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isDefaultAccess()
+	 * @see #getDefaultAccess()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean defaultAccess = DEFAULT_ACCESS_EDEFAULT;
+	protected AccessAction defaultAccess = DEFAULT_ACCESS_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSecrets() <em>Secrets</em>}' attribute list.
+	 * The cached value of the '{@link #getAllowedSecrets() <em>Allowed Secrets</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSecrets()
+	 * @see #getAllowedSecrets()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<String> secrets;
+	protected EList<String> allowedSecrets;
 
 	/**
-	 * The default value of the '{@link #getAction() <em>Action</em>}' attribute.
+	 * The cached value of the '{@link #getDeniedSecrets() <em>Denied Secrets</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAction()
+	 * @see #getDeniedSecrets()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final AccessAction ACTION_EDEFAULT = AccessAction.ALLOW;
-
-	/**
-	 * The cached value of the '{@link #getAction() <em>Action</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAction()
-	 * @generated
-	 * @ordered
-	 */
-	protected AccessAction action = ACTION_EDEFAULT;
+	protected EList<String> deniedSecrets;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -142,17 +132,26 @@ public class SecretsAccessListImpl extends DaprNodeImpl implements SecretsAccess
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Component getComponent() {
-		if (component != null && component.eIsProxy()) {
-			InternalEObject oldComponent = (InternalEObject) component;
-			component = (Component) eResolveProxy(oldComponent);
-			if (component != oldComponent) {
+	public String getHelp() {
+		return help;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SecretStore getSecretStore() {
+		if (secretStore != null && secretStore.eIsProxy()) {
+			InternalEObject oldSecretStore = (InternalEObject) secretStore;
+			secretStore = (SecretStore) eResolveProxy(oldSecretStore);
+			if (secretStore != oldSecretStore) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							DaprdesignerPackage.SECRETS_ACCESS_LIST__COMPONENT, oldComponent, component));
+							DaprdesignerPackage.SECRETS_ACCESS_LIST__SECRET_STORE, oldSecretStore, secretStore));
 			}
 		}
-		return component;
+		return secretStore;
 	}
 
 	/**
@@ -160,8 +159,8 @@ public class SecretsAccessListImpl extends DaprNodeImpl implements SecretsAccess
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Component basicGetComponent() {
-		return component;
+	public SecretStore basicGetSecretStore() {
+		return secretStore;
 	}
 
 	/**
@@ -169,12 +168,12 @@ public class SecretsAccessListImpl extends DaprNodeImpl implements SecretsAccess
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setComponent(Component newComponent) {
-		Component oldComponent = component;
-		component = newComponent;
+	public void setSecretStore(SecretStore newSecretStore) {
+		SecretStore oldSecretStore = secretStore;
+		secretStore = newSecretStore;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.SECRETS_ACCESS_LIST__COMPONENT,
-					oldComponent, component));
+			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.SECRETS_ACCESS_LIST__SECRET_STORE,
+					oldSecretStore, secretStore));
 	}
 
 	/**
@@ -182,7 +181,7 @@ public class SecretsAccessListImpl extends DaprNodeImpl implements SecretsAccess
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isDefaultAccess() {
+	public AccessAction getDefaultAccess() {
 		return defaultAccess;
 	}
 
@@ -191,9 +190,9 @@ public class SecretsAccessListImpl extends DaprNodeImpl implements SecretsAccess
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDefaultAccess(boolean newDefaultAccess) {
-		boolean oldDefaultAccess = defaultAccess;
-		defaultAccess = newDefaultAccess;
+	public void setDefaultAccess(AccessAction newDefaultAccess) {
+		AccessAction oldDefaultAccess = defaultAccess;
+		defaultAccess = newDefaultAccess == null ? DEFAULT_ACCESS_EDEFAULT : newDefaultAccess;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					DaprdesignerPackage.SECRETS_ACCESS_LIST__DEFAULT_ACCESS, oldDefaultAccess, defaultAccess));
@@ -204,12 +203,12 @@ public class SecretsAccessListImpl extends DaprNodeImpl implements SecretsAccess
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<String> getSecrets() {
-		if (secrets == null) {
-			secrets = new EDataTypeUniqueEList<String>(String.class, this,
-					DaprdesignerPackage.SECRETS_ACCESS_LIST__SECRETS);
+	public EList<String> getAllowedSecrets() {
+		if (allowedSecrets == null) {
+			allowedSecrets = new EDataTypeUniqueEList<String>(String.class, this,
+					DaprdesignerPackage.SECRETS_ACCESS_LIST__ALLOWED_SECRETS);
 		}
-		return secrets;
+		return allowedSecrets;
 	}
 
 	/**
@@ -217,30 +216,12 @@ public class SecretsAccessListImpl extends DaprNodeImpl implements SecretsAccess
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AccessAction getAction() {
-		return action;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAction(AccessAction newAction) {
-		AccessAction oldAction = action;
-		action = newAction == null ? ACTION_EDEFAULT : newAction;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.SECRETS_ACCESS_LIST__ACTION,
-					oldAction, action));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getHelp() {
-		return help;
+	public EList<String> getDeniedSecrets() {
+		if (deniedSecrets == null) {
+			deniedSecrets = new EDataTypeUniqueEList<String>(String.class, this,
+					DaprdesignerPackage.SECRETS_ACCESS_LIST__DENIED_SECRETS);
+		}
+		return deniedSecrets;
 	}
 
 	/**
@@ -253,16 +234,16 @@ public class SecretsAccessListImpl extends DaprNodeImpl implements SecretsAccess
 		switch (featureID) {
 		case DaprdesignerPackage.SECRETS_ACCESS_LIST__HELP:
 			return getHelp();
-		case DaprdesignerPackage.SECRETS_ACCESS_LIST__COMPONENT:
+		case DaprdesignerPackage.SECRETS_ACCESS_LIST__SECRET_STORE:
 			if (resolve)
-				return getComponent();
-			return basicGetComponent();
+				return getSecretStore();
+			return basicGetSecretStore();
 		case DaprdesignerPackage.SECRETS_ACCESS_LIST__DEFAULT_ACCESS:
-			return isDefaultAccess();
-		case DaprdesignerPackage.SECRETS_ACCESS_LIST__SECRETS:
-			return getSecrets();
-		case DaprdesignerPackage.SECRETS_ACCESS_LIST__ACTION:
-			return getAction();
+			return getDefaultAccess();
+		case DaprdesignerPackage.SECRETS_ACCESS_LIST__ALLOWED_SECRETS:
+			return getAllowedSecrets();
+		case DaprdesignerPackage.SECRETS_ACCESS_LIST__DENIED_SECRETS:
+			return getDeniedSecrets();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -276,18 +257,19 @@ public class SecretsAccessListImpl extends DaprNodeImpl implements SecretsAccess
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DaprdesignerPackage.SECRETS_ACCESS_LIST__COMPONENT:
-			setComponent((Component) newValue);
+		case DaprdesignerPackage.SECRETS_ACCESS_LIST__SECRET_STORE:
+			setSecretStore((SecretStore) newValue);
 			return;
 		case DaprdesignerPackage.SECRETS_ACCESS_LIST__DEFAULT_ACCESS:
-			setDefaultAccess((Boolean) newValue);
+			setDefaultAccess((AccessAction) newValue);
 			return;
-		case DaprdesignerPackage.SECRETS_ACCESS_LIST__SECRETS:
-			getSecrets().clear();
-			getSecrets().addAll((Collection<? extends String>) newValue);
+		case DaprdesignerPackage.SECRETS_ACCESS_LIST__ALLOWED_SECRETS:
+			getAllowedSecrets().clear();
+			getAllowedSecrets().addAll((Collection<? extends String>) newValue);
 			return;
-		case DaprdesignerPackage.SECRETS_ACCESS_LIST__ACTION:
-			setAction((AccessAction) newValue);
+		case DaprdesignerPackage.SECRETS_ACCESS_LIST__DENIED_SECRETS:
+			getDeniedSecrets().clear();
+			getDeniedSecrets().addAll((Collection<? extends String>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -301,17 +283,17 @@ public class SecretsAccessListImpl extends DaprNodeImpl implements SecretsAccess
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DaprdesignerPackage.SECRETS_ACCESS_LIST__COMPONENT:
-			setComponent((Component) null);
+		case DaprdesignerPackage.SECRETS_ACCESS_LIST__SECRET_STORE:
+			setSecretStore((SecretStore) null);
 			return;
 		case DaprdesignerPackage.SECRETS_ACCESS_LIST__DEFAULT_ACCESS:
 			setDefaultAccess(DEFAULT_ACCESS_EDEFAULT);
 			return;
-		case DaprdesignerPackage.SECRETS_ACCESS_LIST__SECRETS:
-			getSecrets().clear();
+		case DaprdesignerPackage.SECRETS_ACCESS_LIST__ALLOWED_SECRETS:
+			getAllowedSecrets().clear();
 			return;
-		case DaprdesignerPackage.SECRETS_ACCESS_LIST__ACTION:
-			setAction(ACTION_EDEFAULT);
+		case DaprdesignerPackage.SECRETS_ACCESS_LIST__DENIED_SECRETS:
+			getDeniedSecrets().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -327,14 +309,14 @@ public class SecretsAccessListImpl extends DaprNodeImpl implements SecretsAccess
 		switch (featureID) {
 		case DaprdesignerPackage.SECRETS_ACCESS_LIST__HELP:
 			return HELP_EDEFAULT == null ? help != null : !HELP_EDEFAULT.equals(help);
-		case DaprdesignerPackage.SECRETS_ACCESS_LIST__COMPONENT:
-			return component != null;
+		case DaprdesignerPackage.SECRETS_ACCESS_LIST__SECRET_STORE:
+			return secretStore != null;
 		case DaprdesignerPackage.SECRETS_ACCESS_LIST__DEFAULT_ACCESS:
 			return defaultAccess != DEFAULT_ACCESS_EDEFAULT;
-		case DaprdesignerPackage.SECRETS_ACCESS_LIST__SECRETS:
-			return secrets != null && !secrets.isEmpty();
-		case DaprdesignerPackage.SECRETS_ACCESS_LIST__ACTION:
-			return action != ACTION_EDEFAULT;
+		case DaprdesignerPackage.SECRETS_ACCESS_LIST__ALLOWED_SECRETS:
+			return allowedSecrets != null && !allowedSecrets.isEmpty();
+		case DaprdesignerPackage.SECRETS_ACCESS_LIST__DENIED_SECRETS:
+			return deniedSecrets != null && !deniedSecrets.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -354,10 +336,10 @@ public class SecretsAccessListImpl extends DaprNodeImpl implements SecretsAccess
 		result.append(help);
 		result.append(", defaultAccess: ");
 		result.append(defaultAccess);
-		result.append(", secrets: ");
-		result.append(secrets);
-		result.append(", action: ");
-		result.append(action);
+		result.append(", allowedSecrets: ");
+		result.append(allowedSecrets);
+		result.append(", deniedSecrets: ");
+		result.append(deniedSecrets);
 		result.append(')');
 		return result.toString();
 	}

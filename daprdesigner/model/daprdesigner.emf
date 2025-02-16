@@ -45,7 +45,8 @@ enum BlockType{
 	DISTRIBUTEDLOCK;
 	CRYPTOGRAPHY;
 	CONFIGURATION;
-	CONFIGURATIONGROUP;		
+	CONFIGURATIONGROUP;
+	MIDDLEWARE;		
 }
 
 enum NodeBlockType{
@@ -63,6 +64,7 @@ enum NodeBlockType{
 	HTTPENDPOINT;
 	JOBS;
 	CONFIGURATIONSTORE;
+	MIDDLEWARE;
 	
 	
 }
@@ -228,7 +230,7 @@ class LoggingConfiguration extends AppConfiguration{
 //Name Resolution Configuration
 class NameResolutionConfiguration extends AppConfiguration{
 	readonly attr String help= "https://docs.dapr.io/operations/configuration/configuration-overview/#name-resolution-component";
-	ref Component component;
+	attr String nameResolutionComponent;
 	attr String componentVersion;
 	attr String configurationKey;
 	attr String configurationValue;
@@ -247,10 +249,11 @@ class SecretsAccessConfiguration extends AppConfiguration
 
 class SecretsAccessList extends DaprNode{
 	readonly attr String help= "https://docs.dapr.io/operations/configuration/secret-scope/";
-	ref Component component;
-	attr boolean defaultAccess = true;
-	attr String[*] secrets;
-	attr AccessAction action;
+	ref SecretStore secretStore;
+	attr AccessAction defaultAccess;
+	attr String[*] allowedSecrets;
+	attr String[*] deniedSecrets;
+	
 	
 	
 }
@@ -327,8 +330,7 @@ class MiddlewareConfiguration extends AppConfiguration{
 
 class HttpHandler extends DaprNode{
 	readonly attr String help= "https://docs.dapr.io/operations/configuration/configuration-overview/#middleware";
-	attr String handlerName;
-	attr String type;
+	ref Middleware middlewareComponent;
 	attr HttpHandlerType handlerType;
 	
 }
@@ -354,7 +356,7 @@ class SubscriptionConfiguration extends DaprNode {
 	readonly attr String kind = "Subscription";
 	attr String topicName;
 	ref RouteRules[*] routeRules;
-	ref Component pubsub;
+	ref PubSub pubsubComponent;
 	attr String deadLetterTopic;
 	attr boolean bulkSubscribe_enabled;
 	attr String bulkSubscribe_maxMessagesCount;

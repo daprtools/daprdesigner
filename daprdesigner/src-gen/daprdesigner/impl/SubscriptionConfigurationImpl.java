@@ -3,8 +3,8 @@
 package daprdesigner.impl;
 
 import daprdesigner.App;
-import daprdesigner.Component;
 import daprdesigner.DaprdesignerPackage;
+import daprdesigner.PubSub;
 import daprdesigner.RouteRules;
 import daprdesigner.SubscriptionConfiguration;
 
@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link daprdesigner.impl.SubscriptionConfigurationImpl#getKind <em>Kind</em>}</li>
  *   <li>{@link daprdesigner.impl.SubscriptionConfigurationImpl#getTopicName <em>Topic Name</em>}</li>
  *   <li>{@link daprdesigner.impl.SubscriptionConfigurationImpl#getRouteRules <em>Route Rules</em>}</li>
- *   <li>{@link daprdesigner.impl.SubscriptionConfigurationImpl#getPubsub <em>Pubsub</em>}</li>
+ *   <li>{@link daprdesigner.impl.SubscriptionConfigurationImpl#getPubsubComponent <em>Pubsub Component</em>}</li>
  *   <li>{@link daprdesigner.impl.SubscriptionConfigurationImpl#getDeadLetterTopic <em>Dead Letter Topic</em>}</li>
  *   <li>{@link daprdesigner.impl.SubscriptionConfigurationImpl#isBulkSubscribe_enabled <em>Bulk Subscribe enabled</em>}</li>
  *   <li>{@link daprdesigner.impl.SubscriptionConfigurationImpl#getBulkSubscribe_maxMessagesCount <em>Bulk Subscribe max Messages Count</em>}</li>
@@ -136,14 +136,14 @@ public class SubscriptionConfigurationImpl extends DaprNodeImpl implements Subsc
 	protected EList<RouteRules> routeRules;
 
 	/**
-	 * The cached value of the '{@link #getPubsub() <em>Pubsub</em>}' reference.
+	 * The cached value of the '{@link #getPubsubComponent() <em>Pubsub Component</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPubsub()
+	 * @see #getPubsubComponent()
 	 * @generated
 	 * @ordered
 	 */
-	protected Component pubsub;
+	protected PubSub pubsubComponent;
 
 	/**
 	 * The default value of the '{@link #getDeadLetterTopic() <em>Dead Letter Topic</em>}' attribute.
@@ -312,17 +312,18 @@ public class SubscriptionConfigurationImpl extends DaprNodeImpl implements Subsc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Component getPubsub() {
-		if (pubsub != null && pubsub.eIsProxy()) {
-			InternalEObject oldPubsub = (InternalEObject) pubsub;
-			pubsub = (Component) eResolveProxy(oldPubsub);
-			if (pubsub != oldPubsub) {
+	public PubSub getPubsubComponent() {
+		if (pubsubComponent != null && pubsubComponent.eIsProxy()) {
+			InternalEObject oldPubsubComponent = (InternalEObject) pubsubComponent;
+			pubsubComponent = (PubSub) eResolveProxy(oldPubsubComponent);
+			if (pubsubComponent != oldPubsubComponent) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__PUBSUB, oldPubsub, pubsub));
+							DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__PUBSUB_COMPONENT, oldPubsubComponent,
+							pubsubComponent));
 			}
 		}
-		return pubsub;
+		return pubsubComponent;
 	}
 
 	/**
@@ -330,8 +331,8 @@ public class SubscriptionConfigurationImpl extends DaprNodeImpl implements Subsc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Component basicGetPubsub() {
-		return pubsub;
+	public PubSub basicGetPubsubComponent() {
+		return pubsubComponent;
 	}
 
 	/**
@@ -339,12 +340,13 @@ public class SubscriptionConfigurationImpl extends DaprNodeImpl implements Subsc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPubsub(Component newPubsub) {
-		Component oldPubsub = pubsub;
-		pubsub = newPubsub;
+	public void setPubsubComponent(PubSub newPubsubComponent) {
+		PubSub oldPubsubComponent = pubsubComponent;
+		pubsubComponent = newPubsubComponent;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__PUBSUB, oldPubsub, pubsub));
+					DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__PUBSUB_COMPONENT, oldPubsubComponent,
+					pubsubComponent));
 	}
 
 	/**
@@ -479,10 +481,10 @@ public class SubscriptionConfigurationImpl extends DaprNodeImpl implements Subsc
 			return getTopicName();
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__ROUTE_RULES:
 			return getRouteRules();
-		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__PUBSUB:
+		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__PUBSUB_COMPONENT:
 			if (resolve)
-				return getPubsub();
-			return basicGetPubsub();
+				return getPubsubComponent();
+			return basicGetPubsubComponent();
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__DEAD_LETTER_TOPIC:
 			return getDeadLetterTopic();
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__BULK_SUBSCRIBE_ENABLED:
@@ -513,8 +515,8 @@ public class SubscriptionConfigurationImpl extends DaprNodeImpl implements Subsc
 			getRouteRules().clear();
 			getRouteRules().addAll((Collection<? extends RouteRules>) newValue);
 			return;
-		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__PUBSUB:
-			setPubsub((Component) newValue);
+		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__PUBSUB_COMPONENT:
+			setPubsubComponent((PubSub) newValue);
 			return;
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__DEAD_LETTER_TOPIC:
 			setDeadLetterTopic((String) newValue);
@@ -550,8 +552,8 @@ public class SubscriptionConfigurationImpl extends DaprNodeImpl implements Subsc
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__ROUTE_RULES:
 			getRouteRules().clear();
 			return;
-		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__PUBSUB:
-			setPubsub((Component) null);
+		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__PUBSUB_COMPONENT:
+			setPubsubComponent((PubSub) null);
 			return;
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__DEAD_LETTER_TOPIC:
 			setDeadLetterTopic(DEAD_LETTER_TOPIC_EDEFAULT);
@@ -590,8 +592,8 @@ public class SubscriptionConfigurationImpl extends DaprNodeImpl implements Subsc
 			return TOPIC_NAME_EDEFAULT == null ? topicName != null : !TOPIC_NAME_EDEFAULT.equals(topicName);
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__ROUTE_RULES:
 			return routeRules != null && !routeRules.isEmpty();
-		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__PUBSUB:
-			return pubsub != null;
+		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__PUBSUB_COMPONENT:
+			return pubsubComponent != null;
 		case DaprdesignerPackage.SUBSCRIPTION_CONFIGURATION__DEAD_LETTER_TOPIC:
 			return DEAD_LETTER_TOPIC_EDEFAULT == null ? deadLetterTopic != null
 					: !DEAD_LETTER_TOPIC_EDEFAULT.equals(deadLetterTopic);

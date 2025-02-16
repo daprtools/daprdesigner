@@ -38,6 +38,7 @@
     <eLiterals name="CRYPTOGRAPHY" value="10"/>
     <eLiterals name="CONFIGURATION" value="11"/>
     <eLiterals name="CONFIGURATIONGROUP" value="12"/>
+    <eLiterals name="MIDDLEWARE" value="13"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="NodeBlockType">
     <eLiterals name="APP"/>
@@ -54,6 +55,7 @@
     <eLiterals name="HTTPENDPOINT" value="11"/>
     <eLiterals name="JOBS" value="12"/>
     <eLiterals name="CONFIGURATIONSTORE" value="13"/>
+    <eLiterals name="MIDDLEWARE" value="14"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="APIType">
     <eLiterals name="INVOKE"/>
@@ -171,7 +173,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="NameResolutionConfiguration" eSuperTypes="#//AppConfiguration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/configuration/configuration-overview/#name-resolution-component"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameResolutionComponent"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="componentVersion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="configurationKey" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="configurationValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -185,12 +188,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="SecretsAccessList" eSuperTypes="#//DaprNode">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/configuration/secret-scope/"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//Component"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultAccess" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="secrets" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="secretStore" eType="#//SecretStore"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultAccess" eType="#//AccessAction"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="allowedSecrets" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" eType="#//AccessAction"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="deniedSecrets" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MetricsConfiguration" eSuperTypes="#//AppConfiguration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -257,8 +260,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="HttpHandler" eSuperTypes="#//DaprNode">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/configuration/configuration-overview/#middleware"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="handlerName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="middlewareComponent" eType="#//Middleware"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="handlerType" eType="#//HttpHandlerType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TracingConfiguration" eSuperTypes="#//AppConfiguration">
@@ -282,7 +284,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="topicName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="routeRules" upperBound="-1"
         eType="#//RouteRules"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pubsub" eType="#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pubsubComponent" eType="#//PubSub"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="deadLetterTopic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bulkSubscribe_enabled"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>

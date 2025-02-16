@@ -12,7 +12,7 @@ package daprdesigner;
  * </p>
  * <ul>
  *   <li>{@link daprdesigner.NameResolutionConfiguration#getHelp <em>Help</em>}</li>
- *   <li>{@link daprdesigner.NameResolutionConfiguration#getComponent <em>Component</em>}</li>
+ *   <li>{@link daprdesigner.NameResolutionConfiguration#getNameResolutionComponent <em>Name Resolution Component</em>}</li>
  *   <li>{@link daprdesigner.NameResolutionConfiguration#getComponentVersion <em>Component Version</em>}</li>
  *   <li>{@link daprdesigner.NameResolutionConfiguration#getConfigurationKey <em>Configuration Key</em>}</li>
  *   <li>{@link daprdesigner.NameResolutionConfiguration#getConfigurationValue <em>Configuration Value</em>}</li>
@@ -23,28 +23,6 @@ package daprdesigner;
  * @generated
  */
 public interface NameResolutionConfiguration extends AppConfiguration {
-	/**
-	 * Returns the value of the '<em><b>Component</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Component</em>' reference.
-	 * @see #setComponent(Component)
-	 * @see daprdesigner.DaprdesignerPackage#getNameResolutionConfiguration_Component()
-	 * @model
-	 * @generated
-	 */
-	Component getComponent();
-
-	/**
-	 * Sets the value of the '{@link daprdesigner.NameResolutionConfiguration#getComponent <em>Component</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Component</em>' reference.
-	 * @see #getComponent()
-	 * @generated
-	 */
-	void setComponent(Component value);
-
 	/**
 	 * Returns the value of the '<em><b>Component Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -122,5 +100,27 @@ public interface NameResolutionConfiguration extends AppConfiguration {
 	 * @generated
 	 */
 	String getHelp();
+
+	/**
+	 * Returns the value of the '<em><b>Name Resolution Component</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name Resolution Component</em>' attribute.
+	 * @see #setNameResolutionComponent(String)
+	 * @see daprdesigner.DaprdesignerPackage#getNameResolutionConfiguration_NameResolutionComponent()
+	 * @model
+	 * @generated
+	 */
+	String getNameResolutionComponent();
+
+	/**
+	 * Sets the value of the '{@link daprdesigner.NameResolutionConfiguration#getNameResolutionComponent <em>Name Resolution Component</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name Resolution Component</em>' attribute.
+	 * @see #getNameResolutionComponent()
+	 * @generated
+	 */
+	void setNameResolutionComponent(String value);
 
 } // NameResolutionConfiguration

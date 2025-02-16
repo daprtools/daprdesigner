@@ -1324,13 +1324,13 @@ public interface DaprdesignerPackage extends EPackage {
 	int NAME_RESOLUTION_CONFIGURATION__HELP = APP_CONFIGURATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Component</b></em>' reference.
+	 * The feature id for the '<em><b>Name Resolution Component</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NAME_RESOLUTION_CONFIGURATION__COMPONENT = APP_CONFIGURATION_FEATURE_COUNT + 1;
+	int NAME_RESOLUTION_CONFIGURATION__NAME_RESOLUTION_COMPONENT = APP_CONFIGURATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Component Version</b></em>' attribute.
@@ -1515,13 +1515,13 @@ public interface DaprdesignerPackage extends EPackage {
 	int SECRETS_ACCESS_LIST__HELP = DAPR_NODE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Component</b></em>' reference.
+	 * The feature id for the '<em><b>Secret Store</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECRETS_ACCESS_LIST__COMPONENT = DAPR_NODE_FEATURE_COUNT + 1;
+	int SECRETS_ACCESS_LIST__SECRET_STORE = DAPR_NODE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Default Access</b></em>' attribute.
@@ -1533,22 +1533,22 @@ public interface DaprdesignerPackage extends EPackage {
 	int SECRETS_ACCESS_LIST__DEFAULT_ACCESS = DAPR_NODE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Secrets</b></em>' attribute list.
+	 * The feature id for the '<em><b>Allowed Secrets</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECRETS_ACCESS_LIST__SECRETS = DAPR_NODE_FEATURE_COUNT + 3;
+	int SECRETS_ACCESS_LIST__ALLOWED_SECRETS = DAPR_NODE_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Action</b></em>' attribute.
+	 * The feature id for the '<em><b>Denied Secrets</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECRETS_ACCESS_LIST__ACTION = DAPR_NODE_FEATURE_COUNT + 4;
+	int SECRETS_ACCESS_LIST__DENIED_SECRETS = DAPR_NODE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Secrets Access List</em>' class.
@@ -2378,22 +2378,13 @@ public interface DaprdesignerPackage extends EPackage {
 	int HTTP_HANDLER__HELP = DAPR_NODE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Handler Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Middleware Component</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HTTP_HANDLER__HANDLER_NAME = DAPR_NODE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HTTP_HANDLER__TYPE = DAPR_NODE_FEATURE_COUNT + 2;
+	int HTTP_HANDLER__MIDDLEWARE_COMPONENT = DAPR_NODE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Handler Type</b></em>' attribute.
@@ -2402,7 +2393,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HTTP_HANDLER__HANDLER_TYPE = DAPR_NODE_FEATURE_COUNT + 3;
+	int HTTP_HANDLER__HANDLER_TYPE = DAPR_NODE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Http Handler</em>' class.
@@ -2411,7 +2402,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HTTP_HANDLER_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 4;
+	int HTTP_HANDLER_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Http Handler</em>' class.
@@ -2641,13 +2632,13 @@ public interface DaprdesignerPackage extends EPackage {
 	int SUBSCRIPTION_CONFIGURATION__ROUTE_RULES = DAPR_NODE_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Pubsub</b></em>' reference.
+	 * The feature id for the '<em><b>Pubsub Component</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUBSCRIPTION_CONFIGURATION__PUBSUB = DAPR_NODE_FEATURE_COUNT + 5;
+	int SUBSCRIPTION_CONFIGURATION__PUBSUB_COMPONENT = DAPR_NODE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Dead Letter Topic</b></em>' attribute.
@@ -5926,17 +5917,6 @@ public interface DaprdesignerPackage extends EPackage {
 	EClass getNameResolutionConfiguration();
 
 	/**
-	 * Returns the meta object for the reference '{@link daprdesigner.NameResolutionConfiguration#getComponent <em>Component</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Component</em>'.
-	 * @see daprdesigner.NameResolutionConfiguration#getComponent()
-	 * @see #getNameResolutionConfiguration()
-	 * @generated
-	 */
-	EReference getNameResolutionConfiguration_Component();
-
-	/**
 	 * Returns the meta object for the attribute '{@link daprdesigner.NameResolutionConfiguration#getComponentVersion <em>Component Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5981,6 +5961,17 @@ public interface DaprdesignerPackage extends EPackage {
 	EAttribute getNameResolutionConfiguration_Help();
 
 	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.NameResolutionConfiguration#getNameResolutionComponent <em>Name Resolution Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name Resolution Component</em>'.
+	 * @see daprdesigner.NameResolutionConfiguration#getNameResolutionComponent()
+	 * @see #getNameResolutionConfiguration()
+	 * @generated
+	 */
+	EAttribute getNameResolutionConfiguration_NameResolutionComponent();
+
+	/**
 	 * Returns the meta object for class '{@link daprdesigner.SecretsAccessConfiguration <em>Secrets Access Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6023,48 +6014,37 @@ public interface DaprdesignerPackage extends EPackage {
 	EClass getSecretsAccessList();
 
 	/**
-	 * Returns the meta object for the reference '{@link daprdesigner.SecretsAccessList#getComponent <em>Component</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Component</em>'.
-	 * @see daprdesigner.SecretsAccessList#getComponent()
-	 * @see #getSecretsAccessList()
-	 * @generated
-	 */
-	EReference getSecretsAccessList_Component();
-
-	/**
-	 * Returns the meta object for the attribute '{@link daprdesigner.SecretsAccessList#isDefaultAccess <em>Default Access</em>}'.
+	 * Returns the meta object for the attribute '{@link daprdesigner.SecretsAccessList#getDefaultAccess <em>Default Access</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Default Access</em>'.
-	 * @see daprdesigner.SecretsAccessList#isDefaultAccess()
+	 * @see daprdesigner.SecretsAccessList#getDefaultAccess()
 	 * @see #getSecretsAccessList()
 	 * @generated
 	 */
 	EAttribute getSecretsAccessList_DefaultAccess();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link daprdesigner.SecretsAccessList#getSecrets <em>Secrets</em>}'.
+	 * Returns the meta object for the attribute list '{@link daprdesigner.SecretsAccessList#getAllowedSecrets <em>Allowed Secrets</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Secrets</em>'.
-	 * @see daprdesigner.SecretsAccessList#getSecrets()
+	 * @return the meta object for the attribute list '<em>Allowed Secrets</em>'.
+	 * @see daprdesigner.SecretsAccessList#getAllowedSecrets()
 	 * @see #getSecretsAccessList()
 	 * @generated
 	 */
-	EAttribute getSecretsAccessList_Secrets();
+	EAttribute getSecretsAccessList_AllowedSecrets();
 
 	/**
-	 * Returns the meta object for the attribute '{@link daprdesigner.SecretsAccessList#getAction <em>Action</em>}'.
+	 * Returns the meta object for the attribute list '{@link daprdesigner.SecretsAccessList#getDeniedSecrets <em>Denied Secrets</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Action</em>'.
-	 * @see daprdesigner.SecretsAccessList#getAction()
+	 * @return the meta object for the attribute list '<em>Denied Secrets</em>'.
+	 * @see daprdesigner.SecretsAccessList#getDeniedSecrets()
 	 * @see #getSecretsAccessList()
 	 * @generated
 	 */
-	EAttribute getSecretsAccessList_Action();
+	EAttribute getSecretsAccessList_DeniedSecrets();
 
 	/**
 	 * Returns the meta object for the attribute '{@link daprdesigner.SecretsAccessList#getHelp <em>Help</em>}'.
@@ -6076,6 +6056,17 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSecretsAccessList_Help();
+
+	/**
+	 * Returns the meta object for the reference '{@link daprdesigner.SecretsAccessList#getSecretStore <em>Secret Store</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Secret Store</em>'.
+	 * @see daprdesigner.SecretsAccessList#getSecretStore()
+	 * @see #getSecretsAccessList()
+	 * @generated
+	 */
+	EReference getSecretsAccessList_SecretStore();
 
 	/**
 	 * Returns the meta object for class '{@link daprdesigner.MetricsConfiguration <em>Metrics Configuration</em>}'.
@@ -6532,28 +6523,6 @@ public interface DaprdesignerPackage extends EPackage {
 	EClass getHttpHandler();
 
 	/**
-	 * Returns the meta object for the attribute '{@link daprdesigner.HttpHandler#getHandlerName <em>Handler Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Handler Name</em>'.
-	 * @see daprdesigner.HttpHandler#getHandlerName()
-	 * @see #getHttpHandler()
-	 * @generated
-	 */
-	EAttribute getHttpHandler_HandlerName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link daprdesigner.HttpHandler#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see daprdesigner.HttpHandler#getType()
-	 * @see #getHttpHandler()
-	 * @generated
-	 */
-	EAttribute getHttpHandler_Type();
-
-	/**
 	 * Returns the meta object for the attribute '{@link daprdesigner.HttpHandler#getHandlerType <em>Handler Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6574,6 +6543,17 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getHttpHandler_Help();
+
+	/**
+	 * Returns the meta object for the reference '{@link daprdesigner.HttpHandler#getMiddlewareComponent <em>Middleware Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Middleware Component</em>'.
+	 * @see daprdesigner.HttpHandler#getMiddlewareComponent()
+	 * @see #getHttpHandler()
+	 * @generated
+	 */
+	EReference getHttpHandler_MiddlewareComponent();
 
 	/**
 	 * Returns the meta object for class '{@link daprdesigner.TracingConfiguration <em>Tracing Configuration</em>}'.
@@ -6717,15 +6697,15 @@ public interface DaprdesignerPackage extends EPackage {
 	EReference getSubscriptionConfiguration_RouteRules();
 
 	/**
-	 * Returns the meta object for the reference '{@link daprdesigner.SubscriptionConfiguration#getPubsub <em>Pubsub</em>}'.
+	 * Returns the meta object for the reference '{@link daprdesigner.SubscriptionConfiguration#getPubsubComponent <em>Pubsub Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Pubsub</em>'.
-	 * @see daprdesigner.SubscriptionConfiguration#getPubsub()
+	 * @return the meta object for the reference '<em>Pubsub Component</em>'.
+	 * @see daprdesigner.SubscriptionConfiguration#getPubsubComponent()
 	 * @see #getSubscriptionConfiguration()
 	 * @generated
 	 */
-	EReference getSubscriptionConfiguration_Pubsub();
+	EReference getSubscriptionConfiguration_PubsubComponent();
 
 	/**
 	 * Returns the meta object for the attribute '{@link daprdesigner.SubscriptionConfiguration#getDeadLetterTopic <em>Dead Letter Topic</em>}'.
@@ -8362,14 +8342,6 @@ public interface DaprdesignerPackage extends EPackage {
 		EClass NAME_RESOLUTION_CONFIGURATION = eINSTANCE.getNameResolutionConfiguration();
 
 		/**
-		 * The meta object literal for the '<em><b>Component</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference NAME_RESOLUTION_CONFIGURATION__COMPONENT = eINSTANCE.getNameResolutionConfiguration_Component();
-
-		/**
 		 * The meta object literal for the '<em><b>Component Version</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8403,6 +8375,15 @@ public interface DaprdesignerPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute NAME_RESOLUTION_CONFIGURATION__HELP = eINSTANCE.getNameResolutionConfiguration_Help();
+
+		/**
+		 * The meta object literal for the '<em><b>Name Resolution Component</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NAME_RESOLUTION_CONFIGURATION__NAME_RESOLUTION_COMPONENT = eINSTANCE
+				.getNameResolutionConfiguration_NameResolutionComponent();
 
 		/**
 		 * The meta object literal for the '{@link daprdesigner.impl.SecretsAccessConfigurationImpl <em>Secrets Access Configuration</em>}' class.
@@ -8441,14 +8422,6 @@ public interface DaprdesignerPackage extends EPackage {
 		EClass SECRETS_ACCESS_LIST = eINSTANCE.getSecretsAccessList();
 
 		/**
-		 * The meta object literal for the '<em><b>Component</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SECRETS_ACCESS_LIST__COMPONENT = eINSTANCE.getSecretsAccessList_Component();
-
-		/**
 		 * The meta object literal for the '<em><b>Default Access</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8457,20 +8430,20 @@ public interface DaprdesignerPackage extends EPackage {
 		EAttribute SECRETS_ACCESS_LIST__DEFAULT_ACCESS = eINSTANCE.getSecretsAccessList_DefaultAccess();
 
 		/**
-		 * The meta object literal for the '<em><b>Secrets</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Allowed Secrets</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SECRETS_ACCESS_LIST__SECRETS = eINSTANCE.getSecretsAccessList_Secrets();
+		EAttribute SECRETS_ACCESS_LIST__ALLOWED_SECRETS = eINSTANCE.getSecretsAccessList_AllowedSecrets();
 
 		/**
-		 * The meta object literal for the '<em><b>Action</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Denied Secrets</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SECRETS_ACCESS_LIST__ACTION = eINSTANCE.getSecretsAccessList_Action();
+		EAttribute SECRETS_ACCESS_LIST__DENIED_SECRETS = eINSTANCE.getSecretsAccessList_DeniedSecrets();
 
 		/**
 		 * The meta object literal for the '<em><b>Help</b></em>' attribute feature.
@@ -8479,6 +8452,14 @@ public interface DaprdesignerPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SECRETS_ACCESS_LIST__HELP = eINSTANCE.getSecretsAccessList_Help();
+
+		/**
+		 * The meta object literal for the '<em><b>Secret Store</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SECRETS_ACCESS_LIST__SECRET_STORE = eINSTANCE.getSecretsAccessList_SecretStore();
 
 		/**
 		 * The meta object literal for the '{@link daprdesigner.impl.MetricsConfigurationImpl <em>Metrics Configuration</em>}' class.
@@ -8835,22 +8816,6 @@ public interface DaprdesignerPackage extends EPackage {
 		EClass HTTP_HANDLER = eINSTANCE.getHttpHandler();
 
 		/**
-		 * The meta object literal for the '<em><b>Handler Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute HTTP_HANDLER__HANDLER_NAME = eINSTANCE.getHttpHandler_HandlerName();
-
-		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute HTTP_HANDLER__TYPE = eINSTANCE.getHttpHandler_Type();
-
-		/**
 		 * The meta object literal for the '<em><b>Handler Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8865,6 +8830,14 @@ public interface DaprdesignerPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute HTTP_HANDLER__HELP = eINSTANCE.getHttpHandler_Help();
+
+		/**
+		 * The meta object literal for the '<em><b>Middleware Component</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HTTP_HANDLER__MIDDLEWARE_COMPONENT = eINSTANCE.getHttpHandler_MiddlewareComponent();
 
 		/**
 		 * The meta object literal for the '{@link daprdesigner.impl.TracingConfigurationImpl <em>Tracing Configuration</em>}' class.
@@ -8977,12 +8950,13 @@ public interface DaprdesignerPackage extends EPackage {
 		EReference SUBSCRIPTION_CONFIGURATION__ROUTE_RULES = eINSTANCE.getSubscriptionConfiguration_RouteRules();
 
 		/**
-		 * The meta object literal for the '<em><b>Pubsub</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Pubsub Component</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SUBSCRIPTION_CONFIGURATION__PUBSUB = eINSTANCE.getSubscriptionConfiguration_Pubsub();
+		EReference SUBSCRIPTION_CONFIGURATION__PUBSUB_COMPONENT = eINSTANCE
+				.getSubscriptionConfiguration_PubsubComponent();
 
 		/**
 		 * The meta object literal for the '<em><b>Dead Letter Topic</b></em>' attribute feature.

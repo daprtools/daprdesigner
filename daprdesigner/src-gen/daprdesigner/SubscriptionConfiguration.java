@@ -18,7 +18,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link daprdesigner.SubscriptionConfiguration#getKind <em>Kind</em>}</li>
  *   <li>{@link daprdesigner.SubscriptionConfiguration#getTopicName <em>Topic Name</em>}</li>
  *   <li>{@link daprdesigner.SubscriptionConfiguration#getRouteRules <em>Route Rules</em>}</li>
- *   <li>{@link daprdesigner.SubscriptionConfiguration#getPubsub <em>Pubsub</em>}</li>
+ *   <li>{@link daprdesigner.SubscriptionConfiguration#getPubsubComponent <em>Pubsub Component</em>}</li>
  *   <li>{@link daprdesigner.SubscriptionConfiguration#getDeadLetterTopic <em>Dead Letter Topic</em>}</li>
  *   <li>{@link daprdesigner.SubscriptionConfiguration#isBulkSubscribe_enabled <em>Bulk Subscribe enabled</em>}</li>
  *   <li>{@link daprdesigner.SubscriptionConfiguration#getBulkSubscribe_maxMessagesCount <em>Bulk Subscribe max Messages Count</em>}</li>
@@ -90,26 +90,26 @@ public interface SubscriptionConfiguration extends DaprNode {
 	EList<RouteRules> getRouteRules();
 
 	/**
-	 * Returns the value of the '<em><b>Pubsub</b></em>' reference.
+	 * Returns the value of the '<em><b>Pubsub Component</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Pubsub</em>' reference.
-	 * @see #setPubsub(Component)
-	 * @see daprdesigner.DaprdesignerPackage#getSubscriptionConfiguration_Pubsub()
+	 * @return the value of the '<em>Pubsub Component</em>' reference.
+	 * @see #setPubsubComponent(PubSub)
+	 * @see daprdesigner.DaprdesignerPackage#getSubscriptionConfiguration_PubsubComponent()
 	 * @model
 	 * @generated
 	 */
-	Component getPubsub();
+	PubSub getPubsubComponent();
 
 	/**
-	 * Sets the value of the '{@link daprdesigner.SubscriptionConfiguration#getPubsub <em>Pubsub</em>}' reference.
+	 * Sets the value of the '{@link daprdesigner.SubscriptionConfiguration#getPubsubComponent <em>Pubsub Component</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Pubsub</em>' reference.
-	 * @see #getPubsub()
+	 * @param value the new value of the '<em>Pubsub Component</em>' reference.
+	 * @see #getPubsubComponent()
 	 * @generated
 	 */
-	void setPubsub(Component value);
+	void setPubsubComponent(PubSub value);
 
 	/**
 	 * Returns the value of the '<em><b>Dead Letter Topic</b></em>' attribute.

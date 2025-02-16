@@ -49,7 +49,7 @@ public class SubscriptionConfigurationItemProvider extends DaprNodeItemProvider 
 			addKindPropertyDescriptor(object);
 			addTopicNamePropertyDescriptor(object);
 			addRouteRulesPropertyDescriptor(object);
-			addPubsubPropertyDescriptor(object);
+			addPubsubComponentPropertyDescriptor(object);
 			addDeadLetterTopicPropertyDescriptor(object);
 			addBulkSubscribe_enabledPropertyDescriptor(object);
 			addBulkSubscribe_maxMessagesCountPropertyDescriptor(object);
@@ -124,18 +124,19 @@ public class SubscriptionConfigurationItemProvider extends DaprNodeItemProvider 
 	}
 
 	/**
-	 * This adds a property descriptor for the Pubsub feature.
+	 * This adds a property descriptor for the Pubsub Component feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPubsubPropertyDescriptor(Object object) {
+	protected void addPubsubComponentPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_SubscriptionConfiguration_pubsub_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_SubscriptionConfiguration_pubsub_feature",
+				getString("_UI_SubscriptionConfiguration_pubsubComponent_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_SubscriptionConfiguration_pubsubComponent_feature",
 						"_UI_SubscriptionConfiguration_type"),
-				DaprdesignerPackage.Literals.SUBSCRIPTION_CONFIGURATION__PUBSUB, true, false, true, null, null, null));
+				DaprdesignerPackage.Literals.SUBSCRIPTION_CONFIGURATION__PUBSUB_COMPONENT, true, false, true, null,
+				null, null));
 	}
 
 	/**

@@ -135,9 +135,11 @@ public class NodeBlocksItemProvider extends DaprNodeItemProvider {
 		case WORKFLOW:
 			return overlayImage(object, getResourceLocator().getImage("full/obj16/Workflow"));
 		case JOBS:
-			return overlayImage(object, getResourceLocator().getImage("full/obj16/Jobs"));	
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/Jobs"));
 		case CONFIGURATIONSTORE:
-			return overlayImage(object, getResourceLocator().getImage("full/obj16/ConfigurationStore"));	
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/ConfigurationStore"));
+		case MIDDLEWARE:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/Middleware"));
 
 		}
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/NodeBlocks"));

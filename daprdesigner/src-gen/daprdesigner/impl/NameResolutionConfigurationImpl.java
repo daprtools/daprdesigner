@@ -2,15 +2,12 @@
  */
 package daprdesigner.impl;
 
-import daprdesigner.Component;
 import daprdesigner.DaprdesignerPackage;
 import daprdesigner.NameResolutionConfiguration;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -22,7 +19,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link daprdesigner.impl.NameResolutionConfigurationImpl#getHelp <em>Help</em>}</li>
- *   <li>{@link daprdesigner.impl.NameResolutionConfigurationImpl#getComponent <em>Component</em>}</li>
+ *   <li>{@link daprdesigner.impl.NameResolutionConfigurationImpl#getNameResolutionComponent <em>Name Resolution Component</em>}</li>
  *   <li>{@link daprdesigner.impl.NameResolutionConfigurationImpl#getComponentVersion <em>Component Version</em>}</li>
  *   <li>{@link daprdesigner.impl.NameResolutionConfigurationImpl#getConfigurationKey <em>Configuration Key</em>}</li>
  *   <li>{@link daprdesigner.impl.NameResolutionConfigurationImpl#getConfigurationValue <em>Configuration Value</em>}</li>
@@ -52,14 +49,24 @@ public class NameResolutionConfigurationImpl extends AppConfigurationImpl implem
 	protected String help = HELP_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getComponent() <em>Component</em>}' reference.
+	 * The default value of the '{@link #getNameResolutionComponent() <em>Name Resolution Component</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getComponent()
+	 * @see #getNameResolutionComponent()
 	 * @generated
 	 * @ordered
 	 */
-	protected Component component;
+	protected static final String NAME_RESOLUTION_COMPONENT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getNameResolutionComponent() <em>Name Resolution Component</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNameResolutionComponent()
+	 * @generated
+	 * @ordered
+	 */
+	protected String nameResolutionComponent = NAME_RESOLUTION_COMPONENT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getComponentVersion() <em>Component Version</em>}' attribute.
@@ -145,46 +152,6 @@ public class NameResolutionConfigurationImpl extends AppConfigurationImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Component getComponent() {
-		if (component != null && component.eIsProxy()) {
-			InternalEObject oldComponent = (InternalEObject) component;
-			component = (Component) eResolveProxy(oldComponent);
-			if (component != oldComponent) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__COMPONENT, oldComponent, component));
-			}
-		}
-		return component;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Component basicGetComponent() {
-		return component;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setComponent(Component newComponent) {
-		Component oldComponent = component;
-		component = newComponent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__COMPONENT, oldComponent, component));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getComponentVersion() {
 		return componentVersion;
 	}
@@ -263,15 +230,36 @@ public class NameResolutionConfigurationImpl extends AppConfigurationImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getNameResolutionComponent() {
+		return nameResolutionComponent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNameResolutionComponent(String newNameResolutionComponent) {
+		String oldNameResolutionComponent = nameResolutionComponent;
+		nameResolutionComponent = newNameResolutionComponent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__NAME_RESOLUTION_COMPONENT,
+					oldNameResolutionComponent, nameResolutionComponent));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__HELP:
 			return getHelp();
-		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__COMPONENT:
-			if (resolve)
-				return getComponent();
-			return basicGetComponent();
+		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__NAME_RESOLUTION_COMPONENT:
+			return getNameResolutionComponent();
 		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__COMPONENT_VERSION:
 			return getComponentVersion();
 		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__CONFIGURATION_KEY:
@@ -290,8 +278,8 @@ public class NameResolutionConfigurationImpl extends AppConfigurationImpl implem
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__COMPONENT:
-			setComponent((Component) newValue);
+		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__NAME_RESOLUTION_COMPONENT:
+			setNameResolutionComponent((String) newValue);
 			return;
 		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__COMPONENT_VERSION:
 			setComponentVersion((String) newValue);
@@ -314,8 +302,8 @@ public class NameResolutionConfigurationImpl extends AppConfigurationImpl implem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__COMPONENT:
-			setComponent((Component) null);
+		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__NAME_RESOLUTION_COMPONENT:
+			setNameResolutionComponent(NAME_RESOLUTION_COMPONENT_EDEFAULT);
 			return;
 		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__COMPONENT_VERSION:
 			setComponentVersion(COMPONENT_VERSION_EDEFAULT);
@@ -340,8 +328,9 @@ public class NameResolutionConfigurationImpl extends AppConfigurationImpl implem
 		switch (featureID) {
 		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__HELP:
 			return HELP_EDEFAULT == null ? help != null : !HELP_EDEFAULT.equals(help);
-		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__COMPONENT:
-			return component != null;
+		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__NAME_RESOLUTION_COMPONENT:
+			return NAME_RESOLUTION_COMPONENT_EDEFAULT == null ? nameResolutionComponent != null
+					: !NAME_RESOLUTION_COMPONENT_EDEFAULT.equals(nameResolutionComponent);
 		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__COMPONENT_VERSION:
 			return COMPONENT_VERSION_EDEFAULT == null ? componentVersion != null
 					: !COMPONENT_VERSION_EDEFAULT.equals(componentVersion);
@@ -368,6 +357,8 @@ public class NameResolutionConfigurationImpl extends AppConfigurationImpl implem
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (help: ");
 		result.append(help);
+		result.append(", nameResolutionComponent: ");
+		result.append(nameResolutionComponent);
 		result.append(", componentVersion: ");
 		result.append(componentVersion);
 		result.append(", configurationKey: ");

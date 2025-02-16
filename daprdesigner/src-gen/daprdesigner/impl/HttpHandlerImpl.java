@@ -6,10 +6,12 @@ import daprdesigner.DaprdesignerPackage;
 import daprdesigner.HttpHandler;
 import daprdesigner.HttpHandlerType;
 
+import daprdesigner.Middleware;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -21,8 +23,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link daprdesigner.impl.HttpHandlerImpl#getHelp <em>Help</em>}</li>
- *   <li>{@link daprdesigner.impl.HttpHandlerImpl#getHandlerName <em>Handler Name</em>}</li>
- *   <li>{@link daprdesigner.impl.HttpHandlerImpl#getType <em>Type</em>}</li>
+ *   <li>{@link daprdesigner.impl.HttpHandlerImpl#getMiddlewareComponent <em>Middleware Component</em>}</li>
  *   <li>{@link daprdesigner.impl.HttpHandlerImpl#getHandlerType <em>Handler Type</em>}</li>
  * </ul>
  *
@@ -50,44 +51,14 @@ public class HttpHandlerImpl extends DaprNodeImpl implements HttpHandler {
 	protected String help = HELP_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getHandlerName() <em>Handler Name</em>}' attribute.
+	 * The cached value of the '{@link #getMiddlewareComponent() <em>Middleware Component</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getHandlerName()
+	 * @see #getMiddlewareComponent()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String HANDLER_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getHandlerName() <em>Handler Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getHandlerName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String handlerName = HANDLER_NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TYPE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
-	protected String type = TYPE_EDEFAULT;
+	protected Middleware middlewareComponent;
 
 	/**
 	 * The default value of the '{@link #getHandlerType() <em>Handler Type</em>}' attribute.
@@ -133,50 +104,6 @@ public class HttpHandlerImpl extends DaprNodeImpl implements HttpHandler {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getHandlerName() {
-		return handlerName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setHandlerName(String newHandlerName) {
-		String oldHandlerName = handlerName;
-		handlerName = newHandlerName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.HTTP_HANDLER__HANDLER_NAME,
-					oldHandlerName, handlerName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getType() {
-		return type;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setType(String newType) {
-		String oldType = type;
-		type = newType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.HTTP_HANDLER__TYPE, oldType,
-					type));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public HttpHandlerType getHandlerType() {
 		return handlerType;
 	}
@@ -208,15 +135,57 @@ public class HttpHandlerImpl extends DaprNodeImpl implements HttpHandler {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Middleware getMiddlewareComponent() {
+		if (middlewareComponent != null && middlewareComponent.eIsProxy()) {
+			InternalEObject oldMiddlewareComponent = (InternalEObject) middlewareComponent;
+			middlewareComponent = (Middleware) eResolveProxy(oldMiddlewareComponent);
+			if (middlewareComponent != oldMiddlewareComponent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							DaprdesignerPackage.HTTP_HANDLER__MIDDLEWARE_COMPONENT, oldMiddlewareComponent,
+							middlewareComponent));
+			}
+		}
+		return middlewareComponent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Middleware basicGetMiddlewareComponent() {
+		return middlewareComponent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMiddlewareComponent(Middleware newMiddlewareComponent) {
+		Middleware oldMiddlewareComponent = middlewareComponent;
+		middlewareComponent = newMiddlewareComponent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					DaprdesignerPackage.HTTP_HANDLER__MIDDLEWARE_COMPONENT, oldMiddlewareComponent,
+					middlewareComponent));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case DaprdesignerPackage.HTTP_HANDLER__HELP:
 			return getHelp();
-		case DaprdesignerPackage.HTTP_HANDLER__HANDLER_NAME:
-			return getHandlerName();
-		case DaprdesignerPackage.HTTP_HANDLER__TYPE:
-			return getType();
+		case DaprdesignerPackage.HTTP_HANDLER__MIDDLEWARE_COMPONENT:
+			if (resolve)
+				return getMiddlewareComponent();
+			return basicGetMiddlewareComponent();
 		case DaprdesignerPackage.HTTP_HANDLER__HANDLER_TYPE:
 			return getHandlerType();
 		}
@@ -231,11 +200,8 @@ public class HttpHandlerImpl extends DaprNodeImpl implements HttpHandler {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DaprdesignerPackage.HTTP_HANDLER__HANDLER_NAME:
-			setHandlerName((String) newValue);
-			return;
-		case DaprdesignerPackage.HTTP_HANDLER__TYPE:
-			setType((String) newValue);
+		case DaprdesignerPackage.HTTP_HANDLER__MIDDLEWARE_COMPONENT:
+			setMiddlewareComponent((Middleware) newValue);
 			return;
 		case DaprdesignerPackage.HTTP_HANDLER__HANDLER_TYPE:
 			setHandlerType((HttpHandlerType) newValue);
@@ -252,11 +218,8 @@ public class HttpHandlerImpl extends DaprNodeImpl implements HttpHandler {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DaprdesignerPackage.HTTP_HANDLER__HANDLER_NAME:
-			setHandlerName(HANDLER_NAME_EDEFAULT);
-			return;
-		case DaprdesignerPackage.HTTP_HANDLER__TYPE:
-			setType(TYPE_EDEFAULT);
+		case DaprdesignerPackage.HTTP_HANDLER__MIDDLEWARE_COMPONENT:
+			setMiddlewareComponent((Middleware) null);
 			return;
 		case DaprdesignerPackage.HTTP_HANDLER__HANDLER_TYPE:
 			setHandlerType(HANDLER_TYPE_EDEFAULT);
@@ -275,10 +238,8 @@ public class HttpHandlerImpl extends DaprNodeImpl implements HttpHandler {
 		switch (featureID) {
 		case DaprdesignerPackage.HTTP_HANDLER__HELP:
 			return HELP_EDEFAULT == null ? help != null : !HELP_EDEFAULT.equals(help);
-		case DaprdesignerPackage.HTTP_HANDLER__HANDLER_NAME:
-			return HANDLER_NAME_EDEFAULT == null ? handlerName != null : !HANDLER_NAME_EDEFAULT.equals(handlerName);
-		case DaprdesignerPackage.HTTP_HANDLER__TYPE:
-			return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+		case DaprdesignerPackage.HTTP_HANDLER__MIDDLEWARE_COMPONENT:
+			return middlewareComponent != null;
 		case DaprdesignerPackage.HTTP_HANDLER__HANDLER_TYPE:
 			return handlerType != HANDLER_TYPE_EDEFAULT;
 		}
@@ -298,10 +259,6 @@ public class HttpHandlerImpl extends DaprNodeImpl implements HttpHandler {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (help: ");
 		result.append(help);
-		result.append(", handlerName: ");
-		result.append(handlerName);
-		result.append(", type: ");
-		result.append(type);
 		result.append(", handlerType: ");
 		result.append(handlerType);
 		result.append(')');
