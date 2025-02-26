@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link daprdesigner.impl.DaprNodeImpl#isIsReady <em>Is Ready</em>}</li>
  *   <li>{@link daprdesigner.impl.DaprNodeImpl#getName <em>Name</em>}</li>
  *   <li>{@link daprdesigner.impl.DaprNodeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link daprdesigner.impl.DaprNodeImpl#getNotes <em>Notes</em>}</li>
@@ -28,6 +29,26 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public abstract class DaprNodeImpl extends MinimalEObjectImpl.Container implements DaprNode {
+	/**
+	 * The default value of the '{@link #isIsReady() <em>Is Ready</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsReady()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_READY_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsReady() <em>Is Ready</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsReady()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isReady = IS_READY_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -112,6 +133,28 @@ public abstract class DaprNodeImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isIsReady() {
+		return isReady;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsReady(boolean newIsReady) {
+		boolean oldIsReady = isReady;
+		isReady = newIsReady;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.DAPR_NODE__IS_READY, oldIsReady,
+					isReady));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getName() {
 		return name;
 	}
@@ -180,6 +223,8 @@ public abstract class DaprNodeImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case DaprdesignerPackage.DAPR_NODE__IS_READY:
+			return isIsReady();
 		case DaprdesignerPackage.DAPR_NODE__NAME:
 			return getName();
 		case DaprdesignerPackage.DAPR_NODE__DESCRIPTION:
@@ -198,6 +243,9 @@ public abstract class DaprNodeImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case DaprdesignerPackage.DAPR_NODE__IS_READY:
+			setIsReady((Boolean) newValue);
+			return;
 		case DaprdesignerPackage.DAPR_NODE__NAME:
 			setName((String) newValue);
 			return;
@@ -219,6 +267,9 @@ public abstract class DaprNodeImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case DaprdesignerPackage.DAPR_NODE__IS_READY:
+			setIsReady(IS_READY_EDEFAULT);
+			return;
 		case DaprdesignerPackage.DAPR_NODE__NAME:
 			setName(NAME_EDEFAULT);
 			return;
@@ -240,6 +291,8 @@ public abstract class DaprNodeImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case DaprdesignerPackage.DAPR_NODE__IS_READY:
+			return isReady != IS_READY_EDEFAULT;
 		case DaprdesignerPackage.DAPR_NODE__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case DaprdesignerPackage.DAPR_NODE__DESCRIPTION:
@@ -261,7 +314,9 @@ public abstract class DaprNodeImpl extends MinimalEObjectImpl.Container implemen
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
+		result.append(" (isReady: ");
+		result.append(isReady);
+		result.append(", name: ");
 		result.append(name);
 		result.append(", description: ");
 		result.append(description);

@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link daprdesigner.Block#isIsReady <em>Is Ready</em>}</li>
  *   <li>{@link daprdesigner.Block#getName <em>Name</em>}</li>
  *   <li>{@link daprdesigner.Block#getDescription <em>Description</em>}</li>
  *   <li>{@link daprdesigner.Block#getNotes <em>Notes</em>}</li>
@@ -28,6 +29,29 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Block extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Is Ready</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Ready</em>' attribute.
+	 * @see #setIsReady(boolean)
+	 * @see daprdesigner.DaprdesignerPackage#getBlock_IsReady()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isIsReady();
+
+	/**
+	 * Sets the value of the '{@link daprdesigner.Block#isIsReady <em>Is Ready</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Ready</em>' attribute.
+	 * @see #isIsReady()
+	 * @generated
+	 */
+	void setIsReady(boolean value);
+
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

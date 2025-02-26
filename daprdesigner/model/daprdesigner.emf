@@ -117,6 +117,7 @@ class DaprArchitecture {
 }
 
 class Block{
+	attr boolean isReady=false;
 	attr String name;
 	attr String description;
 	attr String notes;
@@ -126,7 +127,7 @@ class Block{
 }
 
 abstract class DaprNode{
-	
+	attr boolean isReady=false;
 	attr String name;
 	attr String description;
 	attr String notes;

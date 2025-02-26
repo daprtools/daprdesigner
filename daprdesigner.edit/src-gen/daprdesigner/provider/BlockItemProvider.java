@@ -57,12 +57,28 @@ public class BlockItemProvider extends ItemProviderAdapter implements IEditingDo
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addIsReadyPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addNotesPropertyDescriptor(object);
 			addBlockTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Ready feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsReadyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Block_isReady_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Block_isReady_feature", "_UI_Block_type"),
+						DaprdesignerPackage.Literals.BLOCK__IS_READY, true, false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -196,7 +212,7 @@ public class BlockItemProvider extends ItemProviderAdapter implements IEditingDo
 		case WORKFLOW:
 			return overlayImage(object, getResourceLocator().getImage("full/obj16/Workflow"));
 		case MIDDLEWARE:
-			return overlayImage(object, getResourceLocator().getImage("full/obj16/Middleware"));	
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/Middleware"));
 
 		}
 
@@ -238,6 +254,7 @@ public class BlockItemProvider extends ItemProviderAdapter implements IEditingDo
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Block.class)) {
+		case DaprdesignerPackage.BLOCK__IS_READY:
 		case DaprdesignerPackage.BLOCK__NAME:
 		case DaprdesignerPackage.BLOCK__DESCRIPTION:
 		case DaprdesignerPackage.BLOCK__NOTES:

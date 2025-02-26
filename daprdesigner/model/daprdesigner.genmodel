@@ -104,6 +104,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//DaprArchitecture/buildingblocks"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//Block">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Block/isReady"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Block/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Block/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Block/notes"/>
@@ -112,6 +113,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//Block/nodes"/>
     </genClasses>
     <genClasses image="false" ecoreClass="daprdesigner.ecore#//DaprNode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//DaprNode/isReady"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//DaprNode/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//DaprNode/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//DaprNode/notes"/>

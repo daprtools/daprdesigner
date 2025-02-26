@@ -160,13 +160,22 @@ public interface DaprdesignerPackage extends EPackage {
 	int BLOCK = 2;
 
 	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOCK__IS_READY = 0;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK__NAME = 0;
+	int BLOCK__NAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -175,7 +184,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK__DESCRIPTION = 1;
+	int BLOCK__DESCRIPTION = 2;
 
 	/**
 	 * The feature id for the '<em><b>Notes</b></em>' attribute.
@@ -184,7 +193,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK__NOTES = 2;
+	int BLOCK__NOTES = 3;
 
 	/**
 	 * The feature id for the '<em><b>Block Type</b></em>' attribute.
@@ -193,7 +202,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK__BLOCK_TYPE = 3;
+	int BLOCK__BLOCK_TYPE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Subblocks</b></em>' containment reference list.
@@ -202,7 +211,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK__SUBBLOCKS = 4;
+	int BLOCK__SUBBLOCKS = 5;
 
 	/**
 	 * The feature id for the '<em><b>Nodes</b></em>' containment reference list.
@@ -211,7 +220,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK__NODES = 5;
+	int BLOCK__NODES = 6;
 
 	/**
 	 * The number of structural features of the '<em>Block</em>' class.
@@ -220,7 +229,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK_FEATURE_COUNT = 6;
+	int BLOCK_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Block</em>' class.
@@ -242,13 +251,22 @@ public interface DaprdesignerPackage extends EPackage {
 	int DAPR_NODE = 3;
 
 	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DAPR_NODE__IS_READY = 0;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DAPR_NODE__NAME = 0;
+	int DAPR_NODE__NAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -257,7 +275,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DAPR_NODE__DESCRIPTION = 1;
+	int DAPR_NODE__DESCRIPTION = 2;
 
 	/**
 	 * The feature id for the '<em><b>Notes</b></em>' attribute.
@@ -266,7 +284,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DAPR_NODE__NOTES = 2;
+	int DAPR_NODE__NOTES = 3;
 
 	/**
 	 * The number of structural features of the '<em>Dapr Node</em>' class.
@@ -275,7 +293,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DAPR_NODE_FEATURE_COUNT = 3;
+	int DAPR_NODE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Dapr Node</em>' class.
@@ -295,6 +313,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	int NODE_BLOCKS = 4;
+
+	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NODE_BLOCKS__IS_READY = DAPR_NODE__IS_READY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -370,6 +397,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int NAMESPACE = 5;
 
 	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE__IS_READY = DAPR_NODE__IS_READY;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -434,6 +470,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int TRUSTDOMAIN = 6;
 
 	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUSTDOMAIN__IS_READY = DAPR_NODE__IS_READY;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -496,6 +541,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	int APP = 7;
+
+	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP__IS_READY = DAPR_NODE__IS_READY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -614,6 +668,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	int ACTOR = 8;
+
+	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTOR__IS_READY = APP__IS_READY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -743,6 +806,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int JOBS = 9;
 
 	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS__IS_READY = APP__IS_READY;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -868,6 +940,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	int WORKFLOW = 10;
+
+	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORKFLOW__IS_READY = APP__IS_READY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -997,6 +1078,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int APP_CONFIGURATION = 11;
 
 	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP_CONFIGURATION__IS_READY = DAPR_NODE__IS_READY;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1068,6 +1158,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	int DENIED_COMPONENTS_CONFIGURATION = 12;
+
+	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DENIED_COMPONENTS_CONFIGURATION__IS_READY = APP_CONFIGURATION__IS_READY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1159,6 +1258,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	int LOGGING_CONFIGURATION = 13;
+
+	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGGING_CONFIGURATION__IS_READY = APP_CONFIGURATION__IS_READY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1268,6 +1376,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	int NAME_RESOLUTION_CONFIGURATION = 14;
+
+	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAME_RESOLUTION_CONFIGURATION__IS_READY = APP_CONFIGURATION__IS_READY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1388,6 +1505,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int SECRETS_ACCESS_CONFIGURATION = 15;
 
 	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECRETS_ACCESS_CONFIGURATION__IS_READY = APP_CONFIGURATION__IS_READY;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1477,6 +1603,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	int SECRETS_ACCESS_LIST = 16;
+
+	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECRETS_ACCESS_LIST__IS_READY = DAPR_NODE__IS_READY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1577,6 +1712,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	int METRICS_CONFIGURATION = 17;
+
+	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRICS_CONFIGURATION__IS_READY = APP_CONFIGURATION__IS_READY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1706,6 +1850,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int API_ACCESS_CONTROL = 18;
 
 	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_ACCESS_CONTROL__IS_READY = APP_CONFIGURATION__IS_READY;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1795,6 +1948,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	int API = 19;
+
+	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API__IS_READY = DAPR_NODE__IS_READY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1895,6 +2057,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	int APP_ACCESS_CONTROL = 20;
+
+	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP_ACCESS_CONTROL__IS_READY = APP_CONFIGURATION__IS_READY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2006,6 +2177,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int APP_POLICY = 21;
 
 	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP_POLICY__IS_READY = DAPR_NODE__IS_READY;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2113,6 +2293,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	int OPERATION = 22;
+
+	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION__IS_READY = DAPR_NODE__IS_READY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2251,6 +2440,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int MIDDLEWARE_CONFIGURATION = 23;
 
 	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIDDLEWARE_CONFIGURATION__IS_READY = APP_CONFIGURATION__IS_READY;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2342,6 +2540,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int HTTP_HANDLER = 24;
 
 	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HTTP_HANDLER__IS_READY = DAPR_NODE__IS_READY;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2422,6 +2629,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	int TRACING_CONFIGURATION = 25;
+
+	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACING_CONFIGURATION__IS_READY = APP_CONFIGURATION__IS_READY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2558,6 +2774,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	int SUBSCRIPTION_CONFIGURATION = 26;
+
+	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBSCRIPTION_CONFIGURATION__IS_READY = DAPR_NODE__IS_READY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2714,6 +2939,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int ROUTE_RULES = 27;
 
 	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROUTE_RULES__IS_READY = DAPR_NODE__IS_READY;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2794,6 +3028,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	int RESILIENCY_CONFIGURATION = 28;
+
+	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESILIENCY_CONFIGURATION__IS_READY = DAPR_NODE__IS_READY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2914,6 +3157,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int RESILIENCY_POLICY = 29;
 
 	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESILIENCY_POLICY__IS_READY = DAPR_NODE__IS_READY;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3003,6 +3255,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	int RETRY_POLICY = 30;
+
+	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETRY_POLICY__IS_READY = DAPR_NODE__IS_READY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3105,6 +3366,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int RESILIENCY_TIMEOUT = 31;
 
 	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESILIENCY_TIMEOUT__IS_READY = DAPR_NODE__IS_READY;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3176,6 +3446,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	int CIRCUIT_BREAKER_POLICY = 32;
+
+	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CIRCUIT_BREAKER_POLICY__IS_READY = DAPR_NODE__IS_READY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3276,6 +3555,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	int RESILIENCY_TARGET = 33;
+
+	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESILIENCY_TARGET__IS_READY = DAPR_NODE__IS_READY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3403,6 +3691,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	int HTTP_END_POINT = 34;
+
+	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HTTP_END_POINT__IS_READY = DAPR_NODE__IS_READY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3550,6 +3847,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int COMPONENT = 35;
 
 	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__IS_READY = DAPR_NODE__IS_READY;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3695,6 +4001,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int COMPONENT_SPEC = 36;
 
 	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_SPEC__IS_READY = DAPR_NODE__IS_READY;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3784,6 +4099,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	int SPEC_METADATA = 37;
+
+	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPEC_METADATA__IS_READY = DAPR_NODE__IS_READY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3902,6 +4226,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	int PUB_SUB = 38;
+
+	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PUB_SUB__IS_READY = COMPONENT__IS_READY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4058,6 +4391,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int BINDINGS = 39;
 
 	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINDINGS__IS_READY = COMPONENT__IS_READY;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4210,6 +4552,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	int SECRET_STORE = 40;
+
+	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECRET_STORE__IS_READY = COMPONENT__IS_READY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4366,6 +4717,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int STATE_STORE = 41;
 
 	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_STORE__IS_READY = COMPONENT__IS_READY;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4518,6 +4878,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	int CONFIGURATION_STORE = 42;
+
+	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIGURATION_STORE__IS_READY = COMPONENT__IS_READY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4674,6 +5043,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int LOCKS = 43;
 
 	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCKS__IS_READY = COMPONENT__IS_READY;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4826,6 +5204,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	int CRYPTOGRAPHY = 44;
+
+	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CRYPTOGRAPHY__IS_READY = COMPONENT__IS_READY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4982,6 +5369,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int MIDDLEWARE = 45;
 
 	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIDDLEWARE__IS_READY = COMPONENT__IS_READY;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5134,6 +5530,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	int NAMERESOLUTION = 46;
+
+	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMERESOLUTION__IS_READY = COMPONENT__IS_READY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5456,6 +5861,17 @@ public interface DaprdesignerPackage extends EPackage {
 	EClass getBlock();
 
 	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.Block#isIsReady <em>Is Ready</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Ready</em>'.
+	 * @see daprdesigner.Block#isIsReady()
+	 * @see #getBlock()
+	 * @generated
+	 */
+	EAttribute getBlock_IsReady();
+
+	/**
 	 * Returns the meta object for the attribute '{@link daprdesigner.Block#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5530,6 +5946,17 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDaprNode();
+
+	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.DaprNode#isIsReady <em>Is Ready</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Ready</em>'.
+	 * @see daprdesigner.DaprNode#isIsReady()
+	 * @see #getDaprNode()
+	 * @generated
+	 */
+	EAttribute getDaprNode_IsReady();
 
 	/**
 	 * Returns the meta object for the attribute '{@link daprdesigner.DaprNode#getName <em>Name</em>}'.
@@ -7973,6 +8400,14 @@ public interface DaprdesignerPackage extends EPackage {
 		EClass BLOCK = eINSTANCE.getBlock();
 
 		/**
+		 * The meta object literal for the '<em><b>Is Ready</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BLOCK__IS_READY = eINSTANCE.getBlock_IsReady();
+
+		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8029,6 +8464,14 @@ public interface DaprdesignerPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DAPR_NODE = eINSTANCE.getDaprNode();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Ready</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DAPR_NODE__IS_READY = eINSTANCE.getDaprNode_IsReady();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.

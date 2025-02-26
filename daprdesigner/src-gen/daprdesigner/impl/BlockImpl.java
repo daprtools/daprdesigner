@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link daprdesigner.impl.BlockImpl#isIsReady <em>Is Ready</em>}</li>
  *   <li>{@link daprdesigner.impl.BlockImpl#getName <em>Name</em>}</li>
  *   <li>{@link daprdesigner.impl.BlockImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link daprdesigner.impl.BlockImpl#getNotes <em>Notes</em>}</li>
@@ -42,6 +43,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
+	/**
+	 * The default value of the '{@link #isIsReady() <em>Is Ready</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsReady()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_READY_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsReady() <em>Is Ready</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsReady()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isReady = IS_READY_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -159,6 +180,28 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 	@Override
 	protected EClass eStaticClass() {
 		return DaprdesignerPackage.Literals.BLOCK;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isIsReady() {
+		return isReady;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsReady(boolean newIsReady) {
+		boolean oldIsReady = isReady;
+		isReady = newIsReady;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.BLOCK__IS_READY, oldIsReady,
+					isReady));
 	}
 
 	/**
@@ -295,6 +338,8 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case DaprdesignerPackage.BLOCK__IS_READY:
+			return isIsReady();
 		case DaprdesignerPackage.BLOCK__NAME:
 			return getName();
 		case DaprdesignerPackage.BLOCK__DESCRIPTION:
@@ -320,6 +365,9 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case DaprdesignerPackage.BLOCK__IS_READY:
+			setIsReady((Boolean) newValue);
+			return;
 		case DaprdesignerPackage.BLOCK__NAME:
 			setName((String) newValue);
 			return;
@@ -352,6 +400,9 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case DaprdesignerPackage.BLOCK__IS_READY:
+			setIsReady(IS_READY_EDEFAULT);
+			return;
 		case DaprdesignerPackage.BLOCK__NAME:
 			setName(NAME_EDEFAULT);
 			return;
@@ -382,6 +433,8 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case DaprdesignerPackage.BLOCK__IS_READY:
+			return isReady != IS_READY_EDEFAULT;
 		case DaprdesignerPackage.BLOCK__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case DaprdesignerPackage.BLOCK__DESCRIPTION:
@@ -409,7 +462,9 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
+		result.append(" (isReady: ");
+		result.append(isReady);
+		result.append(", name: ");
 		result.append(name);
 		result.append(", description: ");
 		result.append(description);

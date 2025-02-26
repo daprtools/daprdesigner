@@ -6,7 +6,7 @@
     <semanticResources>daprdesigner.emf</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_enaFsNJMEe-Peq7LfH4BaA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_esG_gNJMEe-Peq7LfH4BaA" name="daprdesigner" repPath="#_eqjgUNJMEe-Peq7LfH4BaA" changeId="1739710995478">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_esG_gNJMEe-Peq7LfH4BaA" name="daprdesigner" repPath="#_eqjgUNJMEe-Peq7LfH4BaA" changeId="1740544219112">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="daprdesigner.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -264,6 +264,10 @@
         <children xmi:type="notation:Node" xmi:id="_rsLjkNJMEe-Peq7LfH4BaA" type="2003" element="_rmxfINJMEe-Peq7LfH4BaA">
           <children xmi:type="notation:Node" xmi:id="_rsLjk9JMEe-Peq7LfH4BaA" type="5007"/>
           <children xmi:type="notation:Node" xmi:id="_rsLjlNJMEe-Peq7LfH4BaA" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_V-VmQPP6Ee-4rdg8PhLV1A" type="3010" element="_V8U0EfP6Ee-4rdg8PhLV1A">
+              <styles xmi:type="notation:FontStyle" xmi:id="_V-VmQfP6Ee-4rdg8PhLV1A" fontName="Ubuntu" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_V-VmQvP6Ee-4rdg8PhLV1A"/>
+            </children>
             <children xmi:type="notation:Node" xmi:id="_rs4HINJMEe-Peq7LfH4BaA" type="3010" element="_roc6INJMEe-Peq7LfH4BaA">
               <styles xmi:type="notation:FontStyle" xmi:id="_rs4HIdJMEe-Peq7LfH4BaA" fontName="Ubuntu" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_rs4HItJMEe-Peq7LfH4BaA"/>
@@ -289,6 +293,10 @@
         <children xmi:type="notation:Node" xmi:id="_rsMKoNJMEe-Peq7LfH4BaA" type="2003" element="_rmzUUNJMEe-Peq7LfH4BaA">
           <children xmi:type="notation:Node" xmi:id="_rsMxsNJMEe-Peq7LfH4BaA" type="5007"/>
           <children xmi:type="notation:Node" xmi:id="_rsMxsdJMEe-Peq7LfH4BaA" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_V-YpkPP6Ee-4rdg8PhLV1A" type="3010" element="_V8ZFgfP6Ee-4rdg8PhLV1A">
+              <styles xmi:type="notation:FontStyle" xmi:id="_V-YpkfP6Ee-4rdg8PhLV1A" fontName="Ubuntu" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_V-YpkvP6Ee-4rdg8PhLV1A"/>
+            </children>
             <children xmi:type="notation:Node" xmi:id="_rs5VQ9JMEe-Peq7LfH4BaA" type="3010" element="_rohLkNJMEe-Peq7LfH4BaA">
               <styles xmi:type="notation:FontStyle" xmi:id="_rs5VRNJMEe-Peq7LfH4BaA" fontName="Ubuntu" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_rs5VRdJMEe-Peq7LfH4BaA"/>
@@ -3406,6 +3414,14 @@
       <semanticElements xmi:type="ecore:EClass" href="daprdesigner.ecore#//Block"/>
       <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_FL4MAdW5Ee-aK-daK3QgMg" iconPath="/daprdesigner.edit/icons/full/obj16/Block.gif" description="_FL3k89W5Ee-aK-daK3QgMg" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216"/>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_V8U0EfP6Ee-4rdg8PhLV1A" name="isReady : EBoolean = false" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="daprdesigner.ecore#//Block/isReady"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="daprdesigner.ecore#//Block/isReady"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_V8WpQPP6Ee-4rdg8PhLV1A" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_roc6INJMEe-Peq7LfH4BaA" name="name : EString" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="daprdesigner.ecore#//Block/name"/>
         <semanticElements xmi:type="ecore:EAttribute" href="daprdesigner.ecore#//Block/name"/>
@@ -3446,6 +3462,14 @@
         <labelFormat>italic</labelFormat>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_V8ZFgfP6Ee-4rdg8PhLV1A" name="isReady : EBoolean = false" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="daprdesigner.ecore#//DaprNode/isReady"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="daprdesigner.ecore#//DaprNode/isReady"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_V8ZskPP6Ee-4rdg8PhLV1A" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_rohLkNJMEe-Peq7LfH4BaA" name="name : EString" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="daprdesigner.ecore#//DaprNode/name"/>
         <semanticElements xmi:type="ecore:EAttribute" href="daprdesigner.ecore#//DaprNode/name"/>

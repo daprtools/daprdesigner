@@ -53,11 +53,28 @@ public class DaprNodeItemProvider extends ItemProviderAdapter implements IEditin
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addIsReadyPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addNotesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Ready feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsReadyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_DaprNode_isReady_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DaprNode_isReady_feature",
+								"_UI_DaprNode_type"),
+						DaprdesignerPackage.Literals.DAPR_NODE__IS_READY, true, false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -143,6 +160,7 @@ public class DaprNodeItemProvider extends ItemProviderAdapter implements IEditin
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DaprNode.class)) {
+		case DaprdesignerPackage.DAPR_NODE__IS_READY:
 		case DaprdesignerPackage.DAPR_NODE__NAME:
 		case DaprdesignerPackage.DAPR_NODE__DESCRIPTION:
 		case DaprdesignerPackage.DAPR_NODE__NOTES:

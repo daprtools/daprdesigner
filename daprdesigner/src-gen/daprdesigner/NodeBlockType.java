@@ -156,13 +156,13 @@ public enum NodeBlockType implements Enumerator {
 	 */
 	CONFIGURATIONSTORE(13, "CONFIGURATIONSTORE", "CONFIGURATIONSTORE"),
 	/**
-	* The '<em><b>MIDDLEWARE</b></em>' literal object.
-	* <!-- begin-user-doc -->
+	 * The '<em><b>MIDDLEWARE</b></em>' literal object.
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @see #MIDDLEWARE_VALUE
-	* @generated
-	* @ordered
-	*/
+	 * @see #MIDDLEWARE_VALUE
+	 * @generated
+	 * @ordered
+	 */
 	MIDDLEWARE(14, "MIDDLEWARE", "MIDDLEWARE");
 
 	/**

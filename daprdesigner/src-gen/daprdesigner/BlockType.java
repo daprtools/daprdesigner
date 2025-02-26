@@ -148,13 +148,13 @@ public enum BlockType implements Enumerator {
 	 */
 	CONFIGURATIONGROUP(12, "CONFIGURATIONGROUP", "CONFIGURATIONGROUP"),
 	/**
-	* The '<em><b>MIDDLEWARE</b></em>' literal object.
-	* <!-- begin-user-doc -->
+	 * The '<em><b>MIDDLEWARE</b></em>' literal object.
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @see #MIDDLEWARE_VALUE
-	* @generated
-	* @ordered
-	*/
+	 * @see #MIDDLEWARE_VALUE
+	 * @generated
+	 * @ordered
+	 */
 	MIDDLEWARE(13, "MIDDLEWARE", "MIDDLEWARE");
 
 	/**

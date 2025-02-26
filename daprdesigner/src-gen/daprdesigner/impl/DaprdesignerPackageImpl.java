@@ -608,7 +608,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBlock_Name() {
+	public EAttribute getBlock_IsReady() {
 		return (EAttribute) blockEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -617,7 +617,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBlock_Description() {
+	public EAttribute getBlock_Name() {
 		return (EAttribute) blockEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -626,7 +626,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBlock_Notes() {
+	public EAttribute getBlock_Description() {
 		return (EAttribute) blockEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -635,7 +635,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBlock_BlockType() {
+	public EAttribute getBlock_Notes() {
 		return (EAttribute) blockEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -644,8 +644,17 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getBlock_BlockType() {
+		return (EAttribute) blockEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getBlock_Subblocks() {
-		return (EReference) blockEClass.getEStructuralFeatures().get(4);
+		return (EReference) blockEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -654,7 +663,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * @generated
 	 */
 	public EReference getBlock_Nodes() {
-		return (EReference) blockEClass.getEStructuralFeatures().get(5);
+		return (EReference) blockEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -671,7 +680,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDaprNode_Name() {
+	public EAttribute getDaprNode_IsReady() {
 		return (EAttribute) daprNodeEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -680,7 +689,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDaprNode_Description() {
+	public EAttribute getDaprNode_Name() {
 		return (EAttribute) daprNodeEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -689,8 +698,17 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDaprNode_Notes() {
+	public EAttribute getDaprNode_Description() {
 		return (EAttribute) daprNodeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDaprNode_Notes() {
+		return (EAttribute) daprNodeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2675,6 +2693,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		createEReference(daprArchitectureEClass, DAPR_ARCHITECTURE__BUILDINGBLOCKS);
 
 		blockEClass = createEClass(BLOCK);
+		createEAttribute(blockEClass, BLOCK__IS_READY);
 		createEAttribute(blockEClass, BLOCK__NAME);
 		createEAttribute(blockEClass, BLOCK__DESCRIPTION);
 		createEAttribute(blockEClass, BLOCK__NOTES);
@@ -2683,6 +2702,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		createEReference(blockEClass, BLOCK__NODES);
 
 		daprNodeEClass = createEClass(DAPR_NODE);
+		createEAttribute(daprNodeEClass, DAPR_NODE__IS_READY);
 		createEAttribute(daprNodeEClass, DAPR_NODE__NAME);
 		createEAttribute(daprNodeEClass, DAPR_NODE__DESCRIPTION);
 		createEAttribute(daprNodeEClass, DAPR_NODE__NOTES);
@@ -3043,6 +3063,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBlock_IsReady(), ecorePackage.getEBoolean(), "isReady", "false", 0, 1, Block.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBlock_Name(), ecorePackage.getEString(), "name", null, 0, 1, Block.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBlock_Description(), ecorePackage.getEString(), "description", null, 0, 1, Block.class,
@@ -3059,6 +3081,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 				IS_ORDERED);
 
 		initEClass(daprNodeEClass, DaprNode.class, "DaprNode", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDaprNode_IsReady(), ecorePackage.getEBoolean(), "isReady", "false", 0, 1, DaprNode.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDaprNode_Name(), ecorePackage.getEString(), "name", null, 0, 1, DaprNode.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDaprNode_Description(), ecorePackage.getEString(), "description", null, 0, 1, DaprNode.class,
