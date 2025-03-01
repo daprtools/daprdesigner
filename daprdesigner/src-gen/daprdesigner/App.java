@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link daprdesigner.App#getHelp <em>Help</em>}</li>
  *   <li>{@link daprdesigner.App#getAppId <em>App Id</em>}</li>
  *   <li>{@link daprdesigner.App#getRepository <em>Repository</em>}</li>
+ *   <li>{@link daprdesigner.App#getSwaggerLink <em>Swagger Link</em>}</li>
  *   <li>{@link daprdesigner.App#getSdkLanguage <em>Sdk Language</em>}</li>
  *   <li>{@link daprdesigner.App#getNamespace <em>Namespace</em>}</li>
  *   <li>{@link daprdesigner.App#getTrustDomain <em>Trust Domain</em>}</li>
@@ -82,6 +83,28 @@ public interface App extends DaprNode {
 	 * @generated
 	 */
 	void setRepository(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Swagger Link</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Swagger Link</em>' attribute.
+	 * @see #setSwaggerLink(String)
+	 * @see daprdesigner.DaprdesignerPackage#getApp_SwaggerLink()
+	 * @model
+	 * @generated
+	 */
+	String getSwaggerLink();
+
+	/**
+	 * Sets the value of the '{@link daprdesigner.App#getSwaggerLink <em>Swagger Link</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Swagger Link</em>' attribute.
+	 * @see #getSwaggerLink()
+	 * @generated
+	 */
+	void setSwaggerLink(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Sdk Language</b></em>' attribute.

@@ -815,7 +815,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getApp_SdkLanguage() {
+	public EAttribute getApp_SwaggerLink() {
 		return (EAttribute) appEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -824,8 +824,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getApp_Namespace() {
-		return (EReference) appEClass.getEStructuralFeatures().get(4);
+	public EAttribute getApp_SdkLanguage() {
+		return (EAttribute) appEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -833,7 +833,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getApp_TrustDomain() {
+	public EReference getApp_Namespace() {
 		return (EReference) appEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -842,8 +842,17 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getApp_Configurations() {
+	public EReference getApp_TrustDomain() {
 		return (EReference) appEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getApp_Configurations() {
+		return (EReference) appEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -2721,6 +2730,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		createEAttribute(appEClass, APP__HELP);
 		createEAttribute(appEClass, APP__APP_ID);
 		createEAttribute(appEClass, APP__REPOSITORY);
+		createEAttribute(appEClass, APP__SWAGGER_LINK);
 		createEAttribute(appEClass, APP__SDK_LANGUAGE);
 		createEReference(appEClass, APP__NAMESPACE);
 		createEReference(appEClass, APP__TRUST_DOMAIN);
@@ -3120,6 +3130,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		initEAttribute(getApp_AppId(), ecorePackage.getEString(), "appId", null, 0, 1, App.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getApp_Repository(), ecorePackage.getEString(), "repository", null, 0, 1, App.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getApp_SwaggerLink(), ecorePackage.getEString(), "swaggerLink", null, 0, 1, App.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getApp_SdkLanguage(), this.getSDKLanguage(), "sdkLanguage", null, 0, 1, App.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

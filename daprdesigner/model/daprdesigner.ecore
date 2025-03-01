@@ -134,6 +134,7 @@
         changeable="false" defaultValueLiteral="https://docs.dapr.io/developing-applications/building-blocks/service-invocation/service-invocation-overview/"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="appId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="repository" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="swaggerLink" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sdkLanguage" eType="#//SDKLanguage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="namespace" eType="#//Namespace"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="trustDomain" eType="#//Trustdomain"/>

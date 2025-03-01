@@ -606,13 +606,22 @@ public interface DaprdesignerPackage extends EPackage {
 	int APP__REPOSITORY = DAPR_NODE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Swagger Link</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP__SWAGGER_LINK = DAPR_NODE_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Sdk Language</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APP__SDK_LANGUAGE = DAPR_NODE_FEATURE_COUNT + 3;
+	int APP__SDK_LANGUAGE = DAPR_NODE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' reference.
@@ -621,7 +630,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP__NAMESPACE = DAPR_NODE_FEATURE_COUNT + 4;
+	int APP__NAMESPACE = DAPR_NODE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Trust Domain</b></em>' reference.
@@ -630,7 +639,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP__TRUST_DOMAIN = DAPR_NODE_FEATURE_COUNT + 5;
+	int APP__TRUST_DOMAIN = DAPR_NODE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Configurations</b></em>' reference list.
@@ -639,7 +648,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP__CONFIGURATIONS = DAPR_NODE_FEATURE_COUNT + 6;
+	int APP__CONFIGURATIONS = DAPR_NODE_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>App</em>' class.
@@ -648,7 +657,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 7;
+	int APP_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>App</em>' class.
@@ -731,6 +740,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @ordered
 	 */
 	int ACTOR__REPOSITORY = APP__REPOSITORY;
+
+	/**
+	 * The feature id for the '<em><b>Swagger Link</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTOR__SWAGGER_LINK = APP__SWAGGER_LINK;
 
 	/**
 	 * The feature id for the '<em><b>Sdk Language</b></em>' attribute.
@@ -869,6 +887,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int JOBS__REPOSITORY = APP__REPOSITORY;
 
 	/**
+	 * The feature id for the '<em><b>Swagger Link</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS__SWAGGER_LINK = APP__SWAGGER_LINK;
+
+	/**
 	 * The feature id for the '<em><b>Sdk Language</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1003,6 +1030,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @ordered
 	 */
 	int WORKFLOW__REPOSITORY = APP__REPOSITORY;
+
+	/**
+	 * The feature id for the '<em><b>Swagger Link</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORKFLOW__SWAGGER_LINK = APP__SWAGGER_LINK;
 
 	/**
 	 * The feature id for the '<em><b>Sdk Language</b></em>' attribute.
@@ -6109,6 +6145,17 @@ public interface DaprdesignerPackage extends EPackage {
 	EAttribute getApp_Repository();
 
 	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.App#getSwaggerLink <em>Swagger Link</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Swagger Link</em>'.
+	 * @see daprdesigner.App#getSwaggerLink()
+	 * @see #getApp()
+	 * @generated
+	 */
+	EAttribute getApp_SwaggerLink();
+
+	/**
 	 * Returns the meta object for the attribute '{@link daprdesigner.App#getSdkLanguage <em>Sdk Language</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8592,6 +8639,14 @@ public interface DaprdesignerPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute APP__REPOSITORY = eINSTANCE.getApp_Repository();
+
+		/**
+		 * The meta object literal for the '<em><b>Swagger Link</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute APP__SWAGGER_LINK = eINSTANCE.getApp_SwaggerLink();
 
 		/**
 		 * The meta object literal for the '<em><b>Sdk Language</b></em>' attribute feature.

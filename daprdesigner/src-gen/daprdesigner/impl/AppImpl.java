@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link daprdesigner.impl.AppImpl#getHelp <em>Help</em>}</li>
  *   <li>{@link daprdesigner.impl.AppImpl#getAppId <em>App Id</em>}</li>
  *   <li>{@link daprdesigner.impl.AppImpl#getRepository <em>Repository</em>}</li>
+ *   <li>{@link daprdesigner.impl.AppImpl#getSwaggerLink <em>Swagger Link</em>}</li>
  *   <li>{@link daprdesigner.impl.AppImpl#getSdkLanguage <em>Sdk Language</em>}</li>
  *   <li>{@link daprdesigner.impl.AppImpl#getNamespace <em>Namespace</em>}</li>
  *   <li>{@link daprdesigner.impl.AppImpl#getTrustDomain <em>Trust Domain</em>}</li>
@@ -101,6 +102,26 @@ public class AppImpl extends DaprNodeImpl implements App {
 	 * @ordered
 	 */
 	protected String repository = REPOSITORY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSwaggerLink() <em>Swagger Link</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSwaggerLink()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SWAGGER_LINK_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSwaggerLink() <em>Swagger Link</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSwaggerLink()
+	 * @generated
+	 * @ordered
+	 */
+	protected String swaggerLink = SWAGGER_LINK_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getSdkLanguage() <em>Sdk Language</em>}' attribute.
@@ -221,6 +242,28 @@ public class AppImpl extends DaprNodeImpl implements App {
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.APP__REPOSITORY, oldRepository,
 					repository));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getSwaggerLink() {
+		return swaggerLink;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSwaggerLink(String newSwaggerLink) {
+		String oldSwaggerLink = swaggerLink;
+		swaggerLink = newSwaggerLink;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.APP__SWAGGER_LINK, oldSwaggerLink,
+					swaggerLink));
 	}
 
 	/**
@@ -352,6 +395,8 @@ public class AppImpl extends DaprNodeImpl implements App {
 			return getAppId();
 		case DaprdesignerPackage.APP__REPOSITORY:
 			return getRepository();
+		case DaprdesignerPackage.APP__SWAGGER_LINK:
+			return getSwaggerLink();
 		case DaprdesignerPackage.APP__SDK_LANGUAGE:
 			return getSdkLanguage();
 		case DaprdesignerPackage.APP__NAMESPACE:
@@ -382,6 +427,9 @@ public class AppImpl extends DaprNodeImpl implements App {
 			return;
 		case DaprdesignerPackage.APP__REPOSITORY:
 			setRepository((String) newValue);
+			return;
+		case DaprdesignerPackage.APP__SWAGGER_LINK:
+			setSwaggerLink((String) newValue);
 			return;
 		case DaprdesignerPackage.APP__SDK_LANGUAGE:
 			setSdkLanguage((SDKLanguage) newValue);
@@ -414,6 +462,9 @@ public class AppImpl extends DaprNodeImpl implements App {
 		case DaprdesignerPackage.APP__REPOSITORY:
 			setRepository(REPOSITORY_EDEFAULT);
 			return;
+		case DaprdesignerPackage.APP__SWAGGER_LINK:
+			setSwaggerLink(SWAGGER_LINK_EDEFAULT);
+			return;
 		case DaprdesignerPackage.APP__SDK_LANGUAGE:
 			setSdkLanguage(SDK_LANGUAGE_EDEFAULT);
 			return;
@@ -444,6 +495,8 @@ public class AppImpl extends DaprNodeImpl implements App {
 			return APP_ID_EDEFAULT == null ? appId != null : !APP_ID_EDEFAULT.equals(appId);
 		case DaprdesignerPackage.APP__REPOSITORY:
 			return REPOSITORY_EDEFAULT == null ? repository != null : !REPOSITORY_EDEFAULT.equals(repository);
+		case DaprdesignerPackage.APP__SWAGGER_LINK:
+			return SWAGGER_LINK_EDEFAULT == null ? swaggerLink != null : !SWAGGER_LINK_EDEFAULT.equals(swaggerLink);
 		case DaprdesignerPackage.APP__SDK_LANGUAGE:
 			return sdkLanguage != SDK_LANGUAGE_EDEFAULT;
 		case DaprdesignerPackage.APP__NAMESPACE:
@@ -473,6 +526,8 @@ public class AppImpl extends DaprNodeImpl implements App {
 		result.append(appId);
 		result.append(", repository: ");
 		result.append(repository);
+		result.append(", swaggerLink: ");
+		result.append(swaggerLink);
 		result.append(", sdkLanguage: ");
 		result.append(sdkLanguage);
 		result.append(')');

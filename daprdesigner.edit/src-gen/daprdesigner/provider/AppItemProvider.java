@@ -47,6 +47,7 @@ public class AppItemProvider extends DaprNodeItemProvider {
 			addHelpPropertyDescriptor(object);
 			addAppIdPropertyDescriptor(object);
 			addRepositoryPropertyDescriptor(object);
+			addSwaggerLinkPropertyDescriptor(object);
 			addSdkLanguagePropertyDescriptor(object);
 			addNamespacePropertyDescriptor(object);
 			addTrustDomainPropertyDescriptor(object);
@@ -97,6 +98,21 @@ public class AppItemProvider extends DaprNodeItemProvider {
 						getResourceLocator(), getString("_UI_App_repository_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_App_repository_feature", "_UI_App_type"),
 						DaprdesignerPackage.Literals.APP__REPOSITORY, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Swagger Link feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSwaggerLinkPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_App_swaggerLink_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_App_swaggerLink_feature", "_UI_App_type"),
+						DaprdesignerPackage.Literals.APP__SWAGGER_LINK, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -207,6 +223,7 @@ public class AppItemProvider extends DaprNodeItemProvider {
 		case DaprdesignerPackage.APP__HELP:
 		case DaprdesignerPackage.APP__APP_ID:
 		case DaprdesignerPackage.APP__REPOSITORY:
+		case DaprdesignerPackage.APP__SWAGGER_LINK:
 		case DaprdesignerPackage.APP__SDK_LANGUAGE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
