@@ -132,6 +132,7 @@
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//App/help"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//App/appId"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//App/repository"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//App/swaggerLink"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//App/sdkLanguage"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//App/namespace"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//App/trustDomain"/>
