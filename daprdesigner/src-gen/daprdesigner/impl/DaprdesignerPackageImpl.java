@@ -1202,6 +1202,15 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getMetricsConfiguration_RecordErrorCodes() {
+		return (EAttribute) metricsConfigurationEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getMetricsConfiguration_Help() {
 		return (EAttribute) metricsConfigurationEClass.getEStructuralFeatures().get(0);
 	}
@@ -1743,7 +1752,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * @generated
 	 */
 	public EAttribute getRouteRules_Match() {
-		return (EAttribute) routeRulesEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) routeRulesEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1752,7 +1761,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * @generated
 	 */
 	public EAttribute getRouteRules_Path() {
-		return (EAttribute) routeRulesEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) routeRulesEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1762,6 +1771,15 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 */
 	public EAttribute getRouteRules_Help() {
 		return (EAttribute) routeRulesEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRouteRules_IsDefault() {
+		return (EAttribute) routeRulesEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2784,6 +2802,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		createEAttribute(metricsConfigurationEClass, METRICS_CONFIGURATION__HTTP_INCREASED_CARDINALITY);
 		createEAttribute(metricsConfigurationEClass, METRICS_CONFIGURATION__HTTP_PATH_MATCHING);
 		createEAttribute(metricsConfigurationEClass, METRICS_CONFIGURATION__HTTP_EXCLUDE_VERBS);
+		createEAttribute(metricsConfigurationEClass, METRICS_CONFIGURATION__RECORD_ERROR_CODES);
 
 		apiAccessControlEClass = createEClass(API_ACCESS_CONTROL);
 		createEAttribute(apiAccessControlEClass, API_ACCESS_CONTROL__HELP);
@@ -2856,6 +2875,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 
 		routeRulesEClass = createEClass(ROUTE_RULES);
 		createEAttribute(routeRulesEClass, ROUTE_RULES__HELP);
+		createEAttribute(routeRulesEClass, ROUTE_RULES__IS_DEFAULT);
 		createEAttribute(routeRulesEClass, ROUTE_RULES__MATCH);
 		createEAttribute(routeRulesEClass, ROUTE_RULES__PATH);
 
@@ -3268,6 +3288,9 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		initEAttribute(getMetricsConfiguration_Http_excludeVerbs(), ecorePackage.getEBoolean(), "http_excludeVerbs",
 				null, 0, 1, MetricsConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
 				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMetricsConfiguration_RecordErrorCodes(), ecorePackage.getEBoolean(), "recordErrorCodes", null,
+				0, 1, MetricsConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(apiAccessControlEClass, APIAccessControl.class, "APIAccessControl", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -3400,7 +3423,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		initEAttribute(getTracingConfiguration_Otel_isSecure(), ecorePackage.getEBoolean(), "otel_isSecure", null, 0, 1,
 				TracingConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTracingConfiguration_Otel_protocol(), ecorePackage.getEString(), "otel_protocol", null, 0, 1,
+		initEAttribute(getTracingConfiguration_Otel_protocol(), this.getProtocol(), "otel_protocol", null, 0, 1,
 				TracingConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTracingConfiguration_Zipkin_endPointAddress(), ecorePackage.getEString(),
@@ -3450,6 +3473,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 				"https://docs.dapr.io/reference/resource-specs/subscription-schema/#spec-fields", 0, 1,
 				RouteRules.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRouteRules_IsDefault(), ecorePackage.getEBoolean(), "isDefault", null, 0, 1, RouteRules.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRouteRules_Match(), ecorePackage.getEString(), "match", null, 0, 1, RouteRules.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRouteRules_Path(), ecorePackage.getEString(), "path", null, 0, 1, RouteRules.class,

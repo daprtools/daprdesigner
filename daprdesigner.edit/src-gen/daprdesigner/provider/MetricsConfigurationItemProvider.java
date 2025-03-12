@@ -50,6 +50,7 @@ public class MetricsConfigurationItemProvider extends AppConfigurationItemProvid
 			addHttp_increasedCardinalityPropertyDescriptor(object);
 			addHttp_pathMatchingPropertyDescriptor(object);
 			addHttp_excludeVerbsPropertyDescriptor(object);
+			addRecordErrorCodesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -135,6 +136,22 @@ public class MetricsConfigurationItemProvider extends AppConfigurationItemProvid
 	}
 
 	/**
+	 * This adds a property descriptor for the Record Error Codes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRecordErrorCodesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_MetricsConfiguration_recordErrorCodes_feature"),
+						getString("_UI_PropertyDescriptor_description",
+								"_UI_MetricsConfiguration_recordErrorCodes_feature", "_UI_MetricsConfiguration_type"),
+						DaprdesignerPackage.Literals.METRICS_CONFIGURATION__RECORD_ERROR_CODES, true, false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Help feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -202,6 +219,7 @@ public class MetricsConfigurationItemProvider extends AppConfigurationItemProvid
 		case DaprdesignerPackage.METRICS_CONFIGURATION__HTTP_INCREASED_CARDINALITY:
 		case DaprdesignerPackage.METRICS_CONFIGURATION__HTTP_PATH_MATCHING:
 		case DaprdesignerPackage.METRICS_CONFIGURATION__HTTP_EXCLUDE_VERBS:
+		case DaprdesignerPackage.METRICS_CONFIGURATION__RECORD_ERROR_CODES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

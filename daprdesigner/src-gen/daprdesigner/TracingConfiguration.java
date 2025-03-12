@@ -115,25 +115,28 @@ public interface TracingConfiguration extends AppConfiguration {
 
 	/**
 	 * Returns the value of the '<em><b>Otel protocol</b></em>' attribute.
+	 * The literals are from the enumeration {@link daprdesigner.Protocol}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Otel protocol</em>' attribute.
-	 * @see #setOtel_protocol(String)
+	 * @see daprdesigner.Protocol
+	 * @see #setOtel_protocol(Protocol)
 	 * @see daprdesigner.DaprdesignerPackage#getTracingConfiguration_Otel_protocol()
 	 * @model
 	 * @generated
 	 */
-	String getOtel_protocol();
+	Protocol getOtel_protocol();
 
 	/**
 	 * Sets the value of the '{@link daprdesigner.TracingConfiguration#getOtel_protocol <em>Otel protocol</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Otel protocol</em>' attribute.
+	 * @see daprdesigner.Protocol
 	 * @see #getOtel_protocol()
 	 * @generated
 	 */
-	void setOtel_protocol(String value);
+	void setOtel_protocol(Protocol value);
 
 	/**
 	 * Returns the value of the '<em><b>Zipkin end Point Address</b></em>' attribute.

@@ -1858,13 +1858,22 @@ public interface DaprdesignerPackage extends EPackage {
 	int METRICS_CONFIGURATION__HTTP_EXCLUDE_VERBS = APP_CONFIGURATION_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Record Error Codes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRICS_CONFIGURATION__RECORD_ERROR_CODES = APP_CONFIGURATION_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Metrics Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int METRICS_CONFIGURATION_FEATURE_COUNT = APP_CONFIGURATION_FEATURE_COUNT + 6;
+	int METRICS_CONFIGURATION_FEATURE_COUNT = APP_CONFIGURATION_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Metrics Configuration</em>' class.
@@ -3020,13 +3029,22 @@ public interface DaprdesignerPackage extends EPackage {
 	int ROUTE_RULES__HELP = DAPR_NODE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Is Default</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROUTE_RULES__IS_DEFAULT = DAPR_NODE_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Match</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROUTE_RULES__MATCH = DAPR_NODE_FEATURE_COUNT + 1;
+	int ROUTE_RULES__MATCH = DAPR_NODE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Path</b></em>' attribute.
@@ -3035,7 +3053,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROUTE_RULES__PATH = DAPR_NODE_FEATURE_COUNT + 2;
+	int ROUTE_RULES__PATH = DAPR_NODE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Route Rules</em>' class.
@@ -3044,7 +3062,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROUTE_RULES_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 3;
+	int ROUTE_RULES_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Route Rules</em>' class.
@@ -6608,6 +6626,17 @@ public interface DaprdesignerPackage extends EPackage {
 	EAttribute getMetricsConfiguration_Http_excludeVerbs();
 
 	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.MetricsConfiguration#isRecordErrorCodes <em>Record Error Codes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Record Error Codes</em>'.
+	 * @see daprdesigner.MetricsConfiguration#isRecordErrorCodes()
+	 * @see #getMetricsConfiguration()
+	 * @generated
+	 */
+	EAttribute getMetricsConfiguration_RecordErrorCodes();
+
+	/**
 	 * Returns the meta object for the attribute '{@link daprdesigner.MetricsConfiguration#getHelp <em>Help</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7289,6 +7318,17 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRouteRules_Help();
+
+	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.RouteRules#isIsDefault <em>Is Default</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Default</em>'.
+	 * @see daprdesigner.RouteRules#isIsDefault()
+	 * @see #getRouteRules()
+	 * @generated
+	 */
+	EAttribute getRouteRules_IsDefault();
 
 	/**
 	 * Returns the meta object for class '{@link daprdesigner.ResiliencyConfiguration <em>Resiliency Configuration</em>}'.
@@ -9012,6 +9052,14 @@ public interface DaprdesignerPackage extends EPackage {
 		EAttribute METRICS_CONFIGURATION__HTTP_EXCLUDE_VERBS = eINSTANCE.getMetricsConfiguration_Http_excludeVerbs();
 
 		/**
+		 * The meta object literal for the '<em><b>Record Error Codes</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute METRICS_CONFIGURATION__RECORD_ERROR_CODES = eINSTANCE.getMetricsConfiguration_RecordErrorCodes();
+
+		/**
 		 * The meta object literal for the '<em><b>Help</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -9541,6 +9589,14 @@ public interface DaprdesignerPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ROUTE_RULES__HELP = eINSTANCE.getRouteRules_Help();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Default</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROUTE_RULES__IS_DEFAULT = eINSTANCE.getRouteRules_IsDefault();
 
 		/**
 		 * The meta object literal for the '{@link daprdesigner.impl.ResiliencyConfigurationImpl <em>Resiliency Configuration</em>}' class.

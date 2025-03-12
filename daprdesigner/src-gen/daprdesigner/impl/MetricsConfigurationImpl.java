@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link daprdesigner.impl.MetricsConfigurationImpl#isHttp_increasedCardinality <em>Http increased Cardinality</em>}</li>
  *   <li>{@link daprdesigner.impl.MetricsConfigurationImpl#getHttp_pathMatching <em>Http path Matching</em>}</li>
  *   <li>{@link daprdesigner.impl.MetricsConfigurationImpl#isHttp_excludeVerbs <em>Http exclude Verbs</em>}</li>
+ *   <li>{@link daprdesigner.impl.MetricsConfigurationImpl#isRecordErrorCodes <em>Record Error Codes</em>}</li>
  * </ul>
  *
  * @generated
@@ -145,6 +146,26 @@ public class MetricsConfigurationImpl extends AppConfigurationImpl implements Me
 	 * @ordered
 	 */
 	protected boolean http_excludeVerbs = HTTP_EXCLUDE_VERBS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isRecordErrorCodes() <em>Record Error Codes</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isRecordErrorCodes()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean RECORD_ERROR_CODES_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isRecordErrorCodes() <em>Record Error Codes</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isRecordErrorCodes()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean recordErrorCodes = RECORD_ERROR_CODES_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -274,6 +295,29 @@ public class MetricsConfigurationImpl extends AppConfigurationImpl implements Me
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isRecordErrorCodes() {
+		return recordErrorCodes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRecordErrorCodes(boolean newRecordErrorCodes) {
+		boolean oldRecordErrorCodes = recordErrorCodes;
+		recordErrorCodes = newRecordErrorCodes;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					DaprdesignerPackage.METRICS_CONFIGURATION__RECORD_ERROR_CODES, oldRecordErrorCodes,
+					recordErrorCodes));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getHelp() {
 		return help;
 	}
@@ -298,6 +342,8 @@ public class MetricsConfigurationImpl extends AppConfigurationImpl implements Me
 			return getHttp_pathMatching();
 		case DaprdesignerPackage.METRICS_CONFIGURATION__HTTP_EXCLUDE_VERBS:
 			return isHttp_excludeVerbs();
+		case DaprdesignerPackage.METRICS_CONFIGURATION__RECORD_ERROR_CODES:
+			return isRecordErrorCodes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -327,6 +373,9 @@ public class MetricsConfigurationImpl extends AppConfigurationImpl implements Me
 		case DaprdesignerPackage.METRICS_CONFIGURATION__HTTP_EXCLUDE_VERBS:
 			setHttp_excludeVerbs((Boolean) newValue);
 			return;
+		case DaprdesignerPackage.METRICS_CONFIGURATION__RECORD_ERROR_CODES:
+			setRecordErrorCodes((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -354,6 +403,9 @@ public class MetricsConfigurationImpl extends AppConfigurationImpl implements Me
 		case DaprdesignerPackage.METRICS_CONFIGURATION__HTTP_EXCLUDE_VERBS:
 			setHttp_excludeVerbs(HTTP_EXCLUDE_VERBS_EDEFAULT);
 			return;
+		case DaprdesignerPackage.METRICS_CONFIGURATION__RECORD_ERROR_CODES:
+			setRecordErrorCodes(RECORD_ERROR_CODES_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -379,6 +431,8 @@ public class MetricsConfigurationImpl extends AppConfigurationImpl implements Me
 			return http_pathMatching != null && !http_pathMatching.isEmpty();
 		case DaprdesignerPackage.METRICS_CONFIGURATION__HTTP_EXCLUDE_VERBS:
 			return http_excludeVerbs != HTTP_EXCLUDE_VERBS_EDEFAULT;
+		case DaprdesignerPackage.METRICS_CONFIGURATION__RECORD_ERROR_CODES:
+			return recordErrorCodes != RECORD_ERROR_CODES_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -406,6 +460,8 @@ public class MetricsConfigurationImpl extends AppConfigurationImpl implements Me
 		result.append(http_pathMatching);
 		result.append(", http_excludeVerbs: ");
 		result.append(http_excludeVerbs);
+		result.append(", recordErrorCodes: ");
+		result.append(recordErrorCodes);
 		result.append(')');
 		return result.toString();
 	}

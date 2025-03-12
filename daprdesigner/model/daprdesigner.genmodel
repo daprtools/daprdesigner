@@ -186,6 +186,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//MetricsConfiguration/http_increasedCardinality"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//MetricsConfiguration/http_pathMatching"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//MetricsConfiguration/http_excludeVerbs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//MetricsConfiguration/recordErrorCodes"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//APIAccessControl">
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//APIAccessControl/help"/>
@@ -256,6 +257,7 @@
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//RouteRules">
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//RouteRules/help"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//RouteRules/isDefault"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//RouteRules/match"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//RouteRules/path"/>
     </genClasses>

@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link daprdesigner.MetricsConfiguration#isHttp_increasedCardinality <em>Http increased Cardinality</em>}</li>
  *   <li>{@link daprdesigner.MetricsConfiguration#getHttp_pathMatching <em>Http path Matching</em>}</li>
  *   <li>{@link daprdesigner.MetricsConfiguration#isHttp_excludeVerbs <em>Http exclude Verbs</em>}</li>
+ *   <li>{@link daprdesigner.MetricsConfiguration#isRecordErrorCodes <em>Record Error Codes</em>}</li>
  * </ul>
  *
  * @see daprdesigner.DaprdesignerPackage#getMetricsConfiguration()
@@ -125,6 +126,28 @@ public interface MetricsConfiguration extends AppConfiguration {
 	 * @generated
 	 */
 	void setHttp_excludeVerbs(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Record Error Codes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Record Error Codes</em>' attribute.
+	 * @see #setRecordErrorCodes(boolean)
+	 * @see daprdesigner.DaprdesignerPackage#getMetricsConfiguration_RecordErrorCodes()
+	 * @model
+	 * @generated
+	 */
+	boolean isRecordErrorCodes();
+
+	/**
+	 * Sets the value of the '{@link daprdesigner.MetricsConfiguration#isRecordErrorCodes <em>Record Error Codes</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Record Error Codes</em>' attribute.
+	 * @see #isRecordErrorCodes()
+	 * @generated
+	 */
+	void setRecordErrorCodes(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Help</b></em>' attribute.

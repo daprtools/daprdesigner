@@ -3,6 +3,7 @@
 package daprdesigner.impl;
 
 import daprdesigner.DaprdesignerPackage;
+import daprdesigner.Protocol;
 import daprdesigner.TracingConfiguration;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -139,7 +140,7 @@ public class TracingConfigurationImpl extends AppConfigurationImpl implements Tr
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String OTEL_PROTOCOL_EDEFAULT = null;
+	protected static final Protocol OTEL_PROTOCOL_EDEFAULT = Protocol.HTTP;
 
 	/**
 	 * The cached value of the '{@link #getOtel_protocol() <em>Otel protocol</em>}' attribute.
@@ -149,7 +150,7 @@ public class TracingConfigurationImpl extends AppConfigurationImpl implements Tr
 	 * @generated
 	 * @ordered
 	 */
-	protected String otel_protocol = OTEL_PROTOCOL_EDEFAULT;
+	protected Protocol otel_protocol = OTEL_PROTOCOL_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getZipkin_endPointAddress() <em>Zipkin end Point Address</em>}' attribute.
@@ -284,7 +285,7 @@ public class TracingConfigurationImpl extends AppConfigurationImpl implements Tr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getOtel_protocol() {
+	public Protocol getOtel_protocol() {
 		return otel_protocol;
 	}
 
@@ -293,9 +294,9 @@ public class TracingConfigurationImpl extends AppConfigurationImpl implements Tr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOtel_protocol(String newOtel_protocol) {
-		String oldOtel_protocol = otel_protocol;
-		otel_protocol = newOtel_protocol;
+	public void setOtel_protocol(Protocol newOtel_protocol) {
+		Protocol oldOtel_protocol = otel_protocol;
+		otel_protocol = newOtel_protocol == null ? OTEL_PROTOCOL_EDEFAULT : newOtel_protocol;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					DaprdesignerPackage.TRACING_CONFIGURATION__OTEL_PROTOCOL, oldOtel_protocol, otel_protocol));
@@ -380,7 +381,7 @@ public class TracingConfigurationImpl extends AppConfigurationImpl implements Tr
 			setOtel_isSecure((Boolean) newValue);
 			return;
 		case DaprdesignerPackage.TRACING_CONFIGURATION__OTEL_PROTOCOL:
-			setOtel_protocol((String) newValue);
+			setOtel_protocol((Protocol) newValue);
 			return;
 		case DaprdesignerPackage.TRACING_CONFIGURATION__ZIPKIN_END_POINT_ADDRESS:
 			setZipkin_endPointAddress((String) newValue);
@@ -439,8 +440,7 @@ public class TracingConfigurationImpl extends AppConfigurationImpl implements Tr
 		case DaprdesignerPackage.TRACING_CONFIGURATION__OTEL_IS_SECURE:
 			return otel_isSecure != OTEL_IS_SECURE_EDEFAULT;
 		case DaprdesignerPackage.TRACING_CONFIGURATION__OTEL_PROTOCOL:
-			return OTEL_PROTOCOL_EDEFAULT == null ? otel_protocol != null
-					: !OTEL_PROTOCOL_EDEFAULT.equals(otel_protocol);
+			return otel_protocol != OTEL_PROTOCOL_EDEFAULT;
 		case DaprdesignerPackage.TRACING_CONFIGURATION__ZIPKIN_END_POINT_ADDRESS:
 			return ZIPKIN_END_POINT_ADDRESS_EDEFAULT == null ? zipkin_endPointAddress != null
 					: !ZIPKIN_END_POINT_ADDRESS_EDEFAULT.equals(zipkin_endPointAddress);

@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link daprdesigner.impl.RouteRulesImpl#getHelp <em>Help</em>}</li>
+ *   <li>{@link daprdesigner.impl.RouteRulesImpl#isIsDefault <em>Is Default</em>}</li>
  *   <li>{@link daprdesigner.impl.RouteRulesImpl#getMatch <em>Match</em>}</li>
  *   <li>{@link daprdesigner.impl.RouteRulesImpl#getPath <em>Path</em>}</li>
  * </ul>
@@ -46,6 +47,26 @@ public class RouteRulesImpl extends DaprNodeImpl implements RouteRules {
 	 * @ordered
 	 */
 	protected String help = HELP_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isIsDefault() <em>Is Default</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsDefault()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_DEFAULT_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsDefault() <em>Is Default</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsDefault()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isDefault = IS_DEFAULT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getMatch() <em>Match</em>}' attribute.
@@ -164,11 +185,35 @@ public class RouteRulesImpl extends DaprNodeImpl implements RouteRules {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isIsDefault() {
+		return isDefault;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsDefault(boolean newIsDefault) {
+		boolean oldIsDefault = isDefault;
+		isDefault = newIsDefault;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.ROUTE_RULES__IS_DEFAULT,
+					oldIsDefault, isDefault));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case DaprdesignerPackage.ROUTE_RULES__HELP:
 			return getHelp();
+		case DaprdesignerPackage.ROUTE_RULES__IS_DEFAULT:
+			return isIsDefault();
 		case DaprdesignerPackage.ROUTE_RULES__MATCH:
 			return getMatch();
 		case DaprdesignerPackage.ROUTE_RULES__PATH:
@@ -185,6 +230,9 @@ public class RouteRulesImpl extends DaprNodeImpl implements RouteRules {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case DaprdesignerPackage.ROUTE_RULES__IS_DEFAULT:
+			setIsDefault((Boolean) newValue);
+			return;
 		case DaprdesignerPackage.ROUTE_RULES__MATCH:
 			setMatch((String) newValue);
 			return;
@@ -203,6 +251,9 @@ public class RouteRulesImpl extends DaprNodeImpl implements RouteRules {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case DaprdesignerPackage.ROUTE_RULES__IS_DEFAULT:
+			setIsDefault(IS_DEFAULT_EDEFAULT);
+			return;
 		case DaprdesignerPackage.ROUTE_RULES__MATCH:
 			setMatch(MATCH_EDEFAULT);
 			return;
@@ -223,6 +274,8 @@ public class RouteRulesImpl extends DaprNodeImpl implements RouteRules {
 		switch (featureID) {
 		case DaprdesignerPackage.ROUTE_RULES__HELP:
 			return HELP_EDEFAULT == null ? help != null : !HELP_EDEFAULT.equals(help);
+		case DaprdesignerPackage.ROUTE_RULES__IS_DEFAULT:
+			return isDefault != IS_DEFAULT_EDEFAULT;
 		case DaprdesignerPackage.ROUTE_RULES__MATCH:
 			return MATCH_EDEFAULT == null ? match != null : !MATCH_EDEFAULT.equals(match);
 		case DaprdesignerPackage.ROUTE_RULES__PATH:
@@ -244,6 +297,8 @@ public class RouteRulesImpl extends DaprNodeImpl implements RouteRules {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (help: ");
 		result.append(help);
+		result.append(", isDefault: ");
+		result.append(isDefault);
 		result.append(", match: ");
 		result.append(match);
 		result.append(", path: ");

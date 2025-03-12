@@ -45,6 +45,7 @@ public class RouteRulesItemProvider extends DaprNodeItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addHelpPropertyDescriptor(object);
+			addIsDefaultPropertyDescriptor(object);
 			addMatchPropertyDescriptor(object);
 			addPathPropertyDescriptor(object);
 		}
@@ -100,6 +101,22 @@ public class RouteRulesItemProvider extends DaprNodeItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Is Default feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsDefaultPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_RouteRules_isDefault_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_RouteRules_isDefault_feature",
+								"_UI_RouteRules_type"),
+						DaprdesignerPackage.Literals.ROUTE_RULES__IS_DEFAULT, true, false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This returns RouteRules.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -146,6 +163,7 @@ public class RouteRulesItemProvider extends DaprNodeItemProvider {
 
 		switch (notification.getFeatureID(RouteRules.class)) {
 		case DaprdesignerPackage.ROUTE_RULES__HELP:
+		case DaprdesignerPackage.ROUTE_RULES__IS_DEFAULT:
 		case DaprdesignerPackage.ROUTE_RULES__MATCH:
 		case DaprdesignerPackage.ROUTE_RULES__PATH:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

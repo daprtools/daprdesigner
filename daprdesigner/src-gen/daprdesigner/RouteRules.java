@@ -12,6 +12,7 @@ package daprdesigner;
  * </p>
  * <ul>
  *   <li>{@link daprdesigner.RouteRules#getHelp <em>Help</em>}</li>
+ *   <li>{@link daprdesigner.RouteRules#isIsDefault <em>Is Default</em>}</li>
  *   <li>{@link daprdesigner.RouteRules#getMatch <em>Match</em>}</li>
  *   <li>{@link daprdesigner.RouteRules#getPath <em>Path</em>}</li>
  * </ul>
@@ -76,5 +77,27 @@ public interface RouteRules extends DaprNode {
 	 * @generated
 	 */
 	String getHelp();
+
+	/**
+	 * Returns the value of the '<em><b>Is Default</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Default</em>' attribute.
+	 * @see #setIsDefault(boolean)
+	 * @see daprdesigner.DaprdesignerPackage#getRouteRules_IsDefault()
+	 * @model
+	 * @generated
+	 */
+	boolean isIsDefault();
+
+	/**
+	 * Sets the value of the '{@link daprdesigner.RouteRules#isIsDefault <em>Is Default</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Default</em>' attribute.
+	 * @see #isIsDefault()
+	 * @generated
+	 */
+	void setIsDefault(boolean value);
 
 } // RouteRules
