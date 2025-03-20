@@ -158,13 +158,16 @@ class Trustdomain extends DaprNode{
 class App extends DaprNode{
 	readonly attr String help = "https://docs.dapr.io/developing-applications/building-blocks/service-invocation/service-invocation-overview/";
 	attr String appId;
-	attr String repository;
-	attr String swaggerLink;
-	attr SDKLanguage sdkLanguage;
+	attr String appDirPath;
 	ref Namespace namespace;
 	ref Trustdomain trustDomain;
+	attr String[*] command;
+	attr String appHealthCheckPath = "/healthz";
+	attr String containerImage;
 	ref AppConfiguration[*] configurations;
-	
+	attr SDKLanguage sdkLanguage;
+	attr String repository;
+	attr String swaggerLink;
 	
 	
 	

@@ -46,12 +46,16 @@ public class AppItemProvider extends DaprNodeItemProvider {
 
 			addHelpPropertyDescriptor(object);
 			addAppIdPropertyDescriptor(object);
-			addRepositoryPropertyDescriptor(object);
-			addSwaggerLinkPropertyDescriptor(object);
-			addSdkLanguagePropertyDescriptor(object);
+			addAppDirPathPropertyDescriptor(object);
 			addNamespacePropertyDescriptor(object);
 			addTrustDomainPropertyDescriptor(object);
+			addCommandPropertyDescriptor(object);
+			addAppHealthCheckPathPropertyDescriptor(object);
+			addContainerImagePropertyDescriptor(object);
 			addConfigurationsPropertyDescriptor(object);
+			addSdkLanguagePropertyDescriptor(object);
+			addRepositoryPropertyDescriptor(object);
+			addSwaggerLinkPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -83,6 +87,21 @@ public class AppItemProvider extends DaprNodeItemProvider {
 						getResourceLocator(), getString("_UI_App_appId_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_App_appId_feature", "_UI_App_type"),
 						DaprdesignerPackage.Literals.APP__APP_ID, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the App Dir Path feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAppDirPathPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_App_appDirPath_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_App_appDirPath_feature", "_UI_App_type"),
+						DaprdesignerPackage.Literals.APP__APP_DIR_PATH, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -160,6 +179,53 @@ public class AppItemProvider extends DaprNodeItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Command feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCommandPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_App_command_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_App_command_feature", "_UI_App_type"),
+						DaprdesignerPackage.Literals.APP__COMMAND, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the App Health Check Path feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAppHealthCheckPathPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_App_appHealthCheckPath_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_App_appHealthCheckPath_feature",
+								"_UI_App_type"),
+						DaprdesignerPackage.Literals.APP__APP_HEALTH_CHECK_PATH, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Container Image feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContainerImagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_App_containerImage_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_App_containerImage_feature",
+								"_UI_App_type"),
+						DaprdesignerPackage.Literals.APP__CONTAINER_IMAGE, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Configurations feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -222,9 +288,13 @@ public class AppItemProvider extends DaprNodeItemProvider {
 		switch (notification.getFeatureID(App.class)) {
 		case DaprdesignerPackage.APP__HELP:
 		case DaprdesignerPackage.APP__APP_ID:
+		case DaprdesignerPackage.APP__APP_DIR_PATH:
+		case DaprdesignerPackage.APP__COMMAND:
+		case DaprdesignerPackage.APP__APP_HEALTH_CHECK_PATH:
+		case DaprdesignerPackage.APP__CONTAINER_IMAGE:
+		case DaprdesignerPackage.APP__SDK_LANGUAGE:
 		case DaprdesignerPackage.APP__REPOSITORY:
 		case DaprdesignerPackage.APP__SWAGGER_LINK:
-		case DaprdesignerPackage.APP__SDK_LANGUAGE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

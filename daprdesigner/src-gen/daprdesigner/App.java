@@ -15,12 +15,16 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link daprdesigner.App#getHelp <em>Help</em>}</li>
  *   <li>{@link daprdesigner.App#getAppId <em>App Id</em>}</li>
- *   <li>{@link daprdesigner.App#getRepository <em>Repository</em>}</li>
- *   <li>{@link daprdesigner.App#getSwaggerLink <em>Swagger Link</em>}</li>
- *   <li>{@link daprdesigner.App#getSdkLanguage <em>Sdk Language</em>}</li>
+ *   <li>{@link daprdesigner.App#getAppDirPath <em>App Dir Path</em>}</li>
  *   <li>{@link daprdesigner.App#getNamespace <em>Namespace</em>}</li>
  *   <li>{@link daprdesigner.App#getTrustDomain <em>Trust Domain</em>}</li>
+ *   <li>{@link daprdesigner.App#getCommand <em>Command</em>}</li>
+ *   <li>{@link daprdesigner.App#getAppHealthCheckPath <em>App Health Check Path</em>}</li>
+ *   <li>{@link daprdesigner.App#getContainerImage <em>Container Image</em>}</li>
  *   <li>{@link daprdesigner.App#getConfigurations <em>Configurations</em>}</li>
+ *   <li>{@link daprdesigner.App#getSdkLanguage <em>Sdk Language</em>}</li>
+ *   <li>{@link daprdesigner.App#getRepository <em>Repository</em>}</li>
+ *   <li>{@link daprdesigner.App#getSwaggerLink <em>Swagger Link</em>}</li>
  * </ul>
  *
  * @see daprdesigner.DaprdesignerPackage#getApp()
@@ -61,6 +65,28 @@ public interface App extends DaprNode {
 	 * @generated
 	 */
 	void setAppId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>App Dir Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>App Dir Path</em>' attribute.
+	 * @see #setAppDirPath(String)
+	 * @see daprdesigner.DaprdesignerPackage#getApp_AppDirPath()
+	 * @model
+	 * @generated
+	 */
+	String getAppDirPath();
+
+	/**
+	 * Sets the value of the '{@link daprdesigner.App#getAppDirPath <em>App Dir Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>App Dir Path</em>' attribute.
+	 * @see #getAppDirPath()
+	 * @generated
+	 */
+	void setAppDirPath(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Repository</b></em>' attribute.
@@ -174,6 +200,63 @@ public interface App extends DaprNode {
 	 * @generated
 	 */
 	void setTrustDomain(Trustdomain value);
+
+	/**
+	 * Returns the value of the '<em><b>Command</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Command</em>' attribute list.
+	 * @see daprdesigner.DaprdesignerPackage#getApp_Command()
+	 * @model
+	 * @generated
+	 */
+	EList<String> getCommand();
+
+	/**
+	 * Returns the value of the '<em><b>App Health Check Path</b></em>' attribute.
+	 * The default value is <code>"/healthz"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>App Health Check Path</em>' attribute.
+	 * @see #setAppHealthCheckPath(String)
+	 * @see daprdesigner.DaprdesignerPackage#getApp_AppHealthCheckPath()
+	 * @model default="/healthz"
+	 * @generated
+	 */
+	String getAppHealthCheckPath();
+
+	/**
+	 * Sets the value of the '{@link daprdesigner.App#getAppHealthCheckPath <em>App Health Check Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>App Health Check Path</em>' attribute.
+	 * @see #getAppHealthCheckPath()
+	 * @generated
+	 */
+	void setAppHealthCheckPath(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Container Image</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Container Image</em>' attribute.
+	 * @see #setContainerImage(String)
+	 * @see daprdesigner.DaprdesignerPackage#getApp_ContainerImage()
+	 * @model
+	 * @generated
+	 */
+	String getContainerImage();
+
+	/**
+	 * Sets the value of the '{@link daprdesigner.App#getContainerImage <em>Container Image</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Container Image</em>' attribute.
+	 * @see #getContainerImage()
+	 * @generated
+	 */
+	void setContainerImage(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Configurations</b></em>' reference list.

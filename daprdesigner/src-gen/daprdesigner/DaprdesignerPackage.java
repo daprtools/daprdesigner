@@ -597,31 +597,13 @@ public interface DaprdesignerPackage extends EPackage {
 	int APP__APP_ID = DAPR_NODE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Repository</b></em>' attribute.
+	 * The feature id for the '<em><b>App Dir Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APP__REPOSITORY = DAPR_NODE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Swagger Link</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APP__SWAGGER_LINK = DAPR_NODE_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Sdk Language</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APP__SDK_LANGUAGE = DAPR_NODE_FEATURE_COUNT + 4;
+	int APP__APP_DIR_PATH = DAPR_NODE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' reference.
@@ -630,7 +612,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP__NAMESPACE = DAPR_NODE_FEATURE_COUNT + 5;
+	int APP__NAMESPACE = DAPR_NODE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Trust Domain</b></em>' reference.
@@ -639,7 +621,34 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP__TRUST_DOMAIN = DAPR_NODE_FEATURE_COUNT + 6;
+	int APP__TRUST_DOMAIN = DAPR_NODE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Command</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP__COMMAND = DAPR_NODE_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>App Health Check Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP__APP_HEALTH_CHECK_PATH = DAPR_NODE_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Container Image</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP__CONTAINER_IMAGE = DAPR_NODE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Configurations</b></em>' reference list.
@@ -648,7 +657,34 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP__CONFIGURATIONS = DAPR_NODE_FEATURE_COUNT + 7;
+	int APP__CONFIGURATIONS = DAPR_NODE_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Sdk Language</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP__SDK_LANGUAGE = DAPR_NODE_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Repository</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP__REPOSITORY = DAPR_NODE_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Swagger Link</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP__SWAGGER_LINK = DAPR_NODE_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>App</em>' class.
@@ -657,7 +693,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 8;
+	int APP_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 12;
 
 	/**
 	 * The number of operations of the '<em>App</em>' class.
@@ -733,31 +769,13 @@ public interface DaprdesignerPackage extends EPackage {
 	int ACTOR__APP_ID = APP__APP_ID;
 
 	/**
-	 * The feature id for the '<em><b>Repository</b></em>' attribute.
+	 * The feature id for the '<em><b>App Dir Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTOR__REPOSITORY = APP__REPOSITORY;
-
-	/**
-	 * The feature id for the '<em><b>Swagger Link</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTOR__SWAGGER_LINK = APP__SWAGGER_LINK;
-
-	/**
-	 * The feature id for the '<em><b>Sdk Language</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTOR__SDK_LANGUAGE = APP__SDK_LANGUAGE;
+	int ACTOR__APP_DIR_PATH = APP__APP_DIR_PATH;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' reference.
@@ -778,6 +796,33 @@ public interface DaprdesignerPackage extends EPackage {
 	int ACTOR__TRUST_DOMAIN = APP__TRUST_DOMAIN;
 
 	/**
+	 * The feature id for the '<em><b>Command</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTOR__COMMAND = APP__COMMAND;
+
+	/**
+	 * The feature id for the '<em><b>App Health Check Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTOR__APP_HEALTH_CHECK_PATH = APP__APP_HEALTH_CHECK_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Container Image</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTOR__CONTAINER_IMAGE = APP__CONTAINER_IMAGE;
+
+	/**
 	 * The feature id for the '<em><b>Configurations</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -785,6 +830,33 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @ordered
 	 */
 	int ACTOR__CONFIGURATIONS = APP__CONFIGURATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Sdk Language</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTOR__SDK_LANGUAGE = APP__SDK_LANGUAGE;
+
+	/**
+	 * The feature id for the '<em><b>Repository</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTOR__REPOSITORY = APP__REPOSITORY;
+
+	/**
+	 * The feature id for the '<em><b>Swagger Link</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTOR__SWAGGER_LINK = APP__SWAGGER_LINK;
 
 	/**
 	 * The feature id for the '<em><b>Additional Help</b></em>' attribute.
@@ -878,31 +950,13 @@ public interface DaprdesignerPackage extends EPackage {
 	int JOBS__APP_ID = APP__APP_ID;
 
 	/**
-	 * The feature id for the '<em><b>Repository</b></em>' attribute.
+	 * The feature id for the '<em><b>App Dir Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOBS__REPOSITORY = APP__REPOSITORY;
-
-	/**
-	 * The feature id for the '<em><b>Swagger Link</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOBS__SWAGGER_LINK = APP__SWAGGER_LINK;
-
-	/**
-	 * The feature id for the '<em><b>Sdk Language</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOBS__SDK_LANGUAGE = APP__SDK_LANGUAGE;
+	int JOBS__APP_DIR_PATH = APP__APP_DIR_PATH;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' reference.
@@ -923,6 +977,33 @@ public interface DaprdesignerPackage extends EPackage {
 	int JOBS__TRUST_DOMAIN = APP__TRUST_DOMAIN;
 
 	/**
+	 * The feature id for the '<em><b>Command</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS__COMMAND = APP__COMMAND;
+
+	/**
+	 * The feature id for the '<em><b>App Health Check Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS__APP_HEALTH_CHECK_PATH = APP__APP_HEALTH_CHECK_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Container Image</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS__CONTAINER_IMAGE = APP__CONTAINER_IMAGE;
+
+	/**
 	 * The feature id for the '<em><b>Configurations</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -930,6 +1011,33 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @ordered
 	 */
 	int JOBS__CONFIGURATIONS = APP__CONFIGURATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Sdk Language</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS__SDK_LANGUAGE = APP__SDK_LANGUAGE;
+
+	/**
+	 * The feature id for the '<em><b>Repository</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS__REPOSITORY = APP__REPOSITORY;
+
+	/**
+	 * The feature id for the '<em><b>Swagger Link</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS__SWAGGER_LINK = APP__SWAGGER_LINK;
 
 	/**
 	 * The feature id for the '<em><b>Additional Help</b></em>' attribute.
@@ -1023,31 +1131,13 @@ public interface DaprdesignerPackage extends EPackage {
 	int WORKFLOW__APP_ID = APP__APP_ID;
 
 	/**
-	 * The feature id for the '<em><b>Repository</b></em>' attribute.
+	 * The feature id for the '<em><b>App Dir Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WORKFLOW__REPOSITORY = APP__REPOSITORY;
-
-	/**
-	 * The feature id for the '<em><b>Swagger Link</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORKFLOW__SWAGGER_LINK = APP__SWAGGER_LINK;
-
-	/**
-	 * The feature id for the '<em><b>Sdk Language</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORKFLOW__SDK_LANGUAGE = APP__SDK_LANGUAGE;
+	int WORKFLOW__APP_DIR_PATH = APP__APP_DIR_PATH;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' reference.
@@ -1068,6 +1158,33 @@ public interface DaprdesignerPackage extends EPackage {
 	int WORKFLOW__TRUST_DOMAIN = APP__TRUST_DOMAIN;
 
 	/**
+	 * The feature id for the '<em><b>Command</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORKFLOW__COMMAND = APP__COMMAND;
+
+	/**
+	 * The feature id for the '<em><b>App Health Check Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORKFLOW__APP_HEALTH_CHECK_PATH = APP__APP_HEALTH_CHECK_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Container Image</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORKFLOW__CONTAINER_IMAGE = APP__CONTAINER_IMAGE;
+
+	/**
 	 * The feature id for the '<em><b>Configurations</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1075,6 +1192,33 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @ordered
 	 */
 	int WORKFLOW__CONFIGURATIONS = APP__CONFIGURATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Sdk Language</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORKFLOW__SDK_LANGUAGE = APP__SDK_LANGUAGE;
+
+	/**
+	 * The feature id for the '<em><b>Repository</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORKFLOW__REPOSITORY = APP__REPOSITORY;
+
+	/**
+	 * The feature id for the '<em><b>Swagger Link</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORKFLOW__SWAGGER_LINK = APP__SWAGGER_LINK;
 
 	/**
 	 * The feature id for the '<em><b>Additional Help</b></em>' attribute.
@@ -6152,6 +6296,17 @@ public interface DaprdesignerPackage extends EPackage {
 	EAttribute getApp_AppId();
 
 	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.App#getAppDirPath <em>App Dir Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>App Dir Path</em>'.
+	 * @see daprdesigner.App#getAppDirPath()
+	 * @see #getApp()
+	 * @generated
+	 */
+	EAttribute getApp_AppDirPath();
+
+	/**
 	 * Returns the meta object for the attribute '{@link daprdesigner.App#getRepository <em>Repository</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6205,6 +6360,39 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getApp_TrustDomain();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link daprdesigner.App#getCommand <em>Command</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Command</em>'.
+	 * @see daprdesigner.App#getCommand()
+	 * @see #getApp()
+	 * @generated
+	 */
+	EAttribute getApp_Command();
+
+	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.App#getAppHealthCheckPath <em>App Health Check Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>App Health Check Path</em>'.
+	 * @see daprdesigner.App#getAppHealthCheckPath()
+	 * @see #getApp()
+	 * @generated
+	 */
+	EAttribute getApp_AppHealthCheckPath();
+
+	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.App#getContainerImage <em>Container Image</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Container Image</em>'.
+	 * @see daprdesigner.App#getContainerImage()
+	 * @see #getApp()
+	 * @generated
+	 */
+	EAttribute getApp_ContainerImage();
 
 	/**
 	 * Returns the meta object for the reference list '{@link daprdesigner.App#getConfigurations <em>Configurations</em>}'.
@@ -8673,6 +8861,14 @@ public interface DaprdesignerPackage extends EPackage {
 		EAttribute APP__APP_ID = eINSTANCE.getApp_AppId();
 
 		/**
+		 * The meta object literal for the '<em><b>App Dir Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute APP__APP_DIR_PATH = eINSTANCE.getApp_AppDirPath();
+
+		/**
 		 * The meta object literal for the '<em><b>Repository</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8711,6 +8907,30 @@ public interface DaprdesignerPackage extends EPackage {
 		 * @generated
 		 */
 		EReference APP__TRUST_DOMAIN = eINSTANCE.getApp_TrustDomain();
+
+		/**
+		 * The meta object literal for the '<em><b>Command</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute APP__COMMAND = eINSTANCE.getApp_Command();
+
+		/**
+		 * The meta object literal for the '<em><b>App Health Check Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute APP__APP_HEALTH_CHECK_PATH = eINSTANCE.getApp_AppHealthCheckPath();
+
+		/**
+		 * The meta object literal for the '<em><b>Container Image</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute APP__CONTAINER_IMAGE = eINSTANCE.getApp_ContainerImage();
 
 		/**
 		 * The meta object literal for the '<em><b>Configurations</b></em>' reference list feature.

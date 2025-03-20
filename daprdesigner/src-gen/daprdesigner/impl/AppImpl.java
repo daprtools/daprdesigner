@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
@@ -32,12 +33,16 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <ul>
  *   <li>{@link daprdesigner.impl.AppImpl#getHelp <em>Help</em>}</li>
  *   <li>{@link daprdesigner.impl.AppImpl#getAppId <em>App Id</em>}</li>
- *   <li>{@link daprdesigner.impl.AppImpl#getRepository <em>Repository</em>}</li>
- *   <li>{@link daprdesigner.impl.AppImpl#getSwaggerLink <em>Swagger Link</em>}</li>
- *   <li>{@link daprdesigner.impl.AppImpl#getSdkLanguage <em>Sdk Language</em>}</li>
+ *   <li>{@link daprdesigner.impl.AppImpl#getAppDirPath <em>App Dir Path</em>}</li>
  *   <li>{@link daprdesigner.impl.AppImpl#getNamespace <em>Namespace</em>}</li>
  *   <li>{@link daprdesigner.impl.AppImpl#getTrustDomain <em>Trust Domain</em>}</li>
+ *   <li>{@link daprdesigner.impl.AppImpl#getCommand <em>Command</em>}</li>
+ *   <li>{@link daprdesigner.impl.AppImpl#getAppHealthCheckPath <em>App Health Check Path</em>}</li>
+ *   <li>{@link daprdesigner.impl.AppImpl#getContainerImage <em>Container Image</em>}</li>
  *   <li>{@link daprdesigner.impl.AppImpl#getConfigurations <em>Configurations</em>}</li>
+ *   <li>{@link daprdesigner.impl.AppImpl#getSdkLanguage <em>Sdk Language</em>}</li>
+ *   <li>{@link daprdesigner.impl.AppImpl#getRepository <em>Repository</em>}</li>
+ *   <li>{@link daprdesigner.impl.AppImpl#getSwaggerLink <em>Swagger Link</em>}</li>
  * </ul>
  *
  * @generated
@@ -84,6 +89,126 @@ public class AppImpl extends DaprNodeImpl implements App {
 	protected String appId = APP_ID_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getAppDirPath() <em>App Dir Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAppDirPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String APP_DIR_PATH_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAppDirPath() <em>App Dir Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAppDirPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected String appDirPath = APP_DIR_PATH_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getNamespace() <em>Namespace</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNamespace()
+	 * @generated
+	 * @ordered
+	 */
+	protected Namespace namespace;
+
+	/**
+	 * The cached value of the '{@link #getTrustDomain() <em>Trust Domain</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTrustDomain()
+	 * @generated
+	 * @ordered
+	 */
+	protected Trustdomain trustDomain;
+
+	/**
+	 * The cached value of the '{@link #getCommand() <em>Command</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCommand()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> command;
+
+	/**
+	 * The default value of the '{@link #getAppHealthCheckPath() <em>App Health Check Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAppHealthCheckPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String APP_HEALTH_CHECK_PATH_EDEFAULT = "/healthz";
+
+	/**
+	 * The cached value of the '{@link #getAppHealthCheckPath() <em>App Health Check Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAppHealthCheckPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected String appHealthCheckPath = APP_HEALTH_CHECK_PATH_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getContainerImage() <em>Container Image</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContainerImage()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CONTAINER_IMAGE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getContainerImage() <em>Container Image</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContainerImage()
+	 * @generated
+	 * @ordered
+	 */
+	protected String containerImage = CONTAINER_IMAGE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getConfigurations() <em>Configurations</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConfigurations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<AppConfiguration> configurations;
+
+	/**
+	 * The default value of the '{@link #getSdkLanguage() <em>Sdk Language</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSdkLanguage()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final SDKLanguage SDK_LANGUAGE_EDEFAULT = SDKLanguage.JAVA;
+
+	/**
+	 * The cached value of the '{@link #getSdkLanguage() <em>Sdk Language</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSdkLanguage()
+	 * @generated
+	 * @ordered
+	 */
+	protected SDKLanguage sdkLanguage = SDK_LANGUAGE_EDEFAULT;
+
+	/**
 	 * The default value of the '{@link #getRepository() <em>Repository</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -122,56 +247,6 @@ public class AppImpl extends DaprNodeImpl implements App {
 	 * @ordered
 	 */
 	protected String swaggerLink = SWAGGER_LINK_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSdkLanguage() <em>Sdk Language</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSdkLanguage()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final SDKLanguage SDK_LANGUAGE_EDEFAULT = SDKLanguage.JAVA;
-
-	/**
-	 * The cached value of the '{@link #getSdkLanguage() <em>Sdk Language</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSdkLanguage()
-	 * @generated
-	 * @ordered
-	 */
-	protected SDKLanguage sdkLanguage = SDK_LANGUAGE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getNamespace() <em>Namespace</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNamespace()
-	 * @generated
-	 * @ordered
-	 */
-	protected Namespace namespace;
-
-	/**
-	 * The cached value of the '{@link #getTrustDomain() <em>Trust Domain</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTrustDomain()
-	 * @generated
-	 * @ordered
-	 */
-	protected Trustdomain trustDomain;
-
-	/**
-	 * The cached value of the '{@link #getConfigurations() <em>Configurations</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConfigurations()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<AppConfiguration> configurations;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,6 +295,28 @@ public class AppImpl extends DaprNodeImpl implements App {
 		appId = newAppId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.APP__APP_ID, oldAppId, appId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getAppDirPath() {
+		return appDirPath;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAppDirPath(String newAppDirPath) {
+		String oldAppDirPath = appDirPath;
+		appDirPath = newAppDirPath;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.APP__APP_DIR_PATH, oldAppDirPath,
+					appDirPath));
 	}
 
 	/**
@@ -373,6 +470,62 @@ public class AppImpl extends DaprNodeImpl implements App {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<String> getCommand() {
+		if (command == null) {
+			command = new EDataTypeUniqueEList<String>(String.class, this, DaprdesignerPackage.APP__COMMAND);
+		}
+		return command;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getAppHealthCheckPath() {
+		return appHealthCheckPath;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAppHealthCheckPath(String newAppHealthCheckPath) {
+		String oldAppHealthCheckPath = appHealthCheckPath;
+		appHealthCheckPath = newAppHealthCheckPath;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.APP__APP_HEALTH_CHECK_PATH,
+					oldAppHealthCheckPath, appHealthCheckPath));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getContainerImage() {
+		return containerImage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContainerImage(String newContainerImage) {
+		String oldContainerImage = containerImage;
+		containerImage = newContainerImage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DaprdesignerPackage.APP__CONTAINER_IMAGE,
+					oldContainerImage, containerImage));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<AppConfiguration> getConfigurations() {
 		if (configurations == null) {
 			configurations = new EObjectResolvingEList<AppConfiguration>(AppConfiguration.class, this,
@@ -393,12 +546,8 @@ public class AppImpl extends DaprNodeImpl implements App {
 			return getHelp();
 		case DaprdesignerPackage.APP__APP_ID:
 			return getAppId();
-		case DaprdesignerPackage.APP__REPOSITORY:
-			return getRepository();
-		case DaprdesignerPackage.APP__SWAGGER_LINK:
-			return getSwaggerLink();
-		case DaprdesignerPackage.APP__SDK_LANGUAGE:
-			return getSdkLanguage();
+		case DaprdesignerPackage.APP__APP_DIR_PATH:
+			return getAppDirPath();
 		case DaprdesignerPackage.APP__NAMESPACE:
 			if (resolve)
 				return getNamespace();
@@ -407,8 +556,20 @@ public class AppImpl extends DaprNodeImpl implements App {
 			if (resolve)
 				return getTrustDomain();
 			return basicGetTrustDomain();
+		case DaprdesignerPackage.APP__COMMAND:
+			return getCommand();
+		case DaprdesignerPackage.APP__APP_HEALTH_CHECK_PATH:
+			return getAppHealthCheckPath();
+		case DaprdesignerPackage.APP__CONTAINER_IMAGE:
+			return getContainerImage();
 		case DaprdesignerPackage.APP__CONFIGURATIONS:
 			return getConfigurations();
+		case DaprdesignerPackage.APP__SDK_LANGUAGE:
+			return getSdkLanguage();
+		case DaprdesignerPackage.APP__REPOSITORY:
+			return getRepository();
+		case DaprdesignerPackage.APP__SWAGGER_LINK:
+			return getSwaggerLink();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -425,14 +586,8 @@ public class AppImpl extends DaprNodeImpl implements App {
 		case DaprdesignerPackage.APP__APP_ID:
 			setAppId((String) newValue);
 			return;
-		case DaprdesignerPackage.APP__REPOSITORY:
-			setRepository((String) newValue);
-			return;
-		case DaprdesignerPackage.APP__SWAGGER_LINK:
-			setSwaggerLink((String) newValue);
-			return;
-		case DaprdesignerPackage.APP__SDK_LANGUAGE:
-			setSdkLanguage((SDKLanguage) newValue);
+		case DaprdesignerPackage.APP__APP_DIR_PATH:
+			setAppDirPath((String) newValue);
 			return;
 		case DaprdesignerPackage.APP__NAMESPACE:
 			setNamespace((Namespace) newValue);
@@ -440,9 +595,28 @@ public class AppImpl extends DaprNodeImpl implements App {
 		case DaprdesignerPackage.APP__TRUST_DOMAIN:
 			setTrustDomain((Trustdomain) newValue);
 			return;
+		case DaprdesignerPackage.APP__COMMAND:
+			getCommand().clear();
+			getCommand().addAll((Collection<? extends String>) newValue);
+			return;
+		case DaprdesignerPackage.APP__APP_HEALTH_CHECK_PATH:
+			setAppHealthCheckPath((String) newValue);
+			return;
+		case DaprdesignerPackage.APP__CONTAINER_IMAGE:
+			setContainerImage((String) newValue);
+			return;
 		case DaprdesignerPackage.APP__CONFIGURATIONS:
 			getConfigurations().clear();
 			getConfigurations().addAll((Collection<? extends AppConfiguration>) newValue);
+			return;
+		case DaprdesignerPackage.APP__SDK_LANGUAGE:
+			setSdkLanguage((SDKLanguage) newValue);
+			return;
+		case DaprdesignerPackage.APP__REPOSITORY:
+			setRepository((String) newValue);
+			return;
+		case DaprdesignerPackage.APP__SWAGGER_LINK:
+			setSwaggerLink((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -459,14 +633,8 @@ public class AppImpl extends DaprNodeImpl implements App {
 		case DaprdesignerPackage.APP__APP_ID:
 			setAppId(APP_ID_EDEFAULT);
 			return;
-		case DaprdesignerPackage.APP__REPOSITORY:
-			setRepository(REPOSITORY_EDEFAULT);
-			return;
-		case DaprdesignerPackage.APP__SWAGGER_LINK:
-			setSwaggerLink(SWAGGER_LINK_EDEFAULT);
-			return;
-		case DaprdesignerPackage.APP__SDK_LANGUAGE:
-			setSdkLanguage(SDK_LANGUAGE_EDEFAULT);
+		case DaprdesignerPackage.APP__APP_DIR_PATH:
+			setAppDirPath(APP_DIR_PATH_EDEFAULT);
 			return;
 		case DaprdesignerPackage.APP__NAMESPACE:
 			setNamespace((Namespace) null);
@@ -474,8 +642,26 @@ public class AppImpl extends DaprNodeImpl implements App {
 		case DaprdesignerPackage.APP__TRUST_DOMAIN:
 			setTrustDomain((Trustdomain) null);
 			return;
+		case DaprdesignerPackage.APP__COMMAND:
+			getCommand().clear();
+			return;
+		case DaprdesignerPackage.APP__APP_HEALTH_CHECK_PATH:
+			setAppHealthCheckPath(APP_HEALTH_CHECK_PATH_EDEFAULT);
+			return;
+		case DaprdesignerPackage.APP__CONTAINER_IMAGE:
+			setContainerImage(CONTAINER_IMAGE_EDEFAULT);
+			return;
 		case DaprdesignerPackage.APP__CONFIGURATIONS:
 			getConfigurations().clear();
+			return;
+		case DaprdesignerPackage.APP__SDK_LANGUAGE:
+			setSdkLanguage(SDK_LANGUAGE_EDEFAULT);
+			return;
+		case DaprdesignerPackage.APP__REPOSITORY:
+			setRepository(REPOSITORY_EDEFAULT);
+			return;
+		case DaprdesignerPackage.APP__SWAGGER_LINK:
+			setSwaggerLink(SWAGGER_LINK_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -493,18 +679,28 @@ public class AppImpl extends DaprNodeImpl implements App {
 			return HELP_EDEFAULT == null ? help != null : !HELP_EDEFAULT.equals(help);
 		case DaprdesignerPackage.APP__APP_ID:
 			return APP_ID_EDEFAULT == null ? appId != null : !APP_ID_EDEFAULT.equals(appId);
-		case DaprdesignerPackage.APP__REPOSITORY:
-			return REPOSITORY_EDEFAULT == null ? repository != null : !REPOSITORY_EDEFAULT.equals(repository);
-		case DaprdesignerPackage.APP__SWAGGER_LINK:
-			return SWAGGER_LINK_EDEFAULT == null ? swaggerLink != null : !SWAGGER_LINK_EDEFAULT.equals(swaggerLink);
-		case DaprdesignerPackage.APP__SDK_LANGUAGE:
-			return sdkLanguage != SDK_LANGUAGE_EDEFAULT;
+		case DaprdesignerPackage.APP__APP_DIR_PATH:
+			return APP_DIR_PATH_EDEFAULT == null ? appDirPath != null : !APP_DIR_PATH_EDEFAULT.equals(appDirPath);
 		case DaprdesignerPackage.APP__NAMESPACE:
 			return namespace != null;
 		case DaprdesignerPackage.APP__TRUST_DOMAIN:
 			return trustDomain != null;
+		case DaprdesignerPackage.APP__COMMAND:
+			return command != null && !command.isEmpty();
+		case DaprdesignerPackage.APP__APP_HEALTH_CHECK_PATH:
+			return APP_HEALTH_CHECK_PATH_EDEFAULT == null ? appHealthCheckPath != null
+					: !APP_HEALTH_CHECK_PATH_EDEFAULT.equals(appHealthCheckPath);
+		case DaprdesignerPackage.APP__CONTAINER_IMAGE:
+			return CONTAINER_IMAGE_EDEFAULT == null ? containerImage != null
+					: !CONTAINER_IMAGE_EDEFAULT.equals(containerImage);
 		case DaprdesignerPackage.APP__CONFIGURATIONS:
 			return configurations != null && !configurations.isEmpty();
+		case DaprdesignerPackage.APP__SDK_LANGUAGE:
+			return sdkLanguage != SDK_LANGUAGE_EDEFAULT;
+		case DaprdesignerPackage.APP__REPOSITORY:
+			return REPOSITORY_EDEFAULT == null ? repository != null : !REPOSITORY_EDEFAULT.equals(repository);
+		case DaprdesignerPackage.APP__SWAGGER_LINK:
+			return SWAGGER_LINK_EDEFAULT == null ? swaggerLink != null : !SWAGGER_LINK_EDEFAULT.equals(swaggerLink);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -524,12 +720,20 @@ public class AppImpl extends DaprNodeImpl implements App {
 		result.append(help);
 		result.append(", appId: ");
 		result.append(appId);
+		result.append(", appDirPath: ");
+		result.append(appDirPath);
+		result.append(", command: ");
+		result.append(command);
+		result.append(", appHealthCheckPath: ");
+		result.append(appHealthCheckPath);
+		result.append(", containerImage: ");
+		result.append(containerImage);
+		result.append(", sdkLanguage: ");
+		result.append(sdkLanguage);
 		result.append(", repository: ");
 		result.append(repository);
 		result.append(", swaggerLink: ");
 		result.append(swaggerLink);
-		result.append(", sdkLanguage: ");
-		result.append(sdkLanguage);
 		result.append(')');
 		return result.toString();
 	}

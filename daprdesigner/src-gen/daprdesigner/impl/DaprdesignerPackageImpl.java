@@ -806,7 +806,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getApp_Repository() {
+	public EAttribute getApp_AppDirPath() {
 		return (EAttribute) appEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -815,8 +815,17 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getApp_Repository() {
+		return (EAttribute) appEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getApp_SwaggerLink() {
-		return (EAttribute) appEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) appEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -825,7 +834,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * @generated
 	 */
 	public EAttribute getApp_SdkLanguage() {
-		return (EAttribute) appEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) appEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -834,7 +843,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * @generated
 	 */
 	public EReference getApp_Namespace() {
-		return (EReference) appEClass.getEStructuralFeatures().get(5);
+		return (EReference) appEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -843,7 +852,34 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * @generated
 	 */
 	public EReference getApp_TrustDomain() {
-		return (EReference) appEClass.getEStructuralFeatures().get(6);
+		return (EReference) appEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getApp_Command() {
+		return (EAttribute) appEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getApp_AppHealthCheckPath() {
+		return (EAttribute) appEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getApp_ContainerImage() {
+		return (EAttribute) appEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -852,7 +888,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * @generated
 	 */
 	public EReference getApp_Configurations() {
-		return (EReference) appEClass.getEStructuralFeatures().get(7);
+		return (EReference) appEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -2747,12 +2783,16 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		appEClass = createEClass(APP);
 		createEAttribute(appEClass, APP__HELP);
 		createEAttribute(appEClass, APP__APP_ID);
-		createEAttribute(appEClass, APP__REPOSITORY);
-		createEAttribute(appEClass, APP__SWAGGER_LINK);
-		createEAttribute(appEClass, APP__SDK_LANGUAGE);
+		createEAttribute(appEClass, APP__APP_DIR_PATH);
 		createEReference(appEClass, APP__NAMESPACE);
 		createEReference(appEClass, APP__TRUST_DOMAIN);
+		createEAttribute(appEClass, APP__COMMAND);
+		createEAttribute(appEClass, APP__APP_HEALTH_CHECK_PATH);
+		createEAttribute(appEClass, APP__CONTAINER_IMAGE);
 		createEReference(appEClass, APP__CONFIGURATIONS);
+		createEAttribute(appEClass, APP__SDK_LANGUAGE);
+		createEAttribute(appEClass, APP__REPOSITORY);
+		createEAttribute(appEClass, APP__SWAGGER_LINK);
 
 		actorEClass = createEClass(ACTOR);
 		createEAttribute(actorEClass, ACTOR__ADDITIONAL_HELP);
@@ -3149,21 +3189,30 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 				!IS_DERIVED, IS_ORDERED);
 		initEAttribute(getApp_AppId(), ecorePackage.getEString(), "appId", null, 0, 1, App.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getApp_Repository(), ecorePackage.getEString(), "repository", null, 0, 1, App.class,
+		initEAttribute(getApp_AppDirPath(), ecorePackage.getEString(), "appDirPath", null, 0, 1, App.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getApp_SwaggerLink(), ecorePackage.getEString(), "swaggerLink", null, 0, 1, App.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getApp_SdkLanguage(), this.getSDKLanguage(), "sdkLanguage", null, 0, 1, App.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApp_Namespace(), this.getNamespace(), null, "namespace", null, 0, 1, App.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 		initEReference(getApp_TrustDomain(), this.getTrustdomain(), null, "trustDomain", null, 0, 1, App.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getApp_Command(), ecorePackage.getEString(), "command", null, 0, -1, App.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getApp_AppHealthCheckPath(), ecorePackage.getEString(), "appHealthCheckPath", "/healthz", 0, 1,
+				App.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getApp_ContainerImage(), ecorePackage.getEString(), "containerImage", null, 0, 1, App.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApp_Configurations(), this.getAppConfiguration(), null, "configurations", null, 0, -1,
 				App.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getApp_SdkLanguage(), this.getSDKLanguage(), "sdkLanguage", null, 0, 1, App.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getApp_Repository(), ecorePackage.getEString(), "repository", null, 0, 1, App.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getApp_SwaggerLink(), ecorePackage.getEString(), "swaggerLink", null, 0, 1, App.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actorEClass, Actor.class, "Actor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getActor_AdditionalHelp(), ecorePackage.getEString(), "additionalHelp",

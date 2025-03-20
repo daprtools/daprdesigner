@@ -133,13 +133,19 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" defaultValueLiteral="https://docs.dapr.io/developing-applications/building-blocks/service-invocation/service-invocation-overview/"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="appId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="repository" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="swaggerLink" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sdkLanguage" eType="#//SDKLanguage"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="appDirPath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="namespace" eType="#//Namespace"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="trustDomain" eType="#//Trustdomain"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="command" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="appHealthCheckPath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="/healthz"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="containerImage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="configurations" upperBound="-1"
         eType="#//AppConfiguration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sdkLanguage" eType="#//SDKLanguage"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="repository" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="swaggerLink" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Actor" eSuperTypes="#//App">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="additionalHelp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
