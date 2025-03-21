@@ -44,10 +44,28 @@ public class DeniedComponentsConfigurationItemProvider extends AppConfigurationI
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addRequiredFieldsPropertyDescriptor(object);
 			addHelpPropertyDescriptor(object);
 			addDeniedComponentsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Required Fields feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequiredFieldsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_DeniedComponentsConfiguration_requiredFields_feature"),
+						getString("_UI_PropertyDescriptor_description",
+								"_UI_DeniedComponentsConfiguration_requiredFields_feature",
+								"_UI_DeniedComponentsConfiguration_type"),
+						DaprdesignerPackage.Literals.DENIED_COMPONENTS_CONFIGURATION__REQUIRED_FIELDS, false, false,
+						false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -129,6 +147,7 @@ public class DeniedComponentsConfigurationItemProvider extends AppConfigurationI
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DeniedComponentsConfiguration.class)) {
+		case DaprdesignerPackage.DENIED_COMPONENTS_CONFIGURATION__REQUIRED_FIELDS:
 		case DaprdesignerPackage.DENIED_COMPONENTS_CONFIGURATION__HELP:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;

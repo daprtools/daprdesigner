@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link daprdesigner.impl.SecretsAccessConfigurationImpl#getRequiredFields <em>Required Fields</em>}</li>
  *   <li>{@link daprdesigner.impl.SecretsAccessConfigurationImpl#getHelp <em>Help</em>}</li>
  *   <li>{@link daprdesigner.impl.SecretsAccessConfigurationImpl#getAccessList <em>Access List</em>}</li>
  * </ul>
@@ -29,6 +30,26 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * @generated
  */
 public class SecretsAccessConfigurationImpl extends AppConfigurationImpl implements SecretsAccessConfiguration {
+	/**
+	 * The default value of the '{@link #getRequiredFields() <em>Required Fields</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiredFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REQUIRED_FIELDS_EDEFAULT = "Name";
+
+	/**
+	 * The cached value of the '{@link #getRequiredFields() <em>Required Fields</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiredFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected String requiredFields = REQUIRED_FIELDS_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getHelp() <em>Help</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -83,6 +104,15 @@ public class SecretsAccessConfigurationImpl extends AppConfigurationImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getRequiredFields() {
+		return requiredFields;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<SecretsAccessList> getAccessList() {
 		if (accessList == null) {
 			accessList = new EObjectResolvingEList<SecretsAccessList>(SecretsAccessList.class, this,
@@ -108,6 +138,8 @@ public class SecretsAccessConfigurationImpl extends AppConfigurationImpl impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case DaprdesignerPackage.SECRETS_ACCESS_CONFIGURATION__REQUIRED_FIELDS:
+			return getRequiredFields();
 		case DaprdesignerPackage.SECRETS_ACCESS_CONFIGURATION__HELP:
 			return getHelp();
 		case DaprdesignerPackage.SECRETS_ACCESS_CONFIGURATION__ACCESS_LIST:
@@ -156,6 +188,9 @@ public class SecretsAccessConfigurationImpl extends AppConfigurationImpl impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case DaprdesignerPackage.SECRETS_ACCESS_CONFIGURATION__REQUIRED_FIELDS:
+			return REQUIRED_FIELDS_EDEFAULT == null ? requiredFields != null
+					: !REQUIRED_FIELDS_EDEFAULT.equals(requiredFields);
 		case DaprdesignerPackage.SECRETS_ACCESS_CONFIGURATION__HELP:
 			return HELP_EDEFAULT == null ? help != null : !HELP_EDEFAULT.equals(help);
 		case DaprdesignerPackage.SECRETS_ACCESS_CONFIGURATION__ACCESS_LIST:
@@ -175,7 +210,9 @@ public class SecretsAccessConfigurationImpl extends AppConfigurationImpl impleme
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (help: ");
+		result.append(" (requiredFields: ");
+		result.append(requiredFields);
+		result.append(", help: ");
 		result.append(help);
 		result.append(')');
 		return result.toString();

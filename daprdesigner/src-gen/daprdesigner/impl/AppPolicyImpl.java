@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link daprdesigner.impl.AppPolicyImpl#getRequiredFields <em>Required Fields</em>}</li>
  *   <li>{@link daprdesigner.impl.AppPolicyImpl#getHelp <em>Help</em>}</li>
  *   <li>{@link daprdesigner.impl.AppPolicyImpl#getApp <em>App</em>}</li>
  *   <li>{@link daprdesigner.impl.AppPolicyImpl#getDefaultAction <em>Default Action</em>}</li>
@@ -42,6 +43,26 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * @generated
  */
 public class AppPolicyImpl extends DaprNodeImpl implements AppPolicy {
+	/**
+	 * The default value of the '{@link #getRequiredFields() <em>Required Fields</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiredFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REQUIRED_FIELDS_EDEFAULT = "Name, App, Trust Domain, Namespace";
+
+	/**
+	 * The cached value of the '{@link #getRequiredFields() <em>Required Fields</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiredFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected String requiredFields = REQUIRED_FIELDS_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getHelp() <em>Help</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -139,6 +160,15 @@ public class AppPolicyImpl extends DaprNodeImpl implements AppPolicy {
 	@Override
 	protected EClass eStaticClass() {
 		return DaprdesignerPackage.Literals.APP_POLICY;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getRequiredFields() {
+		return requiredFields;
 	}
 
 	/**
@@ -312,6 +342,8 @@ public class AppPolicyImpl extends DaprNodeImpl implements AppPolicy {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case DaprdesignerPackage.APP_POLICY__REQUIRED_FIELDS:
+			return getRequiredFields();
 		case DaprdesignerPackage.APP_POLICY__HELP:
 			return getHelp();
 		case DaprdesignerPackage.APP_POLICY__APP:
@@ -398,6 +430,9 @@ public class AppPolicyImpl extends DaprNodeImpl implements AppPolicy {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case DaprdesignerPackage.APP_POLICY__REQUIRED_FIELDS:
+			return REQUIRED_FIELDS_EDEFAULT == null ? requiredFields != null
+					: !REQUIRED_FIELDS_EDEFAULT.equals(requiredFields);
 		case DaprdesignerPackage.APP_POLICY__HELP:
 			return HELP_EDEFAULT == null ? help != null : !HELP_EDEFAULT.equals(help);
 		case DaprdesignerPackage.APP_POLICY__APP:
@@ -425,7 +460,9 @@ public class AppPolicyImpl extends DaprNodeImpl implements AppPolicy {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (help: ");
+		result.append(" (requiredFields: ");
+		result.append(requiredFields);
+		result.append(", help: ");
 		result.append(help);
 		result.append(", defaultAction: ");
 		result.append(defaultAction);

@@ -11,6 +11,7 @@ package daprdesigner;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link daprdesigner.LoggingConfiguration#getRequiredFields <em>Required Fields</em>}</li>
  *   <li>{@link daprdesigner.LoggingConfiguration#getHelp <em>Help</em>}</li>
  *   <li>{@link daprdesigner.LoggingConfiguration#isEnabled <em>Enabled</em>}</li>
  *   <li>{@link daprdesigner.LoggingConfiguration#isObfuscateUrls <em>Obfuscate Urls</em>}</li>
@@ -22,6 +23,18 @@ package daprdesigner;
  * @generated
  */
 public interface LoggingConfiguration extends AppConfiguration {
+	/**
+	 * Returns the value of the '<em><b>Required Fields</b></em>' attribute.
+	 * The default value is <code>"Name"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Required Fields</em>' attribute.
+	 * @see daprdesigner.DaprdesignerPackage#getLoggingConfiguration_RequiredFields()
+	 * @model default="Name" changeable="false"
+	 * @generated
+	 */
+	String getRequiredFields();
+
 	/**
 	 * Returns the value of the '<em><b>Enabled</b></em>' attribute.
 	 * The default value is <code>"true"</code>.

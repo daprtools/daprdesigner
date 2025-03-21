@@ -19,16 +19,6 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum ResiliencyTargetType implements Enumerator {
 	/**
-	 * The '<em><b>APP</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #APP_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	APP(1, "APP", "APP"),
-
-	/**
 	 * The '<em><b>ACTOR</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -36,7 +26,16 @@ public enum ResiliencyTargetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ACTOR(2, "ACTOR", "ACTOR"),
+	ACTOR(0, "ACTOR", "ACTOR"),
+	/**
+	* The '<em><b>APP</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #APP_VALUE
+	* @generated
+	* @ordered
+	*/
+	APP(1, "APP", "APP"),
 
 	/**
 	 * The '<em><b>COMPONENT INBOUND</b></em>' literal object.
@@ -46,7 +45,7 @@ public enum ResiliencyTargetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	COMPONENT_INBOUND(3, "COMPONENT_INBOUND", "COMPONENT_INBOUND"),
+	COMPONENT_INBOUND(2, "COMPONENT_INBOUND", "COMPONENT_INBOUND"),
 
 	/**
 	 * The '<em><b>COMPONENT OUTBOUND</b></em>' literal object.
@@ -56,7 +55,18 @@ public enum ResiliencyTargetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	COMPONENT_OUTBOUND(4, "COMPONENT_OUTBOUND", "COMPONENT_OUTBOUND");
+	COMPONENT_OUTBOUND(3, "COMPONENT_OUTBOUND", "COMPONENT_OUTBOUND");
+
+	/**
+	 * The '<em><b>ACTOR</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #ACTOR
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int ACTOR_VALUE = 0;
 
 	/**
 	 * The '<em><b>APP</b></em>' literal value.
@@ -70,17 +80,6 @@ public enum ResiliencyTargetType implements Enumerator {
 	public static final int APP_VALUE = 1;
 
 	/**
-	 * The '<em><b>ACTOR</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #ACTOR
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int ACTOR_VALUE = 2;
-
-	/**
 	 * The '<em><b>COMPONENT INBOUND</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -89,7 +88,7 @@ public enum ResiliencyTargetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int COMPONENT_INBOUND_VALUE = 3;
+	public static final int COMPONENT_INBOUND_VALUE = 2;
 
 	/**
 	 * The '<em><b>COMPONENT OUTBOUND</b></em>' literal value.
@@ -100,7 +99,7 @@ public enum ResiliencyTargetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int COMPONENT_OUTBOUND_VALUE = 4;
+	public static final int COMPONENT_OUTBOUND_VALUE = 3;
 
 	/**
 	 * An array of all the '<em><b>Resiliency Target Type</b></em>' enumerators.
@@ -108,7 +107,7 @@ public enum ResiliencyTargetType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ResiliencyTargetType[] VALUES_ARRAY = new ResiliencyTargetType[] { APP, ACTOR,
+	private static final ResiliencyTargetType[] VALUES_ARRAY = new ResiliencyTargetType[] { ACTOR, APP,
 			COMPONENT_INBOUND, COMPONENT_OUTBOUND, };
 
 	/**
@@ -165,10 +164,10 @@ public enum ResiliencyTargetType implements Enumerator {
 	 */
 	public static ResiliencyTargetType get(int value) {
 		switch (value) {
-		case APP_VALUE:
-			return APP;
 		case ACTOR_VALUE:
 			return ACTOR;
+		case APP_VALUE:
+			return APP;
 		case COMPONENT_INBOUND_VALUE:
 			return COMPONENT_INBOUND;
 		case COMPONENT_OUTBOUND_VALUE:

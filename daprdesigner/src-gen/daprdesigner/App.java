@@ -13,6 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link daprdesigner.App#getRequiredFields <em>Required Fields</em>}</li>
  *   <li>{@link daprdesigner.App#getHelp <em>Help</em>}</li>
  *   <li>{@link daprdesigner.App#getAppId <em>App Id</em>}</li>
  *   <li>{@link daprdesigner.App#getAppDirPath <em>App Dir Path</em>}</li>
@@ -32,6 +33,18 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface App extends DaprNode {
+	/**
+	 * Returns the value of the '<em><b>Required Fields</b></em>' attribute.
+	 * The default value is <code>"Name, App Id, App Dir Path, Namespace, Trustdomain"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Required Fields</em>' attribute.
+	 * @see daprdesigner.DaprdesignerPackage#getApp_RequiredFields()
+	 * @model default="Name, App Id, App Dir Path, Namespace, Trustdomain" changeable="false"
+	 * @generated
+	 */
+	String getRequiredFields();
+
 	/**
 	 * Returns the value of the '<em><b>Help</b></em>' attribute.
 	 * The default value is <code>"https://docs.dapr.io/developing-applications/building-blocks/service-invocation/service-invocation-overview/"</code>.

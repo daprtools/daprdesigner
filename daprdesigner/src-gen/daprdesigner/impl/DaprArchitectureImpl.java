@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link daprdesigner.impl.DaprArchitectureImpl#getRequiredFields <em>Required Fields</em>}</li>
  *   <li>{@link daprdesigner.impl.DaprArchitectureImpl#getName <em>Name</em>}</li>
  *   <li>{@link daprdesigner.impl.DaprArchitectureImpl#getBuildingblocks <em>Buildingblocks</em>}</li>
  * </ul>
@@ -37,6 +38,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class DaprArchitectureImpl extends MinimalEObjectImpl.Container implements DaprArchitecture {
+	/**
+	 * The default value of the '{@link #getRequiredFields() <em>Required Fields</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiredFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REQUIRED_FIELDS_EDEFAULT = "Name";
+
+	/**
+	 * The cached value of the '{@link #getRequiredFields() <em>Required Fields</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiredFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected String requiredFields = REQUIRED_FIELDS_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -84,6 +105,15 @@ public class DaprArchitectureImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	protected EClass eStaticClass() {
 		return DaprdesignerPackage.Literals.DAPR_ARCHITECTURE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getRequiredFields() {
+		return requiredFields;
 	}
 
 	/**
@@ -143,6 +173,8 @@ public class DaprArchitectureImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case DaprdesignerPackage.DAPR_ARCHITECTURE__REQUIRED_FIELDS:
+			return getRequiredFields();
 		case DaprdesignerPackage.DAPR_ARCHITECTURE__NAME:
 			return getName();
 		case DaprdesignerPackage.DAPR_ARCHITECTURE__BUILDINGBLOCKS:
@@ -197,6 +229,9 @@ public class DaprArchitectureImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case DaprdesignerPackage.DAPR_ARCHITECTURE__REQUIRED_FIELDS:
+			return REQUIRED_FIELDS_EDEFAULT == null ? requiredFields != null
+					: !REQUIRED_FIELDS_EDEFAULT.equals(requiredFields);
 		case DaprdesignerPackage.DAPR_ARCHITECTURE__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case DaprdesignerPackage.DAPR_ARCHITECTURE__BUILDINGBLOCKS:
@@ -216,7 +251,9 @@ public class DaprArchitectureImpl extends MinimalEObjectImpl.Container implement
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
+		result.append(" (requiredFields: ");
+		result.append(requiredFields);
+		result.append(", name: ");
 		result.append(name);
 		result.append(')');
 		return result.toString();

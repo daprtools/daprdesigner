@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link daprdesigner.DaprArchitecture#getRequiredFields <em>Required Fields</em>}</li>
  *   <li>{@link daprdesigner.DaprArchitecture#getName <em>Name</em>}</li>
  *   <li>{@link daprdesigner.DaprArchitecture#getBuildingblocks <em>Buildingblocks</em>}</li>
  * </ul>
@@ -24,6 +25,18 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface DaprArchitecture extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Required Fields</b></em>' attribute.
+	 * The default value is <code>"Name"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Required Fields</em>' attribute.
+	 * @see daprdesigner.DaprdesignerPackage#getDaprArchitecture_RequiredFields()
+	 * @model default="Name" changeable="false"
+	 * @generated
+	 */
+	String getRequiredFields();
+
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

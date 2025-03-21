@@ -13,6 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link daprdesigner.NodeBlocks#getRequiredFields <em>Required Fields</em>}</li>
  *   <li>{@link daprdesigner.NodeBlocks#getNodeBlockType <em>Node Block Type</em>}</li>
  *   <li>{@link daprdesigner.NodeBlocks#getNodes <em>Nodes</em>}</li>
  * </ul>
@@ -22,6 +23,18 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface NodeBlocks extends DaprNode {
+	/**
+	 * Returns the value of the '<em><b>Required Fields</b></em>' attribute.
+	 * The default value is <code>"Name"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Required Fields</em>' attribute.
+	 * @see daprdesigner.DaprdesignerPackage#getNodeBlocks_RequiredFields()
+	 * @model default="Name" changeable="false"
+	 * @generated
+	 */
+	String getRequiredFields();
+
 	/**
 	 * Returns the value of the '<em><b>Node Block Type</b></em>' attribute.
 	 * The literals are from the enumeration {@link daprdesigner.NodeBlockType}.

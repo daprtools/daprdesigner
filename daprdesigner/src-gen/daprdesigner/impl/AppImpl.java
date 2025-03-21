@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link daprdesigner.impl.AppImpl#getRequiredFields <em>Required Fields</em>}</li>
  *   <li>{@link daprdesigner.impl.AppImpl#getHelp <em>Help</em>}</li>
  *   <li>{@link daprdesigner.impl.AppImpl#getAppId <em>App Id</em>}</li>
  *   <li>{@link daprdesigner.impl.AppImpl#getAppDirPath <em>App Dir Path</em>}</li>
@@ -48,6 +49,26 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * @generated
  */
 public class AppImpl extends DaprNodeImpl implements App {
+	/**
+	 * The default value of the '{@link #getRequiredFields() <em>Required Fields</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiredFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REQUIRED_FIELDS_EDEFAULT = "Name, App Id, App Dir Path, Namespace, Trustdomain";
+
+	/**
+	 * The cached value of the '{@link #getRequiredFields() <em>Required Fields</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiredFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected String requiredFields = REQUIRED_FIELDS_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getHelp() <em>Help</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -196,7 +217,7 @@ public class AppImpl extends DaprNodeImpl implements App {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final SDKLanguage SDK_LANGUAGE_EDEFAULT = SDKLanguage.JAVA;
+	protected static final SDKLanguage SDK_LANGUAGE_EDEFAULT = SDKLanguage.CSHARP;
 
 	/**
 	 * The cached value of the '{@link #getSdkLanguage() <em>Sdk Language</em>}' attribute.
@@ -265,6 +286,15 @@ public class AppImpl extends DaprNodeImpl implements App {
 	@Override
 	protected EClass eStaticClass() {
 		return DaprdesignerPackage.Literals.APP;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getRequiredFields() {
+		return requiredFields;
 	}
 
 	/**
@@ -542,6 +572,8 @@ public class AppImpl extends DaprNodeImpl implements App {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case DaprdesignerPackage.APP__REQUIRED_FIELDS:
+			return getRequiredFields();
 		case DaprdesignerPackage.APP__HELP:
 			return getHelp();
 		case DaprdesignerPackage.APP__APP_ID:
@@ -675,6 +707,9 @@ public class AppImpl extends DaprNodeImpl implements App {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case DaprdesignerPackage.APP__REQUIRED_FIELDS:
+			return REQUIRED_FIELDS_EDEFAULT == null ? requiredFields != null
+					: !REQUIRED_FIELDS_EDEFAULT.equals(requiredFields);
 		case DaprdesignerPackage.APP__HELP:
 			return HELP_EDEFAULT == null ? help != null : !HELP_EDEFAULT.equals(help);
 		case DaprdesignerPackage.APP__APP_ID:
@@ -716,7 +751,9 @@ public class AppImpl extends DaprNodeImpl implements App {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (help: ");
+		result.append(" (requiredFields: ");
+		result.append(requiredFields);
+		result.append(", help: ");
 		result.append(help);
 		result.append(", appId: ");
 		result.append(appId);

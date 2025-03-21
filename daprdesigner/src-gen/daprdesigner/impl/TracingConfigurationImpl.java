@@ -140,7 +140,7 @@ public class TracingConfigurationImpl extends AppConfigurationImpl implements Tr
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Protocol OTEL_PROTOCOL_EDEFAULT = Protocol.HTTP;
+	protected static final Protocol OTEL_PROTOCOL_EDEFAULT = Protocol.GRPC;
 
 	/**
 	 * The cached value of the '{@link #getOtel_protocol() <em>Otel protocol</em>}' attribute.

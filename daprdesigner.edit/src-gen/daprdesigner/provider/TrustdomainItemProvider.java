@@ -44,9 +44,26 @@ public class TrustdomainItemProvider extends DaprNodeItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addRequiredFieldsPropertyDescriptor(object);
 			addHelpPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Required Fields feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequiredFieldsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Trustdomain_requiredFields_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Trustdomain_requiredFields_feature",
+								"_UI_Trustdomain_type"),
+						DaprdesignerPackage.Literals.TRUSTDOMAIN__REQUIRED_FIELDS, false, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -111,6 +128,7 @@ public class TrustdomainItemProvider extends DaprNodeItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Trustdomain.class)) {
+		case DaprdesignerPackage.TRUSTDOMAIN__REQUIRED_FIELDS:
 		case DaprdesignerPackage.TRUSTDOMAIN__HELP:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;

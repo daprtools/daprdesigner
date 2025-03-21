@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link daprdesigner.impl.NodeBlocksImpl#getRequiredFields <em>Required Fields</em>}</li>
  *   <li>{@link daprdesigner.impl.NodeBlocksImpl#getNodeBlockType <em>Node Block Type</em>}</li>
  *   <li>{@link daprdesigner.impl.NodeBlocksImpl#getNodes <em>Nodes</em>}</li>
  * </ul>
@@ -38,6 +39,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class NodeBlocksImpl extends DaprNodeImpl implements NodeBlocks {
 	/**
+	 * The default value of the '{@link #getRequiredFields() <em>Required Fields</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiredFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REQUIRED_FIELDS_EDEFAULT = "Name";
+
+	/**
+	 * The cached value of the '{@link #getRequiredFields() <em>Required Fields</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiredFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected String requiredFields = REQUIRED_FIELDS_EDEFAULT;
+
+	/**
 	 * The default value of the '{@link #getNodeBlockType() <em>Node Block Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -45,7 +66,7 @@ public class NodeBlocksImpl extends DaprNodeImpl implements NodeBlocks {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final NodeBlockType NODE_BLOCK_TYPE_EDEFAULT = NodeBlockType.APP;
+	protected static final NodeBlockType NODE_BLOCK_TYPE_EDEFAULT = NodeBlockType.ACTOR;
 
 	/**
 	 * The cached value of the '{@link #getNodeBlockType() <em>Node Block Type</em>}' attribute.
@@ -84,6 +105,15 @@ public class NodeBlocksImpl extends DaprNodeImpl implements NodeBlocks {
 	@Override
 	protected EClass eStaticClass() {
 		return DaprdesignerPackage.Literals.NODE_BLOCKS;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getRequiredFields() {
+		return requiredFields;
 	}
 
 	/**
@@ -142,6 +172,8 @@ public class NodeBlocksImpl extends DaprNodeImpl implements NodeBlocks {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case DaprdesignerPackage.NODE_BLOCKS__REQUIRED_FIELDS:
+			return getRequiredFields();
 		case DaprdesignerPackage.NODE_BLOCKS__NODE_BLOCK_TYPE:
 			return getNodeBlockType();
 		case DaprdesignerPackage.NODE_BLOCKS__NODES:
@@ -196,6 +228,9 @@ public class NodeBlocksImpl extends DaprNodeImpl implements NodeBlocks {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case DaprdesignerPackage.NODE_BLOCKS__REQUIRED_FIELDS:
+			return REQUIRED_FIELDS_EDEFAULT == null ? requiredFields != null
+					: !REQUIRED_FIELDS_EDEFAULT.equals(requiredFields);
 		case DaprdesignerPackage.NODE_BLOCKS__NODE_BLOCK_TYPE:
 			return nodeBlockType != NODE_BLOCK_TYPE_EDEFAULT;
 		case DaprdesignerPackage.NODE_BLOCKS__NODES:
@@ -215,7 +250,9 @@ public class NodeBlocksImpl extends DaprNodeImpl implements NodeBlocks {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (nodeBlockType: ");
+		result.append(" (requiredFields: ");
+		result.append(requiredFields);
+		result.append(", nodeBlockType: ");
 		result.append(nodeBlockType);
 		result.append(')');
 		return result.toString();

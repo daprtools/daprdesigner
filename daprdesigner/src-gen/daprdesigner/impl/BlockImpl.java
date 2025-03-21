@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link daprdesigner.impl.BlockImpl#getRequiredFields <em>Required Fields</em>}</li>
  *   <li>{@link daprdesigner.impl.BlockImpl#isIsReady <em>Is Ready</em>}</li>
  *   <li>{@link daprdesigner.impl.BlockImpl#getName <em>Name</em>}</li>
  *   <li>{@link daprdesigner.impl.BlockImpl#getDescription <em>Description</em>}</li>
@@ -43,6 +44,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
+	/**
+	 * The default value of the '{@link #getRequiredFields() <em>Required Fields</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiredFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REQUIRED_FIELDS_EDEFAULT = "Name";
+
+	/**
+	 * The cached value of the '{@link #getRequiredFields() <em>Required Fields</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiredFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected String requiredFields = REQUIRED_FIELDS_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #isIsReady() <em>Is Ready</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -131,7 +152,7 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final BlockType BLOCK_TYPE_EDEFAULT = BlockType.ENVIRONMENT;
+	protected static final BlockType BLOCK_TYPE_EDEFAULT = BlockType.ACTORS;
 
 	/**
 	 * The cached value of the '{@link #getBlockType() <em>Block Type</em>}' attribute.
@@ -180,6 +201,15 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 	@Override
 	protected EClass eStaticClass() {
 		return DaprdesignerPackage.Literals.BLOCK;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getRequiredFields() {
+		return requiredFields;
 	}
 
 	/**
@@ -338,6 +368,8 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case DaprdesignerPackage.BLOCK__REQUIRED_FIELDS:
+			return getRequiredFields();
 		case DaprdesignerPackage.BLOCK__IS_READY:
 			return isIsReady();
 		case DaprdesignerPackage.BLOCK__NAME:
@@ -433,6 +465,9 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case DaprdesignerPackage.BLOCK__REQUIRED_FIELDS:
+			return REQUIRED_FIELDS_EDEFAULT == null ? requiredFields != null
+					: !REQUIRED_FIELDS_EDEFAULT.equals(requiredFields);
 		case DaprdesignerPackage.BLOCK__IS_READY:
 			return isReady != IS_READY_EDEFAULT;
 		case DaprdesignerPackage.BLOCK__NAME:
@@ -462,7 +497,9 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (isReady: ");
+		result.append(" (requiredFields: ");
+		result.append(requiredFields);
+		result.append(", isReady: ");
 		result.append(isReady);
 		result.append(", name: ");
 		result.append(name);

@@ -15,12 +15,33 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link daprdesigner.impl.TrustdomainImpl#getRequiredFields <em>Required Fields</em>}</li>
  *   <li>{@link daprdesigner.impl.TrustdomainImpl#getHelp <em>Help</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class TrustdomainImpl extends DaprNodeImpl implements Trustdomain {
+	/**
+	 * The default value of the '{@link #getRequiredFields() <em>Required Fields</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiredFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REQUIRED_FIELDS_EDEFAULT = "Name";
+
+	/**
+	 * The cached value of the '{@link #getRequiredFields() <em>Required Fields</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiredFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected String requiredFields = REQUIRED_FIELDS_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getHelp() <em>Help</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -65,6 +86,15 @@ public class TrustdomainImpl extends DaprNodeImpl implements Trustdomain {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getRequiredFields() {
+		return requiredFields;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getHelp() {
 		return help;
 	}
@@ -77,6 +107,8 @@ public class TrustdomainImpl extends DaprNodeImpl implements Trustdomain {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case DaprdesignerPackage.TRUSTDOMAIN__REQUIRED_FIELDS:
+			return getRequiredFields();
 		case DaprdesignerPackage.TRUSTDOMAIN__HELP:
 			return getHelp();
 		}
@@ -91,6 +123,9 @@ public class TrustdomainImpl extends DaprNodeImpl implements Trustdomain {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case DaprdesignerPackage.TRUSTDOMAIN__REQUIRED_FIELDS:
+			return REQUIRED_FIELDS_EDEFAULT == null ? requiredFields != null
+					: !REQUIRED_FIELDS_EDEFAULT.equals(requiredFields);
 		case DaprdesignerPackage.TRUSTDOMAIN__HELP:
 			return HELP_EDEFAULT == null ? help != null : !HELP_EDEFAULT.equals(help);
 		}
@@ -108,7 +143,9 @@ public class TrustdomainImpl extends DaprNodeImpl implements Trustdomain {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (help: ");
+		result.append(" (requiredFields: ");
+		result.append(requiredFields);
+		result.append(", help: ");
 		result.append(help);
 		result.append(')');
 		return result.toString();

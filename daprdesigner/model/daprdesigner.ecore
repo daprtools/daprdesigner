@@ -19,85 +19,91 @@
     <eLiterals name="OUTGOING" value="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ResiliencyTargetType">
+    <eLiterals name="ACTOR"/>
     <eLiterals name="APP" value="1"/>
-    <eLiterals name="ACTOR" value="2"/>
-    <eLiterals name="COMPONENT_INBOUND" value="3"/>
-    <eLiterals name="COMPONENT_OUTBOUND" value="4"/>
+    <eLiterals name="COMPONENT_INBOUND" value="2"/>
+    <eLiterals name="COMPONENT_OUTBOUND" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="BlockType">
-    <eLiterals name="ENVIRONMENT"/>
-    <eLiterals name="MICROSERVICES" value="1"/>
-    <eLiterals name="PUBSUB" value="2"/>
-    <eLiterals name="SECRETSTORE" value="3"/>
-    <eLiterals name="BINDINGS" value="4"/>
-    <eLiterals name="JOBS" value="5"/>
-    <eLiterals name="WORKFLOW" value="6"/>
-    <eLiterals name="ACTORS" value="7"/>
-    <eLiterals name="STATESTORE" value="8"/>
-    <eLiterals name="DISTRIBUTEDLOCK" value="9"/>
-    <eLiterals name="CRYPTOGRAPHY" value="10"/>
-    <eLiterals name="CONFIGURATION" value="11"/>
-    <eLiterals name="CONFIGURATIONGROUP" value="12"/>
-    <eLiterals name="MIDDLEWARE" value="13"/>
+    <eLiterals name="ACTORS"/>
+    <eLiterals name="BINDINGS" value="1"/>
+    <eLiterals name="CONFIGURATION" value="2"/>
+    <eLiterals name="CONFIGURATIONGROUP" value="3"/>
+    <eLiterals name="CONVERSATION" value="4"/>
+    <eLiterals name="CRYPTOGRAPHY" value="5"/>
+    <eLiterals name="DISTRIBUTEDLOCK" value="6"/>
+    <eLiterals name="ENVIRONMENT" value="7"/>
+    <eLiterals name="JOBS" value="8"/>
+    <eLiterals name="MICROSERVICES" value="9"/>
+    <eLiterals name="MIDDLEWARE" value="10"/>
+    <eLiterals name="PUBSUB" value="11"/>
+    <eLiterals name="SECRETSTORE" value="12"/>
+    <eLiterals name="STATESTORE" value="13"/>
+    <eLiterals name="WORKFLOW" value="14"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="NodeBlockType">
-    <eLiterals name="APP"/>
-    <eLiterals name="ACTOR" value="1"/>
-    <eLiterals name="WORKFLOW" value="2"/>
-    <eLiterals name="PUBSUB" value="3"/>
-    <eLiterals name="BINDING" value="4"/>
-    <eLiterals name="SECRETSTORE" value="5"/>
-    <eLiterals name="STATESTORE" value="6"/>
-    <eLiterals name="DISTRIBUTEDLOCK" value="7"/>
-    <eLiterals name="CRYPTOGRAPHY" value="8"/>
-    <eLiterals name="SUBSCRIPTION" value="9"/>
-    <eLiterals name="RESILIENCY" value="10"/>
-    <eLiterals name="HTTPENDPOINT" value="11"/>
-    <eLiterals name="JOBS" value="12"/>
-    <eLiterals name="CONFIGURATIONSTORE" value="13"/>
-    <eLiterals name="MIDDLEWARE" value="14"/>
+    <eLiterals name="ACTOR"/>
+    <eLiterals name="APP" value="1"/>
+    <eLiterals name="BINDING" value="2"/>
+    <eLiterals name="CONFIGURATIONSTORE" value="3"/>
+    <eLiterals name="CONVERSATION" value="4"/>
+    <eLiterals name="CRYPTOGRAPHY" value="5"/>
+    <eLiterals name="DISTRIBUTEDLOCK" value="6"/>
+    <eLiterals name="HTTPENDPOINT" value="7"/>
+    <eLiterals name="JOBS" value="8"/>
+    <eLiterals name="MIDDLEWARE" value="9"/>
+    <eLiterals name="PUBSUB" value="10"/>
+    <eLiterals name="RESILIENCY" value="11"/>
+    <eLiterals name="SECRETSTORE" value="12"/>
+    <eLiterals name="STATESTORE" value="13"/>
+    <eLiterals name="SUBSCRIPTION" value="14"/>
+    <eLiterals name="WORKFLOW" value="15"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="APIType">
-    <eLiterals name="INVOKE"/>
-    <eLiterals name="STATE" value="1"/>
-    <eLiterals name="PUBLISH" value="2"/>
-    <eLiterals name="SUBSCRIBE" value="3"/>
-    <eLiterals name="BINDINGS" value="4"/>
-    <eLiterals name="SECRETS" value="5"/>
-    <eLiterals name="ACTORS" value="6"/>
+    <eLiterals name="ACTORS"/>
+    <eLiterals name="BINDINGS" value="1"/>
+    <eLiterals name="CONFIGURATION" value="2"/>
+    <eLiterals name="CRYPTO" value="3"/>
+    <eLiterals name="HEALTHZ" value="4"/>
+    <eLiterals name="INVOKE" value="5"/>
+    <eLiterals name="LOCK" value="6"/>
     <eLiterals name="METADATA" value="7"/>
-    <eLiterals name="CONFIGURATION" value="8"/>
-    <eLiterals name="LOCK" value="9"/>
-    <eLiterals name="UNLOCK" value="10"/>
-    <eLiterals name="CRYPTO" value="11"/>
-    <eLiterals name="WORKFLOWS" value="12"/>
-    <eLiterals name="HEALTHZ" value="13"/>
-    <eLiterals name="SHUTDOWN" value="14"/>
+    <eLiterals name="PUBLISH" value="8"/>
+    <eLiterals name="SECRETS" value="9"/>
+    <eLiterals name="SHUTDOWN" value="10"/>
+    <eLiterals name="STATE" value="11"/>
+    <eLiterals name="SUBSCRIBE" value="12"/>
+    <eLiterals name="UNLOCK" value="13"/>
+    <eLiterals name="WORKFLOWS" value="14"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="SDKLanguage">
-    <eLiterals name="JAVA"/>
-    <eLiterals name="CSHARP" value="1"/>
-    <eLiterals name="PYTHON" value="2"/>
-    <eLiterals name="NODE" value="3"/>
+    <eLiterals name="CSHARP"/>
+    <eLiterals name="JAVA" value="1"/>
+    <eLiterals name="NODE" value="2"/>
+    <eLiterals name="PYTHON" value="3"/>
     <eLiterals name="RUST" value="4"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Protocol">
-    <eLiterals name="HTTP"/>
-    <eLiterals name="GRPC" value="1"/>
+    <eLiterals name="GRPC"/>
+    <eLiterals name="HTTP" value="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Verb">
     <eLiterals name="GET"/>
-    <eLiterals name="POST" value="1"/>
-    <eLiterals name="PUT" value="2"/>
-    <eLiterals name="DELETE" value="3"/>
-    <eLiterals name="PATCH" value="4"/>
+    <eLiterals name="DELETE" value="1"/>
+    <eLiterals name="PATCH" value="2"/>
+    <eLiterals name="POST" value="3"/>
+    <eLiterals name="PUT" value="4"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DaprArchitecture">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiredFields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="Name"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="buildingblocks" upperBound="-1"
         eType="#//Block" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Block">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiredFields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="Name"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isReady" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -117,19 +123,27 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="notes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NodeBlocks" eSuperTypes="#//DaprNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiredFields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="Name"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nodeBlockType" eType="#//NodeBlockType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
         eType="#//DaprNode" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Namespace" eSuperTypes="#//DaprNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiredFields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="Name"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/components/component-scopes/"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Trustdomain" eSuperTypes="#//DaprNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiredFields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="Name"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/configuration/invoke-allowlist/#trustdomain"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="App" eSuperTypes="#//DaprNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiredFields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="Name, App Id, App Dir Path, Namespace, Trustdomain"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" defaultValueLiteral="https://docs.dapr.io/developing-applications/building-blocks/service-invocation/service-invocation-overview/"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="appId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -166,12 +180,16 @@
         changeable="false" defaultValueLiteral="Configuration"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DeniedComponentsConfiguration" eSuperTypes="#//AppConfiguration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiredFields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="Name, Denied Compoenents"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/configuration/configuration-overview/#disallow-usage-of-certain-component-types"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="deniedComponents" upperBound="-1"
         eType="#//Component"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LoggingConfiguration" eSuperTypes="#//AppConfiguration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiredFields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="Name"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/configuration/configuration-overview/#logging"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="enabled" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
@@ -182,6 +200,8 @@
         defaultValueLiteral="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NameResolutionConfiguration" eSuperTypes="#//AppConfiguration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiredFields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="Name"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/configuration/configuration-overview/#name-resolution-component"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameResolutionComponent"
@@ -191,6 +211,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="configurationValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SecretsAccessConfiguration" eSuperTypes="#//AppConfiguration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiredFields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="Name"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/configuration/secret-scope/"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="accessList" upperBound="-1"
@@ -242,6 +264,8 @@
         eType="#//AppPolicy"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AppPolicy" eSuperTypes="#//DaprNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiredFields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="Name, App, Trust Domain, Namespace"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" defaultValueLiteral="https://docs.dapr.io/operations/configuration/invoke-allowlist/#policies"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="app" eType="#//App"/>
@@ -315,6 +339,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ResiliencyConfiguration" eSuperTypes="#//DaprNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiredFields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="Name, Scopes"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" defaultValueLiteral="https://docs.dapr.io/reference/resource-specs/resiliency-schema/"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="apiVersion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -393,6 +419,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="specPrivateKey" eType="#//SpecMetadata"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true" eSuperTypes="#//DaprNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiredFields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="Name, Provider Name, Provider Version, Scopes, Metadata Namespace"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="apiVersion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" defaultValueLiteral="dapr.io/v1alpha1"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -463,5 +491,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="Nameresolution" eSuperTypes="#//Component">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" defaultValueLiteral="https://docs.dapr.io/reference/components-reference/supported-name-resolution/"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Conversation" eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="https://docs.dapr.io/reference/components-reference/supported-conversation/"/>
   </eClassifiers>
 </ecore:EPackage>

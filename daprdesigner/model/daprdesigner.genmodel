@@ -22,88 +22,92 @@
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//HttpHandlerType/OUTGOING"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="daprdesigner.ecore#//ResiliencyTargetType">
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//ResiliencyTargetType/APP"/>
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//ResiliencyTargetType/ACTOR"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//ResiliencyTargetType/APP"/>
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//ResiliencyTargetType/COMPONENT_INBOUND"/>
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//ResiliencyTargetType/COMPONENT_OUTBOUND"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="daprdesigner.ecore#//BlockType">
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//BlockType/ENVIRONMENT"/>
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//BlockType/MICROSERVICES"/>
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//BlockType/PUBSUB"/>
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//BlockType/SECRETSTORE"/>
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//BlockType/BINDINGS"/>
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//BlockType/JOBS"/>
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//BlockType/WORKFLOW"/>
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//BlockType/ACTORS"/>
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//BlockType/STATESTORE"/>
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//BlockType/DISTRIBUTEDLOCK"/>
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//BlockType/CRYPTOGRAPHY"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//BlockType/BINDINGS"/>
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//BlockType/CONFIGURATION"/>
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//BlockType/CONFIGURATIONGROUP"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//BlockType/CONVERSATION"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//BlockType/CRYPTOGRAPHY"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//BlockType/DISTRIBUTEDLOCK"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//BlockType/ENVIRONMENT"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//BlockType/JOBS"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//BlockType/MICROSERVICES"/>
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//BlockType/MIDDLEWARE"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//BlockType/PUBSUB"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//BlockType/SECRETSTORE"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//BlockType/STATESTORE"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//BlockType/WORKFLOW"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="daprdesigner.ecore#//NodeBlockType">
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/APP"/>
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/ACTOR"/>
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/WORKFLOW"/>
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/PUBSUB"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/APP"/>
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/BINDING"/>
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/SECRETSTORE"/>
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/STATESTORE"/>
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/DISTRIBUTEDLOCK"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/CONFIGURATIONSTORE"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/CONVERSATION"/>
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/CRYPTOGRAPHY"/>
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/SUBSCRIPTION"/>
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/RESILIENCY"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/DISTRIBUTEDLOCK"/>
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/HTTPENDPOINT"/>
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/JOBS"/>
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/CONFIGURATIONSTORE"/>
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/MIDDLEWARE"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/PUBSUB"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/RESILIENCY"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/SECRETSTORE"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/STATESTORE"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/SUBSCRIPTION"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//NodeBlockType/WORKFLOW"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="daprdesigner.ecore#//APIType">
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//APIType/INVOKE"/>
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//APIType/STATE"/>
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//APIType/PUBLISH"/>
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//APIType/SUBSCRIBE"/>
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//APIType/BINDINGS"/>
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//APIType/SECRETS"/>
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//APIType/ACTORS"/>
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//APIType/METADATA"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//APIType/BINDINGS"/>
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//APIType/CONFIGURATION"/>
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//APIType/LOCK"/>
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//APIType/UNLOCK"/>
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//APIType/CRYPTO"/>
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//APIType/WORKFLOWS"/>
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//APIType/HEALTHZ"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//APIType/INVOKE"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//APIType/LOCK"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//APIType/METADATA"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//APIType/PUBLISH"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//APIType/SECRETS"/>
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//APIType/SHUTDOWN"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//APIType/STATE"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//APIType/SUBSCRIBE"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//APIType/UNLOCK"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//APIType/WORKFLOWS"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="daprdesigner.ecore#//SDKLanguage">
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//SDKLanguage/JAVA"/>
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//SDKLanguage/CSHARP"/>
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//SDKLanguage/PYTHON"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//SDKLanguage/JAVA"/>
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//SDKLanguage/NODE"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//SDKLanguage/PYTHON"/>
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//SDKLanguage/RUST"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="daprdesigner.ecore#//Protocol">
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//Protocol/HTTP"/>
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//Protocol/GRPC"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//Protocol/HTTP"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="daprdesigner.ecore#//Verb">
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//Verb/GET"/>
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//Verb/POST"/>
-      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//Verb/PUT"/>
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//Verb/DELETE"/>
       <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//Verb/PATCH"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//Verb/POST"/>
+      <genEnumLiterals ecoreEnumLiteral="daprdesigner.ecore#//Verb/PUT"/>
     </genEnums>
     <genClasses ecoreClass="daprdesigner.ecore#//EStringToStringMapEntry">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//EStringToStringMapEntry/key"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//EStringToStringMapEntry/value"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//DaprArchitecture">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//DaprArchitecture/requiredFields"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//DaprArchitecture/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//DaprArchitecture/buildingblocks"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//Block">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Block/requiredFields"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Block/isReady"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Block/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Block/description"/>
@@ -119,16 +123,20 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//DaprNode/notes"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//NodeBlocks">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//NodeBlocks/requiredFields"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//NodeBlocks/nodeBlockType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//NodeBlocks/nodes"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//Namespace">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Namespace/requiredFields"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Namespace/help"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//Trustdomain">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Trustdomain/requiredFields"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Trustdomain/help"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//App">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//App/requiredFields"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//App/help"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//App/appId"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//App/appDirPath"/>
@@ -156,16 +164,19 @@
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//AppConfiguration/kind"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//DeniedComponentsConfiguration">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//DeniedComponentsConfiguration/requiredFields"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//DeniedComponentsConfiguration/help"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//DeniedComponentsConfiguration/deniedComponents"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//LoggingConfiguration">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//LoggingConfiguration/requiredFields"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//LoggingConfiguration/help"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//LoggingConfiguration/enabled"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//LoggingConfiguration/obfuscateUrls"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//LoggingConfiguration/omitHealthChecks"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//NameResolutionConfiguration">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//NameResolutionConfiguration/requiredFields"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//NameResolutionConfiguration/help"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//NameResolutionConfiguration/nameResolutionComponent"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//NameResolutionConfiguration/componentVersion"/>
@@ -173,6 +184,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//NameResolutionConfiguration/configurationValue"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//SecretsAccessConfiguration">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//SecretsAccessConfiguration/requiredFields"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//SecretsAccessConfiguration/help"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//SecretsAccessConfiguration/accessList"/>
     </genClasses>
@@ -210,6 +222,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//AppAccessControl/policies"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//AppPolicy">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//AppPolicy/requiredFields"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//AppPolicy/help"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//AppPolicy/app"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//AppPolicy/defaultAction"/>
@@ -266,6 +279,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//RouteRules/path"/>
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//ResiliencyConfiguration">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//ResiliencyConfiguration/requiredFields"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//ResiliencyConfiguration/help"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//ResiliencyConfiguration/apiVersion"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//ResiliencyConfiguration/kind"/>
@@ -321,6 +335,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daprdesigner.ecore#//HTTPEndPoint/specPrivateKey"/>
     </genClasses>
     <genClasses image="false" ecoreClass="daprdesigner.ecore#//Component">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Component/requiredFields"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Component/apiVersion"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Component/kind"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Component/providerName"/>
@@ -373,6 +388,9 @@
     </genClasses>
     <genClasses ecoreClass="daprdesigner.ecore#//Nameresolution">
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Nameresolution/help"/>
+    </genClasses>
+    <genClasses ecoreClass="daprdesigner.ecore#//Conversation">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute daprdesigner.ecore#//Conversation/help"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

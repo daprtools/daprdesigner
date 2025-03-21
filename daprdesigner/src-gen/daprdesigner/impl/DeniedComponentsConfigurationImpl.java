@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link daprdesigner.impl.DeniedComponentsConfigurationImpl#getRequiredFields <em>Required Fields</em>}</li>
  *   <li>{@link daprdesigner.impl.DeniedComponentsConfigurationImpl#getHelp <em>Help</em>}</li>
  *   <li>{@link daprdesigner.impl.DeniedComponentsConfigurationImpl#getDeniedComponents <em>Denied Components</em>}</li>
  * </ul>
@@ -29,6 +30,26 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * @generated
  */
 public class DeniedComponentsConfigurationImpl extends AppConfigurationImpl implements DeniedComponentsConfiguration {
+	/**
+	 * The default value of the '{@link #getRequiredFields() <em>Required Fields</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiredFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REQUIRED_FIELDS_EDEFAULT = "Name, Denied Compoenents";
+
+	/**
+	 * The cached value of the '{@link #getRequiredFields() <em>Required Fields</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiredFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected String requiredFields = REQUIRED_FIELDS_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getHelp() <em>Help</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -83,6 +104,15 @@ public class DeniedComponentsConfigurationImpl extends AppConfigurationImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getRequiredFields() {
+		return requiredFields;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<Component> getDeniedComponents() {
 		if (deniedComponents == null) {
 			deniedComponents = new EObjectResolvingEList<Component>(Component.class, this,
@@ -108,6 +138,8 @@ public class DeniedComponentsConfigurationImpl extends AppConfigurationImpl impl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case DaprdesignerPackage.DENIED_COMPONENTS_CONFIGURATION__REQUIRED_FIELDS:
+			return getRequiredFields();
 		case DaprdesignerPackage.DENIED_COMPONENTS_CONFIGURATION__HELP:
 			return getHelp();
 		case DaprdesignerPackage.DENIED_COMPONENTS_CONFIGURATION__DENIED_COMPONENTS:
@@ -156,6 +188,9 @@ public class DeniedComponentsConfigurationImpl extends AppConfigurationImpl impl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case DaprdesignerPackage.DENIED_COMPONENTS_CONFIGURATION__REQUIRED_FIELDS:
+			return REQUIRED_FIELDS_EDEFAULT == null ? requiredFields != null
+					: !REQUIRED_FIELDS_EDEFAULT.equals(requiredFields);
 		case DaprdesignerPackage.DENIED_COMPONENTS_CONFIGURATION__HELP:
 			return HELP_EDEFAULT == null ? help != null : !HELP_EDEFAULT.equals(help);
 		case DaprdesignerPackage.DENIED_COMPONENTS_CONFIGURATION__DENIED_COMPONENTS:
@@ -175,7 +210,9 @@ public class DeniedComponentsConfigurationImpl extends AppConfigurationImpl impl
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (help: ");
+		result.append(" (requiredFields: ");
+		result.append(requiredFields);
+		result.append(", help: ");
 		result.append(help);
 		result.append(')');
 		return result.toString();

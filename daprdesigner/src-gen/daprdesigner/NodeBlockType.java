@@ -19,16 +19,6 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum NodeBlockType implements Enumerator {
 	/**
-	 * The '<em><b>APP</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #APP_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	APP(0, "APP", "APP"),
-
-	/**
 	 * The '<em><b>ACTOR</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -36,27 +26,16 @@ public enum NodeBlockType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ACTOR(1, "ACTOR", "ACTOR"),
-
+	ACTOR(0, "ACTOR", "ACTOR"),
 	/**
-	 * The '<em><b>WORKFLOW</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #WORKFLOW_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	WORKFLOW(2, "WORKFLOW", "WORKFLOW"),
-
-	/**
-	 * The '<em><b>PUBSUB</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #PUBSUB_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	PUBSUB(3, "PUBSUB", "PUBSUB"),
+	* The '<em><b>APP</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #APP_VALUE
+	* @generated
+	* @ordered
+	*/
+	APP(1, "APP", "APP"),
 
 	/**
 	 * The '<em><b>BINDING</b></em>' literal object.
@@ -66,86 +45,8 @@ public enum NodeBlockType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	BINDING(4, "BINDING", "BINDING"),
+	BINDING(2, "BINDING", "BINDING"),
 
-	/**
-	 * The '<em><b>SECRETSTORE</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #SECRETSTORE_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	SECRETSTORE(5, "SECRETSTORE", "SECRETSTORE"),
-
-	/**
-	 * The '<em><b>STATESTORE</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #STATESTORE_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	STATESTORE(6, "STATESTORE", "STATESTORE"),
-
-	/**
-	 * The '<em><b>DISTRIBUTEDLOCK</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #DISTRIBUTEDLOCK_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	DISTRIBUTEDLOCK(7, "DISTRIBUTEDLOCK", "DISTRIBUTEDLOCK"),
-
-	/**
-	 * The '<em><b>CRYPTOGRAPHY</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #CRYPTOGRAPHY_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	CRYPTOGRAPHY(8, "CRYPTOGRAPHY", "CRYPTOGRAPHY"),
-
-	/**
-	 * The '<em><b>SUBSCRIPTION</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #SUBSCRIPTION_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	SUBSCRIPTION(9, "SUBSCRIPTION", "SUBSCRIPTION"),
-
-	/**
-	 * The '<em><b>RESILIENCY</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #RESILIENCY_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	RESILIENCY(10, "RESILIENCY", "RESILIENCY"),
-
-	/**
-	 * The '<em><b>HTTPENDPOINT</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #HTTPENDPOINT_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	HTTPENDPOINT(11, "HTTPENDPOINT", "HTTPENDPOINT"),
-	/**
-	 * The '<em><b>JOBS</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	* <!-- end-user-doc -->
-	 * @see #JOBS_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	JOBS(12, "JOBS", "JOBS"),
 	/**
 	 * The '<em><b>CONFIGURATIONSTORE</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -154,27 +55,115 @@ public enum NodeBlockType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CONFIGURATIONSTORE(13, "CONFIGURATIONSTORE", "CONFIGURATIONSTORE"),
+	CONFIGURATIONSTORE(3, "CONFIGURATIONSTORE", "CONFIGURATIONSTORE"),
 	/**
-	 * The '<em><b>MIDDLEWARE</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	* <!-- end-user-doc -->
-	 * @see #MIDDLEWARE_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	MIDDLEWARE(14, "MIDDLEWARE", "MIDDLEWARE");
-
-	/**
-	 * The '<em><b>APP</b></em>' literal value.
+	 * The '<em><b>CONVERSATION</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #APP
-	 * @model
+	 * @see #CONVERSATION_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	public static final int APP_VALUE = 0;
+	CONVERSATION(4, "CONVERSATION", "CONVERSATION"),
+	/**
+	* The '<em><b>CRYPTOGRAPHY</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #CRYPTOGRAPHY_VALUE
+	* @generated
+	* @ordered
+	*/
+	CRYPTOGRAPHY(5, "CRYPTOGRAPHY", "CRYPTOGRAPHY"),
+	/**
+	* The '<em><b>DISTRIBUTEDLOCK</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #DISTRIBUTEDLOCK_VALUE
+	* @generated
+	* @ordered
+	*/
+	DISTRIBUTEDLOCK(6, "DISTRIBUTEDLOCK", "DISTRIBUTEDLOCK"),
+	/**
+	* The '<em><b>HTTPENDPOINT</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #HTTPENDPOINT_VALUE
+	* @generated
+	* @ordered
+	*/
+	HTTPENDPOINT(7, "HTTPENDPOINT", "HTTPENDPOINT"),
+	/**
+	* The '<em><b>JOBS</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #JOBS_VALUE
+	* @generated
+	* @ordered
+	*/
+	JOBS(8, "JOBS", "JOBS"),
+	/**
+	* The '<em><b>MIDDLEWARE</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #MIDDLEWARE_VALUE
+	* @generated
+	* @ordered
+	*/
+	MIDDLEWARE(9, "MIDDLEWARE", "MIDDLEWARE"),
+	/**
+	* The '<em><b>PUBSUB</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #PUBSUB_VALUE
+	* @generated
+	* @ordered
+	*/
+	PUBSUB(10, "PUBSUB", "PUBSUB"),
+	/**
+	* The '<em><b>RESILIENCY</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #RESILIENCY_VALUE
+	* @generated
+	* @ordered
+	*/
+	RESILIENCY(11, "RESILIENCY", "RESILIENCY"),
+	/**
+	* The '<em><b>SECRETSTORE</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #SECRETSTORE_VALUE
+	* @generated
+	* @ordered
+	*/
+	SECRETSTORE(12, "SECRETSTORE", "SECRETSTORE"),
+	/**
+	* The '<em><b>STATESTORE</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #STATESTORE_VALUE
+	* @generated
+	* @ordered
+	*/
+	STATESTORE(13, "STATESTORE", "STATESTORE"),
+	/**
+	* The '<em><b>SUBSCRIPTION</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #SUBSCRIPTION_VALUE
+	* @generated
+	* @ordered
+	*/
+	SUBSCRIPTION(14, "SUBSCRIPTION", "SUBSCRIPTION"),
+	/**
+	* The '<em><b>WORKFLOW</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #WORKFLOW_VALUE
+	* @generated
+	* @ordered
+	*/
+	WORKFLOW(15, "WORKFLOW", "WORKFLOW");
 
 	/**
 	 * The '<em><b>ACTOR</b></em>' literal value.
@@ -185,29 +174,18 @@ public enum NodeBlockType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ACTOR_VALUE = 1;
+	public static final int ACTOR_VALUE = 0;
 
 	/**
-	 * The '<em><b>WORKFLOW</b></em>' literal value.
+	 * The '<em><b>APP</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #WORKFLOW
+	 * @see #APP
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int WORKFLOW_VALUE = 2;
-
-	/**
-	 * The '<em><b>PUBSUB</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #PUBSUB
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int PUBSUB_VALUE = 3;
+	public static final int APP_VALUE = 1;
 
 	/**
 	 * The '<em><b>BINDING</b></em>' literal value.
@@ -218,95 +196,7 @@ public enum NodeBlockType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int BINDING_VALUE = 4;
-
-	/**
-	 * The '<em><b>SECRETSTORE</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #SECRETSTORE
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int SECRETSTORE_VALUE = 5;
-
-	/**
-	 * The '<em><b>STATESTORE</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #STATESTORE
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int STATESTORE_VALUE = 6;
-
-	/**
-	 * The '<em><b>DISTRIBUTEDLOCK</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #DISTRIBUTEDLOCK
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int DISTRIBUTEDLOCK_VALUE = 7;
-
-	/**
-	 * The '<em><b>CRYPTOGRAPHY</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #CRYPTOGRAPHY
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int CRYPTOGRAPHY_VALUE = 8;
-
-	/**
-	 * The '<em><b>SUBSCRIPTION</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #SUBSCRIPTION
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int SUBSCRIPTION_VALUE = 9;
-
-	/**
-	 * The '<em><b>RESILIENCY</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #RESILIENCY
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int RESILIENCY_VALUE = 10;
-
-	/**
-	 * The '<em><b>HTTPENDPOINT</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #HTTPENDPOINT
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int HTTPENDPOINT_VALUE = 11;
-
-	/**
-	 * The '<em><b>JOBS</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #JOBS
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int JOBS_VALUE = 12;
+	public static final int BINDING_VALUE = 2;
 
 	/**
 	 * The '<em><b>CONFIGURATIONSTORE</b></em>' literal value.
@@ -317,7 +207,62 @@ public enum NodeBlockType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CONFIGURATIONSTORE_VALUE = 13;
+	public static final int CONFIGURATIONSTORE_VALUE = 3;
+
+	/**
+	 * The '<em><b>CONVERSATION</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #CONVERSATION
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CONVERSATION_VALUE = 4;
+
+	/**
+	 * The '<em><b>CRYPTOGRAPHY</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #CRYPTOGRAPHY
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CRYPTOGRAPHY_VALUE = 5;
+
+	/**
+	 * The '<em><b>DISTRIBUTEDLOCK</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #DISTRIBUTEDLOCK
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int DISTRIBUTEDLOCK_VALUE = 6;
+
+	/**
+	 * The '<em><b>HTTPENDPOINT</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #HTTPENDPOINT
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int HTTPENDPOINT_VALUE = 7;
+
+	/**
+	 * The '<em><b>JOBS</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #JOBS
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int JOBS_VALUE = 8;
 
 	/**
 	 * The '<em><b>MIDDLEWARE</b></em>' literal value.
@@ -328,7 +273,73 @@ public enum NodeBlockType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MIDDLEWARE_VALUE = 14;
+	public static final int MIDDLEWARE_VALUE = 9;
+
+	/**
+	 * The '<em><b>PUBSUB</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #PUBSUB
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int PUBSUB_VALUE = 10;
+
+	/**
+	 * The '<em><b>RESILIENCY</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #RESILIENCY
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int RESILIENCY_VALUE = 11;
+
+	/**
+	 * The '<em><b>SECRETSTORE</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #SECRETSTORE
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int SECRETSTORE_VALUE = 12;
+
+	/**
+	 * The '<em><b>STATESTORE</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #STATESTORE
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int STATESTORE_VALUE = 13;
+
+	/**
+	 * The '<em><b>SUBSCRIPTION</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #SUBSCRIPTION
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int SUBSCRIPTION_VALUE = 14;
+
+	/**
+	 * The '<em><b>WORKFLOW</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #WORKFLOW
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int WORKFLOW_VALUE = 15;
 
 	/**
 	 * An array of all the '<em><b>Node Block Type</b></em>' enumerators.
@@ -336,9 +347,9 @@ public enum NodeBlockType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final NodeBlockType[] VALUES_ARRAY = new NodeBlockType[] { APP, ACTOR, WORKFLOW, PUBSUB, BINDING,
-			SECRETSTORE, STATESTORE, DISTRIBUTEDLOCK, CRYPTOGRAPHY, SUBSCRIPTION, RESILIENCY, HTTPENDPOINT, JOBS,
-			CONFIGURATIONSTORE, MIDDLEWARE, };
+	private static final NodeBlockType[] VALUES_ARRAY = new NodeBlockType[] { ACTOR, APP, BINDING, CONFIGURATIONSTORE,
+			CONVERSATION, CRYPTOGRAPHY, DISTRIBUTEDLOCK, HTTPENDPOINT, JOBS, MIDDLEWARE, PUBSUB, RESILIENCY,
+			SECRETSTORE, STATESTORE, SUBSCRIPTION, WORKFLOW, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Node Block Type</b></em>' enumerators.
@@ -394,36 +405,38 @@ public enum NodeBlockType implements Enumerator {
 	 */
 	public static NodeBlockType get(int value) {
 		switch (value) {
-		case APP_VALUE:
-			return APP;
 		case ACTOR_VALUE:
 			return ACTOR;
-		case WORKFLOW_VALUE:
-			return WORKFLOW;
-		case PUBSUB_VALUE:
-			return PUBSUB;
+		case APP_VALUE:
+			return APP;
 		case BINDING_VALUE:
 			return BINDING;
-		case SECRETSTORE_VALUE:
-			return SECRETSTORE;
-		case STATESTORE_VALUE:
-			return STATESTORE;
-		case DISTRIBUTEDLOCK_VALUE:
-			return DISTRIBUTEDLOCK;
+		case CONFIGURATIONSTORE_VALUE:
+			return CONFIGURATIONSTORE;
+		case CONVERSATION_VALUE:
+			return CONVERSATION;
 		case CRYPTOGRAPHY_VALUE:
 			return CRYPTOGRAPHY;
-		case SUBSCRIPTION_VALUE:
-			return SUBSCRIPTION;
-		case RESILIENCY_VALUE:
-			return RESILIENCY;
+		case DISTRIBUTEDLOCK_VALUE:
+			return DISTRIBUTEDLOCK;
 		case HTTPENDPOINT_VALUE:
 			return HTTPENDPOINT;
 		case JOBS_VALUE:
 			return JOBS;
-		case CONFIGURATIONSTORE_VALUE:
-			return CONFIGURATIONSTORE;
 		case MIDDLEWARE_VALUE:
 			return MIDDLEWARE;
+		case PUBSUB_VALUE:
+			return PUBSUB;
+		case RESILIENCY_VALUE:
+			return RESILIENCY;
+		case SECRETSTORE_VALUE:
+			return SECRETSTORE;
+		case STATESTORE_VALUE:
+			return STATESTORE;
+		case SUBSCRIPTION_VALUE:
+			return SUBSCRIPTION;
+		case WORKFLOW_VALUE:
+			return WORKFLOW;
 		}
 		return null;
 	}

@@ -13,6 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link daprdesigner.SecretsAccessConfiguration#getRequiredFields <em>Required Fields</em>}</li>
  *   <li>{@link daprdesigner.SecretsAccessConfiguration#getHelp <em>Help</em>}</li>
  *   <li>{@link daprdesigner.SecretsAccessConfiguration#getAccessList <em>Access List</em>}</li>
  * </ul>
@@ -22,6 +23,18 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface SecretsAccessConfiguration extends AppConfiguration {
+	/**
+	 * Returns the value of the '<em><b>Required Fields</b></em>' attribute.
+	 * The default value is <code>"Name"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Required Fields</em>' attribute.
+	 * @see daprdesigner.DaprdesignerPackage#getSecretsAccessConfiguration_RequiredFields()
+	 * @model default="Name" changeable="false"
+	 * @generated
+	 */
+	String getRequiredFields();
+
 	/**
 	 * Returns the value of the '<em><b>Access List</b></em>' reference list.
 	 * The list contents are of type {@link daprdesigner.SecretsAccessList}.

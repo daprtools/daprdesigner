@@ -59,7 +59,7 @@ public class APIImpl extends DaprNodeImpl implements API {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final APIType API_TYPE_EDEFAULT = APIType.INVOKE;
+	protected static final APIType API_TYPE_EDEFAULT = APIType.ACTORS;
 
 	/**
 	 * The cached value of the '{@link #getApiType() <em>Api Type</em>}' attribute.
@@ -99,7 +99,7 @@ public class APIImpl extends DaprNodeImpl implements API {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Protocol PROTOCOL_EDEFAULT = Protocol.HTTP;
+	protected static final Protocol PROTOCOL_EDEFAULT = Protocol.GRPC;
 
 	/**
 	 * The cached value of the '{@link #getProtocol() <em>Protocol</em>}' attribute.

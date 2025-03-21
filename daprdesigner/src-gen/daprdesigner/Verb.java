@@ -29,26 +29,6 @@ public enum Verb implements Enumerator {
 	GET(0, "GET", "GET"),
 
 	/**
-	 * The '<em><b>POST</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #POST_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	POST(1, "POST", "POST"),
-
-	/**
-	 * The '<em><b>PUT</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #PUT_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	PUT(2, "PUT", "PUT"),
-
-	/**
 	 * The '<em><b>DELETE</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -56,7 +36,7 @@ public enum Verb implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DELETE(3, "DELETE", "DELETE"),
+	DELETE(1, "DELETE", "DELETE"),
 
 	/**
 	 * The '<em><b>PATCH</b></em>' literal object.
@@ -66,7 +46,25 @@ public enum Verb implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PATCH(4, "PATCH", "PATCH");
+	PATCH(2, "PATCH", "PATCH"),
+	/**
+	* The '<em><b>POST</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #POST_VALUE
+	* @generated
+	* @ordered
+	*/
+	POST(3, "POST", "POST"),
+	/**
+	* The '<em><b>PUT</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #PUT_VALUE
+	* @generated
+	* @ordered
+	*/
+	PUT(4, "PUT", "PUT");
 
 	/**
 	 * The '<em><b>GET</b></em>' literal value.
@@ -80,28 +78,6 @@ public enum Verb implements Enumerator {
 	public static final int GET_VALUE = 0;
 
 	/**
-	 * The '<em><b>POST</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #POST
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int POST_VALUE = 1;
-
-	/**
-	 * The '<em><b>PUT</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #PUT
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int PUT_VALUE = 2;
-
-	/**
 	 * The '<em><b>DELETE</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -110,7 +86,7 @@ public enum Verb implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DELETE_VALUE = 3;
+	public static final int DELETE_VALUE = 1;
 
 	/**
 	 * The '<em><b>PATCH</b></em>' literal value.
@@ -121,7 +97,29 @@ public enum Verb implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PATCH_VALUE = 4;
+	public static final int PATCH_VALUE = 2;
+
+	/**
+	 * The '<em><b>POST</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #POST
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int POST_VALUE = 3;
+
+	/**
+	 * The '<em><b>PUT</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #PUT
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int PUT_VALUE = 4;
 
 	/**
 	 * An array of all the '<em><b>Verb</b></em>' enumerators.
@@ -129,7 +127,7 @@ public enum Verb implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final Verb[] VALUES_ARRAY = new Verb[] { GET, POST, PUT, DELETE, PATCH, };
+	private static final Verb[] VALUES_ARRAY = new Verb[] { GET, DELETE, PATCH, POST, PUT, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Verb</b></em>' enumerators.
@@ -187,14 +185,14 @@ public enum Verb implements Enumerator {
 		switch (value) {
 		case GET_VALUE:
 			return GET;
-		case POST_VALUE:
-			return POST;
-		case PUT_VALUE:
-			return PUT;
 		case DELETE_VALUE:
 			return DELETE;
 		case PATCH_VALUE:
 			return PATCH;
+		case POST_VALUE:
+			return POST;
+		case PUT_VALUE:
+			return PUT;
 		}
 		return null;
 	}

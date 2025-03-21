@@ -60,7 +60,7 @@ public class OperationImpl extends DaprNodeImpl implements Operation {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Protocol PROTOCOL_EDEFAULT = Protocol.HTTP;
+	protected static final Protocol PROTOCOL_EDEFAULT = Protocol.GRPC;
 
 	/**
 	 * The cached value of the '{@link #getProtocol() <em>Protocol</em>}' attribute.

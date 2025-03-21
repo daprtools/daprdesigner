@@ -70,7 +70,7 @@ public class ResiliencyTargetImpl extends DaprNodeImpl implements ResiliencyTarg
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ResiliencyTargetType TYPE_EDEFAULT = ResiliencyTargetType.APP;
+	protected static final ResiliencyTargetType TYPE_EDEFAULT = ResiliencyTargetType.ACTOR;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.

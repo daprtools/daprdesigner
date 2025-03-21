@@ -44,6 +44,7 @@ public class AppPolicyItemProvider extends DaprNodeItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addRequiredFieldsPropertyDescriptor(object);
 			addHelpPropertyDescriptor(object);
 			addAppPropertyDescriptor(object);
 			addDefaultActionPropertyDescriptor(object);
@@ -52,6 +53,22 @@ public class AppPolicyItemProvider extends DaprNodeItemProvider {
 			addOperationsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Required Fields feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequiredFieldsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_AppPolicy_requiredFields_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_AppPolicy_requiredFields_feature",
+								"_UI_AppPolicy_type"),
+						DaprdesignerPackage.Literals.APP_POLICY__REQUIRED_FIELDS, false, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -192,6 +209,7 @@ public class AppPolicyItemProvider extends DaprNodeItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(AppPolicy.class)) {
+		case DaprdesignerPackage.APP_POLICY__REQUIRED_FIELDS:
 		case DaprdesignerPackage.APP_POLICY__HELP:
 		case DaprdesignerPackage.APP_POLICY__DEFAULT_ACTION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

@@ -114,13 +114,22 @@ public interface DaprdesignerPackage extends EPackage {
 	int DAPR_ARCHITECTURE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Required Fields</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DAPR_ARCHITECTURE__REQUIRED_FIELDS = 0;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DAPR_ARCHITECTURE__NAME = 0;
+	int DAPR_ARCHITECTURE__NAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Buildingblocks</b></em>' containment reference list.
@@ -129,7 +138,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DAPR_ARCHITECTURE__BUILDINGBLOCKS = 1;
+	int DAPR_ARCHITECTURE__BUILDINGBLOCKS = 2;
 
 	/**
 	 * The number of structural features of the '<em>Dapr Architecture</em>' class.
@@ -138,7 +147,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DAPR_ARCHITECTURE_FEATURE_COUNT = 2;
+	int DAPR_ARCHITECTURE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Dapr Architecture</em>' class.
@@ -160,13 +169,22 @@ public interface DaprdesignerPackage extends EPackage {
 	int BLOCK = 2;
 
 	/**
+	 * The feature id for the '<em><b>Required Fields</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOCK__REQUIRED_FIELDS = 0;
+
+	/**
 	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK__IS_READY = 0;
+	int BLOCK__IS_READY = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -175,7 +193,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK__NAME = 1;
+	int BLOCK__NAME = 2;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -184,7 +202,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK__DESCRIPTION = 2;
+	int BLOCK__DESCRIPTION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Notes</b></em>' attribute.
@@ -193,7 +211,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK__NOTES = 3;
+	int BLOCK__NOTES = 4;
 
 	/**
 	 * The feature id for the '<em><b>Block Type</b></em>' attribute.
@@ -202,7 +220,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK__BLOCK_TYPE = 4;
+	int BLOCK__BLOCK_TYPE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Subblocks</b></em>' containment reference list.
@@ -211,7 +229,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK__SUBBLOCKS = 5;
+	int BLOCK__SUBBLOCKS = 6;
 
 	/**
 	 * The feature id for the '<em><b>Nodes</b></em>' containment reference list.
@@ -220,7 +238,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK__NODES = 6;
+	int BLOCK__NODES = 7;
 
 	/**
 	 * The number of structural features of the '<em>Block</em>' class.
@@ -229,7 +247,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK_FEATURE_COUNT = 7;
+	int BLOCK_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Block</em>' class.
@@ -351,13 +369,22 @@ public interface DaprdesignerPackage extends EPackage {
 	int NODE_BLOCKS__NOTES = DAPR_NODE__NOTES;
 
 	/**
+	 * The feature id for the '<em><b>Required Fields</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NODE_BLOCKS__REQUIRED_FIELDS = DAPR_NODE_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Node Block Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NODE_BLOCKS__NODE_BLOCK_TYPE = DAPR_NODE_FEATURE_COUNT + 0;
+	int NODE_BLOCKS__NODE_BLOCK_TYPE = DAPR_NODE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Nodes</b></em>' containment reference list.
@@ -366,7 +393,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE_BLOCKS__NODES = DAPR_NODE_FEATURE_COUNT + 1;
+	int NODE_BLOCKS__NODES = DAPR_NODE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Node Blocks</em>' class.
@@ -375,7 +402,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE_BLOCKS_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 2;
+	int NODE_BLOCKS_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Node Blocks</em>' class.
@@ -433,13 +460,22 @@ public interface DaprdesignerPackage extends EPackage {
 	int NAMESPACE__NOTES = DAPR_NODE__NOTES;
 
 	/**
+	 * The feature id for the '<em><b>Required Fields</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE__REQUIRED_FIELDS = DAPR_NODE_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Help</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NAMESPACE__HELP = DAPR_NODE_FEATURE_COUNT + 0;
+	int NAMESPACE__HELP = DAPR_NODE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Namespace</em>' class.
@@ -448,7 +484,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAMESPACE_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 1;
+	int NAMESPACE_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Namespace</em>' class.
@@ -506,13 +542,22 @@ public interface DaprdesignerPackage extends EPackage {
 	int TRUSTDOMAIN__NOTES = DAPR_NODE__NOTES;
 
 	/**
+	 * The feature id for the '<em><b>Required Fields</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUSTDOMAIN__REQUIRED_FIELDS = DAPR_NODE_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Help</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRUSTDOMAIN__HELP = DAPR_NODE_FEATURE_COUNT + 0;
+	int TRUSTDOMAIN__HELP = DAPR_NODE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Trustdomain</em>' class.
@@ -521,7 +566,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRUSTDOMAIN_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 1;
+	int TRUSTDOMAIN_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Trustdomain</em>' class.
@@ -579,13 +624,22 @@ public interface DaprdesignerPackage extends EPackage {
 	int APP__NOTES = DAPR_NODE__NOTES;
 
 	/**
+	 * The feature id for the '<em><b>Required Fields</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP__REQUIRED_FIELDS = DAPR_NODE_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Help</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APP__HELP = DAPR_NODE_FEATURE_COUNT + 0;
+	int APP__HELP = DAPR_NODE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>App Id</b></em>' attribute.
@@ -594,7 +648,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP__APP_ID = DAPR_NODE_FEATURE_COUNT + 1;
+	int APP__APP_ID = DAPR_NODE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>App Dir Path</b></em>' attribute.
@@ -603,7 +657,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP__APP_DIR_PATH = DAPR_NODE_FEATURE_COUNT + 2;
+	int APP__APP_DIR_PATH = DAPR_NODE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' reference.
@@ -612,7 +666,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP__NAMESPACE = DAPR_NODE_FEATURE_COUNT + 3;
+	int APP__NAMESPACE = DAPR_NODE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Trust Domain</b></em>' reference.
@@ -621,7 +675,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP__TRUST_DOMAIN = DAPR_NODE_FEATURE_COUNT + 4;
+	int APP__TRUST_DOMAIN = DAPR_NODE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Command</b></em>' attribute list.
@@ -630,7 +684,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP__COMMAND = DAPR_NODE_FEATURE_COUNT + 5;
+	int APP__COMMAND = DAPR_NODE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>App Health Check Path</b></em>' attribute.
@@ -639,7 +693,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP__APP_HEALTH_CHECK_PATH = DAPR_NODE_FEATURE_COUNT + 6;
+	int APP__APP_HEALTH_CHECK_PATH = DAPR_NODE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Container Image</b></em>' attribute.
@@ -648,7 +702,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP__CONTAINER_IMAGE = DAPR_NODE_FEATURE_COUNT + 7;
+	int APP__CONTAINER_IMAGE = DAPR_NODE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Configurations</b></em>' reference list.
@@ -657,7 +711,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP__CONFIGURATIONS = DAPR_NODE_FEATURE_COUNT + 8;
+	int APP__CONFIGURATIONS = DAPR_NODE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Sdk Language</b></em>' attribute.
@@ -666,7 +720,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP__SDK_LANGUAGE = DAPR_NODE_FEATURE_COUNT + 9;
+	int APP__SDK_LANGUAGE = DAPR_NODE_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Repository</b></em>' attribute.
@@ -675,7 +729,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP__REPOSITORY = DAPR_NODE_FEATURE_COUNT + 10;
+	int APP__REPOSITORY = DAPR_NODE_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Swagger Link</b></em>' attribute.
@@ -684,7 +738,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP__SWAGGER_LINK = DAPR_NODE_FEATURE_COUNT + 11;
+	int APP__SWAGGER_LINK = DAPR_NODE_FEATURE_COUNT + 12;
 
 	/**
 	 * The number of structural features of the '<em>App</em>' class.
@@ -693,7 +747,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 12;
+	int APP_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of operations of the '<em>App</em>' class.
@@ -749,6 +803,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @ordered
 	 */
 	int ACTOR__NOTES = APP__NOTES;
+
+	/**
+	 * The feature id for the '<em><b>Required Fields</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTOR__REQUIRED_FIELDS = APP__REQUIRED_FIELDS;
 
 	/**
 	 * The feature id for the '<em><b>Help</b></em>' attribute.
@@ -932,6 +995,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int JOBS__NOTES = APP__NOTES;
 
 	/**
+	 * The feature id for the '<em><b>Required Fields</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS__REQUIRED_FIELDS = APP__REQUIRED_FIELDS;
+
+	/**
 	 * The feature id for the '<em><b>Help</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1111,6 +1183,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @ordered
 	 */
 	int WORKFLOW__NOTES = APP__NOTES;
+
+	/**
+	 * The feature id for the '<em><b>Required Fields</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORKFLOW__REQUIRED_FIELDS = APP__REQUIRED_FIELDS;
 
 	/**
 	 * The feature id for the '<em><b>Help</b></em>' attribute.
@@ -1394,13 +1475,22 @@ public interface DaprdesignerPackage extends EPackage {
 	int DENIED_COMPONENTS_CONFIGURATION__KIND = APP_CONFIGURATION__KIND;
 
 	/**
+	 * The feature id for the '<em><b>Required Fields</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DENIED_COMPONENTS_CONFIGURATION__REQUIRED_FIELDS = APP_CONFIGURATION_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Help</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DENIED_COMPONENTS_CONFIGURATION__HELP = APP_CONFIGURATION_FEATURE_COUNT + 0;
+	int DENIED_COMPONENTS_CONFIGURATION__HELP = APP_CONFIGURATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Denied Components</b></em>' reference list.
@@ -1409,7 +1499,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DENIED_COMPONENTS_CONFIGURATION__DENIED_COMPONENTS = APP_CONFIGURATION_FEATURE_COUNT + 1;
+	int DENIED_COMPONENTS_CONFIGURATION__DENIED_COMPONENTS = APP_CONFIGURATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Denied Components Configuration</em>' class.
@@ -1418,7 +1508,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DENIED_COMPONENTS_CONFIGURATION_FEATURE_COUNT = APP_CONFIGURATION_FEATURE_COUNT + 2;
+	int DENIED_COMPONENTS_CONFIGURATION_FEATURE_COUNT = APP_CONFIGURATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Denied Components Configuration</em>' class.
@@ -1494,13 +1584,22 @@ public interface DaprdesignerPackage extends EPackage {
 	int LOGGING_CONFIGURATION__KIND = APP_CONFIGURATION__KIND;
 
 	/**
+	 * The feature id for the '<em><b>Required Fields</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGGING_CONFIGURATION__REQUIRED_FIELDS = APP_CONFIGURATION_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Help</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOGGING_CONFIGURATION__HELP = APP_CONFIGURATION_FEATURE_COUNT + 0;
+	int LOGGING_CONFIGURATION__HELP = APP_CONFIGURATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Enabled</b></em>' attribute.
@@ -1509,7 +1608,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGGING_CONFIGURATION__ENABLED = APP_CONFIGURATION_FEATURE_COUNT + 1;
+	int LOGGING_CONFIGURATION__ENABLED = APP_CONFIGURATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Obfuscate Urls</b></em>' attribute.
@@ -1518,7 +1617,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGGING_CONFIGURATION__OBFUSCATE_URLS = APP_CONFIGURATION_FEATURE_COUNT + 2;
+	int LOGGING_CONFIGURATION__OBFUSCATE_URLS = APP_CONFIGURATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Omit Health Checks</b></em>' attribute.
@@ -1527,7 +1626,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGGING_CONFIGURATION__OMIT_HEALTH_CHECKS = APP_CONFIGURATION_FEATURE_COUNT + 3;
+	int LOGGING_CONFIGURATION__OMIT_HEALTH_CHECKS = APP_CONFIGURATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Logging Configuration</em>' class.
@@ -1536,7 +1635,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGGING_CONFIGURATION_FEATURE_COUNT = APP_CONFIGURATION_FEATURE_COUNT + 4;
+	int LOGGING_CONFIGURATION_FEATURE_COUNT = APP_CONFIGURATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Logging Configuration</em>' class.
@@ -1612,13 +1711,22 @@ public interface DaprdesignerPackage extends EPackage {
 	int NAME_RESOLUTION_CONFIGURATION__KIND = APP_CONFIGURATION__KIND;
 
 	/**
+	 * The feature id for the '<em><b>Required Fields</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAME_RESOLUTION_CONFIGURATION__REQUIRED_FIELDS = APP_CONFIGURATION_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Help</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NAME_RESOLUTION_CONFIGURATION__HELP = APP_CONFIGURATION_FEATURE_COUNT + 0;
+	int NAME_RESOLUTION_CONFIGURATION__HELP = APP_CONFIGURATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Name Resolution Component</b></em>' attribute.
@@ -1627,7 +1735,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAME_RESOLUTION_CONFIGURATION__NAME_RESOLUTION_COMPONENT = APP_CONFIGURATION_FEATURE_COUNT + 1;
+	int NAME_RESOLUTION_CONFIGURATION__NAME_RESOLUTION_COMPONENT = APP_CONFIGURATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Component Version</b></em>' attribute.
@@ -1636,7 +1744,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAME_RESOLUTION_CONFIGURATION__COMPONENT_VERSION = APP_CONFIGURATION_FEATURE_COUNT + 2;
+	int NAME_RESOLUTION_CONFIGURATION__COMPONENT_VERSION = APP_CONFIGURATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Configuration Key</b></em>' attribute.
@@ -1645,7 +1753,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAME_RESOLUTION_CONFIGURATION__CONFIGURATION_KEY = APP_CONFIGURATION_FEATURE_COUNT + 3;
+	int NAME_RESOLUTION_CONFIGURATION__CONFIGURATION_KEY = APP_CONFIGURATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Configuration Value</b></em>' attribute.
@@ -1654,7 +1762,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAME_RESOLUTION_CONFIGURATION__CONFIGURATION_VALUE = APP_CONFIGURATION_FEATURE_COUNT + 4;
+	int NAME_RESOLUTION_CONFIGURATION__CONFIGURATION_VALUE = APP_CONFIGURATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Name Resolution Configuration</em>' class.
@@ -1663,7 +1771,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAME_RESOLUTION_CONFIGURATION_FEATURE_COUNT = APP_CONFIGURATION_FEATURE_COUNT + 5;
+	int NAME_RESOLUTION_CONFIGURATION_FEATURE_COUNT = APP_CONFIGURATION_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Name Resolution Configuration</em>' class.
@@ -1739,13 +1847,22 @@ public interface DaprdesignerPackage extends EPackage {
 	int SECRETS_ACCESS_CONFIGURATION__KIND = APP_CONFIGURATION__KIND;
 
 	/**
+	 * The feature id for the '<em><b>Required Fields</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECRETS_ACCESS_CONFIGURATION__REQUIRED_FIELDS = APP_CONFIGURATION_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Help</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECRETS_ACCESS_CONFIGURATION__HELP = APP_CONFIGURATION_FEATURE_COUNT + 0;
+	int SECRETS_ACCESS_CONFIGURATION__HELP = APP_CONFIGURATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Access List</b></em>' reference list.
@@ -1754,7 +1871,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECRETS_ACCESS_CONFIGURATION__ACCESS_LIST = APP_CONFIGURATION_FEATURE_COUNT + 1;
+	int SECRETS_ACCESS_CONFIGURATION__ACCESS_LIST = APP_CONFIGURATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Secrets Access Configuration</em>' class.
@@ -1763,7 +1880,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECRETS_ACCESS_CONFIGURATION_FEATURE_COUNT = APP_CONFIGURATION_FEATURE_COUNT + 2;
+	int SECRETS_ACCESS_CONFIGURATION_FEATURE_COUNT = APP_CONFIGURATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Secrets Access Configuration</em>' class.
@@ -2402,13 +2519,22 @@ public interface DaprdesignerPackage extends EPackage {
 	int APP_POLICY__NOTES = DAPR_NODE__NOTES;
 
 	/**
+	 * The feature id for the '<em><b>Required Fields</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP_POLICY__REQUIRED_FIELDS = DAPR_NODE_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Help</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APP_POLICY__HELP = DAPR_NODE_FEATURE_COUNT + 0;
+	int APP_POLICY__HELP = DAPR_NODE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>App</b></em>' reference.
@@ -2417,7 +2543,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP_POLICY__APP = DAPR_NODE_FEATURE_COUNT + 1;
+	int APP_POLICY__APP = DAPR_NODE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Default Action</b></em>' attribute.
@@ -2426,7 +2552,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP_POLICY__DEFAULT_ACTION = DAPR_NODE_FEATURE_COUNT + 2;
+	int APP_POLICY__DEFAULT_ACTION = DAPR_NODE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Trust Domain</b></em>' reference.
@@ -2435,7 +2561,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP_POLICY__TRUST_DOMAIN = DAPR_NODE_FEATURE_COUNT + 3;
+	int APP_POLICY__TRUST_DOMAIN = DAPR_NODE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' reference.
@@ -2444,7 +2570,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP_POLICY__NAMESPACE = DAPR_NODE_FEATURE_COUNT + 4;
+	int APP_POLICY__NAMESPACE = DAPR_NODE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Operations</b></em>' reference list.
@@ -2453,7 +2579,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP_POLICY__OPERATIONS = DAPR_NODE_FEATURE_COUNT + 5;
+	int APP_POLICY__OPERATIONS = DAPR_NODE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>App Policy</em>' class.
@@ -2462,7 +2588,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP_POLICY_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 6;
+	int APP_POLICY_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>App Policy</em>' class.
@@ -3264,13 +3390,22 @@ public interface DaprdesignerPackage extends EPackage {
 	int RESILIENCY_CONFIGURATION__NOTES = DAPR_NODE__NOTES;
 
 	/**
+	 * The feature id for the '<em><b>Required Fields</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESILIENCY_CONFIGURATION__REQUIRED_FIELDS = DAPR_NODE_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Help</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESILIENCY_CONFIGURATION__HELP = DAPR_NODE_FEATURE_COUNT + 0;
+	int RESILIENCY_CONFIGURATION__HELP = DAPR_NODE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
@@ -3279,7 +3414,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESILIENCY_CONFIGURATION__API_VERSION = DAPR_NODE_FEATURE_COUNT + 1;
+	int RESILIENCY_CONFIGURATION__API_VERSION = DAPR_NODE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -3288,7 +3423,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESILIENCY_CONFIGURATION__KIND = DAPR_NODE_FEATURE_COUNT + 2;
+	int RESILIENCY_CONFIGURATION__KIND = DAPR_NODE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
@@ -3297,7 +3432,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESILIENCY_CONFIGURATION__VERSION = DAPR_NODE_FEATURE_COUNT + 3;
+	int RESILIENCY_CONFIGURATION__VERSION = DAPR_NODE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Scopes</b></em>' reference list.
@@ -3306,7 +3441,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESILIENCY_CONFIGURATION__SCOPES = DAPR_NODE_FEATURE_COUNT + 4;
+	int RESILIENCY_CONFIGURATION__SCOPES = DAPR_NODE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Policy</b></em>' reference.
@@ -3315,7 +3450,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESILIENCY_CONFIGURATION__POLICY = DAPR_NODE_FEATURE_COUNT + 5;
+	int RESILIENCY_CONFIGURATION__POLICY = DAPR_NODE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Resiliency Targets</b></em>' reference list.
@@ -3324,7 +3459,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESILIENCY_CONFIGURATION__RESILIENCY_TARGETS = DAPR_NODE_FEATURE_COUNT + 6;
+	int RESILIENCY_CONFIGURATION__RESILIENCY_TARGETS = DAPR_NODE_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Resiliency Configuration</em>' class.
@@ -3333,7 +3468,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESILIENCY_CONFIGURATION_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 7;
+	int RESILIENCY_CONFIGURATION_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Resiliency Configuration</em>' class.
@@ -4081,13 +4216,22 @@ public interface DaprdesignerPackage extends EPackage {
 	int COMPONENT__NOTES = DAPR_NODE__NOTES;
 
 	/**
+	 * The feature id for the '<em><b>Required Fields</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__REQUIRED_FIELDS = DAPR_NODE_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__API_VERSION = DAPR_NODE_FEATURE_COUNT + 0;
+	int COMPONENT__API_VERSION = DAPR_NODE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -4096,7 +4240,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__KIND = DAPR_NODE_FEATURE_COUNT + 1;
+	int COMPONENT__KIND = DAPR_NODE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Provider Name</b></em>' attribute.
@@ -4105,7 +4249,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__PROVIDER_NAME = DAPR_NODE_FEATURE_COUNT + 2;
+	int COMPONENT__PROVIDER_NAME = DAPR_NODE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Provider Version</b></em>' attribute.
@@ -4114,7 +4258,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__PROVIDER_VERSION = DAPR_NODE_FEATURE_COUNT + 3;
+	int COMPONENT__PROVIDER_VERSION = DAPR_NODE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Auth</b></em>' reference.
@@ -4123,7 +4267,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__AUTH = DAPR_NODE_FEATURE_COUNT + 4;
+	int COMPONENT__AUTH = DAPR_NODE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Metadata namespace</b></em>' reference.
@@ -4132,7 +4276,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__METADATA_NAMESPACE = DAPR_NODE_FEATURE_COUNT + 5;
+	int COMPONENT__METADATA_NAMESPACE = DAPR_NODE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Ignore Errors</b></em>' attribute.
@@ -4141,7 +4285,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__IGNORE_ERRORS = DAPR_NODE_FEATURE_COUNT + 6;
+	int COMPONENT__IGNORE_ERRORS = DAPR_NODE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Init Timeout</b></em>' attribute.
@@ -4150,7 +4294,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__INIT_TIMEOUT = DAPR_NODE_FEATURE_COUNT + 7;
+	int COMPONENT__INIT_TIMEOUT = DAPR_NODE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Spec Metadata</b></em>' reference list.
@@ -4159,7 +4303,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__SPEC_METADATA = DAPR_NODE_FEATURE_COUNT + 8;
+	int COMPONENT__SPEC_METADATA = DAPR_NODE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Scopes</b></em>' reference list.
@@ -4168,7 +4312,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__SCOPES = DAPR_NODE_FEATURE_COUNT + 9;
+	int COMPONENT__SCOPES = DAPR_NODE_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -4177,7 +4321,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 10;
+	int COMPONENT_FEATURE_COUNT = DAPR_NODE_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of operations of the '<em>Component</em>' class.
@@ -4462,6 +4606,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int PUB_SUB__NOTES = COMPONENT__NOTES;
 
 	/**
+	 * The feature id for the '<em><b>Required Fields</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PUB_SUB__REQUIRED_FIELDS = COMPONENT__REQUIRED_FIELDS;
+
+	/**
 	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4623,6 +4776,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @ordered
 	 */
 	int BINDINGS__NOTES = COMPONENT__NOTES;
+
+	/**
+	 * The feature id for the '<em><b>Required Fields</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINDINGS__REQUIRED_FIELDS = COMPONENT__REQUIRED_FIELDS;
 
 	/**
 	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
@@ -4788,6 +4950,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int SECRET_STORE__NOTES = COMPONENT__NOTES;
 
 	/**
+	 * The feature id for the '<em><b>Required Fields</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECRET_STORE__REQUIRED_FIELDS = COMPONENT__REQUIRED_FIELDS;
+
+	/**
 	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4949,6 +5120,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @ordered
 	 */
 	int STATE_STORE__NOTES = COMPONENT__NOTES;
+
+	/**
+	 * The feature id for the '<em><b>Required Fields</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_STORE__REQUIRED_FIELDS = COMPONENT__REQUIRED_FIELDS;
 
 	/**
 	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
@@ -5114,6 +5294,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int CONFIGURATION_STORE__NOTES = COMPONENT__NOTES;
 
 	/**
+	 * The feature id for the '<em><b>Required Fields</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIGURATION_STORE__REQUIRED_FIELDS = COMPONENT__REQUIRED_FIELDS;
+
+	/**
 	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5275,6 +5464,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @ordered
 	 */
 	int LOCKS__NOTES = COMPONENT__NOTES;
+
+	/**
+	 * The feature id for the '<em><b>Required Fields</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCKS__REQUIRED_FIELDS = COMPONENT__REQUIRED_FIELDS;
 
 	/**
 	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
@@ -5440,6 +5638,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int CRYPTOGRAPHY__NOTES = COMPONENT__NOTES;
 
 	/**
+	 * The feature id for the '<em><b>Required Fields</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CRYPTOGRAPHY__REQUIRED_FIELDS = COMPONENT__REQUIRED_FIELDS;
+
+	/**
 	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5601,6 +5808,15 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @ordered
 	 */
 	int MIDDLEWARE__NOTES = COMPONENT__NOTES;
+
+	/**
+	 * The feature id for the '<em><b>Required Fields</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIDDLEWARE__REQUIRED_FIELDS = COMPONENT__REQUIRED_FIELDS;
 
 	/**
 	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
@@ -5766,6 +5982,15 @@ public interface DaprdesignerPackage extends EPackage {
 	int NAMERESOLUTION__NOTES = COMPONENT__NOTES;
 
 	/**
+	 * The feature id for the '<em><b>Required Fields</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMERESOLUTION__REQUIRED_FIELDS = COMPONENT__REQUIRED_FIELDS;
+
+	/**
 	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5883,6 +6108,178 @@ public interface DaprdesignerPackage extends EPackage {
 	int NAMERESOLUTION_OPERATION_COUNT = COMPONENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link daprdesigner.impl.ConversationImpl <em>Conversation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see daprdesigner.impl.ConversationImpl
+	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getConversation()
+	 * @generated
+	 */
+	int CONVERSATION = 47;
+
+	/**
+	 * The feature id for the '<em><b>Is Ready</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONVERSATION__IS_READY = COMPONENT__IS_READY;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONVERSATION__NAME = COMPONENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONVERSATION__DESCRIPTION = COMPONENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Notes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONVERSATION__NOTES = COMPONENT__NOTES;
+
+	/**
+	 * The feature id for the '<em><b>Required Fields</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONVERSATION__REQUIRED_FIELDS = COMPONENT__REQUIRED_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONVERSATION__API_VERSION = COMPONENT__API_VERSION;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONVERSATION__KIND = COMPONENT__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Provider Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONVERSATION__PROVIDER_NAME = COMPONENT__PROVIDER_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Provider Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONVERSATION__PROVIDER_VERSION = COMPONENT__PROVIDER_VERSION;
+
+	/**
+	 * The feature id for the '<em><b>Auth</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONVERSATION__AUTH = COMPONENT__AUTH;
+
+	/**
+	 * The feature id for the '<em><b>Metadata namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONVERSATION__METADATA_NAMESPACE = COMPONENT__METADATA_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Ignore Errors</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONVERSATION__IGNORE_ERRORS = COMPONENT__IGNORE_ERRORS;
+
+	/**
+	 * The feature id for the '<em><b>Init Timeout</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONVERSATION__INIT_TIMEOUT = COMPONENT__INIT_TIMEOUT;
+
+	/**
+	 * The feature id for the '<em><b>Spec Metadata</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONVERSATION__SPEC_METADATA = COMPONENT__SPEC_METADATA;
+
+	/**
+	 * The feature id for the '<em><b>Scopes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONVERSATION__SCOPES = COMPONENT__SCOPES;
+
+	/**
+	 * The feature id for the '<em><b>Help</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONVERSATION__HELP = COMPONENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Conversation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONVERSATION_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Conversation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONVERSATION_OPERATION_COUNT = COMPONENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link daprdesigner.AccessAction <em>Access Action</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5890,7 +6287,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getAccessAction()
 	 * @generated
 	 */
-	int ACCESS_ACTION = 47;
+	int ACCESS_ACTION = 48;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.RetryPolicyType <em>Retry Policy Type</em>}' enum.
@@ -5900,7 +6297,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getRetryPolicyType()
 	 * @generated
 	 */
-	int RETRY_POLICY_TYPE = 48;
+	int RETRY_POLICY_TYPE = 49;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.HttpHandlerType <em>Http Handler Type</em>}' enum.
@@ -5910,7 +6307,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getHttpHandlerType()
 	 * @generated
 	 */
-	int HTTP_HANDLER_TYPE = 49;
+	int HTTP_HANDLER_TYPE = 50;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.ResiliencyTargetType <em>Resiliency Target Type</em>}' enum.
@@ -5920,7 +6317,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getResiliencyTargetType()
 	 * @generated
 	 */
-	int RESILIENCY_TARGET_TYPE = 50;
+	int RESILIENCY_TARGET_TYPE = 51;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.BlockType <em>Block Type</em>}' enum.
@@ -5930,7 +6327,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getBlockType()
 	 * @generated
 	 */
-	int BLOCK_TYPE = 51;
+	int BLOCK_TYPE = 52;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.NodeBlockType <em>Node Block Type</em>}' enum.
@@ -5940,7 +6337,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getNodeBlockType()
 	 * @generated
 	 */
-	int NODE_BLOCK_TYPE = 52;
+	int NODE_BLOCK_TYPE = 53;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.APIType <em>API Type</em>}' enum.
@@ -5950,7 +6347,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getAPIType()
 	 * @generated
 	 */
-	int API_TYPE = 53;
+	int API_TYPE = 54;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.SDKLanguage <em>SDK Language</em>}' enum.
@@ -5960,7 +6357,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getSDKLanguage()
 	 * @generated
 	 */
-	int SDK_LANGUAGE = 54;
+	int SDK_LANGUAGE = 55;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.Protocol <em>Protocol</em>}' enum.
@@ -5970,7 +6367,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getProtocol()
 	 * @generated
 	 */
-	int PROTOCOL = 55;
+	int PROTOCOL = 56;
 
 	/**
 	 * The meta object id for the '{@link daprdesigner.Verb <em>Verb</em>}' enum.
@@ -5980,7 +6377,7 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @see daprdesigner.impl.DaprdesignerPackageImpl#getVerb()
 	 * @generated
 	 */
-	int VERB = 56;
+	int VERB = 57;
 
 	/**
 	 * Returns the meta object for class '{@link java.util.Map.Entry <em>EString To String Map Entry</em>}'.
@@ -6027,6 +6424,17 @@ public interface DaprdesignerPackage extends EPackage {
 	EClass getDaprArchitecture();
 
 	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.DaprArchitecture#getRequiredFields <em>Required Fields</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Required Fields</em>'.
+	 * @see daprdesigner.DaprArchitecture#getRequiredFields()
+	 * @see #getDaprArchitecture()
+	 * @generated
+	 */
+	EAttribute getDaprArchitecture_RequiredFields();
+
+	/**
 	 * Returns the meta object for the attribute '{@link daprdesigner.DaprArchitecture#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6057,6 +6465,17 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getBlock();
+
+	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.Block#getRequiredFields <em>Required Fields</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Required Fields</em>'.
+	 * @see daprdesigner.Block#getRequiredFields()
+	 * @see #getBlock()
+	 * @generated
+	 */
+	EAttribute getBlock_RequiredFields();
 
 	/**
 	 * Returns the meta object for the attribute '{@link daprdesigner.Block#isIsReady <em>Is Ready</em>}'.
@@ -6200,6 +6619,17 @@ public interface DaprdesignerPackage extends EPackage {
 	EClass getNodeBlocks();
 
 	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.NodeBlocks#getRequiredFields <em>Required Fields</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Required Fields</em>'.
+	 * @see daprdesigner.NodeBlocks#getRequiredFields()
+	 * @see #getNodeBlocks()
+	 * @generated
+	 */
+	EAttribute getNodeBlocks_RequiredFields();
+
+	/**
 	 * Returns the meta object for the attribute '{@link daprdesigner.NodeBlocks#getNodeBlockType <em>Node Block Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6232,6 +6662,17 @@ public interface DaprdesignerPackage extends EPackage {
 	EClass getNamespace();
 
 	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.Namespace#getRequiredFields <em>Required Fields</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Required Fields</em>'.
+	 * @see daprdesigner.Namespace#getRequiredFields()
+	 * @see #getNamespace()
+	 * @generated
+	 */
+	EAttribute getNamespace_RequiredFields();
+
+	/**
 	 * Returns the meta object for the attribute '{@link daprdesigner.Namespace#getHelp <em>Help</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6253,6 +6694,17 @@ public interface DaprdesignerPackage extends EPackage {
 	EClass getTrustdomain();
 
 	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.Trustdomain#getRequiredFields <em>Required Fields</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Required Fields</em>'.
+	 * @see daprdesigner.Trustdomain#getRequiredFields()
+	 * @see #getTrustdomain()
+	 * @generated
+	 */
+	EAttribute getTrustdomain_RequiredFields();
+
+	/**
 	 * Returns the meta object for the attribute '{@link daprdesigner.Trustdomain#getHelp <em>Help</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6272,6 +6724,17 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getApp();
+
+	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.App#getRequiredFields <em>Required Fields</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Required Fields</em>'.
+	 * @see daprdesigner.App#getRequiredFields()
+	 * @see #getApp()
+	 * @generated
+	 */
+	EAttribute getApp_RequiredFields();
 
 	/**
 	 * Returns the meta object for the attribute '{@link daprdesigner.App#getHelp <em>Help</em>}'.
@@ -6511,6 +6974,17 @@ public interface DaprdesignerPackage extends EPackage {
 	EClass getDeniedComponentsConfiguration();
 
 	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.DeniedComponentsConfiguration#getRequiredFields <em>Required Fields</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Required Fields</em>'.
+	 * @see daprdesigner.DeniedComponentsConfiguration#getRequiredFields()
+	 * @see #getDeniedComponentsConfiguration()
+	 * @generated
+	 */
+	EAttribute getDeniedComponentsConfiguration_RequiredFields();
+
+	/**
 	 * Returns the meta object for the reference list '{@link daprdesigner.DeniedComponentsConfiguration#getDeniedComponents <em>Denied Components</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6541,6 +7015,17 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getLoggingConfiguration();
+
+	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.LoggingConfiguration#getRequiredFields <em>Required Fields</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Required Fields</em>'.
+	 * @see daprdesigner.LoggingConfiguration#getRequiredFields()
+	 * @see #getLoggingConfiguration()
+	 * @generated
+	 */
+	EAttribute getLoggingConfiguration_RequiredFields();
 
 	/**
 	 * Returns the meta object for the attribute '{@link daprdesigner.LoggingConfiguration#isEnabled <em>Enabled</em>}'.
@@ -6595,6 +7080,17 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getNameResolutionConfiguration();
+
+	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.NameResolutionConfiguration#getRequiredFields <em>Required Fields</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Required Fields</em>'.
+	 * @see daprdesigner.NameResolutionConfiguration#getRequiredFields()
+	 * @see #getNameResolutionConfiguration()
+	 * @generated
+	 */
+	EAttribute getNameResolutionConfiguration_RequiredFields();
 
 	/**
 	 * Returns the meta object for the attribute '{@link daprdesigner.NameResolutionConfiguration#getComponentVersion <em>Component Version</em>}'.
@@ -6660,6 +7156,17 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSecretsAccessConfiguration();
+
+	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.SecretsAccessConfiguration#getRequiredFields <em>Required Fields</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Required Fields</em>'.
+	 * @see daprdesigner.SecretsAccessConfiguration#getRequiredFields()
+	 * @see #getSecretsAccessConfiguration()
+	 * @generated
+	 */
+	EAttribute getSecretsAccessConfiguration_RequiredFields();
 
 	/**
 	 * Returns the meta object for the reference list '{@link daprdesigner.SecretsAccessConfiguration#getAccessList <em>Access List</em>}'.
@@ -6995,6 +7502,17 @@ public interface DaprdesignerPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAppPolicy();
+
+	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.AppPolicy#getRequiredFields <em>Required Fields</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Required Fields</em>'.
+	 * @see daprdesigner.AppPolicy#getRequiredFields()
+	 * @see #getAppPolicy()
+	 * @generated
+	 */
+	EAttribute getAppPolicy_RequiredFields();
 
 	/**
 	 * Returns the meta object for the reference '{@link daprdesigner.AppPolicy#getApp <em>App</em>}'.
@@ -7529,6 +8047,17 @@ public interface DaprdesignerPackage extends EPackage {
 	EClass getResiliencyConfiguration();
 
 	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.ResiliencyConfiguration#getRequiredFields <em>Required Fields</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Required Fields</em>'.
+	 * @see daprdesigner.ResiliencyConfiguration#getRequiredFields()
+	 * @see #getResiliencyConfiguration()
+	 * @generated
+	 */
+	EAttribute getResiliencyConfiguration_RequiredFields();
+
+	/**
 	 * Returns the meta object for the attribute '{@link daprdesigner.ResiliencyConfiguration#getHelp <em>Help</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8050,6 +8579,17 @@ public interface DaprdesignerPackage extends EPackage {
 	EClass getComponent();
 
 	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.Component#getRequiredFields <em>Required Fields</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Required Fields</em>'.
+	 * @see daprdesigner.Component#getRequiredFields()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EAttribute getComponent_RequiredFields();
+
+	/**
 	 * Returns the meta object for the attribute '{@link daprdesigner.Component#getApiVersion <em>Api Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8490,6 +9030,27 @@ public interface DaprdesignerPackage extends EPackage {
 	EAttribute getNameresolution_Help();
 
 	/**
+	 * Returns the meta object for class '{@link daprdesigner.Conversation <em>Conversation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Conversation</em>'.
+	 * @see daprdesigner.Conversation
+	 * @generated
+	 */
+	EClass getConversation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link daprdesigner.Conversation#getHelp <em>Help</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Help</em>'.
+	 * @see daprdesigner.Conversation#getHelp()
+	 * @see #getConversation()
+	 * @generated
+	 */
+	EAttribute getConversation_Help();
+
+	/**
 	 * Returns the meta object for enum '{@link daprdesigner.AccessAction <em>Access Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8649,6 +9210,14 @@ public interface DaprdesignerPackage extends EPackage {
 		EClass DAPR_ARCHITECTURE = eINSTANCE.getDaprArchitecture();
 
 		/**
+		 * The meta object literal for the '<em><b>Required Fields</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DAPR_ARCHITECTURE__REQUIRED_FIELDS = eINSTANCE.getDaprArchitecture_RequiredFields();
+
+		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8673,6 +9242,14 @@ public interface DaprdesignerPackage extends EPackage {
 		 * @generated
 		 */
 		EClass BLOCK = eINSTANCE.getBlock();
+
+		/**
+		 * The meta object literal for the '<em><b>Required Fields</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BLOCK__REQUIRED_FIELDS = eINSTANCE.getBlock_RequiredFields();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Ready</b></em>' attribute feature.
@@ -8783,6 +9360,14 @@ public interface DaprdesignerPackage extends EPackage {
 		EClass NODE_BLOCKS = eINSTANCE.getNodeBlocks();
 
 		/**
+		 * The meta object literal for the '<em><b>Required Fields</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NODE_BLOCKS__REQUIRED_FIELDS = eINSTANCE.getNodeBlocks_RequiredFields();
+
+		/**
 		 * The meta object literal for the '<em><b>Node Block Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8809,6 +9394,14 @@ public interface DaprdesignerPackage extends EPackage {
 		EClass NAMESPACE = eINSTANCE.getNamespace();
 
 		/**
+		 * The meta object literal for the '<em><b>Required Fields</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NAMESPACE__REQUIRED_FIELDS = eINSTANCE.getNamespace_RequiredFields();
+
+		/**
 		 * The meta object literal for the '<em><b>Help</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8827,6 +9420,14 @@ public interface DaprdesignerPackage extends EPackage {
 		EClass TRUSTDOMAIN = eINSTANCE.getTrustdomain();
 
 		/**
+		 * The meta object literal for the '<em><b>Required Fields</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRUSTDOMAIN__REQUIRED_FIELDS = eINSTANCE.getTrustdomain_RequiredFields();
+
+		/**
 		 * The meta object literal for the '<em><b>Help</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8843,6 +9444,14 @@ public interface DaprdesignerPackage extends EPackage {
 		 * @generated
 		 */
 		EClass APP = eINSTANCE.getApp();
+
+		/**
+		 * The meta object literal for the '<em><b>Required Fields</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute APP__REQUIRED_FIELDS = eINSTANCE.getApp_RequiredFields();
 
 		/**
 		 * The meta object literal for the '<em><b>Help</b></em>' attribute feature.
@@ -9031,6 +9640,15 @@ public interface DaprdesignerPackage extends EPackage {
 		EClass DENIED_COMPONENTS_CONFIGURATION = eINSTANCE.getDeniedComponentsConfiguration();
 
 		/**
+		 * The meta object literal for the '<em><b>Required Fields</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DENIED_COMPONENTS_CONFIGURATION__REQUIRED_FIELDS = eINSTANCE
+				.getDeniedComponentsConfiguration_RequiredFields();
+
+		/**
 		 * The meta object literal for the '<em><b>Denied Components</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -9056,6 +9674,14 @@ public interface DaprdesignerPackage extends EPackage {
 		 * @generated
 		 */
 		EClass LOGGING_CONFIGURATION = eINSTANCE.getLoggingConfiguration();
+
+		/**
+		 * The meta object literal for the '<em><b>Required Fields</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOGGING_CONFIGURATION__REQUIRED_FIELDS = eINSTANCE.getLoggingConfiguration_RequiredFields();
 
 		/**
 		 * The meta object literal for the '<em><b>Enabled</b></em>' attribute feature.
@@ -9098,6 +9724,15 @@ public interface DaprdesignerPackage extends EPackage {
 		 * @generated
 		 */
 		EClass NAME_RESOLUTION_CONFIGURATION = eINSTANCE.getNameResolutionConfiguration();
+
+		/**
+		 * The meta object literal for the '<em><b>Required Fields</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NAME_RESOLUTION_CONFIGURATION__REQUIRED_FIELDS = eINSTANCE
+				.getNameResolutionConfiguration_RequiredFields();
 
 		/**
 		 * The meta object literal for the '<em><b>Component Version</b></em>' attribute feature.
@@ -9152,6 +9787,15 @@ public interface DaprdesignerPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SECRETS_ACCESS_CONFIGURATION = eINSTANCE.getSecretsAccessConfiguration();
+
+		/**
+		 * The meta object literal for the '<em><b>Required Fields</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SECRETS_ACCESS_CONFIGURATION__REQUIRED_FIELDS = eINSTANCE
+				.getSecretsAccessConfiguration_RequiredFields();
 
 		/**
 		 * The meta object literal for the '<em><b>Access List</b></em>' reference list feature.
@@ -9414,6 +10058,14 @@ public interface DaprdesignerPackage extends EPackage {
 		 * @generated
 		 */
 		EClass APP_POLICY = eINSTANCE.getAppPolicy();
+
+		/**
+		 * The meta object literal for the '<em><b>Required Fields</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute APP_POLICY__REQUIRED_FIELDS = eINSTANCE.getAppPolicy_RequiredFields();
 
 		/**
 		 * The meta object literal for the '<em><b>App</b></em>' reference feature.
@@ -9829,6 +10481,14 @@ public interface DaprdesignerPackage extends EPackage {
 		EClass RESILIENCY_CONFIGURATION = eINSTANCE.getResiliencyConfiguration();
 
 		/**
+		 * The meta object literal for the '<em><b>Required Fields</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESILIENCY_CONFIGURATION__REQUIRED_FIELDS = eINSTANCE.getResiliencyConfiguration_RequiredFields();
+
+		/**
 		 * The meta object literal for the '<em><b>Help</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -10229,6 +10889,14 @@ public interface DaprdesignerPackage extends EPackage {
 		EClass COMPONENT = eINSTANCE.getComponent();
 
 		/**
+		 * The meta object literal for the '<em><b>Required Fields</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT__REQUIRED_FIELDS = eINSTANCE.getComponent_RequiredFields();
+
+		/**
 		 * The meta object literal for the '<em><b>Api Version</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -10577,6 +11245,24 @@ public interface DaprdesignerPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute NAMERESOLUTION__HELP = eINSTANCE.getNameresolution_Help();
+
+		/**
+		 * The meta object literal for the '{@link daprdesigner.impl.ConversationImpl <em>Conversation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see daprdesigner.impl.ConversationImpl
+		 * @see daprdesigner.impl.DaprdesignerPackageImpl#getConversation()
+		 * @generated
+		 */
+		EClass CONVERSATION = eINSTANCE.getConversation();
+
+		/**
+		 * The meta object literal for the '<em><b>Help</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONVERSATION__HELP = eINSTANCE.getConversation_Help();
 
 		/**
 		 * The meta object literal for the '{@link daprdesigner.AccessAction <em>Access Action</em>}' enum.

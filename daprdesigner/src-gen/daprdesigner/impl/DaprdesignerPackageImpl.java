@@ -17,6 +17,7 @@ import daprdesigner.CircuitBreakerPolicy;
 import daprdesigner.Component;
 import daprdesigner.ComponentSpec;
 import daprdesigner.ConfigurationStore;
+import daprdesigner.Conversation;
 import daprdesigner.Cryptography;
 import daprdesigner.DaprArchitecture;
 import daprdesigner.DaprNode;
@@ -411,6 +412,13 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass conversationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum accessActionEEnum = null;
 
 	/**
@@ -581,7 +589,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDaprArchitecture_Name() {
+	public EAttribute getDaprArchitecture_RequiredFields() {
 		return (EAttribute) daprArchitectureEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -590,8 +598,17 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getDaprArchitecture_Name() {
+		return (EAttribute) daprArchitectureEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getDaprArchitecture_Buildingblocks() {
-		return (EReference) daprArchitectureEClass.getEStructuralFeatures().get(1);
+		return (EReference) daprArchitectureEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -608,7 +625,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBlock_IsReady() {
+	public EAttribute getBlock_RequiredFields() {
 		return (EAttribute) blockEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -617,7 +634,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBlock_Name() {
+	public EAttribute getBlock_IsReady() {
 		return (EAttribute) blockEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -626,7 +643,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBlock_Description() {
+	public EAttribute getBlock_Name() {
 		return (EAttribute) blockEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -635,7 +652,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBlock_Notes() {
+	public EAttribute getBlock_Description() {
 		return (EAttribute) blockEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -644,7 +661,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBlock_BlockType() {
+	public EAttribute getBlock_Notes() {
 		return (EAttribute) blockEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -653,8 +670,17 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getBlock_BlockType() {
+		return (EAttribute) blockEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getBlock_Subblocks() {
-		return (EReference) blockEClass.getEStructuralFeatures().get(5);
+		return (EReference) blockEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -663,7 +689,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * @generated
 	 */
 	public EReference getBlock_Nodes() {
-		return (EReference) blockEClass.getEStructuralFeatures().get(6);
+		return (EReference) blockEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -725,7 +751,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getNodeBlocks_NodeBlockType() {
+	public EAttribute getNodeBlocks_RequiredFields() {
 		return (EAttribute) nodeBlocksEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -734,8 +760,17 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getNodeBlocks_NodeBlockType() {
+		return (EAttribute) nodeBlocksEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getNodeBlocks_Nodes() {
-		return (EReference) nodeBlocksEClass.getEStructuralFeatures().get(1);
+		return (EReference) nodeBlocksEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -752,8 +787,17 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getNamespace_Help() {
+	public EAttribute getNamespace_RequiredFields() {
 		return (EAttribute) namespaceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNamespace_Help() {
+		return (EAttribute) namespaceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -770,8 +814,17 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTrustdomain_Help() {
+	public EAttribute getTrustdomain_RequiredFields() {
 		return (EAttribute) trustdomainEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTrustdomain_Help() {
+		return (EAttribute) trustdomainEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -788,7 +841,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getApp_Help() {
+	public EAttribute getApp_RequiredFields() {
 		return (EAttribute) appEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -797,7 +850,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getApp_AppId() {
+	public EAttribute getApp_Help() {
 		return (EAttribute) appEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -806,7 +859,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getApp_AppDirPath() {
+	public EAttribute getApp_AppId() {
 		return (EAttribute) appEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -815,8 +868,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getApp_Repository() {
-		return (EAttribute) appEClass.getEStructuralFeatures().get(10);
+	public EAttribute getApp_AppDirPath() {
+		return (EAttribute) appEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -824,7 +877,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getApp_SwaggerLink() {
+	public EAttribute getApp_Repository() {
 		return (EAttribute) appEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -833,8 +886,17 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getApp_SwaggerLink() {
+		return (EAttribute) appEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getApp_SdkLanguage() {
-		return (EAttribute) appEClass.getEStructuralFeatures().get(9);
+		return (EAttribute) appEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -843,15 +905,6 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * @generated
 	 */
 	public EReference getApp_Namespace() {
-		return (EReference) appEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getApp_TrustDomain() {
 		return (EReference) appEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -860,8 +913,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getApp_Command() {
-		return (EAttribute) appEClass.getEStructuralFeatures().get(5);
+	public EReference getApp_TrustDomain() {
+		return (EReference) appEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -869,7 +922,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getApp_AppHealthCheckPath() {
+	public EAttribute getApp_Command() {
 		return (EAttribute) appEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -878,7 +931,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getApp_ContainerImage() {
+	public EAttribute getApp_AppHealthCheckPath() {
 		return (EAttribute) appEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -887,8 +940,17 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getApp_ContainerImage() {
+		return (EAttribute) appEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getApp_Configurations() {
-		return (EReference) appEClass.getEStructuralFeatures().get(8);
+		return (EReference) appEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -986,8 +1048,17 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getDeniedComponentsConfiguration_RequiredFields() {
+		return (EAttribute) deniedComponentsConfigurationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getDeniedComponentsConfiguration_DeniedComponents() {
-		return (EReference) deniedComponentsConfigurationEClass.getEStructuralFeatures().get(1);
+		return (EReference) deniedComponentsConfigurationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -996,7 +1067,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * @generated
 	 */
 	public EAttribute getDeniedComponentsConfiguration_Help() {
-		return (EAttribute) deniedComponentsConfigurationEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) deniedComponentsConfigurationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1013,8 +1084,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLoggingConfiguration_Enabled() {
-		return (EAttribute) loggingConfigurationEClass.getEStructuralFeatures().get(1);
+	public EAttribute getLoggingConfiguration_RequiredFields() {
+		return (EAttribute) loggingConfigurationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1022,7 +1093,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLoggingConfiguration_ObfuscateUrls() {
+	public EAttribute getLoggingConfiguration_Enabled() {
 		return (EAttribute) loggingConfigurationEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1031,7 +1102,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLoggingConfiguration_OmitHealthChecks() {
+	public EAttribute getLoggingConfiguration_ObfuscateUrls() {
 		return (EAttribute) loggingConfigurationEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1040,8 +1111,17 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getLoggingConfiguration_OmitHealthChecks() {
+		return (EAttribute) loggingConfigurationEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getLoggingConfiguration_Help() {
-		return (EAttribute) loggingConfigurationEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) loggingConfigurationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1058,34 +1138,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getNameResolutionConfiguration_ComponentVersion() {
-		return (EAttribute) nameResolutionConfigurationEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNameResolutionConfiguration_ConfigurationKey() {
-		return (EAttribute) nameResolutionConfigurationEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNameResolutionConfiguration_ConfigurationValue() {
-		return (EAttribute) nameResolutionConfigurationEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNameResolutionConfiguration_Help() {
+	public EAttribute getNameResolutionConfiguration_RequiredFields() {
 		return (EAttribute) nameResolutionConfigurationEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1094,8 +1147,44 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getNameResolutionConfiguration_NameResolutionComponent() {
+	public EAttribute getNameResolutionConfiguration_ComponentVersion() {
+		return (EAttribute) nameResolutionConfigurationEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNameResolutionConfiguration_ConfigurationKey() {
+		return (EAttribute) nameResolutionConfigurationEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNameResolutionConfiguration_ConfigurationValue() {
+		return (EAttribute) nameResolutionConfigurationEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNameResolutionConfiguration_Help() {
 		return (EAttribute) nameResolutionConfigurationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNameResolutionConfiguration_NameResolutionComponent() {
+		return (EAttribute) nameResolutionConfigurationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1112,8 +1201,17 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getSecretsAccessConfiguration_RequiredFields() {
+		return (EAttribute) secretsAccessConfigurationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getSecretsAccessConfiguration_AccessList() {
-		return (EReference) secretsAccessConfigurationEClass.getEStructuralFeatures().get(1);
+		return (EReference) secretsAccessConfigurationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1122,7 +1220,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * @generated
 	 */
 	public EAttribute getSecretsAccessConfiguration_Help() {
-		return (EAttribute) secretsAccessConfigurationEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) secretsAccessConfigurationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1391,8 +1489,17 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getAppPolicy_RequiredFields() {
+		return (EAttribute) appPolicyEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getAppPolicy_App() {
-		return (EReference) appPolicyEClass.getEStructuralFeatures().get(1);
+		return (EReference) appPolicyEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1401,7 +1508,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * @generated
 	 */
 	public EAttribute getAppPolicy_DefaultAction() {
-		return (EAttribute) appPolicyEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) appPolicyEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1410,15 +1517,6 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * @generated
 	 */
 	public EReference getAppPolicy_TrustDomain() {
-		return (EReference) appPolicyEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAppPolicy_Namespace() {
 		return (EReference) appPolicyEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1427,7 +1525,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAppPolicy_Operations() {
+	public EReference getAppPolicy_Namespace() {
 		return (EReference) appPolicyEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -1436,8 +1534,17 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getAppPolicy_Operations() {
+		return (EReference) appPolicyEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getAppPolicy_Help() {
-		return (EAttribute) appPolicyEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) appPolicyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1832,7 +1939,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getResiliencyConfiguration_Help() {
+	public EAttribute getResiliencyConfiguration_RequiredFields() {
 		return (EAttribute) resiliencyConfigurationEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1841,7 +1948,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getResiliencyConfiguration_ApiVersion() {
+	public EAttribute getResiliencyConfiguration_Help() {
 		return (EAttribute) resiliencyConfigurationEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1850,7 +1957,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getResiliencyConfiguration_Kind() {
+	public EAttribute getResiliencyConfiguration_ApiVersion() {
 		return (EAttribute) resiliencyConfigurationEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1859,7 +1966,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getResiliencyConfiguration_Version() {
+	public EAttribute getResiliencyConfiguration_Kind() {
 		return (EAttribute) resiliencyConfigurationEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1868,8 +1975,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getResiliencyConfiguration_Scopes() {
-		return (EReference) resiliencyConfigurationEClass.getEStructuralFeatures().get(4);
+	public EAttribute getResiliencyConfiguration_Version() {
+		return (EAttribute) resiliencyConfigurationEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1877,7 +1984,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getResiliencyConfiguration_Policy() {
+	public EReference getResiliencyConfiguration_Scopes() {
 		return (EReference) resiliencyConfigurationEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -1886,8 +1993,17 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getResiliencyConfiguration_ResiliencyTargets() {
+	public EReference getResiliencyConfiguration_Policy() {
 		return (EReference) resiliencyConfigurationEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getResiliencyConfiguration_ResiliencyTargets() {
+		return (EReference) resiliencyConfigurationEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -2264,7 +2380,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getComponent_ApiVersion() {
+	public EAttribute getComponent_RequiredFields() {
 		return (EAttribute) componentEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -2273,7 +2389,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getComponent_Kind() {
+	public EAttribute getComponent_ApiVersion() {
 		return (EAttribute) componentEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -2282,7 +2398,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getComponent_ProviderName() {
+	public EAttribute getComponent_Kind() {
 		return (EAttribute) componentEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -2291,7 +2407,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getComponent_ProviderVersion() {
+	public EAttribute getComponent_ProviderName() {
 		return (EAttribute) componentEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -2300,8 +2416,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComponent_Auth() {
-		return (EReference) componentEClass.getEStructuralFeatures().get(4);
+	public EAttribute getComponent_ProviderVersion() {
+		return (EAttribute) componentEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -2309,7 +2425,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComponent_Metadata_namespace() {
+	public EReference getComponent_Auth() {
 		return (EReference) componentEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -2318,8 +2434,8 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getComponent_IgnoreErrors() {
-		return (EAttribute) componentEClass.getEStructuralFeatures().get(6);
+	public EReference getComponent_Metadata_namespace() {
+		return (EReference) componentEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -2327,7 +2443,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getComponent_InitTimeout() {
+	public EAttribute getComponent_IgnoreErrors() {
 		return (EAttribute) componentEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -2336,8 +2452,17 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getComponent_InitTimeout() {
+		return (EAttribute) componentEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getComponent_SpecMetadata() {
-		return (EReference) componentEClass.getEStructuralFeatures().get(8);
+		return (EReference) componentEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -2346,7 +2471,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * @generated
 	 */
 	public EReference getComponent_Scopes() {
-		return (EReference) componentEClass.getEStructuralFeatures().get(9);
+		return (EReference) componentEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -2633,6 +2758,24 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getConversation() {
+		return conversationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getConversation_Help() {
+		return (EAttribute) conversationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getAccessAction() {
 		return accessActionEEnum;
 	}
@@ -2752,10 +2895,12 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		createEAttribute(eStringToStringMapEntryEClass, ESTRING_TO_STRING_MAP_ENTRY__VALUE);
 
 		daprArchitectureEClass = createEClass(DAPR_ARCHITECTURE);
+		createEAttribute(daprArchitectureEClass, DAPR_ARCHITECTURE__REQUIRED_FIELDS);
 		createEAttribute(daprArchitectureEClass, DAPR_ARCHITECTURE__NAME);
 		createEReference(daprArchitectureEClass, DAPR_ARCHITECTURE__BUILDINGBLOCKS);
 
 		blockEClass = createEClass(BLOCK);
+		createEAttribute(blockEClass, BLOCK__REQUIRED_FIELDS);
 		createEAttribute(blockEClass, BLOCK__IS_READY);
 		createEAttribute(blockEClass, BLOCK__NAME);
 		createEAttribute(blockEClass, BLOCK__DESCRIPTION);
@@ -2771,16 +2916,20 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		createEAttribute(daprNodeEClass, DAPR_NODE__NOTES);
 
 		nodeBlocksEClass = createEClass(NODE_BLOCKS);
+		createEAttribute(nodeBlocksEClass, NODE_BLOCKS__REQUIRED_FIELDS);
 		createEAttribute(nodeBlocksEClass, NODE_BLOCKS__NODE_BLOCK_TYPE);
 		createEReference(nodeBlocksEClass, NODE_BLOCKS__NODES);
 
 		namespaceEClass = createEClass(NAMESPACE);
+		createEAttribute(namespaceEClass, NAMESPACE__REQUIRED_FIELDS);
 		createEAttribute(namespaceEClass, NAMESPACE__HELP);
 
 		trustdomainEClass = createEClass(TRUSTDOMAIN);
+		createEAttribute(trustdomainEClass, TRUSTDOMAIN__REQUIRED_FIELDS);
 		createEAttribute(trustdomainEClass, TRUSTDOMAIN__HELP);
 
 		appEClass = createEClass(APP);
+		createEAttribute(appEClass, APP__REQUIRED_FIELDS);
 		createEAttribute(appEClass, APP__HELP);
 		createEAttribute(appEClass, APP__APP_ID);
 		createEAttribute(appEClass, APP__APP_DIR_PATH);
@@ -2808,16 +2957,19 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		createEAttribute(appConfigurationEClass, APP_CONFIGURATION__KIND);
 
 		deniedComponentsConfigurationEClass = createEClass(DENIED_COMPONENTS_CONFIGURATION);
+		createEAttribute(deniedComponentsConfigurationEClass, DENIED_COMPONENTS_CONFIGURATION__REQUIRED_FIELDS);
 		createEAttribute(deniedComponentsConfigurationEClass, DENIED_COMPONENTS_CONFIGURATION__HELP);
 		createEReference(deniedComponentsConfigurationEClass, DENIED_COMPONENTS_CONFIGURATION__DENIED_COMPONENTS);
 
 		loggingConfigurationEClass = createEClass(LOGGING_CONFIGURATION);
+		createEAttribute(loggingConfigurationEClass, LOGGING_CONFIGURATION__REQUIRED_FIELDS);
 		createEAttribute(loggingConfigurationEClass, LOGGING_CONFIGURATION__HELP);
 		createEAttribute(loggingConfigurationEClass, LOGGING_CONFIGURATION__ENABLED);
 		createEAttribute(loggingConfigurationEClass, LOGGING_CONFIGURATION__OBFUSCATE_URLS);
 		createEAttribute(loggingConfigurationEClass, LOGGING_CONFIGURATION__OMIT_HEALTH_CHECKS);
 
 		nameResolutionConfigurationEClass = createEClass(NAME_RESOLUTION_CONFIGURATION);
+		createEAttribute(nameResolutionConfigurationEClass, NAME_RESOLUTION_CONFIGURATION__REQUIRED_FIELDS);
 		createEAttribute(nameResolutionConfigurationEClass, NAME_RESOLUTION_CONFIGURATION__HELP);
 		createEAttribute(nameResolutionConfigurationEClass, NAME_RESOLUTION_CONFIGURATION__NAME_RESOLUTION_COMPONENT);
 		createEAttribute(nameResolutionConfigurationEClass, NAME_RESOLUTION_CONFIGURATION__COMPONENT_VERSION);
@@ -2825,6 +2977,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		createEAttribute(nameResolutionConfigurationEClass, NAME_RESOLUTION_CONFIGURATION__CONFIGURATION_VALUE);
 
 		secretsAccessConfigurationEClass = createEClass(SECRETS_ACCESS_CONFIGURATION);
+		createEAttribute(secretsAccessConfigurationEClass, SECRETS_ACCESS_CONFIGURATION__REQUIRED_FIELDS);
 		createEAttribute(secretsAccessConfigurationEClass, SECRETS_ACCESS_CONFIGURATION__HELP);
 		createEReference(secretsAccessConfigurationEClass, SECRETS_ACCESS_CONFIGURATION__ACCESS_LIST);
 
@@ -2862,6 +3015,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		createEReference(appAccessControlEClass, APP_ACCESS_CONTROL__POLICIES);
 
 		appPolicyEClass = createEClass(APP_POLICY);
+		createEAttribute(appPolicyEClass, APP_POLICY__REQUIRED_FIELDS);
 		createEAttribute(appPolicyEClass, APP_POLICY__HELP);
 		createEReference(appPolicyEClass, APP_POLICY__APP);
 		createEAttribute(appPolicyEClass, APP_POLICY__DEFAULT_ACTION);
@@ -2920,6 +3074,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		createEAttribute(routeRulesEClass, ROUTE_RULES__PATH);
 
 		resiliencyConfigurationEClass = createEClass(RESILIENCY_CONFIGURATION);
+		createEAttribute(resiliencyConfigurationEClass, RESILIENCY_CONFIGURATION__REQUIRED_FIELDS);
 		createEAttribute(resiliencyConfigurationEClass, RESILIENCY_CONFIGURATION__HELP);
 		createEAttribute(resiliencyConfigurationEClass, RESILIENCY_CONFIGURATION__API_VERSION);
 		createEAttribute(resiliencyConfigurationEClass, RESILIENCY_CONFIGURATION__KIND);
@@ -2975,6 +3130,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		createEReference(httpEndPointEClass, HTTP_END_POINT__SPEC_PRIVATE_KEY);
 
 		componentEClass = createEClass(COMPONENT);
+		createEAttribute(componentEClass, COMPONENT__REQUIRED_FIELDS);
 		createEAttribute(componentEClass, COMPONENT__API_VERSION);
 		createEAttribute(componentEClass, COMPONENT__KIND);
 		createEAttribute(componentEClass, COMPONENT__PROVIDER_NAME);
@@ -3027,6 +3183,9 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 
 		nameresolutionEClass = createEClass(NAMERESOLUTION);
 		createEAttribute(nameresolutionEClass, NAMERESOLUTION__HELP);
+
+		conversationEClass = createEClass(CONVERSATION);
+		createEAttribute(conversationEClass, CONVERSATION__HELP);
 
 		// Create enums
 		accessActionEEnum = createEEnum(ACCESS_ACTION);
@@ -3113,6 +3272,7 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		cryptographyEClass.getESuperTypes().add(this.getComponent());
 		middlewareEClass.getESuperTypes().add(this.getComponent());
 		nameresolutionEClass.getESuperTypes().add(this.getComponent());
+		conversationEClass.getESuperTypes().add(this.getComponent());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(eStringToStringMapEntryEClass, Map.Entry.class, "EStringToStringMapEntry", !IS_ABSTRACT,
@@ -3125,6 +3285,9 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 
 		initEClass(daprArchitectureEClass, DaprArchitecture.class, "DaprArchitecture", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDaprArchitecture_RequiredFields(), ecorePackage.getEString(), "requiredFields", "Name", 0, 1,
+				DaprArchitecture.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDaprArchitecture_Name(), ecorePackage.getEString(), "name", null, 0, 1,
 				DaprArchitecture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
@@ -3133,6 +3296,9 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBlock_RequiredFields(), ecorePackage.getEString(), "requiredFields", "Name", 0, 1,
+				Block.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBlock_IsReady(), ecorePackage.getEBoolean(), "isReady", "false", 0, 1, Block.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBlock_Name(), ecorePackage.getEString(), "name", null, 0, 1, Block.class, !IS_TRANSIENT,
@@ -3162,6 +3328,9 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 
 		initEClass(nodeBlocksEClass, NodeBlocks.class, "NodeBlocks", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNodeBlocks_RequiredFields(), ecorePackage.getEString(), "requiredFields", "Name", 0, 1,
+				NodeBlocks.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNodeBlocks_NodeBlockType(), this.getNodeBlockType(), "nodeBlockType", null, 0, 1,
 				NodeBlocks.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
@@ -3171,18 +3340,27 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 
 		initEClass(namespaceEClass, Namespace.class, "Namespace", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNamespace_RequiredFields(), ecorePackage.getEString(), "requiredFields", "Name", 0, 1,
+				Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNamespace_Help(), ecorePackage.getEString(), "help",
 				"https://docs.dapr.io/operations/components/component-scopes/", 0, 1, Namespace.class, !IS_TRANSIENT,
 				!IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(trustdomainEClass, Trustdomain.class, "Trustdomain", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTrustdomain_RequiredFields(), ecorePackage.getEString(), "requiredFields", "Name", 0, 1,
+				Trustdomain.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrustdomain_Help(), ecorePackage.getEString(), "help",
 				"https://docs.dapr.io/operations/configuration/invoke-allowlist/#trustdomain", 0, 1, Trustdomain.class,
 				!IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 
 		initEClass(appEClass, App.class, "App", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getApp_RequiredFields(), ecorePackage.getEString(), "requiredFields",
+				"Name, App Id, App Dir Path, Namespace, Trustdomain", 0, 1, App.class, !IS_TRANSIENT, !IS_VOLATILE,
+				!IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getApp_Help(), ecorePackage.getEString(), "help",
 				"https://docs.dapr.io/developing-applications/building-blocks/service-invocation/service-invocation-overview/",
 				0, 1, App.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
@@ -3244,6 +3422,9 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 
 		initEClass(deniedComponentsConfigurationEClass, DeniedComponentsConfiguration.class,
 				"DeniedComponentsConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDeniedComponentsConfiguration_RequiredFields(), ecorePackage.getEString(), "requiredFields",
+				"Name, Denied Compoenents", 0, 1, DeniedComponentsConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE,
+				!IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDeniedComponentsConfiguration_Help(), ecorePackage.getEString(), "help",
 				"https://docs.dapr.io/operations/configuration/configuration-overview/#disallow-usage-of-certain-component-types",
 				0, 1, DeniedComponentsConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE,
@@ -3254,6 +3435,9 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 
 		initEClass(loggingConfigurationEClass, LoggingConfiguration.class, "LoggingConfiguration", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLoggingConfiguration_RequiredFields(), ecorePackage.getEString(), "requiredFields", "Name", 0,
+				1, LoggingConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLoggingConfiguration_Help(), ecorePackage.getEString(), "help",
 				"https://docs.dapr.io/operations/configuration/configuration-overview/#logging", 0, 1,
 				LoggingConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
@@ -3270,6 +3454,9 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 
 		initEClass(nameResolutionConfigurationEClass, NameResolutionConfiguration.class, "NameResolutionConfiguration",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNameResolutionConfiguration_RequiredFields(), ecorePackage.getEString(), "requiredFields",
+				"Name", 0, 1, NameResolutionConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNameResolutionConfiguration_Help(), ecorePackage.getEString(), "help",
 				"https://docs.dapr.io/operations/configuration/configuration-overview/#name-resolution-component", 0, 1,
 				NameResolutionConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
@@ -3289,6 +3476,9 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 
 		initEClass(secretsAccessConfigurationEClass, SecretsAccessConfiguration.class, "SecretsAccessConfiguration",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSecretsAccessConfiguration_RequiredFields(), ecorePackage.getEString(), "requiredFields",
+				"Name", 0, 1, SecretsAccessConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSecretsAccessConfiguration_Help(), ecorePackage.getEString(), "help",
 				"https://docs.dapr.io/operations/configuration/secret-scope/", 0, 1, SecretsAccessConfiguration.class,
 				!IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
@@ -3384,6 +3574,9 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 
 		initEClass(appPolicyEClass, AppPolicy.class, "AppPolicy", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAppPolicy_RequiredFields(), ecorePackage.getEString(), "requiredFields",
+				"Name, App, Trust Domain, Namespace", 0, 1, AppPolicy.class, !IS_TRANSIENT, !IS_VOLATILE,
+				!IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAppPolicy_Help(), ecorePackage.getEString(), "help",
 				"https://docs.dapr.io/operations/configuration/invoke-allowlist/#policies", 0, 1, AppPolicy.class,
 				!IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
@@ -3531,6 +3724,9 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 
 		initEClass(resiliencyConfigurationEClass, ResiliencyConfiguration.class, "ResiliencyConfiguration",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getResiliencyConfiguration_RequiredFields(), ecorePackage.getEString(), "requiredFields",
+				"Name, Scopes", 0, 1, ResiliencyConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getResiliencyConfiguration_Help(), ecorePackage.getEString(), "help",
 				"https://docs.dapr.io/reference/resource-specs/resiliency-schema/", 0, 1, ResiliencyConfiguration.class,
 				!IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
@@ -3676,6 +3872,10 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 
 		initEClass(componentEClass, Component.class, "Component", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getComponent_RequiredFields(), ecorePackage.getEString(), "requiredFields",
+				"Name, Provider Name, Provider Version, Scopes, Metadata Namespace", 0, 1, Component.class,
+				!IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 		initEAttribute(getComponent_ApiVersion(), ecorePackage.getEString(), "apiVersion", "dapr.io/v1alpha1", 0, 1,
 				Component.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
@@ -3807,6 +4007,13 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 				Nameresolution.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
+		initEClass(conversationEClass, Conversation.class, "Conversation", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getConversation_Help(), ecorePackage.getEString(), "help",
+				"https://docs.dapr.io/reference/components-reference/supported-conversation/", 0, 1, Conversation.class,
+				!IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(accessActionEEnum, AccessAction.class, "AccessAction");
 		addEEnumLiteral(accessActionEEnum, AccessAction.ALLOW);
@@ -3821,78 +4028,80 @@ public class DaprdesignerPackageImpl extends EPackageImpl implements Daprdesigne
 		addEEnumLiteral(httpHandlerTypeEEnum, HttpHandlerType.OUTGOING);
 
 		initEEnum(resiliencyTargetTypeEEnum, ResiliencyTargetType.class, "ResiliencyTargetType");
-		addEEnumLiteral(resiliencyTargetTypeEEnum, ResiliencyTargetType.APP);
 		addEEnumLiteral(resiliencyTargetTypeEEnum, ResiliencyTargetType.ACTOR);
+		addEEnumLiteral(resiliencyTargetTypeEEnum, ResiliencyTargetType.APP);
 		addEEnumLiteral(resiliencyTargetTypeEEnum, ResiliencyTargetType.COMPONENT_INBOUND);
 		addEEnumLiteral(resiliencyTargetTypeEEnum, ResiliencyTargetType.COMPONENT_OUTBOUND);
 
 		initEEnum(blockTypeEEnum, BlockType.class, "BlockType");
-		addEEnumLiteral(blockTypeEEnum, BlockType.ENVIRONMENT);
-		addEEnumLiteral(blockTypeEEnum, BlockType.MICROSERVICES);
-		addEEnumLiteral(blockTypeEEnum, BlockType.PUBSUB);
-		addEEnumLiteral(blockTypeEEnum, BlockType.SECRETSTORE);
-		addEEnumLiteral(blockTypeEEnum, BlockType.BINDINGS);
-		addEEnumLiteral(blockTypeEEnum, BlockType.JOBS);
-		addEEnumLiteral(blockTypeEEnum, BlockType.WORKFLOW);
 		addEEnumLiteral(blockTypeEEnum, BlockType.ACTORS);
-		addEEnumLiteral(blockTypeEEnum, BlockType.STATESTORE);
-		addEEnumLiteral(blockTypeEEnum, BlockType.DISTRIBUTEDLOCK);
-		addEEnumLiteral(blockTypeEEnum, BlockType.CRYPTOGRAPHY);
+		addEEnumLiteral(blockTypeEEnum, BlockType.BINDINGS);
 		addEEnumLiteral(blockTypeEEnum, BlockType.CONFIGURATION);
 		addEEnumLiteral(blockTypeEEnum, BlockType.CONFIGURATIONGROUP);
+		addEEnumLiteral(blockTypeEEnum, BlockType.CONVERSATION);
+		addEEnumLiteral(blockTypeEEnum, BlockType.CRYPTOGRAPHY);
+		addEEnumLiteral(blockTypeEEnum, BlockType.DISTRIBUTEDLOCK);
+		addEEnumLiteral(blockTypeEEnum, BlockType.ENVIRONMENT);
+		addEEnumLiteral(blockTypeEEnum, BlockType.JOBS);
+		addEEnumLiteral(blockTypeEEnum, BlockType.MICROSERVICES);
 		addEEnumLiteral(blockTypeEEnum, BlockType.MIDDLEWARE);
+		addEEnumLiteral(blockTypeEEnum, BlockType.PUBSUB);
+		addEEnumLiteral(blockTypeEEnum, BlockType.SECRETSTORE);
+		addEEnumLiteral(blockTypeEEnum, BlockType.STATESTORE);
+		addEEnumLiteral(blockTypeEEnum, BlockType.WORKFLOW);
 
 		initEEnum(nodeBlockTypeEEnum, NodeBlockType.class, "NodeBlockType");
-		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.APP);
 		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.ACTOR);
-		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.WORKFLOW);
-		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.PUBSUB);
+		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.APP);
 		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.BINDING);
-		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.SECRETSTORE);
-		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.STATESTORE);
-		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.DISTRIBUTEDLOCK);
+		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.CONFIGURATIONSTORE);
+		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.CONVERSATION);
 		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.CRYPTOGRAPHY);
-		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.SUBSCRIPTION);
-		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.RESILIENCY);
+		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.DISTRIBUTEDLOCK);
 		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.HTTPENDPOINT);
 		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.JOBS);
-		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.CONFIGURATIONSTORE);
 		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.MIDDLEWARE);
+		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.PUBSUB);
+		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.RESILIENCY);
+		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.SECRETSTORE);
+		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.STATESTORE);
+		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.SUBSCRIPTION);
+		addEEnumLiteral(nodeBlockTypeEEnum, NodeBlockType.WORKFLOW);
 
 		initEEnum(apiTypeEEnum, APIType.class, "APIType");
-		addEEnumLiteral(apiTypeEEnum, APIType.INVOKE);
-		addEEnumLiteral(apiTypeEEnum, APIType.STATE);
-		addEEnumLiteral(apiTypeEEnum, APIType.PUBLISH);
-		addEEnumLiteral(apiTypeEEnum, APIType.SUBSCRIBE);
-		addEEnumLiteral(apiTypeEEnum, APIType.BINDINGS);
-		addEEnumLiteral(apiTypeEEnum, APIType.SECRETS);
 		addEEnumLiteral(apiTypeEEnum, APIType.ACTORS);
-		addEEnumLiteral(apiTypeEEnum, APIType.METADATA);
+		addEEnumLiteral(apiTypeEEnum, APIType.BINDINGS);
 		addEEnumLiteral(apiTypeEEnum, APIType.CONFIGURATION);
-		addEEnumLiteral(apiTypeEEnum, APIType.LOCK);
-		addEEnumLiteral(apiTypeEEnum, APIType.UNLOCK);
 		addEEnumLiteral(apiTypeEEnum, APIType.CRYPTO);
-		addEEnumLiteral(apiTypeEEnum, APIType.WORKFLOWS);
 		addEEnumLiteral(apiTypeEEnum, APIType.HEALTHZ);
+		addEEnumLiteral(apiTypeEEnum, APIType.INVOKE);
+		addEEnumLiteral(apiTypeEEnum, APIType.LOCK);
+		addEEnumLiteral(apiTypeEEnum, APIType.METADATA);
+		addEEnumLiteral(apiTypeEEnum, APIType.PUBLISH);
+		addEEnumLiteral(apiTypeEEnum, APIType.SECRETS);
 		addEEnumLiteral(apiTypeEEnum, APIType.SHUTDOWN);
+		addEEnumLiteral(apiTypeEEnum, APIType.STATE);
+		addEEnumLiteral(apiTypeEEnum, APIType.SUBSCRIBE);
+		addEEnumLiteral(apiTypeEEnum, APIType.UNLOCK);
+		addEEnumLiteral(apiTypeEEnum, APIType.WORKFLOWS);
 
 		initEEnum(sdkLanguageEEnum, SDKLanguage.class, "SDKLanguage");
-		addEEnumLiteral(sdkLanguageEEnum, SDKLanguage.JAVA);
 		addEEnumLiteral(sdkLanguageEEnum, SDKLanguage.CSHARP);
-		addEEnumLiteral(sdkLanguageEEnum, SDKLanguage.PYTHON);
+		addEEnumLiteral(sdkLanguageEEnum, SDKLanguage.JAVA);
 		addEEnumLiteral(sdkLanguageEEnum, SDKLanguage.NODE);
+		addEEnumLiteral(sdkLanguageEEnum, SDKLanguage.PYTHON);
 		addEEnumLiteral(sdkLanguageEEnum, SDKLanguage.RUST);
 
 		initEEnum(protocolEEnum, Protocol.class, "Protocol");
-		addEEnumLiteral(protocolEEnum, Protocol.HTTP);
 		addEEnumLiteral(protocolEEnum, Protocol.GRPC);
+		addEEnumLiteral(protocolEEnum, Protocol.HTTP);
 
 		initEEnum(verbEEnum, Verb.class, "Verb");
 		addEEnumLiteral(verbEEnum, Verb.GET);
-		addEEnumLiteral(verbEEnum, Verb.POST);
-		addEEnumLiteral(verbEEnum, Verb.PUT);
 		addEEnumLiteral(verbEEnum, Verb.DELETE);
 		addEEnumLiteral(verbEEnum, Verb.PATCH);
+		addEEnumLiteral(verbEEnum, Verb.POST);
+		addEEnumLiteral(verbEEnum, Verb.PUT);
 
 		// Create resource
 		createResource(eNS_URI);

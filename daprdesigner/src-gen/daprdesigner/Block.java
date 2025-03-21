@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link daprdesigner.Block#getRequiredFields <em>Required Fields</em>}</li>
  *   <li>{@link daprdesigner.Block#isIsReady <em>Is Ready</em>}</li>
  *   <li>{@link daprdesigner.Block#getName <em>Name</em>}</li>
  *   <li>{@link daprdesigner.Block#getDescription <em>Description</em>}</li>
@@ -29,6 +30,18 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Block extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Required Fields</b></em>' attribute.
+	 * The default value is <code>"Name"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Required Fields</em>' attribute.
+	 * @see daprdesigner.DaprdesignerPackage#getBlock_RequiredFields()
+	 * @model default="Name" changeable="false"
+	 * @generated
+	 */
+	String getRequiredFields();
+
 	/**
 	 * Returns the value of the '<em><b>Is Ready</b></em>' attribute.
 	 * The default value is <code>"false"</code>.

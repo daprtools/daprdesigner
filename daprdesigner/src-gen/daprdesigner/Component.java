@@ -13,6 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link daprdesigner.Component#getRequiredFields <em>Required Fields</em>}</li>
  *   <li>{@link daprdesigner.Component#getApiVersion <em>Api Version</em>}</li>
  *   <li>{@link daprdesigner.Component#getKind <em>Kind</em>}</li>
  *   <li>{@link daprdesigner.Component#getProviderName <em>Provider Name</em>}</li>
@@ -30,6 +31,18 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface Component extends DaprNode {
+	/**
+	 * Returns the value of the '<em><b>Required Fields</b></em>' attribute.
+	 * The default value is <code>"Name, Provider Name, Provider Version, Scopes, Metadata Namespace"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Required Fields</em>' attribute.
+	 * @see daprdesigner.DaprdesignerPackage#getComponent_RequiredFields()
+	 * @model default="Name, Provider Name, Provider Version, Scopes, Metadata Namespace" changeable="false"
+	 * @generated
+	 */
+	String getRequiredFields();
+
 	/**
 	 * Returns the value of the '<em><b>Api Version</b></em>' attribute.
 	 * The default value is <code>"dapr.io/v1alpha1"</code>.

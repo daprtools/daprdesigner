@@ -11,6 +11,7 @@ package daprdesigner;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link daprdesigner.Trustdomain#getRequiredFields <em>Required Fields</em>}</li>
  *   <li>{@link daprdesigner.Trustdomain#getHelp <em>Help</em>}</li>
  * </ul>
  *
@@ -19,6 +20,18 @@ package daprdesigner;
  * @generated
  */
 public interface Trustdomain extends DaprNode {
+	/**
+	 * Returns the value of the '<em><b>Required Fields</b></em>' attribute.
+	 * The default value is <code>"Name"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Required Fields</em>' attribute.
+	 * @see daprdesigner.DaprdesignerPackage#getTrustdomain_RequiredFields()
+	 * @model default="Name" changeable="false"
+	 * @generated
+	 */
+	String getRequiredFields();
+
 	/**
 	 * Returns the value of the '<em><b>Help</b></em>' attribute.
 	 * The default value is <code>"https://docs.dapr.io/operations/configuration/invoke-allowlist/#trustdomain"</code>.

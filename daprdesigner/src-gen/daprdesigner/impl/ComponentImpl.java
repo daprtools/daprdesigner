@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link daprdesigner.impl.ComponentImpl#getRequiredFields <em>Required Fields</em>}</li>
  *   <li>{@link daprdesigner.impl.ComponentImpl#getApiVersion <em>Api Version</em>}</li>
  *   <li>{@link daprdesigner.impl.ComponentImpl#getKind <em>Kind</em>}</li>
  *   <li>{@link daprdesigner.impl.ComponentImpl#getProviderName <em>Provider Name</em>}</li>
@@ -44,6 +45,26 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * @generated
  */
 public abstract class ComponentImpl extends DaprNodeImpl implements Component {
+	/**
+	 * The default value of the '{@link #getRequiredFields() <em>Required Fields</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiredFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REQUIRED_FIELDS_EDEFAULT = "Name, Provider Name, Provider Version, Scopes, Metadata Namespace";
+
+	/**
+	 * The cached value of the '{@link #getRequiredFields() <em>Required Fields</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiredFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected String requiredFields = REQUIRED_FIELDS_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getApiVersion() <em>Api Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -221,6 +242,15 @@ public abstract class ComponentImpl extends DaprNodeImpl implements Component {
 	@Override
 	protected EClass eStaticClass() {
 		return DaprdesignerPackage.Literals.COMPONENT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getRequiredFields() {
+		return requiredFields;
 	}
 
 	/**
@@ -442,6 +472,8 @@ public abstract class ComponentImpl extends DaprNodeImpl implements Component {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case DaprdesignerPackage.COMPONENT__REQUIRED_FIELDS:
+			return getRequiredFields();
 		case DaprdesignerPackage.COMPONENT__API_VERSION:
 			return getApiVersion();
 		case DaprdesignerPackage.COMPONENT__KIND:
@@ -553,6 +585,9 @@ public abstract class ComponentImpl extends DaprNodeImpl implements Component {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case DaprdesignerPackage.COMPONENT__REQUIRED_FIELDS:
+			return REQUIRED_FIELDS_EDEFAULT == null ? requiredFields != null
+					: !REQUIRED_FIELDS_EDEFAULT.equals(requiredFields);
 		case DaprdesignerPackage.COMPONENT__API_VERSION:
 			return API_VERSION_EDEFAULT == null ? apiVersion != null : !API_VERSION_EDEFAULT.equals(apiVersion);
 		case DaprdesignerPackage.COMPONENT__KIND:
@@ -589,7 +624,9 @@ public abstract class ComponentImpl extends DaprNodeImpl implements Component {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (apiVersion: ");
+		result.append(" (requiredFields: ");
+		result.append(requiredFields);
+		result.append(", apiVersion: ");
 		result.append(apiVersion);
 		result.append(", kind: ");
 		result.append(kind);

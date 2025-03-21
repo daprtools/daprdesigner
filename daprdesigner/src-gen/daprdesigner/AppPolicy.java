@@ -13,6 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link daprdesigner.AppPolicy#getRequiredFields <em>Required Fields</em>}</li>
  *   <li>{@link daprdesigner.AppPolicy#getHelp <em>Help</em>}</li>
  *   <li>{@link daprdesigner.AppPolicy#getApp <em>App</em>}</li>
  *   <li>{@link daprdesigner.AppPolicy#getDefaultAction <em>Default Action</em>}</li>
@@ -26,6 +27,18 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface AppPolicy extends DaprNode {
+	/**
+	 * Returns the value of the '<em><b>Required Fields</b></em>' attribute.
+	 * The default value is <code>"Name, App, Trust Domain, Namespace"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Required Fields</em>' attribute.
+	 * @see daprdesigner.DaprdesignerPackage#getAppPolicy_RequiredFields()
+	 * @model default="Name, App, Trust Domain, Namespace" changeable="false"
+	 * @generated
+	 */
+	String getRequiredFields();
+
 	/**
 	 * Returns the value of the '<em><b>App</b></em>' reference.
 	 * <!-- begin-user-doc -->

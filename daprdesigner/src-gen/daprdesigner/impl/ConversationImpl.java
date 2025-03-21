@@ -2,46 +2,25 @@
  */
 package daprdesigner.impl;
 
+import daprdesigner.Conversation;
 import daprdesigner.DaprdesignerPackage;
-import daprdesigner.Namespace;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Namespace</b></em>'.
+ * An implementation of the model object '<em><b>Conversation</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link daprdesigner.impl.NamespaceImpl#getRequiredFields <em>Required Fields</em>}</li>
- *   <li>{@link daprdesigner.impl.NamespaceImpl#getHelp <em>Help</em>}</li>
+ *   <li>{@link daprdesigner.impl.ConversationImpl#getHelp <em>Help</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class NamespaceImpl extends DaprNodeImpl implements Namespace {
-	/**
-	 * The default value of the '{@link #getRequiredFields() <em>Required Fields</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRequiredFields()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String REQUIRED_FIELDS_EDEFAULT = "Name";
-
-	/**
-	 * The cached value of the '{@link #getRequiredFields() <em>Required Fields</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRequiredFields()
-	 * @generated
-	 * @ordered
-	 */
-	protected String requiredFields = REQUIRED_FIELDS_EDEFAULT;
-
+public class ConversationImpl extends ComponentImpl implements Conversation {
 	/**
 	 * The default value of the '{@link #getHelp() <em>Help</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -50,7 +29,7 @@ public class NamespaceImpl extends DaprNodeImpl implements Namespace {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String HELP_EDEFAULT = "https://docs.dapr.io/operations/components/component-scopes/";
+	protected static final String HELP_EDEFAULT = "https://docs.dapr.io/reference/components-reference/supported-conversation/";
 
 	/**
 	 * The cached value of the '{@link #getHelp() <em>Help</em>}' attribute.
@@ -67,7 +46,7 @@ public class NamespaceImpl extends DaprNodeImpl implements Namespace {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected NamespaceImpl() {
+	protected ConversationImpl() {
 		super();
 	}
 
@@ -78,16 +57,7 @@ public class NamespaceImpl extends DaprNodeImpl implements Namespace {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DaprdesignerPackage.Literals.NAMESPACE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getRequiredFields() {
-		return requiredFields;
+		return DaprdesignerPackage.Literals.CONVERSATION;
 	}
 
 	/**
@@ -107,9 +77,7 @@ public class NamespaceImpl extends DaprNodeImpl implements Namespace {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DaprdesignerPackage.NAMESPACE__REQUIRED_FIELDS:
-			return getRequiredFields();
-		case DaprdesignerPackage.NAMESPACE__HELP:
+		case DaprdesignerPackage.CONVERSATION__HELP:
 			return getHelp();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -123,10 +91,7 @@ public class NamespaceImpl extends DaprNodeImpl implements Namespace {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DaprdesignerPackage.NAMESPACE__REQUIRED_FIELDS:
-			return REQUIRED_FIELDS_EDEFAULT == null ? requiredFields != null
-					: !REQUIRED_FIELDS_EDEFAULT.equals(requiredFields);
-		case DaprdesignerPackage.NAMESPACE__HELP:
+		case DaprdesignerPackage.CONVERSATION__HELP:
 			return HELP_EDEFAULT == null ? help != null : !HELP_EDEFAULT.equals(help);
 		}
 		return super.eIsSet(featureID);
@@ -143,12 +108,10 @@ public class NamespaceImpl extends DaprNodeImpl implements Namespace {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (requiredFields: ");
-		result.append(requiredFields);
-		result.append(", help: ");
+		result.append(" (help: ");
 		result.append(help);
 		result.append(')');
 		return result.toString();
 	}
 
-} //NamespaceImpl
+} //ConversationImpl

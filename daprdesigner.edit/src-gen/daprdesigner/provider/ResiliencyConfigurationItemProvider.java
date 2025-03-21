@@ -43,6 +43,7 @@ public class ResiliencyConfigurationItemProvider extends DaprNodeItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addRequiredFieldsPropertyDescriptor(object);
 			addHelpPropertyDescriptor(object);
 			addApiVersionPropertyDescriptor(object);
 			addKindPropertyDescriptor(object);
@@ -52,6 +53,22 @@ public class ResiliencyConfigurationItemProvider extends DaprNodeItemProvider {
 			addResiliencyTargetsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Required Fields feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequiredFieldsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_ResiliencyConfiguration_requiredFields_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ResiliencyConfiguration_requiredFields_feature",
+						"_UI_ResiliencyConfiguration_type"),
+				DaprdesignerPackage.Literals.RESILIENCY_CONFIGURATION__REQUIRED_FIELDS, false, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -210,6 +227,7 @@ public class ResiliencyConfigurationItemProvider extends DaprNodeItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ResiliencyConfiguration.class)) {
+		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__REQUIRED_FIELDS:
 		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__HELP:
 		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__API_VERSION:
 		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__KIND:

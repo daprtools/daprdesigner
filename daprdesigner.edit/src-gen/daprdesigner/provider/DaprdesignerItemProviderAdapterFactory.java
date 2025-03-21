@@ -1085,6 +1085,29 @@ public class DaprdesignerItemProviderAdapterFactory extends DaprdesignerAdapterF
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link daprdesigner.Conversation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConversationItemProvider conversationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link daprdesigner.Conversation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createConversationAdapter() {
+		if (conversationItemProvider == null) {
+			conversationItemProvider = new ConversationItemProvider(this);
+		}
+
+		return conversationItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1271,6 +1294,8 @@ public class DaprdesignerItemProviderAdapterFactory extends DaprdesignerAdapterF
 			middlewareItemProvider.dispose();
 		if (nameresolutionItemProvider != null)
 			nameresolutionItemProvider.dispose();
+		if (conversationItemProvider != null)
+			conversationItemProvider.dispose();
 	}
 
 }

@@ -19,16 +19,6 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum SDKLanguage implements Enumerator {
 	/**
-	 * The '<em><b>JAVA</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #JAVA_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	JAVA(0, "JAVA", "JAVA"),
-
-	/**
 	 * The '<em><b>CSHARP</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -36,17 +26,16 @@ public enum SDKLanguage implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CSHARP(1, "CSHARP", "CSHARP"),
-
+	CSHARP(0, "CSHARP", "CSHARP"),
 	/**
-	 * The '<em><b>PYTHON</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #PYTHON_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	PYTHON(2, "PYTHON", "PYTHON"),
+	* The '<em><b>JAVA</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #JAVA_VALUE
+	* @generated
+	* @ordered
+	*/
+	JAVA(1, "JAVA", "JAVA"),
 
 	/**
 	 * The '<em><b>NODE</b></em>' literal object.
@@ -56,7 +45,16 @@ public enum SDKLanguage implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	NODE(3, "NODE", "NODE"),
+	NODE(2, "NODE", "NODE"),
+	/**
+	* The '<em><b>PYTHON</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #PYTHON_VALUE
+	* @generated
+	* @ordered
+	*/
+	PYTHON(3, "PYTHON", "PYTHON"),
 
 	/**
 	 * The '<em><b>RUST</b></em>' literal object.
@@ -69,17 +67,6 @@ public enum SDKLanguage implements Enumerator {
 	RUST(4, "RUST", "RUST");
 
 	/**
-	 * The '<em><b>JAVA</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #JAVA
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int JAVA_VALUE = 0;
-
-	/**
 	 * The '<em><b>CSHARP</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -88,18 +75,18 @@ public enum SDKLanguage implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CSHARP_VALUE = 1;
+	public static final int CSHARP_VALUE = 0;
 
 	/**
-	 * The '<em><b>PYTHON</b></em>' literal value.
+	 * The '<em><b>JAVA</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PYTHON
+	 * @see #JAVA
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PYTHON_VALUE = 2;
+	public static final int JAVA_VALUE = 1;
 
 	/**
 	 * The '<em><b>NODE</b></em>' literal value.
@@ -110,7 +97,18 @@ public enum SDKLanguage implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int NODE_VALUE = 3;
+	public static final int NODE_VALUE = 2;
+
+	/**
+	 * The '<em><b>PYTHON</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #PYTHON
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int PYTHON_VALUE = 3;
 
 	/**
 	 * The '<em><b>RUST</b></em>' literal value.
@@ -129,7 +127,7 @@ public enum SDKLanguage implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final SDKLanguage[] VALUES_ARRAY = new SDKLanguage[] { JAVA, CSHARP, PYTHON, NODE, RUST, };
+	private static final SDKLanguage[] VALUES_ARRAY = new SDKLanguage[] { CSHARP, JAVA, NODE, PYTHON, RUST, };
 
 	/**
 	 * A public read-only list of all the '<em><b>SDK Language</b></em>' enumerators.
@@ -185,14 +183,14 @@ public enum SDKLanguage implements Enumerator {
 	 */
 	public static SDKLanguage get(int value) {
 		switch (value) {
-		case JAVA_VALUE:
-			return JAVA;
 		case CSHARP_VALUE:
 			return CSHARP;
-		case PYTHON_VALUE:
-			return PYTHON;
+		case JAVA_VALUE:
+			return JAVA;
 		case NODE_VALUE:
 			return NODE;
+		case PYTHON_VALUE:
+			return PYTHON;
 		case RUST_VALUE:
 			return RUST;
 		}

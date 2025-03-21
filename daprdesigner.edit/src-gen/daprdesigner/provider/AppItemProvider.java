@@ -44,6 +44,7 @@ public class AppItemProvider extends DaprNodeItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addRequiredFieldsPropertyDescriptor(object);
 			addHelpPropertyDescriptor(object);
 			addAppIdPropertyDescriptor(object);
 			addAppDirPathPropertyDescriptor(object);
@@ -58,6 +59,22 @@ public class AppItemProvider extends DaprNodeItemProvider {
 			addSwaggerLinkPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Required Fields feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequiredFieldsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_App_requiredFields_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_App_requiredFields_feature",
+								"_UI_App_type"),
+						DaprdesignerPackage.Literals.APP__REQUIRED_FIELDS, false, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -286,6 +303,7 @@ public class AppItemProvider extends DaprNodeItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(App.class)) {
+		case DaprdesignerPackage.APP__REQUIRED_FIELDS:
 		case DaprdesignerPackage.APP__HELP:
 		case DaprdesignerPackage.APP__APP_ID:
 		case DaprdesignerPackage.APP__APP_DIR_PATH:

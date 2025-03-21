@@ -13,6 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link daprdesigner.ResiliencyConfiguration#getRequiredFields <em>Required Fields</em>}</li>
  *   <li>{@link daprdesigner.ResiliencyConfiguration#getHelp <em>Help</em>}</li>
  *   <li>{@link daprdesigner.ResiliencyConfiguration#getApiVersion <em>Api Version</em>}</li>
  *   <li>{@link daprdesigner.ResiliencyConfiguration#getKind <em>Kind</em>}</li>
@@ -27,6 +28,18 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface ResiliencyConfiguration extends DaprNode {
+	/**
+	 * Returns the value of the '<em><b>Required Fields</b></em>' attribute.
+	 * The default value is <code>"Name, Scopes"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Required Fields</em>' attribute.
+	 * @see daprdesigner.DaprdesignerPackage#getResiliencyConfiguration_RequiredFields()
+	 * @model default="Name, Scopes" changeable="false"
+	 * @generated
+	 */
+	String getRequiredFields();
+
 	/**
 	 * Returns the value of the '<em><b>Help</b></em>' attribute.
 	 * The default value is <code>"https://docs.dapr.io/reference/resource-specs/resiliency-schema/"</code>.

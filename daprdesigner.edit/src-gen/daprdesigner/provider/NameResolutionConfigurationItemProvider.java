@@ -44,6 +44,7 @@ public class NameResolutionConfigurationItemProvider extends AppConfigurationIte
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addRequiredFieldsPropertyDescriptor(object);
 			addHelpPropertyDescriptor(object);
 			addNameResolutionComponentPropertyDescriptor(object);
 			addComponentVersionPropertyDescriptor(object);
@@ -51,6 +52,23 @@ public class NameResolutionConfigurationItemProvider extends AppConfigurationIte
 			addConfigurationValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Required Fields feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequiredFieldsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_NameResolutionConfiguration_requiredFields_feature"),
+						getString("_UI_PropertyDescriptor_description",
+								"_UI_NameResolutionConfiguration_requiredFields_feature",
+								"_UI_NameResolutionConfiguration_type"),
+						DaprdesignerPackage.Literals.NAME_RESOLUTION_CONFIGURATION__REQUIRED_FIELDS, false, false,
+						false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -183,6 +201,7 @@ public class NameResolutionConfigurationItemProvider extends AppConfigurationIte
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(NameResolutionConfiguration.class)) {
+		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__REQUIRED_FIELDS:
 		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__HELP:
 		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__NAME_RESOLUTION_COMPONENT:
 		case DaprdesignerPackage.NAME_RESOLUTION_CONFIGURATION__COMPONENT_VERSION:

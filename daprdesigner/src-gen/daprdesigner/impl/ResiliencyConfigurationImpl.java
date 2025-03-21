@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link daprdesigner.impl.ResiliencyConfigurationImpl#getRequiredFields <em>Required Fields</em>}</li>
  *   <li>{@link daprdesigner.impl.ResiliencyConfigurationImpl#getHelp <em>Help</em>}</li>
  *   <li>{@link daprdesigner.impl.ResiliencyConfigurationImpl#getApiVersion <em>Api Version</em>}</li>
  *   <li>{@link daprdesigner.impl.ResiliencyConfigurationImpl#getKind <em>Kind</em>}</li>
@@ -39,6 +40,26 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * @generated
  */
 public class ResiliencyConfigurationImpl extends DaprNodeImpl implements ResiliencyConfiguration {
+	/**
+	 * The default value of the '{@link #getRequiredFields() <em>Required Fields</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiredFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REQUIRED_FIELDS_EDEFAULT = "Name, Scopes";
+
+	/**
+	 * The cached value of the '{@link #getRequiredFields() <em>Required Fields</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiredFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected String requiredFields = REQUIRED_FIELDS_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getHelp() <em>Help</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -173,6 +194,15 @@ public class ResiliencyConfigurationImpl extends DaprNodeImpl implements Resilie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getRequiredFields() {
+		return requiredFields;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getHelp() {
 		return help;
 	}
@@ -278,6 +308,8 @@ public class ResiliencyConfigurationImpl extends DaprNodeImpl implements Resilie
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__REQUIRED_FIELDS:
+			return getRequiredFields();
 		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__HELP:
 			return getHelp();
 		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__API_VERSION:
@@ -351,6 +383,9 @@ public class ResiliencyConfigurationImpl extends DaprNodeImpl implements Resilie
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__REQUIRED_FIELDS:
+			return REQUIRED_FIELDS_EDEFAULT == null ? requiredFields != null
+					: !REQUIRED_FIELDS_EDEFAULT.equals(requiredFields);
 		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__HELP:
 			return HELP_EDEFAULT == null ? help != null : !HELP_EDEFAULT.equals(help);
 		case DaprdesignerPackage.RESILIENCY_CONFIGURATION__API_VERSION:
@@ -380,7 +415,9 @@ public class ResiliencyConfigurationImpl extends DaprNodeImpl implements Resilie
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (help: ");
+		result.append(" (requiredFields: ");
+		result.append(requiredFields);
+		result.append(", help: ");
 		result.append(help);
 		result.append(", apiVersion: ");
 		result.append(apiVersion);

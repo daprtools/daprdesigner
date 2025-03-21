@@ -48,9 +48,26 @@ public class NodeBlocksItemProvider extends DaprNodeItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addRequiredFieldsPropertyDescriptor(object);
 			addNodeBlockTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Required Fields feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequiredFieldsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_NodeBlocks_requiredFields_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_NodeBlocks_requiredFields_feature",
+								"_UI_NodeBlocks_type"),
+						DaprdesignerPackage.Literals.NODE_BLOCKS__REQUIRED_FIELDS, false, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -140,6 +157,8 @@ public class NodeBlocksItemProvider extends DaprNodeItemProvider {
 			return overlayImage(object, getResourceLocator().getImage("full/obj16/ConfigurationStore"));
 		case MIDDLEWARE:
 			return overlayImage(object, getResourceLocator().getImage("full/obj16/Middleware"));
+		case CONVERSATION:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/Conversation"));	
 
 		}
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/NodeBlocks"));
@@ -180,6 +199,7 @@ public class NodeBlocksItemProvider extends DaprNodeItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(NodeBlocks.class)) {
+		case DaprdesignerPackage.NODE_BLOCKS__REQUIRED_FIELDS:
 		case DaprdesignerPackage.NODE_BLOCKS__NODE_BLOCK_TYPE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
@@ -323,6 +343,9 @@ public class NodeBlocksItemProvider extends DaprNodeItemProvider {
 
 		newChildDescriptors.add(createChildParameter(DaprdesignerPackage.Literals.NODE_BLOCKS__NODES,
 				DaprdesignerFactory.eINSTANCE.createNameresolution()));
+
+		newChildDescriptors.add(createChildParameter(DaprdesignerPackage.Literals.NODE_BLOCKS__NODES,
+				DaprdesignerFactory.eINSTANCE.createConversation()));
 	}
 
 }

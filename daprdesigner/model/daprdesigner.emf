@@ -25,98 +25,103 @@ enum HttpHandlerType{
 }
 
 enum ResiliencyTargetType{
-	APP=1;
-	ACTOR=2;
-	COMPONENT_INBOUND=3;
-	COMPONENT_OUTBOUND=4;
+	ACTOR;
+	APP;
+	COMPONENT_INBOUND;
+	COMPONENT_OUTBOUND;
 	
 }
 
 enum BlockType{
-	ENVIRONMENT;
-	MICROSERVICES;
-	PUBSUB;
-	SECRETSTORE;
-	BINDINGS;
-	JOBS;
-	WORKFLOW;
+
 	ACTORS;
-	STATESTORE;
-	DISTRIBUTEDLOCK;
-	CRYPTOGRAPHY;
+	BINDINGS;
 	CONFIGURATION;
 	CONFIGURATIONGROUP;
-	MIDDLEWARE;		
+	CONVERSATION;
+	CRYPTOGRAPHY;
+	DISTRIBUTEDLOCK;
+	ENVIRONMENT;
+	JOBS;
+	MICROSERVICES;
+	MIDDLEWARE;
+	PUBSUB;
+	SECRETSTORE;
+	STATESTORE;
+	WORKFLOW;			
 }
 
 enum NodeBlockType{
-	APP;
 	ACTOR;
-	WORKFLOW;
-	PUBSUB;
+	APP;
 	BINDING;
-	SECRETSTORE;
-	STATESTORE;
-	DISTRIBUTEDLOCK;
+	CONFIGURATIONSTORE;
+	CONVERSATION;
 	CRYPTOGRAPHY;
-	SUBSCRIPTION;
-	RESILIENCY;
+	DISTRIBUTEDLOCK;
 	HTTPENDPOINT;
 	JOBS;
-	CONFIGURATIONSTORE;
 	MIDDLEWARE;
-	
-	
+	PUBSUB;	
+	RESILIENCY;
+	SECRETSTORE;
+	STATESTORE;
+	SUBSCRIPTION;
+	WORKFLOW;
+
 }
 
 enum APIType{
-	
-	INVOKE;
-	STATE;
-	PUBLISH;
-	SUBSCRIBE;
-	BINDINGS;
-	SECRETS;
 	ACTORS;
-	METADATA;
+	BINDINGS;
 	CONFIGURATION;
-	LOCK;
-	UNLOCK;
 	CRYPTO;
-	WORKFLOWS;
 	HEALTHZ;
+	INVOKE;
+	LOCK;
+	METADATA;
+	PUBLISH;
+	SECRETS;
 	SHUTDOWN;
-	
+	STATE;
+	SUBSCRIBE;
+	UNLOCK;
+	WORKFLOWS;	
 }
 enum SDKLanguage{
-	JAVA;
 	CSHARP;
-	PYTHON;
+	JAVA;
 	NODE;
+	PYTHON;
 	RUST;	
 }
 
 enum Protocol{
-	HTTP;
 	GRPC;
+	HTTP;
+	
 }
 
 enum Verb{
 	GET;
-	POST;
-	PUT;
 	DELETE;
 	PATCH;
+	POST;
+	PUT;
+	
+	
 }
 
 // Base classes
 class DaprArchitecture {
+	readonly attr String requiredFields = "Name";
 	attr String name;
 	val Block[*] buildingblocks;
 	
 }
 
 class Block{
+	readonly attr String requiredFields = "Name";
 	attr boolean isReady=false;
 	attr String name;
 	attr String description;
@@ -127,6 +132,7 @@ class Block{
 }
 
 abstract class DaprNode{
+	
 	attr boolean isReady=false;
 	attr String name;
 	attr String description;
@@ -135,13 +141,14 @@ abstract class DaprNode{
 }
 
 class NodeBlocks extends DaprNode{
-	
+	readonly attr String requiredFields = "Name";
 	attr NodeBlockType nodeBlockType;
 	val DaprNode[*] nodes;	
 	
 }
 
 class Namespace extends DaprNode{
+	readonly attr String requiredFields = "Name";
 	readonly attr String help = "https://docs.dapr.io/operations/components/component-scopes/";
 
 
@@ -149,6 +156,7 @@ class Namespace extends DaprNode{
 	
 }
 class Trustdomain extends DaprNode{
+	readonly attr String requiredFields = "Name";
 	
 	readonly attr String help = "https://docs.dapr.io/operations/configuration/invoke-allowlist/#trustdomain";
 }
@@ -156,6 +164,7 @@ class Trustdomain extends DaprNode{
 
 
 class App extends DaprNode{
+	readonly attr String requiredFields = "Name, App Id, App Dir Path, Namespace, Trustdomain";
 	readonly attr String help = "https://docs.dapr.io/developing-applications/building-blocks/service-invocation/service-invocation-overview/";
 	attr String appId;
 	attr String appDirPath;
@@ -214,6 +223,7 @@ abstract class AppConfiguration extends DaprNode{
 
 // Components Deny List
 class DeniedComponentsConfiguration extends AppConfiguration{
+	readonly attr String requiredFields = "Name, Denied Compoenents";
 	readonly attr String help = "https://docs.dapr.io/operations/configuration/configuration-overview/#disallow-usage-of-certain-component-types";
 	ref Component[*] deniedComponents;
 	
@@ -224,6 +234,7 @@ class DeniedComponentsConfiguration extends AppConfiguration{
 
 //Logging configuration
 class LoggingConfiguration extends AppConfiguration{
+	readonly attr String requiredFields = "Name";
 	readonly attr String help= "https://docs.dapr.io/operations/configuration/configuration-overview/#logging";
 	attr boolean enabled = true;
 	attr boolean obfuscateUrls = false;
@@ -234,6 +245,7 @@ class LoggingConfiguration extends AppConfiguration{
 
 //Name Resolution Configuration
 class NameResolutionConfiguration extends AppConfiguration{
+	readonly attr String requiredFields = "Name";
 	readonly attr String help= "https://docs.dapr.io/operations/configuration/configuration-overview/#name-resolution-component";
 	attr String nameResolutionComponent;
 	attr String componentVersion;
@@ -246,6 +258,7 @@ class NameResolutionConfiguration extends AppConfiguration{
 //Secrets configuration
 class SecretsAccessConfiguration extends AppConfiguration
 {
+	readonly attr String requiredFields = "Name";
 	readonly attr String help= "https://docs.dapr.io/operations/configuration/secret-scope/";
    	ref SecretsAccessList[*] accessList;
    
@@ -253,6 +266,7 @@ class SecretsAccessConfiguration extends AppConfiguration
 }
 
 class SecretsAccessList extends DaprNode{
+
 	readonly attr String help= "https://docs.dapr.io/operations/configuration/secret-scope/";
 	ref SecretStore secretStore;
 	attr AccessAction defaultAccess;
@@ -305,6 +319,7 @@ class AppAccessControl extends AppConfiguration {
 
 
 class AppPolicy extends DaprNode {
+	readonly attr String requiredFields = "Name, App, Trust Domain, Namespace";
 	readonly attr String help= "https://docs.dapr.io/operations/configuration/invoke-allowlist/#policies";
 	ref App app;
 	attr AccessAction defaultAction;
@@ -384,6 +399,7 @@ class RouteRules extends DaprNode{
 
 // Resiliency Configuration
 class ResiliencyConfiguration extends DaprNode{
+	readonly attr String requiredFields = "Name, Scopes";
 	readonly attr String help= "https://docs.dapr.io/reference/resource-specs/resiliency-schema/";
 	readonly attr String apiVersion = "dapr.io/v2alpha1";
 	readonly attr String kind = "Resiliency";
@@ -466,6 +482,7 @@ class HTTPEndPoint extends DaprNode {
 
 //Component Definitions
 abstract class Component extends DaprNode {
+	readonly attr String requiredFields = "Name, Provider Name, Provider Version, Scopes, Metadata Namespace";
 			
 	readonly attr String apiVersion = "dapr.io/v1alpha1";
 	readonly attr String kind = "Component";
@@ -548,6 +565,10 @@ class Nameresolution extends Component{
 	
 }
 
+class Conversation extends Component{
+	readonly attr String help= "https://docs.dapr.io/reference/components-reference/supported-conversation/";
+	
+}
 
 
 

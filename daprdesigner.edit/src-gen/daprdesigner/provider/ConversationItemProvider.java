@@ -2,8 +2,8 @@
  */
 package daprdesigner.provider;
 
+import daprdesigner.Conversation;
 import daprdesigner.DaprdesignerPackage;
-import daprdesigner.SecretsAccessConfiguration;
 
 import java.util.Collection;
 import java.util.List;
@@ -17,19 +17,19 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link daprdesigner.SecretsAccessConfiguration} object.
+ * This is the item provider adapter for a {@link daprdesigner.Conversation} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class SecretsAccessConfigurationItemProvider extends AppConfigurationItemProvider {
+public class ConversationItemProvider extends ComponentItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SecretsAccessConfigurationItemProvider(AdapterFactory adapterFactory) {
+	public ConversationItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -44,43 +44,9 @@ public class SecretsAccessConfigurationItemProvider extends AppConfigurationItem
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addRequiredFieldsPropertyDescriptor(object);
 			addHelpPropertyDescriptor(object);
-			addAccessListPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Required Fields feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRequiredFieldsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_SecretsAccessConfiguration_requiredFields_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_SecretsAccessConfiguration_requiredFields_feature",
-						"_UI_SecretsAccessConfiguration_type"),
-				DaprdesignerPackage.Literals.SECRETS_ACCESS_CONFIGURATION__REQUIRED_FIELDS, false, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Access List feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAccessListPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_SecretsAccessConfiguration_accessList_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_SecretsAccessConfiguration_accessList_feature",
-						"_UI_SecretsAccessConfiguration_type"),
-				DaprdesignerPackage.Literals.SECRETS_ACCESS_CONFIGURATION__ACCESS_LIST, true, false, true, null, null,
-				null));
 	}
 
 	/**
@@ -92,22 +58,22 @@ public class SecretsAccessConfigurationItemProvider extends AppConfigurationItem
 	protected void addHelpPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_SecretsAccessConfiguration_help_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_SecretsAccessConfiguration_help_feature",
-								"_UI_SecretsAccessConfiguration_type"),
-						DaprdesignerPackage.Literals.SECRETS_ACCESS_CONFIGURATION__HELP, false, false, false,
+						getResourceLocator(), getString("_UI_Conversation_help_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Conversation_help_feature",
+								"_UI_Conversation_type"),
+						DaprdesignerPackage.Literals.CONVERSATION__HELP, false, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This returns SecretsAccessConfiguration.gif.
+	 * This returns Conversation.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/SecretsAccessConfiguration"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Conversation"));
 	}
 
 	/**
@@ -128,9 +94,9 @@ public class SecretsAccessConfigurationItemProvider extends AppConfigurationItem
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((SecretsAccessConfiguration) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_SecretsAccessConfiguration_type")
-				: getString("_UI_SecretsAccessConfiguration_type") + " " + label;
+		String label = ((Conversation) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Conversation_type")
+				: getString("_UI_Conversation_type") + " " + label;
 	}
 
 	/**
@@ -144,9 +110,8 @@ public class SecretsAccessConfigurationItemProvider extends AppConfigurationItem
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(SecretsAccessConfiguration.class)) {
-		case DaprdesignerPackage.SECRETS_ACCESS_CONFIGURATION__REQUIRED_FIELDS:
-		case DaprdesignerPackage.SECRETS_ACCESS_CONFIGURATION__HELP:
+		switch (notification.getFeatureID(Conversation.class)) {
+		case DaprdesignerPackage.CONVERSATION__HELP:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

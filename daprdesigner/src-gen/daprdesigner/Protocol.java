@@ -19,16 +19,6 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum Protocol implements Enumerator {
 	/**
-	 * The '<em><b>HTTP</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #HTTP_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	HTTP(0, "HTTP", "HTTP"),
-
-	/**
 	 * The '<em><b>GRPC</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -36,18 +26,16 @@ public enum Protocol implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	GRPC(1, "GRPC", "GRPC");
-
+	GRPC(0, "GRPC", "GRPC"),
 	/**
-	 * The '<em><b>HTTP</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #HTTP
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int HTTP_VALUE = 0;
+	* The '<em><b>HTTP</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #HTTP_VALUE
+	* @generated
+	* @ordered
+	*/
+	HTTP(1, "HTTP", "HTTP");
 
 	/**
 	 * The '<em><b>GRPC</b></em>' literal value.
@@ -58,7 +46,18 @@ public enum Protocol implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int GRPC_VALUE = 1;
+	public static final int GRPC_VALUE = 0;
+
+	/**
+	 * The '<em><b>HTTP</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #HTTP
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int HTTP_VALUE = 1;
 
 	/**
 	 * An array of all the '<em><b>Protocol</b></em>' enumerators.
@@ -66,7 +65,7 @@ public enum Protocol implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final Protocol[] VALUES_ARRAY = new Protocol[] { HTTP, GRPC, };
+	private static final Protocol[] VALUES_ARRAY = new Protocol[] { GRPC, HTTP, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Protocol</b></em>' enumerators.
@@ -122,10 +121,10 @@ public enum Protocol implements Enumerator {
 	 */
 	public static Protocol get(int value) {
 		switch (value) {
-		case HTTP_VALUE:
-			return HTTP;
 		case GRPC_VALUE:
 			return GRPC;
+		case HTTP_VALUE:
+			return HTTP;
 		}
 		return null;
 	}

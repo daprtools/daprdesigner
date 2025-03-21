@@ -19,66 +19,6 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum APIType implements Enumerator {
 	/**
-	 * The '<em><b>INVOKE</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #INVOKE_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	INVOKE(0, "INVOKE", "INVOKE"),
-
-	/**
-	 * The '<em><b>STATE</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #STATE_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	STATE(1, "STATE", "STATE"),
-
-	/**
-	 * The '<em><b>PUBLISH</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #PUBLISH_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	PUBLISH(2, "PUBLISH", "PUBLISH"),
-
-	/**
-	 * The '<em><b>SUBSCRIBE</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #SUBSCRIBE_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	SUBSCRIBE(3, "SUBSCRIBE", "SUBSCRIBE"),
-
-	/**
-	 * The '<em><b>BINDINGS</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #BINDINGS_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	BINDINGS(4, "BINDINGS", "BINDINGS"),
-
-	/**
-	 * The '<em><b>SECRETS</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #SECRETS_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	SECRETS(5, "SECRETS", "SECRETS"),
-
-	/**
 	 * The '<em><b>ACTORS</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -86,17 +26,16 @@ public enum APIType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ACTORS(6, "ACTORS", "ACTORS"),
-
+	ACTORS(0, "ACTORS", "ACTORS"),
 	/**
-	 * The '<em><b>METADATA</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #METADATA_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	METADATA(7, "METADATA", "METADATA"),
+	* The '<em><b>BINDINGS</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #BINDINGS_VALUE
+	* @generated
+	* @ordered
+	*/
+	BINDINGS(1, "BINDINGS", "BINDINGS"),
 
 	/**
 	 * The '<em><b>CONFIGURATION</b></em>' literal object.
@@ -106,27 +45,7 @@ public enum APIType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CONFIGURATION(8, "CONFIGURATION", "CONFIGURATION"),
-
-	/**
-	 * The '<em><b>LOCK</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #LOCK_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	LOCK(9, "LOCK", "LOCK"),
-
-	/**
-	 * The '<em><b>UNLOCK</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #UNLOCK_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	UNLOCK(10, "UNLOCK", "UNLOCK"),
+	CONFIGURATION(2, "CONFIGURATION", "CONFIGURATION"),
 
 	/**
 	 * The '<em><b>CRYPTO</b></em>' literal object.
@@ -136,17 +55,7 @@ public enum APIType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CRYPTO(11, "CRYPTO", "CRYPTO"),
-
-	/**
-	 * The '<em><b>WORKFLOWS</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #WORKFLOWS_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	WORKFLOWS(12, "WORKFLOWS", "WORKFLOWS"),
+	CRYPTO(3, "CRYPTO", "CRYPTO"),
 
 	/**
 	 * The '<em><b>HEALTHZ</b></em>' literal object.
@@ -156,7 +65,52 @@ public enum APIType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	HEALTHZ(13, "HEALTHZ", "HEALTHZ"),
+	HEALTHZ(4, "HEALTHZ", "HEALTHZ"),
+	/**
+	* The '<em><b>INVOKE</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #INVOKE_VALUE
+	* @generated
+	* @ordered
+	*/
+	INVOKE(5, "INVOKE", "INVOKE"),
+	/**
+	* The '<em><b>LOCK</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #LOCK_VALUE
+	* @generated
+	* @ordered
+	*/
+	LOCK(6, "LOCK", "LOCK"),
+	/**
+	* The '<em><b>METADATA</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #METADATA_VALUE
+	* @generated
+	* @ordered
+	*/
+	METADATA(7, "METADATA", "METADATA"),
+	/**
+	* The '<em><b>PUBLISH</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #PUBLISH_VALUE
+	* @generated
+	* @ordered
+	*/
+	PUBLISH(8, "PUBLISH", "PUBLISH"),
+	/**
+	* The '<em><b>SECRETS</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #SECRETS_VALUE
+	* @generated
+	* @ordered
+	*/
+	SECRETS(9, "SECRETS", "SECRETS"),
 
 	/**
 	 * The '<em><b>SHUTDOWN</b></em>' literal object.
@@ -166,73 +120,43 @@ public enum APIType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SHUTDOWN(14, "SHUTDOWN", "SHUTDOWN");
-
+	SHUTDOWN(10, "SHUTDOWN", "SHUTDOWN"),
 	/**
-	 * The '<em><b>INVOKE</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #INVOKE
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int INVOKE_VALUE = 0;
-
+	* The '<em><b>STATE</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #STATE_VALUE
+	* @generated
+	* @ordered
+	*/
+	STATE(11, "STATE", "STATE"),
 	/**
-	 * The '<em><b>STATE</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #STATE
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int STATE_VALUE = 1;
-
+	* The '<em><b>SUBSCRIBE</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #SUBSCRIBE_VALUE
+	* @generated
+	* @ordered
+	*/
+	SUBSCRIBE(12, "SUBSCRIBE", "SUBSCRIBE"),
 	/**
-	 * The '<em><b>PUBLISH</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #PUBLISH
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int PUBLISH_VALUE = 2;
-
+	* The '<em><b>UNLOCK</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #UNLOCK_VALUE
+	* @generated
+	* @ordered
+	*/
+	UNLOCK(13, "UNLOCK", "UNLOCK"),
 	/**
-	 * The '<em><b>SUBSCRIBE</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #SUBSCRIBE
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int SUBSCRIBE_VALUE = 3;
-
-	/**
-	 * The '<em><b>BINDINGS</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #BINDINGS
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int BINDINGS_VALUE = 4;
-
-	/**
-	 * The '<em><b>SECRETS</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #SECRETS
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int SECRETS_VALUE = 5;
+	* The '<em><b>WORKFLOWS</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #WORKFLOWS_VALUE
+	* @generated
+	* @ordered
+	*/
+	WORKFLOWS(14, "WORKFLOWS", "WORKFLOWS");
 
 	/**
 	 * The '<em><b>ACTORS</b></em>' literal value.
@@ -243,7 +167,73 @@ public enum APIType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ACTORS_VALUE = 6;
+	public static final int ACTORS_VALUE = 0;
+
+	/**
+	 * The '<em><b>BINDINGS</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #BINDINGS
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int BINDINGS_VALUE = 1;
+
+	/**
+	 * The '<em><b>CONFIGURATION</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #CONFIGURATION
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CONFIGURATION_VALUE = 2;
+
+	/**
+	 * The '<em><b>CRYPTO</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #CRYPTO
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CRYPTO_VALUE = 3;
+
+	/**
+	 * The '<em><b>HEALTHZ</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #HEALTHZ
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int HEALTHZ_VALUE = 4;
+
+	/**
+	 * The '<em><b>INVOKE</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #INVOKE
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int INVOKE_VALUE = 5;
+
+	/**
+	 * The '<em><b>LOCK</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #LOCK
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int LOCK_VALUE = 6;
 
 	/**
 	 * The '<em><b>METADATA</b></em>' literal value.
@@ -257,70 +247,26 @@ public enum APIType implements Enumerator {
 	public static final int METADATA_VALUE = 7;
 
 	/**
-	 * The '<em><b>CONFIGURATION</b></em>' literal value.
+	 * The '<em><b>PUBLISH</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #CONFIGURATION
+	 * @see #PUBLISH
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CONFIGURATION_VALUE = 8;
+	public static final int PUBLISH_VALUE = 8;
 
 	/**
-	 * The '<em><b>LOCK</b></em>' literal value.
+	 * The '<em><b>SECRETS</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #LOCK
+	 * @see #SECRETS
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LOCK_VALUE = 9;
-
-	/**
-	 * The '<em><b>UNLOCK</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #UNLOCK
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int UNLOCK_VALUE = 10;
-
-	/**
-	 * The '<em><b>CRYPTO</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #CRYPTO
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int CRYPTO_VALUE = 11;
-
-	/**
-	 * The '<em><b>WORKFLOWS</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #WORKFLOWS
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int WORKFLOWS_VALUE = 12;
-
-	/**
-	 * The '<em><b>HEALTHZ</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #HEALTHZ
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int HEALTHZ_VALUE = 13;
+	public static final int SECRETS_VALUE = 9;
 
 	/**
 	 * The '<em><b>SHUTDOWN</b></em>' literal value.
@@ -331,7 +277,51 @@ public enum APIType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SHUTDOWN_VALUE = 14;
+	public static final int SHUTDOWN_VALUE = 10;
+
+	/**
+	 * The '<em><b>STATE</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #STATE
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int STATE_VALUE = 11;
+
+	/**
+	 * The '<em><b>SUBSCRIBE</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #SUBSCRIBE
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int SUBSCRIBE_VALUE = 12;
+
+	/**
+	 * The '<em><b>UNLOCK</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #UNLOCK
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int UNLOCK_VALUE = 13;
+
+	/**
+	 * The '<em><b>WORKFLOWS</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #WORKFLOWS
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int WORKFLOWS_VALUE = 14;
 
 	/**
 	 * An array of all the '<em><b>API Type</b></em>' enumerators.
@@ -339,8 +329,8 @@ public enum APIType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final APIType[] VALUES_ARRAY = new APIType[] { INVOKE, STATE, PUBLISH, SUBSCRIBE, BINDINGS, SECRETS,
-			ACTORS, METADATA, CONFIGURATION, LOCK, UNLOCK, CRYPTO, WORKFLOWS, HEALTHZ, SHUTDOWN, };
+	private static final APIType[] VALUES_ARRAY = new APIType[] { ACTORS, BINDINGS, CONFIGURATION, CRYPTO, HEALTHZ,
+			INVOKE, LOCK, METADATA, PUBLISH, SECRETS, SHUTDOWN, STATE, SUBSCRIBE, UNLOCK, WORKFLOWS, };
 
 	/**
 	 * A public read-only list of all the '<em><b>API Type</b></em>' enumerators.
@@ -396,36 +386,36 @@ public enum APIType implements Enumerator {
 	 */
 	public static APIType get(int value) {
 		switch (value) {
-		case INVOKE_VALUE:
-			return INVOKE;
-		case STATE_VALUE:
-			return STATE;
-		case PUBLISH_VALUE:
-			return PUBLISH;
-		case SUBSCRIBE_VALUE:
-			return SUBSCRIBE;
-		case BINDINGS_VALUE:
-			return BINDINGS;
-		case SECRETS_VALUE:
-			return SECRETS;
 		case ACTORS_VALUE:
 			return ACTORS;
-		case METADATA_VALUE:
-			return METADATA;
+		case BINDINGS_VALUE:
+			return BINDINGS;
 		case CONFIGURATION_VALUE:
 			return CONFIGURATION;
-		case LOCK_VALUE:
-			return LOCK;
-		case UNLOCK_VALUE:
-			return UNLOCK;
 		case CRYPTO_VALUE:
 			return CRYPTO;
-		case WORKFLOWS_VALUE:
-			return WORKFLOWS;
 		case HEALTHZ_VALUE:
 			return HEALTHZ;
+		case INVOKE_VALUE:
+			return INVOKE;
+		case LOCK_VALUE:
+			return LOCK;
+		case METADATA_VALUE:
+			return METADATA;
+		case PUBLISH_VALUE:
+			return PUBLISH;
+		case SECRETS_VALUE:
+			return SECRETS;
 		case SHUTDOWN_VALUE:
 			return SHUTDOWN;
+		case STATE_VALUE:
+			return STATE;
+		case SUBSCRIBE_VALUE:
+			return SUBSCRIBE;
+		case UNLOCK_VALUE:
+			return UNLOCK;
+		case WORKFLOWS_VALUE:
+			return WORKFLOWS;
 		}
 		return null;
 	}

@@ -147,6 +147,8 @@ public class DaprdesignerFactoryImpl extends EFactoryImpl implements Daprdesigne
 			return createMiddleware();
 		case DaprdesignerPackage.NAMERESOLUTION:
 			return createNameresolution();
+		case DaprdesignerPackage.CONVERSATION:
+			return createConversation();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -656,6 +658,16 @@ public class DaprdesignerFactoryImpl extends EFactoryImpl implements Daprdesigne
 	public Nameresolution createNameresolution() {
 		NameresolutionImpl nameresolution = new NameresolutionImpl();
 		return nameresolution;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Conversation createConversation() {
+		ConversationImpl conversation = new ConversationImpl();
+		return conversation;
 	}
 
 	/**

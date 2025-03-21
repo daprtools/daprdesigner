@@ -57,6 +57,7 @@ public class BlockItemProvider extends ItemProviderAdapter implements IEditingDo
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addRequiredFieldsPropertyDescriptor(object);
 			addIsReadyPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
@@ -64,6 +65,22 @@ public class BlockItemProvider extends ItemProviderAdapter implements IEditingDo
 			addBlockTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Required Fields feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequiredFieldsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Block_requiredFields_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Block_requiredFields_feature",
+								"_UI_Block_type"),
+						DaprdesignerPackage.Literals.BLOCK__REQUIRED_FIELDS, false, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -213,6 +230,8 @@ public class BlockItemProvider extends ItemProviderAdapter implements IEditingDo
 			return overlayImage(object, getResourceLocator().getImage("full/obj16/Workflow"));
 		case MIDDLEWARE:
 			return overlayImage(object, getResourceLocator().getImage("full/obj16/Middleware"));
+		case CONVERSATION:
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/Conversation"));	
 
 		}
 
@@ -254,6 +273,7 @@ public class BlockItemProvider extends ItemProviderAdapter implements IEditingDo
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Block.class)) {
+		case DaprdesignerPackage.BLOCK__REQUIRED_FIELDS:
 		case DaprdesignerPackage.BLOCK__IS_READY:
 		case DaprdesignerPackage.BLOCK__NAME:
 		case DaprdesignerPackage.BLOCK__DESCRIPTION:
@@ -405,6 +425,9 @@ public class BlockItemProvider extends ItemProviderAdapter implements IEditingDo
 
 		newChildDescriptors.add(createChildParameter(DaprdesignerPackage.Literals.BLOCK__NODES,
 				DaprdesignerFactory.eINSTANCE.createNameresolution()));
+
+		newChildDescriptors.add(createChildParameter(DaprdesignerPackage.Literals.BLOCK__NODES,
+				DaprdesignerFactory.eINSTANCE.createConversation()));
 	}
 
 	/**

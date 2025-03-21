@@ -13,6 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link daprdesigner.DeniedComponentsConfiguration#getRequiredFields <em>Required Fields</em>}</li>
  *   <li>{@link daprdesigner.DeniedComponentsConfiguration#getHelp <em>Help</em>}</li>
  *   <li>{@link daprdesigner.DeniedComponentsConfiguration#getDeniedComponents <em>Denied Components</em>}</li>
  * </ul>
@@ -22,6 +23,18 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface DeniedComponentsConfiguration extends AppConfiguration {
+	/**
+	 * Returns the value of the '<em><b>Required Fields</b></em>' attribute.
+	 * The default value is <code>"Name, Denied Compoenents"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Required Fields</em>' attribute.
+	 * @see daprdesigner.DaprdesignerPackage#getDeniedComponentsConfiguration_RequiredFields()
+	 * @model default="Name, Denied Compoenents" changeable="false"
+	 * @generated
+	 */
+	String getRequiredFields();
+
 	/**
 	 * Returns the value of the '<em><b>Denied Components</b></em>' reference list.
 	 * The list contents are of type {@link daprdesigner.Component}.
