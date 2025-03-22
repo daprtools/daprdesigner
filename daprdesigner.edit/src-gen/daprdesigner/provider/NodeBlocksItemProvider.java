@@ -178,13 +178,14 @@ public class NodeBlocksItemProvider extends DaprNodeItemProvider {
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((NodeBlocks) object).getName();
+		NodeBlocks nb  = (NodeBlocks)object;
+		String label = nb.getName();
 		return label == null || label.length() == 0 ? getString("_UI_NodeBlocks_type")
-				: getString("_UI_NodeBlocks_type") + " " + label;
+				: label;
 	}
 
 	/**

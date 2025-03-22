@@ -252,13 +252,14 @@ public class BlockItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Block) object).getName();
+		Block b = (Block)object;
+		String label = b.getName();
 		return label == null || label.length() == 0 ? getString("_UI_Block_type")
-				: getString("_UI_Block_type") + " " + label;
+				: b.getBlockType().toString() + " " + label  ;
 	}
 
 	/**
